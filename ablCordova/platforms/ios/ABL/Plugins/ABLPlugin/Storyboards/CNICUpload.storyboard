@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -128,19 +128,31 @@
                                 <rect key="frame" x="20" y="600" width="350" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBn-i3-CZv" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="334" height="104"/>
+                                        <rect key="frame" x="8" y="25.000000000000004" width="334" height="49.333333333333343"/>
                                         <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account. 
-If you wish to continue Click here </string>
+If you wish to continue.</string>
                                         <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="14"/>
                                         <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3qN-3F-Obi" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                        <rect key="frame" x="136" y="80.333333333333371" width="78" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="yZB-S2-dM5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
+                                        <color key="textColor" name="App Orange"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="2Ka-4T-yru"/>
-                                    <constraint firstAttribute="bottom" secondItem="eBn-i3-CZv" secondAttribute="bottom" constant="8" id="Kw5-cR-c5I"/>
+                                    <constraint firstItem="3qN-3F-Obi" firstAttribute="top" secondItem="eBn-i3-CZv" secondAttribute="bottom" constant="6" id="JD7-bh-Sa1"/>
+                                    <constraint firstAttribute="bottom" secondItem="3qN-3F-Obi" secondAttribute="bottom" constant="20.670000000000002" id="KRK-TV-F5Y"/>
+                                    <constraint firstItem="eBn-i3-CZv" firstAttribute="top" secondItem="AJ4-7E-xcK" secondAttribute="top" constant="25" id="MeM-38-eUp"/>
                                     <constraint firstItem="eBn-i3-CZv" firstAttribute="leading" secondItem="AJ4-7E-xcK" secondAttribute="leading" constant="8" id="OYP-gx-yN8"/>
-                                    <constraint firstItem="eBn-i3-CZv" firstAttribute="top" secondItem="AJ4-7E-xcK" secondAttribute="top" constant="8" id="vNm-Ok-Hfr"/>
+                                    <constraint firstAttribute="trailing" secondItem="3qN-3F-Obi" secondAttribute="trailing" constant="136" id="SyS-xd-Z8q"/>
+                                    <constraint firstItem="3qN-3F-Obi" firstAttribute="leading" secondItem="AJ4-7E-xcK" secondAttribute="leading" constant="136" id="dgj-gl-uhl"/>
                                     <constraint firstAttribute="trailing" secondItem="eBn-i3-CZv" secondAttribute="trailing" constant="8" id="wie-HU-doL"/>
                                 </constraints>
                                 <userDefinedRuntimeAttributes>
@@ -2882,37 +2894,6 @@ If you wish to continue Click here </string>
                                     <constraint firstAttribute="height" constant="50" id="VON-hi-86i"/>
                                 </constraints>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="InZ-mD-i8m" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="600" width="350" height="120"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL8-Jr-r8c" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="8" y="8" width="334" height="104"/>
-                                        <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account. 
-If you wish to continue Click here </string>
-                                        <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="14"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="FL8-Jr-r8c" secondAttribute="bottom" constant="8" id="SKM-zv-6pd"/>
-                                    <constraint firstItem="FL8-Jr-r8c" firstAttribute="leading" secondItem="InZ-mD-i8m" secondAttribute="leading" constant="8" id="YY3-Mu-na9"/>
-                                    <constraint firstAttribute="height" constant="120" id="bCZ-V3-tMh"/>
-                                    <constraint firstAttribute="trailing" secondItem="FL8-Jr-r8c" secondAttribute="trailing" constant="8" id="dPf-Da-ovX"/>
-                                    <constraint firstItem="FL8-Jr-r8c" firstAttribute="top" secondItem="InZ-mD-i8m" secondAttribute="top" constant="8" id="fmo-jR-BNm"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
-                                        <color key="value" name="OTP Field Border"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
-                                        <real key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="wyL-7M-8kb">
                                 <rect key="frame" x="20" y="530" width="350" height="50"/>
                                 <subviews>
@@ -3096,6 +3077,49 @@ If you wish to continue Click here </string>
                                     </view>
                                 </subviews>
                             </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="84N-eF-rtM" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
+                                <rect key="frame" x="20" y="600" width="350" height="120"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ap-h8-ldd" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                        <rect key="frame" x="8" y="25.000000000000004" width="334" height="49.333333333333343"/>
+                                        <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account. 
+If you wish to continue.</string>
+                                        <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qx9-FK-hy8" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                        <rect key="frame" x="136" y="80.333333333333371" width="78" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="vTw-OV-nDg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
+                                        <color key="textColor" name="App Orange"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="Qx9-FK-hy8" firstAttribute="leading" secondItem="84N-eF-rtM" secondAttribute="leading" constant="136" id="Vs2-re-87Q"/>
+                                    <constraint firstAttribute="trailing" secondItem="6Ap-h8-ldd" secondAttribute="trailing" constant="8" id="X07-tN-dF4"/>
+                                    <constraint firstItem="6Ap-h8-ldd" firstAttribute="leading" secondItem="84N-eF-rtM" secondAttribute="leading" constant="8" id="o0u-Xl-Oc9"/>
+                                    <constraint firstItem="6Ap-h8-ldd" firstAttribute="top" secondItem="84N-eF-rtM" secondAttribute="top" constant="25" id="oBa-11-agq"/>
+                                    <constraint firstAttribute="trailing" secondItem="Qx9-FK-hy8" secondAttribute="trailing" constant="136" id="qzr-Pa-Dmi"/>
+                                    <constraint firstAttribute="bottom" secondItem="Qx9-FK-hy8" secondAttribute="bottom" constant="20.670000000000002" id="t22-iz-Dys"/>
+                                    <constraint firstItem="Qx9-FK-hy8" firstAttribute="top" secondItem="6Ap-h8-ldd" secondAttribute="bottom" constant="6" id="vy5-Vc-dh0"/>
+                                    <constraint firstAttribute="height" constant="120" id="x3V-uC-xfK"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                        <color key="value" name="OTP Field Border"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="6"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bXm-9y-62e"/>
                         <color key="backgroundColor" name="App Background"/>
@@ -3107,23 +3131,23 @@ If you wish to continue Click here </string>
                             <constraint firstItem="bXm-9y-62e" firstAttribute="trailing" secondItem="lUR-mI-Lhy" secondAttribute="trailing" constant="20" id="4Gj-Wg-ywC"/>
                             <constraint firstItem="2hl-lg-dqT" firstAttribute="leading" secondItem="bXm-9y-62e" secondAttribute="leading" constant="20" id="4iz-tQ-gve"/>
                             <constraint firstItem="xKx-7I-lmQ" firstAttribute="top" secondItem="J8W-b1-oKn" secondAttribute="bottom" id="8Vo-zd-Knl"/>
-                            <constraint firstItem="bXm-9y-62e" firstAttribute="trailing" secondItem="InZ-mD-i8m" secondAttribute="trailing" constant="20" id="8j3-jN-oOm"/>
                             <constraint firstItem="pLj-PR-K4P" firstAttribute="top" secondItem="xKx-7I-lmQ" secondAttribute="bottom" constant="20" id="BgR-lj-pHB"/>
                             <constraint firstItem="J8W-b1-oKn" firstAttribute="leading" secondItem="bXm-9y-62e" secondAttribute="leading" id="E76-nv-9gD"/>
                             <constraint firstItem="bXm-9y-62e" firstAttribute="trailing" secondItem="xKx-7I-lmQ" secondAttribute="trailing" id="Exl-wS-K4W"/>
+                            <constraint firstItem="84N-eF-rtM" firstAttribute="leading" secondItem="bXm-9y-62e" secondAttribute="leading" constant="20" id="HZq-gd-GeV"/>
                             <constraint firstAttribute="trailing" secondItem="kwC-2J-nVy" secondAttribute="trailing" constant="20" id="I3J-UZ-cfg"/>
-                            <constraint firstItem="InZ-mD-i8m" firstAttribute="leading" secondItem="bXm-9y-62e" secondAttribute="leading" constant="20" id="MOn-Cu-gg9"/>
                             <constraint firstItem="J8W-b1-oKn" firstAttribute="trailing" secondItem="bXm-9y-62e" secondAttribute="trailing" id="Mmz-UD-xrB"/>
                             <constraint firstItem="2hl-lg-dqT" firstAttribute="top" secondItem="kwC-2J-nVy" secondAttribute="bottom" constant="20" id="Ohi-a6-wNd"/>
+                            <constraint firstItem="lUR-mI-Lhy" firstAttribute="top" secondItem="84N-eF-rtM" secondAttribute="bottom" constant="20" id="QLF-V4-pDW"/>
                             <constraint firstItem="J8W-b1-oKn" firstAttribute="top" secondItem="bXm-9y-62e" secondAttribute="top" id="U3U-JR-Xmt"/>
+                            <constraint firstItem="84N-eF-rtM" firstAttribute="top" secondItem="wyL-7M-8kb" secondAttribute="bottom" constant="20" id="Vfo-Cb-9M1"/>
                             <constraint firstItem="kwC-2J-nVy" firstAttribute="leading" secondItem="Qqq-wq-T0E" secondAttribute="leading" constant="20" id="W2g-lu-PHG"/>
-                            <constraint firstItem="InZ-mD-i8m" firstAttribute="top" secondItem="wyL-7M-8kb" secondAttribute="bottom" constant="20" id="ZSS-yW-V7A"/>
-                            <constraint firstItem="lUR-mI-Lhy" firstAttribute="top" secondItem="InZ-mD-i8m" secondAttribute="bottom" constant="20" id="djj-HF-UMc"/>
                             <constraint firstItem="bXm-9y-62e" firstAttribute="trailing" secondItem="wyL-7M-8kb" secondAttribute="trailing" constant="20" id="fG4-Nd-QXX"/>
                             <constraint firstItem="kwC-2J-nVy" firstAttribute="top" secondItem="pLj-PR-K4P" secondAttribute="bottom" constant="20" id="mnX-ct-DbT"/>
                             <constraint firstItem="wyL-7M-8kb" firstAttribute="leading" secondItem="bXm-9y-62e" secondAttribute="leading" constant="20" id="nSR-2y-nNg"/>
                             <constraint firstItem="xKx-7I-lmQ" firstAttribute="top" secondItem="J8W-b1-oKn" secondAttribute="bottom" id="pbK-ob-emR"/>
                             <constraint firstItem="xKx-7I-lmQ" firstAttribute="leading" secondItem="Qqq-wq-T0E" secondAttribute="leading" id="th3-hw-D5H"/>
+                            <constraint firstItem="bXm-9y-62e" firstAttribute="trailing" secondItem="84N-eF-rtM" secondAttribute="trailing" constant="20" id="zm4-4H-jZi"/>
                             <constraint firstItem="bXm-9y-62e" firstAttribute="bottom" secondItem="lUR-mI-Lhy" secondAttribute="bottom" constant="20" id="zt9-2p-Vf5"/>
                         </constraints>
                     </view>
@@ -4180,24 +4204,36 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                     <constraint firstAttribute="height" constant="50" id="xkO-rZ-Wo9"/>
                                                 </constraints>
                                             </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ubq-Vb-WRu" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zrk-ml-hZN" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="493.66666666666663" width="350" height="120"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u2a-cl-CEb" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                        <rect key="frame" x="8" y="8" width="334" height="104"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g1s-bK-0sW" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="25.000000000000004" width="334" height="49.333333333333343"/>
                                                         <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account. 
-If you wish to continue Click here </string>
+If you wish to continue.</string>
                                                         <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z3a-Mm-Tc1" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                        <rect key="frame" x="130" y="80.333333333333371" width="90" height="19"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="19" id="KXb-tC-eDM"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="WorkSans-Bold" family="Work Sans" pointSize="15"/>
+                                                        <color key="textColor" name="Allied Blue"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="u2a-cl-CEb" secondAttribute="trailing" constant="8" id="2Vd-1O-fXL"/>
-                                                    <constraint firstAttribute="height" constant="120" id="hWu-AW-Gbr"/>
-                                                    <constraint firstAttribute="bottom" secondItem="u2a-cl-CEb" secondAttribute="bottom" constant="8" id="hzb-P8-yJz"/>
-                                                    <constraint firstItem="u2a-cl-CEb" firstAttribute="top" secondItem="Ubq-Vb-WRu" secondAttribute="top" constant="8" id="maO-e9-ccB"/>
-                                                    <constraint firstItem="u2a-cl-CEb" firstAttribute="leading" secondItem="Ubq-Vb-WRu" secondAttribute="leading" constant="8" id="reZ-SK-sqv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="g1s-bK-0sW" secondAttribute="trailing" constant="8" id="5RB-VU-I5h"/>
+                                                    <constraint firstAttribute="bottom" secondItem="z3a-Mm-Tc1" secondAttribute="bottom" constant="20.670000000000002" id="68j-IA-isv"/>
+                                                    <constraint firstItem="g1s-bK-0sW" firstAttribute="leading" secondItem="zrk-ml-hZN" secondAttribute="leading" constant="8" id="At6-rI-Au1"/>
+                                                    <constraint firstItem="g1s-bK-0sW" firstAttribute="top" secondItem="zrk-ml-hZN" secondAttribute="top" constant="25" id="CqM-nQ-HTB"/>
+                                                    <constraint firstItem="z3a-Mm-Tc1" firstAttribute="top" secondItem="g1s-bK-0sW" secondAttribute="bottom" constant="6" id="lLB-tp-HfS"/>
+                                                    <constraint firstItem="z3a-Mm-Tc1" firstAttribute="leading" secondItem="zrk-ml-hZN" secondAttribute="leading" constant="130" id="mr7-hU-GYO"/>
+                                                    <constraint firstAttribute="height" constant="120" id="r8n-lC-Hhh"/>
+                                                    <constraint firstAttribute="trailing" secondItem="z3a-Mm-Tc1" secondAttribute="trailing" constant="130" id="uuI-3u-ShP"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -4271,13 +4307,15 @@ If you wish to continue Click here </string>
                                         <constraints>
                                             <constraint firstItem="qji-l5-erv" firstAttribute="top" secondItem="fCo-bL-L3O" secondAttribute="bottom" constant="20" id="30z-ZK-6cF"/>
                                             <constraint firstItem="qEu-ZE-O16" firstAttribute="leading" secondItem="jho-yG-Kyx" secondAttribute="leading" id="3ul-a2-aQj"/>
-                                            <constraint firstItem="sce-4u-gwe" firstAttribute="top" secondItem="Ubq-Vb-WRu" secondAttribute="bottom" constant="20" id="4ZU-34-7he"/>
                                             <constraint firstItem="hCJ-6n-ysU" firstAttribute="top" secondItem="qji-l5-erv" secondAttribute="bottom" constant="20" id="4qj-I1-Nzt"/>
+                                            <constraint firstItem="zrk-ml-hZN" firstAttribute="leading" secondItem="jho-yG-Kyx" secondAttribute="leading" constant="20" id="6xa-Fo-swO"/>
                                             <constraint firstItem="fCo-bL-L3O" firstAttribute="top" secondItem="qEu-ZE-O16" secondAttribute="bottom" id="74n-CU-xp3"/>
                                             <constraint firstItem="sce-4u-gwe" firstAttribute="leading" secondItem="jho-yG-Kyx" secondAttribute="leading" constant="20" id="7Ls-4x-fym"/>
                                             <constraint firstAttribute="trailing" secondItem="ctA-Fm-oXQ" secondAttribute="trailing" constant="20" id="7VX-6Y-1NH"/>
                                             <constraint firstAttribute="trailing" secondItem="KCZ-t3-A7X" secondAttribute="trailing" constant="20" id="7Xs-9G-V48"/>
                                             <constraint firstAttribute="bottom" secondItem="sce-4u-gwe" secondAttribute="bottom" constant="20" id="98k-8I-LB0"/>
+                                            <constraint firstItem="zrk-ml-hZN" firstAttribute="top" secondItem="lx3-Zt-dpe" secondAttribute="bottom" constant="20" id="DEJ-6t-jDr"/>
+                                            <constraint firstItem="sce-4u-gwe" firstAttribute="top" secondItem="zrk-ml-hZN" secondAttribute="bottom" constant="20" id="Fob-xp-iPu"/>
                                             <constraint firstItem="qEu-ZE-O16" firstAttribute="top" secondItem="jho-yG-Kyx" secondAttribute="top" id="FyE-G5-txf"/>
                                             <constraint firstItem="lx3-Zt-dpe" firstAttribute="leading" secondItem="jho-yG-Kyx" secondAttribute="leading" constant="20" id="IOQ-cz-MDu"/>
                                             <constraint firstItem="jx1-rb-Dd6" firstAttribute="leading" secondItem="jho-yG-Kyx" secondAttribute="leading" constant="20" id="Jfk-ew-Irf"/>
@@ -4287,14 +4325,12 @@ If you wish to continue Click here </string>
                                             <constraint firstAttribute="trailing" secondItem="sce-4u-gwe" secondAttribute="trailing" constant="20" id="Pnk-IF-LGx"/>
                                             <constraint firstItem="ctA-Fm-oXQ" firstAttribute="top" secondItem="hCJ-6n-ysU" secondAttribute="bottom" constant="20" id="SYJ-bp-yUX"/>
                                             <constraint firstItem="jx1-rb-Dd6" firstAttribute="top" secondItem="ctA-Fm-oXQ" secondAttribute="bottom" constant="20" id="UVj-OI-pTG"/>
-                                            <constraint firstItem="Ubq-Vb-WRu" firstAttribute="leading" secondItem="jho-yG-Kyx" secondAttribute="leading" constant="20" id="XAg-hg-x49"/>
                                             <constraint firstItem="qji-l5-erv" firstAttribute="leading" secondItem="jho-yG-Kyx" secondAttribute="leading" constant="20" id="aVE-fj-lJb"/>
                                             <constraint firstItem="KCZ-t3-A7X" firstAttribute="leading" secondItem="jx1-rb-Dd6" secondAttribute="trailing" constant="20" id="bx3-jX-cGw"/>
                                             <constraint firstItem="lx3-Zt-dpe" firstAttribute="top" secondItem="jx1-rb-Dd6" secondAttribute="bottom" constant="50" id="dK2-3n-BpB"/>
-                                            <constraint firstAttribute="trailing" secondItem="Ubq-Vb-WRu" secondAttribute="trailing" constant="20" id="eMi-IE-lSc"/>
                                             <constraint firstAttribute="trailing" secondItem="hCJ-6n-ysU" secondAttribute="trailing" constant="20" id="fFF-gY-4i1"/>
-                                            <constraint firstItem="Ubq-Vb-WRu" firstAttribute="top" secondItem="lx3-Zt-dpe" secondAttribute="bottom" constant="20" id="gIe-ZQ-Eh8"/>
                                             <constraint firstItem="hCJ-6n-ysU" firstAttribute="leading" secondItem="jho-yG-Kyx" secondAttribute="leading" constant="20" id="gts-bk-VRL"/>
+                                            <constraint firstAttribute="trailing" secondItem="zrk-ml-hZN" secondAttribute="trailing" constant="20" id="h68-JI-Rtv"/>
                                             <constraint firstAttribute="trailing" secondItem="fCo-bL-L3O" secondAttribute="trailing" id="wGW-0H-3Ad"/>
                                             <constraint firstAttribute="trailing" secondItem="lx3-Zt-dpe" secondAttribute="trailing" constant="20" id="xR8-YI-9fh"/>
                                             <constraint firstItem="ctA-Fm-oXQ" firstAttribute="leading" secondItem="jho-yG-Kyx" secondAttribute="leading" constant="20" id="ym4-md-LvH"/>
@@ -4322,6 +4358,7 @@ If you wish to continue Click here </string>
                     </view>
                     <connections>
                         <outlet property="buttonUrdu" destination="WpN-ig-XMs" id="ZNW-TX-aYh"/>
+                        <outlet property="clickHereLink" destination="z3a-Mm-Tc1" id="aWK-vf-78D"/>
                         <outlet property="cnicNumberLabel" destination="93Q-yW-7ZL" id="qKU-2j-Fe3"/>
                         <outlet property="cnicNumberTextField" destination="Lcz-xu-4Nl" id="3Dw-mF-irZ"/>
                         <outlet property="cnicNumberView" destination="aAa-aO-IZo" id="DbQ-kc-q8P"/>
@@ -4347,6 +4384,9 @@ If you wish to continue Click here </string>
         </designable>
         <designable name="3L1-VE-0Lm">
             <size key="intrinsicContentSize" width="171.33333333333334" height="18.666666666666668"/>
+        </designable>
+        <designable name="3qN-3F-Obi">
+            <size key="intrinsicContentSize" width="78" height="19"/>
         </designable>
         <designable name="46E-Et-Szy">
             <size key="intrinsicContentSize" width="1649.6666666666667" height="19"/>
@@ -4374,6 +4414,9 @@ If you wish to continue Click here </string>
         </designable>
         <designable name="5tc-dB-yqt">
             <size key="intrinsicContentSize" width="92.333333333333329" height="16.666666666666668"/>
+        </designable>
+        <designable name="6Ap-h8-ldd">
+            <size key="intrinsicContentSize" width="616.66666666666663" height="33"/>
         </designable>
         <designable name="6K0-GQ-pRy">
             <size key="intrinsicContentSize" width="92.666666666666671" height="18"/>
@@ -4422,9 +4465,6 @@ If you wish to continue Click here </string>
         </designable>
         <designable name="F0a-cg-lgo">
             <size key="intrinsicContentSize" width="155.33333333333334" height="18.666666666666668"/>
-        </designable>
-        <designable name="FL8-Jr-r8c">
-            <size key="intrinsicContentSize" width="616.66666666666663" height="33"/>
         </designable>
         <designable name="FXo-5w-y8J">
             <size key="intrinsicContentSize" width="116.66666666666667" height="23.666666666666668"/>
@@ -4491,6 +4531,9 @@ If you wish to continue Click here </string>
         </designable>
         <designable name="Qas-wT-1pl">
             <size key="intrinsicContentSize" width="54" height="54"/>
+        </designable>
+        <designable name="Qx9-FK-hy8">
+            <size key="intrinsicContentSize" width="78" height="19"/>
         </designable>
         <designable name="R0c-bw-OUX">
             <size key="intrinsicContentSize" width="72" height="33.333333333333336"/>
@@ -4609,6 +4652,9 @@ If you wish to continue Click here </string>
         <designable name="fxc-87-W4Z">
             <size key="intrinsicContentSize" width="613" height="19.333333333333332"/>
         </designable>
+        <designable name="g1s-bK-0sW">
+            <size key="intrinsicContentSize" width="616.66666666666663" height="33"/>
+        </designable>
         <designable name="g63-kI-dIA">
             <size key="intrinsicContentSize" width="132.33333333333334" height="19.333333333333332"/>
         </designable>
@@ -4708,9 +4754,6 @@ If you wish to continue Click here </string>
         <designable name="tLr-5C-xll">
             <size key="intrinsicContentSize" width="103.33333333333333" height="18"/>
         </designable>
-        <designable name="u2a-cl-CEb">
-            <size key="intrinsicContentSize" width="616.66666666666663" height="33"/>
-        </designable>
         <designable name="uYu-0n-73w">
             <size key="intrinsicContentSize" width="1528" height="19"/>
         </designable>
@@ -4734,6 +4777,9 @@ If you wish to continue Click here </string>
         </designable>
         <designable name="ydE-VJ-Qhs">
             <size key="intrinsicContentSize" width="483.66666666666669" height="23.666666666666668"/>
+        </designable>
+        <designable name="z3a-Mm-Tc1">
+            <size key="intrinsicContentSize" width="74.666666666666671" height="17.666666666666668"/>
         </designable>
         <designable name="zcf-ME-3pA">
             <size key="intrinsicContentSize" width="169.33333333333334" height="16.666666666666668"/>

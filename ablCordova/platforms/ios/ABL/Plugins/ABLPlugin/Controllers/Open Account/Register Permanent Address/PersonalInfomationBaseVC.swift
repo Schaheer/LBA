@@ -190,13 +190,12 @@ final class PersonalInformationBaseVC: UIViewController{
     }
     
     private func addPictureAndSignatureVCChild(fromViewController: String){
+        
         guard let pictureAndSignVC = UIStoryboard.initialize(
             viewController: .pictureAndSignatureVC,
             fromStoryboard: .openAccount
         ) as? PictureAndSignatureVC else { return }
         
-        pictureAndSignVC.isEditFromReviewDetailsViewController = true
-        pictureAndSignVC.forViewController = forViewController
         childContainerView.frame = pictureAndSignVC.view.frame
         add(pictureAndSignVC, to: childContainerView)
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {

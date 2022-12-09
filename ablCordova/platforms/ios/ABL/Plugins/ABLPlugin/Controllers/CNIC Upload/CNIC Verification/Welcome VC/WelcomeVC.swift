@@ -18,7 +18,10 @@ class WelcomeVC: UIViewController {
         super.viewDidLoad()
         DataCacheManager.shared.saveNoOfJointApplicants(input: 0)
         // Do any additional setup after loading the view.
+        setupGestureRecognizers()
     }
+    
+    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -36,11 +39,11 @@ class WelcomeVC: UIViewController {
         
     }
     private func openAvailabilityVC() {
-//                let vc = UIStoryboard.init(name: "OpenAccount", bundle: nil).instantiateViewController(withIdentifier: "PictureAndSignatureVC") as? PictureAndSignatureVC
-//                self.navigationController?.pushViewController(vc!, animated: true)
-//        
-//                //Shakeel Test
-//                return()
+        //        let vc = UIStoryboard.init(name: "RemittanceAccount", bundle: nil).instantiateViewController(withIdentifier: "TaxResidentDetailVC") as? TaxResidentDetailVC
+        //        self.navigationController?.pushViewController(vc!, animated: true)
+        //
+        //        //Shakeel Test
+        //        return()
         guard let verifyOTPVC = UIStoryboard.initialize(
             viewController: .cnicAvailabilityVC,
             fromStoryboard: .cnicUpload

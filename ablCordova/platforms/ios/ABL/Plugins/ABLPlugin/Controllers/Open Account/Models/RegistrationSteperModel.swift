@@ -25,7 +25,6 @@ class RegistrationSteperModel {
     var mothersNames: [String]?
     var placesOfBirth: [String]?
 
-    var proofOfIncomeInd: Int?
     var gender: String?
     var genderId = Int()
     var fullName: String?
@@ -76,8 +75,5 @@ class RegistrationSteperModel {
     var taxNotAvailableResonId: Double?
     var taxNotAvailableResonFormBExplination: String?
     var taxFormBExplanation: String?
-    var proofOfIncomeFileData: Data?
-    var proofOfIncomeFileName: String?
-    
-    var isJointAccount = false
+
 }

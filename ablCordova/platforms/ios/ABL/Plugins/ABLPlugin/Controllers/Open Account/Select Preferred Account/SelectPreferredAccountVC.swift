@@ -272,8 +272,9 @@ final class SelectPreferredAccountVC: UIViewController {
         
         let proofOfIncomeInd = selectPreferredAccountViewModel.getProofOfIncomeInd()
         let accountVariantID = selectPreferredAccountViewModel.getAccountVariantID()
-        modelRegistrationSteper.proofOfIncomeInd = proofOfIncomeInd
+        
         if proofOfIncomeInd != 2 && accountVariantID.id != 0 {
+            
             if let registerVerifyOTPResponse = DataCacheManager.shared.loadRegisterVerifyOTPResponse() {
                 let consumer = registerVerifyOTPResponse.consumerList?.first
                 

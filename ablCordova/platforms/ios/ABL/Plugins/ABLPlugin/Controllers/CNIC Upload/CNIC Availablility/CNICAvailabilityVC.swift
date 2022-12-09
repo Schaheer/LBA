@@ -15,6 +15,8 @@ final class CNICAvailabilityVC: UIViewController {
     @IBOutlet weak var cnicNumberTextField: UITextField!
     @IBOutlet weak var cnicNumberView: UIView!
     
+    @IBOutlet weak var clickHereLink: LabelSetting!
+    
     @IBAction func buttonUrdu(_ sender: Any) {
         funChangeAppLanguageAndSide(to: "ur", vc: self)
     }
@@ -41,6 +43,8 @@ final class CNICAvailabilityVC: UIViewController {
         cnicNumberTextField.text = nil
         mobileNumberTextField.text = nil
         modelRegistrationSteper = RegistrationSteperModel()
+        //Irfan
+        setupGestureRecognizers()
     }
     
     override func viewDidLoad() {
@@ -85,6 +89,27 @@ final class CNICAvailabilityVC: UIViewController {
             name: .additionalApplicant,
             object: nil
         )
+    }
+    //Irfan
+    private func setupGestureRecognizers() {
+        
+        let clickHere = UITapGestureRecognizer(target: self, action: #selector(openclickHereLink))
+        clickHereLink.isUserInteractionEnabled = true
+        clickHereLink.addGestureRecognizer(clickHere)
+
+    }
+        //Irfan
+    @objc private func openclickHereLink() {
+        let clickHere: String = "https://apps.apple.com/pk/app/myabl-wallet/id1455479217"
+        if let appURL = URL(string: clickHere){
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(appURL)
+                
+            }
+            
+        }
     }
     
     @IBAction func toggleSwich(_ sender: UISwitch) {

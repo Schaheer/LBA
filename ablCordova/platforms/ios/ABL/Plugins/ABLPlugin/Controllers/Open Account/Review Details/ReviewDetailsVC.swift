@@ -254,25 +254,13 @@ extension ReviewDetailsVC: ReviewDetailsCellDelegate {
     }
     
     func buttonEditCurrentAddress() {
+//        dismissToViewController(viewController: PersonalInformationBaseVC.self)
         guard let personalInformationBaseVC = UIStoryboard.initialize(
             viewController: .personalInformationBaseVC,
             fromStoryboard: .openAccount
         ) as? PersonalInformationBaseVC else { return }
 //        PersonalInformationThirdVC
         personalInformationBaseVC.firstChild = .personalInfoThirdVC
-        navigationController?.pushViewController(personalInformationBaseVC, animated: true)
-    }
-    
-    func buttonEditDocuments() {
-        
-        guard let personalInformationBaseVC = UIStoryboard.initialize(
-            viewController: .personalInformationBaseVC,
-            fromStoryboard: .openAccount
-        ) as? PersonalInformationBaseVC else { return }
-//        PersonalInformationThirdVC
-        personalInformationBaseVC.firstChild = .pictureAndSignVC
-        personalInformationBaseVC.isEditFromReviewDetailsViewController = true
-        personalInformationBaseVC.forViewController = "ReviewDetailsVC"
         navigationController?.pushViewController(personalInformationBaseVC, animated: true)
     }
 }

@@ -23,7 +23,7 @@ final class PersonalInformationThirdVC: UIViewController {
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
     
-    
+    let ACCEPTABLE_CHARACTERS = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_."
     
     var isEditFromReviewDetailsViewController = false
     var forViewController = ""
@@ -43,6 +43,8 @@ final class PersonalInformationThirdVC: UIViewController {
         countryTextField.isUserInteractionEnabled = false
         emailTextField.delegate = self
         lanlineNumTextField.delegate = self
+        cityTextField.delegate = self
+        townTextField.delegate = self
         super.viewDidLoad()
         subscribeViewModel()
         prePopulateData()
@@ -250,6 +252,11 @@ extension PersonalInformationThirdVC : UITextFieldDelegate {
             
             textField.text = formatLandLineNumber(with: "XXXX-XXXXXXX", phone: newString)
             return false
+        }
+        else if cityTextField == textField || townTextField == textField {
+            let cs = CharacterSet(charactersIn: ACCEPTABLE_CHARACTERS).inverted
+            let filtered: String = (string.components(separatedBy: cs) as NSArray).componentsJoined(by: "")
+            return (string == filtered)
         }
         return true
     }

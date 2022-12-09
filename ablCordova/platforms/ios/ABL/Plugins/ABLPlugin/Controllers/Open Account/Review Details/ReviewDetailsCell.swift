@@ -15,7 +15,6 @@ protocol ReviewDetailsCellDelegate: AnyObject {
     func buttonEditNationality()
     func buttonEditFATCA()
     func buttonEditPermanentAddress()
-    func buttonEditDocuments()
 }
 final class ReviewDetailsCell: UITableViewCell {
     
@@ -127,7 +126,6 @@ final class ReviewDetailsCell: UITableViewCell {
     }
     @IBOutlet weak var buttonEditDocuments: UIButton!
     @IBAction func buttonEditDocuments(_ sender: Any) {
-        cellDelegate.buttonEditDocuments()
     }
     
 //    @IBOutlet weak var bankingModetxt: UITextField!

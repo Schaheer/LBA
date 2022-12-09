@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_72" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -1666,7 +1666,7 @@ Currency PKR</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Aau-O0-63A" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813" y="75"/>
+            <point key="canvasLocation" x="869.30232558139539" y="142.274678111588"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="5kd-xV-8WR">
@@ -2526,7 +2526,7 @@ Currency PKR</string>
                                                                 <rect key="frame" x="0.0" y="70" width="366" height="70"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-i1-i9K">
-                                                                        <rect key="frame" x="8" y="8" width="254.66666666666663" height="59"/>
+                                                                        <rect key="frame" x="8" y="8" width="230.66666666666666" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearest Landmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZC-9x-bpb" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="254.66666666666666" height="12"/>
@@ -4694,7 +4694,11 @@ Currency PKR</string>
                                 <rect key="frame" x="0.0" y="59" width="430" height="839"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEL-s7-zDV">
+<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="0.0" width="430" height="874.66666666666663"/>
+=======
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="839"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cdy-1m-uxL">
                                                 <rect key="frame" x="0.0" y="0.0" width="430" height="50"/>
@@ -4766,41 +4770,86 @@ Currency PKR</string>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nmh-jr-7wu" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                 <rect key="frame" x="20" y="200.66666666666666" width="390" height="368.66666666666674"/>
+=======
+                                                <rect key="frame" x="20" y="200.66666666666669" width="390" height="341.00000000000006"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVs-Ed-c74" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                        <rect key="frame" x="12" y="30" width="366" height="27"/>
+                                                        <rect key="frame" x="12" y="25" width="366" height="27"/>
                                                         <fontDescription key="fontDescription" name="WorkSans-Bold" family="Work Sans" pointSize="23"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="thumbs-up-icon" translatesAutoresizingMaskIntoConstraints="NO" id="JTY-zW-xwW">
-                                                        <rect key="frame" x="135" y="77" width="120" height="120"/>
+                                                        <rect key="frame" x="135" y="67" width="120" height="120"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="120" id="qKL-k6-6fb"/>
                                                             <constraint firstAttribute="width" constant="120" id="sCg-bH-M4g"/>
                                                         </constraints>
                                                     </imageView>
+<<<<<<< HEAD
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJ5-84-Stq" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="217" width="350" height="131.66666666666663"/>
                                                         <string key="text">Your have successfully submitted your application for the Asaan Digital Account to Allied Bank.
 
 For any further inquiry, please contact ada@abl.com       or call our Helpline: 111-225-225</string>
+=======
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You have successfully submitted your application for the to Allied Bank." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJ5-84-Stq" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                        <rect key="frame" x="20" y="202" width="350" height="37.666666666666657"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
                                                         <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For any further inquiry, please contact" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w0Y-kD-DKh" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                        <rect key="frame" x="8" y="251.66666666666663" width="374" height="19"/>
+                                                        <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="1xl-yd-3bC">
+                                                        <rect key="frame" x="67.666666666666686" y="309.66666666666669" width="255" height="19"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="or call our Helpline:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hBe-rF-Evl" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                                <rect key="frame" x="0.0" y="0.0" width="154" height="19"/>
+                                                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="111-225-225" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="161" translatesAutoresizingMaskIntoConstraints="NO" id="MdR-nC-KYZ" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                                <rect key="frame" x="165" y="0.0" width="90" height="19"/>
+                                                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
+                                                                <color key="textColor" name="App Orange"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ada@abl.com" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQN-SA-kXI" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                        <rect key="frame" x="142.33333333333334" y="278.66666666666669" width="105.33333333333334" height="19"/>
+                                                        <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
+                                                        <color key="textColor" name="App Orange"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstItem="IJ5-84-Stq" firstAttribute="leading" secondItem="nmh-jr-7wu" secondAttribute="leading" constant="20" id="4PQ-Mz-bWv"/>
-                                                    <constraint firstAttribute="trailing" secondItem="IJ5-84-Stq" secondAttribute="trailing" constant="20" id="6yo-nt-bPS"/>
-                                                    <constraint firstItem="JTY-zW-xwW" firstAttribute="top" secondItem="tVs-Ed-c74" secondAttribute="bottom" constant="20" id="ASC-at-OyL"/>
+                                                    <constraint firstItem="IJ5-84-Stq" firstAttribute="leading" secondItem="nmh-jr-7wu" secondAttribute="leading" constant="20" symbolic="YES" id="3ZP-mn-trK"/>
+                                                    <constraint firstItem="w0Y-kD-DKh" firstAttribute="top" secondItem="IJ5-84-Stq" secondAttribute="bottom" constant="12" id="7qo-EO-3WN"/>
+                                                    <constraint firstItem="JTY-zW-xwW" firstAttribute="top" secondItem="tVs-Ed-c74" secondAttribute="bottom" constant="15" id="ASC-at-OyL"/>
+                                                    <constraint firstItem="jQN-SA-kXI" firstAttribute="top" secondItem="w0Y-kD-DKh" secondAttribute="bottom" constant="8" id="DNj-Ui-glr"/>
                                                     <constraint firstItem="JTY-zW-xwW" firstAttribute="centerX" secondItem="nmh-jr-7wu" secondAttribute="centerX" id="Ihd-5w-HdV"/>
-                                                    <constraint firstAttribute="bottom" secondItem="IJ5-84-Stq" secondAttribute="bottom" constant="20" id="Yq7-yL-WyS"/>
-                                                    <constraint firstItem="IJ5-84-Stq" firstAttribute="top" secondItem="JTY-zW-xwW" secondAttribute="bottom" constant="20" id="aGa-S5-BIJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="w0Y-kD-DKh" secondAttribute="trailing" constant="8" id="VDp-I8-AMn"/>
+                                                    <constraint firstItem="w0Y-kD-DKh" firstAttribute="leading" secondItem="nmh-jr-7wu" secondAttribute="leading" constant="8" id="VXz-Ry-UcJ"/>
+                                                    <constraint firstItem="1xl-yd-3bC" firstAttribute="centerX" secondItem="nmh-jr-7wu" secondAttribute="centerX" id="Vu4-Eu-1Gc"/>
+                                                    <constraint firstItem="jQN-SA-kXI" firstAttribute="centerX" secondItem="nmh-jr-7wu" secondAttribute="centerX" id="XsG-E9-Ju0"/>
+                                                    <constraint firstItem="1xl-yd-3bC" firstAttribute="top" secondItem="jQN-SA-kXI" secondAttribute="bottom" constant="12" id="Ya2-jB-Y6o"/>
+                                                    <constraint firstAttribute="bottom" secondItem="1xl-yd-3bC" secondAttribute="bottom" constant="12.33" id="a32-mv-ggW"/>
+                                                    <constraint firstItem="IJ5-84-Stq" firstAttribute="top" secondItem="JTY-zW-xwW" secondAttribute="bottom" constant="15" id="aGa-S5-BIJ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="IJ5-84-Stq" secondAttribute="trailing" constant="20" symbolic="YES" id="dbt-UB-xQs"/>
                                                     <constraint firstAttribute="trailing" secondItem="tVs-Ed-c74" secondAttribute="trailing" constant="12" id="f8c-7q-6pX"/>
                                                     <constraint firstItem="tVs-Ed-c74" firstAttribute="leading" secondItem="nmh-jr-7wu" secondAttribute="leading" constant="12" id="taj-9V-1KR"/>
-                                                    <constraint firstItem="tVs-Ed-c74" firstAttribute="top" secondItem="nmh-jr-7wu" secondAttribute="top" constant="30" id="wcx-ti-hqv"/>
+                                                    <constraint firstItem="tVs-Ed-c74" firstAttribute="top" secondItem="nmh-jr-7wu" secondAttribute="top" constant="25" id="wcx-ti-hqv"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -4815,7 +4864,11 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LKg-7w-pgL" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                 <rect key="frame" x="20" y="589.33333333333337" width="390" height="185.33333333333337"/>
+=======
+                                                <rect key="frame" x="20" y="553.66666666666663" width="390" height="195.33333333333337"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="f81-LA-6vl" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="20" y="20" width="350" height="75.333333333333329"/>
@@ -4825,7 +4878,11 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="hyU-Ue-O5m">
+<<<<<<< HEAD
                                                         <rect key="frame" x="20" y="115.33333333333326" width="350" height="50"/>
+=======
+                                                        <rect key="frame" x="20" y="115.33333333333337" width="350" height="50"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                         <subviews>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rO-rf-FuC" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="167" height="50"/>
@@ -4874,13 +4931,13 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="hyU-Ue-O5m" secondAttribute="bottom" constant="30" id="20b-PW-jFz"/>
                                                     <constraint firstAttribute="trailing" secondItem="f81-LA-6vl" secondAttribute="trailing" constant="20" id="8EP-1l-Lo5"/>
                                                     <constraint firstItem="f81-LA-6vl" firstAttribute="leading" secondItem="LKg-7w-pgL" secondAttribute="leading" constant="20" id="BPt-Fo-RYU"/>
                                                     <constraint firstItem="f81-LA-6vl" firstAttribute="top" secondItem="LKg-7w-pgL" secondAttribute="top" constant="20" id="Bmx-aM-cHa"/>
                                                     <constraint firstItem="hyU-Ue-O5m" firstAttribute="top" secondItem="f81-LA-6vl" secondAttribute="bottom" constant="20" id="HOm-lt-Jbz"/>
                                                     <constraint firstAttribute="trailing" secondItem="hyU-Ue-O5m" secondAttribute="trailing" constant="20" id="Ibe-02-pH9"/>
                                                     <constraint firstItem="hyU-Ue-O5m" firstAttribute="leading" secondItem="LKg-7w-pgL" secondAttribute="leading" constant="20" id="leL-UP-Hwm"/>
-                                                    <constraint firstAttribute="bottom" secondItem="hyU-Ue-O5m" secondAttribute="bottom" constant="20" id="xvq-Ci-Yln"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
@@ -4895,7 +4952,11 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="EKU-CF-rhu">
+<<<<<<< HEAD
                                                 <rect key="frame" x="20" y="804.66666666666663" width="390" height="50"/>
+=======
+                                                <rect key="frame" x="20" y="769" width="390" height="50"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="EYq-ju-fGz"/>
                                                 </constraints>
@@ -4908,12 +4969,11 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                             <constraint firstItem="LKg-7w-pgL" firstAttribute="leading" secondItem="EEL-s7-zDV" secondAttribute="leading" constant="20" id="FgM-TU-a7S"/>
                                             <constraint firstAttribute="trailing" secondItem="nmh-jr-7wu" secondAttribute="trailing" constant="20" id="Ib8-uv-BvB"/>
                                             <constraint firstAttribute="trailing" secondItem="tPS-hh-pQ7" secondAttribute="trailing" constant="20" id="KdZ-fl-Vhp"/>
-                                            <constraint firstItem="EKU-CF-rhu" firstAttribute="top" secondItem="LKg-7w-pgL" secondAttribute="bottom" constant="30" id="PbL-TL-vcG"/>
                                             <constraint firstItem="tPS-hh-pQ7" firstAttribute="top" secondItem="Ge1-Xw-rZW" secondAttribute="bottom" constant="20" id="Qok-K4-h9R"/>
+                                            <constraint firstItem="EKU-CF-rhu" firstAttribute="top" secondItem="LKg-7w-pgL" secondAttribute="bottom" constant="20" id="R9L-eP-Ezk"/>
                                             <constraint firstItem="nmh-jr-7wu" firstAttribute="top" secondItem="tPS-hh-pQ7" secondAttribute="bottom" constant="20" id="TTL-gL-dkY"/>
                                             <constraint firstItem="tPS-hh-pQ7" firstAttribute="leading" secondItem="EEL-s7-zDV" secondAttribute="leading" constant="20" id="UW5-AH-PZb"/>
                                             <constraint firstItem="cdy-1m-uxL" firstAttribute="top" secondItem="EEL-s7-zDV" secondAttribute="top" id="YEH-G9-6fN"/>
-                                            <constraint firstItem="LKg-7w-pgL" firstAttribute="top" secondItem="nmh-jr-7wu" secondAttribute="bottom" constant="20" id="bcN-Eq-Dlb"/>
                                             <constraint firstItem="nmh-jr-7wu" firstAttribute="leading" secondItem="EEL-s7-zDV" secondAttribute="leading" constant="20" id="dTs-GW-pzm"/>
                                             <constraint firstAttribute="bottom" secondItem="EKU-CF-rhu" secondAttribute="bottom" constant="20" id="fUB-po-8W0"/>
                                             <constraint firstItem="EKU-CF-rhu" firstAttribute="leading" secondItem="EEL-s7-zDV" secondAttribute="leading" constant="20" id="gI5-8f-w0C"/>
@@ -4922,6 +4982,7 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                             <constraint firstItem="iCd-CM-Omo" firstAttribute="leading" secondItem="EEL-s7-zDV" secondAttribute="leading" id="lFk-qh-0p0"/>
                                             <constraint firstItem="Ge1-Xw-rZW" firstAttribute="top" secondItem="iCd-CM-Omo" secondAttribute="bottom" constant="20" id="pHx-aZ-78e"/>
                                             <constraint firstAttribute="trailing" secondItem="LKg-7w-pgL" secondAttribute="trailing" constant="20" id="qA6-el-max"/>
+                                            <constraint firstItem="LKg-7w-pgL" firstAttribute="top" secondItem="nmh-jr-7wu" secondAttribute="bottom" constant="12" id="rge-GG-sHu"/>
                                             <constraint firstItem="cdy-1m-uxL" firstAttribute="leading" secondItem="EEL-s7-zDV" secondAttribute="leading" id="suX-6c-1Np"/>
                                             <constraint firstAttribute="trailing" secondItem="cdy-1m-uxL" secondAttribute="trailing" id="vAS-wb-Yo7"/>
                                         </constraints>
@@ -4946,10 +5007,14 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                             <constraint firstItem="7ez-9m-xmF" firstAttribute="trailing" secondItem="1WV-De-8qx" secondAttribute="trailing" id="zC4-39-5kJ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="abmNumber" destination="MdR-nC-KYZ" id="JuK-0D-7vz"/>
+                        <outlet property="appEmail" destination="jQN-SA-kXI" id="HdA-Aj-Cr0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kzY-Hf-OPj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5726" y="75"/>
+            <point key="canvasLocation" x="5725.1162790697672" y="74.678111587982841"/>
         </scene>
         <!--Picture And SignatureVC-->
         <scene sceneID="P3h-tF-pLh">
@@ -4962,11 +5027,11 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyz-9M-m21">
                                 <rect key="frame" x="0.0" y="59" width="430" height="839"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Y1j-7x-Vnb">
-                                        <rect key="frame" x="0.0" y="0.0" width="430" height="1000"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1j-7x-Vnb">
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="670"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RrZ-Zs-gzM">
-                                                <rect key="frame" x="0.0" y="0.0" width="430" height="570"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RrZ-Zs-gzM">
+                                                <rect key="frame" x="0.0" y="0.0" width="430" height="320"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jp1-qI-fBi">
                                                         <rect key="frame" x="0.0" y="0.0" width="430" height="150"/>
@@ -5076,6 +5141,7 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
+<<<<<<< HEAD
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HMg-Oq-pjm">
                                                         <rect key="frame" x="0.0" y="340" width="430" height="150"/>
                                                         <subviews>
@@ -5182,23 +5248,29 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
+=======
+>>>>>>> e3b24a2 (Bug Fixing)
                                                 </subviews>
-                                                <constraints>
-                                                    <constraint firstItem="HMg-Oq-pjm" firstAttribute="top" secondItem="KgM-UH-y8b" secondAttribute="bottom" constant="20" id="5Ov-ZJ-NbU"/>
-                                                    <constraint firstItem="vTK-u2-vY4" firstAttribute="top" secondItem="HMg-Oq-pjm" secondAttribute="bottom" constant="20" id="ssM-v4-KM0"/>
-                                                </constraints>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take the picture of your signature on white paper" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HxL-Hv-Zhn" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                 <rect key="frame" x="0.0" y="578" width="430" height="18"/>
+=======
+                                                <rect key="frame" x="0.0" y="328" width="430" height="18"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xbw-iv-idP" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                 <rect key="frame" x="0.0" y="616" width="430" height="134"/>
+=======
+                                                <rect key="frame" x="0.0" y="366" width="430" height="214"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="xSo-Eu-xmM">
-                                                        <rect key="frame" x="12" y="12" width="406" height="110"/>
+                                                        <rect key="frame" x="12" y="12" width="406" height="190"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="abS-YU-ZSL">
                                                                 <rect key="frame" x="0.0" y="0.0" width="406" height="30"/>
@@ -5220,20 +5292,28 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                                                 </constraints>
                                                             </stackView>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dPv-HD-2eL">
-                                                                <rect key="frame" x="0.0" y="40" width="406" height="70"/>
+                                                                <rect key="frame" x="0.0" y="40" width="406" height="150"/>
                                                                 <subviews>
-                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ng6-hp-Q3K">
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ng6-hp-Q3K">
                                                                         <rect key="frame" x="0.0" y="0.0" width="406" height="50"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio-unfilled" translatesAutoresizingMaskIntoConstraints="NO" id="ffI-wm-b0B">
+<<<<<<< HEAD
                                                                                 <rect key="frame" x="0.0" y="12.666666666666629" width="25" height="25"/>
+=======
+                                                                                <rect key="frame" x="0.0" y="12.666666666666686" width="25" height="25"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="25" id="Hva-nM-UV9"/>
                                                                                     <constraint firstAttribute="height" constant="25" id="zEK-Uv-6Vg"/>
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Single" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MKm-dU-OhO" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                                                 <rect key="frame" x="33" y="15.666666666666629" width="47" height="19.000000000000007"/>
+=======
+                                                                                <rect key="frame" x="33" y="15.666666666666686" width="47" height="19"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -5249,12 +5329,12 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                                                         </constraints>
                                                                     </view>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AbH-5A-fts">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="406" height="70"/>
+                                                                        <rect key="frame" x="0.0" y="50" width="406" height="50"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="xyz-eE-amR">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="406" height="70"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="406" height="50"/>
                                                                                 <subviews>
-                                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsC-2a-Zk8">
+                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tsC-2a-Zk8">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="406" height="50"/>
                                                                                         <subviews>
                                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio-unfilled" translatesAutoresizingMaskIntoConstraints="NO" id="K2g-Tl-8z6">
@@ -5265,7 +5345,11 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                                                                                 </constraints>
                                                                                             </imageView>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cP-KV-gaF" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                                                                 <rect key="frame" x="33" y="15.666666666666629" width="39.333333333333343" height="19.000000000000007"/>
+=======
+                                                                                                <rect key="frame" x="33" y="15.666666666666629" width="39.333333333333343" height="19"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
                                                                                                 <nil key="textColor"/>
                                                                                                 <nil key="highlightedColor"/>
@@ -5280,7 +5364,7 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                                                                             <constraint firstItem="3cP-KV-gaF" firstAttribute="leading" secondItem="K2g-Tl-8z6" secondAttribute="trailing" constant="8" symbolic="YES" id="iH8-Qk-ydQ"/>
                                                                                         </constraints>
                                                                                     </view>
-                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9d0-Lj-vtI">
+                                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9d0-Lj-vtI">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="406" height="70"/>
                                                                                         <subviews>
                                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select number of additional applicants" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p6m-XX-ZxJ" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
@@ -5350,8 +5434,8 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                                                             <constraint firstItem="xyz-eE-amR" firstAttribute="leading" secondItem="AbH-5A-fts" secondAttribute="leading" id="fW1-BZ-5ad"/>
                                                                         </constraints>
                                                                     </view>
-                                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00v-n1-SSO">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="406" height="50"/>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="00v-n1-SSO">
+                                                                        <rect key="frame" x="0.0" y="100" width="406" height="50"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio-unfilled" translatesAutoresizingMaskIntoConstraints="NO" id="JY4-h4-ufk">
                                                                                 <rect key="frame" x="0.0" y="12.666666666666629" width="25" height="25"/>
@@ -5361,7 +5445,11 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gz5-Sq-E37" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                                                 <rect key="frame" x="33" y="15.666666666666629" width="44" height="19.000000000000007"/>
+=======
+                                                                                <rect key="frame" x="33" y="15.666666666666629" width="44" height="19"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -5395,7 +5483,11 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="30T-3P-sp6">
+<<<<<<< HEAD
                                                 <rect key="frame" x="0.0" y="770" width="430" height="50"/>
+=======
+                                                <rect key="frame" x="0.0" y="600" width="430" height="50"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVQ-rx-Y1w" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="207" height="50"/>
@@ -5485,20 +5577,15 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                     <connections>
                         <outlet property="additionalApplicantLabel" destination="kmo-Hl-0Pa" id="us5-Xo-cQS"/>
                         <outlet property="additionalApplicantListView" destination="uqP-QW-WFi" id="Vgx-ue-G9W"/>
-                        <outlet property="imageProofOfIncome" destination="xhq-4m-xJC" id="9el-Jx-ieO"/>
                         <outlet property="jointAccountRadio" destination="K2g-Tl-8z6" id="Cng-jL-fCK"/>
                         <outlet property="jointAccountView" destination="AbH-5A-fts" id="DM7-i0-54j"/>
                         <outlet property="livePhotoPreviewImageView" destination="3YS-bA-Fxs" id="3Y0-kB-0xV"/>
                         <outlet property="minorAccountRadio" destination="JY4-h4-ufk" id="WmI-DV-5ig"/>
                         <outlet property="minorAccountView" destination="00v-n1-SSO" id="vGC-SJ-eH3"/>
-                        <outlet property="segmentJointAccount" destination="UNU-99-qCx" id="lmL-1N-XDy"/>
                         <outlet property="selectAdditionalApplicantView" destination="9d0-Lj-vtI" id="YCV-vR-Nm1"/>
                         <outlet property="signaturePreviewImageView" destination="t8x-jx-8zq" id="EFM-ak-1LA"/>
                         <outlet property="singleAccountRadio" destination="ffI-wm-b0B" id="6rW-G1-sUo"/>
                         <outlet property="singleAccountView" destination="ng6-hp-Q3K" id="SeN-Oh-KPH"/>
-                        <outlet property="viewProofOfIncome" destination="HMg-Oq-pjm" id="abd-CS-0vQ"/>
-                        <outlet property="viewProofOfIncomePicutre" destination="QId-cL-8Vl" id="E1J-Nf-JX4"/>
-                        <outlet property="viewSelectNatureOfAccount" destination="xbw-iv-idP" id="Olf-EO-Akn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nkv-3n-4U8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -5692,13 +5779,21 @@ For any further inquiry, please contact ada@abl.com       or call our Helpline: 
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="kjv-fb-z5h">
                                                                         <rect key="frame" x="0.0" y="0.0" width="406" height="90"/>
                                                                         <subviews>
+<<<<<<< HEAD
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Full Name (As per NADRA Record)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHm-3m-qat" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+=======
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name (As per NADRA Record)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHm-3m-qat" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                 <rect key="frame" x="0.0" y="0.0" width="406" height="17.333333333333332"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
+<<<<<<< HEAD
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="You may amend if correction is required" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klc-Oq-oiA" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+=======
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You may amend if correction is required" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Klc-Oq-oiA" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                 <rect key="frame" x="0.0" y="25.333333333333329" width="406" height="16.666666666666671"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
                                                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -7491,13 +7586,21 @@ Preferences</string>
                                                                 <rect key="frame" x="0.0" y="0.0" width="406" height="30"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactional Alerts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOK-OO-4US" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
+=======
+                                                                        <rect key="frame" x="0.0" y="0.0" width="177.66666666666666" height="30"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                         <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZV-lL-Pl5" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                                         <rect key="frame" x="8" y="0.0" width="21" height="30"/>
+=======
+                                                                        <rect key="frame" x="185.66666666666666" y="0.0" width="21" height="30"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="21" id="gOa-oC-xOd"/>
                                                                         </constraints>
@@ -7505,7 +7608,11 @@ Preferences</string>
                                                                         <state key="normal" image="InfoIcon"/>
                                                                     </button>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bXa-hN-NNh" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+<<<<<<< HEAD
                                                                         <rect key="frame" x="37" y="0.0" width="369" height="30"/>
+=======
+                                                                        <rect key="frame" x="214.66666666666663" y="0.0" width="191.33333333333337" height="30"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                         <color key="backgroundColor" name="App Orange"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -8158,18 +8265,30 @@ ATM Bill Payment</string>
                                                                         <rect key="frame" x="0.0" y="0.0" width="406" height="30"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactional Alerts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSr-lP-noh" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                                                 <rect key="frame" x="0.0" y="0.0" width="0.0" height="30"/>
+=======
+                                                                                <rect key="frame" x="0.0" y="0.0" width="177.66666666666666" height="30"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2B4-PS-cBP" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                                                 <rect key="frame" x="8" y="0.0" width="0.0" height="30"/>
+=======
+                                                                                <rect key="frame" x="185.66666666666666" y="0.0" width="9.3333333333333428" height="30"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" image="InfoIcon"/>
                                                                             </button>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjw-CI-IGj" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+<<<<<<< HEAD
                                                                                 <rect key="frame" x="16" y="0.0" width="390" height="30"/>
+=======
+                                                                                <rect key="frame" x="203" y="0.0" width="203" height="30"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -8588,7 +8707,11 @@ ATM Bill Payment</string>
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Single" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K7Z-9s-iUh" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                                                         <rect key="frame" x="33" y="15.666666666666629" width="47" height="19.000000000000007"/>
+=======
+                                                                                        <rect key="frame" x="33" y="15.666666666666629" width="47" height="19"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -8620,7 +8743,11 @@ ATM Bill Payment</string>
                                                                                                         </constraints>
                                                                                                     </imageView>
                                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joint" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4h-7M-dFd" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                                                                         <rect key="frame" x="33" y="15.666666666666629" width="39.333333333333343" height="19.000000000000007"/>
+=======
+                                                                                                        <rect key="frame" x="33" y="15.666666666666629" width="39.333333333333343" height="19"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
                                                                                                         <nil key="textColor"/>
                                                                                                         <nil key="highlightedColor"/>
@@ -8716,7 +8843,11 @@ ATM Bill Payment</string>
                                                                                         </constraints>
                                                                                     </imageView>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Minor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XYj-L9-KNe" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                                                         <rect key="frame" x="33" y="15.666666666666629" width="44" height="19.000000000000007"/>
+=======
+                                                                                        <rect key="frame" x="33" y="15.666666666666629" width="44" height="19"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
                                                                                         <nil key="textColor"/>
                                                                                         <nil key="highlightedColor"/>
@@ -8793,7 +8924,6 @@ ATM Bill Payment</string>
                         <outlet property="selectAdditionalApplicantView" destination="bhE-7q-e5M" id="MvC-6C-GpN"/>
                         <outlet property="singleAccountRadio" destination="tZD-Ss-dd4" id="07Y-40-BLd"/>
                         <outlet property="singleAccountView" destination="S1T-xg-tsR" id="Vbg-3t-iGG"/>
-                        <outlet property="viewProofOfIncome" destination="cul-H6-LKZ" id="djy-WP-SCi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lEe-Dm-9ME" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -8812,7 +8942,11 @@ ATM Bill Payment</string>
                                 <rect key="frame" x="0.0" y="59" width="430" height="839"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgw-Ns-z2g">
+<<<<<<< HEAD
                                         <rect key="frame" x="0.0" y="0.0" width="430" height="1152"/>
+=======
+                                        <rect key="frame" x="0.0" y="0.0" width="430" height="883.33333333333337"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFl-Fv-94W">
                                                 <rect key="frame" x="0.0" y="20" width="430" height="342.66666666666669"/>
@@ -8863,7 +8997,11 @@ ATM Bill Payment</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="an0-tj-UxS">
+<<<<<<< HEAD
                                                 <rect key="frame" x="0.0" y="402.66666666666669" width="430" height="749.33333333333326"/>
+=======
+                                                <rect key="frame" x="0.0" y="134" width="430" height="749.33333333333337"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39R-wC-hxp">
                                                         <rect key="frame" x="0.0" y="0.0" width="430" height="501.33333333333331"/>
@@ -8878,7 +9016,11 @@ ATM Bill Payment</string>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="3" translatesAutoresizingMaskIntoConstraints="NO" id="7Gu-qv-KpT">
+<<<<<<< HEAD
                                                                         <rect key="frame" x="0.0" y="27.333333333333314" width="406" height="462"/>
+=======
+                                                                        <rect key="frame" x="0.0" y="27.333333333333371" width="406" height="462"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                         <subviews>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DLn-sq-CgK">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="406" height="90"/>
@@ -8890,7 +9032,11 @@ ATM Bill Payment</string>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Pre-filled Address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PD4-Fs-WuH" customClass="TextFieldSetting" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                                                         <rect key="frame" x="0.0" y="26" width="406" height="40"/>
+=======
+                                                                                        <rect key="frame" x="0.0" y="25.999999999999972" width="406" height="40"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="40" id="mgg-CN-Cqh"/>
                                                                                         </constraints>
@@ -8915,7 +9061,11 @@ ATM Bill Payment</string>
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JJ6-Tf-H7Q">
+<<<<<<< HEAD
                                                                                 <rect key="frame" x="0.0" y="93" width="406" height="90"/>
+=======
+                                                                                <rect key="frame" x="0.0" y="92.999999999999972" width="406" height="90"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                 <subviews>
                                                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="uIa-ul-bK7">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="406" height="90"/>
@@ -8958,7 +9108,11 @@ ATM Bill Payment</string>
                                                                                 </constraints>
                                                                             </view>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="32m-eA-ae9">
+<<<<<<< HEAD
                                                                                 <rect key="frame" x="0.0" y="186" width="406" height="90"/>
+=======
+                                                                                <rect key="frame" x="0.0" y="185.99999999999997" width="406" height="90.000000000000028"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="City" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkE-k4-UaC" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                                         <rect key="frame" x="0.0" y="0.0" width="406" height="18"/>
@@ -9001,7 +9155,11 @@ ATM Bill Payment</string>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="Please Select" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lA5-sw-NP5" customClass="TextFieldSetting" customModule="ABL" customModuleProvider="target">
+<<<<<<< HEAD
                                                                                         <rect key="frame" x="0.0" y="26" width="406" height="40"/>
+=======
+                                                                                        <rect key="frame" x="0.0" y="26.000000000000057" width="406" height="40"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="40" id="Lfy-cJ-LJh"/>
                                                                                         </constraints>
@@ -9078,7 +9236,11 @@ ATM Bill Payment</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="Cjc-GO-Ile">
+<<<<<<< HEAD
                                                         <rect key="frame" x="0.0" y="551.33333333333326" width="430" height="198"/>
+=======
+                                                        <rect key="frame" x="0.0" y="551.33333333333337" width="430" height="198"/>
+>>>>>>> e3b24a2 (Bug Fixing)
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9f-7p-kW6">
                                                                 <rect key="frame" x="0.0" y="0.0" width="430" height="98"/>
@@ -12188,7 +12350,7 @@ Preferences</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cdF-9t-XYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4916" y="1468"/>
+            <point key="canvasLocation" x="4920" y="1481.3304721030045"/>
         </scene>
     </scenes>
     <designables>
@@ -12550,7 +12712,11 @@ Preferences</string>
             <size key="intrinsicContentSize" width="98" height="12"/>
         </designable>
         <designable name="IJ5-84-Stq">
+<<<<<<< HEAD
             <size key="intrinsicContentSize" width="743.66666666666663" height="56.333333333333336"/>
+=======
+            <size key="intrinsicContentSize" width="562.66666666666663" height="19"/>
+>>>>>>> e3b24a2 (Bug Fixing)
         </designable>
         <designable name="IQk-XE-iSj">
             <size key="intrinsicContentSize" width="215.33333333333334" height="19.333333333333332"/>
@@ -12609,8 +12775,13 @@ Preferences</string>
         <designable name="MbT-Ao-3ZH">
             <size key="intrinsicContentSize" width="49.666666666666664" height="12"/>
         </designable>
+<<<<<<< HEAD
         <designable name="Mha-6x-4Sy">
             <size key="intrinsicContentSize" width="243.33333333333334" height="24.666666666666668"/>
+=======
+        <designable name="MdR-nC-KYZ">
+            <size key="intrinsicContentSize" width="90" height="19"/>
+>>>>>>> e3b24a2 (Bug Fixing)
         </designable>
         <designable name="Mod-AG-j5D">
             <size key="intrinsicContentSize" width="48" height="38"/>
@@ -12731,9 +12902,12 @@ Preferences</string>
         </designable>
         <designable name="V54-4j-sKh">
             <size key="intrinsicContentSize" width="60.666666666666664" height="33"/>
+<<<<<<< HEAD
         </designable>
         <designable name="VP9-jm-r8B">
             <size key="intrinsicContentSize" width="385.66666666666669" height="16.666666666666668"/>
+=======
+>>>>>>> e3b24a2 (Bug Fixing)
         </designable>
         <designable name="VRa-g3-OjQ">
             <size key="intrinsicContentSize" width="47" height="19"/>
@@ -12989,6 +13163,12 @@ Preferences</string>
         </designable>
         <designable name="h21-Fi-gUQ">
             <size key="intrinsicContentSize" width="255.33333333333334" height="76.333333333333329"/>
+<<<<<<< HEAD
+=======
+        </designable>
+        <designable name="hBe-rF-Evl">
+            <size key="intrinsicContentSize" width="154" height="19"/>
+>>>>>>> e3b24a2 (Bug Fixing)
         </designable>
         <designable name="hFK-p9-3Hi">
             <size key="intrinsicContentSize" width="102" height="19"/>
@@ -13043,6 +13223,12 @@ Preferences</string>
         </designable>
         <designable name="jQB-8C-tZX">
             <size key="intrinsicContentSize" width="144" height="23.666666666666668"/>
+<<<<<<< HEAD
+=======
+        </designable>
+        <designable name="jQN-SA-kXI">
+            <size key="intrinsicContentSize" width="105.33333333333333" height="19"/>
+>>>>>>> e3b24a2 (Bug Fixing)
         </designable>
         <designable name="jUI-x0-GCN">
             <size key="intrinsicContentSize" width="121.66666666666667" height="18"/>
@@ -13166,9 +13352,12 @@ Preferences</string>
         </designable>
         <designable name="q5G-9f-j56">
             <size key="intrinsicContentSize" width="81" height="33"/>
+<<<<<<< HEAD
         </designable>
         <designable name="q6v-R5-Yj6">
             <size key="intrinsicContentSize" width="104" height="37"/>
+=======
+>>>>>>> e3b24a2 (Bug Fixing)
         </designable>
         <designable name="qYU-XP-6KD">
             <size key="intrinsicContentSize" width="56" height="12"/>
@@ -13295,6 +13484,12 @@ Preferences</string>
         </designable>
         <designable name="vvi-fm-RTz">
             <size key="intrinsicContentSize" width="39.333333333333336" height="12"/>
+<<<<<<< HEAD
+=======
+        </designable>
+        <designable name="w0Y-kD-DKh">
+            <size key="intrinsicContentSize" width="299.33333333333331" height="19"/>
+>>>>>>> e3b24a2 (Bug Fixing)
         </designable>
         <designable name="w0l-89-7Kj">
             <size key="intrinsicContentSize" width="19.666666666666668" height="12"/>
@@ -13384,7 +13579,6 @@ Preferences</string>
         <image name="chevron.down" catalog="system" width="128" height="70"/>
         <image name="conventional-icon" width="90.333335876464844" height="86.666664123535156"/>
         <image name="current-account-icon" width="86.666664123535156" height="72.666664123535156"/>
-        <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="edit-icon" width="38" height="38"/>
         <image name="islamic-icon" width="86.666664123535156" height="86.666664123535156"/>
         <image name="navbar-back-button" width="37.333332061767578" height="24"/>

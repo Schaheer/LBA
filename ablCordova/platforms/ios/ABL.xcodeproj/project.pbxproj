@@ -726,6 +726,7 @@
 		4C40A2C5283CA9EC00E72949 /* Register Permanent Address */ = {
 			isa = PBXGroup;
 			children = (
+				7A12225C27E3D64B00CE890A /* PersonalInfomationBaseVC.swift */,
 				4C40A2CB283CC6F700E72949 /* View Model */,
 				4C40A2CA283CC6EF00E72949 /* Model */,
 				4C40A2C6283CAA1F00E72949 /* RegisterPermanentAddressViewController.swift */,
@@ -997,7 +998,6 @@
 		7A12225527E3D20600CE890A /* Personal Information */ = {
 			isa = PBXGroup;
 			children = (
-				7A12225C27E3D64B00CE890A /* PersonalInfomationBaseVC.swift */,
 				7A12225627E3D25900CE890A /* PersonalInformationFirstVC.swift */,
 				7A12225827E3D27900CE890A /* PersonalInformationSecondVC.swift */,
 				7A12225A27E3D2AA00CE890A /* PersonalInformationThirdVC.swift */,
