@@ -40,21 +40,28 @@ class FATCADetailsViewController: UIViewController {
         questionsTableView.reloadData()
     }
 
-    
-    
-    
     private func subscribeViewModel() {
         fatcaDetailsViewModel.registerFACTAInfoResponse.bind { [weak self]  response  in
             guard let status = response?.message?.status, let description = response?.message?.description?.lowercased() else { return }
             if status == "200" && description.lowercased() == "success"{
-                if self?.fromViewController == "TaxResidentDetailVC" {
-                    self?.delegate?.addChild(vc: .serviceChannelsVC, fromViewController :"")
+                guard let personalInformationBaseVC = UIStoryboard.initialize(
+                    viewController: .personalInformationBaseVC,
+                    fromStoryboard: .openAccount
+                ) as? PersonalInformationBaseVC else { return }
+                
+                if self?.isEditFromReviewDetailsViewController ?? false && self?.forViewController == "FATCADetailsViewController" {
+                    self?.dismissToViewController(viewController: ReviewDetailsVC.self)
+                    DispatchQueue.main.async {
+                        NotificationCenter.default.post(name: Notification.Name("NotificationIdentifierRefreshReviewDetailsVC"), object: nil)
+                    }
                 }
-                else {
+                switch modelRegistrationSteper.selectPreferredAccountViewModel?.getAccountVariantID() {
+                case .freelancerDigitalAccount:
                     self?.delegate?.addChild(vc: .personalInformationSecondVC, fromViewController: "")
+                default:
+                    self?.delegate?.addChild(vc: .reviewDetailsVC, fromViewController: "")
                 }
             }
-
         }
         
         fatcaDetailsViewModel.errorMessage.bind {  error in
@@ -84,29 +91,29 @@ class FATCADetailsViewController: UIViewController {
     }
     
     @IBAction func nextBtnTapped(_ sender: UIButton){
-        if isEditFromReviewDetailsViewController && forViewController == "FATCADetailsViewController" {
-            self.dismissToViewController(viewController: ReviewDetailsVC.self)
-            DispatchQueue.main.async {
-                NotificationCenter.default.post(name: Notification.Name("NotificationIdentifierRefreshReviewDetailsVC"), object: nil)
-            }
-        }
-        else {
-            if fromViewController == "TaxResidentDetailVC" {
-                delegate?.addChild(vc: .personalInformationSecondVC, fromViewController: "")
-            }
-            else {
-                delegate?.addChild(vc: .serviceChannelsVC, fromViewController: "")
-            }
-        }
-//        fatcaDetailsViewModel.registerFATCADetails(
-//            attorneyInd: fatcaDetailsViewModel.getAnswer(at: 6).intValue,
-//            birthUSInd: fatcaDetailsViewModel.getAnswer(at: 3).intValue,
-//            careAddrInd: fatcaDetailsViewModel.getAnswer(at: 2).intValue,
-//            greenCardHolderInd: fatcaDetailsViewModel.getAnswer(at: 5).intValue,
-//            rdaCustomerId: BaseConstants.Config.rdaCustomerId,
-//            usCitizenInd: fatcaDetailsViewModel.getAnswer(at: 1).intValue,
-//            usMailAddrInd: fatcaDetailsViewModel.getAnswer(at: 4).intValue,
-//            usTaxResidentInd: fatcaDetailsViewModel.getAnswer(at: 0).intValue)
+//        if isEditFromReviewDetailsViewController && forViewController == "FATCADetailsViewController" {
+//            self.dismissToViewController(viewController: ReviewDetailsVC.self)
+//            DispatchQueue.main.async {
+//                NotificationCenter.default.post(name: Notification.Name("NotificationIdentifierRefreshReviewDetailsVC"), object: nil)
+//            }
+//        }
+//        else {
+//            if fromViewController == "TaxResidentDetailVC" {
+//                delegate?.addChild(vc: .personalInformationSecondVC, fromViewController: "")
+//            }
+//            else {
+//                delegate?.addChild(vc: .serviceChannelsVC, fromViewController: "")
+//            }
+//        }
+        fatcaDetailsViewModel.registerFATCADetails(
+            attorneyInd: fatcaDetailsViewModel.getAnswer(at: 6).intValue,
+            birthUSInd: fatcaDetailsViewModel.getAnswer(at: 3).intValue,
+            careAddrInd: fatcaDetailsViewModel.getAnswer(at: 2).intValue,
+            greenCardHolderInd: fatcaDetailsViewModel.getAnswer(at: 5).intValue,
+            rdaCustomerId: BaseConstants.Config.rdaCustomerId,
+            usCitizenInd: fatcaDetailsViewModel.getAnswer(at: 1).intValue,
+            usMailAddrInd: fatcaDetailsViewModel.getAnswer(at: 4).intValue,
+            usTaxResidentInd: fatcaDetailsViewModel.getAnswer(at: 0).intValue)
         
         
     }

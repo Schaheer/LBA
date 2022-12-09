@@ -221,9 +221,7 @@ final class PersonalInformationThirdVC: UIViewController {
             guard let status = response?.message?.status, let description = response?.message?.description?.lowercased() else { return }
             if status == "200" && description.lowercased() == "success"{
                 guard let accountVariantID = DataCacheManager.shared.loadAccountType() else {
-                    
                     //Shakeel
-                    //                    self?.delegate?.addChild(vc: .occupationVC)
                     self?.delegate?.addChild(vc: .nationalityVC, fromViewController: "")
                     return
                 }
@@ -231,11 +229,8 @@ final class PersonalInformationThirdVC: UIViewController {
                     self?.delegate?.addChild(vc: .registerPermanentAddress, fromViewController: "")
                 }else {
                     //Shakeel
-                    //                    self?.delegate?.addChild(vc: .occupationVC)
                     self?.delegate?.addChild(vc: .nationalityVC, fromViewController: "")
                 }
-                
-                //                self?.delegate?.addChild(vc: .occupationVC)
             }
         }
         

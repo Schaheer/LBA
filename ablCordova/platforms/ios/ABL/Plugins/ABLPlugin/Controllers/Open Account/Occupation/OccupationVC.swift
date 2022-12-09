@@ -118,7 +118,7 @@ final class OccupationVC: UIViewController {
         print(employmentDetailsViewModel.getSelectedOccupationId())
         //101409.0(self employeed) 101402.0(Salaried person)
         relevantProfId = Int()
-        if occupationId == 101409.0 || occupationId == 101402.0 {
+        if occupationId == 101409.0 || occupationId == 101402.0 || occupationId == 101401.0 {
             stackViewProfession.isHidden = false
         }
         else {

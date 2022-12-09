@@ -31,10 +31,10 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+    <key>NSDocumentsFolderUsageDescription</key>
+    <string>To access device files for upload upon user request</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Camera access is required for reading the fingerprints.</string>
-	<key>NSDocumentsFolderUsageDescription</key>
-	<string>To access device files for upload upon user request</string>
 	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
 	<string>Do you allow this app to know your current location while using the app?</string>
 	<key>NSLocationAlwaysUsageDescription</key>

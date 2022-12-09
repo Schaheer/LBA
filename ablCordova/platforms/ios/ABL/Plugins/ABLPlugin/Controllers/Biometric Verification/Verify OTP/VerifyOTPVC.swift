@@ -86,6 +86,7 @@ final class VerifyOTPVC: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         verifyOTPViewModel.resetTimer()
+        timer?.invalidate()
     }
     
     deinit {
