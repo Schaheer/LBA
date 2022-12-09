@@ -1,0 +1,11 @@
+framework module FingerprintSDK {
+  umbrella header "FingerprintSDK.h"
+
+  export *
+  module * { export * }
+}
+
+module FingerprintSDK.Swift {
+    header "FingerprintSDK-Swift.h"
+    requires objc
+}

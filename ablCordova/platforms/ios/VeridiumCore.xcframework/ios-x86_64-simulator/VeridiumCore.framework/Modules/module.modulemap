@@ -1,0 +1,11 @@
+framework module VeridiumCore {
+  umbrella header "VeridiumCore.h"
+
+  export *
+  module * { export * }
+}
+
+module VeridiumCore.Swift {
+    header "VeridiumCore-Swift.h"
+    requires objc
+}

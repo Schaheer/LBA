@@ -1,0 +1,6 @@
+framework module VeridiumFingerSelector {
+  umbrella header "VeridiumFingerSelector.h"
+
+  export *
+  module * { export * }
+}

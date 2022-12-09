@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CFBundleDevelopmentRegion</key>
+	<string>en_US</string>
+	<key>CFBundleDisplayName</key>
+	<string>ABL</string>
+	<key>CFBundleExecutable</key>
+	<string>$(EXECUTABLE_NAME)</string>
+	<key>CFBundleIdentifier</key>
+	<string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>
+	<key>CFBundleInfoDictionaryVersion</key>
+	<string>6.0</string>
+	<key>CFBundleName</key>
+	<string>$(PRODUCT_NAME)</string>
+	<key>CFBundlePackageType</key>
+	<string>APPL</string>
+	<key>CFBundleShortVersionString</key>
+	<string>1.0.0</string>
+	<key>CFBundleSignature</key>
+	<string>????</string>
+	<key>CFBundleVersion</key>
+	<string>1.0.0</string>
+	<key>FaceoffLicenseKey</key>
+	<string>MTUwLDEyMiwxMjIsOTQsMTIwLDI1MywxMDEsMzksMzgsMTYwLDc3LDkyLDE0OSw3OCwxOTIsOTEsMjM0LDI1LDE1NiwxMjQsMTk1LDExMiw4MSwxNzMsNywxODgsMTIxLDQ2LDY5LDk2LDQ0LDE3OSwzMSw3MCwyNDAsMTg3LDE3LDEzNiwyMTEsMjAwLDE2NywxMTUsMTgxLDk5LDIyNywyMTYsMjE0LDIxMCwxNDQsMTQsMjEwLDMxLDQxLDksMTE5LDgyLDU5LDE3NCwwLDExNSwyMDMsMTQ0LDMwLDgyLDksMTY0LDIxOSwxNzcsMjM5LDcwLDE1MywxMzIsMTk0LDMsMTY2LDEyOSwxODYsMjQxLDIzMiw2NiwxODcsMjA5LDEzMywxMjcsMTU2LDIwMiwxMTcsNzgsMTEsNjksODIsMjEzLDE4NCwyMjEsNjUsMTk0LDEzNiwyNDMsOTIsMTMwLDQ5LDE2MSwyMSwyLDE0OCwwLDE4MiwxMjQsODIsMTU4LDU2LDExLDU3LDEwOSwyMjQsNTEsMjA2LDQwLDQ5LDIwMCwzMCwxMzgsMjAyLDI4LDE2MCw4MiwzMSwzMCw4NiwyMDAsMTczLDksMTcsMTA1LDY2LDM3LDE1OSw5MiwyMDIsMjIsNTMsMTI5LDE5OSwxNTMsMTc2LDE3NiwyMTAsMTkyLDM3LDIzNiwxMSwxNDYsMjI5LDIwMSwyNTAsMTI4LDE4OSwxMTksNDksMTUsMTYzLDQ4LDE0OCwyMTUsMTQwLDI1NCwyMDcsMTA5LDk0LDM1LDE4MCwxMTAsMTI2LDE5LDE0OCwxMDQsMjQxLDEyNiwxMjcsMjAxLDk2LDY2LDIxMSwyMzQsNTUsMjQwLDE5NSw0OSwyNCwyNDgsMTI4LDE1LDE2LDEwOCwzNSwxNjQsMTUwLDE5Myw4MCw0OCwxODgsNDksMTAsMjQ1LDIxMywxNjMsODEsODgsMTU1LDIyOSwyMDIsMTkxLDYyLDYsMjYsMTg3LDM2LDUsMTcyLDgxLDE3NSwxODAsNDQsMTQsMjQ3LDIyMywyMDksMTg3LDE1OSwxMDksMTk1LDEwMCwyNDcsMTAwLDkzLDI4LDE2NCwxOTYsMjksNDAsOSwyNTIsMjE3LDk3LDM2LDIzNSwxNDgsMTA2LDEsMjE3LDEyOCw3MywxNzksNDksMTY3LDU1LDEsMCwxLA==</string>
+	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Camera access is required for reading the fingerprints.</string>
+	<key>NSDocumentsFolderUsageDescription</key>
+	<string>To access device files for upload upon user request</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Do you allow this app to know your current location while using the app?</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Will you allow this app to always know your location?</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Do you allow this app to know your current location while using the app?</string>
+	<key>NSMainNibFile</key>
+	<string></string>
+	<key>NSMainNibFile~ipad</key>
+	<string></string>
+	<key>UIAppFonts</key>
+	<array>
+		<string>WorkSans-BlackItalic</string>
+		<string>WorkSans-Black</string>
+		<string>WorkSans-Bold</string>
+		<string>WorkSans-BoldItalic</string>
+		<string>WorkSans-ExtraBold</string>
+		<string>WorkSans-ExtraBoldItalic</string>
+		<string>WorkSans-ExtraLight</string>
+		<string>WorkSans-ExtraLightItalic</string>
+		<string>WorkSans-Italic</string>
+		<string>WorkSans-Light</string>
+		<string>WorkSans-LightItalic</string>
+		<string>WorkSans-Medium</string>
+		<string>WorkSans-MediumItalic</string>
+		<string>WorkSans-Regular</string>
+		<string>WorkSans-SemiBold</string>
+		<string>WorkSans-SemiBoldItalic</string>
+		<string>WorkSans-Thin</string>
+		<string>WorkSans-ThinItalic</string>
+	</array>
+	<key>UIRequiresFullScreen</key>
+	<true/>
+	<key>UISupportedInterfaceOrientations</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UISupportedInterfaceOrientations~ipad</key>
+	<array>
+		<string>UIInterfaceOrientationPortrait</string>
+	</array>
+	<key>UIUserInterfaceStyle</key>
+	<string>Light</string>
+</dict>
+</plist>

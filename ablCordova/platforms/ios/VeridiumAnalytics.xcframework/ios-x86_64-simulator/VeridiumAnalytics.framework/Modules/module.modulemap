@@ -1,0 +1,6 @@
+framework module VeridiumAnalytics {
+  umbrella header "VeridiumAnalytics.h"
+
+  export *
+  module * { export * }
+}

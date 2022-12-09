@@ -1,0 +1,30 @@
+android {
+    compileSdkVersion 28
+    defaultConfig {
+        applicationId "cordova.plugin.abl"
+        minSdkVersion 21
+        targetSdkVersion 30
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        defaultBuildToolsVersion="28.0.3"
+        defaultMinSdkVersion=21
+
+    
+    }
+    
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+}
+
+dependencies {
+
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+       
+}
+

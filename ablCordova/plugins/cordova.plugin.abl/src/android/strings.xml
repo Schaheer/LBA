@@ -1,0 +1,9 @@
+<resources>
+    <string name="activity_name">Cnic Availability</string>
+    <string name="app_name">ABL Cordova</string>
+    <string name="launcher_name">ABL Cordova</string>
+    <string name="OTP_link">
+        <a href="#">Click here</a>
+        To Resend OTP
+    </string>
+</resources>

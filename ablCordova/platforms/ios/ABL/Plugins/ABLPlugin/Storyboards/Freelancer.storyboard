@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="WorkSans-Regular.ttf">
+            <string>WorkSans-Regular</string>
+        </array>
+        <array key="WorkSans-SemiBold.ttf">
+            <string>WorkSans-SemiBold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Details View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="FATCADetailsViewController" id="Y6W-OH-hqX" customClass="FATCADetailsViewController" customModule="ABL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CIn-Ds-15u">
+                                <rect key="frame" x="8" y="68" width="398" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" id="Fvb-gp-2Ul">
+                                    <rect key="frame" x="0.0" y="0.0" width="398" height="100"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FATCA" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zNu-vj-Ar0" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="16.5"/>
+                                            <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UwM-54-LV3" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="18.5" width="398" height="81.5"/>
+                                            <string key="text">The Foreign Account Tax Compliance Act (FATCA), requires us to generally acquire information regarding foreign assets held by applicants.</string>
+                                            <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView key="tableFooterView" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" id="SW4-z0-Vny">
+                                    <rect key="frame" x="0.0" y="348" width="398" height="50"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0vi-cW-25L" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="191" height="50"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="b34-Ad-jRo"/>
+                                            </constraints>
+                                            <color key="tintColor" name="App CTA Blue"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Back">
+                                                <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="6"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                    <real key="value" value="1"/>
+                                                </userDefinedRuntimeAttribute>
+                                                <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                    <color key="value" name="App CTA Border"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="backBtnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="ypa-Q7-4k4"/>
+                                            </connections>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qFg-qN-tD9" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+                                            <rect key="frame" x="207" y="0.0" width="191" height="50"/>
+                                            <color key="backgroundColor" name="Allied Blue"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="50" id="6Og-ey-84S"/>
+                                            </constraints>
+                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Next">
+                                                <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
+                                            </buttonConfiguration>
+                                            <userDefinedRuntimeAttributes>
+                                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                    <real key="value" value="6"/>
+                                                </userDefinedRuntimeAttribute>
+                                            </userDefinedRuntimeAttributes>
+                                            <connections>
+                                                <action selector="nextBtnTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="PJa-DG-e3a"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                </stackView>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="170" id="qZp-Rs-uAj">
+                                        <rect key="frame" x="0.0" y="150" width="398" height="170"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qZp-Rs-uAj" id="NIC-So-HEa">
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="170"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="CIn-Ds-15u" secondAttribute="bottom" constant="20" id="BFF-gg-f0W"/>
+                            <constraint firstItem="CIn-Ds-15u" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="EOQ-CJ-oXn"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="CIn-Ds-15u" secondAttribute="trailing" constant="8" id="Me0-ob-oX0"/>
+                            <constraint firstItem="CIn-Ds-15u" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="8" id="pU0-Kp-X4T"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="questionsTableView" destination="CIn-Ds-15u" id="NFw-Yg-g6q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="120.53571428571428"/>
+        </scene>
+    </scenes>
+    <designables>
+        <designable name="0vi-cW-25L">
+            <size key="intrinsicContentSize" width="63" height="33"/>
+        </designable>
+        <designable name="UwM-54-LV3">
+            <size key="intrinsicContentSize" width="946.5" height="16.5"/>
+        </designable>
+        <designable name="qFg-qN-tD9">
+            <size key="intrinsicContentSize" width="61" height="33"/>
+        </designable>
+        <designable name="zNu-vj-Ar0">
+            <size key="intrinsicContentSize" width="43.5" height="16.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <namedColor name="Allied Blue">
+            <color red="0.063000001013278961" green="0.16500000655651093" blue="0.51399999856948853" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="App CTA Blue">
+            <color red="0.0040000001899898052" green="0.31400001049041748" blue="0.53299999237060547" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="App CTA Border">
+            <color red="0.046999998390674591" green="0.44299998879432678" blue="0.72500002384185791" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
