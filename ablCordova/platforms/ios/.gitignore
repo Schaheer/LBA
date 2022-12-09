@@ -1,0 +1,12 @@
+*.mode1v3
+*.perspectivev3
+*.pbxuser
+.DS_Store
+build/
+ablCordova/platforms/ios/FingerprintSDK.framework
+ablCordova/platforms/ios/Veridiumore.xcframework
+ablCordova/platforms/ios/LicensingFramework.framework
+ablCordova/platforms/ios/VeridiumAnalytics.xcframework
+ablCordova/platforms/ios/Veridium4FBiometrics.xcframework
+ablCordova/platforms/ios/Veridium4FUI.xcframework
+ablCordova/platforms/ios/VeridiumFingerSelector.xcframework

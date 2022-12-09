@@ -1,0 +1,400 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target x86_64-apple-ios10.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FingerprintSDK
+import Alamofire
+import Darwin
+@_exported import FingerprintSDK
+import Foundation
+import LicensingFramework
+import Swift
+import UIKit
+import Veridium4FBiometrics
+import Veridium4FUI
+import VeridiumCore
+import VeridiumFingerSelector
+import _Concurrency
+@_hasMissingDesignatedInitializers open class IdentificationResponse : Swift.Codable {
+  final public let citizenName: Swift.String?
+  final public let citizenNumber: Swift.String?
+  @objc deinit
+  open func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class TelemetryHelper {
+  public func trackLicensing(licensePayload: FingerprintSDK.LicensePayload)
+  public func trackScanning(scanningPayload: FingerprintSDK.ScanningPayload)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class LicensePayload : Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+open class KeychainWrapper {
+  @available(*, deprecated, message: "KeychainWrapper.defaultKeychainWrapper is deprecated since version 2.2.1, use KeychainWrapper.standard instead")
+  public static let defaultKeychainWrapper: FingerprintSDK.KeychainWrapper
+  public static let standard: FingerprintSDK.KeychainWrapper
+  public var serviceName: Swift.String {
+    get
+  }
+  public var accessGroup: Swift.String? {
+    get
+  }
+  public init(serviceName: Swift.String, accessGroup: Swift.String? = nil)
+  open func hasValue(forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool
+  open func accessibilityOfKey(_ key: Swift.String) -> FingerprintSDK.KeychainItemAccessibility?
+  open func allKeys() -> Swift.Set<Swift.String>
+  open func integer(forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Int?
+  open func float(forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Float?
+  open func double(forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Double?
+  open func bool(forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool?
+  open func string(forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.String?
+  open func object(forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Foundation.NSCoding?
+  open func data(forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Foundation.Data?
+  open func dataRef(forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Foundation.Data?
+  @discardableResult
+  open func set(_ value: Swift.Int, forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool
+  @discardableResult
+  open func set(_ value: Swift.Float, forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool
+  @discardableResult
+  open func set(_ value: Swift.Double, forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool
+  @discardableResult
+  open func set(_ value: Swift.Bool, forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool
+  @discardableResult
+  open func set(_ value: Swift.String, forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool
+  @discardableResult
+  open func set(_ value: Foundation.NSCoding, forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool
+  @discardableResult
+  open func set(_ value: Foundation.Data, forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool
+  @available(*, deprecated, message: "remove is deprecated since version 2.2.1, use removeObject instead")
+  @discardableResult
+  open func remove(key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool
+  @discardableResult
+  open func removeObject(forKey key: Swift.String, withAccessibility accessibility: FingerprintSDK.KeychainItemAccessibility? = nil, isSynchronizable: Swift.Bool = false) -> Swift.Bool
+  @discardableResult
+  open func removeAllKeys() -> Swift.Bool
+  open class func wipeKeychain()
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class GlobalHelper {
+  public static func currentTimeStamp() -> Swift.String
+  public static func convertUtcTimeToLocal(dateString: Swift.String!) -> Foundation.Date?
+  public static func getDeviceId(dateString: Swift.String!) -> Foundation.Date?
+  public static func print(object: Any)
+  @objc deinit
+}
+@objc open class CustomDialog : ObjectiveC.NSObject {
+  open var dialogImageBackgroundColor: UIKit.UIColor?
+  open var dialogImageForegroundColor: UIKit.UIColor?
+  open var dialogBackgroundColor: UIKit.UIColor
+  open var dialogTitleColor: UIKit.UIColor
+  open var dialogMessageColor: UIKit.UIColor
+  open var dialogButtonTextColor: UIKit.UIColor
+  open var dialogButtonBackgroundColor: UIKit.UIColor
+  open var dialogSuccessImage: UIKit.UIImage?
+  open var dialogRetryImage: UIKit.UIImage?
+  open var dialogSwitchHandImage: UIKit.UIImage?
+  open var dialogRetryMessage: Swift.String
+  open var dialogTimeoutImage: UIKit.UIImage?
+  open var dialogTimeoutTitle: Swift.String
+  open var dialogTimeoutMessage: Swift.String
+  open var dialogTimeoutButtonText: Swift.String
+  open var dialogLivenessFailImage: UIKit.UIImage?
+  open var dialogLivenessFailTitle: Swift.String
+  open var dialogLivenessFailMessage: Swift.String
+  open var dialogLivenessFailButtonText: Swift.String
+  open var dialogSuccessTitle: Swift.String
+  open var dialogSuccessMessage: Swift.String
+  open var dialogSuccessButtonText: Swift.String
+  open var dialogSwitchHandTitle: Swift.String
+  open var dialogSwitchHandMessage: Swift.String
+  open var dialogSwitchHandButtonText: Swift.String
+  @objc public init(dialogImageBackgroundColor: UIKit.UIColor = UIColor.black, dialogImageForegroundColor: UIKit.UIColor = UIConfig.defaultThemeColor, dialogBackgroundColor: UIKit.UIColor = UIColor.white, dialogTitleColor: UIKit.UIColor = UIConfig.defaultThemeColor, dialogMessageColor: UIKit.UIColor = UIColor.black, dialogButtonTextColor: UIKit.UIColor = UIColor.white, dialogButtonBackgroundColor: UIKit.UIColor = UIConfig.defaultThemeColor, dialogSuccessTitle: Swift.String = "SUCCESS!", dialogSuccessMessage: Swift.String = "Scan Complete", dialogSuccessButtonText: Swift.String = "Next", dialogSwitchHandTitle: Swift.String = "SUCCESS!", dialogSwitchHandMessage: Swift.String = "Please change hand", dialogSwitchHandButtonText: Swift.String = "Next", dialogTimeoutTitle: Swift.String = "Sorry", dialogTimeoutMessage: Swift.String = "Timed-out", dialogTimeoutButtonText: Swift.String = "Continue", dialogLivenessFailTitle: Swift.String = "Sorry, the result ws uncertain", dialogLivenessFailMessage: Swift.String = "Fingerprint Recognition Failed", dialogLivenessFailButtonText: Swift.String = "Continue", dialogRetryMessage: Swift.String = "Please try again")
+  @objc public init(dialogSuccessImage: UIKit.UIImage?, dialogRetryImage: UIKit.UIImage?, dialogSwitchHandImage: UIKit.UIImage?, dialogBackgroundColor: UIKit.UIColor = UIColor.white, dialogTitleColor: UIKit.UIColor = UIConfig.defaultThemeColor, dialogMessageColor: UIKit.UIColor = UIColor.black, dialogButtonTextColor: UIKit.UIColor = UIColor.white, dialogButtonBackgroundColor: UIKit.UIColor = UIConfig.defaultThemeColor, dialogSuccessTitle: Swift.String = "SUCCESS!", dialogSuccessMessage: Swift.String = "Scan Complete", dialogSuccessButtonText: Swift.String = "Next", dialogSwitchHandTitle: Swift.String = "SUCCESS!", dialogSwitchHandMessage: Swift.String = "Please change hand", dialogSwitchHandButtonText: Swift.String = "Next", dialogTimeoutTitle: Swift.String = "Sorry", dialogTimeoutMessage: Swift.String = "Timed-out", dialogTimeoutButtonText: Swift.String = "Continue", dialogLivenessFailTitle: Swift.String = "Sorry, the result ws uncertain", dialogLivenessFailMessage: Swift.String = "Fingerprint Recognition Failed", dialogLivenessFailButtonText: Swift.String = "Continue", dialogRetryMessage: Swift.String = "Please try again", dialogTimeoutImage: UIKit.UIImage?, dialogLivenessFailImage: UIKit.UIImage?)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers public class Telemetry : ObjectiveC.NSObject, Foundation.NSCoding, Swift.Codable {
+  @objc required convenience public init(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers open class MiddlewareResponse : Swift.Codable {
+  final public let middlewareResponseCode: Swift.String?, middlewareResponseDescription: Swift.String?
+  final public let nadraResponse: FingerprintSDK.NadraResponse?
+  @objc deinit
+  open func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers open class NadraResponse : Swift.Codable {
+  final public let responseData: FingerprintSDK.ResponseData?
+  @objc deinit
+  open func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers open class ResponseData : Swift.Codable {
+  final public let cardType: Swift.String?, citizenNumber: Swift.String?
+  final public let fingerIndex: Swift.String?
+  final public let personData: FingerprintSDK.PersonData?
+  final public let responseStatus: FingerprintSDK.ResponseStatus?
+  final public let sessionID: Swift.String?
+  @objc deinit
+  open func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers open class PersonData : Swift.Codable {
+  final public let birthPlace: Swift.String?, dateOfBirth: Swift.String?, expiryDate: Swift.String?, fatherHusbandName: Swift.String?
+  final public let name: Swift.String?, permanantAddress: Swift.String?, photograph: Swift.String?
+  final public let presentAddress: Swift.String?
+  @objc deinit
+  open func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers open class ResponseStatus : Swift.Codable {
+  final public let code: Swift.String?, message: Swift.String?
+  @objc deinit
+  open func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class ScanningPayload : Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class LicensingHelper {
+  public func getLicense(completion: @escaping (FingerprintSDK.License?, Swift.String?) -> ())
+  public func removeCachedLicense() -> Swift.Bool
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class TelemetryRequest : ObjectiveC.NSObject, Foundation.NSCoding, Swift.Codable {
+  @objc required convenience public init(coder aDecoder: Foundation.NSCoder)
+  @objc public func encode(with aCoder: Foundation.NSCoder)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public enum KeychainItemAccessibility {
+  @available(iOS 4, *)
+  case afterFirstUnlock
+  @available(iOS 4, *)
+  case afterFirstUnlockThisDeviceOnly
+  @available(iOS 4, *)
+  case always
+  @available(iOS 8, *)
+  case whenPasscodeSetThisDeviceOnly
+  @available(iOS 4, *)
+  case alwaysThisDeviceOnly
+  @available(iOS 4, *)
+  case whenUnlocked
+  @available(iOS 4, *)
+  case whenUnlockedThisDeviceOnly
+  public static func == (a: FingerprintSDK.KeychainItemAccessibility, b: FingerprintSDK.KeychainItemAccessibility) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@objc open class CustomUI : ObjectiveC.NSObject {
+  open var topBarBackgroundImage: UIKit.UIImage?
+  open var topBarColor: UIKit.UIColor
+  open var topBarTextColor: UIKit.UIColor
+  open var containerBackgroundColor: UIKit.UIColor
+  open var scannerOverlayColor: UIKit.UIColor
+  open var scannerOverlayTextColor: UIKit.UIColor
+  open var instructionTextColor: UIKit.UIColor
+  open var buttonsBackgroundColor: UIKit.UIColor
+  open var buttonsTextColor: UIKit.UIColor
+  open var imagesColor: UIKit.UIColor
+  open var isFullWidthButtons: Swift.Bool
+  open var guidanceScreenButtonText: Swift.String
+  open var guidanceScreenText: Swift.String?
+  open var guidanceScreenAnimationFilePath: Swift.String?
+  open var showGuidanceScreen: Swift.Bool
+  open var guidanceScreenTopBarText: Swift.String
+  open var guidanceScreenInstructionImage: UIKit.UIImage?
+  @objc public init(topBarBackgroundImage: UIKit.UIImage?, topBarColor: UIKit.UIColor = UIConfig.defaultThemeColor, topBarTextColor: UIKit.UIColor = UIColor.white, containerBackgroundColor: UIKit.UIColor = UIColor.white, scannerOverlayColor: UIKit.UIColor = UIColor.black, scannerOverlayTextColor: UIKit.UIColor = UIColor.white, instructionTextColor: UIKit.UIColor = UIColor.black, buttonsBackgroundColor: UIKit.UIColor = UIConfig.defaultThemeColor, buttonsTextColor: UIKit.UIColor = UIColor.white, imagesColor: UIKit.UIColor = UIColor.white, isFullWidthButtons: Swift.Bool = false, guidanceScreenButtonText: Swift.String = "CONTINUE", guidanceScreenText: Swift.String?, guidanceScreenAnimationFilePath: Swift.String?, showGuidanceScreen: Swift.Bool = true, guidanceScreenTopBarText: Swift.String = "4 Fingers TouchlessID", guidanceScreenInstructionImage: UIKit.UIImage? = nil)
+  @objc deinit
+}
+@objc open class CustomFontFamily : ObjectiveC.NSObject {
+  open var customFontRegular: Swift.String!
+  open var customFontSemiBold: Swift.String!
+  open var customFontBold: Swift.String!
+  @objc public init(customFontRegular: Swift.String!, customFontSemiBold: Swift.String!, customFontBold: Swift.String!)
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers public class License : Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FaceoffViewController : UIKit.UIViewController {
+  @objc @_Concurrency.MainActor(unsafe) public var fingerprintConfig: FingerprintSDK.FingerprintConfig!
+  @_Concurrency.MainActor(unsafe) public var personName: Swift.String!
+  @_Concurrency.MainActor(unsafe) public var personCnicNumber: Swift.String!
+  @_Concurrency.MainActor(unsafe) public var username: Swift.String!
+  @_Concurrency.MainActor(unsafe) public var password: Swift.String!
+  @objc @_Concurrency.MainActor(unsafe) public var fingerprintResponseDelegate: FingerprintSDK.FingerprintResponseDelegate!
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc public protocol FingerprintResponseDelegate {
+  @objc func onScanComplete(fingerprintResponse: FingerprintSDK.FingerprintResponse)
+}
+extension FingerprintSDK.FaceoffViewController : VeridiumFingerSelector.ViewControllerFingerSelectorDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func viewControllerFingerSelectorDidFinish(_ controller: VeridiumFingerSelector.ViewControllerFingerSelector!, withSelection fingers: Foundation.NSMutableSet!, andWasComplete complete: Swift.Bool)
+}
+@objc @_hasMissingDesignatedInitializers open class Png : ObjectiveC.NSObject, Swift.Codable {
+  @objc open var binaryBase64ObjectPNG: Swift.String?
+  @objc open var fingerPositionCode: Swift.Int
+  @objc deinit
+  open func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers open class FingerprintResponse : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var response: FingerprintSDK.Response
+  @objc open var wsqList: [FingerprintSDK.Wsq]?
+  @objc open var pngList: [FingerprintSDK.Png]?
+  open var middlewareResponse: FingerprintSDK.MiddlewareResponse?
+  open var identificationResponse: FingerprintSDK.IdentificationResponse?
+  @objc deinit
+  open func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public protocol CodeMessageEnum {
+  var message: Swift.String { get }
+}
+@objc public enum Response : Swift.Int, FingerprintSDK.CodeMessageEnum, Swift.Codable {
+  case SUCCESS_NADRA = 111
+  case SUCCESS_ENROLLMENT = 112
+  case SUCCESS_IDENTIFICATION = 113
+  case SUCCESS_WSQ_EXPORT = 114
+  case CANCELLATION = 115
+  case SCANNING_FAILURE = 116
+  case LIVENESS_FAILURE = 117
+  case SCANNING_ERROR = 118
+  case LICENSE_FAILED = 119
+  case INVALID_CNIC_NUMBER = 120
+  case EMPTY_NAME = 121
+  case FINGERPRINTS_READ_FAILURE = 122
+  case REQUEST_CREATION_FAILED = 123
+  case NADRA_REQUEST_FAILED = 124
+  case ENROLLMENT_REQUEST_FAILED = 125
+  case IDENTIFICATION_REQUEST_FAILED = 126
+  case EMPTY_SERVER_RESPONSE = 127
+  case INITIALIZATION_EXCEPTION = 128
+  case JSON_DECODING_FAILURE = 129
+  public var message: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers public class Constants {
+  public static let LICENSING_BASE_URL: Swift.String
+  public static let TELEMETRY_BASE_URL: Swift.String
+  public static let FACEOFF_PUBLIC_KEY: Swift.String
+  public static let simpleDateFormat: Swift.String
+  public static let apiDateFormat: Swift.String
+  public static let timeApiDateFormat: Swift.String
+  @objc deinit
+}
+@objc open class FingerprintConfig : ObjectiveC.NSObject {
+  @objc public init(mode: FingerprintSDK.Mode = Mode.NADRA, hand: FingerprintSDK.Hand = Hand.EITHER_HAND, fingers: FingerprintSDK.Fingers = Fingers.FOUR_FINGERS, liveness: Swift.Bool = true, isPackPng: Swift.Bool = false, uiConfig: FingerprintSDK.UIConfig = UIConfig(splashScreenLoaderIndicatorColor: UIColor.white, splashScreenText: "Please wait", splashScreenTextColor: UIColor.white, customFontFamily: nil), activeLiveness: Swift.Bool = false)
+  @objc deinit
+}
+@objc public enum Mode : Swift.Int, FingerprintSDK.CodeMessageEnum, Swift.CaseIterable {
+  case NADRA = 1
+  case EXPORT_WSQ = 2
+  case ENROLL = 3
+  case IDENTIFY = 4
+  public var message: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [FingerprintSDK.Mode]
+  public typealias RawValue = Swift.Int
+  public static var allCases: [FingerprintSDK.Mode] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum Hand : Swift.Int, FingerprintSDK.CodeMessageEnum, Swift.CaseIterable {
+  case EITHER_HAND = 1
+  case BOTH_HANDS = 2
+  case LEFT_ENFORCED = 3
+  case RIGHT_ENFORCED = 4
+  public var message: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [FingerprintSDK.Hand]
+  public typealias RawValue = Swift.Int
+  public static var allCases: [FingerprintSDK.Hand] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public enum Fingers : Swift.Int, FingerprintSDK.CodeMessageEnum, Swift.CaseIterable {
+  case FOUR_FINGERS = 1
+  case TWO_THUMBS = 2
+  case EIGHT_FINGERS = 3
+  case TEN_FINGERS = 4
+  case INDIVIDUAL = 5
+  case FOUR_FINGERS_INDEX = 6
+  case EIGHT_FINGERS_INDEX = 7
+  case DOUBLE_OPTIMIZE = 8
+  public var message: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [FingerprintSDK.Fingers]
+  public typealias RawValue = Swift.Int
+  public static var allCases: [FingerprintSDK.Fingers] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc open class UIConfig : ObjectiveC.NSObject {
+  public static let defaultThemeColor: UIKit.UIColor
+  open var splashScreenLoaderIndicatorColor: UIKit.UIColor?
+  open var splashScreenText: Swift.String?
+  open var splashScreenTextColor: UIKit.UIColor?
+  open var customUI: FingerprintSDK.CustomUI
+  open var customDialog: FingerprintSDK.CustomDialog
+  open var customFontFamily: FingerprintSDK.CustomFontFamily?
+  @objc public init(splashScreenLoaderIndicatorColor: UIKit.UIColor?, splashScreenText: Swift.String?, splashScreenTextColor: UIKit.UIColor?, customUI: FingerprintSDK.CustomUI = CustomUI(topBarBackgroundImage: nil, guidanceScreenText: nil, guidanceScreenAnimationFilePath: nil), customDialog: FingerprintSDK.CustomDialog = CustomDialog(), customFontFamily: FingerprintSDK.CustomFontFamily?)
+  @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers open class Wsq : ObjectiveC.NSObject, Swift.Codable {
+  @objc open var binaryBase64ObjectWSQ: Swift.String?
+  @objc open var fingerPositionCode: Swift.Int
+  @objc deinit
+  open func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+extension FingerprintSDK.KeychainItemAccessibility : Swift.Equatable {}
+extension FingerprintSDK.KeychainItemAccessibility : Swift.Hashable {}
+extension FingerprintSDK.Response : Swift.Equatable {}
+extension FingerprintSDK.Response : Swift.Hashable {}
+extension FingerprintSDK.Response : Swift.RawRepresentable {}
+extension FingerprintSDK.Mode : Swift.Hashable {}
+extension FingerprintSDK.Mode : Swift.Equatable {}
+extension FingerprintSDK.Mode : Swift.RawRepresentable {}
+extension FingerprintSDK.Hand : Swift.Hashable {}
+extension FingerprintSDK.Hand : Swift.Equatable {}
+extension FingerprintSDK.Hand : Swift.RawRepresentable {}
+extension FingerprintSDK.Fingers : Swift.Hashable {}
+extension FingerprintSDK.Fingers : Swift.Equatable {}
+extension FingerprintSDK.Fingers : Swift.RawRepresentable {}

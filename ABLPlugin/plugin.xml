@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='utf-8'?>
+<plugin id="cordova.plugin.abl" version="0.1"
+	xmlns="http://apache.org/cordova/ns/plugins/1.0"
+	xmlns:android="http://schemas.android.com/apk/res/android">
+	<name>ABLPlugin</name>
+	<js-module name="ABLPlugin" src="www/ABLPlugin.js">
+		<clobbers target="cordova.plugins.ABLPlugin" />
+	</js-module>
+	<platform name="android">
+		<config-file parent="/*" target="res/xml/config.xml">
+			<feature name="ABLPlugin">
+				<param name="android-package" value="cordova.plugin.abl.ABLPlugin" />
+			</feature>
+		</config-file>
+		<config-file parent="/*" target="AndroidManifest.xml" />
+		<config-file parent="/manifest/application" target="AndroidManifest.xml">
+			<activity android:label="CNIC Availability" android:name="cordova.plugin.abl.CNIC_Availability" android:theme="@style/Theme.AppCompat.Light" />
+			<activity android:label="OTP Verification" android:name="cordova.plugin.abl.OTP_Verification" android:theme="@style/Theme.AppCompat.Light" />
+		</config-file>
+		<source-file src="src/android/ABLPlugin.java" target-dir="src/cordova/plugin/abl/ABLPlugin" />
+		<source-file src="src/android/CNIC_Availability.java" target-dir="src/cordova/plugin/abl/ABLPlugin" />
+		<source-file src="src/android/cnic_availability.xml" target-dir="res/layout" />
+		<source-file src="src/android/OTP_Verification.java" target-dir="src/cordova/plugin/abl/ABLPlugin" />
+		<source-file src="src/android/otp_verification.xml" target-dir="res/layout" />
+		<resource-file src="src/android/strings.xml" target="res/values/strings.xml" />
+		<resource-file src="src/android/colors.xml" target="res/values/colors.xml" />
+		<framework custom="true" src="src/android/build.gradle" type="gradleReference" />
+	</platform>
+	<platform name="ios">
+		<config-file parent="/*" target="config.xml">
+			<feature name="ABLPlugin">
+				<param name="ios-package" value="ABLPlugin" />
+			</feature>
+		</config-file>
+		<source-file src="src/ios/ABLPlugin.swift" />
+		<source-file src="src/ios/FirstVC.swift" />
+		<resource-file src="src/ios/Main.storyboard" />
+	</platform>
+</plugin>

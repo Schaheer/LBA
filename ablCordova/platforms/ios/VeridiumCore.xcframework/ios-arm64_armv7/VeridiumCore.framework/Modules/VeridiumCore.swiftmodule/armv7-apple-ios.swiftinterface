@@ -1,0 +1,66 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.5.2 effective-4.2 (swiftlang-1300.0.47.5 clang-1300.0.29.30)
+// swift-module-flags: -target armv7-apple-ios9.0 -enable-objc-interop -enable-library-evolution -swift-version 4.2 -enforce-exclusivity=checked -O -module-name VeridiumCore
+import Foundation
+import Swift
+@_exported import VeridiumCore
+import _Concurrency
+@_hasMissingDesignatedInitializers @objc public class OnlineLicenseChecker : ObjectiveC.NSObject {
+  weak public var onlineLicensingProtocol: VeridiumCore.OnlineLicensingProtocol?
+  @objc public var veridiumSDK: VeridiumCore.VeridiumSDKProtocol?
+  public typealias ErrorBlock = (Swift.Error?) -> Swift.Void
+  public typealias Completion = ([Swift.String : VeridiumCore.VeridiumLicenseStatus]?, Swift.Error?) -> Swift.Void
+  public typealias SdkLoadCompletion = (Swift.String?, Swift.Error?) -> Swift.Void
+  @objc public static func shared() -> VeridiumCore.OnlineLicenseChecker
+  @objc public func getSDKLicense(initialClientCert: Swift.String, completion: @escaping VeridiumCore.OnlineLicenseChecker.SdkLoadCompletion)
+  @objc public func validateBioLibs() -> [Swift.String : VeridiumCore.VeridiumLicenseStatus]
+  @objc public func removeEnrollment()
+  @objc public func onTransaction(bioLibName: Swift.String, operationType: VeridiumCore.OperationType, isSuccessfulTransaction: Swift.Bool)
+  @objc deinit
+}
+@objc public protocol VeridiumSDKProtocol {
+  @objc func setupBioLicense(_ license: Swift.String, forName: Swift.String) -> VeridiumCore.VeridiumLicenseStatus?
+}
+extension VeridiumCore.VeridiumSDK : VeridiumCore.VeridiumSDKProtocol {
+}
+public protocol OnlineLicensingProtocol : ObjectiveC.NSObjectProtocol {
+  func didUpdateOnlineLicense(status: [Swift.String : VeridiumCore.VeridiumLicenseStatus])
+}
+@objc public enum OperationType : Swift.Int {
+  case Export
+  case Enroll
+  case Match
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc extension UIKit.UIColor {
+  @objc dynamic public convenience init?(hex: Swift.String)
+}
+public enum OnlineLicensingError : Swift.Error {
+  case invalidClientCert
+  case licensesNotAvailable
+  case licenseNameNotAvailable
+  case licenseExpirationDateNotAvailable
+  case licenseParamNotAvailable(Swift.String)
+  case invalidLicense(Swift.Error)
+  case networkError(Swift.Error)
+  case internalServerError(Swift.String)
+  case licenseDisabledError
+  case emptyAPIResponseDataError
+}
+extension VeridiumCore.OnlineLicensingError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+extension VeridiumCore.OnlineLicensingError : Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+}
