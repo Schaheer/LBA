@@ -24,9 +24,15 @@ final class PictureAndSignatureVC: UIViewController {
     @IBAction func segmentJointAccount(_ sender: BetterSegmentedControl) {
         if sender.index == 1 {
             viewSelectNatureOfAccount.isHidden = false
+            natureOfAccountLocal = .joint
+            picAndSignViewModel.jointAccountTapped()
+            self.joint()
         }
         else {
             viewSelectNatureOfAccount.isHidden = true
+            natureOfAccountLocal = .single
+            picAndSignViewModel.singleAccountTapped()
+            self.single()
         }
     }
     @IBOutlet weak var jointAccountView: UIView!
@@ -60,10 +66,11 @@ final class PictureAndSignatureVC: UIViewController {
     var natureOfAccountLocal = NatureOfAccount.single
     override func viewDidAppear(_ animated: Bool) {
         viewDidLoadLocal()
+        viewProofOfIncome.isHidden = true
         self.selectAdditionalApplicantView.isHidden = false
 
-        if modelRegistrationSteper.proofOfIncomeInd == 0 {
-            viewProofOfIncome.isHidden = true
+        if modelRegistrationSteper.proofOfIncomeInd == 1 {
+            viewProofOfIncome.isHidden = false
         }
         if modelRegistrationSteper.isJointAccount {
             segmentJointAccount.setIndex(modelRegistrationSteper.isJointAccount ? 1 : 0)
@@ -179,7 +186,26 @@ final class PictureAndSignatureVC: UIViewController {
         }
     }
     
+    func validationError() -> Bool {
+        if segmentJointAccount.index == 1 {
+            if additionalApplicantLabel.text == "Select additional applicants" {
+                self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please select additional applicants")
+                return true
+            }
+        }
+        
+        if modelRegistrationSteper.proofOfIncomeInd == 1 && imageProofOfIncome.tag != 1 {
+            self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please upload proof of income")
+            return true
+        }
+        
+        //False means no error
+        return false
+    }
     @IBAction func nextBtnTapped(_ sender: UIButton) {
+        if validationError() {
+            return()
+        }
         modelRegistrationSteper.isJointAccount = segmentJointAccount.index == 1 ? true : false
         if let natureOfAccount = picAndSignViewModel.getNatureOfAccount() {
             
@@ -518,13 +544,134 @@ final class PictureAndSignatureVC: UIViewController {
         ) as? ReviewDetailsVC else { return }
         
         switch natureOfAccountLocal {
-        case .single:
-            navigationController?.pushViewController(reviewDetailsVC, animated: true)
+        case .single: break
+           // navigationController?.pushViewController(reviewDetailsVC, animated: true)
         case .joint: break
             
-        case .minor:
-            navigationController?.pushViewController(reviewDetailsVC, animated: true)
-        }        
+        case .minor: break
+            //navigationController?.pushViewController(reviewDetailsVC, animated: true)
+        }
+        
+        
+        guard let personalInformationBaseVC = UIStoryboard.initialize(
+            viewController: .personalInformationBaseVC,
+            fromStoryboard: .openAccount
+        ) as? PersonalInformationBaseVC else { return }
+        
+        //        switch selectPreferredAccountViewModel.getAccountVariantID(){
+////        case .asaanDigitalAccount:
+////            personalInformationBaseVC.firstChild = .personalInfoSecondVC
+////        case .asaanDigitalRemittanceAccount:
+////            personalInformationBaseVC.firstChild = .taxResidentDetailVC
+//        case .freelancerDigitalAccount:
+//            personalInformationBaseVC.firstChild = .fatcaVC
+////        case .currentAccount:
+////            personalInformationBaseVC.firstChild = .personalInfoSecondVC
+//        default:
+//            personalInformationBaseVC.firstChild = .personalInfoSecondVC
+////            logsManager.debug("Default case")
+//        }
+        //MARK: - if user is pramary so joint account button will b show otherwise hide
+        //if account category is single then check from below mention account with OR condition
+        
+        
+        
+        guard let personalInformationBaseVC = UIStoryboard.initialize(
+            viewController: .personalInformationBaseVC,
+            fromStoryboard: .openAccount
+        ) as? PersonalInformationBaseVC else { return }
+
+        
+        var results = [Int]()
+        for i in (108243 ..< 108255) {
+            results.append(i)
+        }
+//        print(results)
+//        print(accountVariantID)
+//        print(AccountVariant.currentAccount.id)
+//        print(AccountVariant.currentAccount)
+        //Shakeel
+        //don't show residential address screen from ACCOUNT_VARIANT_ID 108243 to 108253
+        //go directly to nationality in this scenario
+        //never go to employment screen directly
+        
+        
+//        edit ka case is me handle karna ha in sy pehlay
+        var isJointAccount = modelRegistrationSteper.isJointAccount
+        let accountVariantID = modelRegistrationSteper.selectPreferredAccountViewModel?.getAccountVariantID()
+        if !isJointAccount {
+            if (results.first{$0  == Int(accountVariantID?.rawValue ?? 0)} != nil) {
+                guard let reviewDetailsVC = UIStoryboard.initialize(
+                    viewController: .reviewDetailsVC,
+                    fromStoryboard: .openAccount
+                ) as? ReviewDetailsVC else { return }
+                navigationController?.pushViewController(reviewDetailsVC, animated: true)
+
+            }
+            else {
+                self.delegate?.addChild(vc: .fatcaDetailsVC, fromViewController: "")
+            }
+        }
+        else {
+            let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
+            
+            print(consumer)
+            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
+            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
+            
+            
+        }
+       
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        //Android Check
+//        if (getIntent().hasExtra(Config.INDEX)) {
+//            openActivity(ReviewDocumentActivity.class);
+//        } else {
+//            int selectedJointApplicant = consumerList.get(0).getAccountInformation().getNoOfJointApplicatns();
+//            if (selectedJointApplicant == 0 || index == selectedJointApplicant) {
+//
+//                if (getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ASAAN_DIGITAL_ACCOUNT ||
+//                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.REMITTANCE_ACCOUNT
+//                    ||
+//                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ASAAN_DIGITAL_REMITTANCE_SAVING_ACCOUNT ||
+//                    getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.FREELANCE_DIGITAL_SAVING_ACCOUNT ||
+//                    getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.FREELANCE_ACCOUNT ||
+//
+//
+//
+//
+//                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.FREELANCE_FCY_ACCOUNT ||
+//                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ALLIED_ISLAMIC_ASAAN_DIGITAL_ACCOUNT ||
+//                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ALLIED_AITEBAR_ASAAN_DIGITAL_ACCOUNT ||
+//                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.FREELANCE_DIGITAL_ISLAMIC_ACCOUNT ||
+//                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ALLIED_AITEBAR_FREELANCE_DIGITAL_ACCOUNT) {
+//                    openActivity(ReviewDocumentActivity.class);
+//                } else {
+//                    openActivity(FatcaDetailsActivity.class);
+//                }
+//            } else {
+//                openAdditionalApplicantActivity();
+//            }
+//        }
+        
+        
+        
+        
+        
+        
     }
     
     private func openAdditionalDetailsVC() {
@@ -654,6 +801,7 @@ extension PictureAndSignatureVC: UIDocumentMenuDelegate, UIDocumentPickerDelegat
             modelRegistrationSteper.proofOfIncomeFileData = proofOfIncomeFileData
             modelRegistrationSteper.proofOfIncomeFileName = myURL.lastPathComponent
             imageProofOfIncome.isHidden = false
+            imageProofOfIncome.tag = 1
             viewProofOfIncomePicutre.isHidden = false
         } catch {
             print("Unable to load data: \(error)")
@@ -669,6 +817,5 @@ extension PictureAndSignatureVC: UIDocumentMenuDelegate, UIDocumentPickerDelegat
     
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         print("view was cancelled")
-        dismiss(animated: true, completion: nil)
     }
 }

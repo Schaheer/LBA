@@ -20,7 +20,7 @@ final class TaxResidentDetailVC: UIViewController {
     
     @IBOutlet weak var taxResidentSegment: BetterSegmentedControl!
     @IBOutlet weak var taxIdentificationNumSegment: BetterSegmentedControl!
-    @IBOutlet weak var viewCountry: CustomUIView!
+    @IBOutlet weak var viewCountry: UIView!
     @IBOutlet weak var taxIdentificationNumView: UIStackView!
     @IBOutlet weak var resonView: UIView!
     @IBOutlet weak var resonBView: UIView!
@@ -149,8 +149,8 @@ final class TaxResidentDetailVC: UIViewController {
             modelRegistrationSteper.countryDual = labelCountry.text
             modelRegistrationSteper.countryDualId = self.taxResidentViewModel.getCountyofTaxResidenceID()
             if taxIdentificationNumSegment.index == 1 {
-                if labelReson.text?.lowercased() == "please select" {
-                    self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please select reason")
+                if enterTaxNumberTextField.text?.count == 0 {
+                    AlertManager.shared.showOKAlert(with: "Alert!", message: "Please Enter Tax Identification Number first")
                     return()
                 }
                 modelRegistrationSteper.isTaxIdentificationNoDual = true
@@ -164,8 +164,8 @@ final class TaxResidentDetailVC: UIViewController {
                 }
             }
             else {
-                if enterTaxNumberTextField.text?.count == 0 {
-                    AlertManager.shared.showOKAlert(with: "Alert!", message: "Please Enter Tax Identification Number first")
+                if labelReson.text?.lowercased() == "please select" {
+                    self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please select reason")
                     return()
                 }
                 modelRegistrationSteper.isTaxIdentificationNoDual = false
@@ -304,16 +304,34 @@ final class TaxResidentDetailVC: UIViewController {
         
         taxResidentViewModel.registerConsumerBasicInfoResponse.bind { [weak self] response in
             guard let status = response?.message?.status, let description = response?.message?.description?.lowercased() else { return }
+            
             if status == "200" && description.lowercased() == "success"{
+                
                 guard let registerConsumerAccountInfoResponse = DataCacheManager.shared.loadRegisterConsumerAccountInfoResponse()?.data else { return }
-                if registerConsumerAccountInfoResponse.accountVariantID == AccountVariant.freelancerDigitalAccount.id{
-                    self?.delegate?.addChild(vc: .fatcaDetailsVC, fromViewController: "TaxResidentDetailVC")
-                }else if registerConsumerAccountInfoResponse.accountVariantID == AccountVariant.asaanDigitalRemittanceAccount.id{
-                    self?.delegate?.addChild(vc: .remitterDetailVC, fromViewController: "TaxResidentDetailVC")
+                
+                
+                guard let personalInformationBaseVC = UIStoryboard.initialize(
+                    viewController: .personalInformationBaseVC,
+                    fromStoryboard: .openAccount
+                ) as? PersonalInformationBaseVC else { return }
+                               
+                switch modelRegistrationSteper.selectPreferredAccountViewModel?.getAccountVariantID() {
+//                case .asaanDigitalRemittanceAccountSaving:
+//                    personalInformationBaseVC.firstChild = .personalInfoSecondVC
+                case .asaanDigitalRemittanceAccount:
+                    self?.delegate?.addChild(vc: .remitterDetailVC, fromViewController: "")
+                default:
+                    self?.delegate?.addChild(vc: .serviceChannelsVC, fromViewController: "")
                 }
-                else {
-                    self?.delegate?.addChild(vc: .serviceChannelsVC, fromViewController: "TaxResidentDetailVC")
-                }
+                
+//                if registerConsumerAccountInfoResponse.accountVariantID == AccountVariant.freelancerDigitalAccount.id{
+//                    self?.delegate?.addChild(vc: .fatcaDetailsVC, fromViewController: "TaxResidentDetailVC")
+//                }else if registerConsumerAccountInfoResponse.accountVariantID == AccountVariant.asaanDigitalRemittanceAccount.id{
+//                    self?.delegate?.addChild(vc: .remitterDetailVC, fromViewController: "TaxResidentDetailVC")
+//                }
+//                else {
+//                    self?.delegate?.addChild(vc: .serviceChannelsVC, fromViewController: "TaxResidentDetailVC")
+//                }
             }
         }
     }

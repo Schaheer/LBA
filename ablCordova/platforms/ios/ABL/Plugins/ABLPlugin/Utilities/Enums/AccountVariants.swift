@@ -39,6 +39,7 @@ enum AccountVariant: Double {
     case alliedAitebarAsaanDigitalRemittanceAccountRC = 108248
     case freelancerDigitalAccountIslamic = 108249
     case alliedAitebarFreelancerDigitalAccountC = 108250
+    case asaanDigitalRemittanceAccountSaving = 108252
     case unknown = 0
     
     var id: Double {
@@ -103,6 +104,8 @@ enum AccountVariant: Double {
             return 108249
         case .alliedAitebarFreelancerDigitalAccountC:
             return 108250
+        case .asaanDigitalRemittanceAccountSaving:
+            return 108252
         case .unknown:
             return 0
         }
@@ -170,8 +173,11 @@ enum AccountVariant: Double {
             return .PKR
         case .alliedAitebarFreelancerDigitalAccountC:
             return .USD
+        case .asaanDigitalRemittanceAccountSaving:
+            return .PKR
         case .unknown:
             return .PKR
+        
         }
     }
     
@@ -498,6 +504,9 @@ This account is only for low-profile customers with limited financial requiremen
 • Monthly limit of USD 5,000 or equivalent (debit & credit limits shall be applied separately).
 • Cash Withdrawal Limit of PKR 500,000/- or equivalent per day.This account is only for low-profile customers with limited financial requirements/ needs and not available for Politically Exposed Persons/ High Net Worth customers.
 """
+            
+        case .asaanDigitalRemittanceAccountSaving:
+            return "no error message added"
         case .unknown:
             return ""
         }

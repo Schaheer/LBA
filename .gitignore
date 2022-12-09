@@ -1,6 +1,8 @@
 # Xcode
 #
 # gitignore contributors: remember to update Global/Xcode.gitignore, Objective-C.gitignore & Swift.gitignore
+./Users/schaheer.saleem/Desktop/Systems Projects/ABL/LBA/ablCordova/platforms/ios/Veridium4FBiometrics.xcframework/ios-arm64_armv7/
+./Users/schaheer.saleem/Desktop/Systems Projects/ABL/LBA/ablCordova/platforms/ios/Pods/
 
 ## User settings
 xcuserdata/

@@ -269,6 +269,7 @@ final class SelectPreferredAccountVC: UIViewController {
             self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please select gender")
             return()
         }
+        
         let proofOfIncomeInd = selectPreferredAccountViewModel.getProofOfIncomeInd()
         let accountVariantID = selectPreferredAccountViewModel.getAccountVariantID()
         modelRegistrationSteper.proofOfIncomeInd = proofOfIncomeInd
@@ -319,15 +320,14 @@ final class SelectPreferredAccountVC: UIViewController {
         ) as? PersonalInformationBaseVC else { return }
         print(selectPreferredAccountViewModel.getAccountVariantID())
         switch selectPreferredAccountViewModel.getAccountVariantID(){
-        case .asaanDigitalAccount:
-            personalInformationBaseVC.firstChild = .personalInfoSecondVC
-        case .asaanDigitalRemittanceAccount:
-            personalInformationBaseVC.firstChild = .taxResidentDetailVC
+//        case .asaanDigitalAccount:
+//            personalInformationBaseVC.firstChild = .personalInfoSecondVC
+//        case .asaanDigitalRemittanceAccount:
+//            personalInformationBaseVC.firstChild = .taxResidentDetailVC
         case .freelancerDigitalAccount:
-            personalInformationBaseVC.firstChild = .taxResidentDetailVC
-//            personalInformationBaseVC.firstChild = .taxResidentailDetailVC
-        case .currentAccount:
-            personalInformationBaseVC.firstChild = .personalInfoSecondVC
+            personalInformationBaseVC.firstChild = .fatcaVC
+//        case .currentAccount:
+//            personalInformationBaseVC.firstChild = .personalInfoSecondVC
         default:
             personalInformationBaseVC.firstChild = .personalInfoSecondVC
 //            logsManager.debug("Default case")
