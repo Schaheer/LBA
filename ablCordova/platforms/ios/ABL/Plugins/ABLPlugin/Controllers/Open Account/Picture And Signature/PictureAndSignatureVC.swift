@@ -739,7 +739,7 @@ final class PictureAndSignatureVC: UIViewController {
     private func setupDropdown() {
         dropDown.anchorView = additionalApplicantListView
         dropDown.direction = .top
-        dropDown.dropDownHeight = 250
+        dropDown.frame.size.height = 250
         dropDown.topOffset = CGPoint(
             x: 0,
             y: -(dropDown.anchorView?.plainView.bounds.height ?? 0)

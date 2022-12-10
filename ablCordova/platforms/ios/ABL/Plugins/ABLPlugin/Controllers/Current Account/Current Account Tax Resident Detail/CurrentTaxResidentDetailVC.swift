@@ -146,7 +146,7 @@ final class CurrentTaxResidentDetailVC: UIViewController {
     private func setupDropdowns() {
         countryDropdown.anchorView = selectCountryContainer
         countryDropdown.direction = .bottom
-        countryDropdown.dropDownHeight = 250
+        countryDropdown.frame.size.height = 250
         countryDropdown.bottomOffset = CGPoint(
             x: 0,
             y: countryDropdown.anchorView?.plainView.bounds.height ?? 0

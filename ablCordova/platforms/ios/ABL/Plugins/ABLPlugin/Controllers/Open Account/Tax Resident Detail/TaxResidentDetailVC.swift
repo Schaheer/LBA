@@ -226,7 +226,7 @@ final class TaxResidentDetailVC: UIViewController {
         selectCountryDropDown.anchorView = viewCountry
         selectCountryDropDown.direction = .any
         selectCountryDropDown.width = viewCountry.bounds.width
-        selectCountryDropDown.dropDownHeight = 400
+        selectCountryDropDown.frame.size.height = 400
         selectCountryDropDown.bottomOffset = CGPoint(
             x: 0,
             y: selectCountryDropDown.anchorView?.plainView.bounds.height ?? 0

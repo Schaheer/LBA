@@ -290,7 +290,7 @@ final class SelectBankingMethodVC: UIViewController {
         dropDown.anchorView = allBranchesView
         dropDown.direction = .top
         dropDown.width = allBranchesView.bounds.width
-        dropDown.dropDownHeight = 250
+        dropDown.frame.size.height = 250
         dropDown.topOffset = CGPoint(
             x: 0,
             y: -(dropDown.anchorView?.plainView.bounds.height ?? 0)

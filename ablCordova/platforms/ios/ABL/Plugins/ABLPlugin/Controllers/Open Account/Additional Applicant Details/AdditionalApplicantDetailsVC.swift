@@ -63,7 +63,7 @@ final class AdditionalApplicantDetailsVC: UIViewController {
     private func setupDropdown() {
         dropDown.anchorView = selectRelationshipView
         dropDown.direction = .bottom
-        dropDown.dropDownHeight = 250
+        dropDown.frame.size.height = 250
         dropDown.bottomOffset = CGPoint(
             x: 0,
             y: dropDown.anchorView?.plainView.bounds.height ?? 0

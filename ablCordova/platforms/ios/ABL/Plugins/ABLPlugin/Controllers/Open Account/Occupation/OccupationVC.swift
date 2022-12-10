@@ -81,7 +81,7 @@ final class OccupationVC: UIViewController {
         occupationsListDropDown.frame.origin.y = selectOccupationView.frame.maxY
         occupationsListDropDown.direction = .any
         occupationsListDropDown.width = selectOccupationView.bounds.width
-        occupationsListDropDown.dropDownHeight = 250
+        occupationsListDropDown.frame.size.height = 250
         occupationsListDropDown.bottomOffset = CGPoint(
             x: 0,
             y: occupationsListDropDown.anchorView?.plainView.bounds.height ?? 0
@@ -97,7 +97,7 @@ final class OccupationVC: UIViewController {
         professionsListDropDown.anchorView = selectProfessionView
         professionsListDropDown.direction = .any
         professionsListDropDown.width = selectProfessionView.bounds.width
-        professionsListDropDown.dropDownHeight = 250
+        professionsListDropDown.frame.size.height = 250
         professionsListDropDown.bottomOffset = CGPoint(
             x: 0,
             y: professionsListDropDown.anchorView?.plainView.bounds.height ?? 0
