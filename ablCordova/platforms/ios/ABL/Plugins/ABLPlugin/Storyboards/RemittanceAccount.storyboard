@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -13,11 +13,11 @@
         <array key="WorkSans-Medium.ttf">
             <string>WorkSans-Medium</string>
         </array>
+        <array key="WorkSans-Regular.ttf">
+            <string>WorkSans-Regular</string>
+        </array>
         <array key="WorkSans-SemiBold.ttf">
             <string>WorkSans-SemiBold</string>
-        </array>
-        <array key="WorkSans-VariableFont_wght.ttf">
-            <string>WorkSans-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -1413,6 +1413,9 @@
         <designable name="Ekm-oI-ohK">
             <size key="intrinsicContentSize" width="158" height="23.5"/>
         </designable>
+        <designable name="GYv-Ae-t0D">
+            <size key="intrinsicContentSize" width="195" height="32"/>
+        </designable>
         <designable name="H9m-o9-gqW">
             <size key="intrinsicContentSize" width="110.5" height="16.5"/>
         </designable>
@@ -1448,6 +1451,9 @@
         </designable>
         <designable name="iyB-m1-hBy">
             <size key="intrinsicContentSize" width="242" height="16.5"/>
+        </designable>
+        <designable name="j0l-rD-qxC">
+            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="p5U-ms-MIg">
             <size key="intrinsicContentSize" width="106.5" height="19"/>

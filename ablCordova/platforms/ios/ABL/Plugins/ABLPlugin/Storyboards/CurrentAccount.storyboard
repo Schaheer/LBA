@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -33,13 +33,13 @@
                                 <rect key="frame" x="0.0" y="48" width="414" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country of Nationality" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Iq-SF-5b9">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="306" height="30"/>
                                         <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwh-DP-ZHu" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uwh-DP-ZHu" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                        <rect key="frame" x="314" y="0.0" width="100" height="30"/>
                                         <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="100" id="Xr0-9s-oPj"/>
@@ -238,16 +238,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPi-DL-2QF">
-                                                    <rect key="frame" x="200.5" y="8" width="213.5" height="49"/>
+                                                    <rect key="frame" x="213.5" y="8" width="200.5" height="49"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Another Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t01-VF-Ygd">
-                                                            <rect key="frame" x="8" y="15" width="164.5" height="19"/>
+                                                            <rect key="frame" x="8" y="15" width="151.5" height="19"/>
                                                             <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
                                                             <color key="textColor" name="Allied Blue"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rounded-plus-orange" translatesAutoresizingMaskIntoConstraints="NO" id="IB6-kD-rjR">
-                                                            <rect key="frame" x="180.5" y="12" width="25" height="25"/>
+                                                            <rect key="frame" x="167.5" y="12" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="hBE-Py-F3B"/>
                                                                 <constraint firstAttribute="width" constant="25" id="rWx-re-U3s"/>
@@ -855,31 +855,40 @@
     </scenes>
     <designables>
         <designable name="BRw-pR-HT4">
-            <size key="intrinsicContentSize" width="110.5" height="28.5"/>
+            <size key="intrinsicContentSize" width="113" height="28"/>
+        </designable>
+        <designable name="CFo-1m-nBp">
+            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="U0h-pQ-0kd">
-            <size key="intrinsicContentSize" width="105.5" height="16.5"/>
+            <size key="intrinsicContentSize" width="96.5" height="16.5"/>
         </designable>
         <designable name="Vfh-MF-Hud">
-            <size key="intrinsicContentSize" width="153.5" height="28.5"/>
+            <size key="intrinsicContentSize" width="150.5" height="28"/>
         </designable>
         <designable name="WT3-rd-ZBg">
-            <size key="intrinsicContentSize" width="184" height="23.5"/>
+            <size key="intrinsicContentSize" width="166" height="23.5"/>
         </designable>
         <designable name="XI0-uX-p62">
-            <size key="intrinsicContentSize" width="63" height="33"/>
+            <size key="intrinsicContentSize" width="60.5" height="33"/>
+        </designable>
+        <designable name="YIU-rA-Rii">
+            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="diA-Lz-bfY">
             <size key="intrinsicContentSize" width="34" height="16.5"/>
         </designable>
         <designable name="eOx-hU-pJN">
-            <size key="intrinsicContentSize" width="61" height="33"/>
+            <size key="intrinsicContentSize" width="57.5" height="33"/>
         </designable>
         <designable name="hQz-RN-dsl">
-            <size key="intrinsicContentSize" width="140.5" height="28.5"/>
+            <size key="intrinsicContentSize" width="144.5" height="28"/>
         </designable>
         <designable name="hoU-0e-aGb">
-            <size key="intrinsicContentSize" width="76.5" height="16.5"/>
+            <size key="intrinsicContentSize" width="68.5" height="16.5"/>
+        </designable>
+        <designable name="uwh-DP-ZHu">
+            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
     </designables>
     <resources>
