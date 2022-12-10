@@ -203,6 +203,12 @@ final class PictureAndSignatureVC: UIViewController {
         return false
     }
     @IBAction func nextBtnTapped(_ sender: UIButton) {
+        let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
+        
+        print(consumer)
+        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
+        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
+        
         if validationError() {
             return()
         }
