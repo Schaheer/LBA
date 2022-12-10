@@ -2526,7 +2526,7 @@ Currency PKR</string>
                                                                 <rect key="frame" x="0.0" y="70" width="366" height="70"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="CNS-i1-i9K">
-                                                                        <rect key="frame" x="8" y="8" width="254.66666666666663" height="59"/>
+                                                                        <rect key="frame" x="8" y="8" width="230.66666666666666" height="58"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nearest Landmark" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZC-9x-bpb" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="254.66666666666666" height="12"/>
