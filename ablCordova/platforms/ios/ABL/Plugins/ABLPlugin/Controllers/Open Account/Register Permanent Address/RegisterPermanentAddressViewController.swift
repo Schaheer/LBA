@@ -26,7 +26,7 @@ final class RegisterPermanentAddressViewController: UIViewController {
     
     var isEditFromReviewDetailsViewController = false
     var forViewController = ""
-    let ACCEPTABLE_CHARACTERS = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_."
+    let ACCEPTABLE_CHARACTERS = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
 
     private let permanentAddressViewModel = PersonalInformationViewModel()
     weak var delegate: PersonalInfoChildToParentProtocol? = nil
@@ -54,6 +54,8 @@ final class RegisterPermanentAddressViewController: UIViewController {
         landlineTextField.delegate = self
         cityTextField.delegate = self
         townTextField.delegate = self
+        addressTextField.delegate = self
+        nearestLandmaarkTextField.delegate = self
 //        emailTextField.delegate = self
         mailAddressPreferenceSwitch.segments = LabelSegment.segments(withTitles: ["Permanent", "Current"],
                                                                    normalTextColor: .white,
@@ -182,11 +184,42 @@ extension RegisterPermanentAddressViewController : UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return false }
         if landlineTextField == textField {
+            let maxLength = 17
+            let currentString: NSString = textField.text! as NSString
+            let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
+            return newString.length <= maxLength
+        }
+        if landlineTextField == textField {
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
-            textField.text = formatLandLineNumber(with: "XXX-XXXXXXX", phone: newString)
+            
+            textField.text = formatLandLineNumber(with: "XXXX-XXXXXXX", phone: newString)
             return false
         }
         else if cityTextField == textField || townTextField == textField {
+            let cs = CharacterSet(charactersIn: ACCEPTABLE_CHARACTERS).inverted
+            let filtered: String = (string.components(separatedBy: cs) as NSArray).componentsJoined(by: "")
+            if(string == filtered){
+                let maxLength = 17
+                let currentString: NSString = textField.text! as NSString
+                let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
+                return newString.length <= maxLength
+            }else{
+                return false
+            }
+        }
+        else if addressTextField == textField{
+            let maxLength = 35
+            let currentString: NSString = textField.text! as NSString
+            let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
+            return newString.length <= maxLength
+        }
+        else if nearestLandmaarkTextField == textField  {
+            let maxLength = 25
+            let currentString: NSString = textField.text! as NSString
+            let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
+            return newString.length <= maxLength
+        }
+        if nearestLandmaarkTextField == textField {
             let cs = CharacterSet(charactersIn: ACCEPTABLE_CHARACTERS).inverted
             let filtered: String = (string.components(separatedBy: cs) as NSArray).componentsJoined(by: "")
             return (string == filtered)

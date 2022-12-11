@@ -24,6 +24,7 @@ final class CNICAvailabilityVC: UIViewController {
     @IBOutlet weak var mobileNumberLabel: UILabel!
     @IBOutlet weak var mobileNumberTextField: UITextField!
     
+    @IBOutlet weak var nextButton: ButtonSetting!
     @IBOutlet weak var mobileNetworkLabel: UILabel!
     @IBOutlet weak var mobileNetworkTitleLabel: UILabel!
     @IBOutlet weak var mobileNetworkView: UIView!

@@ -39,6 +39,23 @@ final class AlertManager {
             
             self.topController?.present(alert, animated: true)
         }
+//        {
+//            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
+//
+//            let titFont = [NSAttributedString.Key.font: UIFont(name: "ArialHebrew-Bold", size: 15.0)!]
+//            let msgFont = [NSAttributedString.Key.font: UIFont(name: "Avenir-Roman", size: 13.0)!]
+//            let messageAttrString = NSMutableAttributedString(string: message ?? "", attributes: msgFont as [NSAttributedString.Key : Any])
+//            let titleAttrString = NSMutableAttributedString(string: title ?? "", attributes: titFont as [NSAttributedString.Key : Any])
+//
+//            alert.setValue(messageAttrString, forKey: "attributedMessage")
+//            alert.setValue(titleAttrString, forKey: "attributedTitle")
+//
+//            let okAlertAction = UIAlertAction(title: "OK", style: .default)
+//
+//            alert.addAction(okAlertAction)
+//
+//            self.topController?.present(alert, animated: true)
+//        }
     }
     
     func showOkAlert(title: String, message: String) {

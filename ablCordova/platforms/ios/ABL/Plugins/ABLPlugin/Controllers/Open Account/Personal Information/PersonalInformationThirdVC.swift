@@ -23,7 +23,7 @@ final class PersonalInformationThirdVC: UIViewController {
     @IBOutlet weak var cityTextField: UITextField!
     @IBOutlet weak var countryTextField: UITextField!
     
-    
+    let ACCEPTABLE_CHARACTERS = " ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
     
     var isEditFromReviewDetailsViewController = false
     var forViewController = ""
@@ -43,6 +43,10 @@ final class PersonalInformationThirdVC: UIViewController {
         countryTextField.isUserInteractionEnabled = false
         emailTextField.delegate = self
         lanlineNumTextField.delegate = self
+        cityTextField.delegate = self
+        townTextField.delegate = self
+        addressTextField.delegate = self
+        nearestLandmaarkTextField.delegate = self
         super.viewDidLoad()
         subscribeViewModel()
         prePopulateData()
@@ -246,10 +250,45 @@ extension PersonalInformationThirdVC : UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return false }
         if lanlineNumTextField == textField {
+            let maxLength = 17
+            let currentString: NSString = textField.text! as NSString
+            let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
+            return newString.length <= maxLength
+        }
+        if lanlineNumTextField == textField {
             let newString = (text as NSString).replacingCharacters(in: range, with: string)
             
             textField.text = formatLandLineNumber(with: "XXXX-XXXXXXX", phone: newString)
             return false
+        }
+        else if cityTextField == textField || townTextField == textField {
+            let cs = CharacterSet(charactersIn: ACCEPTABLE_CHARACTERS).inverted
+            let filtered: String = (string.components(separatedBy: cs) as NSArray).componentsJoined(by: "")
+            if(string == filtered){
+                let maxLength = 17
+                let currentString: NSString = textField.text! as NSString
+                let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
+                return newString.length <= maxLength
+            }else{
+                return false
+            }
+        }
+        else if addressTextField == textField{
+            let maxLength = 35
+            let currentString: NSString = textField.text! as NSString
+            let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
+            return newString.length <= maxLength
+        }
+        else if nearestLandmaarkTextField == textField  {
+            let maxLength = 25
+            let currentString: NSString = textField.text! as NSString
+            let newString: NSString =  currentString.replacingCharacters(in: range, with: string) as NSString
+            return newString.length <= maxLength
+        }
+        if nearestLandmaarkTextField == textField {
+            let cs = CharacterSet(charactersIn: ACCEPTABLE_CHARACTERS).inverted
+            let filtered: String = (string.components(separatedBy: cs) as NSArray).componentsJoined(by: "")
+            return (string == filtered)
         }
         return true
     }

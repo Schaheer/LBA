@@ -85,7 +85,7 @@ class ButtonSetting: UIButton {
 //                fontSize *= iPhoneMultiplier
 //            }
             
-            self.titleLabel?.font = UIFont(name: fontName, size: fontSize)
+            self.titleLabel?.font = UIFont(name: fontName, size: 16)
         }
     }
 }
