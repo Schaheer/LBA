@@ -603,7 +603,25 @@ final class PictureAndSignatureVC: UIViewController {
 //        edit ka case is me handle karna ha in sy pehlay
         var isJointAccount = modelRegistrationSteper.isJointAccount
         let accountVariantID = modelRegistrationSteper.selectPreferredAccountViewModel?.getAccountVariantID()
-        if !isJointAccount {
+        if isJointAccount {
+            let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
+            if DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count == DataCacheManager.shared.loadNoOfJointApplicants() {
+                self.delegate?.addChild(vc: .fatcaDetailsVC, fromViewController: "")
+            }
+            else {
+                guard let reviewDetailsVC = UIStoryboard.initialize(
+                    viewController: .reviewDetailsVC,
+                    fromStoryboard: .openAccount
+                ) as? ReviewDetailsVC else { return }
+                navigationController?.pushViewController(reviewDetailsVC, animated: true)
+            }
+            print(consumer)
+            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
+            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
+            print(DataCacheManager.shared.loadNoOfJointApplicants())
+            
+        }
+        else {
             if (results.first{$0  == Int(accountVariantID?.rawValue ?? 0)} != nil) {
                 guard let reviewDetailsVC = UIStoryboard.initialize(
                     viewController: .reviewDetailsVC,
@@ -615,14 +633,6 @@ final class PictureAndSignatureVC: UIViewController {
             else {
                 self.delegate?.addChild(vc: .fatcaDetailsVC, fromViewController: "")
             }
-        }
-        else {
-            let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
-            
-            print(consumer)
-            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
-            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
-            print(DataCacheManager.shared.loadNoOfJointApplicants())
         }
        
         

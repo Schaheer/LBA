@@ -30,8 +30,17 @@ final class ChangeNumberVC: UIViewController {
             selectedTextColor: .white
         )
         
+        
         mobileNumberLabel.makeAttributedText(stringToColor: "*")
         subscribeViewModel()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
+        
+        print(consumer)
+        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
+        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
+        print(DataCacheManager.shared.loadNoOfJointApplicants())
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton) {

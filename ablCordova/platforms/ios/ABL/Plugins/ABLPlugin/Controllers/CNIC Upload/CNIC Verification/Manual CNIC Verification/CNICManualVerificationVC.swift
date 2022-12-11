@@ -25,7 +25,14 @@ final class CNICManualVerificationVC: UIViewController {
 //    private var frontSideCNICData: Data?
 //    private var backSideCNICData: Data?
     var cameFromJointFlow = false
-    
+    override func viewWillAppear(_ animated: Bool) {
+        let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
+        
+        print(consumer)
+        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
+        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
+        print(DataCacheManager.shared.loadNoOfJointApplicants())
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         subscribeViewModel()

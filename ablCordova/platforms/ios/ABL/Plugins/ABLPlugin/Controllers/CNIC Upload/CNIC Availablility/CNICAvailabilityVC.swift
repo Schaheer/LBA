@@ -46,6 +46,12 @@ final class CNICAvailabilityVC: UIViewController {
         modelRegistrationSteper = RegistrationSteperModel()
         //Irfan
         setupGestureRecognizers()
+        let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
+        
+        print(consumer)
+        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
+        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
+        print(DataCacheManager.shared.loadNoOfJointApplicants())
     }
     
     override func viewDidLoad() {
