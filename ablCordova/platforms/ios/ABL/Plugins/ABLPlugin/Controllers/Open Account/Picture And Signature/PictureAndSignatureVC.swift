@@ -214,7 +214,6 @@ final class PictureAndSignatureVC: UIViewController {
         }
         modelRegistrationSteper.isJointAccount = segmentJointAccount.index == 1 ? true : false
         if let natureOfAccount = picAndSignViewModel.getNatureOfAccount() {
-            
             guard let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.first, let rdaCustomerProfileID = consumer.rdaCustomerProfileID else {
                 return
             }
@@ -476,7 +475,6 @@ final class PictureAndSignatureVC: UIViewController {
             
         }
         picAndSignViewModel.registerPicAndSignResponse.bind { [weak self]  response  in
-            
             guard let status = response?.message?.status, let description = response?.message?.description?.lowercased() else { return }
             if status == "200" && description.lowercased() == "success"{
                 //TODO: check if no of applicants
@@ -624,8 +622,7 @@ final class PictureAndSignatureVC: UIViewController {
             print(consumer)
             print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
             print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
-            
-            
+            print(DataCacheManager.shared.loadNoOfJointApplicants())
         }
        
         
