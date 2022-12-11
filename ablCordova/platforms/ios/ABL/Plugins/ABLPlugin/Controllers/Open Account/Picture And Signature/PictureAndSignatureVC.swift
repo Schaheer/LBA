@@ -218,6 +218,13 @@ final class PictureAndSignatureVC: UIViewController {
                 return
             }
             
+            let consumer1 = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
+            print(consumer1)
+            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
+            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
+            print(DataCacheManager.shared.loadNoOfJointApplicants())
+            
+            
             
             if natureOfAccount != .joint {
                 logsManager.debug(natureOfAccount.rawValue)
