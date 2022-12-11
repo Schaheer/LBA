@@ -132,7 +132,7 @@ extension RemitterDetailVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         if indexPath.row < remitters.count {
-            return 230
+            return 300
         } else {
             return 65
         }
