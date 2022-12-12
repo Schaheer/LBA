@@ -15,13 +15,15 @@ final class PictureAndSignatureVC: UIViewController {
     
     @IBOutlet weak var viewProofOfIncome: UIView!
     @IBOutlet weak var imageProofOfIncome: UIImageView!
-    
+    @IBOutlet weak var viewJointAccount: UIView!
+
     @IBOutlet weak var singleAccountView: UIView!
     @IBOutlet weak var singleAccountRadio: UIImageView!
     @IBOutlet weak var viewSelectNatureOfAccount: CustomUIView!
     @IBOutlet weak var segmentJointAccount: BetterSegmentedControl!
     
     @IBAction func segmentJointAccount(_ sender: BetterSegmentedControl) {
+        DataCacheManager.shared.saveNoOfJointApplicants(input: 0)
         if sender.index == 1 {
             viewSelectNatureOfAccount.isHidden = false
             natureOfAccountLocal = .joint
@@ -65,7 +67,7 @@ final class PictureAndSignatureVC: UIViewController {
     var forViewController = ""
     var natureOfAccountLocal = NatureOfAccount.single
     override func viewDidAppear(_ animated: Bool) {
-        viewDidLoadLocal()
+        viewDidAppearLocal()
         viewProofOfIncome.isHidden = true
         self.selectAdditionalApplicantView.isHidden = false
 
@@ -80,12 +82,13 @@ final class PictureAndSignatureVC: UIViewController {
 
     }
     override func viewDidLoad() {
+        print(DataCacheManager.shared.loadNoOfJointApplicants())
+        print(DataCacheManager.shared.loadNoOfJointApplicants())
+
         super.viewDidLoad()
         imageProofOfIncome.isHidden = true
         viewProofOfIncomePicutre.isHidden = true
-        natureOfAccountLocal = .single
-        picAndSignViewModel.singleAccountTapped()
-        self.single()
+        
         segmentJointAccount.segments = LabelSegment.segments(
             withTitles: ["No", "Yes"],
             normalTextColor: .white,
@@ -127,13 +130,28 @@ final class PictureAndSignatureVC: UIViewController {
         )
         subscribeViewModel()
         setupGestureRecognizers()
+        let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
+        print(consumer)
+        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
+        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
+        if DataCacheManager.shared.loadNoOfJointApplicants() ?? 0 > 0 {
+//            viewJointAccount.isHidden = true
+            natureOfAccountLocal = .joint
+            picAndSignViewModel.jointAccountTapped()
+            self.joint()
+        }
+        else {
+            natureOfAccountLocal = .single
+            picAndSignViewModel.singleAccountTapped()
+            self.single()
+        }
     }
     
     override func viewDidLayoutSubviews() {
         //        setupViews()
     }
     
-    func viewDidLoadLocal(){
+    func viewDidAppearLocal() {
         var tempNoOfParticipant = ""
         if modelRegistrationSteper.picAndSignViewModel != nil {
             tempNoOfParticipant = modelRegistrationSteper.additionalApplicant!
@@ -203,29 +221,20 @@ final class PictureAndSignatureVC: UIViewController {
         return false
     }
     @IBAction func nextBtnTapped(_ sender: UIButton) {
-        let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
+        if validationError() {
+            return()
+        }
         
+        let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
         print(consumer)
         print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
         print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
         
-        if validationError() {
-            return()
-        }
         modelRegistrationSteper.isJointAccount = segmentJointAccount.index == 1 ? true : false
         if let natureOfAccount = picAndSignViewModel.getNatureOfAccount() {
             guard let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.first, let rdaCustomerProfileID = consumer.rdaCustomerProfileID else {
                 return
             }
-            
-            let consumer1 = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
-            print(consumer1)
-            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
-            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
-            print(DataCacheManager.shared.loadNoOfJointApplicants())
-            
-            
-            
             if natureOfAccount != .joint {
                 logsManager.debug(natureOfAccount.rawValue)
                 picAndSignViewModel.saveNatureOfAccount(
@@ -241,7 +250,6 @@ final class PictureAndSignatureVC: UIViewController {
             } else {
                 let noOfJointApplicants = picAndSignViewModel.getNoOfJointApplicants()
                 DataCacheManager.shared.saveNoOfJointApplicants(input: noOfJointApplicants)
-                
                 //                if noOfJointApplicants > 0 {
                 logsManager.debug(natureOfAccount.rawValue, noOfJointApplicants)
                 picAndSignViewModel.saveNatureOfAccount(
@@ -257,7 +265,7 @@ final class PictureAndSignatureVC: UIViewController {
                 //                } else {
                 // move to
                 modelRegistrationSteper.picAndSignViewModel = picAndSignViewModel
-                openAdditionalDetailsVC()
+//                openAdditionalDetailsVC()
                 //                    AlertManager.shared.showOKAlert(with: "Error", message: "Please select number of joint applicants")
                 //                }
             }
@@ -486,8 +494,8 @@ final class PictureAndSignatureVC: UIViewController {
             if status == "200" && description.lowercased() == "success"{
                 //TODO: check if no of applicants
                 modelRegistrationSteper.picAndSignViewModel = self?.picAndSignViewModel
-                self?.openReviewDetailsVC()
                 
+                self?.openReviewDetailsVC()
             }
         }
         
@@ -522,7 +530,7 @@ final class PictureAndSignatureVC: UIViewController {
         self.additionalApplicantLabel.text = "Select additional applicants"
         modelRegistrationSteper.additionalApplicant = "Select additional applicants"
         natureOfAccountLocal = .single
-        DataCacheManager.shared.saveNoOfJointApplicants(input: 0)
+//        DataCacheManager.shared.saveNoOfJointApplicants(input: 0)
     }
     func joint() {
         self.singleAccountRadio.image = PluginImageAsset.radioUnfilled.image
@@ -546,22 +554,23 @@ final class PictureAndSignatureVC: UIViewController {
     private func openReviewDetailsVC() {
         if isEditFromReviewDetailsViewController && forViewController == "ReviewDetailsVC" {
             navigationController?.popViewController(animated: true)
-
             return()
         }
+        modelRegistrationSteper.picAndSignViewModel = picAndSignViewModel
+        
         guard let reviewDetailsVC = UIStoryboard.initialize(
             viewController: .reviewDetailsVC,
             fromStoryboard: .openAccount
         ) as? ReviewDetailsVC else { return }
         
-        switch natureOfAccountLocal {
-        case .single: break
-           // navigationController?.pushViewController(reviewDetailsVC, animated: true)
-        case .joint: break
-            
-        case .minor: break
-            //navigationController?.pushViewController(reviewDetailsVC, animated: true)
-        }
+//        switch natureOfAccountLocal {
+//        case .single: break
+//           // navigationController?.pushViewController(reviewDetailsVC, animated: true)
+//        case .joint: break
+//            
+//        case .minor: break
+//            //navigationController?.pushViewController(reviewDetailsVC, animated: true)
+//        }
         
         
         guard let personalInformationBaseVC = UIStoryboard.initialize(
@@ -593,19 +602,6 @@ final class PictureAndSignatureVC: UIViewController {
         ) as? PersonalInformationBaseVC else { return }
 
         
-        var results = [Int]()
-        for i in (108243 ..< 108255) {
-            results.append(i)
-        }
-//        print(results)
-//        print(accountVariantID)
-//        print(AccountVariant.currentAccount.id)
-//        print(AccountVariant.currentAccount)
-        //Shakeel
-        //don't show residential address screen from ACCOUNT_VARIANT_ID 108243 to 108253
-        //go directly to nationality in this scenario
-        //never go to employment screen directly
-        
         
 //        edit ka case is me handle karna ha in sy pehlay
         var isJointAccount = modelRegistrationSteper.isJointAccount
@@ -616,19 +612,19 @@ final class PictureAndSignatureVC: UIViewController {
                 self.delegate?.addChild(vc: .fatcaDetailsVC, fromViewController: "")
             }
             else {
-                guard let reviewDetailsVC = UIStoryboard.initialize(
-                    viewController: .reviewDetailsVC,
-                    fromStoryboard: .openAccount
-                ) as? ReviewDetailsVC else { return }
-                navigationController?.pushViewController(reviewDetailsVC, animated: true)
+                openAdditionalDetailsVC()
             }
-            print(consumer)
-            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
-            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
-            print(DataCacheManager.shared.loadNoOfJointApplicants())
+//            print(consumer)
+//            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
+//            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
+//            print(DataCacheManager.shared.loadNoOfJointApplicants())
             
         }
         else {
+            var results = [Int]()
+            for i in (108243 ..< 108255) {
+                results.append(i)
+            }
             if (results.first{$0  == Int(accountVariantID?.rawValue ?? 0)} != nil) {
                 guard let reviewDetailsVC = UIStoryboard.initialize(
                     viewController: .reviewDetailsVC,
@@ -765,6 +761,7 @@ final class PictureAndSignatureVC: UIViewController {
             modelRegistrationSteper.additionalApplicant = item
             modelRegistrationSteper.additionalApplicantNo = Int(noOfJointApplicants ?? "0") ?? 0
             self.picAndSignViewModel.setNoOfJointApplicants(applicants: Int(noOfJointApplicants ?? "0") ?? 0)
+            DataCacheManager.shared.saveNoOfJointApplicants(input: Int(noOfJointApplicants ?? "0") ?? 0)
         }
     }
 }
