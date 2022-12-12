@@ -13,11 +13,11 @@
         <array key="Lato-Regular.ttf">
             <string>Lato-Regular</string>
         </array>
-        <array key="WorkSans-Regular.ttf">
-            <string>WorkSans-Regular</string>
-        </array>
         <array key="WorkSans-SemiBold.ttf">
             <string>WorkSans-SemiBold</string>
+        </array>
+        <array key="WorkSans-VariableFont_wght.ttf">
+            <string>WorkSans-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -855,31 +855,31 @@
     </scenes>
     <designables>
         <designable name="BRw-pR-HT4">
-            <size key="intrinsicContentSize" width="113" height="28"/>
+            <size key="intrinsicContentSize" width="110.5" height="28.5"/>
         </designable>
         <designable name="U0h-pQ-0kd">
-            <size key="intrinsicContentSize" width="96.5" height="16.5"/>
+            <size key="intrinsicContentSize" width="105.5" height="16.5"/>
         </designable>
         <designable name="Vfh-MF-Hud">
-            <size key="intrinsicContentSize" width="150.5" height="28"/>
+            <size key="intrinsicContentSize" width="153.5" height="28.5"/>
         </designable>
         <designable name="WT3-rd-ZBg">
-            <size key="intrinsicContentSize" width="166" height="23.5"/>
+            <size key="intrinsicContentSize" width="184" height="23.5"/>
         </designable>
         <designable name="XI0-uX-p62">
-            <size key="intrinsicContentSize" width="60.5" height="33"/>
+            <size key="intrinsicContentSize" width="63" height="33"/>
         </designable>
         <designable name="diA-Lz-bfY">
             <size key="intrinsicContentSize" width="34" height="16.5"/>
         </designable>
         <designable name="eOx-hU-pJN">
-            <size key="intrinsicContentSize" width="57.5" height="33"/>
+            <size key="intrinsicContentSize" width="61" height="33"/>
         </designable>
         <designable name="hQz-RN-dsl">
-            <size key="intrinsicContentSize" width="144.5" height="28"/>
+            <size key="intrinsicContentSize" width="140.5" height="28.5"/>
         </designable>
         <designable name="hoU-0e-aGb">
-            <size key="intrinsicContentSize" width="68.5" height="16.5"/>
+            <size key="intrinsicContentSize" width="76.5" height="16.5"/>
         </designable>
     </designables>
     <resources>

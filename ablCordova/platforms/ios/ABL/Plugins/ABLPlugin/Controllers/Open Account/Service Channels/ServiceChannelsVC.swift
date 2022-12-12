@@ -10,6 +10,11 @@ import BetterSegmentedControl
 
 final class ServiceChannelsVC: UIViewController {
     
+    @IBAction func buttonReason(_ sender: Any) {
+    }
+    @IBOutlet weak var buttonReason: UIButton!
+    @IBOutlet weak var labelReason: LabelSetting!
+    @IBOutlet weak var viewReason: CustomUIView!
     @IBOutlet weak var nextBtnTapped: UIButton!
     @IBOutlet weak var buttonSms: UIButton!
     @IBOutlet weak var buttonEmail: UIButton!
@@ -83,8 +88,7 @@ final class ServiceChannelsVC: UIViewController {
         )
         setupCollectionViews()
         subscribeViewModel()
-        
-        
+        viewReason.isHidden = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -267,6 +271,25 @@ extension ServiceChannelsVC: UICollectionViewDelegate, UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         guard let selectedATMTypeId = atmTypes[indexPath.row].id else { return }
+        
+        if (Int(selectedATMTypeId) == 108608 ||
+            Int(selectedATMTypeId) == 108613 ||
+            Int(selectedATMTypeId) == 108614 ||
+            Int(selectedATMTypeId) == 108618 ||
+            Int(selectedATMTypeId) == 108619 ||
+            Int(selectedATMTypeId) == 108620 ||
+            Int(selectedATMTypeId) == 108621 ||
+            Int(selectedATMTypeId) == 108622 ||
+            Int(selectedATMTypeId) == 108623) {
+            //Visa Card Visible dropdown show
+            viewReason.isHidden = false
+            
+        } else {
+            //Hide dropdown
+            viewReason.isHidden = true
+        }
+        
+        
         self.selectedATMTypeId = selectedATMTypeId
         serviceChannelsVM.setSelectedATMTypeID(accountVariantID: selectedATMTypeId)
         modelRegistrationSteper.serviceChannelsVM = serviceChannelsVM
