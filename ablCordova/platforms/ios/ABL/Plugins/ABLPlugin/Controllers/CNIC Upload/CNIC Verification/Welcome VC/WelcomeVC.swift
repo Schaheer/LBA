@@ -100,4 +100,53 @@ class WelcomeVC: UIViewController {
             }
         }
     }
+    
+    @IBAction func twitterTapped(_ sender: Any) {
+        let url = URL(string: "https://twitter.com/ablpk")
+        
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.open(url!)
+        }
+    }
+    
+    @IBAction func facebookTapped(_ sender: Any) {
+        let url = URL(string: "https://www.facebook.com/alliedbankpk")
+        
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.open(url!)
+        }
+    }
+    
+    @IBAction func youtubeTapped(_ sender: Any) {
+        let url = URL(string: "https://www.youtube.com/user/alliedbankltd")
+        
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.open(url!)
+        }
+    }
+    
+    @IBAction func instagramTapped(_ sender: Any) {
+        let url = URL(string: "https://www.instagram.com/ablpk/")
+        
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.open(url!)
+        }
+    }
+    
+    @IBAction func linkedinTapped(_ sender: Any) {
+        let url = URL(string: "https://www.linkedin.com/company/allied-bank-limited/")
+        
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.open(url!)
+        }
+    }
+    
+    @IBAction func whatsappTapped(_ sender: Any) {
+        let url = URL(string: "https://api.whatsapp.com/send?phone=+923001225225")
+        
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.open(url!)
+        }
+    }
+    
 }
