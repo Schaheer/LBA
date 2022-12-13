@@ -22,11 +22,11 @@
         <array key="WorkSans-Medium.ttf">
             <string>WorkSans-Medium</string>
         </array>
+        <array key="WorkSans-Regular.ttf">
+            <string>WorkSans-Regular</string>
+        </array>
         <array key="WorkSans-SemiBold.ttf">
             <string>WorkSans-SemiBold</string>
-        </array>
-        <array key="WorkSans-VariableFont_wght.ttf">
-            <string>WorkSans-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -2721,84 +2721,6 @@ If you wish to continue Click here </string>
             </objects>
             <point key="canvasLocation" x="2732" y="753"/>
         </scene>
-        <!--Ported PopupVC-->
-        <scene sceneID="C6Y-ao-euL">
-            <objects>
-                <viewController storyboardIdentifier="PortedPopupVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="SRY-Fd-wG6" customClass="PortedPopupVC" customModule="ABL" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="tDt-4e-JIb">
-                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tED-K9-OP2" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="267" width="350" height="320"/>
-                                <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning-icon" translatesAutoresizingMaskIntoConstraints="NO" id="lRd-jT-FL5">
-                                        <rect key="frame" x="140" y="20" width="70" height="70"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="70" id="rrg-wS-drk"/>
-                                            <constraint firstAttribute="height" constant="70" id="sXT-LY-xYi"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYu-0n-73w" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="110" width="310" height="112.66666666666669"/>
-                                        <string key="text">To update your mobile network in bank's system, please write "MNP" in message and send it to 9225 &amp; 9080. Otherwise, you will not be able to receive One Time Password on your mobile phone.</string>
-                                        <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6n-uI-09b" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="250" width="310" height="50"/>
-                                        <color key="backgroundColor" name="Allied Blue"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="cuO-ou-puh"/>
-                                        </constraints>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Done">
-                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                        </buttonConfiguration>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                                <real key="value" value="6"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="doneTapped:" destination="SRY-Fd-wG6" eventType="touchUpInside" id="Sfn-wx-nM7"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="320" id="D4f-7p-Ojo"/>
-                                    <constraint firstItem="lRd-jT-FL5" firstAttribute="centerX" secondItem="tED-K9-OP2" secondAttribute="centerX" id="ECf-Xu-D1y"/>
-                                    <constraint firstItem="lRd-jT-FL5" firstAttribute="top" secondItem="tED-K9-OP2" secondAttribute="top" constant="20" id="Fxk-mh-gZ1"/>
-                                    <constraint firstAttribute="bottom" secondItem="V6n-uI-09b" secondAttribute="bottom" constant="20" id="W2Q-0w-uX2"/>
-                                    <constraint firstAttribute="trailing" secondItem="V6n-uI-09b" secondAttribute="trailing" constant="20" id="Xfl-58-iBU"/>
-                                    <constraint firstAttribute="trailing" secondItem="uYu-0n-73w" secondAttribute="trailing" constant="20" id="bWr-1p-P4N"/>
-                                    <constraint firstItem="V6n-uI-09b" firstAttribute="leading" secondItem="tED-K9-OP2" secondAttribute="leading" constant="20" id="c53-jf-Fbv"/>
-                                    <constraint firstItem="uYu-0n-73w" firstAttribute="leading" secondItem="tED-K9-OP2" secondAttribute="leading" constant="20" id="iRM-HZ-0mf"/>
-                                    <constraint firstItem="uYu-0n-73w" firstAttribute="top" secondItem="lRd-jT-FL5" secondAttribute="bottom" constant="20" id="m16-DE-DOn"/>
-                                </constraints>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <real key="value" value="12"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </view>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="ePn-J9-s3G"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="tED-K9-OP2" firstAttribute="leading" secondItem="ePn-J9-s3G" secondAttribute="leading" constant="20" id="JSl-SR-To9"/>
-                            <constraint firstItem="tED-K9-OP2" firstAttribute="centerY" secondItem="ePn-J9-s3G" secondAttribute="centerY" id="Mzd-mh-yYp"/>
-                            <constraint firstItem="ePn-J9-s3G" firstAttribute="trailing" secondItem="tED-K9-OP2" secondAttribute="trailing" constant="20" id="y3g-tw-TUU"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QKJ-W0-6nq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3727.6923076923076" y="73.93364928909952"/>
-        </scene>
         <!--Manual VerificationVC-->
         <scene sceneID="1Ln-C6-IaN">
             <objects>
@@ -4410,6 +4332,105 @@ If you wish to continue.</string>
             </objects>
             <point key="canvasLocation" x="-720" y="73.93364928909952"/>
         </scene>
+        <!--Ported PopupVC-->
+        <scene sceneID="Edu-yb-OyC">
+            <objects>
+                <viewController storyboardIdentifier="PortedPopupVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" id="ANx-U6-505" customClass="PortedPopupVC" customModule="ABL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="tQ8-Uy-00g">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cpv-eO-yh0" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
+                                <rect key="frame" x="20" y="267" width="350" height="320"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning-icon" translatesAutoresizingMaskIntoConstraints="NO" id="bpO-vR-5zh">
+                                        <rect key="frame" x="140" y="20" width="70" height="70"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="70" id="FxO-Bt-jdn"/>
+                                            <constraint firstAttribute="width" constant="70" id="S5e-Yc-Oym"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mb3-Wl-J6m" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="110" width="310" height="112.66666666666669"/>
+                                        <string key="text">To update your mobile network in bank's system, please write "MNP" in message and send it to 9225 &amp; 9080. Otherwise, you will not be able to receive One Time Password on your mobile phone.</string>
+                                        <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gLi-wL-U27" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="250" width="310" height="50"/>
+                                        <color key="backgroundColor" name="Allied Blue"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="O0Z-9Y-Pk7"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Done">
+                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
+                                        </buttonConfiguration>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="doneTapped:" destination="ANx-U6-505" eventType="touchUpInside" id="fLs-hA-CHQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="09W-wK-j2t">
+                                        <rect key="frame" x="285" y="20" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="HDC-7C-gqN"/>
+                                            <constraint firstAttribute="width" constant="45" id="pPT-9l-7dp"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" name="Allied Blue"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="ANx-U6-505" eventType="touchUpInside" id="aBW-YF-atg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstItem="mb3-Wl-J6m" firstAttribute="leading" secondItem="cpv-eO-yh0" secondAttribute="leading" constant="20" id="3fU-tg-sOW"/>
+                                    <constraint firstAttribute="trailing" secondItem="09W-wK-j2t" secondAttribute="trailing" constant="20" symbolic="YES" id="AkR-xb-RVd"/>
+                                    <constraint firstAttribute="height" constant="320" id="ES4-WN-qGb"/>
+                                    <constraint firstItem="bpO-vR-5zh" firstAttribute="top" secondItem="cpv-eO-yh0" secondAttribute="top" constant="20" id="TY3-PZ-3rd"/>
+                                    <constraint firstAttribute="bottom" secondItem="gLi-wL-U27" secondAttribute="bottom" constant="20" id="WNS-Ou-69H"/>
+                                    <constraint firstAttribute="trailing" secondItem="gLi-wL-U27" secondAttribute="trailing" constant="20" id="ZVM-o8-630"/>
+                                    <constraint firstItem="gLi-wL-U27" firstAttribute="leading" secondItem="cpv-eO-yh0" secondAttribute="leading" constant="20" id="jxR-Go-aSb"/>
+                                    <constraint firstAttribute="trailing" secondItem="mb3-Wl-J6m" secondAttribute="trailing" constant="20" id="l9f-Zj-zue"/>
+                                    <constraint firstItem="mb3-Wl-J6m" firstAttribute="top" secondItem="bpO-vR-5zh" secondAttribute="bottom" constant="20" id="sN5-q5-15B"/>
+                                    <constraint firstItem="bpO-vR-5zh" firstAttribute="centerX" secondItem="cpv-eO-yh0" secondAttribute="centerX" id="xag-2u-6IE"/>
+                                    <constraint firstItem="09W-wK-j2t" firstAttribute="top" secondItem="cpv-eO-yh0" secondAttribute="top" constant="20" symbolic="YES" id="zwb-WI-Hgk"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="zci-QM-MRE"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cpv-eO-yh0" firstAttribute="centerY" secondItem="zci-QM-MRE" secondAttribute="centerY" id="D9E-eG-1Gb"/>
+                            <constraint firstItem="cpv-eO-yh0" firstAttribute="leading" secondItem="zci-QM-MRE" secondAttribute="leading" constant="20" id="J8e-q8-d3S"/>
+                            <constraint firstItem="zci-QM-MRE" firstAttribute="trailing" secondItem="cpv-eO-yh0" secondAttribute="trailing" constant="20" id="eaV-XW-IF2"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="09W-wK-j2t" id="mVE-N1-H5s"/>
+                        <outlet property="doneButton" destination="gLi-wL-U27" id="Ral-0E-lKo"/>
+                        <outlet property="labelMessage" destination="mb3-Wl-J6m" id="qX6-ra-2on"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Nd1-xb-Irx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3727.6923076923076" y="73.93364928909952"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="2Vk-pC-GLB">
@@ -4616,9 +4637,6 @@ If you wish to continue.</string>
         <designable name="Udw-1f-HrB">
             <size key="intrinsicContentSize" width="49" height="31"/>
         </designable>
-        <designable name="V6n-uI-09b">
-            <size key="intrinsicContentSize" width="64.333333333333329" height="33"/>
-        </designable>
         <designable name="W9F-5o-fHX">
             <size key="intrinsicContentSize" width="538.66666666666663" height="19"/>
         </designable>
@@ -4700,6 +4718,9 @@ If you wish to continue.</string>
         <designable name="g7f-Kp-hPC">
             <size key="intrinsicContentSize" width="491.33333333333331" height="23.666666666666668"/>
         </designable>
+        <designable name="gLi-wL-U27">
+            <size key="intrinsicContentSize" width="64.333333333333329" height="33"/>
+        </designable>
         <designable name="gMd-1A-2Ds">
             <size key="intrinsicContentSize" width="160.66666666666666" height="19"/>
         </designable>
@@ -4741,6 +4762,9 @@ If you wish to continue.</string>
         </designable>
         <designable name="lc9-xL-5hQ">
             <size key="intrinsicContentSize" width="289.33333333333331" height="16.666666666666668"/>
+        </designable>
+        <designable name="mb3-Wl-J6m">
+            <size key="intrinsicContentSize" width="1528" height="19"/>
         </designable>
         <designable name="mhy-N5-yw4">
             <size key="intrinsicContentSize" width="164.33333333333334" height="18"/>
@@ -4792,9 +4816,6 @@ If you wish to continue.</string>
         </designable>
         <designable name="tLr-5C-xll">
             <size key="intrinsicContentSize" width="103.33333333333333" height="18"/>
-        </designable>
-        <designable name="uYu-0n-73w">
-            <size key="intrinsicContentSize" width="1528" height="19"/>
         </designable>
         <designable name="v7K-mK-Ot9">
             <size key="intrinsicContentSize" width="72" height="33.333333333333336"/>

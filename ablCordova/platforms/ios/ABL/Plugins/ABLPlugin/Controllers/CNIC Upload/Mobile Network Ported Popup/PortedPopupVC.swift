@@ -35,8 +35,6 @@ final class PortedPopupVC: UIViewController {
         }
     }
     @IBAction func cancelButton(_ sender: Any) {
-        dismiss(animated: true) {
-            self.portedMobileNetwork?()
-        }
+        dismiss(animated: true)
     }
 }
