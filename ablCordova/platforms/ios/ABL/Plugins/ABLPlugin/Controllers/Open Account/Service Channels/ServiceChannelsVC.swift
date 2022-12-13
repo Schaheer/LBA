@@ -11,7 +11,12 @@ import DropDown
 
 final class ServiceChannelsVC: UIViewController {
     
+    @IBAction func buttonEye(_ sender: Any) {
+        let message  = "Charges shall be applicable as per latest SOC. Click Open to view"
+        openPortedPopupVC(viewController: self, message: message)
+    }
     @IBAction func buttonReason(_ sender: Any) {
+        
     }
     @IBOutlet weak var buttonReason: UIButton!
     @IBOutlet weak var labelReason: LabelSetting!
@@ -346,4 +351,20 @@ extension ServiceChannelsVC: UICollectionViewDelegate, UICollectionViewDataSourc
         modelRegistrationSteper.serviceChannelsVM = serviceChannelsVM
         collectionView.reloadData()
     }
+}
+
+func openPortedPopupVC(viewController: UIViewController, message: String) {
+    guard let portedPopupVC = UIStoryboard.initialize(
+        viewController: .portedPopupVC,
+        fromStoryboard: .cnicUpload
+    ) as? PortedPopupVC else { return }
+    
+    portedPopupVC.message = message
+    portedPopupVC.buttonTitle = "Open"
+    portedPopupVC.portedMobileNetwork = {
+        if let url = URL(string: "https://www.abl.com/services/downloads/schedule-of-charges/") {
+            UIApplication.shared.open(url)
+        }
+    }
+    viewController.present(portedPopupVC, animated: true)
 }
