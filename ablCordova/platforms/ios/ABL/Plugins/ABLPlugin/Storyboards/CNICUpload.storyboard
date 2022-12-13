@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -39,7 +39,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zO-ah-tQm">
-                                <rect key="frame" x="0.0" y="47" width="390" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, January 3, 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGg-m8-WkD" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                         <rect key="frame" x="20" y="16.666666666666664" width="210" height="16.666666666666664"/>
@@ -77,7 +77,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qoQ-MF-S0b">
-                                <rect key="frame" x="0.0" y="97" width="390" height="65"/>
+                                <rect key="frame" x="0.0" y="94" width="390" height="65"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="q9i-p7-wE1">
                                         <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
@@ -106,19 +106,19 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN3-lA-V6G" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="182" width="157" height="23.666666666666657"/>
+                                <rect key="frame" x="20" y="179" width="157" height="23.666666666666657"/>
                                 <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1G-7x-4yj">
-                                <rect key="frame" x="20" y="225.66666666666666" width="350" height="2"/>
+                                <rect key="frame" x="20" y="222.66666666666666" width="350" height="2"/>
                                 <color key="backgroundColor" name="App Orange"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="ANC-Bf-AYI"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="Lx7-Jg-I65">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="Lx7-Jg-I65" customClass="ChatView" customModule="ABL" customModuleProvider="target">
                                 <rect key="frame" x="20" y="740" width="350" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="Miq-Hx-H5M"/>
@@ -206,7 +206,7 @@ If you wish to continue Click here </string>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yG4-HG-bpZ" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                <rect key="frame" x="300" y="352.66666666666669" width="70" height="35"/>
+                                <rect key="frame" x="300" y="349.66666666666669" width="70" height="35"/>
                                 <color key="backgroundColor" name="OTP Field Border"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="ym3-1Y-pvM"/>
@@ -225,13 +225,13 @@ If you wish to continue Click here </string>
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Have you ported your mobile network?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8g7-CQ-0L5" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="353.66666666666669" width="260" height="33"/>
+                                <rect key="frame" x="20" y="350.66666666666669" width="260" height="33"/>
                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="COl-X3-0P5">
-                                <rect key="frame" x="20" y="247.66666666666663" width="350" height="85"/>
+                                <rect key="frame" x="20" y="244.66666666666663" width="350" height="85"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DNE-So-tPQ">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="85"/>
@@ -450,7 +450,7 @@ If you wish to continue Click here </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WCG-jN-u6R">
-                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0I5-ol-OYC">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1152.6666666666667"/>
@@ -821,7 +821,7 @@ If you wish to continue Click here </string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="exr-eP-Rgw">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="exr-eP-Rgw" customClass="ChatView" customModule="ABL" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="1082.6666666666667" width="350" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="wXN-tP-VN0"/>
@@ -912,7 +912,7 @@ If you wish to continue Click here </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yyj-tB-d7H">
-                                <rect key="frame" x="0.0" y="47" width="390" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="vWY-cW-DHW">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
@@ -936,13 +936,13 @@ If you wish to continue Click here </string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Get Started" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RAc-IB-jIb" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="117" width="350" height="19.333333333333343"/>
+                                <rect key="frame" x="20" y="114" width="350" height="19.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Svc-Xp-4IH">
-                                <rect key="frame" x="20" y="196.33333333333334" width="350" height="85.000000000000028"/>
+                                <rect key="frame" x="20" y="193.33333333333334" width="350" height="85.000000000000028"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CgQ-F1-nqZ">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="85"/>
@@ -1132,14 +1132,14 @@ If you wish to continue Click here </string>
                                 </subviews>
                             </stackView>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Udw-1f-HrB" customClass="CustomSwitch" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="321" y="301.33333333333331" width="51" height="31"/>
+                                <rect key="frame" x="321" y="298.33333333333331" width="51" height="31"/>
                                 <color key="onTintColor" name="Allied Blue"/>
                                 <connections>
                                     <action selector="toggleSwich:" destination="Y6W-OH-hqX" eventType="valueChanged" id="ZL4-i1-4ZF"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Have you ported your mobile network?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wf-d4-lwL" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="308.33333333333331" width="281" height="17"/>
+                                <rect key="frame" x="20" y="305.33333333333331" width="281" height="17"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1192,7 +1192,7 @@ If you wish to continue Click here </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGG-Nd-hUT">
-                                <rect key="frame" x="0.0" y="47" width="414" height="919"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="922"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N73-Pk-1Az">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="910.66666666666663"/>
@@ -1483,7 +1483,7 @@ If you wish to continue Click here </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59T-d7-dhr">
-                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Pe-76-mpn">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="766"/>
@@ -1524,7 +1524,7 @@ If you wish to continue Click here </string>
                                                                 <rect key="frame" x="350" y="0.0" width="20" height="20"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tJ2-JT-Q8P" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="-1" y="2.6666666666666714" width="22" height="15"/>
+                                                                        <rect key="frame" x="-1" y="2.6666666666666643" width="22" height="15"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" secondItem="tJ2-JT-Q8P" secondAttribute="height" multiplier="52:35" id="g5S-um-UDK"/>
                                                                             <constraint firstAttribute="height" constant="15" id="gyc-29-5Kg"/>
@@ -1823,7 +1823,7 @@ Do you wish to change mobile number?</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4PK-6q-skv">
-                                <rect key="frame" x="0.0" y="47" width="390" height="1019"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="1022"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qvG-Ks-P79">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="939.66666666666663"/>
@@ -1981,7 +1981,7 @@ If you wish to continue Click here </string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="HFP-uA-hEM">
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="HFP-uA-hEM" customClass="ChatView" customModule="ABL" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="869.66666666666663" width="350" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="9dg-lj-YUN"/>
@@ -1995,7 +1995,7 @@ If you wish to continue Click here </string>
                                                 </constraints>
                                                 <prototypes>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResumeApplicationDetailCell" rowHeight="230" id="KQ2-xJ-RSI" customClass="ResumeApplicationDetailCell" customModule="ABL" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="50" width="350" height="230"/>
+                                                        <rect key="frame" x="0.0" y="44.666666030883789" width="350" height="230"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="KQ2-xJ-RSI" id="kVn-08-Omt">
                                                             <rect key="frame" x="0.0" y="0.0" width="350" height="230"/>
@@ -2119,7 +2119,7 @@ If you wish to continue Click here </string>
                                                         </connections>
                                                     </tableViewCell>
                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResumeApplicationCreateNewAccountCell" rowHeight="66" id="eIP-3M-Zgf" customClass="ResumeApplicationCreateNewAccountCell" customModule="ABL" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="280" width="350" height="66"/>
+                                                        <rect key="frame" x="0.0" y="274.66666603088379" width="350" height="66"/>
                                                         <autoresizingMask key="autoresizingMask"/>
                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eIP-3M-Zgf" id="Wjx-uO-hKB">
                                                             <rect key="frame" x="0.0" y="0.0" width="350" height="66"/>
@@ -2234,7 +2234,7 @@ If you wish to continue Click here </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cZe-b3-cat">
-                                <rect key="frame" x="0.0" y="47" width="390" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, January 3, 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcv-WY-bxg">
                                         <rect key="frame" x="20" y="14.666666666666666" width="210" height="20.666666666666671"/>
@@ -2261,7 +2261,7 @@ If you wish to continue Click here </string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hv-pF-3aH">
-                                <rect key="frame" x="0.0" y="97" width="390" height="65"/>
+                                <rect key="frame" x="0.0" y="94" width="390" height="65"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="LqD-7K-U2h">
                                         <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
@@ -2290,20 +2290,20 @@ If you wish to continue Click here </string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resume Application" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bgw-9p-Czx" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="182" width="174.33333333333334" height="24"/>
+                                <rect key="frame" x="20" y="179" width="174.33333333333334" height="24"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pSg-fX-0KJ">
-                                <rect key="frame" x="20" y="226" width="350" height="2"/>
+                                <rect key="frame" x="20" y="223" width="350" height="2"/>
                                 <color key="backgroundColor" name="App Orange"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="saV-lh-jZz"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select And Continue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN2-3b-nM7" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="248" width="350" height="15.666666666666686"/>
+                                <rect key="frame" x="20" y="245" width="350" height="15.666666666666686"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -2383,7 +2383,7 @@ If you wish to continue Click here </string>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="oRq-ig-bd8">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="oRq-ig-bd8" customClass="ChatView" customModule="ABL" customModuleProvider="target">
                                 <rect key="frame" x="20" y="740" width="350" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="NKH-P4-GaH"/>
@@ -2433,7 +2433,7 @@ If you wish to continue Click here </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w6S-oJ-xeE">
-                                <rect key="frame" x="0.0" y="47" width="390" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="O8o-gM-2lR">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
@@ -2457,23 +2457,23 @@ If you wish to continue Click here </string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Resume Application" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CY3-HG-E5y" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="117" width="350" height="19.333333333333343"/>
+                                <rect key="frame" x="20" y="114" width="350" height="19.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select And Continue" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mzz-Io-q4b" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="176.33333333333334" width="350" height="15.666666666666657"/>
+                                <rect key="frame" x="20" y="173.33333333333334" width="350" height="15.666666666666657"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hsD-F1-a9v">
-                                <rect key="frame" x="20" y="212" width="350" height="442"/>
+                                <rect key="frame" x="20" y="209" width="350" height="445"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResumeApplicationDetailCell" rowHeight="230" id="UAY-KP-Uh7" customClass="ResumeApplicationDetailCell" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="350" height="230"/>
+                                        <rect key="frame" x="0.0" y="44.666666030883789" width="350" height="230"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UAY-KP-Uh7" id="yVC-IF-mbc">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="230"/>
@@ -2596,7 +2596,7 @@ If you wish to continue Click here </string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ResumeApplicationCreateNewAccountCell" rowHeight="66" id="Xx2-dg-FD0" customClass="ResumeApplicationCreateNewAccountCell" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="280" width="350" height="66"/>
+                                        <rect key="frame" x="0.0" y="274.66666603088379" width="350" height="66"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Xx2-dg-FD0" id="hUP-fv-b5d">
                                             <rect key="frame" x="0.0" y="0.0" width="350" height="66"/>
@@ -2730,7 +2730,7 @@ If you wish to continue Click here </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tED-K9-OP2" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="268.66666666666669" width="350" height="320.00000000000006"/>
+                                <rect key="frame" x="20" y="267" width="350" height="320"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="warning-icon" translatesAutoresizingMaskIntoConstraints="NO" id="lRd-jT-FL5">
                                         <rect key="frame" x="140" y="20" width="70" height="70"/>
@@ -2747,7 +2747,7 @@ If you wish to continue Click here </string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="V6n-uI-09b" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="249.99999999999994" width="310" height="50"/>
+                                        <rect key="frame" x="20" y="250" width="310" height="50"/>
                                         <color key="backgroundColor" name="Allied Blue"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="cuO-ou-puh"/>
@@ -2808,7 +2808,7 @@ If you wish to continue Click here </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J8W-b1-oKn">
-                                <rect key="frame" x="0.0" y="47" width="390" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, January 3, 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tc9-46-RSR" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                         <rect key="frame" x="20" y="16.666666666666664" width="210" height="16.666666666666664"/>
@@ -2835,7 +2835,7 @@ If you wish to continue Click here </string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKx-7I-lmQ">
-                                <rect key="frame" x="0.0" y="97" width="390" height="65"/>
+                                <rect key="frame" x="0.0" y="94" width="390" height="65"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="fF7-Y1-PYt">
                                         <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
@@ -2864,19 +2864,19 @@ If you wish to continue Click here </string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CNIC Verification" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pLj-PR-K4P">
-                                <rect key="frame" x="20" y="182" width="165.66666666666666" height="23.666666666666657"/>
+                                <rect key="frame" x="20" y="179" width="165.66666666666666" height="23.666666666666657"/>
                                 <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kwC-2J-nVy">
-                                <rect key="frame" x="20" y="225.66666666666666" width="350" height="2"/>
+                                <rect key="frame" x="20" y="222.66666666666666" width="350" height="2"/>
                                 <color key="backgroundColor" name="App Orange"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="nWA-IO-5bz"/>
                                 </constraints>
                             </view>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="lUR-mI-Lhy">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="lUR-mI-Lhy" customClass="ChatView" customModule="ABL" customModuleProvider="target">
                                 <rect key="frame" x="20" y="740" width="350" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="VON-hi-86i"/>
@@ -2964,7 +2964,7 @@ If you wish to continue Click here </string>
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="2hl-lg-dqT">
-                                <rect key="frame" x="20" y="247.66666666666663" width="350" height="190"/>
+                                <rect key="frame" x="20" y="244.66666666666663" width="350" height="190"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EqC-JO-GCg">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="85"/>
@@ -3141,7 +3141,7 @@ If you wish to continue Click here </string>
             <objects>
                 <navigationController storyboardIdentifier="WelcomeNavigationViewController" id="2q4-fv-EHO" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="LSv-G5-HMA">
-                        <rect key="frame" x="0.0" y="47" width="390" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="390" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -3161,7 +3161,7 @@ If you wish to continue Click here </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DDD-bh-GZb">
-                                <rect key="frame" x="0.0" y="91" width="390" height="719"/>
+                                <rect key="frame" x="0.0" y="88" width="390" height="722"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o03-Ny-EUu">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="1931.3333333333333"/>
@@ -3893,7 +3893,7 @@ Please ensure you use camera enabled device during whole onboarding process. You
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P4f-yD-mgf">
-                                <rect key="frame" x="0.0" y="47" width="390" height="763"/>
+                                <rect key="frame" x="0.0" y="44" width="390" height="766"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIK-WJ-3jw">
                                         <rect key="frame" x="0.0" y="0.0" width="390" height="703.66666666666663"/>
@@ -4488,6 +4488,9 @@ If you wish to continue.</string>
         <designable name="Lr1-fe-nx0">
             <size key="intrinsicContentSize" width="58.333333333333336" height="33.333333333333336"/>
         </designable>
+        <designable name="Lx7-Jg-I65">
+            <size key="intrinsicContentSize" width="288" height="68"/>
+        </designable>
         <designable name="Mzz-Io-q4b">
             <size key="intrinsicContentSize" width="118.66666666666667" height="15.666666666666666"/>
         </designable>
@@ -4668,6 +4671,9 @@ If you wish to continue.</string>
         <designable name="kwy-T7-bzI">
             <size key="intrinsicContentSize" width="139.33333333333334" height="18"/>
         </designable>
+        <designable name="lUR-mI-Lhy">
+            <size key="intrinsicContentSize" width="288" height="68"/>
+        </designable>
         <designable name="lc9-xL-5hQ">
             <size key="intrinsicContentSize" width="289.33333333333331" height="16.666666666666668"/>
         </designable>
@@ -4761,7 +4767,7 @@ If you wish to continue.</string>
         <image name="allied-logo-new" width="129" height="22.666666030883789"/>
         <image name="camera-icon" width="66.666664123535156" height="60"/>
         <image name="chatIcon" width="16.333333969116211" height="16.333333969116211"/>
-        <image name="circle.fill" catalog="system" width="128" height="123"/>
+        <image name="circle.fill" catalog="system" width="128" height="121"/>
         <image name="cnic-instruction-good" width="124" height="126"/>
         <image name="cnic-instruction-not-blur" width="124.33333587646484" height="126"/>
         <image name="cnic-instruction-not-cropped" width="130.33332824707031" height="126"/>
