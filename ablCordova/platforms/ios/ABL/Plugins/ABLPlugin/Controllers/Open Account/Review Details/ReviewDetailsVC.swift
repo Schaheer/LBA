@@ -162,17 +162,34 @@ final class ReviewDetailsVC: UIViewController {
 }
 
 extension ReviewDetailsVC: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return consumers.count
+        if section == 0 {
+            return consumers.count
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewDetailsCell", for: indexPath) as? ReviewDetailsCell
-        cell?.cellDelegate = self
-        cell?.setupCell(with: consumers[indexPath.row])
-        
-        return cell ?? UITableViewCell()
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewDetailsCell", for: indexPath) as? ReviewDetailsCell
+            cell?.cellDelegate = self
+            cell?.setupCell(with: consumers[indexPath.row])
+            
+            return cell ?? UITableViewCell()
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell")!
+            
+            return cell
+        }
+            
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UITableView.automaticDimension
     }

@@ -190,7 +190,7 @@ final class PersonalInformationThirdVC: UIViewController {
                 print(AccountVariant.currentAccount.id)
                 print(AccountVariant.currentAccount)
                 
-                var results = []
+                var results: [Double] = []
                 for i in (108243 ..< 108255) {
                     results.append(Double(i))
                 }

@@ -121,16 +121,30 @@ class FATCADetailsViewController: UIViewController {
 
 extension FATCADetailsViewController: UITableViewDelegate, UITableViewDataSource{
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        fatcaDetailsViewModel.getFATCAQuestions().count
+        if section == 0 {
+            return fatcaDetailsViewModel.getFATCAQuestions().count
+        } else {
+            return 1
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: FATCATableViewCell.identifier) as! FATCATableViewCell
-        cell.loadCell(with: fatcaDetailsViewModel.getFATCAQuestions()[indexPath.row])
-        cell.answerSwitch.tag = indexPath.row
-        cell.answerSwitch.addTarget(self, action: #selector(answerSwitchTapped), for: .valueChanged)
-        return cell
+        if indexPath.section == 0 {
+            let cell = tableView.dequeueReusableCell(withIdentifier: FATCATableViewCell.identifier) as! FATCATableViewCell
+            cell.loadCell(with: fatcaDetailsViewModel.getFATCAQuestions()[indexPath.row])
+            cell.answerSwitch.tag = indexPath.row
+            cell.answerSwitch.addTarget(self, action: #selector(answerSwitchTapped), for: .valueChanged)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell")!
+            
+            return cell
+        }
     }
     
     @objc func answerSwitchTapped(_ sender: BetterSegmentedControl){

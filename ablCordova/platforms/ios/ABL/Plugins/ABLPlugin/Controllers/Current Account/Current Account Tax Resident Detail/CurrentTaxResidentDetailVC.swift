@@ -220,3 +220,49 @@ final class CurrentTaxResidentDetailVC: UIViewController {
         }
     }
 }
+
+class ChatView: UIImageView {
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+
+        commonInit()
+    }
+
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        
+        commonInit()
+    }
+
+    func commonInit() {
+        isUserInteractionEnabled = true
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(self.handleTap(_:)))
+        self.addGestureRecognizer(tap)
+    }
+
+    @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
+        let alert = UIAlertController(title: "Alert", message: "Pending from client", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            
+            topController.present(alert, animated: true, completion: nil)
+        }
+        
+//        guard let url = URL(string: "http://www.google.com") else {
+//          return //be safe
+//        }
+//
+//        if #available(iOS 10.0, *) {
+//            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+//        } else {
+//            UIApplication.shared.openURL(url)
+//        }
+    }
+
+}
