@@ -7,6 +7,7 @@
 
 import UIKit
 import BetterSegmentedControl
+import DropDown
 
 final class ServiceChannelsVC: UIViewController {
     
@@ -25,6 +26,8 @@ final class ServiceChannelsVC: UIViewController {
         buttonEmailSMS(button: buttonEmail)
     }
     
+    private let reasonListDropDown = DropDown()
+
     var selectedATMTypeId = Double()
     
     func buttonEmailSMSDefault() {
@@ -75,7 +78,8 @@ final class ServiceChannelsVC: UIViewController {
     private var serviceChannelsVM = ServiceChannelsViewModel()
     weak var delegate: PersonalInfoChildToParentProtocol? = nil
     private var atmTypes = [CodeTypeDataModel]()
-    
+    private var reasonTypes = [CodeTypeDataModel]()
+
     override func viewWillAppear(_ animated: Bool) {
     }
     
@@ -86,9 +90,15 @@ final class ServiceChannelsVC: UIViewController {
         serviceChannelsVM.getATMTypes(
             codeTypeID: BaseConstants.Config.allATMTypesLookupId
         )
+        serviceChannelsVM.getReasons(
+            codeTypeID: BaseConstants.Config.reasonForRequiringVisaCard
+        )
+        setupDropdown()
         setupCollectionViews()
         subscribeViewModel()
         viewReason.isHidden = true
+        
+        setupGestureRecognizers()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -167,6 +177,7 @@ final class ServiceChannelsVC: UIViewController {
         nextBtnTapped.tag = 0
     }
     
+    
     private func setupCollectionViews(){
         
         atmTypeCollectionView.register(UINib(nibName: ATMTypeCollectionViewCell.identifier, bundle: nil), forCellWithReuseIdentifier: ATMTypeCollectionViewCell.identifier)
@@ -175,6 +186,32 @@ final class ServiceChannelsVC: UIViewController {
         atmTypeCollectionView.dataSource = self
         
     }
+    private func setupDropdown() {
+        reasonListDropDown.anchorView = viewReason
+        reasonListDropDown.frame.origin.y = viewReason.frame.maxY
+        reasonListDropDown.direction = .any
+        reasonListDropDown.width = viewReason.bounds.width
+        reasonListDropDown.frame.size.height = 250
+        reasonListDropDown.bottomOffset = CGPoint(
+            x: 0,
+            y: reasonListDropDown.anchorView?.plainView.bounds.height ?? 0
+        )
+        
+        reasonListDropDown.selectionAction = { [unowned self] index, item in
+            let reason = serviceChannelsVM.getReason(at: index)
+            self.labelReason.text = reason?.description
+            self.serviceChannelsVM.setReason(id: reason?.id ?? 0)
+        }
+    }
+    private func setupGestureRecognizers() {
+        viewReason.addGestureRecognizer(
+            UITapGestureRecognizer(
+                target: serviceChannelsVM,
+                action: #selector(serviceChannelsVM.openReasonDropdown)
+            )
+        )
+    }
+    
     
     @IBAction func backBtnTapped(_ sender: UIButton){
         if let count = self.parent?.children.count{
@@ -201,7 +238,7 @@ final class ServiceChannelsVC: UIViewController {
             transAlertInd: transactionalAlertsSwitch.index == 0 ? true.intValue : false.intValue,
             chequeBookReqInd: chequeBookSwitch.index == 0 ? true.intValue : false.intValue,
             transactionalAlertId: getTransactionalAlertId(),
-            rdaCustomerProfileId: DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last?.rdaCustomerProfileID
+            rdaCustomerProfileId: DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last?.rdaCustomerProfileID, reasonForVisaDebitCardRequestId: serviceChannelsVM.getReasonSelected()
         )
     }
     
@@ -238,6 +275,20 @@ final class ServiceChannelsVC: UIViewController {
             self.atmTypeCollectionView.reloadData()
         }
         
+        serviceChannelsVM.reasonTypes.bind { [weak self] reasonTypes in
+            print(reasonTypes)
+            guard let self = self, let reasonTypes = reasonTypes?.data else { return }
+            self.reasonTypes = reasonTypes
+            self.reasonListDropDown.dataSource = reasonTypes.map { $0.description ?? "N/A" }
+        }
+        
+        serviceChannelsVM.reasonDropDownTapped.bind { [weak self] isTapped in
+            print(isTapped)
+            guard let self = self, isTapped else {
+                return
+            }
+            self.reasonListDropDown.show()
+        }
         serviceChannelsVM.errorMessage.bind {   error in
             guard let error = error else { return }
             AlertManager.shared.showOKAlert(with: "Error", message: error)

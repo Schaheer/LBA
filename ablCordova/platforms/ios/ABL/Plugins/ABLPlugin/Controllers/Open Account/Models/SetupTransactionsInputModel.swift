@@ -72,6 +72,7 @@ final class SetupTransactionDataInputModel: BaseInputModel {
         case chequeBookReqInd = "chequeBookReqInd"
         case transactionalAlertId = "transactionalAlertId"
         case rdaCustomerProfileId = "rdaCustomerProfileId"
+        case reasonForVisaDebitCardRequestId = "reasonForVisaDebitCardRequestId"
 
     }
     
@@ -85,7 +86,7 @@ final class SetupTransactionDataInputModel: BaseInputModel {
     var chequeBookReqInd: Int?
     var transactionalAlertId: Double?
     var rdaCustomerProfileId: Double?
-
+    var reasonForVisaDebitCardRequestId: Double?
     
     // MARK: - Model Initializers
     
@@ -101,7 +102,8 @@ final class SetupTransactionDataInputModel: BaseInputModel {
         transAlertInd: Int,
         chequeBookReqInd: Int,
         transactionalAlertId: Double,
-        rdaCustomerProfileId: Double
+        rdaCustomerProfileId: Double,
+        reasonForVisaDebitCardRequestId: Double
 
     ) {
         var dictionary = [String: Any]()
@@ -113,7 +115,8 @@ final class SetupTransactionDataInputModel: BaseInputModel {
         dictionary[CodingKeys.chequeBookReqInd.rawValue] = chequeBookReqInd
         dictionary[CodingKeys.transactionalAlertId.rawValue] = transactionalAlertId
         dictionary[CodingKeys.rdaCustomerProfileId.rawValue] = rdaCustomerProfileId
-
+        dictionary[CodingKeys.reasonForVisaDebitCardRequestId.rawValue] = reasonForVisaDebitCardRequestId
+        
         
         self.rdaCustomerAccInfoId = rdaCustomerAccInfoId
         self.rdaCustomerId = rdaCustomerId
@@ -123,7 +126,7 @@ final class SetupTransactionDataInputModel: BaseInputModel {
         self.chequeBookReqInd = chequeBookReqInd
         self.transactionalAlertId = transactionalAlertId
         self.rdaCustomerProfileId = rdaCustomerProfileId
-
+        self.reasonForVisaDebitCardRequestId = reasonForVisaDebitCardRequestId
         
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
@@ -146,6 +149,6 @@ final class SetupTransactionDataInputModel: BaseInputModel {
         chequeBookReqInd <- map[CodingKeys.chequeBookReqInd.rawValue]
         transactionalAlertId <- map[CodingKeys.transactionalAlertId.rawValue]
         rdaCustomerProfileId <- map[CodingKeys.rdaCustomerProfileId.rawValue]
-
+        reasonForVisaDebitCardRequestId <- map[CodingKeys.reasonForVisaDebitCardRequestId.rawValue]
     }
 }

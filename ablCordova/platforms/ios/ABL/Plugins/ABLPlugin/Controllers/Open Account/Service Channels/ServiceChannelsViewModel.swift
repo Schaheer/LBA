@@ -10,8 +10,13 @@ import Foundation
 protocol ServiceChannelsViewModelProtocol{
     
     var registerConsumerTransactionDetailsResponse: Observable<ConsumerTransactionDetailsResponseModel?> { get }
+    
+    var reasonDropDownTapped: Observable<Bool> { get }
+
     var errorMessage: Observable<String?> { get }
     var atmTypes: Observable<CodeTypeResponseModel?> { get }
+    var reasonTypes: Observable<CodeTypeResponseModel?> { get }
+
     var selectedAtmTypeID: Observable<Double?> { get }
     
     func getATMTypes(codeTypeID: Int)
@@ -21,12 +26,15 @@ protocol ServiceChannelsViewModelProtocol{
 
 
 class ServiceChannelsViewModel{
-    
+    private(set) var reasonDropDownTapped: Observable<Bool> = Observable(false)
     private(set) var registerConsumerTransactionDetailsResponse: Observable<ConsumerTransactionDetailsResponseModel?> = Observable(nil)
     private(set) var errorMessage: Observable<String?> = Observable(nil)
     private(set) var atmTypes: Observable<CodeTypeResponseModel?> = Observable(nil)
+    private(set) var reasonTypes: Observable<CodeTypeResponseModel?> = Observable(nil)
+
     private(set) var selectedAtmTypeID: Observable<Double?> = Observable(nil)
-    
+    private var reasonID: Double = 0
+
     func registerConsumerEmploymentDetails(
         customerAccInfoID: Double?,
         rdaCustomerId: Double?,
@@ -35,7 +43,8 @@ class ServiceChannelsViewModel{
         transAlertInd: Int?,
         chequeBookReqInd: Int?,
         transactionalAlertId: Double?,
-        rdaCustomerProfileId: Double?
+        rdaCustomerProfileId: Double?,
+        reasonForVisaDebitCardRequestId: Double?
         
     ) {
         guard
@@ -46,7 +55,8 @@ class ServiceChannelsViewModel{
             let transAlertInd = transAlertInd,
             let chequeBookReqInd = chequeBookReqInd,
             let transactionalAlertId = transactionalAlertId,
-            let rdaCustomerProfileId = rdaCustomerProfileId
+            let rdaCustomerProfileId = rdaCustomerProfileId,
+            let reasonForVisaDebitCardRequestId = reasonForVisaDebitCardRequestId
         else {
             
             self.errorMessage.value = "All fields are required"
@@ -54,7 +64,18 @@ class ServiceChannelsViewModel{
             
         }
         
-        guard let transactionDetailsData = SetupTransactionDataInputModel(rdaCustomerAccInfoId: customerAccInfoID, rdaCustomerId: rdaCustomerId, customerTypeId: customerTypeId, atmTypeId: atmTypeId, transAlertInd: transAlertInd, chequeBookReqInd: chequeBookReqInd, transactionalAlertId: transactionalAlertId,rdaCustomerProfileId:rdaCustomerProfileId ) else { return }
+        guard let transactionDetailsData = SetupTransactionDataInputModel (
+            rdaCustomerAccInfoId: customerAccInfoID,
+            rdaCustomerId: rdaCustomerId,
+            customerTypeId: customerTypeId,
+            atmTypeId: atmTypeId,
+            transAlertInd: transAlertInd,
+            chequeBookReqInd: chequeBookReqInd,
+            transactionalAlertId: transactionalAlertId,
+            rdaCustomerProfileId:rdaCustomerProfileId,
+            reasonForVisaDebitCardRequestId: reasonForVisaDebitCardRequestId )
+        else { return }
+        
         guard let transactionDetailsInput = SetupTransactionsInputModel(consumerList: [transactionDetailsData]) else { return }
         
         APIManager.shared.setupConsumerTransactionDetails(input: transactionDetailsInput) { [weak self] response in
@@ -86,12 +107,40 @@ class ServiceChannelsViewModel{
         }
     }
     
+    func getReasons(codeTypeID: Int) {
+        guard let input = CodeTypeInputModel(codeTypeID: codeTypeID) else { return }
+        APIManager.shared.lookupInformation(input: input) { [weak self] response in
+            guard let self = self else { return }
+            switch response.result {
+            case .success(let value):
+                self.reasonTypes.value = value
+            case .failure(let error):
+                self.errorMessage.value = error.errorDescription
+            }
+        }
+    }
+    
+    func getReason(at index: Int) -> CodeTypeDataModel? {
+        return reasonTypes.value?.data?[index]
+    }
+    
+    func setReason(id: Double) {// selected reason is stored in
+        reasonID = id
+    }
+    func getReasonSelected() -> Double {// selected reason is stored in
+        return reasonID
+    }
+    
+    @objc
+    func openReasonDropdown() {
+        reasonDropDownTapped.value = true
+    }
+    
     func setSelectedATMTypeID(accountVariantID: Double) {
         self.selectedAtmTypeID.value = accountVariantID
     }
     
     func getSelectedATMTypeID() -> Double?{
-        
         return selectedAtmTypeID.value
     }
     
