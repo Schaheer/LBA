@@ -22,6 +22,10 @@ final class PictureAndSignatureVC: UIViewController {
     @IBOutlet weak var viewSelectNatureOfAccount: CustomUIView!
     @IBOutlet weak var segmentJointAccount: BetterSegmentedControl!
     
+    @IBAction func buttonEye(_ sender: Any) {
+        let message  = "In case of joint account, entier details of joint applicant along with documentation is required."
+        openPortedPopupVC(viewController: self, message: message)
+    }
     @IBAction func segmentJointAccount(_ sender: BetterSegmentedControl) {
         DataCacheManager.shared.saveNoOfJointApplicants(input: 0)
         if sender.index == 1 {
@@ -834,6 +838,20 @@ extension PictureAndSignatureVC: UIDocumentMenuDelegate, UIDocumentPickerDelegat
     
     func documentPickerWasCancelled(_ controller: UIDocumentPickerViewController) {
         print("view was cancelled")
+    }
+    
+    func openPortedPopupVC(viewController: UIViewController, message: String) {
+        guard let portedPopupVC = UIStoryboard.initialize(
+            viewController: .portedPopupVC,
+            fromStoryboard: .cnicUpload
+        ) as? PortedPopupVC else { return }
+        
+        portedPopupVC.message = message
+        portedPopupVC.buttonTitle = "OK"
+        portedPopupVC.portedMobileNetwork = {
+            
+        }
+        viewController.present(portedPopupVC, animated: true)
     }
 }
 

@@ -48,14 +48,22 @@ class PersonalInformationViewModel: PersonalInformationViewModelProtocol {
             var consumerListInputModelArray = [BasicInfoConsumerListInputModel]()
             viewAppGenerateResponseModel.forEach {
                 guard let rdaCustomerAccInfoId = $0.accountInformation?.rdaCustomerAccInfoID, let rdaCustomerProfileId = $0.rdaCustomerProfileID,let fullName = $0.fullName, let fatherHusbandName = $0.fatherHusbandName, let motherMaidenName = $0.motherMaidenName, let isPrimary = $0.isPrimary else { return }
-                guard let consumerListInputModel = BasicInfoConsumerListInputModel(rdaCustomerAccInfoId: rdaCustomerAccInfoId, rdaCustomerProfileId: rdaCustomerProfileId, fullName: fullName, fatherHusbandName: fatherHusbandName, motherMaidenName: motherMaidenName, isPrimary: isPrimary, genderId: modelRegistrationSteper.genderId) else { return }
+                guard let consumerListInputModel = BasicInfoConsumerListInputModel(rdaCustomerAccInfoId: rdaCustomerAccInfoId, rdaCustomerProfileId: rdaCustomerProfileId, fullName: fullName, fatherHusbandName: fatherHusbandName, motherMaidenName: motherMaidenName, isPrimary: isPrimary
+                                                                                   //                                                                                   , genderId: modelRegistrationSteper.genderId
+                ) else { return }
                 
                 consumerListInputModelArray.append(consumerListInputModel)
             }
             
 //            guard let registerVerifyOTPInput = RegisterVerifyOTPInputModel(consumerList: consumerListInputModelArray, noOfJointApplicants: 0) else { return }
-            
-            guard let basicInfoConsumerListInput = BasicInfoConsumerListInputModel(rdaCustomerAccInfoId: customerAccInfoID, rdaCustomerProfileId: customerProfiledID, fullName: fullName, fatherHusbandName: fatherHusbandName, motherMaidenName: motherMaidenName, isPrimary: isPrimary, genderId: modelRegistrationSteper.genderId
+            guard let basicInfoConsumerListInput = BasicInfoConsumerListInputModel(
+                rdaCustomerAccInfoId: customerAccInfoID,
+                rdaCustomerProfileId: customerProfiledID,
+                fullName: fullName,
+                fatherHusbandName: fatherHusbandName,
+                motherMaidenName: motherMaidenName,
+                isPrimary: isPrimary
+//                genderId: modelRegistrationSteper.genderId
 ) else { return }
             consumerListInputModelArray.append(basicInfoConsumerListInput)
             //TODO: add data of all the applicants for joint account

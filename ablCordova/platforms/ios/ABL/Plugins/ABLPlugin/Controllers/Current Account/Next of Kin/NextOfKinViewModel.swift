@@ -67,8 +67,8 @@ final class NextOfKinViewModel: NextOfKinViewModelProtocol {
                     kinName: kinName,
                     kinCNIC: kinCNIC,
                     kinMobileNumber: kinMobileNumber,
-                    isPrimary: isPrimary,
-                    genderId: modelRegistrationSteper.genderId
+                    isPrimary: isPrimary
+//                    ,genderId: modelRegistrationSteper.genderId
                 ) else { return }
                 
                 consumersList.append(consumerListInputModel)
@@ -80,8 +80,8 @@ final class NextOfKinViewModel: NextOfKinViewModelProtocol {
                 kinName: kinName,
                 kinCNIC: kinCNIC,
                 kinMobileNumber: kinMobileNumber,
-                isPrimary: isPrimary,
-                genderId: modelRegistrationSteper.genderId
+                isPrimary: isPrimary
+//                ,genderId: modelRegistrationSteper.genderId
 
             ) else { return }
             

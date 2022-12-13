@@ -56,8 +56,8 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         fullName: String,
         fatherHusbandName: String,
         motherMaidenName: String,
-        isPrimary: Bool,
-        genderId: Int
+        isPrimary: Bool
+//        genderId: Int
     ) {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.rdaCustomerAccInfoId.rawValue] = rdaCustomerAccInfoId
@@ -66,7 +66,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         dictionary[CodingKeys.fatherHusbandName.rawValue] = fatherHusbandName
         dictionary[CodingKeys.motherMaidenName.rawValue] = motherMaidenName
         dictionary[CodingKeys.isPrimary.rawValue] = isPrimary
-        dictionary[CodingKeys.genderId.rawValue] = genderId
+//        dictionary[CodingKeys.genderId.rawValue] = genderId
 
         
         self.rdaCustomerAccInfoId = rdaCustomerAccInfoId
@@ -75,7 +75,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         self.fatherHusbandName = fatherHusbandName
         self.motherMaidenName = motherMaidenName
         self.isPrimary = isPrimary
-        self.genderId = genderId
+//        self.genderId = genderId
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
     
@@ -85,8 +85,8 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         kinName: String,
         kinCNIC: String,
         kinMobileNumber: String,
-        isPrimary: Bool,
-        genderId: Int
+        isPrimary: Bool
+//        genderId: Int
     ) {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.rdaCustomerAccInfoId.rawValue] = rdaCustomerAccInfoId
@@ -95,7 +95,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         dictionary[CodingKeys.kinCNIC.rawValue] = kinCNIC
         dictionary[CodingKeys.kinMobileNumber.rawValue] = kinMobileNumber
         dictionary[CodingKeys.isPrimary.rawValue] = isPrimary
-        dictionary[CodingKeys.genderId.rawValue] = genderId
+//        dictionary[CodingKeys.genderId.rawValue] = genderId
 
         self.rdaCustomerAccInfoId = rdaCustomerAccInfoId
         self.rdaCustomerProfileId = rdaCustomerProfileId
@@ -103,7 +103,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         self.kinCNIC = kinCNIC
         self.kinMobileNumber = kinMobileNumber
         self.isPrimary = isPrimary
-        self.genderId = genderId
+//        self.genderId = genderId
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
     
@@ -112,8 +112,8 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         rdaCustomerProfileId: Double,
         customerTypeID: Double,
         taxResidentInd: Int,
-        isPrimary: Bool,
-        genderId: Int
+        isPrimary: Bool
+//        genderId: Int
     ) {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.rdaCustomerAccInfoId.rawValue] = rdaCustomerAccInfoId
@@ -121,14 +121,14 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         dictionary[CodingKeys.customerTypeID.rawValue] = customerTypeID
         dictionary[CodingKeys.taxResidentInd.rawValue] = taxResidentInd
         dictionary[CodingKeys.isPrimary.rawValue] = isPrimary
-        dictionary[CodingKeys.genderId.rawValue] = genderId
+//        dictionary[CodingKeys.genderId.rawValue] = genderId
 
         self.rdaCustomerAccInfoId = rdaCustomerAccInfoId
         self.rdaCustomerProfileId = rdaCustomerProfileId
         self.customerTypeID = customerTypeID
         self.taxResidentInd = taxResidentInd
         self.isPrimary = isPrimary
-        self.genderId = genderId
+//        self.genderId = genderId
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
     

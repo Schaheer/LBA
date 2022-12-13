@@ -123,8 +123,8 @@ final class CurrentTaxResidentDetailViewModel: CurrentTaxResidentDetailViewModel
                 rdaCustomerProfileId: rdaCustomerProfileID,
                 customerTypeID: customerTypeID,
                 taxResidentInd: taxResidentInd,
-                isPrimary: isPrimary,
-                genderId: modelRegistrationSteper.genderId
+                isPrimary: isPrimary
+//                ,genderId: modelRegistrationSteper.genderId
             ) else { return }
             
             consumersList.append(consumerListInputModel)
@@ -135,8 +135,8 @@ final class CurrentTaxResidentDetailViewModel: CurrentTaxResidentDetailViewModel
             rdaCustomerProfileId: customerProfileID,
             customerTypeID: customerTypeID,
             taxResidentInd: taxResidentInd,
-            isPrimary: isPrimary,
-            genderId: modelRegistrationSteper.genderId
+            isPrimary: isPrimary
+//            ,genderId: modelRegistrationSteper.genderId
         ) else { return }
         
         consumersList.append(consumerListInputModel)
@@ -205,8 +205,8 @@ final class CurrentTaxResidentDetailViewModel: CurrentTaxResidentDetailViewModel
                         rdaCustomerProfileId: rdaCustomerProfileID,
                         customerTypeID: customerTypeID,
                         taxResidentInd: taxResidentInd,
-                        isPrimary: isPrimary,
-                        genderId: modelRegistrationSteper.genderId
+                        isPrimary: isPrimary
+//                        ,genderId: modelRegistrationSteper.genderId
                     ) else { return }
                     
                     consumersList.append(consumerListInputModel)
@@ -217,8 +217,8 @@ final class CurrentTaxResidentDetailViewModel: CurrentTaxResidentDetailViewModel
                     rdaCustomerProfileId: customerProfileID,
                     customerTypeID: customerTypeID,
                     taxResidentInd: taxResidentInd,
-                    isPrimary: isPrimary,
-                    genderId: modelRegistrationSteper.genderId
+                    isPrimary: isPrimary
+//                    ,genderId: modelRegistrationSteper.genderId
                 ) else { return }
                 
                 consumersList.append(consumerListInputModel)
@@ -257,8 +257,8 @@ final class CurrentTaxResidentDetailViewModel: CurrentTaxResidentDetailViewModel
                     rdaCustomerProfileId: rdaCustomerProfileID,
                     customerTypeID: customerTypeID,
                     taxResidentInd: taxResidentInd,
-                    isPrimary: isPrimary,
-                    genderId: modelRegistrationSteper.genderId
+                    isPrimary: isPrimary
+//                    ,genderId: modelRegistrationSteper.genderId
                 ) else { return }
                 
                 consumersList.append(consumerListInputModel)
@@ -269,8 +269,8 @@ final class CurrentTaxResidentDetailViewModel: CurrentTaxResidentDetailViewModel
                 rdaCustomerProfileId: customerProfileID,
                 customerTypeID: customerTypeID,
                 taxResidentInd: taxResidentInd,
-                isPrimary: isPrimary,
-                genderId: modelRegistrationSteper.genderId
+                isPrimary: isPrimary
+//                ,genderId: modelRegistrationSteper.genderId
             ) else { return }
             
             consumersList.append(consumerListInputModel)

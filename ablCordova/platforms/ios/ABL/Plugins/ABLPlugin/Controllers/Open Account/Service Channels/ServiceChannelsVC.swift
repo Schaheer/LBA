@@ -351,20 +351,21 @@ extension ServiceChannelsVC: UICollectionViewDelegate, UICollectionViewDataSourc
         modelRegistrationSteper.serviceChannelsVM = serviceChannelsVM
         collectionView.reloadData()
     }
+    func openPortedPopupVC(viewController: UIViewController, message: String) {
+        guard let portedPopupVC = UIStoryboard.initialize(
+            viewController: .portedPopupVC,
+            fromStoryboard: .cnicUpload
+        ) as? PortedPopupVC else { return }
+        
+        portedPopupVC.message = message
+        portedPopupVC.buttonTitle = "Open"
+        portedPopupVC.portedMobileNetwork = {
+            if let url = URL(string: "https://www.abl.com/services/downloads/schedule-of-charges/") {
+                UIApplication.shared.open(url)
+            }
+        }
+        viewController.present(portedPopupVC, animated: true)
+    }
 }
 
-func openPortedPopupVC(viewController: UIViewController, message: String) {
-    guard let portedPopupVC = UIStoryboard.initialize(
-        viewController: .portedPopupVC,
-        fromStoryboard: .cnicUpload
-    ) as? PortedPopupVC else { return }
-    
-    portedPopupVC.message = message
-    portedPopupVC.buttonTitle = "Open"
-    portedPopupVC.portedMobileNetwork = {
-        if let url = URL(string: "https://www.abl.com/services/downloads/schedule-of-charges/") {
-            UIApplication.shared.open(url)
-        }
-    }
-    viewController.present(portedPopupVC, animated: true)
-}
+
