@@ -2766,12 +2766,28 @@ If you wish to continue Click here </string>
                                             <action selector="doneTapped:" destination="SRY-Fd-wG6" eventType="touchUpInside" id="Sfn-wx-nM7"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XLt-uI-Bt2">
+                                        <rect key="frame" x="285" y="20" width="45" height="45"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="2Ca-xZ-LKj"/>
+                                            <constraint firstAttribute="width" constant="45" id="rXn-eY-KXy"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="X">
+                                            <color key="titleColor" name="Allied Blue"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="cancelButton:" destination="SRY-Fd-wG6" eventType="touchUpInside" id="zOh-8g-ypK"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="XLt-uI-Bt2" secondAttribute="trailing" constant="20" symbolic="YES" id="5Aw-Fx-7jh"/>
                                     <constraint firstAttribute="height" constant="320" id="D4f-7p-Ojo"/>
                                     <constraint firstItem="lRd-jT-FL5" firstAttribute="centerX" secondItem="tED-K9-OP2" secondAttribute="centerX" id="ECf-Xu-D1y"/>
                                     <constraint firstItem="lRd-jT-FL5" firstAttribute="top" secondItem="tED-K9-OP2" secondAttribute="top" constant="20" id="Fxk-mh-gZ1"/>
+                                    <constraint firstItem="XLt-uI-Bt2" firstAttribute="top" secondItem="tED-K9-OP2" secondAttribute="top" constant="20" symbolic="YES" id="Qn2-pK-eRS"/>
                                     <constraint firstAttribute="bottom" secondItem="V6n-uI-09b" secondAttribute="bottom" constant="20" id="W2Q-0w-uX2"/>
                                     <constraint firstAttribute="trailing" secondItem="V6n-uI-09b" secondAttribute="trailing" constant="20" id="Xfl-58-iBU"/>
                                     <constraint firstAttribute="trailing" secondItem="uYu-0n-73w" secondAttribute="trailing" constant="20" id="bWr-1p-P4N"/>
@@ -2794,6 +2810,11 @@ If you wish to continue Click here </string>
                             <constraint firstItem="ePn-J9-s3G" firstAttribute="trailing" secondItem="tED-K9-OP2" secondAttribute="trailing" constant="20" id="y3g-tw-TUU"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="XLt-uI-Bt2" id="ckV-kO-Xp1"/>
+                        <outlet property="doneButton" destination="V6n-uI-09b" id="7w0-Hu-aTW"/>
+                        <outlet property="labelMessage" destination="uYu-0n-73w" id="q53-86-uxv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QKJ-W0-6nq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -4457,9 +4478,6 @@ If you wish to continue.</string>
         </designable>
         <designable name="H3O-DX-Gk1">
             <size key="intrinsicContentSize" width="94" height="18"/>
-        </designable>
-        <designable name="HOJ-2T-ONe">
-            <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
         <designable name="HfV-c1-yX1">
             <size key="intrinsicContentSize" width="107.66666666666667" height="18"/>
