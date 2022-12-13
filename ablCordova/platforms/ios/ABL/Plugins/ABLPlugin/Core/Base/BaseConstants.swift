@@ -108,6 +108,7 @@ struct BaseConstants {
         static let emailTransactionalAlertID: Double = 114402
         static let allAccountsLookupID = 1082
         static let allATMTypesLookupId = 1086
+        static let reasonForRequiringVisaCard = 1126
     }
     
     struct AttachmentTypeIDs{

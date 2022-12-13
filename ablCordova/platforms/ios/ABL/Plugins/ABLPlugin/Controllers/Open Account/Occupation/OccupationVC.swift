@@ -171,7 +171,6 @@ final class OccupationVC: UIViewController {
                 return
             }
             self.professionsListDropDown.show()
-            
         }
         
         employmentDetailsViewModel.registerConsumerEmploymentDetailsResponse.bind {  response  in
