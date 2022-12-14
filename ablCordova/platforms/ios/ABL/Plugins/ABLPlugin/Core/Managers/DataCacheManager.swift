@@ -90,7 +90,6 @@ final class DataCacheManager: NSObject {
     }
     
     func saveAccountTypeInfo(input: Double) {
-
         userDefaults.saveData(input, forKey: .accountTypeInfo)
     }
     
@@ -198,4 +197,17 @@ final class DataCacheManager: NSObject {
 //        
 //        return viewAppGenerateOTPResponses
 //    }
+    
+    private var frontCnicPrivate: CNICAttachmentInputModel!
+    private var backCnicPrivate: CNICAttachmentInputModel!
+
+    //Shakeel
+    func saveCnicFrontBackModel(frontCnic: CNICAttachmentInputModel?, backCnic: CNICAttachmentInputModel?) {
+        frontCnicPrivate = frontCnic
+        backCnicPrivate = backCnic
+    }
+    
+    func getCnicFrontBack() -> (CNICAttachmentInputModel?, CNICAttachmentInputModel?) {
+        return (frontCnicPrivate, backCnicPrivate)
+    }
 }

@@ -79,6 +79,7 @@ final class CNICVerificationViewModel: CNICVerificationViewModelProtocol {
                 switch response.result {
                 case .success(let value):
                     self.openAccountUserData.value = value
+                    DataCacheManager.shared.saveCnicFrontBackModel(frontCnic: cnicFrontAttachmentInput, backCnic: cnicBackAttachmentInput)
                     
                     DataCacheManager.shared.saveViewAppGenerateOTPWithData(input: viewAppGenerateOTPInput)
                 case .failure(let error):

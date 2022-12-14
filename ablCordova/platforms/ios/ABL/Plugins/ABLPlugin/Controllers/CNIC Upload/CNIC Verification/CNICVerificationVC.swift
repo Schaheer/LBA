@@ -10,7 +10,10 @@ import UIKit
 final class CNICVerificationVC: UIViewController {
     
     // MARK: - Class Outlets
-    
+    //test back button
+    @IBAction func buttonBack(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+    }
     @IBOutlet weak var cnicFrontSideLabel: UILabel!
     @IBOutlet weak var cnicFrontSideImageView: UIImageView!
     

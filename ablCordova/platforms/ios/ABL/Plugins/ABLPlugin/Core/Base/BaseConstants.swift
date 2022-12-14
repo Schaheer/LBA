@@ -87,6 +87,8 @@ struct BaseConstants {
         case noOfJointApplicants = "com.ablPlugin.noOfJointApplicants"
         case shouldGenerateOTP = "com.ablPlugin.shouldGenerateOTP"
         case viewAppGenerateOTPResponseArray = "com.plugin.viewAppGenerateOTPResponseArray"
+        case fronCnic = "com.plugin.fronCnic"
+        case backCnic = "com.plugin.backCnic"
     }
     
     struct Encryption {

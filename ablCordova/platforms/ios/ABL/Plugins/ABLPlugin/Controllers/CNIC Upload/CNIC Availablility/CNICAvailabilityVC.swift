@@ -136,15 +136,17 @@ final class CNICAvailabilityVC: UIViewController {
             if mobileNumberTextField.text?.count == 0{
                 AlertManager.shared.showOKAlert(with: "Alert!", message: "Please enter Mobile Number first")
             }else{
+                print(DataCacheManager.shared.loadNoOfJointApplicants())
+                
                 cnicAvailabilityViewModel.viewAppGenerateOTP(
                     customerTypeID: 106501,
                     mobileNumber: mobileNumberTextField.text ?? "",
-                    generateOTP: false
+                    generateOTP: false,
+                    isPortedMobileNetwork: portedSegment.index == 0 ? false : true
                 )
             }
         } else {
             if modelRegistrationSteper.cnicNumber != cnicNumberTextField.text ?? "" {
-                
                 self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Provided CNIC is not matched")
                 
                 DispatchQueue.main.async {
@@ -167,6 +169,10 @@ final class CNICAvailabilityVC: UIViewController {
     }
     
     private func openCNICVerificationVC() {
+        if DataCacheManager.shared.loadNoOfJointApplicants() ?? 0 > 0 {
+            self.openPersonalInformationVC()
+            return()
+        }
         guard let cnicVerificationVC = UIStoryboard.initialize(
             viewController: .cnicVerificationVC,
             fromStoryboard: .cnicUpload
@@ -230,7 +236,7 @@ final class CNICAvailabilityVC: UIViewController {
             } else {
                 //Shakeel 11Nov22
                 modelRegistrationSteper.cnicNumber = response.idNumber
-//                self.cnicNumberTextField.text = response.idNumber
+                //                self.cnicNumberTextField.text = response.idNumber
                 self.cnicNumberView.isHidden = false
             }
         }

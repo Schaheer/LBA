@@ -233,7 +233,7 @@ final class PictureAndSignatureVC: UIViewController {
         print(consumer)
         print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
         print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
-        
+        print(DataCacheManager.shared.loadNoOfJointApplicants())
         modelRegistrationSteper.isJointAccount = segmentJointAccount.index == 1 ? true : false
         if let natureOfAccount = picAndSignViewModel.getNatureOfAccount() {
             guard let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.first, let rdaCustomerProfileID = consumer.rdaCustomerProfileID else {

@@ -10,12 +10,14 @@ import UIKit
 final class ConfirmationVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        DataCacheManager.shared.saveCnicFrontBackModel(frontCnic: nil, backCnic: nil)
         setupGestureRecognizers()
     }
     @IBOutlet weak var appEmail: LabelSetting!
     @IBOutlet weak var abmNumber: LabelSetting!
     
     @IBAction func noThanksTapped(_ sender: UIButton){
+        
         
         navigationController?.popViewController(animated: true)
 //        self.view.window?.rootViewController?.dismiss(animated: true)
