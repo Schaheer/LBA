@@ -13,11 +13,11 @@
         <array key="WorkSans-Medium.ttf">
             <string>WorkSans-Medium</string>
         </array>
+        <array key="WorkSans-Regular.ttf">
+            <string>WorkSans-Regular</string>
+        </array>
         <array key="WorkSans-SemiBold.ttf">
             <string>WorkSans-SemiBold</string>
-        </array>
-        <array key="WorkSans-VariableFont_wght.ttf">
-            <string>WorkSans-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -1413,8 +1413,14 @@
         <designable name="Ekm-oI-ohK">
             <size key="intrinsicContentSize" width="174.5" height="23.5"/>
         </designable>
+        <designable name="F9e-7z-KdG">
+            <size key="intrinsicContentSize" width="288" height="68"/>
+        </designable>
         <designable name="H9m-o9-gqW">
             <size key="intrinsicContentSize" width="122" height="16.5"/>
+        </designable>
+        <designable name="JOp-EY-ubd">
+            <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
         <designable name="KXF-Ek-oAE">
             <size key="intrinsicContentSize" width="238.5" height="16.5"/>
@@ -1439,6 +1445,9 @@
         </designable>
         <designable name="gPF-M8-doy">
             <size key="intrinsicContentSize" width="234" height="14.5"/>
+        </designable>
+        <designable name="gah-Fc-tm3">
+            <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
         <designable name="gbe-W4-jfE">
             <size key="intrinsicContentSize" width="61" height="33"/>

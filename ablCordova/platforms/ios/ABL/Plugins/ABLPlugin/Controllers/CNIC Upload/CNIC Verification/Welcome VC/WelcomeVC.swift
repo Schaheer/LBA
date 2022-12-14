@@ -38,7 +38,7 @@ class WelcomeVC: UIViewController {
     private func openAvailabilityVC() {
 //                let vc = UIStoryboard.init(name: "OpenAccount", bundle: nil).instantiateViewController(withIdentifier: "ServiceChannelsVC") as? ServiceChannelsVC
 //                self.navigationController?.pushViewController(vc!, animated: true)
-//        
+//
 //                //Shakeel Test
 //                return()
         guard let verifyOTPVC = UIStoryboard.initialize(

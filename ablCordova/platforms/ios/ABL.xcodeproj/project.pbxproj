@@ -11,6 +11,8 @@
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		2029B57B81A24D31A58152F2 /* ABLPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1128E1DF53954936B0922A53 /* ABLPlugin.swift */; };
+		2C6913D82948CC3D0068F11E /* ABLWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6913D72948CC3D0068F11E /* ABLWebVC.swift */; };
+		2C9F7A3C2949CB4A008BF72C /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9F7A3B2949CB4A008BF72C /* ChatCell.swift */; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
 		302D95F214D2391D003F00A1 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 302D95F014D2391D003F00A1 /* MainViewController.xib */; };
 		37607A7DF4727E34FE15B7C5 /* Pods_ABL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85EF20C9C1615DAA6CA55ACA /* Pods_ABL.framework */; };
@@ -323,6 +325,8 @@
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* ABL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C6913D72948CC3D0068F11E /* ABLWebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABLWebVC.swift; sourceTree = "<group>"; };
+		2C9F7A3B2949CB4A008BF72C /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
 		301BF56E109A69640062928A /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; path = www; sourceTree = SOURCE_ROOT; };
 		302D95EE14D2391D003F00A1 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
@@ -686,6 +690,14 @@
 			path = ABL/Resources;
 			sourceTree = "<group>";
 		};
+		2C6913DA2948CC420068F11E /* Generic Web View */ = {
+			isa = PBXGroup;
+			children = (
+				2C6913D72948CC3D0068F11E /* ABLWebVC.swift */,
+			);
+			path = "Generic Web View";
+			sourceTree = "<group>";
+		};
 		301BF52E109A57CC0062928A /* Products */ = {
 			isa = PBXGroup;
 			children = (
@@ -960,6 +972,7 @@
 				7AB78E8227FF0E71009A339C /* Select Account Type */,
 				7A12224927E3293300CE890A /* Select Branch */,
 				7A12224627E321F800CE890A /* Select Banking Method */,
+				2C6913DA2948CC420068F11E /* Generic Web View */,
 			);
 			path = "Open Account";
 			sourceTree = "<group>";
@@ -1279,6 +1292,7 @@
 				7ABF89BD28070309008F8D61 /* ReviewDetailsVC2.swift */,
 				7ABF89BF28082AA4008F8D61 /* ReviewDetailsViewModel.swift */,
 				7A27447A2812348A0073D737 /* ReviewDetailsCell.swift */,
+				2C9F7A3B2949CB4A008BF72C /* ChatCell.swift */,
 			);
 			path = "Review Details";
 			sourceTree = "<group>";
@@ -1772,6 +1786,7 @@
 				1D3623260D0F684500981E51 /* AppDelegate.m in Sources */,
 				7AE17A2F27EC6A620020D00B /* ViewAppGenerateOTPInputModel.swift in Sources */,
 				7ABF89CC280ED949008F8D61 /* ChangeNumberVC.swift in Sources */,
+				2C9F7A3C2949CB4A008BF72C /* ChatCell.swift in Sources */,
 				4C8A6928280EB32C0026345B /* PicAndSignViewModel.swift in Sources */,
 				7A12224827E3220B00CE890A /* SelectBankingMethodVC.swift in Sources */,
 				7A6F14DB27D2136E00DA1D15 /* PluginColorAsset.swift in Sources */,
@@ -1856,6 +1871,7 @@
 				7ABD538E27F72C6C00AC54AE /* CustomSwitch.swift in Sources */,
 				7ABD537C27F46AED00AC54AE /* SelectBankingMethodViewModel.swift in Sources */,
 				7A77C23B28346AF40059B514 /* NationalityViewModel.swift in Sources */,
+				2C6913D82948CC3D0068F11E /* ABLWebVC.swift in Sources */,
 				4CD5217228571C2700F9CA62 /* GetAllAccountsInputModel.swift in Sources */,
 				7AB8918727D758D700054BD3 /* BaseConstants.swift in Sources */,
 				7AB8917627D7533D00054BD3 /* LogsManager.swift in Sources */,
