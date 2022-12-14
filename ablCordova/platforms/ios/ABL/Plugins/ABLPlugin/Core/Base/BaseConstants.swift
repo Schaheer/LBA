@@ -55,7 +55,7 @@ struct BaseConstants {
     
 //    enum BaseURL: String {
 //        case connectionProtocol = "https"
-//        case qaServer = "rda.abl.com.pk"
+//        case qaServer = "rda.abl.com"
 //        case api = "api"
 //
 //        enum RDA: String {

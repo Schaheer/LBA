@@ -32,13 +32,23 @@ final class AlertManager {
     func showOKAlert(with title: String? = "", message: String? = "") {
         
         DispatchQueue.main.async {
-            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-            let okAlertAction = UIAlertAction(title: "OK", style: .default)
-            
-            alert.addAction(okAlertAction)
-            
-            self.topController?.present(alert, animated: true)
+//            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+//            let okAlertAction = UIAlertAction(title: "OK", style: .default)
+//
+//            alert.addAction(okAlertAction)
+//
+////            self.topController?.present(alert, animated: true)
+            let portedPopupVC = UIStoryboard.init(name: "CNICUpload", bundle: nil).instantiateViewController(withIdentifier: "CustomPopup") as! CustomPopup
+
+            portedPopupVC.titleString = title
+            portedPopupVC.message = message
+            portedPopupVC.buttonTitle = "OK"
+            portedPopupVC.portedMobileNetwork = {
+
+            }
+            self.topController?.present(portedPopupVC, animated: true)
         }
+        
 //        {
 //            let alert = UIAlertController(title: nil, message: nil, preferredStyle: .alert)
 //
@@ -59,22 +69,31 @@ final class AlertManager {
     }
     
     func showOkAlert(title: String, message: String) {
-        
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        
+//        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+
+//        alertController.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+
         var rootViewController = UIApplication.shared.keyWindow?.rootViewController
-        
+
         if let navigationController = rootViewController as? UINavigationController {
             rootViewController = navigationController.viewControllers.first
         }
-        
+
         if let tabBarController = rootViewController as? UITabBarController {
             rootViewController = tabBarController.selectedViewController
         }
+
+       // rootViewController?.present(alertController, animated: true, completion: nil)
         
-        rootViewController?.present(alertController, animated: true, completion: nil)
+        let portedPopupVC = UIStoryboard.init(name: "CNICUpload", bundle: nil).instantiateViewController(withIdentifier: "CustomPopup") as! CustomPopup
+
+        portedPopupVC.titleString = title
+        portedPopupVC.message = message
+        portedPopupVC.buttonTitle = "OK"
+        portedPopupVC.portedMobileNetwork = {
+
+        }
+        rootViewController?.present(portedPopupVC, animated: true)
     }
     
     func showOkAlertWithViewFingerprintsOption(title: String, message: String, handler: @escaping (UIAlertAction) -> ()) {

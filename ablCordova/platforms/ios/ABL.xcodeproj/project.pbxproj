@@ -265,6 +265,7 @@
 		7D18C3C52924FFFC00EAF680 /* SettingUIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D18C3C12924FFFC00EAF680 /* SettingUIDesign.swift */; };
 		7D18C3C62924FFFC00EAF680 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D18C3C22924FFFC00EAF680 /* Localizable.swift */; };
 		7D18C3C92925003900EAF680 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D18C3CB2925003900EAF680 /* Localizable.strings */; };
+		7D5CAD7F2949E1F30092C044 /* CustomPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CAD7E2949E1F30092C044 /* CustomPopup.swift */; };
 		7D88A7BB2923C87800D522C8 /* RegistrationSteperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D88A7B92923C87800D522C8 /* RegistrationSteperModel.swift */; };
 		7D97757F29261F530060315C /* ReviewDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D97757E29261F530060315C /* ReviewDetailsVC.swift */; };
 		8DA36AAA2B4C4F8F83EADA68 /* BiometricVerification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF29282811C42E8ACDB35CF /* BiometricVerification.storyboard */; };
@@ -577,6 +578,7 @@
 		7D18C3C22924FFFC00EAF680 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		7D18C3CA2925003900EAF680 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7D18C3CC2925003D00EAF680 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7D5CAD7E2949E1F30092C044 /* CustomPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopup.swift; sourceTree = "<group>"; };
 		7D88A7B92923C87800D522C8 /* RegistrationSteperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationSteperModel.swift; sourceTree = "<group>"; };
 		7D97757E29261F530060315C /* ReviewDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewDetailsVC.swift; sourceTree = "<group>"; };
 		85EF20C9C1615DAA6CA55ACA /* Pods_ABL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ABL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1268,6 +1270,7 @@
 			isa = PBXGroup;
 			children = (
 				7ABD53AE27FB872300AC54AE /* PortedPopupVC.swift */,
+				7D5CAD7E2949E1F30092C044 /* CustomPopup.swift */,
 			);
 			path = "Mobile Network Ported Popup";
 			sourceTree = "<group>";
@@ -1710,6 +1713,7 @@
 				7A12225927E3D27900CE890A /* PersonalInformationSecondVC.swift in Sources */,
 				7A12223527DF660D00CE890A /* CNICAvailabilityVC.swift in Sources */,
 				7ABF89C3280832DF008F8D61 /* ConfirmationVC.swift in Sources */,
+				7D5CAD7F2949E1F30092C044 /* CustomPopup.swift in Sources */,
 				7AB8919627D772CD00054BD3 /* RequestBiometricResponseModel.swift in Sources */,
 				7A99D4C327D0FB3E00B0ABEA /* PluginUtils.swift in Sources */,
 				7D88A7BB2923C87800D522C8 /* RegistrationSteperModel.swift in Sources */,

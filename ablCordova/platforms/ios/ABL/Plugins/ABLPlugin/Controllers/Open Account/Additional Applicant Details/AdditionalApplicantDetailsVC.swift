@@ -99,10 +99,24 @@ extension UIViewController {
     }
     
     func showAlertSuccessWithPopToVC<T>(viewController: T ,title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
-            
-        }))
-        self.present(alert, animated: true, completion: nil)
+//        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertController.Style.alert)
+//        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+//
+//        }))
+//        self.present(alert, animated: true, completion: nil)
+//
+        openCustomPopup(viewController: self, titleMessage: title, message: message)
+    }
+    
+    func openCustomPopup(viewController: UIViewController, titleMessage: String, message: String) {
+        let portedPopupVC = UIStoryboard.init(name: "CNICUpload", bundle: nil).instantiateViewController(withIdentifier: "CustomPopup") as! CustomPopup
+
+        portedPopupVC.titleString = title
+        portedPopupVC.message = message
+        portedPopupVC.buttonTitle = "OK"
+        portedPopupVC.portedMobileNetwork = {
+
+        }
+        viewController.present(portedPopupVC, animated: true)
     }
 }

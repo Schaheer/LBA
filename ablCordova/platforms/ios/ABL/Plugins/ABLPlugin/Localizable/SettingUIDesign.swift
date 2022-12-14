@@ -68,6 +68,9 @@ class ButtonSetting: UIButton {
         super.awakeFromNib()
         checkScreenSize()
         self.setTitle(self.titleLabel?.text?.localizeString(), for: .normal)
+        if #available(iOS 15.0, *) {
+            self.configuration = .none
+        }
     }
     
     func checkScreenSize() {
@@ -84,8 +87,9 @@ class ButtonSetting: UIButton {
 //            } else {
 //                fontSize *= iPhoneMultiplier
 //            }
-            
-            self.titleLabel?.font = UIFont(name: fontName, size: 16)
+            DispatchQueue.main.async {
+                self.titleLabel?.font = UIFont(name: fontName, size: 16)
+            }
         }
     }
 }
