@@ -88,7 +88,7 @@ class ButtonSetting: UIButton {
 //                fontSize *= iPhoneMultiplier
 //            }
             DispatchQueue.main.async {
-                self.titleLabel?.font = UIFont(name: fontName, size: 16)
+                self.titleLabel?.font = UIFont(name: "WorkSans-SemiBold", size: 16)
             }
         }
     }
