@@ -50,6 +50,12 @@ final class ReviewDetailsVC: UIViewController {
     private let reviewDetailsViewModel = ReviewDetailsViewModel()
     private var consumers = [ConsumerListResponseModel]()
     
+    var TCCheckBoxChecked: Bool = false
+    var declarationCheckBoxChecked: Bool = false
+    var keyFactStatementCheckBoxChecked: Bool = false
+    
+    private var selectPreferredAccountViewModel = SelectPreferredAccountViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         subscribeViewModel()
@@ -149,11 +155,140 @@ final class ReviewDetailsVC: UIViewController {
     
 //    }
     
+    func showWebView(with type: ABLWebVC.ViewType, url: String? = nil, htmlString: String? = nil, agreeBlock: (() -> ())?) {
+        let vc = UIStoryboard.init(name: "OpenAccount", bundle: nil).instantiateViewController(withIdentifier: "ABLWebVC") as! ABLWebVC
+        vc.url = url
+        vc.htmlString = htmlString
+        vc.viewType = type
+        vc.agreeBlock = agreeBlock
+        
+        present(vc, animated: true)
+    }
+    
+    func getKfsUrl() -> String {
+        print(selectPreferredAccountViewModel.getAccountVariantID())
+        
+        var kfsUrl: String = ""
+        let accountVariant: Double = selectPreferredAccountViewModel.getAccountVariantID().rawValue
+        
+        if (accountVariant == 108203) {
+            kfsUrl = "assets/docs/KFS-Allied-Business-AC.pdf";
+        } else if (accountVariant == 108238) {
+            kfsUrl = "assets/docs/KFS-Allied-Khanum-AC-1.pdf";
+        } else if (accountVariant == 108211) {
+            kfsUrl = "assets/docs/KFS-Allied-Platinum-Rewarding-Profit-AC.pdf";
+        } else if (accountVariant == 108242) {
+            kfsUrl = "assets/docs/KFS-Allied-Senior-Citizen.pdf";
+        } else if (accountVariant == 108214) {
+            kfsUrl = "assets/docs/KFS-Allied-Youth-Account.pdf";
+        } else if (accountVariant == 108212) {
+            kfsUrl = "assets/docs/KFS-Current-AC.pdf";
+        } else if (accountVariant == 108217) {
+            kfsUrl = "assets/docs/KFS-Saving-AC.pdf";
+        } else if (accountVariant == 108205) {
+            kfsUrl = "assets/docs/KFS-Allied-Express-AC.pdf";
+        } else if (accountVariant == 108220) {
+            kfsUrl = "assets/docs/1.-KFS-LCY-Current-Accounts-JAN-JUNE-2022.pdf";
+        } else if (accountVariant == 108224) {
+            kfsUrl = "assets/docs/2.-KFS-LCY-Saving-Accounts-Individuals-and-Entities-JAN-JUNE-2022.pdf";
+        } else if (accountVariant == 108237) {
+            kfsUrl = "assets/docs/10.-KFS-FCY-Current-and-Saving-Accounts-JAN-JUNE-2022.pdf";
+        } else if (accountVariant == 108216) {
+            kfsUrl = "assets/docs/KFS-Allied-Khanum-AC-1.pdf";
+        } else if (accountVariant == 108240) {
+            kfsUrl = "assets/docs/KFS-Allied-Khanum-AC-1.pdf";
+        } else if (accountVariant == 108241) {
+            kfsUrl = "assets/docs/KFS-Allied-Khanum-AC-1.pdf";
+        } else if (accountVariant == 108238) {
+            kfsUrl = "assets/docs/KFS-Allied-Khanum-AC-1.pdf";
+        } else if (accountVariant == 108206) {
+            kfsUrl = "assets/docs/KFS-Allied-Senior-Citizen.pdf";
+        } else if (accountVariant == 108207) {
+            kfsUrl = "assets/docs/KFS-Allied-Senior-Citizen.pdf";
+        } else if (accountVariant == 108239) {
+            kfsUrl = "assets/docs/KFS-Allied-Senior-Citizen.pdf";
+        } else if (accountVariant == 108208) {
+            kfsUrl = "assets/docs/KFS-Allied-Youth-Account.pdf";
+        } else if (accountVariant == 108209) {
+            kfsUrl = "assets/docs/KFS-Allied-Youth-Account.pdf";
+        } else if (accountVariant == 108213) {
+            kfsUrl = "assets/docs/KFS-Allied-Youth-Account.pdf";
+        } else if (accountVariant == 108201) {
+            kfsUrl = "assets/docs/KFS-Current-AC.pdf";
+        } else if (accountVariant == 108204) {
+            kfsUrl = "assets/docs/KFS-Current-AC.pdf";
+        } else if (accountVariant == 108210) {
+            kfsUrl = "assets/docs/KFS-Saving-AC.pdf";
+        } else if (accountVariant == 108215) {
+            kfsUrl = "assets/docs/KFS-Saving-AC.pdf";
+        } else if (accountVariant == 108217) {
+            kfsUrl = "assets/docs/KFS-Saving-AC.pdf";
+        } else if (accountVariant == 108218) {
+            kfsUrl = "assets/docs/1.-KFS-LCY-Current-Accounts-JULY-DEC-2022-DH-reviewed.pdf";
+        } else if (accountVariant == 108222) {
+            kfsUrl = "assets/docs/2.a.-KFS-LCY-Saving-Accounts-Individuals-and-Entities-JULY-DEC-2022DH-reviewed.pdf";
+        } else if (accountVariant == 108225) {
+            kfsUrl = "assets/docs/3.-KFS-LCY-Saving-Accounts-Specialized-products-JULY-DEC-2022-DH-reviewed.pdf";
+        } else if (accountVariant == 108226) {
+            kfsUrl = "assets/docs/2.a.-KFS-LCY-Saving-Accounts-Individuals-and-Entities-JULY-DEC-2022DH-reviewed.pdf";
+        } else if (accountVariant == 108228) {
+            kfsUrl = "assets/docs/3.a-KFS-LCY-Saving-Accounts-Specialized-products-JULY-DEC-2022-DH-Reviewed.pdf";
+        } else if (accountVariant == 108230) {
+            kfsUrl = "assets/docs/3.a-KFS-LCY-Saving-Accounts-Specialized-products-JULY-DEC-2022-DH-Reviewed.pdf";
+        } else if (accountVariant == 108231) {
+            kfsUrl = "assets/docs/3.a-KFS-LCY-Saving-Accounts-Specialized-products-JULY-DEC-2022-DH-Reviewed.pdf";
+        } else if (accountVariant == 108234) {
+            kfsUrl = "assets/docs/KFS-Current-AC-FCY.pdf";
+        } else if (accountVariant == 108235) {
+            kfsUrl = "assets/docs/10.-KFS-FCY-Current-and-Saving-Accounts-JULY-DEC-2022-DH-reviewed.pdf";
+        } else if (accountVariant == 108236) {
+            kfsUrl = "assets/docs/KFS-Saving-AC.pdf";
+        } else if (accountVariant == 108243) {
+            kfsUrl = "assets/docs/KFS-Asaan-Digital-Account";
+        } else if (accountVariant == 108244) {
+            kfsUrl = "assets/docs/KFS-Asaan-Digital-Remittance-Account";
+        } else if (accountVariant == 108245) {
+            kfsUrl = "assets/docs/KFS-Freelancer-Digital-Account";
+        } else if (accountVariant == 108246) {
+            kfsUrl = "assets/docs/KFS-Allied-Aitebar-Freelancer-Digital-Account-(PKR & FCY)-JULY-DEC 2022";
+        } else if (accountVariant == 108247) {
+            kfsUrl = "assets/docs/23.KFS-Allied-Islamic-Asaan-Digital-Account-JULY-DEC-2022";
+        } else if (accountVariant == 108248) {
+            kfsUrl = "assets/docs/KFS-Allied-Aitebar-Asaan-Digital-Remittance-Account-JULY-DEC-2022";
+        } else if (accountVariant == 108249) {
+            kfsUrl = "assets/docs/KFS-Freelancer-Digital-Account";
+        } else if (accountVariant == 108250) {
+            kfsUrl = "assets/docs/KFS-Allied-Aitebar-Freelancer-Digital-Account-(PKR & FCY)-JULY-DEC 2022";
+        } else if (accountVariant == 108251) {
+            kfsUrl = "assets/docs/KFS-Asaan-Digital-Account";
+        } else if (accountVariant == 108252) {
+            kfsUrl = "assets/docs/KFS-Asaan-Digital-Remittance-Account";
+        } else if (accountVariant == 108253) {
+            kfsUrl = "assets/docs/KFS-Freelancer-Digital-Saving-Account";
+        }
+
+        return BaseConstants.BaseURL.value() + "/consumer-portal/" + kfsUrl
+    }
+    
     @IBAction func backTapped(_ sender: UIButton) {
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func submitTapped(_ sender: UIButton) {
+        if TCCheckBoxChecked == false {
+            self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please accept Terms & Conditions")
+            
+            return
+        } else if declarationCheckBoxChecked == false {
+            self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please accept Declaration")
+            
+            return
+        } else if keyFactStatementCheckBoxChecked == false {
+            self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please accept KFS")
+            
+            return
+        }
+            
         reviewDetailsViewModel.openConfirmationVC()
     }
     
@@ -183,11 +318,52 @@ extension ReviewDetailsVC: UITableViewDelegate, UITableViewDataSource {
             
             return cell ?? UITableViewCell()
         } else {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell")!
+            let cell = tableView.dequeueReusableCell(withIdentifier: "ChatCell") as? ChatCell
             
-            return cell
+            cell?.setTermsCheckBox(with: false)
+            cell?.setDeclarationCheckBox(with: false)
+            cell?.setKeyFactStatementCheckBox(with: false)
+            
+            cell?.TNCBlock = { [weak self] in
+                if self?.TCCheckBoxChecked == false {
+                    self?.showWebView(with: .termsNConditions, url: BaseConstants.BaseURL.value() + "/abl-rda/terms/pda-terms.html") { [weak self] in
+                        DispatchQueue.main.async {
+                            self?.TCCheckBoxChecked = true
+                            cell?.setTermsCheckBox(with: true)
+                        }
+                    }
+                } else {
+                    self?.TCCheckBoxChecked = false
+                    cell?.setTermsCheckBox(with: false)
+                }
+            }
+            
+            cell?.declarationBlock = { [weak self] in
+                if self?.declarationCheckBoxChecked == false {
+                    self?.showWebView(with: .declaration, url: nil, htmlString: "<h1>• I / We hereby confirm my residency/ non-residency status as per the Income Tax Ordinance 2001 under Chapter-V, Division II \"Resident and Non-Resident Persons\". <br><br> • I / We hereby confirm that funds to be invested / used through this account will be my own / dependent family members / spouse funds and also confirm that funds beneficially owned by any other person will not be invested/used through this account. If the funds are not beneficially owned by me/us or my/our dependent family members, the same will be intimated to the bank.<br><br>• I / We hereby allow the Bank to open my account digitally and bank is also allowed to use my / our information/documents for all due diligence and supervisory functions. <br><br>• I / We declare that I / we have neither asked for, nor received, any advice from the Bank in determining my classification as a Reportable person or otherwise. I / We further declare that I / we have neither asked for nor received, any advice in relation to concealing from the Bank anything that would affect my / our classification as a foreign person. <br><br>• I / We agree to indemnify the Bank from any loss, claim, damages or liability arising or incurred by the bank in discharging its obligations under FATCA and CRS or as result of disclosure of account related information to U.S. or other Tax Authorities. <br><br>• I / We acknowledge downloading / received copy of Account Opening information as well as copy of the Terms &amp; Conditions. I / We declare and confirm that I / we have read / been read before me / us and understood the Terms &amp; Conditions governing the Account, Digital Account opening, transaction through digital channels and agree to observe and be bound by the said Terms &amp; Conditions and any changes, supplements or modifications thereto that may be made by the Bank from time to time. <br><br>• Where required by domestic or overseas regulations or tax authorities, I / we consent and agree that the Bank may withhold from my / our account(s) such amount as may be required according to applicable laws, regulations and directives. <br><br>• I / We explicitly provide my / our consent to share my / our KYC / CDD information with CDC and will ensure compliance to applicable laws, rules &amp; regulations. <br><br>• I hereby declare that whole information provided to the Bank is correct and true in all respects. Further source of income declared above is also correct and legitimate.</h1>") { [weak self] in
+                        self?.declarationCheckBoxChecked = true
+                        cell?.setDeclarationCheckBox(with: true)
+                    }
+                } else {
+                    self?.declarationCheckBoxChecked = false
+                    cell?.setDeclarationCheckBox(with: false)
+                }
+            }
+            
+            cell?.keyFactStatementBlock = { [weak self] in
+                if self?.keyFactStatementCheckBoxChecked == false {
+                    self?.showWebView(with: .keyFactStatement, url: self?.getKfsUrl() ?? "") { [weak self] in
+                        self?.keyFactStatementCheckBoxChecked = true
+                        cell?.setKeyFactStatementCheckBox(with: true)
+                    }
+                } else {
+                    self?.keyFactStatementCheckBoxChecked = false
+                    cell?.setKeyFactStatementCheckBox(with: false)
+                }
+            }
+            
+            return cell ?? UITableViewCell()
         }
-            
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

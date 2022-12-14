@@ -1416,8 +1416,14 @@
         <designable name="F9e-7z-KdG">
             <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
+        <designable name="F9e-7z-KdG">
+            <size key="intrinsicContentSize" width="288" height="68"/>
+        </designable>
         <designable name="H9m-o9-gqW">
             <size key="intrinsicContentSize" width="110.5" height="16.5"/>
+        </designable>
+        <designable name="JOp-EY-ubd">
+            <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
         <designable name="JOp-EY-ubd">
             <size key="intrinsicContentSize" width="288" height="68"/>
@@ -1445,6 +1451,9 @@
         </designable>
         <designable name="gPF-M8-doy">
             <size key="intrinsicContentSize" width="214.5" height="14"/>
+        </designable>
+        <designable name="gah-Fc-tm3">
+            <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
         <designable name="gah-Fc-tm3">
             <size key="intrinsicContentSize" width="288" height="68"/>
