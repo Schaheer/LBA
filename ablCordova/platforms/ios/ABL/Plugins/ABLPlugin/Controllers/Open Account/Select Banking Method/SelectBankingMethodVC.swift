@@ -41,8 +41,9 @@ final class SelectBankingMethodVC: UIViewController {
     
     private var branchName = ""
     private var suggestedBranches = [BranchListModel]()
-    var isEditFromReviewDetailsViewController = false
+    var branchList: [BranchListModel]?
     
+    var isEditFromReviewDetailsViewController = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -360,6 +361,8 @@ final class SelectBankingMethodVC: UIViewController {
                 let suggestedBranches = response?.suggestedBranchList
             else { return }
             self.dropDown.dataSource = allBranches.map { "\($0.branchName ?? "N/A") (\($0.branchCode ?? ""))"}
+            
+            self.branchList = allBranches
             self.suggestedBranches = suggestedBranches
             
             self.suggestedBranchesContainer.isHidden = false
@@ -409,6 +412,17 @@ final class SelectBankingMethodVC: UIViewController {
             )
         }
     }
+    
+    @IBAction func branchCodeSearchTapped(_ sender: Any) {
+        let dataSource = branchList?.map({ "\($0.branchName ?? "N/A") (\($0.branchCode ?? ""))" }) ?? []
+        
+        showSelectionAlert(with: dataSource, title: "Searched Branches") { index, item in
+            logsManager.debug("Selected item \(item) at index \(index)")
+            self.preferredBranchLabel.text = item
+            self.selectBankingMethodViewModel.setBranch(name: item)
+        }
+    }
+    
 }
 
 extension SelectBankingMethodVC: UITableViewDelegate, UITableViewDataSource {

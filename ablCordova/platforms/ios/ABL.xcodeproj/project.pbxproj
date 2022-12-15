@@ -11,6 +11,10 @@
 		1D3623260D0F684500981E51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* AppDelegate.m */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		2029B57B81A24D31A58152F2 /* ABLPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1128E1DF53954936B0922A53 /* ABLPlugin.swift */; };
+		2C390C68294B38EB0039A724 /* SelectionPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C390C62294B38EB0039A724 /* SelectionPopupVC.swift */; };
+		2C390C69294B38EB0039A724 /* SelectionPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C390C63294B38EB0039A724 /* SelectionPopupVC.xib */; };
+		2C390C6A294B38EB0039A724 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C390C65294B38EB0039A724 /* SelectionCell.swift */; };
+		2C390C6B294B38EB0039A724 /* SelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C390C66294B38EB0039A724 /* SelectionCell.xib */; };
 		2C6913D82948CC3D0068F11E /* ABLWebVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C6913D72948CC3D0068F11E /* ABLWebVC.swift */; };
 		2C9F7A3C2949CB4A008BF72C /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9F7A3B2949CB4A008BF72C /* ChatCell.swift */; };
 		302D95F114D2391D003F00A1 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 302D95EF14D2391D003F00A1 /* MainViewController.m */; };
@@ -326,6 +330,10 @@
 		1D3623250D0F684500981E51 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* ABL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ABL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2C390C62294B38EB0039A724 /* SelectionPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionPopupVC.swift; sourceTree = "<group>"; };
+		2C390C63294B38EB0039A724 /* SelectionPopupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionPopupVC.xib; sourceTree = "<group>"; };
+		2C390C65294B38EB0039A724 /* SelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
+		2C390C66294B38EB0039A724 /* SelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionCell.xib; sourceTree = "<group>"; };
 		2C6913D72948CC3D0068F11E /* ABLWebVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABLWebVC.swift; sourceTree = "<group>"; };
 		2C9F7A3B2949CB4A008BF72C /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
 		301BF52D109A57CC0062928A /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = CordovaLib/CordovaLib.xcodeproj; sourceTree = "<group>"; };
@@ -690,6 +698,25 @@
 			);
 			name = Resources;
 			path = ABL/Resources;
+			sourceTree = "<group>";
+		};
+		2C390C61294B38EB0039A724 /* Selection Popup */ = {
+			isa = PBXGroup;
+			children = (
+				2C390C62294B38EB0039A724 /* SelectionPopupVC.swift */,
+				2C390C63294B38EB0039A724 /* SelectionPopupVC.xib */,
+				2C390C64294B38EB0039A724 /* SelectionCell */,
+			);
+			path = "Selection Popup";
+			sourceTree = "<group>";
+		};
+		2C390C64294B38EB0039A724 /* SelectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				2C390C65294B38EB0039A724 /* SelectionCell.swift */,
+				2C390C66294B38EB0039A724 /* SelectionCell.xib */,
+			);
+			path = SelectionCell;
 			sourceTree = "<group>";
 		};
 		2C6913DA2948CC420068F11E /* Generic Web View */ = {
@@ -1094,6 +1121,7 @@
 		7A6F14E027D238F200DA1D15 /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
+				2C390C61294B38EB0039A724 /* Selection Popup */,
 				7A6F14E227D238FC00DA1D15 /* OTPStackView.swift */,
 				7A6F14E427D2391500DA1D15 /* OTPTextField.swift */,
 				7AB891A027D8D9EF00054BD3 /* ActivityIndicatorView.swift */,
@@ -1598,8 +1626,10 @@
 				4CBB13F82808622200BECF46 /* README.txt in Resources */,
 				7A99D4B427D0DFB900B0ABEA /* CustomColor.xcassets in Resources */,
 				4CBB13EE2808622200BECF46 /* WorkSans-SemiBold.ttf in Resources */,
+				2C390C6B294B38EB0039A724 /* SelectionCell.xib in Resources */,
 				4CBB13ED2808622200BECF46 /* WorkSans-Medium.ttf in Resources */,
 				4CBB13F62808622200BECF46 /* WorkSans-Italic-VariableFont_wght.ttf in Resources */,
+				2C390C69294B38EB0039A724 /* SelectionPopupVC.xib in Resources */,
 				7A6BCC6E27D60563003921A0 /* Lato-Regular.ttf in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				7A6BCC7327D60563003921A0 /* Lato-Bold.ttf in Resources */,
@@ -1882,7 +1912,9 @@
 				7A24FCF828354D5100500331 /* NextOfKinVC.swift in Sources */,
 				7A77C23928345A570059B514 /* NationalityVC.swift in Sources */,
 				7AB8917D27D7545800054BD3 /* Parser.swift in Sources */,
+				2C390C68294B38EB0039A724 /* SelectionPopupVC.swift in Sources */,
 				4C40A2CD283CC71B00E72949 /* RegisterPermanentAddressInputModel.swift in Sources */,
+				2C390C6A294B38EB0039A724 /* SelectionCell.swift in Sources */,
 				7A12224E27E332D300CE890A /* SelectPreferredAccountVC.swift in Sources */,
 				4C40A2D3283E19E400E72949 /* RegisterNationalityResponseModel.swift in Sources */,
 				7AB8918327D7560000054BD3 /* BaseHTTPClient.swift in Sources */,

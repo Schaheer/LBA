@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="WorkSans-VariableFont_wght.ttf">
+            <string>WorkSans-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="95" id="KGk-i7-Jjw" customClass="SelectionCell" customModule="ABL" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="405" height="95"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="405" height="95"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Xk-Ea-DmQ" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                        <rect key="frame" x="30" y="16" width="345" height="62"/>
+                        <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ar-rZ-wDz">
+                        <rect key="frame" x="18" y="94" width="369" height="1"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.20000000000000001" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="1" id="PgL-G7-CrY"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="9ar-rZ-wDz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="18" id="2rR-6k-qmA"/>
+                    <constraint firstAttribute="bottom" secondItem="9ar-rZ-wDz" secondAttribute="bottom" id="5dT-YR-583"/>
+                    <constraint firstItem="9ar-rZ-wDz" firstAttribute="top" secondItem="3Xk-Ea-DmQ" secondAttribute="bottom" constant="16" id="NSd-oS-mDo"/>
+                    <constraint firstAttribute="trailing" secondItem="3Xk-Ea-DmQ" secondAttribute="trailing" constant="30" id="iDc-W4-sA8"/>
+                    <constraint firstAttribute="trailing" secondItem="9ar-rZ-wDz" secondAttribute="trailing" constant="18" id="jNl-5s-VSU"/>
+                    <constraint firstItem="3Xk-Ea-DmQ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="30" id="kI9-9O-xKH"/>
+                    <constraint firstItem="3Xk-Ea-DmQ" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="16" id="p1T-9g-0Wp"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <connections>
+                <outlet property="titleLabel" destination="3Xk-Ea-DmQ" id="ePg-rc-bbZ"/>
+            </connections>
+            <point key="canvasLocation" x="199.27536231884059" y="64.620535714285708"/>
+        </tableViewCell>
+    </objects>
+    <designables>
+        <designable name="3Xk-Ea-DmQ">
+            <size key="intrinsicContentSize" width="28.5" height="17.5"/>
+        </designable>
+    </designables>
+</document>

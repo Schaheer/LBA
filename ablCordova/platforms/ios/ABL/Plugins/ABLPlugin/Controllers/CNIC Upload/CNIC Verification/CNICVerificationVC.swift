@@ -352,6 +352,31 @@ final class CNICVerificationVC: UIViewController {
             self.openCNICVerificationManualVC()
         }
     }
+    
+    func openPortedPopupVC(viewController: UIViewController, message: String) {
+        guard let portedPopupVC = UIStoryboard.initialize(
+            viewController: .portedPopupVC,
+            fromStoryboard: .cnicUpload
+        ) as? PortedPopupVC else { return }
+        
+        portedPopupVC.message = message
+        portedPopupVC.buttonTitle = "OK"
+        portedPopupVC.portedMobileNetwork = {
+            
+        }
+        viewController.present(portedPopupVC, animated: true)
+    }
+    
+    @IBAction func cnicFrontEyeIconTapped(_ sender: Any) {
+        let message  = "The picture shall be complete, clear and not blur. Maximum upload size is 5MB"
+        openPortedPopupVC(viewController: self, message: message)
+    }
+    
+    @IBAction func cnicBackEyeIconTapped(_ sender: Any) {
+        let message  = "The picture shall be complete, clear and not blur. Maximum upload size is 5MB"
+        openPortedPopupVC(viewController: self, message: message)
+    }
+    
 }
 
 //irfan

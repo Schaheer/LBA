@@ -35,3 +35,48 @@ extension UIViewController {
         removeFromParent()
     }
 }
+
+extension UIViewController {
+    
+    /**
+     Initialize a nib.
+     
+     
+     - returns: UIViewController.
+     */
+    public class func fromNib<T>() -> T? where T : UIViewController {
+        return fromNib(nibName: nil)
+    }
+    
+    /**
+     Initialize a nib.
+     
+     - parameter nibName: Nib name.
+     
+     - returns: UIViewController.
+     */
+    public class func fromNib<T>(nibName: String?) -> T? where T : UIViewController {
+        
+        let name = nibName ?? String(describing: self)
+        return self.init(nibName: name, bundle: Bundle.main) as? T
+    }
+    
+    open func presentPOPUP(_ viewControllerToPresent: UIViewController, animated flag: Bool, modalTransitionStyle:UIModalTransitionStyle = .coverVertical, completion: (() -> Swift.Void)? = nil) {
+        DispatchQueue.main.async {
+            viewControllerToPresent.modalPresentationStyle = .overCurrentContext
+            viewControllerToPresent.modalTransitionStyle = modalTransitionStyle
+            
+            self.present(viewControllerToPresent, animated: flag, completion: completion)
+        }
+        
+    }
+    
+    func showSelectionAlert(with datasource: [String], title: String? = "", block: @escaping ((Int, String) -> ()) = { _, _ in }) {
+        if let alert: SelectionPopupVC = SelectionPopupVC.fromNib() {
+            alert.setAlertWith(datasource: datasource, title: title, block: block)
+            
+            presentPOPUP(alert, animated: true)
+        }
+    }
+    
+}

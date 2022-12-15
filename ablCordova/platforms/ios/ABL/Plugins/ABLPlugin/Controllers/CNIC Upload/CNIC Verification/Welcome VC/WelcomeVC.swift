@@ -149,4 +149,20 @@ class WelcomeVC: UIViewController {
         }
     }
     
+    @IBAction func securityGuidelinesTapped(_ sender: Any) {
+        var urlString = ""
+        
+        if BaseConstants.BaseURL.qaServer.rawValue == "10.100.102.124" {
+            urlString = "https://10.100.102.124/consumer-portal/assets/docs/securityawareness.pdf"
+        } else {
+            urlString = BaseConstants.BaseURL.value() + "/consumer-portal/assets/docs/securityawareness.pdf"
+        }
+        
+        let url = URL(string: urlString)
+        
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.open(url!)
+        }
+    }
+    
 }
