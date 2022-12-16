@@ -51,6 +51,7 @@ class RegistrationSteperModel {
     var debitCardIndex: Int?
     var chequeBookIndex: Int?
     var transAlertIndex: Int?
+    var SOAIndex: Int?
     var isEmail: Int?
     var isSMS: Int?
     var livePhotoPreviewImage: UIImage?

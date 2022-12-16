@@ -73,7 +73,8 @@ final class SetupTransactionDataInputModel: BaseInputModel {
         case transactionalAlertId = "transactionalAlertId"
         case rdaCustomerProfileId = "rdaCustomerProfileId"
         case reasonForVisaDebitCardRequestId = "reasonForVisaDebitCardRequestId"
-
+        case mailingAddrPrefId = "mailingAddrPrefId"
+        case esoaInd = "esoaInd"
     }
     
     // MARK: - Model Properties
@@ -87,6 +88,8 @@ final class SetupTransactionDataInputModel: BaseInputModel {
     var transactionalAlertId: Double?
     var rdaCustomerProfileId: Double?
     var reasonForVisaDebitCardRequestId: Double?
+    var mailingAddrPrefId: Double?
+    var esoaInd: Int?
     
     // MARK: - Model Initializers
     
@@ -103,8 +106,9 @@ final class SetupTransactionDataInputModel: BaseInputModel {
         chequeBookReqInd: Int,
         transactionalAlertId: Double,
         rdaCustomerProfileId: Double,
-        reasonForVisaDebitCardRequestId: Double
-
+        reasonForVisaDebitCardRequestId: Double,
+        mailingAddrPrefId: Double,
+        esoaInd: Int
     ) {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.rdaCustomerAccInfoId.rawValue] = rdaCustomerAccInfoId
@@ -116,7 +120,8 @@ final class SetupTransactionDataInputModel: BaseInputModel {
         dictionary[CodingKeys.transactionalAlertId.rawValue] = transactionalAlertId
         dictionary[CodingKeys.rdaCustomerProfileId.rawValue] = rdaCustomerProfileId
         dictionary[CodingKeys.reasonForVisaDebitCardRequestId.rawValue] = reasonForVisaDebitCardRequestId
-        
+        dictionary[CodingKeys.mailingAddrPrefId.rawValue] = mailingAddrPrefId
+        dictionary[CodingKeys.esoaInd.rawValue] = esoaInd
         
         self.rdaCustomerAccInfoId = rdaCustomerAccInfoId
         self.rdaCustomerId = rdaCustomerId
@@ -127,6 +132,8 @@ final class SetupTransactionDataInputModel: BaseInputModel {
         self.transactionalAlertId = transactionalAlertId
         self.rdaCustomerProfileId = rdaCustomerProfileId
         self.reasonForVisaDebitCardRequestId = reasonForVisaDebitCardRequestId
+        self.mailingAddrPrefId = mailingAddrPrefId
+        self.esoaInd = esoaInd
         
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
@@ -150,5 +157,7 @@ final class SetupTransactionDataInputModel: BaseInputModel {
         transactionalAlertId <- map[CodingKeys.transactionalAlertId.rawValue]
         rdaCustomerProfileId <- map[CodingKeys.rdaCustomerProfileId.rawValue]
         reasonForVisaDebitCardRequestId <- map[CodingKeys.reasonForVisaDebitCardRequestId.rawValue]
+        mailingAddrPrefId <- map[CodingKeys.mailingAddrPrefId.rawValue]
+        esoaInd <- map[CodingKeys.esoaInd.rawValue]
     }
 }
