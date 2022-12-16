@@ -14,6 +14,11 @@ class WelcomeVC: UIViewController {
     @IBOutlet weak var helpLineNumber: LabelSetting!
     @IBOutlet weak var email: LabelSetting!
     
+    @IBAction func buttonUrdu(_ sender: Any) {
+        funChangeAppLanguageAndSide(to: "ur", vc: self)
+    }
+    @IBOutlet weak var buttonUrdu: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DataCacheManager.shared.saveNoOfJointApplicants(input: 0)

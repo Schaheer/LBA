@@ -22,11 +22,11 @@
         <array key="WorkSans-Medium.ttf">
             <string>WorkSans-Medium</string>
         </array>
+        <array key="WorkSans-Regular.ttf">
+            <string>WorkSans-Regular</string>
+        </array>
         <array key="WorkSans-SemiBold.ttf">
             <string>WorkSans-SemiBold</string>
-        </array>
-        <array key="WorkSans-VariableFont_wght.ttf">
-            <string>WorkSans-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -3189,12 +3189,35 @@ If you wish to continue Click here </string>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top-bar-urdu-trans" translatesAutoresizingMaskIntoConstraints="NO" id="RV9-ln-HHf">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4dd-Fr-Mkk">
                                                                 <rect key="frame" x="324" y="0.0" width="50" height="19"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top-bar-urdu-trans" translatesAutoresizingMaskIntoConstraints="NO" id="RV9-ln-HHf">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="19"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="50" id="3bq-ai-19D"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bhn-zJ-eL8">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="19"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <connections>
+                                                                            <action selector="buttonUrdu:" destination="Edf-MR-RmW" eventType="touchUpInside" id="V1Q-OM-Esx"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="3bq-ai-19D"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="Bhn-zJ-eL8" secondAttribute="bottom" id="2qk-cO-gqv"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="Bhn-zJ-eL8" secondAttribute="trailing" id="6Ak-KU-bOg"/>
+                                                                    <constraint firstItem="Bhn-zJ-eL8" firstAttribute="top" secondItem="4dd-Fr-Mkk" secondAttribute="top" id="L5s-Cd-lrh"/>
+                                                                    <constraint firstItem="RV9-ln-HHf" firstAttribute="top" secondItem="4dd-Fr-Mkk" secondAttribute="top" id="QA6-8J-e5p"/>
+                                                                    <constraint firstItem="Bhn-zJ-eL8" firstAttribute="leading" secondItem="4dd-Fr-Mkk" secondAttribute="leading" id="aVX-ui-7S3"/>
+                                                                    <constraint firstItem="RV9-ln-HHf" firstAttribute="leading" secondItem="4dd-Fr-Mkk" secondAttribute="leading" id="f9U-X9-KFF"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="RV9-ln-HHf" secondAttribute="bottom" id="v1z-9p-Dnk"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="RV9-ln-HHf" secondAttribute="trailing" id="z2e-pL-kaY"/>
                                                                 </constraints>
-                                                            </imageView>
+                                                            </view>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -3981,6 +4004,7 @@ Please ensure you use camera enabled device during whole onboarding process. You
                     </view>
                     <navigationItem key="navigationItem" id="X2J-Lm-6Xq"/>
                     <connections>
+                        <outlet property="buttonUrdu" destination="Bhn-zJ-eL8" id="bN3-y2-Rb5"/>
                         <outlet property="email" destination="e20-Zg-J1w" id="neK-ZD-GQN"/>
                         <outlet property="emailStack" destination="lab-ji-zlV" id="vt4-wV-Yoe"/>
                         <outlet property="helpLineNumber" destination="5rM-bR-R4e" id="iTN-pM-87f"/>
