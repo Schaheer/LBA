@@ -112,7 +112,7 @@
                     </subviews>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t1g-K6-gTJ" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                    <rect key="frame" x="60" y="67.333333333333329" width="255" height="23.333333333333329"/>
+                    <rect key="frame" x="60" y="67.333333333333329" width="255" height="23.666666666666671"/>
                     <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="20"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -136,7 +136,7 @@
     </objects>
     <designables>
         <designable name="t1g-K6-gTJ">
-            <size key="intrinsicContentSize" width="37.666666666666664" height="23.333333333333332"/>
+            <size key="intrinsicContentSize" width="44" height="23.666666666666668"/>
         </designable>
     </designables>
     <resources>

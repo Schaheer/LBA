@@ -14,23 +14,27 @@ class ABLWebVC: UIViewController, WKNavigationDelegate {
     
     @IBOutlet weak var webView: WKWebView!
     
+    @IBOutlet weak var bottomButton: ButtonSetting!
+    
     var url: String?
     var htmlString: String?
     
     var viewType: ViewType?
     
-    var agreeBlock: (() -> ())?
+    var completionBlock: (() -> ())?
     
     enum ViewType: String {
         case termsNConditions = "Terms & Conditions"
         case declaration = "Declaration"
         case keyFactStatement = "KFS"
+        case POIDetails = "Details"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         titleLabel.text = viewType?.rawValue
+        bottomButton.setTitle("Agree", for: .normal)
         
         switch viewType {
         case .termsNConditions, .keyFactStatement:
@@ -42,13 +46,18 @@ class ABLWebVC: UIViewController, WKNavigationDelegate {
             if let htmlString = htmlString {
                 webView.loadHTMLString(htmlString, baseURL: nil)
             }
+        case .POIDetails:
+            if let htmlString = htmlString {
+                webView.loadHTMLString(htmlString, baseURL: nil)
+            }
+            bottomButton.setTitle("Okay", for: .normal)
         case .none:
             break
         }
     }
     
     @IBAction func agreeTapped(_ sender: Any) {
-        agreeBlock?()
+        completionBlock?()
         
         dismiss(animated: true)
     }

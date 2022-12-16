@@ -484,14 +484,16 @@ final class PictureAndSignatureVC: UIViewController {
           ]
         let documentPicker = UIDocumentPickerViewController(documentTypes: docsTypes, in: .import)
             documentPicker.delegate = self
-            documentPicker.allowsMultipleSelection = true
             present(documentPicker, animated: true, completion: nil)
     }
     
     private func subscribeViewModel() {
         
         picAndSignViewModel.saveAttachmentResponse.bind { [weak self]  response  in
-            
+            guard let status = response?.message?.status, let description = response?.message?.description?.lowercased() else { return }
+            if status == "200" && description.lowercased() == "success"{
+                self?.showAlertSuccessWithPopToVC(viewController: self, title: "Success", message: "Document uploaded successfully")
+            }
         }
         picAndSignViewModel.registerPicAndSignResponse.bind { [weak self]  response  in
             guard let status = response?.message?.status, let description = response?.message?.description?.lowercased() else { return }

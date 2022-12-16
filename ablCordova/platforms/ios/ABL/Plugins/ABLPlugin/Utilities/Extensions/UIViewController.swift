@@ -79,4 +79,14 @@ extension UIViewController {
         }
     }
     
+    func showWebView(with type: ABLWebVC.ViewType, url: String? = nil, htmlString: String? = nil, completionBlock: (() -> ())? = {}) {
+        let vc = UIStoryboard.init(name: "OpenAccount", bundle: nil).instantiateViewController(withIdentifier: "ABLWebVC") as! ABLWebVC
+        vc.url = url
+        vc.htmlString = htmlString
+        vc.viewType = type
+        vc.completionBlock = completionBlock
+        
+        present(vc, animated: true)
+    }
+    
 }

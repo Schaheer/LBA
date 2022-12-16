@@ -155,16 +155,6 @@ final class ReviewDetailsVC: UIViewController {
     
 //    }
     
-    func showWebView(with type: ABLWebVC.ViewType, url: String? = nil, htmlString: String? = nil, agreeBlock: (() -> ())?) {
-        let vc = UIStoryboard.init(name: "OpenAccount", bundle: nil).instantiateViewController(withIdentifier: "ABLWebVC") as! ABLWebVC
-        vc.url = url
-        vc.htmlString = htmlString
-        vc.viewType = type
-        vc.agreeBlock = agreeBlock
-        
-        present(vc, animated: true)
-    }
-    
     func getKfsUrl() -> String {
         print(selectPreferredAccountViewModel.getAccountVariantID())
         
