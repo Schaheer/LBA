@@ -79,12 +79,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qoQ-MF-S0b">
                                 <rect key="frame" x="0.0" y="94" width="390" height="65"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="q9i-p7-wE1">
-                                        <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="mXM-te-2Ie">
-                                        <rect key="frame" x="283" y="15.333333333333332" width="87" height="34.333333333333343"/>
-                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryA-0q-gzn">
                                         <rect key="frame" x="0.0" y="62" width="390" height="3"/>
                                         <color key="backgroundColor" name="Allied Blue"/>
@@ -92,16 +86,29 @@
                                             <constraint firstAttribute="height" constant="3" id="gDj-7x-V44"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wHn-Lb-8bL">
+                                        <rect key="frame" x="20" y="15.333333333333332" width="350" height="34.333333333333343"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="H5v-GC-bEn">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="NOR-Br-7Sm">
+                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="3n4-xM-Ozv">
+                                                <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="mXM-te-2Ie" secondAttribute="trailing" constant="20" id="1s7-eB-69O"/>
+                                    <constraint firstItem="wHn-Lb-8bL" firstAttribute="centerY" secondItem="qoQ-MF-S0b" secondAttribute="centerY" id="5Wa-Wp-Qo7"/>
                                     <constraint firstAttribute="height" constant="65" id="5jR-Uj-AV2"/>
-                                    <constraint firstItem="q9i-p7-wE1" firstAttribute="leading" secondItem="qoQ-MF-S0b" secondAttribute="leading" constant="20" id="AEy-Ub-Bne"/>
-                                    <constraint firstItem="q9i-p7-wE1" firstAttribute="centerY" secondItem="qoQ-MF-S0b" secondAttribute="centerY" id="Odf-E7-5Gx"/>
                                     <constraint firstAttribute="trailing" secondItem="ryA-0q-gzn" secondAttribute="trailing" id="Y8Y-HV-Jhz"/>
                                     <constraint firstItem="ryA-0q-gzn" firstAttribute="leading" secondItem="qoQ-MF-S0b" secondAttribute="leading" id="gF3-7P-9gG"/>
-                                    <constraint firstItem="mXM-te-2Ie" firstAttribute="centerY" secondItem="qoQ-MF-S0b" secondAttribute="centerY" id="xkY-mR-I9P"/>
+                                    <constraint firstAttribute="trailing" secondItem="wHn-Lb-8bL" secondAttribute="trailing" constant="20" id="vyp-Wl-FkT"/>
+                                    <constraint firstItem="wHn-Lb-8bL" firstAttribute="leading" secondItem="qoQ-MF-S0b" secondAttribute="leading" constant="20" id="wVF-Cm-a1J"/>
                                     <constraint firstAttribute="bottom" secondItem="ryA-0q-gzn" secondAttribute="bottom" id="yZm-Nn-pdg"/>
                                 </constraints>
                             </view>
@@ -485,12 +492,6 @@ If you wish to continue Click here </string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHs-u6-Imd">
                                                 <rect key="frame" x="0.0" y="50" width="390" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="MIx-5P-YXK">
-                                                        <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="gGl-Ae-vJs">
-                                                        <rect key="frame" x="283" y="15.333333333333332" width="87" height="34.333333333333343"/>
-                                                    </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiQ-ce-fNK">
                                                         <rect key="frame" x="0.0" y="62" width="390" height="3"/>
                                                         <color key="backgroundColor" name="Allied Blue"/>
@@ -498,16 +499,29 @@ If you wish to continue Click here </string>
                                                             <constraint firstAttribute="height" constant="3" id="ZHy-1J-7r0"/>
                                                         </constraints>
                                                     </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="u7g-4l-9ZT">
+                                                        <rect key="frame" x="20" y="15.333333333333332" width="350" height="34.333333333333343"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="0KV-YB-9Sm">
+                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="yyM-gv-8xF">
+                                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="hwo-g9-bF0">
+                                                                <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="aiQ-ce-fNK" firstAttribute="leading" secondItem="XHs-u6-Imd" secondAttribute="leading" id="1ho-FL-vAd"/>
-                                                    <constraint firstAttribute="trailing" secondItem="gGl-Ae-vJs" secondAttribute="trailing" constant="20" id="Kw5-fP-gSV"/>
-                                                    <constraint firstItem="MIx-5P-YXK" firstAttribute="centerY" secondItem="XHs-u6-Imd" secondAttribute="centerY" id="PIH-dD-XPO"/>
-                                                    <constraint firstItem="gGl-Ae-vJs" firstAttribute="centerY" secondItem="XHs-u6-Imd" secondAttribute="centerY" id="Vja-O0-tsA"/>
+                                                    <constraint firstItem="u7g-4l-9ZT" firstAttribute="leading" secondItem="XHs-u6-Imd" secondAttribute="leading" constant="20" id="H9G-g1-0lI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="u7g-4l-9ZT" secondAttribute="trailing" constant="20" id="Knd-FT-Wph"/>
+                                                    <constraint firstItem="u7g-4l-9ZT" firstAttribute="centerY" secondItem="XHs-u6-Imd" secondAttribute="centerY" id="RYI-ph-t3F"/>
                                                     <constraint firstAttribute="bottom" secondItem="aiQ-ce-fNK" secondAttribute="bottom" id="bTs-z1-I31"/>
                                                     <constraint firstAttribute="height" constant="65" id="jkx-yV-5jo"/>
-                                                    <constraint firstItem="MIx-5P-YXK" firstAttribute="leading" secondItem="XHs-u6-Imd" secondAttribute="leading" constant="20" id="nuX-iZ-Xse"/>
                                                     <constraint firstAttribute="trailing" secondItem="aiQ-ce-fNK" secondAttribute="trailing" id="qlb-N8-GV5"/>
                                                 </constraints>
                                             </view>
@@ -1858,12 +1872,20 @@ Do you wish to change mobile number?</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wu-Ul-gr5">
                                                 <rect key="frame" x="0.0" y="50" width="390" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="v99-DT-XGE">
-                                                        <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="vS5-GZ-QkG">
-                                                        <rect key="frame" x="283" y="15.333333333333332" width="87" height="34.333333333333343"/>
-                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="62N-o7-ZSc">
+                                                        <rect key="frame" x="20" y="15.333333333333332" width="350" height="34.333333333333343"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="cSx-o9-gcG">
+                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="LEt-Jw-h3J">
+                                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="GTA-GC-sLb">
+                                                                <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWN-pE-vgs">
                                                         <rect key="frame" x="0.0" y="62" width="390" height="3"/>
                                                         <color key="backgroundColor" name="Allied Blue"/>
@@ -1874,13 +1896,12 @@ Do you wish to change mobile number?</string>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="vS5-GZ-QkG" secondAttribute="trailing" constant="20" id="2BZ-ne-yYA"/>
-                                                    <constraint firstItem="vS5-GZ-QkG" firstAttribute="centerY" secondItem="4Wu-Ul-gr5" secondAttribute="centerY" id="C7F-Hm-PKq"/>
+                                                    <constraint firstItem="62N-o7-ZSc" firstAttribute="leading" secondItem="4Wu-Ul-gr5" secondAttribute="leading" constant="20" id="7CM-8B-ac3"/>
                                                     <constraint firstAttribute="bottom" secondItem="OWN-pE-vgs" secondAttribute="bottom" id="KKb-Tl-Gfn"/>
                                                     <constraint firstItem="OWN-pE-vgs" firstAttribute="leading" secondItem="4Wu-Ul-gr5" secondAttribute="leading" id="NBw-dd-U1R"/>
-                                                    <constraint firstItem="v99-DT-XGE" firstAttribute="leading" secondItem="4Wu-Ul-gr5" secondAttribute="leading" constant="20" id="Pa3-tB-fh1"/>
+                                                    <constraint firstItem="62N-o7-ZSc" firstAttribute="centerY" secondItem="4Wu-Ul-gr5" secondAttribute="centerY" id="U04-cN-uPn"/>
                                                     <constraint firstAttribute="height" constant="65" id="aDD-yC-rf2"/>
-                                                    <constraint firstItem="v99-DT-XGE" firstAttribute="centerY" secondItem="4Wu-Ul-gr5" secondAttribute="centerY" id="eDI-qy-MmL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="62N-o7-ZSc" secondAttribute="trailing" constant="20" id="ezA-jF-cu7"/>
                                                     <constraint firstAttribute="trailing" secondItem="OWN-pE-vgs" secondAttribute="trailing" id="iuz-sz-waj"/>
                                                 </constraints>
                                             </view>
@@ -2263,12 +2284,20 @@ If you wish to continue Click here </string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hv-pF-3aH">
                                 <rect key="frame" x="0.0" y="94" width="390" height="65"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="LqD-7K-U2h">
-                                        <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="mEO-Dr-lT1">
-                                        <rect key="frame" x="283" y="15.333333333333332" width="87" height="34.333333333333343"/>
-                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hv3-6f-PGR">
+                                        <rect key="frame" x="20" y="15.333333333333332" width="350" height="34.333333333333343"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="WZQ-Yf-wmd">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="k5x-Z8-H1O">
+                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="yHR-Iz-4xu">
+                                                <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YY6-S6-b5l">
                                         <rect key="frame" x="0.0" y="62" width="390" height="3"/>
                                         <color key="backgroundColor" name="Allied Blue"/>
@@ -2279,13 +2308,12 @@ If you wish to continue Click here </string>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="LqD-7K-U2h" firstAttribute="leading" secondItem="9hv-pF-3aH" secondAttribute="leading" constant="20" id="5Mi-EO-04D"/>
                                     <constraint firstAttribute="height" constant="65" id="8hj-m1-Vt2"/>
                                     <constraint firstAttribute="trailing" secondItem="YY6-S6-b5l" secondAttribute="trailing" id="AQ4-TM-r6a"/>
-                                    <constraint firstItem="LqD-7K-U2h" firstAttribute="centerY" secondItem="9hv-pF-3aH" secondAttribute="centerY" id="JJS-6R-VsD"/>
-                                    <constraint firstItem="mEO-Dr-lT1" firstAttribute="centerY" secondItem="9hv-pF-3aH" secondAttribute="centerY" id="MLx-gk-xYn"/>
+                                    <constraint firstAttribute="trailing" secondItem="hv3-6f-PGR" secondAttribute="trailing" constant="20" id="Jh1-fy-4sm"/>
+                                    <constraint firstItem="hv3-6f-PGR" firstAttribute="leading" secondItem="9hv-pF-3aH" secondAttribute="leading" constant="20" id="PrH-hN-N9V"/>
+                                    <constraint firstItem="hv3-6f-PGR" firstAttribute="centerY" secondItem="9hv-pF-3aH" secondAttribute="centerY" id="U0t-W8-4nv"/>
                                     <constraint firstItem="YY6-S6-b5l" firstAttribute="leading" secondItem="9hv-pF-3aH" secondAttribute="leading" id="XHe-Pt-eMq"/>
-                                    <constraint firstAttribute="trailing" secondItem="mEO-Dr-lT1" secondAttribute="trailing" constant="20" id="fQR-Bu-taD"/>
                                     <constraint firstAttribute="bottom" secondItem="YY6-S6-b5l" secondAttribute="bottom" id="nU9-YB-KUZ"/>
                                 </constraints>
                             </view>
@@ -2759,12 +2787,6 @@ If you wish to continue Click here </string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKx-7I-lmQ">
                                 <rect key="frame" x="0.0" y="94" width="390" height="65"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="fF7-Y1-PYt">
-                                        <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="cD8-L9-MBL">
-                                        <rect key="frame" x="283" y="15.333333333333332" width="87" height="34.333333333333343"/>
-                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCM-wf-Ess">
                                         <rect key="frame" x="0.0" y="62" width="390" height="3"/>
                                         <color key="backgroundColor" name="Allied Blue"/>
@@ -2772,14 +2794,27 @@ If you wish to continue Click here </string>
                                             <constraint firstAttribute="height" constant="3" id="o8W-uj-S6L"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="UDB-yK-HzM">
+                                        <rect key="frame" x="20" y="15.333333333333332" width="350" height="34.333333333333343"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="CLs-h4-Tlv">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="iiP-ge-Z0e">
+                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="N1E-Ip-rFk">
+                                                <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="fF7-Y1-PYt" firstAttribute="centerY" secondItem="xKx-7I-lmQ" secondAttribute="centerY" id="Cod-TY-eE5"/>
-                                    <constraint firstItem="fF7-Y1-PYt" firstAttribute="leading" secondItem="xKx-7I-lmQ" secondAttribute="leading" constant="20" id="Reg-BB-K9G"/>
                                     <constraint firstAttribute="height" constant="65" id="RjD-x5-a8j"/>
-                                    <constraint firstItem="cD8-L9-MBL" firstAttribute="centerY" secondItem="xKx-7I-lmQ" secondAttribute="centerY" id="aNq-HR-E5A"/>
-                                    <constraint firstAttribute="trailing" secondItem="cD8-L9-MBL" secondAttribute="trailing" constant="20" id="j19-S0-dMh"/>
+                                    <constraint firstItem="UDB-yK-HzM" firstAttribute="leading" secondItem="xKx-7I-lmQ" secondAttribute="leading" constant="20" id="XHe-9d-YZf"/>
+                                    <constraint firstItem="UDB-yK-HzM" firstAttribute="centerY" secondItem="xKx-7I-lmQ" secondAttribute="centerY" id="eh3-hB-hn2"/>
+                                    <constraint firstAttribute="trailing" secondItem="UDB-yK-HzM" secondAttribute="trailing" constant="20" id="iCh-Y7-Or4"/>
                                     <constraint firstAttribute="trailing" secondItem="LCM-wf-Ess" secondAttribute="trailing" id="kL5-OM-Fdz"/>
                                     <constraint firstAttribute="bottom" secondItem="LCM-wf-Ess" secondAttribute="bottom" id="ydZ-gY-bIV"/>
                                     <constraint firstItem="LCM-wf-Ess" firstAttribute="leading" secondItem="xKx-7I-lmQ" secondAttribute="leading" id="zR5-fz-4dq"/>
@@ -3177,12 +3212,20 @@ If you wish to continue Click here </string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiW-d6-LCC">
                                                 <rect key="frame" x="0.0" y="50" width="390" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="ZCc-qR-VO0">
-                                                        <rect key="frame" x="20" y="21.333333333333343" width="129" height="22.666666666666671"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="jOD-sn-wjw">
-                                                        <rect key="frame" x="283" y="15.333333333333346" width="87" height="34.333333333333343"/>
-                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="LvD-oH-S5h">
+                                                        <rect key="frame" x="20" y="15.333333333333346" width="350" height="34.333333333333343"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="ZCc-qR-VO0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="jOD-sn-wjw">
+                                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="zPe-Sg-LQQ">
+                                                                <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23p-bg-BoZ">
                                                         <rect key="frame" x="0.0" y="62" width="390" height="3"/>
                                                         <color key="backgroundColor" name="Allied Blue"/>
@@ -3194,11 +3237,10 @@ If you wish to continue Click here </string>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="65" id="3uJ-Nu-zBv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LvD-oH-S5h" secondAttribute="trailing" constant="20" id="6Tm-33-ez4"/>
                                                     <constraint firstAttribute="trailing" secondItem="23p-bg-BoZ" secondAttribute="trailing" id="8w1-cF-Kbw"/>
-                                                    <constraint firstAttribute="trailing" secondItem="jOD-sn-wjw" secondAttribute="trailing" constant="20" id="Bg9-0S-XW2"/>
-                                                    <constraint firstItem="ZCc-qR-VO0" firstAttribute="centerY" secondItem="RiW-d6-LCC" secondAttribute="centerY" id="CIy-45-KkF"/>
-                                                    <constraint firstItem="jOD-sn-wjw" firstAttribute="centerY" secondItem="RiW-d6-LCC" secondAttribute="centerY" id="ZWV-tX-dmH"/>
-                                                    <constraint firstItem="ZCc-qR-VO0" firstAttribute="leading" secondItem="RiW-d6-LCC" secondAttribute="leading" constant="20" id="lPP-WH-d5Q"/>
+                                                    <constraint firstItem="LvD-oH-S5h" firstAttribute="leading" secondItem="RiW-d6-LCC" secondAttribute="leading" constant="20" id="CZu-ul-VPn"/>
+                                                    <constraint firstItem="LvD-oH-S5h" firstAttribute="centerY" secondItem="RiW-d6-LCC" secondAttribute="centerY" id="DZW-qo-1df"/>
                                                     <constraint firstAttribute="bottom" secondItem="23p-bg-BoZ" secondAttribute="bottom" id="sNT-1E-Adz"/>
                                                     <constraint firstItem="23p-bg-BoZ" firstAttribute="leading" secondItem="RiW-d6-LCC" secondAttribute="leading" id="xEH-in-KQU"/>
                                                 </constraints>
@@ -3918,12 +3960,20 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEL-VW-jig">
                                                 <rect key="frame" x="0.0" y="50" width="390" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="94e-bJ-6oz">
-                                                        <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="uxg-S9-Flh">
-                                                        <rect key="frame" x="283" y="15.333333333333332" width="87" height="34.333333333333343"/>
-                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wnD-pw-rml">
+                                                        <rect key="frame" x="20" y="15.333333333333332" width="350" height="34.333333333333343"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="5aJ-fG-TFO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="SmE-GP-F9q">
+                                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="7KV-fV-Jcc">
+                                                                <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yE-44-EJi">
                                                         <rect key="frame" x="0.0" y="62" width="390" height="3"/>
                                                         <color key="backgroundColor" name="Allied Blue"/>
@@ -3934,14 +3984,13 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="wnD-pw-rml" secondAttribute="trailing" constant="20" id="CbQ-Mf-7Rs"/>
                                                     <constraint firstAttribute="height" constant="65" id="EHL-cw-YQS"/>
-                                                    <constraint firstItem="uxg-S9-Flh" firstAttribute="centerY" secondItem="EEL-VW-jig" secondAttribute="centerY" id="EmT-dE-GzA"/>
                                                     <constraint firstAttribute="trailing" secondItem="3yE-44-EJi" secondAttribute="trailing" id="GiZ-mF-g6N"/>
                                                     <constraint firstAttribute="bottom" secondItem="3yE-44-EJi" secondAttribute="bottom" id="Glh-NJ-VwQ"/>
-                                                    <constraint firstItem="94e-bJ-6oz" firstAttribute="centerY" secondItem="EEL-VW-jig" secondAttribute="centerY" id="Ixh-JU-NvE"/>
                                                     <constraint firstItem="3yE-44-EJi" firstAttribute="leading" secondItem="EEL-VW-jig" secondAttribute="leading" id="UV2-N3-351"/>
-                                                    <constraint firstItem="94e-bJ-6oz" firstAttribute="leading" secondItem="EEL-VW-jig" secondAttribute="leading" constant="20" id="XGy-HU-Iol"/>
-                                                    <constraint firstAttribute="trailing" secondItem="uxg-S9-Flh" secondAttribute="trailing" constant="20" id="oZE-da-9SN"/>
+                                                    <constraint firstItem="wnD-pw-rml" firstAttribute="centerY" secondItem="EEL-VW-jig" secondAttribute="centerY" id="Z0X-Jn-rrA"/>
+                                                    <constraint firstItem="wnD-pw-rml" firstAttribute="leading" secondItem="EEL-VW-jig" secondAttribute="leading" constant="20" id="klC-Kz-khq"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Get Started" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yL-Gr-iUS" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
@@ -4954,6 +5003,7 @@ If you wish to continue.</string>
     <resources>
         <image name="allied-live-chat" width="288" height="68"/>
         <image name="allied-logo-new" width="129" height="22.666666030883789"/>
+        <image name="allied-slogan" width="97" height="14"/>
         <image name="camera-icon" width="66.666664123535156" height="60"/>
         <image name="chatIcon" width="16.333333969116211" height="16.333333969116211"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
