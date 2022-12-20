@@ -1,21 +1,16 @@
 {
   "images" : [
     {
-      "filename" : "rightArrow.png",
       "idiom" : "universal",
-      "language-direction" : "left-to-right",
       "scale" : "1x"
     },
     {
-      "filename" : "rightArrow@2x.png",
+      "filename" : "top-bar-english-trans.png",
       "idiom" : "universal",
-      "language-direction" : "left-to-right",
       "scale" : "2x"
     },
     {
-      "filename" : "rightArrow@3x.png",
       "idiom" : "universal",
-      "language-direction" : "left-to-right",
       "scale" : "3x"
     }
   ],

@@ -19,6 +19,10 @@ class WelcomeVC: UIViewController {
     }
     @IBOutlet weak var buttonUrdu: UIButton!
     
+    @IBAction func buttonEnglish(_ sender: Any) {
+        funChangeAppLanguageAndSide(to: "en", vc: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DataCacheManager.shared.saveNoOfJointApplicants(input: 0)

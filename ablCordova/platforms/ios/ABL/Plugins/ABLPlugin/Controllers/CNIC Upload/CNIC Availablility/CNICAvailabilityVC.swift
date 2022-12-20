@@ -21,6 +21,11 @@ final class CNICAvailabilityVC: UIViewController {
         funChangeAppLanguageAndSide(to: "ur", vc: self)
     }
     @IBOutlet weak var buttonUrdu: UIButton!
+    
+    @IBAction func buttonEnglish(_ sender: Any) {
+        funChangeAppLanguageAndSide(to: "en", vc: self)
+    }
+    
     @IBOutlet weak var mobileNumberLabel: UILabel!
     @IBOutlet weak var mobileNumberTextField: UITextField!
     
