@@ -129,7 +129,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
     var idNumber: String?
     var statusID: Double?
     var nationalityTypeID: Double?
-    var nationalities: [NationalityInputModel]?
+    var nationalities: [[String: Any]]?
     var natureOfAccountID: Double?
     var stepperSections: StepperSectionsModel?
     var addresses: [AddressesModel]?

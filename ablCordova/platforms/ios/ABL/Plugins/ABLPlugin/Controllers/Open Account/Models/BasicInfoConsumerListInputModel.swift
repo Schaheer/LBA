@@ -48,7 +48,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
     var customerTypeID: Double?
     var genderId: Int?
     var nationalityTypeId: Double?
-    var nationalities: [NationalityInputModel]?
+    var nationalities: [[String: Any]]?
 
     
     // MARK: - Model Initializers
@@ -66,7 +66,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         isPrimary: Bool,
         isPrimaryRegistered: Bool = false,
         nationalityTypeId: Double? = nil,
-        nationalities: [NationalityInputModel]? = nil
+        nationalities: [[String: Any]]? = []
 //        genderId: Int
     ) {
         
@@ -239,7 +239,7 @@ final class BasicInfoConsumerListInputModelForNationality: Mappable {
     var customerTypeID: Double?
     var genderId: Int?
     var nationalityTypeId: Double?
-    var nationalities: [NationalityInputModel]?
+    var nationalities: [[String: Any]]?
 
     // MARK: - Model Initializers
     init?(map: Map) {
@@ -255,7 +255,7 @@ final class BasicInfoConsumerListInputModelForNationality: Mappable {
         isPrimary: Bool,
         isPrimaryRegistered: Bool = false,
         nationalityTypeId: Double? = nil,
-        nationalities: [NationalityInputModel]? = nil
+        nationalities: [[String: Any]]? = []
 //        genderId: Int
     ) {
         var dictionary = [String: Any]()
@@ -366,7 +366,7 @@ final class BasicInfoConsumerListInputModelForAll: BaseInputModel {
     var occupationID: Double?
     var professionID: Double?
     var nationalityTypeId: Double?
-    var nationalities: [NationalityInputModel]?
+    var nationalities: [[String: Any]]?
     var residentCountries: [ResidentCountryInputModel]?
     
     // MARK: - Model Initializers
@@ -389,7 +389,7 @@ final class BasicInfoConsumerListInputModelForAll: BaseInputModel {
         customerNtn: String? = nil,
         rdaCustomerCountryId: Double? = nil,
         nationalityTypeId: Double? = nil,
-        nationalities: [NationalityInputModel]? = nil,
+        nationalities: [[String: Any]]? = [],
         residentCountries: [ResidentCountryInputModel]? = nil,
         kinName: String? = nil,
         kinCNIC: String? = nil,

@@ -82,8 +82,8 @@ final class TransactionalAlertsViewModel: TransactionalAlertsViewModelProtocol {
             customerTypeID: customerTypeID,
             transAlertInd: transAlertInd,
             transactionalAlertID: transactionalAlertID,
-            eSOAInd: eSOAInd,
-            genderId: genderId
+            eSOAInd: eSOAInd
+//            genderId: genderId
         ) else { return }
         
         APIManager.shared.registerConsumerAccountInfo(input: input) { [weak self] response in

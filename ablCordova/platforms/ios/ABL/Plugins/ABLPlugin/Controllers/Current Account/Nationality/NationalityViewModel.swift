@@ -57,7 +57,7 @@ class NationalityViewModel: NationalityViewModelProtocol {
         kinCnic: String?,
         kinMobile: String?,
         nationalityTypeId: Double?,
-        nationalities: [NationalityInputModel]?,
+        nationalities: [[String: Any]]?,
         residentCountries: [ResidentCountryInputModel]?) {
         guard
             let rdaCustomerAccInfoId = rdaCustomerAccInfoId,

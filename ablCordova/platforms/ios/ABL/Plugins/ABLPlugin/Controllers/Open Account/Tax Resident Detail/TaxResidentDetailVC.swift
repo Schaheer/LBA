@@ -88,7 +88,9 @@ final class TaxResidentDetailVC: UIViewController {
         if modelRegistrationSteper.isNationalityDual ?? false {
             taxResidentSegment.setIndex(1)
             labelCountry.text = modelRegistrationSteper.countryDual
-            taxResidentViewModel.setCountryOfTaxResidenceID(for: modelRegistrationSteper.countryDualId!)
+            if let countryDualId = modelRegistrationSteper.countryDualId {
+                taxResidentViewModel.setCountryOfTaxResidenceID(for: countryDualId)
+            }
             
             if modelRegistrationSteper.isTaxIdentificationNoDual ?? false {
                 taxIdentificationNumSegment.setIndex(1)
@@ -97,7 +99,9 @@ final class TaxResidentDetailVC: UIViewController {
             else {
                 taxIdentificationNumSegment.setIndex(0)
                 labelReson.text = modelRegistrationSteper.taxNotAvailableReson
-                taxResidentViewModel.setTaxNotAvailableReason(id: modelRegistrationSteper.taxNotAvailableResonId!)
+                if let taxNotAvailableResonId = modelRegistrationSteper.taxNotAvailableResonId {
+                    taxResidentViewModel.setTaxNotAvailableReason(id: taxNotAvailableResonId)
+                }
                 if taxResidentViewModel.getTaxNotAvailableReasonID() == 101202.0 {
                     resonBView.isHidden = false
                     textFieldIDentificationNumber.text = modelRegistrationSteper.taxFormBExplanation

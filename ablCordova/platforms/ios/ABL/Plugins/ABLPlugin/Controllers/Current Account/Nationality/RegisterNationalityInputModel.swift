@@ -108,7 +108,7 @@ final class RegisterNationalityConsumerListInputModel: BaseInputModel {
     var kinCnic: String?
     var kinMobile: String?
     var nationalityTypeId: Double?
-    var nationalities: [NationalityInputModel]?
+    var nationalities: [[String: Any]]?
     var residentCountries: [ResidentCountryInputModel]?
     
     // MARK: - Model Initializers
@@ -138,7 +138,7 @@ final class RegisterNationalityConsumerListInputModel: BaseInputModel {
         kinCnic: String?,
         kinMobile: String?,
         nationalityTypeId: Double?,
-        nationalities: [NationalityInputModel]?,
+        nationalities: [[String: Any]]?,
         residentCountries: [ResidentCountryInputModel]?
     ) {
         var dictionary = [String: Any]()

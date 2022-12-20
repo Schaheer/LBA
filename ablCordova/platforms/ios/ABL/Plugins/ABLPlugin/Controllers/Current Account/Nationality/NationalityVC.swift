@@ -74,6 +74,7 @@ final class NationalityVC: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: UIButton){
+        print(nationalitySegment.index)
         if nationalitySegment.index == 1 {
             modelRegistrationSteper.isNationalityDual = true
             if nationalityDualCountryNameLocal != nil {
@@ -82,8 +83,7 @@ final class NationalityVC: UIViewController {
             if nationalityDualCountryIdLocal != nil {
                 modelRegistrationSteper.nationalityDualId = nationalityDualCountryIdLocal
             }
-        }
-        else {
+        } else {
             modelRegistrationSteper.isNationalityDual = nil
             modelRegistrationSteper.nationalityDualName = nil
             modelRegistrationSteper.nationalityDualId = nil
@@ -208,6 +208,12 @@ extension NationalityVC: UITableViewDelegate, UITableViewDataSource {
             nationalitiesArray?.append(nationalityOther)
         }
         
+        let nationalities2: [[String: Any]] = (nationalitiesArray?.map({
+            ["rdaCustomerId": ($0.rdaCustomerId ?? 0),
+             "nationalityId": ($0.nationalityId ?? 0),
+             "idNumber": ($0.idNumber ?? 0)]
+        }))!
+        
         let customerAccInfoID = currentUser.rdaCustomerAccInfoId
         let customerProfiledID = currentUser.rdaCustomerProfileID!
         let isPrimary = currentUser.isPrimary
@@ -222,8 +228,8 @@ extension NationalityVC: UITableViewDelegate, UITableViewDataSource {
             rdaCustomerProfileId: customerProfiledID,
             isPrimary: (consumerList?.count ?? 0 > 0 ? false : isPrimary)!,
             isPrimaryRegistered: isPrimaryRegistered,
-            nationalityTypeId: 100901,
-            nationalities: nationalitiesArray
+            nationalityTypeId: modelRegistrationSteper.isNationalityDual ?? false ? 100902 : 100901,
+            nationalities: nationalities2
         )
         
         let nationalities = basicInfoConsumerListInput?.nationalities

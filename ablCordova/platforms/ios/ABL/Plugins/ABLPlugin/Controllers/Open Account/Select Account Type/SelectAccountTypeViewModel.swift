@@ -122,8 +122,8 @@ final class SelectAccountTypeViewModel: SelectAccountTypeViewModelProtocol {
             customerAccountTypeID: customerAccountTypeID,
             customerBranch: customerBranch,
             customerTypeID: customerTypeID,
-            purposeOfAccountID: purposeOfAccountID,
-            genderId: modelRegistrationSteper.genderId
+            purposeOfAccountID: purposeOfAccountID
+//            genderId: modelRegistrationSteper.genderId
         ) else { return }
         
         APIManager.shared.registerConsumerAccountInfo(input: input) { [weak self] response in
