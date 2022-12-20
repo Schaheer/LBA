@@ -113,7 +113,7 @@ final class RegisterConsumerAccountInfoInputModel: BaseInputModel {
         dictionary[CodingKeys.proofOfIncomeInd.rawValue] = proofOfIncomeInd
         dictionary[CodingKeys.accountVariantID.rawValue] = accountVariantID
         dictionary[CodingKeys.genderId.rawValue] = genderId
-        print(dictionary)
+//        print(dictionary)
         self.rdaCustomerAccInfoID = rdaCustomerAccInfoID
         self.rdaCustomerID = rdaCustomerID
         self.bankingModeID = bankingModeID

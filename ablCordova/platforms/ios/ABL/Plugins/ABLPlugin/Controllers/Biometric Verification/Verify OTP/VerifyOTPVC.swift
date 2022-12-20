@@ -29,10 +29,13 @@ final class VerifyOTPVC: UIViewController {
     var otpVerifyMode: OTPVerifyMode = .biometricVerification
     
     private let verifyOTPViewModel = VerifyOTPViewModel()
-    
+    var cameFromJointFlow = false
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        if DataCacheManager.shared.loadNoOfJointApplicants() ?? 0 > 0 {
+            cameFromJointFlow = true
+        }
         otpFieldView.addSubview(otpStackView)
         otpStackView.delegate = self
         
@@ -62,7 +65,7 @@ final class VerifyOTPVC: UIViewController {
        }
    
    @objc func updateTimer() {
-           print(self.seconds)
+//           print(self.seconds)
            self.otpTimerLabel.text = self.timeFormatted(self.seconds) // will show timer
            if seconds != 0 {
                seconds -= 1  // decrease counter timer
@@ -152,17 +155,34 @@ final class VerifyOTPVC: UIViewController {
         
         let otp = otpStackView.getOTP()
         if otp.count == 6 {
-            let encryptedOTP = aesManager?.encrypt(string: otp) ?? ""
-            verifyOTPViewModel.verifyCnicUploadOTP(
-                customerTypeID: BaseConstants.Config.customerTypeID,
-                cnicNumber: viewAppGenerateOTPResponse.idNumber,
-                mobileNumber: viewAppGenerateOTPResponse.mobileNo,
-                otp: encryptedOTP
-            )
+            if cameFromJointFlow {
+                callRegisterVerifyOTP()
+            }
+            else {
+                let encryptedOTP = aesManager?.encrypt(string: otp) ?? ""
+                verifyOTPViewModel.verifyCnicUploadOTP(
+                    customerTypeID: BaseConstants.Config.customerTypeID,
+                    cnicNumber: viewAppGenerateOTPResponse.idNumber,
+                    mobileNumber: viewAppGenerateOTPResponse.mobileNo,
+                    otp: encryptedOTP
+                )
+            }
         }
     }
-    
+    private func openPersonalInformationVC() {
+        guard let personalInformationVC = UIStoryboard.initialize(
+            viewController: .personalInformationBaseVC,
+            fromStoryboard: .openAccount
+        ) as? PersonalInformationBaseVC else { return }
+        personalInformationVC.firstChild = .personalInfoSecondVC
+        navigationController?.pushViewController(personalInformationVC, animated: true)
+    }
     private func openBiometricVerificationVC() {
+        if DataCacheManager.shared.loadNoOfJointApplicants() ?? 0 > 0 {
+            self.openPersonalInformationVC()
+            return()
+        }
+        
         guard let biometricVerificationVC = UIStoryboard.initialize(
             viewController: .biometricVerificationVC,
             fromStoryboard: .biometricVerification
@@ -300,7 +320,7 @@ final class VerifyOTPVC: UIViewController {
 
 extension VerifyOTPVC: OTPDelegate {
     func didChangeValidity(isValid: Bool) {
-        print(isValid)
+//        print(isValid)
             //Shakeel only add ! sign
         if isValid {
             verifyButton.isEnabled = true
@@ -313,6 +333,94 @@ extension VerifyOTPVC: OTPDelegate {
             }
         } else {
             verifyButton.isEnabled = false
+        }
+    }
+    
+    private func callRegisterVerifyOTP(){
+        //        if DataCacheManager.shared.getRegisterVerifyOTPResponseModel() != nil {
+        //
+        //        }
+        
+        guard
+            let viewAppGenerateOTPResponse = DataCacheManager.shared.loadViewAppGenerateOTPResponse() else { return }
+        guard let viewAppGenerateResponseModel = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList else { return }
+        print(viewAppGenerateResponseModel.first?.idNumber)
+
+        var consumerListInputModelArray = [ConsumerListInputModel]()
+        let consumer = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList?.first
+        
+        let consumerList = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
+        print(consumer?.idNumber)
+        var rdaCustomerAccInfoId = 0
+        if let rdaid = consumer?.rdaCustomerAccInfoId as? Int {
+            rdaCustomerAccInfoId = rdaid
+        }
+        else if let rdaid = consumer?.rdaCustomerAccInfoId as? Double {
+            rdaCustomerAccInfoId = Int(rdaid)
+        }
+        else if let rdaid = consumer?.rdaCustomerAccInfoId as? String {
+            rdaCustomerAccInfoId = Int(rdaid)!
+        }
+        guard let consumerListInputModelll = ConsumerListInputModel(
+            cnicNumber: viewAppGenerateOTPResponse.idNumber ?? "",
+            mobileNumber: viewAppGenerateOTPResponse.mobileNo ?? "",
+            isPrimary: viewAppGenerateOTPResponse.isPrimary ?? false,
+            customerTypeID: BaseConstants.Config.customerTypeID,
+            customerBranch: consumer?.customerBranch ?? "",
+            bankingModeID: consumer?.accountInformation?.bankingModeID, //selectBankingMethodViewModel.getBankingModeID(),
+            dateOfBirth: viewAppGenerateOTPResponse.dateOfBirth ?? "",
+            dateOfIssue: viewAppGenerateOTPResponse.dateOfIssue ?? "",
+            isPrimaryRegistered: false,
+            rdaCustomerAccInfoId:  rdaCustomerAccInfoId,
+            attachments: [String]()
+        ) else { return }
+        
+        consumerListInputModelArray.append(consumerListInputModelll)
+        consumerList?.forEach {
+            guard let consumerListInputModel = ConsumerListInputModel(
+                cnicNumber: $0.idNumber ?? "",
+                mobileNumber: $0.mobileNo ?? "",
+                isPrimary: $0.isPrimary ?? false,
+                customerTypeID: BaseConstants.Config.customerTypeID,
+                customerBranch: $0.customerBranch ?? "",
+                bankingModeID: consumer?.accountInformation?.bankingModeID, //selectBankingMethodViewModel.getBankingModeID(),
+                dateOfBirth: $0.dateOfBirth ?? "",
+                dateOfIssue: $0.dateOfIssue ?? "",
+                isPrimaryRegistered: $0.isPrimary ?? false,
+                rdaCustomerAccInfoId: rdaCustomerAccInfoId,
+                attachments: [String]()
+            ) else { return }
+            
+            consumerListInputModelArray.append(consumerListInputModel)
+        }
+        
+//        print(DataCacheManager.shared.loadNoOfJointApplicants())
+//        print(consumer)
+//        print(DataCacheManager.shared.loadRegisterConsumerAccountInfoResponse())
+//        print(consumerListInputModelArray)
+        
+        //TODO: add data of primary and all the secondary applicants in consumerList Array
+        guard let registerVerifyOTPInput = RegisterVerifyOTPInputModel(consumerList: consumerListInputModelArray, noOfJointApplicants: DataCacheManager.shared.loadNoOfJointApplicants() ?? 0, bioMetricVerificationNadraMobileReq: nil, channelId: BaseConstants.Config.channelID, customerTypeId: BaseConstants.Config.customerTypeID) else { return }
+
+        registerVerifyOTP(input: registerVerifyOTPInput)
+    }
+    
+    func registerVerifyOTP(input: RegisterVerifyOTPInputModel?) {
+        guard let input = input else { return }
+        
+        APIManager.shared.registerVerifyOTP(input: input) { [weak self] response in
+            guard let self = self else { return }
+            
+            switch response.result {
+            case .success(let value):
+                var registerVerifyOTPResponse: RegisterVerifyOTPResponseModel = value
+                DataCacheManager.shared.saveRegisterVerifyOTPResponse(input: registerVerifyOTPResponse)
+//                DataCacheManager.shared.saveRegisterVerifyOTPResponseModel(registerVerifyOTPResponseModel: value)
+                self.openPersonalInformationVC()
+            case .failure(let error):
+                var errorMessage: String? = error.errorDescription
+                self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: errorMessage ?? "")
+            }
         }
     }
 }

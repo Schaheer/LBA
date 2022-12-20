@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -30,7 +30,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7vL-DI-TX4">
-                                <rect key="frame" x="0.0" y="44" width="414" height="30"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Country of Nationality" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Iq-SF-5b9">
                                         <rect key="frame" x="0.0" y="0.0" width="306" height="30"/>
@@ -59,11 +59,11 @@
                                 </constraints>
                             </stackView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="js1-pg-VXr">
-                                <rect key="frame" x="0.0" y="94" width="414" height="628"/>
+                                <rect key="frame" x="0.0" y="98" width="414" height="624"/>
                                 <color key="backgroundColor" name="App Background"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SelectNationalityCell2" rowHeight="129" id="vLi-fl-ca5" customClass="SelectNationalityCell" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="44.5" width="414" height="129"/>
+                                        <rect key="frame" x="0.0" y="50" width="414" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vLi-fl-ca5" id="uTT-6M-aCe">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="129"/>
@@ -147,7 +147,7 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SelectNationalityCell" rowHeight="129" id="SwS-1B-Y0D" customClass="SelectNationalityCell" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="173.5" width="414" height="129"/>
+                                        <rect key="frame" x="0.0" y="179" width="414" height="129"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="SwS-1B-Y0D" id="tuH-Ua-eoO">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="129"/>
@@ -231,23 +231,23 @@
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AddCountryCell" rowHeight="65" id="zvv-iX-NYY" customClass="AddCountryCell" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="302.5" width="414" height="65"/>
+                                        <rect key="frame" x="0.0" y="308" width="414" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zvv-iX-NYY" id="mt9-Cc-Igw">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cPi-DL-2QF">
-                                                    <rect key="frame" x="200.5" y="8" width="213.5" height="49"/>
+                                                    <rect key="frame" x="213.5" y="8" width="200.5" height="49"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Another Country" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t01-VF-Ygd">
-                                                            <rect key="frame" x="8" y="15" width="164.5" height="19"/>
+                                                            <rect key="frame" x="8" y="15" width="151.5" height="19"/>
                                                             <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
                                                             <color key="textColor" name="Allied Blue"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="rounded-plus-orange" translatesAutoresizingMaskIntoConstraints="NO" id="IB6-kD-rjR">
-                                                            <rect key="frame" x="180.5" y="12" width="25" height="25"/>
+                                                            <rect key="frame" x="167.5" y="12" width="25" height="25"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="25" id="hBE-Py-F3B"/>
                                                                 <constraint firstAttribute="width" constant="25" id="rWx-re-U3s"/>
@@ -279,7 +279,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6vK-UN-XQ2">
                                 <rect key="frame" x="0.0" y="742" width="414" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osT-Wx-pu5">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="osT-Wx-pu5" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="199" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="apu-Di-xEO"/>
@@ -304,7 +304,7 @@
                                             <action selector="backButtonTapped:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="VeE-cS-g0B"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GF5-4K-aGV">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GF5-4K-aGV" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                         <rect key="frame" x="215" y="0.0" width="199" height="50"/>
                                         <color key="backgroundColor" name="Allied Blue"/>
                                         <constraints>
@@ -369,7 +369,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sH7-4C-8jX" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="60"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="60"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="tT5-PB-G5f">
                                         <rect key="frame" x="12" y="15" width="390" height="30"/>
@@ -425,7 +425,7 @@
                                 </userDefinedRuntimeAttributes>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IRv-G1-WfN">
-                                <rect key="frame" x="0.0" y="124" width="414" height="131.5"/>
+                                <rect key="frame" x="0.0" y="128" width="414" height="131.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="tOF-K3-Y8Z">
                                         <rect key="frame" x="12" y="12" width="390" height="107.5"/>
@@ -479,7 +479,7 @@
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="Blr-0h-FB5">
                                                         <rect key="frame" x="0.0" y="8" width="172" height="30"/>
                                                         <subviews>
-                                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBp-Rn-f1a">
+                                                            <button opaque="NO" tag="10" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JBp-Rn-f1a" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="80" height="30"/>
                                                                 <color key="backgroundColor" name="Allied Blue"/>
                                                                 <constraints>
@@ -500,7 +500,7 @@
                                                                     <action selector="smsButtonTapped:" destination="oIh-rM-GlN" eventType="touchUpInside" id="aI7-cq-yHd"/>
                                                                 </connections>
                                                             </button>
-                                                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeU-o4-QyA">
+                                                            <button opaque="NO" tag="20" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zeU-o4-QyA" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                                 <rect key="frame" x="92" y="0.0" width="80" height="30"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="80" id="Rjk-uW-ROm"/>
@@ -555,7 +555,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="vNR-wr-5wY">
                                 <rect key="frame" x="0.0" y="742" width="414" height="50"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRY-qk-6Zb">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KRY-qk-6Zb" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="199" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="r1q-0y-5pB"/>
@@ -580,7 +580,7 @@
                                             <action selector="backButtonTapped:" destination="oIh-rM-GlN" eventType="touchUpInside" id="JIx-Dj-KDJ"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeN-Vb-DI7">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DeN-Vb-DI7" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                         <rect key="frame" x="215" y="0.0" width="199" height="50"/>
                                         <color key="backgroundColor" name="Allied Blue"/>
                                         <constraints>
@@ -646,7 +646,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i67-p5-cSB" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44" width="414" height="300"/>
+                                <rect key="frame" x="0.0" y="48" width="414" height="300"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Next of Kin Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WT3-rd-ZBg" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                         <rect key="frame" x="12" y="12" width="390" height="23.5"/>
@@ -854,8 +854,26 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="1KF-jY-CAx">
+            <size key="intrinsicContentSize" width="288" height="68"/>
+        </designable>
         <designable name="BRw-pR-HT4">
             <size key="intrinsicContentSize" width="110.5" height="28.5"/>
+        </designable>
+        <designable name="C1E-Uc-KCn">
+            <size key="intrinsicContentSize" width="288" height="68"/>
+        </designable>
+        <designable name="DeN-Vb-DI7">
+            <size key="intrinsicContentSize" width="57.5" height="33"/>
+        </designable>
+        <designable name="GF5-4K-aGV">
+            <size key="intrinsicContentSize" width="57.5" height="33"/>
+        </designable>
+        <designable name="JBp-Rn-f1a">
+            <size key="intrinsicContentSize" width="59" height="33"/>
+        </designable>
+        <designable name="KRY-qk-6Zb">
+            <size key="intrinsicContentSize" width="60.5" height="33"/>
         </designable>
         <designable name="U0h-pQ-0kd">
             <size key="intrinsicContentSize" width="105.5" height="16.5"/>
@@ -869,6 +887,9 @@
         <designable name="XI0-uX-p62">
             <size key="intrinsicContentSize" width="63" height="33"/>
         </designable>
+        <designable name="dJn-Lb-nIV">
+            <size key="intrinsicContentSize" width="288" height="68"/>
+        </designable>
         <designable name="diA-Lz-bfY">
             <size key="intrinsicContentSize" width="34" height="16.5"/>
         </designable>
@@ -880,6 +901,12 @@
         </designable>
         <designable name="hoU-0e-aGb">
             <size key="intrinsicContentSize" width="76.5" height="16.5"/>
+        </designable>
+        <designable name="osT-Wx-pu5">
+            <size key="intrinsicContentSize" width="60.5" height="33"/>
+        </designable>
+        <designable name="zeU-o4-QyA">
+            <size key="intrinsicContentSize" width="63.5" height="33"/>
         </designable>
     </designables>
     <resources>

@@ -41,31 +41,57 @@ class PersonalInformationViewModel: PersonalInformationViewModelProtocol {
             let isPrimary = isPrimary
         else { return }
         
-        if !fullName.isEmpty && !fatherHusbandName.isEmpty && !motherMaidenName.isEmpty{
-            
-            
-            guard let viewAppGenerateResponseModel = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList else { return }
+        if !fullName.isEmpty && !fatherHusbandName.isEmpty && !motherMaidenName.isEmpty {
+            let consumerList = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
+//            let viewAppGenerateResponseModel = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
+//            print(viewAppGenerateResponseModel?.count)
             var consumerListInputModelArray = [BasicInfoConsumerListInputModel]()
-            viewAppGenerateResponseModel.forEach {
-                guard let rdaCustomerAccInfoId = $0.accountInformation?.rdaCustomerAccInfoID, let rdaCustomerProfileId = $0.rdaCustomerProfileID,let fullName = $0.fullName, let fatherHusbandName = $0.fatherHusbandName, let motherMaidenName = $0.motherMaidenName, let isPrimary = $0.isPrimary else { return }
-                guard let consumerListInputModel = BasicInfoConsumerListInputModel(rdaCustomerAccInfoId: rdaCustomerAccInfoId, rdaCustomerProfileId: rdaCustomerProfileId, fullName: fullName, fatherHusbandName: fatherHusbandName, motherMaidenName: motherMaidenName, isPrimary: isPrimary
-                                                                                   //                                                                                   , genderId: modelRegistrationSteper.genderId
-                ) else { return }
-                
-                consumerListInputModelArray.append(consumerListInputModel)
-            }
+//            var consumerListInputModelPrimaryUser = BasicInfoConsumerListInputModel()
+//            if DataCacheManager.shared.loadNoOfJointApplicants() ?? 0 > 0 {
+//                consumerListInputModelPrimaryUser = BasicInfoConsumerListInputModel(
+//                    rdaCustomerAccInfoId: (consumer?.accountInformation?.rdaCustomerAccInfoID)!,
+//                    rdaCustomerProfileId: consumer?.rdaCustomerProfileID ?? 0,
+//                    fullName: consumer?.fullName ?? "",
+//                    fatherHusbandName: consumer?.fatherHusbandName ?? "",
+//                    motherMaidenName: consumer?.motherMaidenName ?? "",
+//                    isPrimary: consumer?.isPrimary ?? false
+//                )
+//                consumerListInputModelArray.append(consumerListInputModelPrimaryUser!)
+//            }
             
-//            guard let registerVerifyOTPInput = RegisterVerifyOTPInputModel(consumerList: consumerListInputModelArray, noOfJointApplicants: 0) else { return }
+//            viewAppGenerateResponseModel?.forEach {
+//                if $0.rdaCustomerProfileID == consumer?.rdaCustomerProfileID {
+//                }
+//                else {
+//                    let consumerListInputModel = BasicInfoConsumerListInputModel(
+//                        rdaCustomerAccInfoId: ($0.accountInformation?.rdaCustomerAccInfoID)!,
+//                        rdaCustomerProfileId: $0.rdaCustomerProfileID!,
+//                        fullName: $0.fullName!,
+//                        fatherHusbandName: $0.fatherHusbandName ?? "",
+//                        motherMaidenName: $0.motherMaidenName ?? "",
+//                        isPrimary: $0.isPrimary ?? false
+//                    )
+//                    consumerListInputModelArray.append(consumerListInputModel!)
+//                }
+////                let rdaCustomerAccInfoId = $0.accountInformation?.rdaCustomerAccInfoID,
+////                let rdaCustomerProfileId = $0.rdaCustomerProfileID,
+////                let fullName = $0.fullName,
+////                let fatherHusbandName = $0.fatherHusbandName,
+////                let motherMaidenName = $0.motherMaidenName,
+////                let isPrimaryLocal = $0.isPrimary
+//            }
             guard let basicInfoConsumerListInput = BasicInfoConsumerListInputModel(
                 rdaCustomerAccInfoId: customerAccInfoID,
                 rdaCustomerProfileId: customerProfiledID,
                 fullName: fullName,
                 fatherHusbandName: fatherHusbandName,
                 motherMaidenName: motherMaidenName,
-                isPrimary: isPrimary
-//                genderId: modelRegistrationSteper.genderId
-) else { return }
-            consumerListInputModelArray.append(basicInfoConsumerListInput)
+                isPrimary: consumerList?.count ?? 0 > 0 ? false : isPrimary
+            ) else { return }
+            
+//            consumerListInputModelArray.append(basicInfoConsumerListInput)
+            consumerListInputModelArray = getListOfConsumers(newUserInfo: basicInfoConsumerListInput)
+            
             //TODO: add data of all the applicants for joint account
             guard let registerConsumerBasicInfoInput = RegisterConsumerBasicInfoInputModel(consumerList: consumerListInputModelArray) else {return}
             APIManager.shared.registerConsumerBasicInfo(input: registerConsumerBasicInfoInput) { [weak self] response in
@@ -74,7 +100,7 @@ class PersonalInformationViewModel: PersonalInformationViewModelProtocol {
                 switch response.result {
                 case .success(let value):
                     self.registerConsumerBasicInfoResponse.value = value
-
+                    
                 case .failure(let error):
                     self.errorMessage.value = error.errorDescription
                 }
@@ -274,5 +300,121 @@ class PersonalInformationViewModel: PersonalInformationViewModelProtocol {
 //            errorMessage.value = "All fields are required"
 //        }
     }
+    //MARK: - For merging
+    func getListOfConsumers(newUserInfo: BasicInfoConsumerListInputModel) -> [BasicInfoConsumerListInputModel] {
+        var tempRdaCustomerProfileID = newUserInfo.rdaCustomerProfileId
+        var tempRdaCustomerAccInfoId = newUserInfo.rdaCustomerAccInfoId
+        
+        let cousumerListHamza = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
+        let cousumerListShakeel = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
+        
+        //MARK: - Start----- Just to find new User Profile ID
+        if let listConsumerLocalHamza = cousumerListHamza {
+            for consumer in listConsumerLocalHamza {
+                print(consumer.rdaCustomerProfileID ?? 0)
+                print(consumer.rdaCustomerAccInfoId ?? 0)
+                if let consumerListLocalShakeel = cousumerListShakeel {
+                    var isNotFoundAndNewUserProfileID = true
+                    consumerListLocalShakeel.forEach {
+                        print("Hamza" + "\(consumer.rdaCustomerProfileID ?? 0)")
+                        print("Hamza" + "\(consumer.rdaCustomerAccInfoId ?? 0)")
+                        print("Shakeel" + "\($0.rdaCustomerProfileID ?? 0)")
+                        print("Shakeel" + "\($0.rdaCustomerAccInfoId ?? 0)")
+                        if $0.rdaCustomerProfileID == consumer.rdaCustomerProfileID {
+                            print("record found")
+                            isNotFoundAndNewUserProfileID = false
+                        }
+                    }
+                    if isNotFoundAndNewUserProfileID {
+                        print("------Start-----Profile Id Not Found------")
+                        tempRdaCustomerProfileID = consumer.rdaCustomerProfileID ?? 0
+                        tempRdaCustomerAccInfoId = consumer.rdaCustomerAccInfoId as? Double
+                        print(consumer.rdaCustomerProfileID ?? 0)
+                        print(consumer.rdaCustomerAccInfoId ?? 0)
+                        print("------End-----Profile Id Not Found------")
+                    }
+                }
+            }
+        }
+        //MARK: - End----- Just to find new User Profile ID
+
+        //MARK: - Start-----If user profile id found Replace in new user Request data
+        newUserInfo.rdaCustomerProfileId = tempRdaCustomerProfileID
+        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+        //MARK: - End-----If user profile id found Replace in new user Request data
+
+        var consumerListInputModelArray = [BasicInfoConsumerListInputModel]()
+       
+        
+        if let consumerListTemp = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList {
+            consumerListTemp.forEach {
+                let consumerListInputModel = BasicInfoConsumerListInputModel(
+                    rdaCustomerAccInfoId: ($0.accountInformation?.rdaCustomerAccInfoID)!,
+                    rdaCustomerProfileId: $0.rdaCustomerProfileID!,
+                    fullName: $0.fullName!,
+                    fatherHusbandName: $0.fatherHusbandName ?? "",
+                    motherMaidenName: $0.motherMaidenName ?? "",
+                    isPrimary: $0.isPrimary ?? false,
+                    isPrimaryRegistered: $0.isPrimaryRegistered ?? false
+                )
+                consumerListInputModelArray.append(consumerListInputModel!)
+            }
+        }
+        
+        print("------Start-----Check if user is adding for joint account------")
+        //MARK: - Start----- Just to check if user is trying for joint account this this check will become true
+        if consumerListInputModelArray.count > 0 {
+            newUserInfo.isPrimaryRegistered = false
+            newUserInfo.isPrimary = false
+        }
+        //MARK: - End----- Just to check if user is trying for joint account this this check will become true
+        print("------End-----Check if user is adding for joint account------")
+
+        consumerListInputModelArray.append(newUserInfo)
+        return consumerListInputModelArray
+    }
+}
+
+
+//MARK: - For merging
+func getCurrentUser() -> ConsumerListResponseModel {
     
+    var currentUser = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.first
+    let cousumerListHamza = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
+    let cousumerListShakeel = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
+    
+    //MARK: - Start----- Just to find new User Profile ID
+    if let listConsumerLocalHamza = cousumerListHamza {
+        for consumer in listConsumerLocalHamza {
+            print(consumer.rdaCustomerProfileID ?? 0)
+            print(consumer.rdaCustomerAccInfoId ?? 0)
+            if let consumerListLocalShakeel = cousumerListShakeel {
+                var isNotFoundAndNewUserProfileID = true
+                consumerListLocalShakeel.forEach {
+                    print("Hamza" + "\(consumer.rdaCustomerProfileID ?? 0)")
+                    print("Hamza" + "\(consumer.rdaCustomerAccInfoId ?? 0)")
+                    print("Shakeel" + "\($0.rdaCustomerProfileID ?? 0)")
+                    print("Shakeel" + "\($0.rdaCustomerAccInfoId ?? 0)")
+                    if $0.rdaCustomerProfileID == consumer.rdaCustomerProfileID {
+                        print("record found")
+                        isNotFoundAndNewUserProfileID = false
+                    }
+                }
+                if isNotFoundAndNewUserProfileID {
+                    print("------Start-----Profile Id Not Found------")
+                    currentUser = consumer
+                    print(consumer.rdaCustomerProfileID ?? 0)
+                    print(consumer.rdaCustomerAccInfoId ?? 0)
+                    print("------End-----Profile Id Not Found------")
+                }
+            }
+        }
+    }
+    
+    if cousumerListShakeel?.count ?? 0 > 0 {
+        currentUser!.isPrimaryRegistered = false
+        currentUser!.isPrimary = false
+    }
+   
+    return currentUser!
 }

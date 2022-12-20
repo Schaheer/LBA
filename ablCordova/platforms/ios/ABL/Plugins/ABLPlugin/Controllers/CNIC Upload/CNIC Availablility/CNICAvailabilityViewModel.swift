@@ -93,9 +93,7 @@ class CNICAvailabilityViewModel: CNICAvailabilityViewModelProtocol {
                         mobileNumber: mobileNumber,
                         generateOTP: generateOTP)
                 }
-                var array = DataCacheManager.shared.getCnicFrontBack()
-                print(array)
-                print(array)
+              
 //                guard let viewAppGenerateOTPInput = ViewAppGenerateOTPInputModel(
 //                    customerTypeID: customerTypeID,
 //                    mobileNumber: mobileNumber,

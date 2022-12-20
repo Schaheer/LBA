@@ -26,6 +26,8 @@ final class AdditionalApplicantDetailsVC: UIViewController {
         additionalApplicantDetailsViewModel.getAdditionalApplicantRelationships(
             codeTypeID: BaseConstants.Config.additionalApplicantRelationshipsLookupID
         )
+        
+        getConsumerAccountDetails()
     }
     
     @IBAction func backTapped(_ sender: UIButton) {
@@ -86,6 +88,55 @@ final class AdditionalApplicantDetailsVC: UIViewController {
             )
         )
     }
+    
+    private func getConsumerAccountDetails() {
+        guard
+            let consumerAccountDetails = DataCacheManager.shared.loadRegisterVerifyOTPResponse()
+        else { return }
+        
+        let consumer = consumerAccountDetails.consumerList?.first
+        getConsumerAccountDetail(
+            rdaCustomerProfileID: consumer?.rdaCustomerProfileID,
+            rdaCustomerAccInfoID: consumer?.accountInformation?.rdaCustomerAccInfoID,
+            customerTypeID: BaseConstants.Config.customerTypeID
+        )
+    }
+    
+    private func getConsumerAccountDetail(
+        rdaCustomerProfileID: Double?,
+        rdaCustomerAccInfoID: Double?,
+        customerTypeID: Double?
+    ) {
+        guard
+            let rdaCustomerProfileID = rdaCustomerProfileID,
+            let rdaCustomerAccInfoID = rdaCustomerAccInfoID,
+            let customerTypeID = customerTypeID
+        else {
+            print("All fields required")
+            return }
+        
+        guard let input = ConsumerAccountDetailInputModel(
+            rdaCustomerProfileID: rdaCustomerProfileID,
+            rdaCustomerAccInfoID: rdaCustomerAccInfoID,
+            customerTypeID: customerTypeID
+        ) else { return }
+        
+        APIManager.shared.getConsumerAccountDetail(input: input) { [weak self] response in
+            guard let self = self else { return }
+            
+            switch response.result {
+            case .success(let value):
+                var registerVerifyOTPResponseModel: RegisterVerifyOTPResponseModel = value
+                print(registerVerifyOTPResponseModel)
+                DataCacheManager.shared.saveRegisterVerifyOTPResponse(input: registerVerifyOTPResponseModel)
+                DataCacheManager.shared.saveRegisterVerifyOTPResponseModel(registerVerifyOTPResponseModel: registerVerifyOTPResponseModel)
+                print(DataCacheManager.shared.getRegisterVerifyOTPResponseModel())
+                print(DataCacheManager.shared.getRegisterVerifyOTPResponseModel())
+            case .failure(let error):
+                print(error.errorDescription)
+            }
+        }
+    }
 }
 
 extension UIViewController {
@@ -119,4 +170,8 @@ extension UIViewController {
         }
         viewController.present(portedPopupVC, animated: true)
     }
+    
+    
+    
+   
 }

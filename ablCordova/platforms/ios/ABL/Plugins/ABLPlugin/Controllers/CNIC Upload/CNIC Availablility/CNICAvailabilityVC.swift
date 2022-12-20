@@ -169,10 +169,7 @@ final class CNICAvailabilityVC: UIViewController {
     }
     
     private func openCNICVerificationVC() {
-        if DataCacheManager.shared.loadNoOfJointApplicants() ?? 0 > 0 {
-            self.openPersonalInformationVC()
-            return()
-        }
+        
         guard let cnicVerificationVC = UIStoryboard.initialize(
             viewController: .cnicVerificationVC,
             fromStoryboard: .cnicUpload
@@ -191,16 +188,14 @@ final class CNICAvailabilityVC: UIViewController {
         ) as? VerifyOTPVC else { return }
         
         verifyOTPVC.otpVerifyMode = .cnicUpload
-        
         navigationController?.pushViewController(verifyOTPVC, animated: true)
     }
-    
     private func openPersonalInformationVC() {
         guard let personalInformationVC = UIStoryboard.initialize(
             viewController: .personalInformationBaseVC,
             fromStoryboard: .openAccount
         ) as? PersonalInformationBaseVC else { return }
-                
+        personalInformationVC.firstChild = .personalInfoSecondVC
         navigationController?.pushViewController(personalInformationVC, animated: true)
     }
     

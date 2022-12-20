@@ -81,3 +81,5 @@ class RegistrationSteperModel {
     
     var isJointAccount = false
 }
+
+

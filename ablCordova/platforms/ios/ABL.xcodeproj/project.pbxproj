@@ -143,7 +143,7 @@
 		7A5D99942819DFD8007B572D /* RemitterDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D99932819DFD8007B572D /* RemitterDetailViewModel.swift */; };
 		7A5D99A0281AB4AA007B572D /* TaxResidentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D999F281AB4AA007B572D /* TaxResidentViewModel.swift */; };
 		7A5D99A2281AB81F007B572D /* CodeTypeInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D99A1281AB81F007B572D /* CodeTypeInputModel.swift */; };
-		7A5D99A4281AB87A007B572D /* CodeTypeResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D99A3281AB87A007B572D /* CodeTypeResponseModel.swift */; };
+		7A5D99A4281AB87A007B572D /* personalInformationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D99A3281AB87A007B572D /* personalInformationVC.swift */; };
 		7A5D99A6281AB8BB007B572D /* CodeTypeDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D99A5281AB8BB007B572D /* CodeTypeDataModel.swift */; };
 		7A5D99A8281AFD6E007B572D /* BasicInfoResidentCountriesInputModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5D99A7281AFD6E007B572D /* BasicInfoResidentCountriesInputModel.swift */; };
 		7A6BCC6C27D60563003921A0 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7A6BCC6127D60561003921A0 /* Lato-Italic.ttf */; };
@@ -457,7 +457,7 @@
 		7A5D99932819DFD8007B572D /* RemitterDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemitterDetailViewModel.swift; sourceTree = "<group>"; };
 		7A5D999F281AB4AA007B572D /* TaxResidentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxResidentViewModel.swift; sourceTree = "<group>"; };
 		7A5D99A1281AB81F007B572D /* CodeTypeInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTypeInputModel.swift; sourceTree = "<group>"; };
-		7A5D99A3281AB87A007B572D /* CodeTypeResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTypeResponseModel.swift; sourceTree = "<group>"; };
+		7A5D99A3281AB87A007B572D /* personalInformationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = personalInformationVC.swift; sourceTree = "<group>"; };
 		7A5D99A5281AB8BB007B572D /* CodeTypeDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTypeDataModel.swift; sourceTree = "<group>"; };
 		7A5D99A7281AFD6E007B572D /* BasicInfoResidentCountriesInputModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicInfoResidentCountriesInputModel.swift; sourceTree = "<group>"; };
 		7A6BCC6127D60561003921A0 /* Lato-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Lato-Italic.ttf"; sourceTree = "<group>"; };
@@ -1269,7 +1269,7 @@
 				4C8A6930280EEED90026345B /* RegisterPicAndSignResponseModel.swift */,
 				7A5D99912819DBB6007B572D /* PDARemitterDetailInputModel.swift */,
 				7A5D99A1281AB81F007B572D /* CodeTypeInputModel.swift */,
-				7A5D99A3281AB87A007B572D /* CodeTypeResponseModel.swift */,
+				7A5D99A3281AB87A007B572D /* personalInformationVC.swift */,
 				7A5D99A5281AB8BB007B572D /* CodeTypeDataModel.swift */,
 				7A5D99A7281AFD6E007B572D /* BasicInfoResidentCountriesInputModel.swift */,
 				7A24FD02283D04E900500331 /* CountryLookupResponseModel.swift */,
@@ -1762,7 +1762,7 @@
 				4CBB13C6280802D100BECF46 /* RegisterConsumerEmailResponseModel.swift in Sources */,
 				7A6BCC7C27D605E1003921A0 /* BiometricVerificationVC.swift in Sources */,
 				7A12798228256DC5008AB996 /* NatureOfAccount.swift in Sources */,
-				7A5D99A4281AB87A007B572D /* CodeTypeResponseModel.swift in Sources */,
+				7A5D99A4281AB87A007B572D /* personalInformationVC.swift in Sources */,
 				4CBB13C82808086400BECF46 /* RegisterConsumerAddressInputModel.swift in Sources */,
 				7AE4A0C4283D612900E95D2C /* CurrentTaxResidentDetailViewModel.swift in Sources */,
 				4C8A692D280EE9E80026345B /* SaveAttachmentResponseModel.swift in Sources */,

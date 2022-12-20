@@ -83,6 +83,7 @@ final class RegisterNationalityConsumerListInputModel: BaseInputModel {
         case nationalityTypeId = "nationalityTypeId"
         case nationalities = "nationalities"
         case residentCountries = "residentCountries"
+        case isPrimaryRegistered = "isPrimaryRegistered"
 
     }
     
@@ -96,6 +97,7 @@ final class RegisterNationalityConsumerListInputModel: BaseInputModel {
     var motherMaidenName: String?
     var cityOfBirth: String?
     var isPrimary: Int?
+    var isPrimaryRegistered: Bool?
     var emailAddress: String?
     var taxResidentInd: Int?
     var occupationId: Double?
@@ -124,6 +126,7 @@ final class RegisterNationalityConsumerListInputModel: BaseInputModel {
         motherMaidenName: String?,
         cityOfBirth: String?,
         isPrimary: Int?,
+        isPrimaryRegistered: Int?,
         emailAddress: String?,
         taxResidentInd: Int?,
         occupationId: Double?,
@@ -147,6 +150,7 @@ final class RegisterNationalityConsumerListInputModel: BaseInputModel {
         dictionary[CodingKeys.motherMaidenName.rawValue] = motherMaidenName
         dictionary[CodingKeys.cityOfBirth.rawValue] = cityOfBirth
         dictionary[CodingKeys.isPrimary.rawValue] = isPrimary
+        dictionary[CodingKeys.isPrimaryRegistered.rawValue] = isPrimaryRegistered
         dictionary[CodingKeys.emailAddress.rawValue] = emailAddress
         dictionary[CodingKeys.taxResidentInd.rawValue] = taxResidentInd
         dictionary[CodingKeys.occupationId.rawValue] = occupationId
@@ -168,6 +172,7 @@ final class RegisterNationalityConsumerListInputModel: BaseInputModel {
         self.motherMaidenName = motherMaidenName
         self.cityOfBirth = cityOfBirth
         self.isPrimary = isPrimary
+        self.isPrimaryRegistered = isPrimaryRegistered == 1 ? true : false
         self.emailAddress = emailAddress
         self.taxResidentInd = taxResidentInd
         self.occupationId = occupationId
@@ -202,6 +207,7 @@ final class RegisterNationalityConsumerListInputModel: BaseInputModel {
         motherMaidenName <- map[CodingKeys.motherMaidenName.rawValue]
         cityOfBirth <- map[CodingKeys.cityOfBirth.rawValue]
         isPrimary <- map[CodingKeys.isPrimary.rawValue]
+        isPrimaryRegistered <- map[CodingKeys.isPrimaryRegistered.rawValue]
         emailAddress <- map[CodingKeys.emailAddress.rawValue]
         taxResidentInd <- map[CodingKeys.taxResidentInd.rawValue]
         occupationId <- map[CodingKeys.occupationId.rawValue]
@@ -218,7 +224,6 @@ final class RegisterNationalityConsumerListInputModel: BaseInputModel {
     }
 }
 
-
 final class NationalityInputModel: BaseInputModel {
     
     // MARK: Coding Keys
@@ -227,7 +232,6 @@ final class NationalityInputModel: BaseInputModel {
         case rdaCustomerId = "rdaCustomerId"
         case nationalityId = "nationalityId"
         case idNumber = "idNumber"
-
     }
     
     // MARK: - Model Properties
@@ -254,7 +258,6 @@ final class NationalityInputModel: BaseInputModel {
         dictionary[CodingKeys.nationalityId.rawValue] = nationalityId
         dictionary[CodingKeys.nationalityId.rawValue] = nationalityId
 
-        
         self.rdaCustomerId = rdaCustomerId
         self.nationalityId = nationalityId
         self.idNumber = idNumber

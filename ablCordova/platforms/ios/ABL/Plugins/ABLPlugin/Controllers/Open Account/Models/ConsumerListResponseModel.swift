@@ -56,6 +56,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
         case idNumber
         case statusID = "statusId"
         case nationalityTypeID = "nationalityTypeId"
+        case nationalities
         case natureOfAccountID = "natureOfAccountId"
         case stepperSections
         case addresses
@@ -72,6 +73,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
         case kinCNIC = "kinCnic"
         case kinRelation
         case isPrimary
+        case isPrimaryRegistered
         case referredBy
         case referrerCp
         case relationshipWithMinorID = "relationshipWithMinorId"
@@ -79,6 +81,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
         case suggestedMotherNames = "suggestMotherNames"
         case mobileNetworkID = "mobileNetworkId"
         case portedMobileNetwork
+        case bankingModeId
     }
     
     // MARK: - Model Properties
@@ -126,6 +129,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
     var idNumber: String?
     var statusID: Double?
     var nationalityTypeID: Double?
+    var nationalities: [NationalityInputModel]?
     var natureOfAccountID: Double?
     var stepperSections: StepperSectionsModel?
     var addresses: [AddressesModel]?
@@ -136,12 +140,14 @@ final class ConsumerListResponseModel: BaseResponseModel {
     var customerCity: String?
     var customerBranch: String?
     var customerTypeID: Double?
+    var bankingModeId: Double?
     var kinName: String?
     var kinMobile: String?
     var kinAddress: String?
     var kinCNIC: String?
     var kinRelation: String?
     var isPrimary: Bool?
+    var isPrimaryRegistered: Bool?
     var referredBy: String?
     var referrerCp: String?
     var relationshipWithMinorID: Int?
@@ -209,6 +215,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
         idNumber <- map[CodingKeys.idNumber.rawValue]
         statusID <- map[CodingKeys.statusID.rawValue]
         nationalityTypeID <- map[CodingKeys.nationalityTypeID.rawValue]
+        nationalities <- map[CodingKeys.nationalities.rawValue]
         natureOfAccountID <- map[CodingKeys.natureOfAccountID.rawValue]
         stepperSections <- map[CodingKeys.stepperSections.rawValue]
         addresses <- map[CodingKeys.addresses.rawValue]
@@ -225,6 +232,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
         kinCNIC <- map[CodingKeys.kinCNIC.rawValue]
         kinRelation <- map[CodingKeys.kinRelation.rawValue]
         isPrimary <- map[CodingKeys.isPrimary.rawValue]
+        isPrimaryRegistered <- map[CodingKeys.isPrimary.rawValue]
         referredBy <- map[CodingKeys.referredBy.rawValue]
         referrerCp <- map[CodingKeys.referrerCp.rawValue]
         relationshipWithMinorID <- map[CodingKeys.relationshipWithMinorID.rawValue]
@@ -232,5 +240,6 @@ final class ConsumerListResponseModel: BaseResponseModel {
         suggestedMotherNames <- map[CodingKeys.suggestedMotherNames.rawValue]
         mobileNetworkID <- map[CodingKeys.mobileNetworkID.rawValue]
         portedMobileNetwork <- map[CodingKeys.portedMobileNetwork.rawValue]
+        bankingModeId <- map[CodingKeys.bankingModeId.rawValue]
     }
 }

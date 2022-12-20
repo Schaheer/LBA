@@ -25,6 +25,7 @@ final class RemitterDetailVC: UIViewController {
         tableView.dataSource = self
         
         subscribeViewModel()
+        
     }
     
     @IBAction func backTapped(_ sender: UIButton) {
@@ -91,6 +92,7 @@ final class RemitterDetailVC: UIViewController {
             AlertManager.shared.showOKAlert(with: "Error", message: error)
         }
     }
+    
 }
 
 extension RemitterDetailVC: UITableViewDelegate, UITableViewDataSource {
@@ -150,4 +152,6 @@ extension RemitterDetailVC: UITextFieldDelegate {
             }
         }
     }
+    
+    
 }

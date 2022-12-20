@@ -200,7 +200,6 @@ final class DataCacheManager: NSObject {
     
     private var frontCnicPrivate: CNICAttachmentInputModel!
     private var backCnicPrivate: CNICAttachmentInputModel!
-
     //Shakeel
     func saveCnicFrontBackModel(frontCnic: CNICAttachmentInputModel?, backCnic: CNICAttachmentInputModel?) {
         frontCnicPrivate = frontCnic
@@ -209,5 +208,16 @@ final class DataCacheManager: NSObject {
     
     func getCnicFrontBack() -> (CNICAttachmentInputModel?, CNICAttachmentInputModel?) {
         return (frontCnicPrivate, backCnicPrivate)
+    }
+    
+    
+    private var registerVerifyOTPResponseModelPrivate: RegisterVerifyOTPResponseModel!
+    //Shakeel
+    func saveRegisterVerifyOTPResponseModel(registerVerifyOTPResponseModel: RegisterVerifyOTPResponseModel) {
+        registerVerifyOTPResponseModelPrivate = registerVerifyOTPResponseModel
+    }
+    
+    func getRegisterVerifyOTPResponseModel() -> RegisterVerifyOTPResponseModel? {
+        return registerVerifyOTPResponseModelPrivate
     }
 }

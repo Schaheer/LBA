@@ -225,7 +225,7 @@ final class APIManager: BaseHTTPClient {
         completion: @escaping registerVerifyOTPCompletion
     ) {
         clearParameters()
-        print(input.consumerList?.first!.rdaCustomerAccInfoId)
+//        print(input.consumerList?.first!.rdaCustomerAccInfoId)
         parameters = input.dictionaryRepresentation()
         let endPoint = BaseConstants.BaseURL.RDA.consumer.rawValue + APIEndPoint.registerVerifyOTP.rawValue
         

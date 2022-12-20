@@ -122,10 +122,7 @@ final class CNICManualVerificationVC: UIViewController {
             
             if !self.cameFromJointFlow {
                 self.cnicVerificationViewModel.openVerifyOTPVC()
-                
-                
             } else {
-                
                 //                    self.cnicVerificationViewModel.openPersonalInformationVC()
                 self.callRegisterVerifyOTP()
             }
@@ -168,6 +165,9 @@ final class CNICManualVerificationVC: UIViewController {
             }
         }
     }
+    
+    
+    
     
 }
 

@@ -38,14 +38,18 @@ final class CNICVerificationVC: UIViewController {
     var cameFromJointFlow = false
     
     override func viewWillAppear(_ animated: Bool) {
+        
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
         if modelRegistrationSteper.cnicFrontSideImageView != nil {
             cnicFrontSideImageView.image =  modelRegistrationSteper.cnicFrontSideImageView
         }
         if modelRegistrationSteper.cnicBackSideImageView != nil {
             cnicBackSideImageView.image =  modelRegistrationSteper.cnicBackSideImageView
         }
-        
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -299,7 +303,7 @@ final class CNICVerificationVC: UIViewController {
             DataCacheManager.shared.saveViewAppGenerateOTPResponse(input: response)
             
             if !self.cameFromJointFlow {
-                if let _ = response.idNumber{
+                if let _ = response.idNumber {
                     self.cnicVerificationViewModel.openVerifyOTPVC()
                     
                 } else {
@@ -308,7 +312,6 @@ final class CNICVerificationVC: UIViewController {
                 }
                 
             } else {
-                
                 //                    self.cnicVerificationViewModel.openPersonalInformationVC()
                 self.callRegisterVerifyOTP()
             }
@@ -331,7 +334,7 @@ final class CNICVerificationVC: UIViewController {
         }
         
         selectBankingMethodViewModel.registerVerifyOTPResponse.bind { [weak self] response in
-            //            TODO: where to get relation code and average monthly salary for savekyc
+//  TODO: where to get relation code and average monthly salary for savekyc
             if let noOfJointApplicants = DataCacheManager.shared.loadNoOfJointApplicants() {
                 if noOfJointApplicants > 0 {
                     

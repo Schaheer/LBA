@@ -58,8 +58,8 @@ final class ConsumerListInputModel: BaseInputModel {
         customerBranch: String,
         bankingModeID: Double,
         rdaCustomerAccInfoId: Double,
-        attachments: [String]
-
+        attachments: [String],
+        isPrimaryRegistered: Bool
     ) {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.cnicNumber.rawValue] = cnicNumber
@@ -70,7 +70,8 @@ final class ConsumerListInputModel: BaseInputModel {
         dictionary[CodingKeys.bankingModeID.rawValue] = bankingModeID
         dictionary[CodingKeys.rdaCustomerAccInfoId.rawValue] = rdaCustomerAccInfoId
         dictionary[CodingKeys.attachments.rawValue] = attachments
-
+        dictionary[CodingKeys.isPrimaryRegistered.rawValue] = isPrimaryRegistered
+        
         self.cnicNumber = cnicNumber
         self.mobileNumber = mobileNumber
         self.isPrimary = isPrimary
@@ -79,6 +80,8 @@ final class ConsumerListInputModel: BaseInputModel {
         self.bankingModeID = bankingModeID
         self.rdaCustomerAccInfoId = rdaCustomerAccInfoId
         self.attachments = attachments
+        self.isPrimaryRegistered = isPrimaryRegistered
+
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
     
@@ -88,7 +91,7 @@ final class ConsumerListInputModel: BaseInputModel {
         isPrimary: Bool,
         customerTypeID: Double,
         customerBranch: String,
-        bankingModeID: Double,
+        bankingModeID: Double? = nil,
         dateOfBirth: String,
         dateOfIssue: String,
         isPrimaryRegistered: Bool? = nil,
@@ -110,7 +113,7 @@ final class ConsumerListInputModel: BaseInputModel {
         dictionary[CodingKeys.rdaCustomerAccInfoId.rawValue] = rdaCustomerAccInfoId == 0 ? "" : rdaCustomerAccInfoId
         dictionary[CodingKeys.attachments.rawValue] = attachments
 
-        print(dictionary)
+//        print(dictionary)
         
         self.cnicNumber = cnicNumber
         self.mobileNumber = mobileNumber

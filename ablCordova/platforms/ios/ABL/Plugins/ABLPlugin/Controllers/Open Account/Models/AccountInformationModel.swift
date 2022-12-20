@@ -138,14 +138,14 @@ final class AccountInformationModel: BaseResponseModel {
     required init?() {
         let dictionary = [String: Any]()
         super.init(map: Map(mappingType: MappingType.fromJSON, JSON: dictionary))
-        print(dictionary)
+//        print(dictionary)
     }
     
     // MARK: Model Mapping
     
     override func mapping(map: Map) {
         super.mapping(map: map)
-        print(map)
+//        print(map)
         rdaCustomerAccInfoID <- map[CodingKeys.rdaCustomerAccInfoID.rawValue]
         rdaCustomerID <- map[CodingKeys.rdaCustomerID.rawValue]
         purposeOfAccountID <- map[CodingKeys.purposeOfAccountID.rawValue]
@@ -202,8 +202,8 @@ final class AccountInformationModel: BaseResponseModel {
         averageMonthlySalary <- map[CodingKeys.averageMonthlySalary.rawValue]
         
         genderId <- map[CodingKeys.genderId.rawValue]
-        print(proofOfIncomeInd)
-        print(genderId)
+//        print(proofOfIncomeInd)
+//        print(genderId)
         pdaRemitterDetailList <- map[CodingKeys.pdaRemitterDetailList.rawValue]
         
     }
