@@ -26,5 +26,8 @@ target 'ABL' do
   pod 'DropDown'
   pod 'GoogleMaps'
   pod 'BetterSegmentedControl'
+  pod 'SwiftyJSON'
+
+  
 
 end

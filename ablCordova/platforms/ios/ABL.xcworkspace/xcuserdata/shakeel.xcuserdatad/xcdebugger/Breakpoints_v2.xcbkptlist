@@ -1886,8 +1886,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/CNIC Upload/CNIC Verification/CNICVerificationViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
+            startingLineNumber = "168"
+            endingLineNumber = "168"
             landmarkName = "saveKyc(rdaCustomerAccInfoId:rdaCustomerProfileId:isPrimary:relationCode1:averageMonthlySalary:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1902,8 +1902,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/CNIC Upload/CNIC Verification/CNICVerificationViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "152"
-            endingLineNumber = "152"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
             landmarkName = "saveKyc(rdaCustomerAccInfoId:rdaCustomerProfileId:isPrimary:relationCode1:averageMonthlySalary:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1918,8 +1918,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/CNIC Upload/CNIC Verification/CNICVerificationViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "185"
+            endingLineNumber = "185"
             landmarkName = "saveKyc(rdaCustomerAccInfoId:rdaCustomerProfileId:isPrimary:relationCode1:averageMonthlySalary:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -2359,22 +2359,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E5EA862F-C6AD-44D8-B45D-6CB2DD5DCC94"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/CNIC Upload/CNIC Availablility/CNICAvailabilityVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "229"
-            endingLineNumber = "229"
-            landmarkName = "subscribeViewModel()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "3533E131-35B5-4D93-867E-282D3C0598C7"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -2737,6 +2721,182 @@
             startingLineNumber = "82"
             endingLineNumber = "82"
             landmarkName = "init?(rdaCustomerAccInfoId:rdaCustomerProfileId:fullName:fatherHusbandName:motherMaidenName:isPrimary:isPrimaryRegistered:nationalityTypeId:nationalities:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C83B59F9-1D79-41B0-B811-C5CC309D0273"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/CNIC Upload/CNIC Verification/CNICVerificationVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "388"
+            endingLineNumber = "388"
+            landmarkName = "imagePickerController(_:didFinishPickingMediaWithInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CE88E883-BB12-45AE-A929-0D38679A6F17"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/CNIC Upload/CNIC Verification/CNICVerificationVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "418"
+            endingLineNumber = "418"
+            landmarkName = "toBase64String2()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "28C9FE3C-3D2A-4D40-83B4-40DC865CE34B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/CNIC Upload/CNIC Verification/CNICVerificationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "sendImage(parameters:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A98F0441-888C-4301-AD01-870DA9AF595C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/CNIC Upload/CNIC Verification/CNICVerificationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
+            landmarkName = "sendImage(parameters:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B78E29AF-0A85-43D4-8D4E-1672ED6B0142"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/DataContainer/APIs.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1105"
+            endingLineNumber = "1105"
+            landmarkName = "kfunCatchJsonDecoderError(_:responseJSON:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E93CD532-8F10-409B-A3CB-385B519FEE9A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/DataContainer/APIs.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "1090"
+            endingLineNumber = "1090"
+            landmarkName = "kfunCatchJsonDecoderError(_:responseJSON:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E9CFAD62-4C22-4F79-B2AD-4B0EA16F0CF6"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/DataContainer/APIs.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "702"
+            endingLineNumber = "702"
+            landmarkName = "postAPI(apiName:parameters:viewController:timeout:encoding:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4CA51E7F-07AD-4226-9729-DB3C4ECD8BE8"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/DataContainer/APIs.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "708"
+            endingLineNumber = "708"
+            landmarkName = "postAPI(apiName:parameters:viewController:timeout:encoding:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "37D696AE-7986-4F91-8BC3-3A65FC67457C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/DataContainer/APIs.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "713"
+            endingLineNumber = "713"
+            landmarkName = "postAPI(apiName:parameters:viewController:timeout:encoding:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED80EAD8-D9E6-4943-8336-8FC1E5293DDD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/DataContainer/APIs.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "718"
+            endingLineNumber = "718"
+            landmarkName = "postAPI(apiName:parameters:viewController:timeout:encoding:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AAF9CAF7-7142-4327-AA2C-1AC42BB7076F"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/DataContainer/APIs.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "707"
+            endingLineNumber = "707"
+            landmarkName = "postAPI(apiName:parameters:viewController:timeout:encoding:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

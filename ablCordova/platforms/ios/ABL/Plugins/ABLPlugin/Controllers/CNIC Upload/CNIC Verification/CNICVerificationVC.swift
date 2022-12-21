@@ -384,6 +384,9 @@ extension CNICVerificationVC: UIImagePickerControllerDelegate, UINavigationContr
         if picker == frontSideImagePicker {
 
             cnicFrontSideImageView.image = image
+            
+            print(image?.toBase64String2())
+            
 
             frontSideCNICData = image?.jpegData(compressionQuality: 1)
 
@@ -396,5 +399,24 @@ extension CNICVerificationVC: UIImagePickerControllerDelegate, UINavigationContr
         }
 
     }
+    
 
+}
+extension UIImage {
+    func toBase64String2() -> String {
+        //Use image name from bundle to create NSData
+
+        //Now use image to create into NSData format
+
+        let imageData:Data = self.pngData()! as Data
+        var strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
+        
+        strBase64 = strBase64.replacingOccurrences(of: "\\r", with: "", options: .literal, range: nil)
+
+        strBase64 = strBase64.replacingOccurrences(of: "\\n", with: "", options: .literal, range: nil)
+        strBase64 = strBase64.replacingOccurrences(of: "\\", with: "", options: .literal, range: nil)
+        print(strBase64)
+        
+        return strBase64
+    }
 }

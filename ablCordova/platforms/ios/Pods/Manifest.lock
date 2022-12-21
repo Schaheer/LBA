@@ -13,6 +13,7 @@ PODS:
   - NVActivityIndicatorView/Base (5.1.1)
   - ObjectMapper (4.2.0)
   - SwiftKeychainWrapper (3.4.0)
+  - SwiftyJSON (5.0.1)
   - TTGTagCollectionView (2.1.0)
 
 DEPENDENCIES:
@@ -24,6 +25,7 @@ DEPENDENCIES:
   - NVActivityIndicatorView
   - ObjectMapper
   - SwiftKeychainWrapper (~> 3.2)
+  - SwiftyJSON
   - TTGTagCollectionView
 
 SPEC REPOS:
@@ -36,6 +38,7 @@ SPEC REPOS:
     - NVActivityIndicatorView
     - ObjectMapper
     - SwiftKeychainWrapper
+    - SwiftyJSON
     - TTGTagCollectionView
 
 SPEC CHECKSUMS:
@@ -47,8 +50,9 @@ SPEC CHECKSUMS:
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
+  SwiftyJSON: 2f33a42c6fbc52764d96f13368585094bfd8aa5e
   TTGTagCollectionView: a2a8668c659b39e7a6ffd6590475ea53a7ae95f7
 
-PODFILE CHECKSUM: db51ac3270d744a22bda85c86516a56f293b38a4
+PODFILE CHECKSUM: c63d70c93e353516281208f3e990fa0b4316f710
 
 COCOAPODS: 1.11.3

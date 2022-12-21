@@ -42,7 +42,7 @@
                                 <rect key="frame" x="0.0" y="47" width="390" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, January 3, 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGg-m8-WkD" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="16.666666666666664" width="210" height="16.666666666666664"/>
+                                        <rect key="frame" x="20" y="17" width="210" height="16.333333333333329"/>
                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -106,13 +106,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN3-lA-V6G" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="182" width="157" height="23.666666666666657"/>
+                                <rect key="frame" x="20" y="182" width="147.33333333333334" height="23.333333333333343"/>
                                 <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1G-7x-4yj">
-                                <rect key="frame" x="20" y="225.66666666666666" width="350" height="2"/>
+                                <rect key="frame" x="20" y="225.33333333333334" width="350" height="2"/>
                                 <color key="backgroundColor" name="App Orange"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="ANC-Bf-AYI"/>
@@ -206,7 +206,7 @@ If you wish to continue Click here </string>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yG4-HG-bpZ" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                <rect key="frame" x="300" y="352.66666666666669" width="70" height="35"/>
+                                <rect key="frame" x="300" y="352.33333333333331" width="70" height="35"/>
                                 <color key="backgroundColor" name="OTP Field Border"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="ym3-1Y-pvM"/>
@@ -225,25 +225,25 @@ If you wish to continue Click here </string>
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Have you ported your mobile network?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8g7-CQ-0L5" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="353.66666666666669" width="260" height="33"/>
+                                <rect key="frame" x="20" y="361.66666666666669" width="260" height="16.333333333333314"/>
                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="COl-X3-0P5">
-                                <rect key="frame" x="20" y="247.66666666666663" width="350" height="85"/>
+                                <rect key="frame" x="20" y="247.33333333333337" width="350" height="85"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DNE-So-tPQ">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="85"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctv-fW-bmK" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="16.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="16.333333333333332"/>
                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Enter your mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ssk-3D-n5b" customClass="TextFieldSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="24.666666666666657" width="350" height="40"/>
+                                                <rect key="frame" x="0.0" y="24.333333333333343" width="350" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="c0L-xj-KTU"/>
@@ -278,7 +278,7 @@ If you wish to continue Click here </string>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Make sure entered mobile number is registered against your CNIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdw-go-56I" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="72.666666666666657" width="350" height="12.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="72.333333333333343" width="350" height="12.666666666666671"/>
                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="9"/>
                                                 <color key="textColor" name="Textfield Placeholder"/>
                                                 <nil key="highlightedColor"/>
@@ -301,13 +301,13 @@ If you wish to continue Click here </string>
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CNIC Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3O-DX-Gk1" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="18"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Enter your CNIC number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3L1-VE-0Lm" customClass="TextFieldSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="26.000000000000028" width="350" height="40"/>
+                                                <rect key="frame" x="0.0" y="25.666666666666657" width="350" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="1kg-gg-wAZ"/>
                                                 </constraints>
@@ -346,13 +346,13 @@ If you wish to continue Click here </string>
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Network" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isS-8X-brr" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="18"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="17.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERt-63-294" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="26.000000000000028" width="350" height="40"/>
+                                                <rect key="frame" x="0.0" y="25.666666666666657" width="350" height="40"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield-down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="CLA-Dg-hjp">
                                                         <rect key="frame" x="318" y="14" width="12" height="12"/>
@@ -362,7 +362,7 @@ If you wish to continue Click here </string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your mobile network" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FH-Lk-HhX" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="11.666666666666629" width="310" height="17"/>
+                                                        <rect key="frame" x="0.0" y="11.999999999999998" width="310" height="16.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                         <color key="textColor" name="Textfield Placeholder"/>
                                                         <nil key="highlightedColor"/>
@@ -3886,13 +3886,13 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                 <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIK-WJ-3jw">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="703.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="686.66666666666663"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8P-Qe-jul">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, January 3, 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuk-Hd-zWj" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                        <rect key="frame" x="20" y="16.666666666666664" width="210" height="16.666666666666664"/>
+                                                        <rect key="frame" x="20" y="17" width="210" height="16.333333333333329"/>
                                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
@@ -3956,20 +3956,20 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Get Started" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yL-Gr-iUS" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="135" width="167.33333333333334" height="23.666666666666657"/>
+                                                <rect key="frame" x="20" y="135" width="152.66666666666666" height="23.333333333333343"/>
                                                 <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4z-BD-zb7">
-                                                <rect key="frame" x="20" y="178.66666666666666" width="350" height="2"/>
+                                                <rect key="frame" x="20" y="178.33333333333334" width="350" height="2"/>
                                                 <color key="backgroundColor" name="App Orange"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="Q4b-HK-dE9"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ITZ-hv-ozy">
-                                                <rect key="frame" x="20" y="200.66666666666663" width="350" height="120"/>
+                                                <rect key="frame" x="20" y="200.33333333333337" width="350" height="120"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0K-GJ-cXy">
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="120"/>
@@ -3978,19 +3978,19 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="120"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKc-2c-acB" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="16.666666666666668"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="16.333333333333332"/>
                                                                         <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter mobile no as &quot;03xx-xxxxxxx&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lc9-xL-5hQ" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="24.666666666666657" width="350" height="16.666666666666671"/>
+                                                                        <rect key="frame" x="0.0" y="24.333333333333343" width="350" height="16.333333333333329"/>
                                                                         <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Enter your mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aTI-0R-R5c" customClass="TextFieldSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="49.333333333333343" width="350" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="48.666666666666657" width="350" height="40"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="CS3-1W-9Bn"/>
@@ -4025,7 +4025,7 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Make sure entered mobile number is registered against your CNIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uu-fU-ApC" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="97.333333333333343" width="350" height="22.666666666666671"/>
+                                                                        <rect key="frame" x="0.0" y="96.666666666666657" width="350" height="23.333333333333329"/>
                                                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="9"/>
                                                                         <color key="textColor" name="Textfield Placeholder"/>
                                                                         <nil key="highlightedColor"/>
@@ -4045,13 +4045,13 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="85"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CNIC Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoM-UV-VcR" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="16.666666666666668"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="16.333333333333332"/>
                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Enter your CNIC number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vTo-ld-Bw8" customClass="TextFieldSetting" customModule="ABL" customModuleProvider="target">
-                                                                <rect key="frame" x="2" y="24.666666666666657" width="348" height="40"/>
+                                                                <rect key="frame" x="2" y="24.333333333333343" width="348" height="40"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="3Ir-4I-5Ef"/>
@@ -4091,13 +4091,13 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="0.0"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Network" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfV-c1-yX1" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="18"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="17.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="je5-rl-hMk" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="26.000000000000028" width="350" height="40"/>
+                                                                <rect key="frame" x="0.0" y="25.666666666666657" width="350" height="40"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield-down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="sun-qU-fQF">
                                                                         <rect key="frame" x="318" y="14" width="12" height="12"/>
@@ -4107,7 +4107,7 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your mobile network" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQJ-cj-byT" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="11.666666666666629" width="310" height="17"/>
+                                                                        <rect key="frame" x="0.0" y="11.999999999999998" width="310" height="16.333333333333329"/>
                                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                                         <color key="textColor" name="Textfield Placeholder"/>
                                                                         <nil key="highlightedColor"/>
@@ -4140,13 +4140,13 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Have you ported your mobile network?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfP-er-OAn" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="340.66666666666669" width="260" height="33"/>
+                                                <rect key="frame" x="20" y="340.33333333333331" width="260" height="16.333333333333314"/>
                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXQ-C5-dfi" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                                <rect key="frame" x="300" y="340.33333333333331" width="70" height="34"/>
+                                                <rect key="frame" x="300" y="331.66666666666669" width="70" height="34"/>
                                                 <color key="backgroundColor" name="OTP Field Border"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="Fc6-59-aWl"/>
@@ -4165,13 +4165,13 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                 </connections>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="HOJ-2T-ONe" customClass="ChatView" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="633.66666666666663" width="350" height="50"/>
+                                                <rect key="frame" x="20" y="616.66666666666663" width="350" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="GGl-RQ-USu"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfL-he-X3h" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="493.66666666666663" width="350" height="120"/>
+                                                <rect key="frame" x="20" y="476.66666666666663" width="350" height="120"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qd-0f-w0f" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="25.000000000000004" width="334" height="49.333333333333343"/>
@@ -4214,7 +4214,7 @@ If you wish to continue.</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6bR-tZ-IG2">
-                                                <rect key="frame" x="20" y="423.66666666666669" width="350" height="50"/>
+                                                <rect key="frame" x="20" y="406.66666666666669" width="350" height="50"/>
                                                 <subviews>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6oX-ji-jRL" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="50"/>
@@ -4542,7 +4542,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="236.66666666666666" height="17"/>
         </designable>
         <designable name="3L1-VE-0Lm">
-            <size key="intrinsicContentSize" width="171.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="174" height="18"/>
         </designable>
         <designable name="46E-Et-Szy">
             <size key="intrinsicContentSize" width="1649.6666666666667" height="19"/>
@@ -4569,31 +4569,31 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="92.333333333333329" height="16.666666666666668"/>
         </designable>
         <designable name="5uu-fU-ApC">
-            <size key="intrinsicContentSize" width="290.66666666666669" height="10.666666666666666"/>
+            <size key="intrinsicContentSize" width="265.66666666666669" height="10.666666666666666"/>
         </designable>
         <designable name="6K0-GQ-pRy">
             <size key="intrinsicContentSize" width="92.666666666666671" height="18"/>
         </designable>
         <designable name="6oX-ji-jRL">
-            <size key="intrinsicContentSize" width="72" height="33.333333333333336"/>
+            <size key="intrinsicContentSize" width="74" height="32.666666666666664"/>
         </designable>
         <designable name="7FD-cA-ueB">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="7lP-V9-K42">
-            <size key="intrinsicContentSize" width="60.666666666666664" height="33"/>
+            <size key="intrinsicContentSize" width="57.666666666666664" height="32.666666666666664"/>
         </designable>
         <designable name="8FH-Lk-HhX">
-            <size key="intrinsicContentSize" width="167.33333333333334" height="17"/>
+            <size key="intrinsicContentSize" width="170.66666666666666" height="16.333333333333332"/>
         </designable>
         <designable name="8g7-CQ-0L5">
-            <size key="intrinsicContentSize" width="265.66666666666669" height="16.666666666666668"/>
+            <size key="intrinsicContentSize" width="243.33333333333334" height="16.333333333333332"/>
         </designable>
         <designable name="8qd-0f-w0f">
-            <size key="intrinsicContentSize" width="616.66666666666663" height="33"/>
+            <size key="intrinsicContentSize" width="562" height="32.666666666666664"/>
         </designable>
         <designable name="8yL-Gr-iUS">
-            <size key="intrinsicContentSize" width="167.33333333333334" height="23.666666666666668"/>
+            <size key="intrinsicContentSize" width="152.66666666666666" height="23.333333333333332"/>
         </designable>
         <designable name="AFa-O0-uor">
             <size key="intrinsicContentSize" width="616.66666666666663" height="33"/>
@@ -4602,7 +4602,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="73.333333333333329" height="19"/>
         </designable>
         <designable name="BQJ-cj-byT">
-            <size key="intrinsicContentSize" width="167.33333333333334" height="17"/>
+            <size key="intrinsicContentSize" width="170.66666666666666" height="16.333333333333332"/>
         </designable>
         <designable name="Bgw-9p-Czx">
             <size key="intrinsicContentSize" width="174.33333333333334" height="24"/>
@@ -4614,7 +4614,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="143.33333333333334" height="19.333333333333332"/>
         </designable>
         <designable name="Ctv-fW-bmK">
-            <size key="intrinsicContentSize" width="105.33333333333333" height="16.666666666666668"/>
+            <size key="intrinsicContentSize" width="96.666666666666671" height="16.333333333333332"/>
         </designable>
         <designable name="EKx-vZ-Vd7">
             <size key="intrinsicContentSize" width="46" height="34"/>
@@ -4641,7 +4641,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="165.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="H3O-DX-Gk1">
-            <size key="intrinsicContentSize" width="94" height="18"/>
+            <size key="intrinsicContentSize" width="94.666666666666671" height="17.666666666666668"/>
         </designable>
         <designable name="HFP-uA-hEM">
             <size key="intrinsicContentSize" width="288" height="68"/>
@@ -4650,7 +4650,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
         <designable name="HfV-c1-yX1">
-            <size key="intrinsicContentSize" width="107.66666666666667" height="18"/>
+            <size key="intrinsicContentSize" width="106" height="17.666666666666668"/>
         </designable>
         <designable name="IhV-g2-Lcm">
             <size key="intrinsicContentSize" width="165.33333333333334" height="18.666666666666668"/>
@@ -4659,7 +4659,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="259" height="11"/>
         </designable>
         <designable name="KDI-Sa-7Tr">
-            <size key="intrinsicContentSize" width="72" height="33.333333333333336"/>
+            <size key="intrinsicContentSize" width="74" height="32.666666666666664"/>
         </designable>
         <designable name="KPd-l3-Uye">
             <size key="intrinsicContentSize" width="657" height="41"/>
@@ -4719,7 +4719,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="136.33333333333334" height="19.333333333333332"/>
         </designable>
         <designable name="Ssk-3D-n5b">
-            <size key="intrinsicContentSize" width="181.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="186" height="18"/>
         </designable>
         <designable name="Stp-mR-xTp">
             <size key="intrinsicContentSize" width="167.33333333333334" height="18.666666666666668"/>
@@ -4728,7 +4728,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="95.666666666666671" height="14.666666666666666"/>
         </designable>
         <designable name="TGg-m8-WkD">
-            <size key="intrinsicContentSize" width="167.66666666666666" height="16.666666666666668"/>
+            <size key="intrinsicContentSize" width="158" height="16.333333333333332"/>
         </designable>
         <designable name="TWB-J5-wgz">
             <size key="intrinsicContentSize" width="290.66666666666669" height="10.666666666666666"/>
@@ -4747,6 +4747,9 @@ If you wish to continue.</string>
         </designable>
         <designable name="W9F-5o-fHX">
             <size key="intrinsicContentSize" width="538.66666666666663" height="19"/>
+        </designable>
+        <designable name="WXQ-C5-dfi">
+            <size key="intrinsicContentSize" width="177" height="32"/>
         </designable>
         <designable name="Wd3-Ga-So6">
             <size key="intrinsicContentSize" width="107.66666666666667" height="18"/>
@@ -4773,7 +4776,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="265" height="17"/>
         </designable>
         <designable name="aTI-0R-R5c">
-            <size key="intrinsicContentSize" width="181.33333333333334" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="186" height="18"/>
         </designable>
         <designable name="aoZ-DQ-lEr">
             <size key="intrinsicContentSize" width="60.666666666666664" height="33"/>
@@ -4788,7 +4791,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="49" height="31"/>
         </designable>
         <designable name="cuk-Hd-zWj">
-            <size key="intrinsicContentSize" width="167.66666666666666" height="16.666666666666668"/>
+            <size key="intrinsicContentSize" width="158" height="16.333333333333332"/>
         </designable>
         <designable name="dXT-C1-loa">
             <size key="intrinsicContentSize" width="126" height="19.333333333333332"/>
@@ -4797,7 +4800,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="101.33333333333333" height="19"/>
         </designable>
         <designable name="eBn-i3-CZv">
-            <size key="intrinsicContentSize" width="616.66666666666663" height="33"/>
+            <size key="intrinsicContentSize" width="562" height="32.666666666666664"/>
         </designable>
         <designable name="eWy-Tc-aAJ">
             <size key="intrinsicContentSize" width="78" height="19"/>
@@ -4812,7 +4815,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
         <designable name="fN3-lA-V6G">
-            <size key="intrinsicContentSize" width="157" height="23.666666666666668"/>
+            <size key="intrinsicContentSize" width="147.33333333333334" height="23.333333333333332"/>
         </designable>
         <designable name="fTv-RW-a9W">
             <size key="intrinsicContentSize" width="72" height="33.333333333333336"/>
@@ -4842,7 +4845,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="62.666666666666664" height="33"/>
         </designable>
         <designable name="isS-8X-brr">
-            <size key="intrinsicContentSize" width="107.66666666666667" height="18"/>
+            <size key="intrinsicContentSize" width="106" height="17.666666666666668"/>
         </designable>
         <designable name="jMG-fk-45g">
             <size key="intrinsicContentSize" width="1178.6666666666667" height="37.666666666666664"/>
@@ -4869,7 +4872,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
         <designable name="lc9-xL-5hQ">
-            <size key="intrinsicContentSize" width="289.33333333333331" height="16.666666666666668"/>
+            <size key="intrinsicContentSize" width="263.66666666666669" height="16.333333333333332"/>
         </designable>
         <designable name="mb3-Wl-J6m">
             <size key="intrinsicContentSize" width="1528" height="19"/>
@@ -4884,7 +4887,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="122.33333333333333" height="16.666666666666668"/>
         </designable>
         <designable name="oKc-2c-acB">
-            <size key="intrinsicContentSize" width="105.33333333333333" height="16.666666666666668"/>
+            <size key="intrinsicContentSize" width="96.666666666666671" height="16.333333333333332"/>
         </designable>
         <designable name="oRq-ig-bd8">
             <size key="intrinsicContentSize" width="288" height="68"/>
@@ -4896,13 +4899,13 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="245.66666666666666" height="19.333333333333332"/>
         </designable>
         <designable name="pdw-go-56I">
-            <size key="intrinsicContentSize" width="290.66666666666669" height="10.666666666666666"/>
+            <size key="intrinsicContentSize" width="265.66666666666669" height="10.666666666666666"/>
         </designable>
         <designable name="phb-j7-R3k">
             <size key="intrinsicContentSize" width="72" height="33.333333333333336"/>
         </designable>
         <designable name="qfP-er-OAn">
-            <size key="intrinsicContentSize" width="265.66666666666669" height="16.666666666666668"/>
+            <size key="intrinsicContentSize" width="243.33333333333334" height="16.333333333333332"/>
         </designable>
         <designable name="rQr-lP-aS3">
             <size key="intrinsicContentSize" width="271.33333333333331" height="19"/>
@@ -4932,7 +4935,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="81.666666666666671" height="19"/>
         </designable>
         <designable name="vTo-ld-Bw8">
-            <size key="intrinsicContentSize" width="174" height="18.666666666666668"/>
+            <size key="intrinsicContentSize" width="178" height="18"/>
         </designable>
         <designable name="vwl-AW-ZWS">
             <size key="intrinsicContentSize" width="94" height="18"/>
@@ -4941,7 +4944,10 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="290.66666666666669" height="10.666666666666666"/>
         </designable>
         <designable name="xoM-UV-VcR">
-            <size key="intrinsicContentSize" width="93.333333333333329" height="16.666666666666668"/>
+            <size key="intrinsicContentSize" width="88.333333333333329" height="16.333333333333332"/>
+        </designable>
+        <designable name="yG4-HG-bpZ">
+            <size key="intrinsicContentSize" width="177" height="32"/>
         </designable>
         <designable name="yU2-eO-Bqo">
             <size key="intrinsicContentSize" width="103.66666666666667" height="23.666666666666668"/>
@@ -4959,7 +4965,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="169.33333333333334" height="16.666666666666668"/>
         </designable>
         <designable name="zir-eb-vhv">
-            <size key="intrinsicContentSize" width="74.666666666666671" height="17.666666666666668"/>
+            <size key="intrinsicContentSize" width="67" height="17.666666666666668"/>
         </designable>
     </designables>
     <resources>

@@ -73,6 +73,10 @@ final class CNICVerificationViewModel: CNICVerificationViewModelProtocol {
                 isPortedMobileNetwork: isPortedMobileNetwork
             ) else { return }
             
+            var parameters = viewAppGenerateOTPInput.dictionaryRepresentation()
+            sendImage(parameters: parameters)
+            
+            return()
             APIManager.shared.viewAppsGenerateOTP(input: viewAppGenerateOTPInput) { [weak self] response in
                 guard let self = self else { return }
                 
@@ -89,6 +93,31 @@ final class CNICVerificationViewModel: CNICVerificationViewModelProtocol {
         } else {
             errorMessage.value = "Please take pictures of cnic front and back side"
         }
+    }
+    
+    
+    func sendImage(parameters: [String: Any]) {
+        APIs.postAPI(apiName: .rentSubscription, parameters: parameters, viewController: nil, timeout: 60, completion: {
+            jsonResponse, success, errorMessage in
+//            print(jsonResponse)
+//            print(success)
+//            print(jsonResponse)
+            if success {
+                let (recordDataModel, error) = APIs.kfunCatchJsonDecoderError(RegisterVerifyOTPResponseModel.self, responseJSON: jsonResponse!)
+                print(jsonResponse)
+                if error == nil {
+                    print(recordDataModel as Any)
+//                    self.modelRentalSubscription = recordDataModel
+                }
+                else {
+                    //Error Log If issue in Model
+                    print(error as Any)
+                }
+            }
+            else {
+//                self.showAlert(message: errorMessage)
+            }
+        })
     }
     
     func viewAppGenerateOTPWithoutAttachment(
