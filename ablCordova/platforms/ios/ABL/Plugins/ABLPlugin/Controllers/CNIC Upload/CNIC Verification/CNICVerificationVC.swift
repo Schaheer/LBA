@@ -63,7 +63,7 @@ final class CNICVerificationVC: UIViewController {
 //        print(backSideCNICData?.base64EncodedString(), "backSideCNICData?.base64EncodedString()")
         cnicVerificationViewModel.viewAppGenerateOTPWithAttachment(
             customerTypeID: 106501,
-            mobileNumber: mobileNumber,
+            mobileNumber: mobileNumber!.replacingOccurrences(of: "-", with: ""),
             generateOTP: jointAccountSecondaryApplicant ? false : true,
             cnicFront: frontSideCNICData?.base64EncodedString(),
             cnicBack: backSideCNICData?.base64EncodedString(),
@@ -151,8 +151,8 @@ final class CNICVerificationVC: UIViewController {
         
         viewAppGenerateResponseModel.forEach {
             guard let consumerListInputModel = ConsumerListInputModel(
-                cnicNumber: $0.idNumber ?? "",
-                mobileNumber: $0.mobileNo ?? "",
+                cnicNumber: ($0.idNumber ?? "").replacingOccurrences(of: "-", with: ""),
+                mobileNumber: ($0.mobileNo ?? "").replacingOccurrences(of: "-", with: ""),
                 isPrimary: $0.isPrimary ?? false,
                 customerTypeID: BaseConstants.Config.customerTypeID,
                 customerBranch: selectBankingMethodViewModel.getBranchName(),

@@ -114,8 +114,10 @@ final class VerifyOTPVC: UIViewController {
         switch otpVerifyMode {
         case .cnicUpload:
             resendCnicUploadOTP()
+            startOtpTimer()
         case .biometricVerification:
             resendBiometricOTP()
+            startOtpTimer()
         }
     }
     
