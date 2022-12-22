@@ -20,8 +20,7 @@ protocol CNICAvailabilityViewModelProtocol {
     func viewAppGenerateOTP(
         customerTypeID: Double?,
         mobileNumber: String?,
-        generateOTP: Bool?,
-        isPortedMobileNetwork: Bool?
+        generateOTP: Bool?
     )
     
     func viewAppGenerateOTPWithCNIC(
@@ -56,8 +55,7 @@ class CNICAvailabilityViewModel: CNICAvailabilityViewModelProtocol {
     func viewAppGenerateOTP(
         customerTypeID: Double?,
         mobileNumber: String?,
-        generateOTP: Bool?,
-        isPortedMobileNetwork: Bool?
+        generateOTP: Bool?
     ) {
         guard
             let customerTypeID = customerTypeID,
@@ -67,40 +65,13 @@ class CNICAvailabilityViewModel: CNICAvailabilityViewModelProtocol {
         
         if !mobileNumber.isEmpty {
             if mobileNumber.isValidPhoneNumber{
-                var viewAppGenerateOTPInput = ViewAppGenerateOTPInputModel()
+                guard let viewAppGenerateOTPInput = ViewAppGenerateOTPInputModel(
+                    customerTypeID: customerTypeID,
+                    mobileNumber: mobileNumber.replacingOccurrences(of: "-", with: ""),
+                    generateOTP: generateOTP
+                ) else { return }
                 
-                if DataCacheManager.shared.loadNoOfJointApplicants() ?? 0 > 0 {
-                    let cnicFront = DataCacheManager.shared.getCnicFrontBack().0
-                    let cnicBack = DataCacheManager.shared.getCnicFrontBack().1
-                    
-                    var attachment = [CNICAttachmentInputModel]()
-                    if cnicFront != nil && cnicBack != nil {
-                        attachment = [cnicFront!, cnicBack!]
-                    }
-                    
-                    var array = DataCacheManager.shared.getCnicFrontBack()
-                    print(array)
-                    viewAppGenerateOTPInput = ViewAppGenerateOTPInputModel(
-                        customerTypeID: customerTypeID,
-                        mobileNumber: mobileNumber,
-                        generateOTP: generateOTP,
-                        attachments: attachment,
-                        isPortedMobileNetwork: isPortedMobileNetwork ?? false)
-                }
-                else {
-                    viewAppGenerateOTPInput = ViewAppGenerateOTPInputModel(
-                        customerTypeID: customerTypeID,
-                        mobileNumber: mobileNumber,
-                        generateOTP: generateOTP)
-                }
-              
-//                guard let viewAppGenerateOTPInput = ViewAppGenerateOTPInputModel(
-//                    customerTypeID: customerTypeID,
-//                    mobileNumber: mobileNumber,
-//                    generateOTP: generateOTP
-//                ) else { return }
-                
-                APIManager.shared.viewAppsGenerateOTP(input: viewAppGenerateOTPInput!) { [weak self] response in
+                APIManager.shared.viewAppsGenerateOTP(input: viewAppGenerateOTPInput) { [weak self] response in
                     guard let self = self else { return }
                     
                     switch response.result {
@@ -137,9 +108,9 @@ class CNICAvailabilityViewModel: CNICAvailabilityViewModelProtocol {
         if !mobileNumber.isEmpty && !cnicNumber.isEmpty {
             guard let viewAppGenerateOTPInput = ViewAppGenerateOTPInputModel(
                 customerTypeID: customerTypeID,
-                mobileNumber: mobileNumber,
+                mobileNumber: mobileNumber.replacingOccurrences(of: "-", with: ""),
                 generateOTP: generateOTP,
-                cnicNumber: cnicNumber,
+                cnicNumber: cnicNumber.replacingOccurrences(of: "-", with: ""),
                 isPortedMobileNetwork: isPortedMobileNetwork
             ) else { return }
             

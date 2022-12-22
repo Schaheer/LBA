@@ -301,12 +301,13 @@ class PersonalInformationViewModel: PersonalInformationViewModelProtocol {
 //        }
     }
     //MARK: - For merging
-    func getListOfConsumers(newUserInfo: BasicInfoConsumerListInputModel) -> [BasicInfoConsumerListInputModel] {
+    func getListOfConsumers2(newUserInfo: BasicInfoConsumerListInputModel) -> [BasicInfoConsumerListInputModel] {
         var tempRdaCustomerProfileID = newUserInfo.rdaCustomerProfileId
         var tempRdaCustomerAccInfoId = newUserInfo.rdaCustomerAccInfoId
         
         let cousumerListHamza = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
         let cousumerListShakeel = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
+        let currentConsumerList = getCurrentConsumerListResponseInInputModel(responseCunsumerList: cousumerListHamza!)
         
         //MARK: - Start----- Just to find new User Profile ID
         if let listConsumerLocalHamza = cousumerListHamza {
@@ -372,6 +373,60 @@ class PersonalInformationViewModel: PersonalInformationViewModelProtocol {
 
         consumerListInputModelArray.append(newUserInfo)
         return consumerListInputModelArray
+    }
+    
+    
+    //MARK: - For merging
+    func getListOfConsumers(newUserInfo: BasicInfoConsumerListInputModel) -> [BasicInfoConsumerListInputModel] {
+        var tempRdaCustomerProfileID = newUserInfo.rdaCustomerProfileId
+        var tempRdaCustomerAccInfoId = newUserInfo.rdaCustomerAccInfoId
+        
+        let cousumerListHamza = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
+        let currentConsumerList = getCurrentConsumerListResponseInInputModel(responseCunsumerList: cousumerListHamza!)
+        let cousumerListShakeel = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
+        var foundIndex = 99
+        //MARK: - Start----- Just to find new User Profile ID
+        if currentConsumerList.count > 0 {
+            for (index, consumer) in currentConsumerList.enumerated() {
+                print(consumer.rdaCustomerProfileId ?? 0)
+                print(consumer.rdaCustomerAccInfoId ?? 0)
+                if let consumerListLocalShakeel = cousumerListShakeel {
+                    var isNotFoundAndNewUserProfileID = true
+                    consumerListLocalShakeel.forEach {
+                       if $0.rdaCustomerProfileID == consumer.rdaCustomerProfileId {
+                            print("record found")
+                            isNotFoundAndNewUserProfileID = false
+                        }
+                    }
+                    if isNotFoundAndNewUserProfileID {
+                        print("------Start-----Profile Id Not Found------")
+                        tempRdaCustomerProfileID = consumer.rdaCustomerProfileId ?? 0
+                        tempRdaCustomerAccInfoId = consumer.rdaCustomerAccInfoId
+                        print("------End-----Profile Id Not Found------")
+                        foundIndex = index
+                    }
+                }
+            }
+        }
+        //MARK: - Start-----If user profile id found Replace in new user Request data
+//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerProfileID
+        
+        if foundIndex != 99 {
+            currentConsumerList[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+            currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerAccInfoId
+            currentConsumerList[foundIndex].isPrimary = false
+            currentConsumerList[foundIndex].isPrimaryRegistered = false
+        }
+        else {
+            foundIndex = 0
+        }
+        
+        currentConsumerList[foundIndex].fullName = newUserInfo.fullName
+        currentConsumerList[foundIndex].fatherHusbandName = newUserInfo.fatherHusbandName
+        currentConsumerList[foundIndex].motherMaidenName = newUserInfo.motherMaidenName
+        
+        return currentConsumerList
     }
 }
 

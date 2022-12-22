@@ -210,7 +210,6 @@ final class TaxResidentDetailVC: UIViewController {
         ) else { return }
         
         taxResidentViewModel.registerConsumerBasicInfo(
-            consumerList: [], // Create a proper [BasicInfoConsumerListInputModel] array to pass in here
             residentCountries: [residentCountry]
         )
     }

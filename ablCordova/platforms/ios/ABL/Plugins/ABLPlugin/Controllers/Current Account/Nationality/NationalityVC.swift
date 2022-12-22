@@ -209,7 +209,7 @@ extension NationalityVC: UITableViewDelegate, UITableViewDataSource {
         }
         
         let nationalities2: [[String: Any]] = (nationalitiesArray?.map({
-            ["rdaCustomerId": ($0.rdaCustomerId ?? 0),
+            ["rdaCustomerId": ($0.rdaCustomerId ?? 0) ?? 0,
              "nationalityId": ($0.nationalityId ?? 0),
              "idNumber": ($0.idNumber ?? 0)]
         }))!
@@ -231,10 +231,6 @@ extension NationalityVC: UITableViewDelegate, UITableViewDataSource {
             nationalityTypeId: modelRegistrationSteper.isNationalityDual ?? false ? 100902 : 100901,
             nationalities: nationalities2
         )
-        
-        let nationalities = basicInfoConsumerListInput?.nationalities
-        print(nationalities)
-        
         consumerListInputModelArray = getListOfConsumers(newUserInfo: basicInfoConsumerListInput!)
         
         //TODO: add data of all the applicants for joint account
@@ -253,7 +249,7 @@ extension NationalityVC: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-//MARK: - For merging
+    //MARK: - For merging
     func getListOfConsumers(newUserInfo: BasicInfoConsumerListInputModel) -> [BasicInfoConsumerListInputModel] {
         var tempRdaCustomerProfileID = newUserInfo.rdaCustomerProfileId
         var tempRdaCustomerAccInfoId = newUserInfo.rdaCustomerAccInfoId
@@ -298,7 +294,6 @@ extension NationalityVC: UITableViewDelegate, UITableViewDataSource {
         //MARK: - End-----If user profile id found Replace in new user Request data
         
         var consumerListInputModelArray = [BasicInfoConsumerListInputModel]()
-        
         
         if let consumerListTemp = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList {
             consumerListTemp.forEach {

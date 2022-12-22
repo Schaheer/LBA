@@ -688,14 +688,14 @@ class APIs: SessionDelegate {
         task.resume()
     }
     
-    static func postAPI(apiName: APIs.name, parameters: [String: Any], viewController: UIViewController? = nil, timeout: Int? = 120, encoding: ParameterEncoding? = JSONEncoding.default, completion: @escaping(_ response: JSON?, Bool, _ errorMsg: String) -> Void) {
-        let url = "\(baseURL)\(apiName.rawValue)"
+    static func postAPI(apiName: String, parameters: [String: Any], viewController: UIViewController? = nil, timeout: Int? = 120, encoding: ParameterEncoding? = JSONEncoding.default, completion: @escaping(_ response: JSON?, Bool, _ errorMsg: String) -> Void) {
+//        let url = "\(baseURL)\(apiName.rawValue)"
         
         let authToken = "Bearer \(kAccessToken)"
         let headerWithToken: HTTPHeaders = ["Content-Type": "application/json",
                                    "Authorization" : authToken]
         
-        print("URL: \(url)")
+//        print("URL: \(url)")
         print("Parameters: \(parameters)")
 //        print("Header: \(header)")
         
@@ -703,7 +703,7 @@ class APIs: SessionDelegate {
         if viewController != nil {
 //            viewController?.view.showLoader(viewController: viewController!)
         }
-        sessionManger.request(url, method: .post, parameters: parameters, encoding: encoding!, headers: headerWithToken).responseString { response in
+        sessionManger.request(apiName, method: .post, parameters: parameters, encoding: encoding!, headers: headerWithToken).responseString { response in
             sessionManger.cancelAllRequests()
             if viewController != nil {
 //                viewController?.view.removeLoader(viewController: viewController!)

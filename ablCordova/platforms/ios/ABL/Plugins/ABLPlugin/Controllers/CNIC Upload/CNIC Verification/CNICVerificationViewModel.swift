@@ -65,6 +65,8 @@ final class CNICVerificationViewModel: CNICVerificationViewModelProtocol {
                 )
             else { return }
             
+            //print(cnicFrontAttachmentInput)
+            
             guard let viewAppGenerateOTPInput = ViewAppGenerateOTPInputModel(
                 customerTypeID: customerTypeID,
                 mobileNumber: mobileNumber,
@@ -73,17 +75,12 @@ final class CNICVerificationViewModel: CNICVerificationViewModelProtocol {
                 isPortedMobileNetwork: isPortedMobileNetwork
             ) else { return }
             
-            var parameters = viewAppGenerateOTPInput.dictionaryRepresentation()
-            sendImage(parameters: parameters)
-            
-            return()
             APIManager.shared.viewAppsGenerateOTP(input: viewAppGenerateOTPInput) { [weak self] response in
                 guard let self = self else { return }
                 
                 switch response.result {
                 case .success(let value):
                     self.openAccountUserData.value = value
-                    DataCacheManager.shared.saveCnicFrontBackModel(frontCnic: cnicFrontAttachmentInput, backCnic: cnicBackAttachmentInput)
                     
                     DataCacheManager.shared.saveViewAppGenerateOTPWithData(input: viewAppGenerateOTPInput)
                 case .failure(let error):
@@ -93,31 +90,6 @@ final class CNICVerificationViewModel: CNICVerificationViewModelProtocol {
         } else {
             errorMessage.value = "Please take pictures of cnic front and back side"
         }
-    }
-    
-    
-    func sendImage(parameters: [String: Any]) {
-        APIs.postAPI(apiName: .rentSubscription, parameters: parameters, viewController: nil, timeout: 60, completion: {
-            jsonResponse, success, errorMessage in
-//            print(jsonResponse)
-//            print(success)
-//            print(jsonResponse)
-            if success {
-                let (recordDataModel, error) = APIs.kfunCatchJsonDecoderError(RegisterVerifyOTPResponseModel.self, responseJSON: jsonResponse!)
-                print(jsonResponse)
-                if error == nil {
-                    print(recordDataModel as Any)
-//                    self.modelRentalSubscription = recordDataModel
-                }
-                else {
-                    //Error Log If issue in Model
-                    print(error as Any)
-                }
-            }
-            else {
-//                self.showAlert(message: errorMessage)
-            }
-        })
     }
     
     func viewAppGenerateOTPWithoutAttachment(
@@ -164,14 +136,8 @@ final class CNICVerificationViewModel: CNICVerificationViewModelProtocol {
     
     func saveKyc(rdaCustomerAccInfoId: Double?, rdaCustomerProfileId: Double?, isPrimary: Bool?, relationCode1: Double?, averageMonthlySalary: String?) {
 //        guard let rdaCustomerAccInfoId = rdaCustomerAccInfoId, let rdaCustomerProfileId= rdaCustomerProfileId, let isPrimary = isPrimary, let relationCode1 = relationCode1, let averageMonthlySalary = averageMonthlySalary else { return }
-        
         guard let kycInfo = saveKYCObject(rdaCustomerAccInfoId: rdaCustomerAccInfoId, rdaCustomerProfileId: rdaCustomerProfileId, isPrimary: isPrimary, relationCode1: relationCode1, averageMonthlySalary: averageMonthlySalary) else { return }
-        
         let viewAppGenerateResponseModel = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
-        
-        print(kycInfo)
-        print(viewAppGenerateResponseModel)
-        
         var consumerListInputModelArray = [saveKYCObject]()
         viewAppGenerateResponseModel?.forEach {
             guard let consumerListInputModel = saveKYCObject(rdaCustomerAccInfoId: ($0.accountInformation?.rdaCustomerAccInfoID)!, rdaCustomerProfileId: $0.rdaCustomerProfileID , isPrimary: $0.isPrimary, relationCode1: DataCacheManager.shared.loadAdditionalApplicantRelationship()?.id, averageMonthlySalary: $0.accountInformation?.averageMonthlySalary) else { return }

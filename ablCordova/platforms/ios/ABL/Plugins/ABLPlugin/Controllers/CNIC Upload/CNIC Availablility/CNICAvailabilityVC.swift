@@ -21,6 +21,11 @@ final class CNICAvailabilityVC: UIViewController {
         funChangeAppLanguageAndSide(to: "ur", vc: self)
     }
     @IBOutlet weak var buttonUrdu: UIButton!
+    
+    @IBAction func buttonEnglish(_ sender: Any) {
+        funChangeAppLanguageAndSide(to: "en", vc: self)
+    }
+    
     @IBOutlet weak var mobileNumberLabel: UILabel!
     @IBOutlet weak var mobileNumberTextField: UITextField!
     
@@ -136,17 +141,15 @@ final class CNICAvailabilityVC: UIViewController {
             if mobileNumberTextField.text?.count == 0{
                 AlertManager.shared.showOKAlert(with: "Alert!", message: "Please enter Mobile Number first")
             }else{
-                print(DataCacheManager.shared.loadNoOfJointApplicants())
-                
                 cnicAvailabilityViewModel.viewAppGenerateOTP(
                     customerTypeID: 106501,
                     mobileNumber: mobileNumberTextField.text ?? "",
-                    generateOTP: false,
-                    isPortedMobileNetwork: portedSegment.index == 0 ? false : true
+                    generateOTP: false
                 )
             }
         } else {
-            if modelRegistrationSteper.cnicNumber != cnicNumberTextField.text ?? "" {
+            if modelRegistrationSteper.cnicNumber != (cnicNumberTextField.text ?? "").replacingOccurrences(of: "-", with: "") {
+                
                 self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Provided CNIC is not matched")
                 
                 DispatchQueue.main.async {
@@ -169,7 +172,6 @@ final class CNICAvailabilityVC: UIViewController {
     }
     
     private func openCNICVerificationVC() {
-        
         guard let cnicVerificationVC = UIStoryboard.initialize(
             viewController: .cnicVerificationVC,
             fromStoryboard: .cnicUpload
@@ -188,14 +190,16 @@ final class CNICAvailabilityVC: UIViewController {
         ) as? VerifyOTPVC else { return }
         
         verifyOTPVC.otpVerifyMode = .cnicUpload
+        
         navigationController?.pushViewController(verifyOTPVC, animated: true)
     }
+    
     private func openPersonalInformationVC() {
         guard let personalInformationVC = UIStoryboard.initialize(
             viewController: .personalInformationBaseVC,
             fromStoryboard: .openAccount
         ) as? PersonalInformationBaseVC else { return }
-        personalInformationVC.firstChild = .personalInfoSecondVC
+                
         navigationController?.pushViewController(personalInformationVC, animated: true)
     }
     
@@ -231,7 +235,7 @@ final class CNICAvailabilityVC: UIViewController {
             } else {
                 //Shakeel 11Nov22
                 modelRegistrationSteper.cnicNumber = response.idNumber
-                //                self.cnicNumberTextField.text = response.idNumber
+//                self.cnicNumberTextField.text = response.idNumber
                 self.cnicNumberView.isHidden = false
             }
         }

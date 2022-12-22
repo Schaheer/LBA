@@ -95,8 +95,6 @@ final class SelectBankingMethodVC: UIViewController {
         let branch = selectBankingMethodViewModel.getBranchName()
         
         if bankingModeID != 0 && !branch.isEmpty {
-            
-            
 //            let viewAppGenerateResponseModel = DataCacheManager.shared.loadViewAppGenerateOTPResponseArray()
 //            var consumerListInputModelArray = [ConsumerListInputModel]()
 //
@@ -114,10 +112,20 @@ final class SelectBankingMethodVC: UIViewController {
 //
 //                consumerListInputModelArray.append(consumerListInputModel)
 //            }
-            guard
-                let viewAppGenerateResponseModel = DataCacheManager.shared.loadViewAppGenerateOTPResponse()
-            else { return }
-            let attachments = [String]()
+            guard let viewAppGenerateResponseModel = DataCacheManager.shared.loadViewAppGenerateOTPResponse() else { return }
+            let viewAppGenerateOTPWithData = DataCacheManager.shared.loadViewAppGenerateOTPWithData()
+
+            let attachments = viewAppGenerateOTPWithData?.attachments
+            let cnicFrontAttachmentInput = [
+                "fileName": "CNIC FRONT",
+                "base64Content": attachments?.first?.base64Content ?? "",
+                "attachmentTypeId": attachments?.first?.attachmentTypeID ?? 0
+            ] as [String : Any]
+            let cnicBackAttachmentInput = [
+                "fileName": "CNIC BACK",
+                "base64Content": attachments?.last?.base64Content ?? "",
+                "attachmentTypeId": attachments?.last?.attachmentTypeID ?? 0
+            ] as [String : Any]
             guard let consumerListInputModel = ConsumerListInputModel(
                 cnicNumber: viewAppGenerateResponseModel.idNumber ?? "",
                 mobileNumber: viewAppGenerateResponseModel.mobileNo ?? "",
@@ -129,7 +137,7 @@ final class SelectBankingMethodVC: UIViewController {
                 dateOfIssue: viewAppGenerateResponseModel.dateOfIssue ?? "",
                 //Shakeel 11Nov22
                 rdaCustomerAccInfoId: modelRegistrationSteper.rdaCustomerAccInfoId,
-                attachments: attachments
+                attachments: [cnicFrontAttachmentInput, cnicBackAttachmentInput]
             ) else { return }
             let fingerprintList =  self.fingerprintList
             

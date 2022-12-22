@@ -10,10 +10,7 @@ import UIKit
 final class CNICVerificationVC: UIViewController {
     
     // MARK: - Class Outlets
-    //test back button
-    @IBAction func buttonBack(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
-    }
+    
     @IBOutlet weak var cnicFrontSideLabel: UILabel!
     @IBOutlet weak var cnicFrontSideImageView: UIImageView!
     
@@ -38,18 +35,14 @@ final class CNICVerificationVC: UIViewController {
     var cameFromJointFlow = false
     
     override func viewWillAppear(_ animated: Bool) {
-        
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
         if modelRegistrationSteper.cnicFrontSideImageView != nil {
             cnicFrontSideImageView.image =  modelRegistrationSteper.cnicFrontSideImageView
         }
         if modelRegistrationSteper.cnicBackSideImageView != nil {
             cnicBackSideImageView.image =  modelRegistrationSteper.cnicBackSideImageView
         }
+        
     }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -66,44 +59,48 @@ final class CNICVerificationVC: UIViewController {
     }
     
     @IBAction func nextTapped(_ sender: UIButton) {
-//        print(frontSideCNICData?.base64EncodedString(), "frontSideCNICData?.base64EncodedString()...")
-//        print(backSideCNICData?.base64EncodedString(), "backSideCNICData?.base64EncodedString()")
-        cnicVerificationViewModel.viewAppGenerateOTPWithAttachment(
-            customerTypeID: 106501,
-            mobileNumber: mobileNumber,
-            generateOTP: jointAccountSecondaryApplicant ? false : true,
-            cnicFront: frontSideCNICData?.base64EncodedString(),
-            cnicBack: backSideCNICData?.base64EncodedString(),
-            isPortedMobileNetwork: isPortedMobileNetwork
-        )
-        modelRegistrationSteper.cnicFrontSideImageView = cnicFrontSideImageView.image
-        modelRegistrationSteper.cnicBackSideImageView = cnicBackSideImageView.image
-        
-//        guard let viewAppGenerateResponseModel = DataCacheManager.shared.loadViewAppGenerateOTPResponse() else { return }
-//
-//
-//        "rdaCustomerAccInfoId": 6332, "idNumber": "0348110473971", "dateOfBirth": "29/08/1991", "dateOfIssue": "26/07/2021", "mobileNo": "02569877444", "isPrimary": true, "isPrimaryRegistered": true, "customerTypeId": 106501, "customerBranch": "Abdul Hakim", "bankingModeId": 114201, "portedMobileNetwork": 0
-        
-//        guard let consumerListInputModel = ConsumerListInputModel(
-//            cnicNumber: viewAppGenerateResponseModel.idNumber ?? "",
-//            mobileNumber: viewAppGenerateResponseModel.mobileNo ?? "",
-//            isPrimary: true,
-//            customerTypeID: BaseConstants.Config.customerTypeID,
-//            customerBranch: selectBankingMethodViewModel.getBranchName(),
-//            bankingModeID: selectBankingMethodViewModel.getBankingModeID(),
-//            dateOfBirth: viewAppGenerateResponseModel.dateOfBirth ?? "",
-//            dateOfIssue: viewAppGenerateResponseModel.dateOfIssue ?? "",
-//            isPrimaryRegistered: true,
-//            portedMobileNetwork: false
-//        ) else { return }
-        
+        //        print(frontSideCNICData?.base64EncodedString(), "frontSideCNICData?.base64EncodedString()...")
+        //        print(backSideCNICData?.base64EncodedString(), "backSideCNICData?.base64EncodedString()")
+                
 
-        
-        //TODO: add data of primary and all the secondary applicants in consumerList Array
-        
+                cnicVerificationViewModel.viewAppGenerateOTPWithAttachment(
+                    customerTypeID: 106501,
+                    mobileNumber:mobileNumber?.replacingOccurrences(of: "-", with: ""),
+                    generateOTP: jointAccountSecondaryApplicant ? false : true,
+                    cnicFront: cnicFrontSideImageView.image!.toBase64String2(),
+                    cnicBack: cnicBackSideImageView.image!.toBase64String2(),
+//                    cnicFront: frontSideCNICData?.base64EncodedString().replacingOccurrences(of: "\\", with: ""),
+//                    cnicBack: backSideCNICData?.base64EncodedString().replacingOccurrences(of: "\\", with: ""),
+                    isPortedMobileNetwork: isPortedMobileNetwork
+                )
+                modelRegistrationSteper.cnicFrontSideImageView = cnicFrontSideImageView.image
+                modelRegistrationSteper.cnicBackSideImageView = cnicBackSideImageView.image
+                
+        //        guard let viewAppGenerateResponseModel = DataCacheManager.shared.loadViewAppGenerateOTPResponse() else { return }
+        //
+        //
+        //        "rdaCustomerAccInfoId": 6332, "idNumber": "0348110473971", "dateOfBirth": "29/08/1991", "dateOfIssue": "26/07/2021", "mobileNo": "02569877444", "isPrimary": true, "isPrimaryRegistered": true, "customerTypeId": 106501, "customerBranch": "Abdul Hakim", "bankingModeId": 114201, "portedMobileNetwork": 0
+                
+        //        guard let consumerListInputModel = ConsumerListInputModel(
+        //            cnicNumber: viewAppGenerateResponseModel.idNumber ?? "",
+        //            mobileNumber: viewAppGenerateResponseModel.mobileNo ?? "",
+        //            isPrimary: true,
+        //            customerTypeID: BaseConstants.Config.customerTypeID,
+        //            customerBranch: selectBankingMethodViewModel.getBranchName(),
+        //            bankingModeID: selectBankingMethodViewModel.getBankingModeID(),
+        //            dateOfBirth: viewAppGenerateResponseModel.dateOfBirth ?? "",
+        //            dateOfIssue: viewAppGenerateResponseModel.dateOfIssue ?? "",
+        //            isPrimaryRegistered: true,
+        //            portedMobileNetwork: false
+        //        ) else { return }
+                
 
-        
-    }
+                
+                //TODO: add data of primary and all the secondary applicants in consumerList Array
+                
+
+                
+            }
     
     @IBAction func btnViewFront(_ sender: UIButton){
         let imageView = cnicFrontSideImageView!
@@ -136,7 +133,7 @@ final class CNICVerificationVC: UIViewController {
         //shakeel
         frontSideImagePicker.sourceType = .photoLibrary
 //        frontSideImagePicker.sourceType = .camera
-//        frontSideImagePicker.allowsEditing = true
+        frontSideImagePicker.allowsEditing = true
         frontSideImagePicker.delegate = self
         present(frontSideImagePicker, animated: true)
     }
@@ -147,7 +144,7 @@ final class CNICVerificationVC: UIViewController {
         frontSideImagePicker.sourceType = .photoLibrary
 
 //        backSideImagePicker.sourceType = .camera
-//        backSideImagePicker.allowsEditing = true
+        backSideImagePicker.allowsEditing = true
         backSideImagePicker.delegate = self
         present(backSideImagePicker, animated: true)
     }
@@ -166,7 +163,7 @@ final class CNICVerificationVC: UIViewController {
                 bankingModeID: selectBankingMethodViewModel.getBankingModeID(),
                 dateOfBirth: $0.dateOfBirth ?? "",
                 dateOfIssue: $0.dateOfIssue ?? "",
-                attachments: [String]()
+                attachments: [[String : Any]]()
             ) else { return }
             
             consumerListInputModelArray.append(consumerListInputModel)
@@ -207,7 +204,7 @@ final class CNICVerificationVC: UIViewController {
             fromStoryboard: .cnicUpload
         ) as? CNICManualVerificationVC else { return }
         
-        verifyOTPVC.mobileNumber = self.mobileNumber
+        verifyOTPVC.mobileNumber = self.mobileNumber?.replacingOccurrences(of: "-", with: " ")
         navigationController?.pushViewController(verifyOTPVC, animated: true)
     }
     
@@ -303,7 +300,7 @@ final class CNICVerificationVC: UIViewController {
             DataCacheManager.shared.saveViewAppGenerateOTPResponse(input: response)
             
             if !self.cameFromJointFlow {
-                if let _ = response.idNumber {
+                if let _ = response.idNumber{
                     self.cnicVerificationViewModel.openVerifyOTPVC()
                     
                 } else {
@@ -312,6 +309,7 @@ final class CNICVerificationVC: UIViewController {
                 }
                 
             } else {
+                
                 //                    self.cnicVerificationViewModel.openPersonalInformationVC()
                 self.callRegisterVerifyOTP()
             }
@@ -334,7 +332,7 @@ final class CNICVerificationVC: UIViewController {
         }
         
         selectBankingMethodViewModel.registerVerifyOTPResponse.bind { [weak self] response in
-//  TODO: where to get relation code and average monthly salary for savekyc
+            //            TODO: where to get relation code and average monthly salary for savekyc
             if let noOfJointApplicants = DataCacheManager.shared.loadNoOfJointApplicants() {
                 if noOfJointApplicants > 0 {
                     
@@ -358,6 +356,31 @@ final class CNICVerificationVC: UIViewController {
             self.openCNICVerificationManualVC()
         }
     }
+    
+    func openPortedPopupVC(viewController: UIViewController, message: String) {
+        guard let portedPopupVC = UIStoryboard.initialize(
+            viewController: .portedPopupVC,
+            fromStoryboard: .cnicUpload
+        ) as? PortedPopupVC else { return }
+        
+        portedPopupVC.message = message
+        portedPopupVC.buttonTitle = "OK"
+        portedPopupVC.portedMobileNetwork = {
+            
+        }
+        viewController.present(portedPopupVC, animated: true)
+    }
+    
+    @IBAction func cnicFrontEyeIconTapped(_ sender: Any) {
+        let message  = "The picture shall be complete, clear and not blur. Maximum upload size is 5MB"
+        openPortedPopupVC(viewController: self, message: message)
+    }
+    
+    @IBAction func cnicBackEyeIconTapped(_ sender: Any) {
+        let message  = "The picture shall be complete, clear and not blur. Maximum upload size is 5MB"
+        openPortedPopupVC(viewController: self, message: message)
+    }
+    
 }
 
 //irfan
@@ -369,54 +392,55 @@ extension CNICVerificationVC: UIImagePickerControllerDelegate, UINavigationContr
 
 
 
-//        guard let image = info[.editedImage] as? UIImage else {
+        guard let image = info[.editedImage] as? UIImage else {
 
-//            print("No image found")
+            print("No image found")
 
-//            return
+            return
 
-//        }
+        }
 
-        let image = info[.originalImage] as? UIImage
+//        let image = info[.originalImage] as? UIImage
 
 
 
         if picker == frontSideImagePicker {
 
             cnicFrontSideImageView.image = image
-            
-            print(image?.toBase64String2())
-            
 
-            frontSideCNICData = image?.jpegData(compressionQuality: 1)
+            frontSideCNICData = image.jpeg(.low)
 
         } else {
 
             cnicBackSideImageView.image = image
 
-            backSideCNICData = image?.jpegData(compressionQuality: 1)
+            backSideCNICData = image.jpeg(.low)
 
         }
 
     }
-    
 
 }
+
 extension UIImage {
     func toBase64String2() -> String {
         //Use image name from bundle to create NSData
-
         //Now use image to create into NSData format
-
-        let imageData:Data = self.pngData()! as Data
-        var strBase64 = imageData.base64EncodedString(options: .lineLength64Characters)
-        
-        strBase64 = strBase64.replacingOccurrences(of: "\\r", with: "", options: .literal, range: nil)
-
-        strBase64 = strBase64.replacingOccurrences(of: "\\n", with: "", options: .literal, range: nil)
-        strBase64 = strBase64.replacingOccurrences(of: "\\", with: "", options: .literal, range: nil)
-        print(strBase64)
-        
-        return strBase64
+        let imageData:Data = self.jpeg(.low)!
+        let base64String = imageData.base64EncodedString(options: Data.Base64EncodingOptions(rawValue: 0))
+        let imgStr = base64String.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
+        //print(imgStr)
+        return imgStr!
     }
+    enum JPEGQuality: CGFloat {
+            case lowest  = 0
+            case low     = 0.25
+            case medium  = 0.5
+            case high    = 0.75
+            case highest = 1
+        }
+        func jpeg(_ jpegQuality: JPEGQuality) -> Data? {
+            return jpegData(compressionQuality: jpegQuality.rawValue)
+        }
 }
+

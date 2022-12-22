@@ -42,7 +42,7 @@ final class ConsumerListInputModel: BaseInputModel {
     var isPrimaryRegistered: Bool?
     var portedMobileNetwork: Bool?
     var rdaCustomerAccInfoId: Any?
-    var attachments: [String]?
+    var attachments: [[String : Any]]?
 
     // MARK: - Model Initializers
     
@@ -58,7 +58,7 @@ final class ConsumerListInputModel: BaseInputModel {
         customerBranch: String,
         bankingModeID: Double,
         rdaCustomerAccInfoId: Double,
-        attachments: [String],
+        attachments: [[String : Any]],
         isPrimaryRegistered: Bool
     ) {
         var dictionary = [String: Any]()
@@ -97,7 +97,7 @@ final class ConsumerListInputModel: BaseInputModel {
         isPrimaryRegistered: Bool? = nil,
         portedMobileNetwork: Bool? = nil,
         rdaCustomerAccInfoId: Int? = 0,
-        attachments: [String]
+        attachments: [[String : Any]]
     ) {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.cnicNumber.rawValue] = cnicNumber

@@ -372,7 +372,7 @@ extension VerifyOTPVC: OTPDelegate {
             dateOfIssue: viewAppGenerateOTPResponse.dateOfIssue ?? "",
             isPrimaryRegistered: false,
             rdaCustomerAccInfoId:  rdaCustomerAccInfoId,
-            attachments: [String]()
+            attachments: [[String : Any]]()
         ) else { return }
         
         consumerListInputModelArray.append(consumerListInputModelll)
@@ -388,7 +388,7 @@ extension VerifyOTPVC: OTPDelegate {
                 dateOfIssue: $0.dateOfIssue ?? "",
                 isPrimaryRegistered: $0.isPrimary ?? false,
                 rdaCustomerAccInfoId: rdaCustomerAccInfoId,
-                attachments: [String]()
+                attachments: [[String : Any]]()
             ) else { return }
             
             consumerListInputModelArray.append(consumerListInputModel)

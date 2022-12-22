@@ -64,7 +64,8 @@ final class CNICManualVerificationVC: UIViewController {
                 customerBranch: selectBankingMethodViewModel.getBranchName(),
                 bankingModeID: selectBankingMethodViewModel.getBankingModeID(),
                 dateOfBirth: $0.dateOfBirth ?? "",
-                dateOfIssue: $0.dateOfIssue ?? "", attachments: [String]()
+                dateOfIssue: $0.dateOfIssue ?? "",
+                attachments: [[String : Any]]()
             ) else { return }
             
             consumerListInputModelArray.append(consumerListInputModel)
