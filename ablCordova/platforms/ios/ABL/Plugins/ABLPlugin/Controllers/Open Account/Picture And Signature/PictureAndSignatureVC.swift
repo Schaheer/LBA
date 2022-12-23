@@ -11,7 +11,8 @@ import DropDown
 import MobileCoreServices
 import UniformTypeIdentifiers
 
-final class PictureAndSignatureVC: UIViewController {
+final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
+    
     
     @IBOutlet weak var viewProofOfIncome: UIView!
     @IBOutlet weak var imageProofOfIncome: UIImageView!
@@ -155,6 +156,16 @@ final class PictureAndSignatureVC: UIViewController {
         //        setupViews()
     }
     
+    func continueToCamera() {
+                pictureImagePicker = UIImagePickerController()
+                //        pictureImagePicker.sourceType = .camera
+                pictureImagePicker.sourceType = .photoLibrary
+        
+                pictureImagePicker.allowsEditing = true
+                pictureImagePicker.delegate = self
+                present(pictureImagePicker, animated: true)
+    }
+    
     func viewDidAppearLocal() {
         var tempNoOfParticipant = ""
         if modelRegistrationSteper.picAndSignViewModel != nil {
@@ -210,7 +221,7 @@ final class PictureAndSignatureVC: UIViewController {
     
     func validationError() -> Bool {
         if segmentJointAccount.index == 1 {
-            if additionalApplicantLabel.text == "Select additional applicants" {
+            if additionalApplicantLabel.text == "Select additional applicants".localizeString() {
                 self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please select additional applicants")
                 return true
             }
@@ -280,17 +291,22 @@ final class PictureAndSignatureVC: UIViewController {
         
         
     }
+
+    @IBAction func infoAccountPressed(_ sender: Any) {
+        let message  = "In case of joint account entire details of joint applicant along with documentation is required.".localizeString()
+        openPortedPopupVC(viewController: self, message: message)
+    }
+    
     
     @objc private func takePictureTapped(_ sender: UIButton){
         
-        pictureImagePicker = UIImagePickerController()
-        //        pictureImagePicker.sourceType = .camera
-        pictureImagePicker.sourceType = .photoLibrary
+        guard let customPopupDemoVC = UIStoryboard.initialize(
+            viewController: .CustomPopupDemoVC,
+            fromStoryboard: .cnicUpload
+        ) as? CustomPopupDemoVC else { return }
         
-        pictureImagePicker.allowsEditing = true
-        pictureImagePicker.delegate = self
-        present(pictureImagePicker, animated: true)
-        
+        customPopupDemoVC.delegate = self
+        self.present(customPopupDemoVC, animated: true)
     }
     
     @objc private func uploadSignTapped(_ sender: UIButton){
@@ -849,7 +865,7 @@ extension PictureAndSignatureVC: UIDocumentMenuDelegate, UIDocumentPickerDelegat
         ) as? PortedPopupVC else { return }
         
         portedPopupVC.message = message
-        portedPopupVC.buttonTitle = "OK"
+        portedPopupVC.buttonTitle = "OK".localizeString()
         portedPopupVC.portedMobileNetwork = {
             
         }
