@@ -106,6 +106,7 @@
 		4CE222C828A4EAB80094FE0E /* VeridiumCore.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE222B328A4CB240094FE0E /* VeridiumCore.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		4CE222C928A4EABA0094FE0E /* VeridiumFingerSelector.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE222B228A4CB240094FE0E /* VeridiumFingerSelector.xcframework */; };
 		4CE222CA28A4EABA0094FE0E /* VeridiumFingerSelector.xcframework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 4CE222B228A4CB240094FE0E /* VeridiumFingerSelector.xcframework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		54E194602955D3C400C39E7E /* CustomPopupDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E1945F2955D3C300C39E7E /* CustomPopupDemo.swift */; };
 		6AFF5BF91D6E424B00AB3073 /* CDVLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */; };
 		7A0A79FA2817EEBB004806D3 /* TaxResidentDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0A79F92817EEBB004806D3 /* TaxResidentDetailVC.swift */; };
 		7A12222D27DF2F8600CE890A /* VerifyOTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A12222C27DF2F8600CE890A /* VerifyOTPViewModel.swift */; };
@@ -424,6 +425,7 @@
 		4CE222B328A4CB240094FE0E /* VeridiumCore.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = VeridiumCore.xcframework; sourceTree = "<group>"; };
 		4CE222B428A4CB250094FE0E /* FingerprintSDK.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = FingerprintSDK.xcframework; sourceTree = "<group>"; };
 		4CE222B528A4CB260094FE0E /* Veridium4FBiometrics.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; path = Veridium4FBiometrics.xcframework; sourceTree = "<group>"; };
+		54E1945F2955D3C300C39E7E /* CustomPopupDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopupDemo.swift; sourceTree = "<group>"; };
 		6AFF5BF81D6E424B00AB3073 /* CDVLaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = CDVLaunchScreen.storyboard; path = ABL/CDVLaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		7512578F33ED548E4A64A693 /* Pods-ABL.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ABL.release.xcconfig"; path = "Target Support Files/Pods-ABL/Pods-ABL.release.xcconfig"; sourceTree = "<group>"; };
 		7A0A79F92817EEBB004806D3 /* TaxResidentDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaxResidentDetailVC.swift; sourceTree = "<group>"; };
@@ -1312,6 +1314,7 @@
 			children = (
 				7ABD53AE27FB872300AC54AE /* PortedPopupVC.swift */,
 				7D5CAD7E2949E1F30092C044 /* CustomPopup.swift */,
+				54E1945F2955D3C300C39E7E /* CustomPopupDemo.swift */,
 			);
 			path = "Mobile Network Ported Popup";
 			sourceTree = "<group>";
@@ -1922,6 +1925,7 @@
 				7AB8918F27D769EA00054BD3 /* APIManager.swift in Sources */,
 				4CBB14032809816200BECF46 /* OccupationsListResponseModel.swift in Sources */,
 				7A12225227E3336000CE890A /* SelectPreferredAccountCell.swift in Sources */,
+				54E194602955D3C400C39E7E /* CustomPopupDemo.swift in Sources */,
 				7AB78E5727FD8895009A339C /* RegisterVerifyOTPResponseModel.swift in Sources */,
 				4C3029F3281AB46700784867 /* AccountVariants.swift in Sources */,
 				7AB8918927D75AD100054BD3 /* UserDefaults.swift in Sources */,

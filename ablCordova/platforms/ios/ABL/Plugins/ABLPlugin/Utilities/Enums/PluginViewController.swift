@@ -24,6 +24,7 @@ enum PluginViewController: String {
     case simVerificationVC = "SimVerificationVC"
     case resumeApplicationVC = "ResumeApplicationVC"
     case portedPopupVC = "PortedPopupVC"
+    case CustomPopupDemoVC = "CustomPopupDemoVC"
     case changeNumberVC = "ChangeNumberVC"
     case welcomeVC = "WelcomeVC"
     case CNICManualVerificationVC = "CNICManualVerificationVC"
@@ -132,6 +133,8 @@ enum PluginViewController: String {
             return PluginViewController.registerPermanentAddress.rawValue
         case .welcomeVC:
             return PluginViewController.welcomeVC.rawValue
+        case .CustomPopupDemoVC:
+            return PluginViewController.CustomPopupDemoVC.rawValue
         case .CNICManualVerificationVC:
             return PluginViewController.CNICManualVerificationVC.rawValue
 

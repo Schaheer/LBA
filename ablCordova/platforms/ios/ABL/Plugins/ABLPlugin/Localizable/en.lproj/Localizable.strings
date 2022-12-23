@@ -96,6 +96,8 @@ Do you wish to change mobile number?";
 "If you wish to open Joint Account, details of joint applicant will be taken at the end of the process" = "If you wish to open Joint Account, details of joint applicant will be taken at the end of the process";
 "For Customer Support, Suggestions & Complaints" = "For Customer Support, Suggestions & Complaints";
 "Live Chat" = "Live Chat";
+"OK" = "OK";
+"In case of joint account entire details of joint applicant along with documentation is required." = "In case of joint account entire details of joint applicant along with documentation is required.";
 "We will be obliged to have your feedback on overall user experience at the end of the process." = "We will be obliged to have your feedback on overall user experience at the end of the process.";
 "Must Read" = "Must Read";
 "In case of expired NADRA ID Document (CNIC/ SNIC), please upload original NADRA Token in place of Original ID Card. Please be informed that you shall update bank record with original renewed NADRA ID Card immediately on receipt but not later than ‘30’ days, otherwise, bank reserves the right to block operation in your account." = "In case of expired NADRA ID Document (CNIC/ SNIC), please upload original NADRA Token in place of Original ID Card. Please be informed that you shall update bank record with original renewed NADRA ID Card immediately on receipt but not later than ‘30’ days, otherwise, bank reserves the right to block operation in your account.";
@@ -211,6 +213,7 @@ Currency PKR";
 "Your have successfully submitted your application for the Asaan Digital Account to Allied Bank.
 
 For any further inquiry, please contact ada@abl.com       or call our Helpline: 111-225-225" = "Your have successfully submitted your application for the Asaan Digital Account to Allied Bank.
+
 
 For any further inquiry, please contact ada@abl.com       or call our Helpline: 111-225-225";
 "We will be obliged if you can take a minute to give us feedback and provide your input to further improve the digital onboarding experience" = "We will be obliged if you can take a minute to give us feedback and provide your input to further improve the digital onboarding experience";
