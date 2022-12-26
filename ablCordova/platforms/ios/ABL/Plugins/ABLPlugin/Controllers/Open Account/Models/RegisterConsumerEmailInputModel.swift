@@ -14,8 +14,6 @@ final class RegisterConsumerEmailInputModel: BaseInputModel {
     
     enum CodingKeys: String {
         case consumerList = "data.consumerList"
-        
-
     }
     
     // MARK: - Model Properties
@@ -32,13 +30,11 @@ final class RegisterConsumerEmailInputModel: BaseInputModel {
     
     required init?(
         consumerList: [EmailConsumerListInputModel]
-
     ) {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.consumerList.rawValue] = consumerList
         
         self.consumerList = consumerList
-        
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
     
@@ -51,10 +47,7 @@ final class RegisterConsumerEmailInputModel: BaseInputModel {
     
     override func mapping(map: Map) {
         super.mapping(map: map)
-        
         consumerList <- map[CodingKeys.consumerList.rawValue]
-        
-
     }
 }
 
@@ -68,7 +61,7 @@ final class EmailConsumerListInputModel: BaseInputModel {
         case rdaCustomerProfileId = "rdaCustomerProfileId"
         case emailAddress = "emailAddress"
         case isPrimary = "isPrimary"
-        case customerNonResidentInd = "customerNonResidentInd"
+        case customerNonResidentInd
     }
     
     // MARK: - Model Properties
@@ -91,7 +84,6 @@ final class EmailConsumerListInputModel: BaseInputModel {
         emailAddress: String,
         isPrimary: Bool,
         customerNonResidentInd: Int
-        
     ) {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.rdaCustomerAccInfoId.rawValue] = rdaCustomerAccInfoId
@@ -104,7 +96,7 @@ final class EmailConsumerListInputModel: BaseInputModel {
         self.rdaCustomerProfileId = rdaCustomerProfileId
         self.emailAddress = emailAddress
         self.isPrimary = isPrimary
-        self.customerNonResidentInd = customerNonResidentInd
+        self.customerNonResidentInd = 0
         
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }

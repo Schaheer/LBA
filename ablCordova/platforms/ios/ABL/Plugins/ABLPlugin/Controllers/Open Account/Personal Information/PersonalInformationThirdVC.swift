@@ -153,7 +153,6 @@ final class PersonalInformationThirdVC: UIViewController {
     }
     
     private func callRegisterAddress(){
-        
         personalInformationViewModel.registerConsumerAddress(
             rdaCustomerId: BaseConstants.Config.rdaCustomerId,
             nearestLandMark: nearestLandmaarkTextField.text,

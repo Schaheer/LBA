@@ -21,7 +21,7 @@ final class RegisterVerifyOTPInputModel: BaseInputModel {
     
     // MARK: - Model Properties
     
-    var consumerList: [ConsumerListInputModel]?
+    var consumerList: [BasicInfoConsumerListInputModel]?
     var noOfJointApplicants: Int?
     var bioMetricVerificationNadraMobileReq: VerifyBiometricNadraInputData?
     var channelId: Double?
@@ -34,7 +34,7 @@ final class RegisterVerifyOTPInputModel: BaseInputModel {
     }
     
     required init?(
-        consumerList: [ConsumerListInputModel],
+        consumerList: [BasicInfoConsumerListInputModel],
         noOfJointApplicants: Int,
         bioMetricVerificationNadraMobileReq: VerifyBiometricNadraInputData?,
         channelId: Double,

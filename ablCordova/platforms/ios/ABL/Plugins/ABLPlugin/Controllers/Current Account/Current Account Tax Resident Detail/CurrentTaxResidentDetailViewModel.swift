@@ -121,7 +121,7 @@ final class CurrentTaxResidentDetailViewModel: CurrentTaxResidentDetailViewModel
             guard let consumerListInputModel = BasicInfoConsumerListInputModel(
                 rdaCustomerAccInfoId: rdaCustomerAccInfoID,
                 rdaCustomerProfileId: rdaCustomerProfileID,
-                customerTypeID: customerTypeID,
+                customerTypeId: customerTypeID,
                 taxResidentInd: taxResidentInd,
                 isPrimary: isPrimary
 //                ,genderId: modelRegistrationSteper.genderId
@@ -133,7 +133,7 @@ final class CurrentTaxResidentDetailViewModel: CurrentTaxResidentDetailViewModel
         guard let consumerListInputModel = BasicInfoConsumerListInputModel(
             rdaCustomerAccInfoId: customerAccInfoID,
             rdaCustomerProfileId: customerProfileID,
-            customerTypeID: customerTypeID,
+            customerTypeId: customerTypeID,
             taxResidentInd: taxResidentInd,
             isPrimary: isPrimary
 //            ,genderId: modelRegistrationSteper.genderId
@@ -203,7 +203,7 @@ final class CurrentTaxResidentDetailViewModel: CurrentTaxResidentDetailViewModel
                     guard let consumerListInputModel = BasicInfoConsumerListInputModel(
                         rdaCustomerAccInfoId: rdaCustomerAccInfoID,
                         rdaCustomerProfileId: rdaCustomerProfileID,
-                        customerTypeID: customerTypeID,
+                        customerTypeId: customerTypeID,
                         taxResidentInd: taxResidentInd,
                         isPrimary: isPrimary
 //                        ,genderId: modelRegistrationSteper.genderId
@@ -215,7 +215,7 @@ final class CurrentTaxResidentDetailViewModel: CurrentTaxResidentDetailViewModel
                 guard let consumerListInputModel = BasicInfoConsumerListInputModel(
                     rdaCustomerAccInfoId: customerAccInfoID,
                     rdaCustomerProfileId: customerProfileID,
-                    customerTypeID: customerTypeID,
+                    customerTypeId: customerTypeID,
                     taxResidentInd: taxResidentInd,
                     isPrimary: isPrimary
 //                    ,genderId: modelRegistrationSteper.genderId
@@ -255,7 +255,7 @@ final class CurrentTaxResidentDetailViewModel: CurrentTaxResidentDetailViewModel
                 guard let consumerListInputModel = BasicInfoConsumerListInputModel(
                     rdaCustomerAccInfoId: rdaCustomerAccInfoID,
                     rdaCustomerProfileId: rdaCustomerProfileID,
-                    customerTypeID: customerTypeID,
+                    customerTypeId: customerTypeID,
                     taxResidentInd: taxResidentInd,
                     isPrimary: isPrimary
 //                    ,genderId: modelRegistrationSteper.genderId
@@ -267,7 +267,7 @@ final class CurrentTaxResidentDetailViewModel: CurrentTaxResidentDetailViewModel
             guard let consumerListInputModel = BasicInfoConsumerListInputModel(
                 rdaCustomerAccInfoId: customerAccInfoID,
                 rdaCustomerProfileId: customerProfileID,
-                customerTypeID: customerTypeID,
+                customerTypeId: customerTypeID,
                 taxResidentInd: taxResidentInd,
                 isPrimary: isPrimary
 //                ,genderId: modelRegistrationSteper.genderId

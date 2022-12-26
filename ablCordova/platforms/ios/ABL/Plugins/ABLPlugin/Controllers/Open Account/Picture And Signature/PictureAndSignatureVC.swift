@@ -27,7 +27,12 @@ final class PictureAndSignatureVC: UIViewController {
         openPortedPopupVC(viewController: self, message: message)
     }
     @IBAction func segmentJointAccount(_ sender: BetterSegmentedControl) {
-        DataCacheManager.shared.saveNoOfJointApplicants(input: 0)
+        if DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList?.count ?? 0 > 0 {
+        }
+        else {
+            DataCacheManager.shared.saveNoOfJointApplicants(input: 0)
+        }
+        
         if sender.index == 1 {
             viewSelectNatureOfAccount.isHidden = false
             natureOfAccountLocal = .joint
@@ -52,8 +57,9 @@ final class PictureAndSignatureVC: UIViewController {
     @IBOutlet weak var minorAccountRadio: UIImageView!
     @IBOutlet weak var livePhotoPreviewImageView: UIImageView!
     @IBOutlet weak var signaturePreviewImageView: UIImageView!
-    
     @IBOutlet weak var additionalApplicantListView: CustomUIView!
+    @IBOutlet weak var viewProofOfIncomePicutre: UIView!
+
     
     private var picAndSignViewModel = PicAndSignViewModel()
     
@@ -64,8 +70,10 @@ final class PictureAndSignatureVC: UIViewController {
     private var signData: Data?
     private var proofOfIncomeFileData: Data?
     
-    @IBOutlet weak var viewProofOfIncomePicutre: UIView!
+    private var isJointFlow = false
+    private var noOfJointApplicant: Int?
     private let dropDown = DropDown()
+    
     weak var delegate: PersonalInfoChildToParentProtocol? = nil
     var isEditFromReviewDetailsViewController = false
     var forViewController = ""
@@ -83,12 +91,16 @@ final class PictureAndSignatureVC: UIViewController {
         }
     }
     override func viewWillAppear(_ animated: Bool) {
-
+        if DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList?.count ?? 0 > 0 {
+            viewJointAccount.isHidden = true
+            modelRegistrationSteper.isJointAccount = true
+            natureOfAccountLocal = .joint
+            picAndSignViewModel.jointAccountTapped()
+            self.joint()
+            picAndSignViewModel.setNoOfJointApplicants(applicants: DataCacheManager.shared.loadNoOfJointApplicants() ?? 0)
+        }
     }
     override func viewDidLoad() {
-        print(DataCacheManager.shared.loadNoOfJointApplicants())
-        print(DataCacheManager.shared.loadNoOfJointApplicants())
-
         super.viewDidLoad()
         imageProofOfIncome.isHidden = true
         viewProofOfIncomePicutre.isHidden = true
@@ -138,11 +150,13 @@ final class PictureAndSignatureVC: UIViewController {
         print(consumer)
         print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
         print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
+        
+        
         if DataCacheManager.shared.loadNoOfJointApplicants() ?? 0 > 0 {
-//            viewJointAccount.isHidden = true
-            natureOfAccountLocal = .joint
-            picAndSignViewModel.jointAccountTapped()
-            self.joint()
+            isJointFlow = true
+            viewJointAccount.isHidden = true
+            noOfJointApplicant = DataCacheManager.shared.loadNoOfJointApplicants() ?? 0
+            modelRegistrationSteper.isJointAccount = true
         }
         else {
             natureOfAccountLocal = .single
@@ -192,8 +206,6 @@ final class PictureAndSignatureVC: UIViewController {
                 }
             }
         }
-        
-        
     }
     
     
@@ -209,10 +221,15 @@ final class PictureAndSignatureVC: UIViewController {
     }
     
     func validationError() -> Bool {
-        if segmentJointAccount.index == 1 {
-            if additionalApplicantLabel.text == "Select additional applicants" {
-                self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please select additional applicants")
-                return true
+        if noOfJointApplicant ?? 0 > 0 {
+            
+        }
+        else {
+            if segmentJointAccount.index == 1 {
+                if additionalApplicantLabel.text == "Select additional applicants" {
+                    self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please select additional applicants")
+                    return true
+                }
             }
         }
         
@@ -228,59 +245,69 @@ final class PictureAndSignatureVC: UIViewController {
         if validationError() {
             return()
         }
+        if isJointFlow  {
+            jointFlow()
+            return()
+        }
         
-        let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
-        print(consumer)
-        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
-        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
-        print(DataCacheManager.shared.loadNoOfJointApplicants())
         modelRegistrationSteper.isJointAccount = segmentJointAccount.index == 1 ? true : false
         if let natureOfAccount = picAndSignViewModel.getNatureOfAccount() {
-            guard let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.first, let rdaCustomerProfileID = consumer.rdaCustomerProfileID else {
-                return
-            }
             if natureOfAccount != .joint {
-                logsManager.debug(natureOfAccount.rawValue)
-                picAndSignViewModel.saveNatureOfAccount(
-                    rdaCustomerProfileId: consumer.rdaCustomerProfileID,
-                    rdaCustomerAccInfoId: consumer.accountInformation?.rdaCustomerAccInfoID,
-                    rdaCustomerId: consumer.accountInformation?.rdaCustomerID,
-                    customerTypeId: BaseConstants.Config.customerTypeID,
-                    //                        customerTypeId: consumer.customerTypeID,
-                    natureOfAccountId: natureOfAccount.code,
-                    noOfJointApplicatns: 0,
-                    nameOnPhysicalATM: consumer.fullName
-                )
+                singleFlow()
             } else {
-                let noOfJointApplicants = picAndSignViewModel.getNoOfJointApplicants()
-                DataCacheManager.shared.saveNoOfJointApplicants(input: noOfJointApplicants)
-                //                if noOfJointApplicants > 0 {
-                logsManager.debug(natureOfAccount.rawValue, noOfJointApplicants)
-                picAndSignViewModel.saveNatureOfAccount(
-                    rdaCustomerProfileId: consumer.rdaCustomerProfileID,
-                    rdaCustomerAccInfoId: consumer.accountInformation?.rdaCustomerAccInfoID,
-                    rdaCustomerId: consumer.accountInformation?.rdaCustomerID,
-                    customerTypeId: BaseConstants.Config.customerTypeID,
-                    //                        customerTypeId: consumer.customerTypeID,
-                    natureOfAccountId: natureOfAccount.code,
-                    noOfJointApplicatns: Int(noOfJointApplicants),
-                    nameOnPhysicalATM: String(rdaCustomerProfileID) // rdaCustomerProfileID of primary applicant
-                )
-                //                } else {
-                // move to
-                modelRegistrationSteper.picAndSignViewModel = picAndSignViewModel
-//                openAdditionalDetailsVC()
-                //                    AlertManager.shared.showOKAlert(with: "Error", message: "Please select number of joint applicants")
-                //                }
+                jointFlow()
             }
             
         } else {
             AlertManager.shared.showOKAlert(with: "Error", message: "Please select the nature of account")
         }
-        
-        
     }
     
+    private func jointFlow() {
+        isJointFlow = true
+        let natureOfAccount = picAndSignViewModel.getNatureOfAccount()!
+        var currentUser = getCurrentUser()
+        var noOfJointApplicants = 0
+        if isJointFlow {
+            noOfJointApplicants = noOfJointApplicant ?? 0
+        }
+        else {
+            noOfJointApplicants = picAndSignViewModel.getNoOfJointApplicants()
+            DataCacheManager.shared.saveNoOfJointApplicants(input: noOfJointApplicants)
+        }
+        
+        logsManager.debug(natureOfAccount.rawValue, noOfJointApplicants)
+        picAndSignViewModel.saveNatureOfAccount(
+            rdaCustomerProfileId: currentUser.rdaCustomerProfileID,
+            rdaCustomerAccInfoId: currentUser.rdaCustomerAccInfoId as? Double,
+            rdaCustomerId: currentUser.accountInformation?.rdaCustomerID,
+            customerTypeId: BaseConstants.Config.customerTypeID,
+            //                        customerTypeId: consumer.customerTypeID,
+            natureOfAccountId: natureOfAccount.code,
+            noOfJointApplicatns: Int(noOfJointApplicants),
+            nameOnPhysicalATM: String(getPrimaryUser().rdaCustomerProfileID!) // rdaCustomerProfileID of primary applicant
+        )
+        // move to
+        modelRegistrationSteper.picAndSignViewModel = picAndSignViewModel
+    }
+    
+    
+    func singleFlow() {
+        isJointFlow = false
+        let natureOfAccount = picAndSignViewModel.getNatureOfAccount()!
+        var currentUser = getCurrentUser()
+        logsManager.debug(natureOfAccount.rawValue)
+        picAndSignViewModel.saveNatureOfAccount (
+            rdaCustomerProfileId: currentUser.rdaCustomerProfileID,
+            rdaCustomerAccInfoId: currentUser.accountInformation?.rdaCustomerAccInfoID,
+            rdaCustomerId: currentUser.accountInformation?.rdaCustomerID,
+            customerTypeId: BaseConstants.Config.customerTypeID,
+            //                        customerTypeId: consumer.customerTypeID,
+            natureOfAccountId: natureOfAccount.code,
+            noOfJointApplicatns: 0,
+            nameOnPhysicalATM: currentUser.fullName
+        )
+    }
     @objc private func takePictureTapped(_ sender: UIButton){
         
         pictureImagePicker = UIImagePickerController()
@@ -562,67 +589,23 @@ final class PictureAndSignatureVC: UIViewController {
         }
         modelRegistrationSteper.picAndSignViewModel = picAndSignViewModel
         
-        guard let reviewDetailsVC = UIStoryboard.initialize(
-            viewController: .reviewDetailsVC,
-            fromStoryboard: .openAccount
-        ) as? ReviewDetailsVC else { return }
-        
-//        switch natureOfAccountLocal {
-//        case .single: break
-//           // navigationController?.pushViewController(reviewDetailsVC, animated: true)
-//        case .joint: break
-//            
-//        case .minor: break
-//            //navigationController?.pushViewController(reviewDetailsVC, animated: true)
-//        }
-        
-        
-        guard let personalInformationBaseVC = UIStoryboard.initialize(
+        let personalInformationBaseVC = UIStoryboard.initialize(
             viewController: .personalInformationBaseVC,
             fromStoryboard: .openAccount
-        ) as? PersonalInformationBaseVC else { return }
-        
-        //        switch selectPreferredAccountViewModel.getAccountVariantID(){
-////        case .asaanDigitalAccount:
-////            personalInformationBaseVC.firstChild = .personalInfoSecondVC
-////        case .asaanDigitalRemittanceAccount:
-////            personalInformationBaseVC.firstChild = .taxResidentDetailVC
-//        case .freelancerDigitalAccount:
-//            personalInformationBaseVC.firstChild = .fatcaVC
-////        case .currentAccount:
-////            personalInformationBaseVC.firstChild = .personalInfoSecondVC
-//        default:
-//            personalInformationBaseVC.firstChild = .personalInfoSecondVC
-////            logsManager.debug("Default case")
-//        }
-        //MARK: - if user is pramary so joint account button will b show otherwise hide
-        //if account category is single then check from below mention account with OR condition
-        
-        
-        
-        guard let personalInformationBaseVC = UIStoryboard.initialize(
-            viewController: .personalInformationBaseVC,
-            fromStoryboard: .openAccount
-        ) as? PersonalInformationBaseVC else { return }
-
-        
+        ) as? PersonalInformationBaseVC
         
 //        edit ka case is me handle karna ha in sy pehlay
-        var isJointAccount = modelRegistrationSteper.isJointAccount
         let accountVariantID = modelRegistrationSteper.selectPreferredAccountViewModel?.getAccountVariantID()
-        if isJointAccount {
-            let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
-            if DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count == DataCacheManager.shared.loadNoOfJointApplicants() {
+        if isJointFlow {
+            let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
+            if consumer?.count == noOfJointApplicant {
+                print("====================1")
                 self.delegate?.addChild(vc: .fatcaDetailsVC, fromViewController: "")
             }
             else {
+                print("====================2")
                 openAdditionalDetailsVC()
             }
-//            print(consumer)
-//            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
-//            print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
-//            print(DataCacheManager.shared.loadNoOfJointApplicants())
-            
         }
         else {
             var results = [Int]()
@@ -635,10 +618,14 @@ final class PictureAndSignatureVC: UIViewController {
                     fromStoryboard: .openAccount
                 ) as? ReviewDetailsVC else { return }
                 navigationController?.pushViewController(reviewDetailsVC, animated: true)
-
             }
             else {
-                self.delegate?.addChild(vc: .fatcaDetailsVC, fromViewController: "")
+                if DataCacheManager.shared.loadNoOfJointApplicants() ?? 0 > 0 {
+                    
+                }
+                else {
+                    self.delegate?.addChild(vc: .fatcaDetailsVC, fromViewController: "")
+                }
             }
         }
        

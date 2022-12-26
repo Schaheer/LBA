@@ -49,33 +49,23 @@ final class CNICManualVerificationVC: UIViewController {
         
     }
     
-    
     private func callRegisterVerifyOTP(){
         
         guard let viewAppGenerateResponseModel = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList else { return }
-        var consumerListInputModelArray = [ConsumerListInputModel]()
         
-        viewAppGenerateResponseModel.forEach {
-            guard let consumerListInputModel = ConsumerListInputModel(
-                cnicNumber: $0.idNumber ?? "",
-                mobileNumber: $0.mobileNo ?? "",
-                isPrimary: $0.isPrimary ?? false,
-                customerTypeID: BaseConstants.Config.customerTypeID,
-                customerBranch: selectBankingMethodViewModel.getBranchName(),
-                bankingModeID: selectBankingMethodViewModel.getBankingModeID(),
-                dateOfBirth: $0.dateOfBirth ?? "",
-                dateOfIssue: $0.dateOfIssue ?? "",
-                attachments: [[String : Any]]()
-            ) else { return }
-            
-            consumerListInputModelArray.append(consumerListInputModel)
-        }
+        var consumerListInputModelArray = [BasicInfoConsumerListInputModel]()
+        consumerListInputModelArray = getListOfConsumers(newUserInfo: BasicInfoConsumerListInputModel()!)
+
         //TODO: add data of primary and all the secondary applicants in consumerList Array
-        guard let registerVerifyOTPInput = RegisterVerifyOTPInputModel(consumerList: consumerListInputModelArray, noOfJointApplicants: 0, bioMetricVerificationNadraMobileReq: nil, channelId: BaseConstants.Config.channelID, customerTypeId: BaseConstants.Config.customerTypeID) else { return }
- 
+        guard let registerVerifyOTPInput = RegisterVerifyOTPInputModel(
+            consumerList: consumerListInputModelArray,
+            noOfJointApplicants: 0,
+            bioMetricVerificationNadraMobileReq: nil,
+            channelId: BaseConstants.Config.channelID,
+            customerTypeId: BaseConstants.Config.customerTypeID
+        ) else { return }
 
         selectBankingMethodViewModel.registerVerifyOTP(input: registerVerifyOTPInput)
-        
     }
     
     @IBAction func cancelTapped(_ sender: UIButton) {
@@ -167,6 +157,56 @@ final class CNICManualVerificationVC: UIViewController {
         }
     }
     
+    
+    //MARK: - For merging
+    func getListOfConsumers(newUserInfo: BasicInfoConsumerListInputModel) -> [BasicInfoConsumerListInputModel] {
+        var tempRdaCustomerProfileID = newUserInfo.rdaCustomerProfileId
+        var tempRdaCustomerAccInfoId = newUserInfo.rdaCustomerAccInfoId
+        
+        let cousumerListHamza = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
+        var currentConsumerList = getCurrentConsumerListResponseInInputModel(responseCunsumerList: cousumerListHamza!)
+        let cousumerListShakeel = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
+        var foundIndex = 99
+        //MARK: - Start----- Just to find new User Profile ID
+        if currentConsumerList.count > 0 {
+            for (index, consumer) in currentConsumerList.enumerated() {
+                print(consumer.rdaCustomerProfileId ?? 0)
+                print(consumer.rdaCustomerAccInfoId ?? 0)
+                if let consumerListLocalShakeel = cousumerListShakeel {
+                    var isNotFoundAndNewUserProfileID = true
+                    consumerListLocalShakeel.forEach {
+                       if $0.rdaCustomerProfileID == consumer.rdaCustomerProfileId {
+                            print("record found")
+                            isNotFoundAndNewUserProfileID = false
+                        }
+                    }
+                    if isNotFoundAndNewUserProfileID {
+                        print("------Start-----Profile Id Not Found------")
+                        tempRdaCustomerProfileID = consumer.rdaCustomerProfileId ?? 0
+                        tempRdaCustomerAccInfoId = consumer.rdaCustomerAccInfoId
+                        print("------End-----Profile Id Not Found------")
+                        foundIndex = index
+                    }
+                }
+            }
+        }
+        //MARK: - Start-----If user profile id found Replace in new user Request data
+//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerProfileID
+        
+        if foundIndex != 99 {
+            currentConsumerList[foundIndex] = BasicInfoConsumerListInputModel()!
+            currentConsumerList[foundIndex].isPrimary = false
+            currentConsumerList[foundIndex].isPrimaryRegistered = false
+        }
+        else {
+            foundIndex = 0
+            currentConsumerList[foundIndex].isPrimary = true
+        }
+        currentConsumerList[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+        currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
+        return currentConsumerList
+    }
     
     
     

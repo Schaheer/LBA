@@ -240,8 +240,9 @@ final class ServiceChannelsVC: UIViewController {
             rdaCustomerId: DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last?.accountInformation?.rdaCustomerID,
             customerTypeId: BaseConstants.Config.customerTypeID,
             atmTypeId: serviceChannelsVM.getSelectedATMTypeID(),
-            transAlertInd: transactionalAlertsSwitch.index == 0 ? true.intValue : false.intValue,
-            chequeBookReqInd: chequeBookSwitch.index == 0 ? true.intValue : false.intValue,
+            physicalCardInd: debitCardSwitch.index == 0 ? false.intValue : true.intValue,
+            transAlertInd: transactionalAlertsSwitch.index == 0 ? false.intValue : true.intValue,
+            chequeBookReqInd: chequeBookSwitch.index == 0 ? false.intValue : true.intValue,
             transactionalAlertId: getTransactionalAlertId(),
             rdaCustomerProfileId: DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last?.rdaCustomerProfileID, reasonForVisaDebitCardRequestId: serviceChannelsVM.getReasonSelected()
         )

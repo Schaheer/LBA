@@ -176,7 +176,6 @@ final class RegisterPermanentAddressViewController: UIViewController {
             AlertManager.shared.showOKAlert(with: "Error", message: error)
         }
     }
-    
 }
 
 

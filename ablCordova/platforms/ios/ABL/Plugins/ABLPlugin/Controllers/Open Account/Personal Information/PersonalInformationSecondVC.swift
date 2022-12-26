@@ -219,6 +219,7 @@ final class PersonalInformationSecondVC: UIViewController {
                 fullName: fullNameTextField.text,
                 fatherHusbandName: fathersNameTextField.text,
                 motherMaidenName: mothersName,
+                placeOfBirth: placeOfBirth,
                 isPrimary: true
             )
         }
@@ -245,8 +246,6 @@ final class PersonalInformationSecondVC: UIViewController {
 }
 
 extension PersonalInformationSecondVC: TTGTextTagCollectionViewDelegate {
-    
-    
     func textTagCollectionView(
         _ textTagCollectionView: TTGTextTagCollectionView!,
         didTap tag: TTGTextTag!,

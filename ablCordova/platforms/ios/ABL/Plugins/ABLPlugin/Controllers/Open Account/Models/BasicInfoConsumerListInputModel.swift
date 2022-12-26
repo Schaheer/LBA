@@ -20,9 +20,9 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
 //        case motherMaidenName = "motherMaidenName"
 //        case isPrimary = "isPrimary"
 //        case isPrimaryRegistered = "isPrimaryRegistered"
-//        case customerTypeID = "customerTypeId"
-//        case occupationID = "occupationId"
-//        case professionID = "professionId"
+//        case customerTypeId = "customerTypeId"
+//        case occupationId = "occupationId"
+//        case professionId = "professionId"
 //        case kinName
 //        case kinCNIC = "kinCnic"
 //        case kinMobileNumber = "kinMobile"
@@ -33,7 +33,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
 //    }
     
     enum CodingKeys: String {
-        case rdaCustomerAccInfoId = "accountInformation.rdaCustomerAccInfoId"
+        case rdaCustomerAccInfoId = "rdaCustomerAccInfoId"
         case rdaCustomerProfileId
         case accessToken
         case customerTitleId
@@ -41,10 +41,11 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         case emailAddress
         case fullName
         case mobileNo
+
         case mobileNoCountryCodeID = "mobileNoCountryCodeId"
         case fatherHusbandName
         case motherMaidenName
-        case countryOfResidenceID = "countryOfResidenceId"
+        case countryOfResidenceId
         case genderId
         case gender
         case maritalStatusID = "maritalStatusId"
@@ -54,9 +55,9 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         case customerNTN = "customerNtn"
         case taxResidentInd
         case employmentTypeID = "employmentTypeId"
-        case professionID = "professionId"
+        case professionId
         case profession
-        case occupationID = "occupationId"
+        case occupationId
         case occupation
         case nearestLandmark
         case natureOfBusiness
@@ -78,7 +79,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         case statusID = "statusId"
         case nationalityTypeId
         case nationalities
-        case natureOfAccountID = "natureOfAccountId"
+        case natureOfAccountId
         case stepperSections
         case addresses
         case accountInformation
@@ -87,7 +88,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         case customerNonResidentInd
         case customerCity
         case customerBranch
-        case customerTypeID = "customerTypeId"
+        case customerTypeId
         case kinName
         case kinMobile
         case kinAddress
@@ -103,6 +104,15 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         case mobileNetworkID = "mobileNetworkId"
         case portedMobileNetwork
         case bankingModeId
+        case atmTypeId
+        case physicalCardInd
+        case transAlertInd
+        case chequeBookReqInd
+        case transactionalAlertId
+        case reasonForVisaDebitCardRequestId
+        case noOfJointApplicatns
+        case nameOnPhysicalATM
+        case modeOfMajorTransId
     }
     
     // MARK: - Model Properties
@@ -118,7 +128,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
     var kinCNIC: String?
     var kinMobileNumber: String?
     var taxResidentInd: Int?
-    var customerTypeID: Double?
+
     var genderId: Int?
     var nationalityTypeId: Double?
     var nationalities: [[String: Any]]?
@@ -126,6 +136,14 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
     // MARK: - Model Properties
     //    var rdaCustomerAccInfoId: Any?
     //    var rdaCustomerProfileID: Double?
+    var atmTypeId: Double?
+    var physicalCardInd: Int?
+    var transAlertInd: Int?
+    var chequeBookReqInd: Int?
+    var transactionalAlertId: Double?
+    var reasonForVisaDebitCardRequestId: Double?
+    var customerTypeId: Double?
+
     var accessToken: String?
     var customerTitleId: Double?
     var customerTitle: String?
@@ -135,7 +153,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
     var mobileNoCountryCodeID: Double?
     //    var fatherHusbandName: String?
     //    var motherMaidenName: String?
-    var countryOfResidenceID: Double?
+    var countryOfResidenceId: Double?
     var genderID: Int?
     var gender: String?
     var maritalStatusID: Int?
@@ -144,10 +162,11 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
     var cityOfBirth: String?
     var customerNTN: String?
     //    var taxResidentInd: Int?
+    var occupationId: Double?
+    var professionId: Double?
+    
     var employmentTypeID: Int?
-    var professionID: Int?
     var profession: String?
-    var occupationID: Int?
     var occupation: String?
     var nearestLandmark: String?
     var natureOfBusiness: String?
@@ -169,24 +188,21 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
     var statusID: Double?
     var nationalityTypeID: Double?
     //    var nationalities: [[String: Any]]?
-    var natureOfAccountID: Double?
+    var natureOfAccountId: Double?
     var stepperSections: StepperSectionsModel?
     var addresses: [AddressesModel]?
     var accountInformation: AccountInformationModel?
-    var attachments: [CNICAttachmentResponseModel]?
+    var attachments: [[String : Any]]?
     var existingAccountInd: Bool?
-    var customerNonResidentInd: Bool?
+    var customerNonResidentInd: Int?
     var customerCity: String?
     var customerBranch: String?
-    //    var customerTypeID: Double?
     var bankingModeId: Double?
     //    var kinName: String?
     var kinMobile: String?
     var kinAddress: String?
     //    var kinCNIC: String?
     var kinRelation: String?
-    //    var isPrimary: Bool?
-    //    var isPrimaryRegistered: Bool?
     var referredBy: String?
     var referrerCp: String?
     var relationshipWithMinorID: Int?
@@ -194,7 +210,10 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
     var suggestedMotherNames: [String]?
     var mobileNetworkID: Double?
     var portedMobileNetwork: Bool?
-    
+    var noOfJointApplicatns: Int?
+    var nameOnPhysicalATM: String?
+    var modeOfMajorTransId: [Double]?
+
     required init?(
         rdaCustomerAccInfoId: Double? = nil,
         rdaCustomerProfileId: Double? = nil,
@@ -207,7 +226,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         kinCNIC: String? = nil,
 //        kinMobileNumber: String? = nil,
         taxResidentInd: Int? = nil,
-        customerTypeID: Double? = nil,
+        customerTypeId: Double? = nil,
         genderId: Int? = nil,
         nationalityTypeId: Double? = nil,
         nationalities: [[String: Any]]? = nil,
@@ -217,7 +236,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         emailAddress: String? = nil,
         mobileNo: String? = nil,
         mobileNoCountryCodeID: Double? = nil,
-        countryOfResidenceID: Double? = nil,
+        countryOfResidenceId: Double? = nil,
 //        genderID: Int? = nil,
         gender: String? = nil,
         maritalStatusID: Int? = nil,
@@ -226,9 +245,9 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         cityOfBirth: String? = nil,
         customerNTN: String? = nil,
         employmentTypeID: Int? = nil,
-        professionID: Int? = nil,
+        professionId: Double? = nil,
         profession: String? = nil,
-        occupationID: Int? = nil,
+        occupationId: Double? = nil,
         occupation: String? = nil,
         nearestLandmark: String? = nil,
         natureOfBusiness: String? = nil,
@@ -249,13 +268,13 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         idNumber: String? = nil,
         statusID: Double? = nil,
         nationalityTypeID: Double? = nil,
-        natureOfAccountID: Double? = nil,
+        natureOfAccountId: Double? = nil,
         stepperSections: StepperSectionsModel? = nil,
         addresses: [AddressesModel]? = nil,
         accountInformation: AccountInformationModel? = nil,
-        attachments: [CNICAttachmentResponseModel]? = nil,
+        attachments:  [[String : Any]]? = nil,
         existingAccountInd: Bool? = nil,
-        customerNonResidentInd: Bool? = nil,
+        customerNonResidentInd: Int? = nil,
         customerCity: String? = nil,
         customerBranch: String? = nil,
         bankingModeId: Double? = nil,
@@ -268,7 +287,16 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         suggestedPlaceOfBirth: [String]? = nil,
         suggestedMotherNames: [String]? = nil,
         mobileNetworkID: Double? = nil,
-        portedMobileNetwork: Bool? = nil
+        portedMobileNetwork: Bool? = nil,
+        atmTypeId: Double? = nil,
+        physicalCardInd: Int? = nil,
+        transAlertInd: Int? = nil,
+        chequeBookReqInd: Int? = nil,
+        transactionalAlertId: Double? = nil,
+        reasonForVisaDebitCardRequestId: Double? = nil,
+        noOfJointApplicatns: Int? = nil,
+        nameOnPhysicalATM: String? = nil,
+        modeOfMajorTransId: [Double]? = nil
     ) {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.rdaCustomerAccInfoId.rawValue] = rdaCustomerAccInfoId
@@ -282,7 +310,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         dictionary[CodingKeys.kinCNIC.rawValue] = kinCNIC
 //        dictionary[CodingKeys.kinMobile.rawValue] = kinMobileNumber
         dictionary[CodingKeys.taxResidentInd.rawValue] = taxResidentInd
-        dictionary[CodingKeys.customerTypeID.rawValue] = customerTypeID
+        dictionary[CodingKeys.customerTypeId.rawValue] = customerTypeId
         dictionary[CodingKeys.genderId.rawValue] = genderId
         dictionary[CodingKeys.nationalityTypeId.rawValue] = nationalityTypeId
         dictionary[CodingKeys.nationalities.rawValue] = nationalities
@@ -292,7 +320,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         dictionary[CodingKeys.emailAddress.rawValue] = emailAddress
         dictionary[CodingKeys.mobileNo.rawValue] = mobileNo
         dictionary[CodingKeys.mobileNoCountryCodeID.rawValue] = mobileNoCountryCodeID
-        dictionary[CodingKeys.countryOfResidenceID.rawValue] = countryOfResidenceID
+        dictionary[CodingKeys.countryOfResidenceId.rawValue] = countryOfResidenceId
 //        dictionary[CodingKeys.genderID.rawValue] = genderID
         dictionary[CodingKeys.gender.rawValue] = gender
         dictionary[CodingKeys.maritalStatusID.rawValue] = maritalStatusID
@@ -301,9 +329,9 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         dictionary[CodingKeys.cityOfBirth.rawValue] = cityOfBirth
         dictionary[CodingKeys.customerNTN.rawValue] = customerNTN
         dictionary[CodingKeys.employmentTypeID.rawValue] = employmentTypeID
-        dictionary[CodingKeys.professionID.rawValue] = professionID
+        dictionary[CodingKeys.professionId.rawValue] = professionId
         dictionary[CodingKeys.profession.rawValue] = profession
-        dictionary[CodingKeys.occupationID.rawValue] = occupationID
+        dictionary[CodingKeys.occupationId.rawValue] = occupationId
         dictionary[CodingKeys.occupation.rawValue] = occupation
         dictionary[CodingKeys.nearestLandmark.rawValue] = nearestLandmark
         dictionary[CodingKeys.natureOfBusiness.rawValue] = natureOfBusiness
@@ -324,7 +352,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         dictionary[CodingKeys.idNumber.rawValue] = idNumber
         dictionary[CodingKeys.statusID.rawValue] = statusID
         dictionary[CodingKeys.nationalityTypeId.rawValue] = nationalityTypeId
-        dictionary[CodingKeys.natureOfAccountID.rawValue] = natureOfAccountID
+        dictionary[CodingKeys.natureOfAccountId.rawValue] = natureOfAccountId
         dictionary[CodingKeys.stepperSections.rawValue] = stepperSections
         dictionary[CodingKeys.addresses.rawValue] = addresses
         dictionary[CodingKeys.accountInformation.rawValue] = accountInformation
@@ -344,7 +372,17 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         dictionary[CodingKeys.suggestedMotherNames.rawValue] = suggestedMotherNames
         dictionary[CodingKeys.mobileNetworkID.rawValue] = mobileNetworkID
         dictionary[CodingKeys.portedMobileNetwork.rawValue] = portedMobileNetwork
+        dictionary[CodingKeys.atmTypeId.rawValue] = atmTypeId
+        dictionary[CodingKeys.physicalCardInd.rawValue] = physicalCardInd
+        dictionary[CodingKeys.transAlertInd.rawValue] = transAlertInd
         
+        dictionary[CodingKeys.chequeBookReqInd.rawValue] = chequeBookReqInd
+        dictionary[CodingKeys.transactionalAlertId.rawValue] = transactionalAlertId
+        dictionary[CodingKeys.reasonForVisaDebitCardRequestId.rawValue] = reasonForVisaDebitCardRequestId
+        dictionary[CodingKeys.noOfJointApplicatns.rawValue] = noOfJointApplicatns
+        dictionary[CodingKeys.nameOnPhysicalATM.rawValue] = nameOnPhysicalATM
+        dictionary[CodingKeys.modeOfMajorTransId.rawValue] = modeOfMajorTransId
+
         self.rdaCustomerAccInfoId = rdaCustomerAccInfoId
         self.rdaCustomerProfileId = rdaCustomerProfileId
         self.fullName = fullName
@@ -355,7 +393,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         self.kinName = kinName
         self.kinCNIC = kinCNIC
         self.taxResidentInd = taxResidentInd
-        self.customerTypeID = customerTypeID
+        self.customerTypeId = customerTypeId
         self.genderId = genderId
         self.nationalityTypeId = nationalityTypeId
         self.nationalities = nationalities
@@ -365,7 +403,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         self.emailAddress = emailAddress
         self.mobileNo = mobileNo
         self.mobileNoCountryCodeID = mobileNoCountryCodeID
-        self.countryOfResidenceID = countryOfResidenceID
+        self.countryOfResidenceId = countryOfResidenceId
         self.gender = gender
         self.maritalStatusID = maritalStatusID
         self.dateOfBirth = dateOfBirth
@@ -373,9 +411,9 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         self.cityOfBirth = cityOfBirth
         self.customerNTN = customerNTN
         self.employmentTypeID = employmentTypeID
-        self.professionID = professionID
+        self.professionId = professionId
         self.profession = profession
-        self.occupationID = occupationID
+        self.occupationId = occupationId
         self.occupation = occupation
         self.nearestLandmark = nearestLandmark
         self.natureOfBusiness = natureOfBusiness
@@ -396,13 +434,13 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         self.idNumber = idNumber
         self.statusID = statusID
         self.nationalityTypeID = nationalityTypeID
-        self.natureOfAccountID = natureOfAccountID
+        self.natureOfAccountId = natureOfAccountId
         self.stepperSections = stepperSections
         self.addresses = addresses
         self.accountInformation = accountInformation
         self.attachments = attachments
         self.existingAccountInd = existingAccountInd
-        self.customerNonResidentInd = customerNonResidentInd
+        self.customerNonResidentInd = 0
         self.customerCity = customerCity
         self.customerBranch = customerBranch
         self.bankingModeId = bankingModeId
@@ -416,6 +454,15 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         self.suggestedMotherNames = suggestedMotherNames
         self.mobileNetworkID = mobileNetworkID
         self.portedMobileNetwork = portedMobileNetwork
+        self.atmTypeId = atmTypeId
+        self.physicalCardInd = physicalCardInd
+        self.transAlertInd = transAlertInd
+        self.chequeBookReqInd = chequeBookReqInd
+        self.transactionalAlertId = transactionalAlertId
+        self.reasonForVisaDebitCardRequestId = reasonForVisaDebitCardRequestId
+        self.noOfJointApplicatns = noOfJointApplicatns
+        self.nameOnPhysicalATM = nameOnPhysicalATM
+        self.modeOfMajorTransId = modeOfMajorTransId
         
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
@@ -498,7 +545,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
     required init?(
         rdaCustomerAccInfoId: Double,
         rdaCustomerProfileId: Double,
-        customerTypeID: Double,
+        customerTypeId: Double,
         taxResidentInd: Int,
         isPrimary: Bool
 //        genderId: Int
@@ -506,14 +553,14 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.rdaCustomerAccInfoId.rawValue] = rdaCustomerAccInfoId
         dictionary[CodingKeys.rdaCustomerProfileId.rawValue] = rdaCustomerProfileId
-        dictionary[CodingKeys.customerTypeID.rawValue] = customerTypeID
+        dictionary[CodingKeys.customerTypeId.rawValue] = customerTypeId
         dictionary[CodingKeys.taxResidentInd.rawValue] = taxResidentInd
         dictionary[CodingKeys.isPrimary.rawValue] = isPrimary
 //        dictionary[CodingKeys.genderId.rawValue] = genderId
 
         self.rdaCustomerAccInfoId = rdaCustomerAccInfoId
         self.rdaCustomerProfileId = rdaCustomerProfileId
-        self.customerTypeID = customerTypeID
+        self.customerTypeId = customerTypeId
         self.taxResidentInd = taxResidentInd
         self.isPrimary = isPrimary
 //        self.genderId = genderId
@@ -556,7 +603,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
 //        kinName <- map[CodingKeys.kinName.rawValue]
 //        kinCNIC <- map[CodingKeys.kinCNIC.rawValue]
 //        kinMobileNumber <- map[CodingKeys.kinMobile.rawValue]
-//        customerTypeID <- map[CodingKeys.customerTypeID.rawValue]
+//        customerTypeId <- map[CodingKeys.customerTypeId.rawValue]
 //        genderId <- map[CodingKeys.genderId.rawValue]
 //        nationalityTypeId <- map[CodingKeys.nationalityTypeId.rawValue]
 //        nationalities <- map[CodingKeys.nationalities.rawValue]
@@ -582,7 +629,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         mobileNoCountryCodeID <- map[CodingKeys.mobileNoCountryCodeID.rawValue]
         fatherHusbandName <- map[CodingKeys.fatherHusbandName.rawValue]
         motherMaidenName <- map[CodingKeys.motherMaidenName.rawValue]
-        countryOfResidenceID <- map[CodingKeys.countryOfResidenceID.rawValue]
+        countryOfResidenceId <- map[CodingKeys.countryOfResidenceId.rawValue]
         genderId <- map[CodingKeys.genderId.rawValue]
         gender <- map[CodingKeys.gender.rawValue]
         maritalStatusID <- map[CodingKeys.maritalStatusID.rawValue]
@@ -592,9 +639,9 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         customerNTN <- map[CodingKeys.customerNTN.rawValue]
         taxResidentInd <- map[CodingKeys.taxResidentInd.rawValue]
         employmentTypeID <- map[CodingKeys.employmentTypeID.rawValue]
-        professionID <- map[CodingKeys.professionID.rawValue]
+        professionId <- map[CodingKeys.professionId.rawValue]
         profession <- map[CodingKeys.profession.rawValue]
-        occupationID <- map[CodingKeys.occupationID.rawValue]
+        occupationId <- map[CodingKeys.occupationId.rawValue]
         occupation <- map[CodingKeys.occupation.rawValue]
         nearestLandmark <- map[CodingKeys.nearestLandmark.rawValue]
         natureOfBusiness <- map[CodingKeys.natureOfBusiness.rawValue]
@@ -616,7 +663,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         statusID <- map[CodingKeys.statusID.rawValue]
         nationalityTypeId <- map[CodingKeys.nationalityTypeId.rawValue]
         nationalities <- map[CodingKeys.nationalities.rawValue]
-        natureOfAccountID <- map[CodingKeys.natureOfAccountID.rawValue]
+        natureOfAccountId <- map[CodingKeys.natureOfAccountId.rawValue]
         stepperSections <- map[CodingKeys.stepperSections.rawValue]
         addresses <- map[CodingKeys.addresses.rawValue]
         accountInformation <- map[CodingKeys.accountInformation.rawValue]
@@ -625,14 +672,14 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         customerNonResidentInd <- map[CodingKeys.customerNonResidentInd.rawValue]
         customerCity <- map[CodingKeys.customerCity.rawValue]
         customerBranch <- map[CodingKeys.customerBranch.rawValue]
-        customerTypeID <- map[CodingKeys.customerTypeID.rawValue]
+        customerTypeId <- map[CodingKeys.customerTypeId.rawValue]
         kinName <- map[CodingKeys.kinName.rawValue]
         kinMobile <- map[CodingKeys.kinMobile.rawValue]
         kinAddress <- map[CodingKeys.kinAddress.rawValue]
         kinCNIC <- map[CodingKeys.kinCNIC.rawValue]
         kinRelation <- map[CodingKeys.kinRelation.rawValue]
         isPrimary <- map[CodingKeys.isPrimary.rawValue]
-        isPrimaryRegistered <- map[CodingKeys.isPrimary.rawValue]
+        isPrimaryRegistered <- map[CodingKeys.isPrimaryRegistered.rawValue]
         referredBy <- map[CodingKeys.referredBy.rawValue]
         referrerCp <- map[CodingKeys.referrerCp.rawValue]
         relationshipWithMinorID <- map[CodingKeys.relationshipWithMinorID.rawValue]
@@ -641,6 +688,16 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         mobileNetworkID <- map[CodingKeys.mobileNetworkID.rawValue]
         portedMobileNetwork <- map[CodingKeys.portedMobileNetwork.rawValue]
         bankingModeId <- map[CodingKeys.bankingModeId.rawValue]
+        atmTypeId <- map[CodingKeys.atmTypeId.rawValue]
+        physicalCardInd <- map[CodingKeys.physicalCardInd.rawValue]
+        transAlertInd <- map[CodingKeys.transAlertInd.rawValue]
+        
+        chequeBookReqInd <- map[CodingKeys.chequeBookReqInd.rawValue]
+        transactionalAlertId <- map[CodingKeys.transactionalAlertId.rawValue]
+        reasonForVisaDebitCardRequestId <- map[CodingKeys.reasonForVisaDebitCardRequestId.rawValue]
+        noOfJointApplicatns <- map[CodingKeys.noOfJointApplicatns.rawValue]
+        nameOnPhysicalATM <- map[CodingKeys.nameOnPhysicalATM.rawValue]
+        modeOfMajorTransId <- map[CodingKeys.modeOfMajorTransId.rawValue]
     }
 }
 
@@ -657,9 +714,9 @@ final class BasicInfoConsumerListInputModelForNationality: Mappable {
         case motherMaidenName = "motherMaidenName"
         case isPrimary = "isPrimary"
         case isPrimaryRegistered = "isPrimaryRegistered"
-        case customerTypeID = "customerTypeId"
-        case occupationID = "occupationId"
-        case professionID = "professionId"
+        case customerTypeId
+        case occupationId
+        case professionId
         case kinName
         case kinCNIC = "kinCnic"
         case kinMobileNumber = "kinMobile"
@@ -681,7 +738,7 @@ final class BasicInfoConsumerListInputModelForNationality: Mappable {
     var kinCNIC: String?
     var kinMobileNumber: String?
     var taxResidentInd: Int?
-    var customerTypeID: Double?
+    var customerTypeId: Double?
     var genderId: Int?
     var nationalityTypeId: Double?
     var nationalities: [[String: Any]]?
@@ -745,7 +802,7 @@ final class BasicInfoConsumerListInputModelForNationality: Mappable {
         kinName <- map[CodingKeys.kinName.rawValue]
         kinCNIC <- map[CodingKeys.kinCNIC.rawValue]
         kinMobileNumber <- map[CodingKeys.kinMobileNumber.rawValue]
-        customerTypeID <- map[CodingKeys.customerTypeID.rawValue]
+        customerTypeId <- map[CodingKeys.customerTypeId.rawValue]
         genderId <- map[CodingKeys.genderId.rawValue]
         nationalityTypeId <- map[CodingKeys.nationalityTypeId.rawValue]
         nationalities <- map[CodingKeys.nationalities.rawValue]
@@ -771,9 +828,9 @@ final class BasicInfoConsumerListInputModelForAll: BaseInputModel {
         case motherMaidenName = "motherMaidenName"
         case isPrimary = "isPrimary"
         case isPrimaryRegistered = "isPrimaryRegistered"
-        case customerTypeID = "customerTypeId"
-        case occupationID = "occupationId"
-        case professionID = "professionId"
+        case customerTypeId
+        case occupationId
+        case professionId
         case kinName
         case kinCNIC = "kinCnic"
         case kinMobileNumber = "kinMobile"
@@ -802,14 +859,14 @@ final class BasicInfoConsumerListInputModelForAll: BaseInputModel {
     var kinCNIC: String?
     var kinMobileNumber: String?
     var taxResidentInd: Int?
-    var customerTypeID: Double?
+    var customerTypeId: Double?
     var genderId: Int?
     var cityOfBirth: String?
     var emailAddress: String?
     var customerNtn: String?
     var rdaCustomerCountryId: Double?
-    var occupationID: Double?
-    var professionID: Double?
+    var occupationId: Double?
+    var professionId: Double?
     var nationalityTypeId: Double?
     var nationalities: [[String: Any]]?
     var residentCountries: [ResidentCountryInputModel]?
@@ -839,12 +896,12 @@ final class BasicInfoConsumerListInputModelForAll: BaseInputModel {
         kinName: String? = nil,
         kinCNIC: String? = nil,
         kinMobileNumber: String? = nil,
-        customerTypeID: Double? = nil,
+        customerTypeId: Double? = nil,
         taxResidentInd: Int? = nil,
         
         
-        occupationID: Double? = nil,
-        professionID: Double? = nil
+        occupationId: Double? = nil,
+        professionId: Double? = nil
         
         
     ) {
@@ -860,14 +917,14 @@ final class BasicInfoConsumerListInputModelForAll: BaseInputModel {
         dictionary[CodingKeys.kinName.rawValue] = kinName
         dictionary[CodingKeys.kinCNIC.rawValue] = kinCNIC
         dictionary[CodingKeys.kinMobileNumber.rawValue] = kinMobileNumber
-        dictionary[CodingKeys.customerTypeID.rawValue] = customerTypeID
-        dictionary[CodingKeys.occupationID.rawValue] = occupationID
+        dictionary[CodingKeys.customerTypeId.rawValue] = customerTypeId
+        dictionary[CodingKeys.occupationId.rawValue] = occupationId
         
-        dictionary[CodingKeys.professionID.rawValue] = professionID
+        dictionary[CodingKeys.professionId.rawValue] = professionId
         dictionary[CodingKeys.genderId.rawValue] = genderId
         dictionary[CodingKeys.cityOfBirth.rawValue] = cityOfBirth
         
-        dictionary[CodingKeys.professionID.rawValue] = professionID
+        dictionary[CodingKeys.professionId.rawValue] = professionId
         dictionary[CodingKeys.emailAddress.rawValue] = emailAddress
         dictionary[CodingKeys.customerNtn.rawValue] = customerNtn
         dictionary[CodingKeys.rdaCustomerCountryId.rawValue] = rdaCustomerCountryId
@@ -892,9 +949,9 @@ final class BasicInfoConsumerListInputModelForAll: BaseInputModel {
         self.kinName = kinName
         self.kinCNIC = kinCNIC
         self.kinMobileNumber = kinMobileNumber
-        self.customerTypeID = customerTypeID
-        self.occupationID = occupationID
-        self.professionID = professionID
+        self.customerTypeId = customerTypeId
+        self.occupationId = occupationId
+        self.professionId = professionId
         self.taxResidentInd = taxResidentInd
         self.genderId = genderId
         self.cityOfBirth = cityOfBirth
@@ -925,9 +982,9 @@ final class BasicInfoConsumerListInputModelForAll: BaseInputModel {
         motherMaidenName <- map[CodingKeys.motherMaidenName.rawValue]
         isPrimary <- map[CodingKeys.isPrimary.rawValue]
         isPrimaryRegistered <- map[CodingKeys.isPrimary.rawValue]
-        occupationID <- map[CodingKeys.occupationID.rawValue]
-        professionID <- map[CodingKeys.professionID.rawValue]
-        customerTypeID <- map[CodingKeys.customerTypeID.rawValue]
+        occupationId <- map[CodingKeys.occupationId.rawValue]
+        professionId <- map[CodingKeys.professionId.rawValue]
+        customerTypeId <- map[CodingKeys.customerTypeId.rawValue]
         kinName <- map[CodingKeys.kinName.rawValue]
         kinCNIC <- map[CodingKeys.kinCNIC.rawValue]
         kinMobileNumber <- map[CodingKeys.kinMobileNumber.rawValue]
@@ -940,9 +997,6 @@ final class BasicInfoConsumerListInputModelForAll: BaseInputModel {
         nationalities <- map[CodingKeys.nationalities.rawValue]
         residentCountries <- map[CodingKeys.residentCountries.rawValue]
         emailAddress <- map[CodingKeys.emailAddress.rawValue]
-
     }
-   
-    
     
 }

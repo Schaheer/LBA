@@ -23,11 +23,11 @@
         <array key="WorkSans-Medium.ttf">
             <string>WorkSans-Medium</string>
         </array>
+        <array key="WorkSans-Regular.ttf">
+            <string>WorkSans-Regular</string>
+        </array>
         <array key="WorkSans-SemiBold.ttf">
             <string>WorkSans-SemiBold</string>
-        </array>
-        <array key="WorkSans-VariableFont_wght.ttf">
-            <string>WorkSans-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -6387,16 +6387,16 @@ Currency PKR</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXq-nF-DvJ">
-                                                        <rect key="frame" x="0.0" y="551.5" width="414" height="45"/>
+                                                        <rect key="frame" x="0.0" y="551.5" width="414" height="62"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="z9j-gc-3Pl">
-                                                                <rect key="frame" x="12" y="0.0" width="390" height="45"/>
+                                                                <rect key="frame" x="12" y="0.0" width="390" height="62"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bSg-Qw-QhQ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="390" height="33"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOS-EZ-UMM" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="107" height="33"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="107" height="50"/>
                                                                                 <string key="text">Mailing Address
 Preferences</string>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
@@ -6404,7 +6404,7 @@ Preferences</string>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mca-HD-cnz" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                                                                <rect key="frame" x="115" y="0.0" width="275" height="33"/>
+                                                                                <rect key="frame" x="115" y="0.0" width="275" height="50"/>
                                                                                 <color key="backgroundColor" name="OTP Field Border"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -6415,7 +6415,7 @@ Preferences</string>
                                                                         </subviews>
                                                                     </stackView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at which address bank shall send letters/correspondence." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isB-2v-iOE" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="33" width="390" height="12"/>
+                                                                        <rect key="frame" x="0.0" y="50" width="390" height="12"/>
                                                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="10"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -7137,18 +7137,18 @@ Preferences</string>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xV5-fP-H8p">
                                                         <rect key="frame" x="12" y="20" width="390" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Choose Your Debit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCp-1b-LH5" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Debit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCp-1b-LH5" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="158" height="30"/>
                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js4-FS-GIZ" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js4-FS-GIZ" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                                 <rect key="frame" x="166" y="0.0" width="21" height="30"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="InfoIcon"/>
                                                             </button>
-                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jf6-e3-qEs" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jf6-e3-qEs" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
                                                                 <rect key="frame" x="195" y="0.0" width="195" height="30"/>
                                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -7505,13 +7505,13 @@ ATM Bill Payment</string>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fg4-jk-EiA">
                                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cheque Book Required?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmE-9h-HvW" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cheque Book Required?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmE-9h-HvW" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="211.5" height="30"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYa-kQ-em7" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYa-kQ-em7" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="219.5" y="0.0" width="21" height="30"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="21" id="rkI-NX-Gtb"/>
@@ -7519,7 +7519,7 @@ ATM Bill Payment</string>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" image="InfoIcon"/>
                                                                             </button>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W1h-lZ-jUQ" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1h-lZ-jUQ" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
                                                                                 <rect key="frame" x="248.5" y="0.0" width="141.5" height="30"/>
                                                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -7578,18 +7578,18 @@ ATM Bill Payment</string>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nWU-Qk-RJW">
                                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Transactional Alerts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSr-lP-noh" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactional Alerts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSr-lP-noh" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2B4-PS-cBP" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2B4-PS-cBP" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="185.5" y="0.0" width="1.5" height="30"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" image="InfoIcon"/>
                                                                             </button>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sjw-CI-IGj" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjw-CI-IGj" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
                                                                                 <rect key="frame" x="195" y="0.0" width="195" height="30"/>
                                                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -7946,7 +7946,7 @@ ATM Bill Payment</string>
                                                         <rect key="frame" x="0.0" y="170" width="414" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you want to open Joint Account with another person?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exZ-8q-R6k" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                <rect key="frame" x="12" y="12" width="278" height="33"/>
+                                                                <rect key="frame" x="12" y="12" width="278" height="36"/>
                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -8244,25 +8244,25 @@ ATM Bill Payment</string>
                                 <rect key="frame" x="0.0" y="48" width="414" height="814"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgw-Ns-z2g">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="935.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="953.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFl-Fv-94W">
-                                                <rect key="frame" x="0.0" y="20" width="414" height="56"/>
+                                                <rect key="frame" x="0.0" y="20" width="414" height="74"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DMs-m4-PJt">
-                                                        <rect key="frame" x="12" y="12" width="390" height="32"/>
+                                                        <rect key="frame" x="12" y="12" width="390" height="50"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dzi-aj-nFa">
-                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="32"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Same as mailing address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBq-16-JAk" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="32"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="50"/>
                                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGS-7N-tkH" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                                                        <rect key="frame" x="187.5" y="0.0" width="202.5" height="32"/>
+                                                                        <rect key="frame" x="187.5" y="0.0" width="202.5" height="50"/>
                                                                         <color key="backgroundColor" name="OTP Field Border"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -8295,7 +8295,7 @@ ATM Bill Payment</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="an0-tj-UxS">
-                                                <rect key="frame" x="0.0" y="116" width="414" height="819.5"/>
+                                                <rect key="frame" x="0.0" y="134" width="414" height="819.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39R-wC-hxp">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="501.5"/>
@@ -8519,10 +8519,10 @@ ATM Bill Payment</string>
                                                                         <rect key="frame" x="12" y="12" width="390" height="74"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dLW-rz-EMD">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="33"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="un7-Um-t0x" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="107" height="33"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="107" height="50"/>
                                                                                         <string key="text">Mailing Address
 Preferences</string>
                                                                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
@@ -8530,7 +8530,7 @@ Preferences</string>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xaq-WN-Nrj" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                                                                        <rect key="frame" x="115" y="0.0" width="275" height="33"/>
+                                                                                        <rect key="frame" x="115" y="0.0" width="275" height="50"/>
                                                                                         <color key="backgroundColor" name="OTP Field Border"/>
                                                                                         <userDefinedRuntimeAttributes>
                                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -8544,7 +8544,7 @@ Preferences</string>
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at which address bank shall send letters/correspondence." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYN-kt-jbA" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="45" width="390" height="29"/>
+                                                                                <rect key="frame" x="0.0" y="62" width="390" height="12"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="10"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -12437,13 +12437,13 @@ Preferences</string>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sdO-Jb-fr1">
                                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Transactional Alerts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="uPF-0Q-o0o" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactional Alerts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="uPF-0Q-o0o" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17n-Ps-q2A" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17n-Ps-q2A" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="185.5" y="0.0" width="21" height="30"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="21" id="ely-Id-4ub"/>
@@ -12454,7 +12454,7 @@ Preferences</string>
                                                                                     <action selector="buttonEye:" destination="U5V-6L-nus" eventType="touchUpInside" id="3jW-Zv-iUA"/>
                                                                                 </connections>
                                                                             </button>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zBE-uL-Omt" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBE-uL-Omt" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
                                                                                 <rect key="frame" x="214.5" y="0.0" width="175.5" height="30"/>
                                                                                 <color key="backgroundColor" name="App Orange"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -12858,9 +12858,6 @@ Preferences</string>
         <designable name="9bT-aT-5TD">
             <size key="intrinsicContentSize" width="45.5" height="33"/>
         </designable>
-        <designable name="9uX-a7-rfc">
-            <size key="intrinsicContentSize" width="159" height="32"/>
-        </designable>
         <designable name="9vF-uI-dta">
             <size key="intrinsicContentSize" width="193.5" height="18.5"/>
         </designable>
@@ -12933,9 +12930,6 @@ Preferences</string>
         <designable name="CEt-I1-k66">
             <size key="intrinsicContentSize" width="106" height="19"/>
         </designable>
-        <designable name="Ce9-4k-nwE">
-            <size key="intrinsicContentSize" width="159" height="32"/>
-        </designable>
         <designable name="Cr0-ya-Umg">
             <size key="intrinsicContentSize" width="255" height="12"/>
         </designable>
@@ -12947,9 +12941,6 @@ Preferences</string>
         </designable>
         <designable name="D4h-lc-cVX">
             <size key="intrinsicContentSize" width="26" height="19"/>
-        </designable>
-        <designable name="DBf-vY-9ci">
-            <size key="intrinsicContentSize" width="159" height="32"/>
         </designable>
         <designable name="DEv-D0-oIG">
             <size key="intrinsicContentSize" width="111" height="19"/>
@@ -13073,9 +13064,6 @@ Preferences</string>
         </designable>
         <designable name="InG-la-SFs">
             <size key="intrinsicContentSize" width="143" height="23.5"/>
-        </designable>
-        <designable name="Jf6-e3-qEs">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="Jfu-pP-Dpk">
             <size key="intrinsicContentSize" width="288" height="68"/>
@@ -13248,9 +13236,6 @@ Preferences</string>
         <designable name="Tqz-CN-S0V">
             <size key="intrinsicContentSize" width="63" height="33"/>
         </designable>
-        <designable name="UNU-99-qCx">
-            <size key="intrinsicContentSize" width="195" height="32"/>
-        </designable>
         <designable name="UXq-Xc-2Wt">
             <size key="intrinsicContentSize" width="81.5" height="19"/>
         </designable>
@@ -13287,9 +13272,6 @@ Preferences</string>
         <designable name="VvD-ay-t2h">
             <size key="intrinsicContentSize" width="321" height="19.5"/>
         </designable>
-        <designable name="W1h-lZ-jUQ">
-            <size key="intrinsicContentSize" width="195" height="32"/>
-        </designable>
         <designable name="WLR-SC-vJM">
             <size key="intrinsicContentSize" width="58.5" height="33.5"/>
         </designable>
@@ -13320,9 +13302,6 @@ Preferences</string>
         <designable name="X01-q2-BAl">
             <size key="intrinsicContentSize" width="82.5" height="19.5"/>
         </designable>
-        <designable name="X0i-ME-Tok">
-            <size key="intrinsicContentSize" width="195" height="32"/>
-        </designable>
         <designable name="X6p-hh-Gch">
             <size key="intrinsicContentSize" width="19.5" height="12"/>
         </designable>
@@ -13334,9 +13313,6 @@ Preferences</string>
         </designable>
         <designable name="XYj-L9-KNe">
             <size key="intrinsicContentSize" width="44" height="19"/>
-        </designable>
-        <designable name="Xaq-WN-Nrj">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="Xmj-h9-Qnd">
             <size key="intrinsicContentSize" width="79" height="19"/>
@@ -13407,9 +13383,6 @@ Preferences</string>
         <designable name="bht-2P-4UK">
             <size key="intrinsicContentSize" width="324.5" height="19.5"/>
         </designable>
-        <designable name="bjU-iX-ylw">
-            <size key="intrinsicContentSize" width="159" height="32"/>
-        </designable>
         <designable name="byA-CM-u21">
             <size key="intrinsicContentSize" width="77" height="19"/>
         </designable>
@@ -13418,9 +13391,6 @@ Preferences</string>
         </designable>
         <designable name="cFY-LU-p8V">
             <size key="intrinsicContentSize" width="333.5" height="25"/>
-        </designable>
-        <designable name="cGS-7N-tkH">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="cXd-fY-Ygm">
             <size key="intrinsicContentSize" width="169.5" height="12"/>
@@ -13545,9 +13515,6 @@ Preferences</string>
         <designable name="hGc-Wp-ook">
             <size key="intrinsicContentSize" width="61" height="33"/>
         </designable>
-        <designable name="hHa-7G-ye7">
-            <size key="intrinsicContentSize" width="159" height="32"/>
-        </designable>
         <designable name="hI1-if-imR">
             <size key="intrinsicContentSize" width="198.5" height="23.5"/>
         </designable>
@@ -13587,9 +13554,6 @@ Preferences</string>
         <designable name="isB-2v-iOE">
             <size key="intrinsicContentSize" width="284" height="12"/>
         </designable>
-        <designable name="iyY-da-ek9">
-            <size key="intrinsicContentSize" width="195" height="32"/>
-        </designable>
         <designable name="j4R-8W-yRO">
             <size key="intrinsicContentSize" width="35.5" height="12"/>
         </designable>
@@ -13619,9 +13583,6 @@ Preferences</string>
         </designable>
         <designable name="jsI-5d-DjU">
             <size key="intrinsicContentSize" width="113" height="19"/>
-        </designable>
-        <designable name="jut-Xa-Y9t">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="jwn-Kf-m0g">
             <size key="intrinsicContentSize" width="229.5" height="30.5"/>
@@ -13656,12 +13617,6 @@ Preferences</string>
         <designable name="m9z-hE-cJq">
             <size key="intrinsicContentSize" width="61" height="33"/>
         </designable>
-        <designable name="mAi-tR-7ga">
-            <size key="intrinsicContentSize" width="159" height="32"/>
-        </designable>
-        <designable name="mCw-ig-99I">
-            <size key="intrinsicContentSize" width="159" height="32"/>
-        </designable>
         <designable name="mPX-yd-hUH">
             <size key="intrinsicContentSize" width="121.5" height="19"/>
         </designable>
@@ -13670,9 +13625,6 @@ Preferences</string>
         </designable>
         <designable name="maw-vD-Te1">
             <size key="intrinsicContentSize" width="288" height="68"/>
-        </designable>
-        <designable name="mca-HD-cnz">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="mcl-FF-KdC">
             <size key="intrinsicContentSize" width="168" height="16.5"/>
@@ -13805,9 +13757,6 @@ Preferences</string>
         </designable>
         <designable name="se5-id-O0G">
             <size key="intrinsicContentSize" width="333.5" height="25"/>
-        </designable>
-        <designable name="sjw-CI-IGj">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="t56-XG-cLn">
             <size key="intrinsicContentSize" width="75.5" height="12"/>
@@ -13958,9 +13907,6 @@ Preferences</string>
         </designable>
         <designable name="yxx-Eq-rpe">
             <size key="intrinsicContentSize" width="72" height="33.5"/>
-        </designable>
-        <designable name="zBE-uL-Omt">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="zDc-Uo-Bma">
             <size key="intrinsicContentSize" width="276" height="21.5"/>

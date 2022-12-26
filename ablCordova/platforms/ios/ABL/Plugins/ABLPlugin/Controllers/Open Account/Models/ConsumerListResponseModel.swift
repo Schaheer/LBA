@@ -23,7 +23,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
         case mobileNoCountryCodeID = "mobileNoCountryCodeId"
         case fatherHusbandName
         case motherMaidenName
-        case countryOfResidenceID = "countryOfResidenceId"
+        case countryOfResidenceId
         case genderID = "genderId"
         case gender
         case maritalStatusID = "maritalStatusId"
@@ -96,7 +96,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
     var mobileNoCountryCodeID: Double?
     var fatherHusbandName: String?
     var motherMaidenName: String?
-    var countryOfResidenceID: Double?
+    var countryOfResidenceId: Double?
     var genderID: Int?
     var gender: String?
     var maritalStatusID: Int?
@@ -106,9 +106,9 @@ final class ConsumerListResponseModel: BaseResponseModel {
     var customerNTN: String?
     var taxResidentInd: Int?
     var employmentTypeID: Int?
-    var professionID: Int?
+    var professionID: Double?
     var profession: String?
-    var occupationID: Int?
+    var occupationID: Double?
     var occupation: String?
     var nearestLandmark: String?
     var natureOfBusiness: String?
@@ -136,7 +136,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
     var accountInformation: AccountInformationModel?
     var attachments: [CNICAttachmentResponseModel]?
     var existingAccountInd: Bool?
-    var customerNonResidentInd: Bool?
+    var customerNonResidentInd: Int?
     var customerCity: String?
     var customerBranch: String?
     var customerTypeID: Double?
@@ -182,7 +182,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
         mobileNoCountryCodeID <- map[CodingKeys.mobileNoCountryCodeID.rawValue]
         fatherHusbandName <- map[CodingKeys.fatherHusbandName.rawValue]
         motherMaidenName <- map[CodingKeys.motherMaidenName.rawValue]
-        countryOfResidenceID <- map[CodingKeys.countryOfResidenceID.rawValue]
+        countryOfResidenceId <- map[CodingKeys.countryOfResidenceId.rawValue]
         genderID <- map[CodingKeys.genderID.rawValue]
         gender <- map[CodingKeys.gender.rawValue]
         maritalStatusID <- map[CodingKeys.maritalStatusID.rawValue]

@@ -11,7 +11,8 @@ import DropDown
 final class SelectNationalityCell: UITableViewCell {
     
     @IBOutlet weak var selectNationalityView: CustomUIView!
-    @IBOutlet weak var selectNationalityLabel: UILabel!
+ 
+    @IBOutlet weak var labelDualCountry: LabelSetting!
     
     private let dropDown = DropDown()
     var countrySelected: ((Int, String) -> Void)?
@@ -40,7 +41,7 @@ final class SelectNationalityCell: UITableViewCell {
         dropDown.frame.size.height = 250
 
         dropDown.selectionAction = { [unowned self] index, item in
-            self.selectNationalityLabel.text = item
+            self.labelDualCountry.text = item
             self.countrySelected?(index, item)
         }
         

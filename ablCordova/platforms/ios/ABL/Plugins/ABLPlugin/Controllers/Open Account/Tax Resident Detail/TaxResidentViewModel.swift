@@ -92,6 +92,7 @@ final class TaxResidentViewModel: TaxResidentViewModelProtocol {
             residentCountries: residentCountries
         ) else { return }
         
+        
         APIManager.shared.registerConsumerBasicInfo(input: input) { [weak self] response in
             guard let self = self else { return }
             switch response.result {
@@ -151,7 +152,7 @@ final class TaxResidentViewModel: TaxResidentViewModelProtocol {
         var tempRdaCustomerAccInfoId = newUserInfo.rdaCustomerAccInfoId
         
         let cousumerListHamza = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
-        let currentConsumerList = getCurrentConsumerListResponseInInputModel(responseCunsumerList: cousumerListHamza!)
+        var currentConsumerList = getCurrentConsumerListResponseInInputModel(responseCunsumerList: cousumerListHamza!)
         let cousumerListShakeel = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
         var foundIndex = 99
         //MARK: - Start----- Just to find new User Profile ID
@@ -178,15 +179,21 @@ final class TaxResidentViewModel: TaxResidentViewModelProtocol {
             }
         }
         //MARK: - Start-----If user profile id found Replace in new user Request data
-//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
-//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerProfileID
+        print(tempRdaCustomerAccInfoId as Any)
+        print(tempRdaCustomerProfileID as Any)
         
         if foundIndex != 99 {
-            currentConsumerList[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
-            currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerAccInfoId
+//            currentConsumerList[foundIndex] = BasicInfoConsumerListInputModel()!
             currentConsumerList[foundIndex].isPrimary = false
             currentConsumerList[foundIndex].isPrimaryRegistered = false
+            currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
+            currentConsumerList[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
         }
+        else {
+            foundIndex = 0
+            currentConsumerList[foundIndex].isPrimary = true
+        }
+        
         return currentConsumerList
     }
 }
@@ -206,7 +213,7 @@ func getCurrentConsumerListResponseInInputModel(responseCunsumerList: [ConsumerL
             kinName: $0.kinName,
             kinCNIC: $0.kinCNIC,
             taxResidentInd: $0.taxResidentInd,
-            customerTypeID: $0.customerTypeID,
+            customerTypeId: $0.customerTypeID,
             genderId: $0.genderID,
             nationalityTypeId: $0.nationalityTypeID,
             nationalities: $0.nationalities,
@@ -216,7 +223,7 @@ func getCurrentConsumerListResponseInInputModel(responseCunsumerList: [ConsumerL
             emailAddress: $0.emailAddress,
             mobileNo: $0.mobileNo,
             mobileNoCountryCodeID: $0.mobileNoCountryCodeID,
-            countryOfResidenceID: $0.mobileNoCountryCodeID,
+            countryOfResidenceId: $0.countryOfResidenceId,
             gender: $0.gender,
             maritalStatusID: $0.maritalStatusID,
             dateOfBirth: $0.dateOfBirth,
@@ -224,9 +231,9 @@ func getCurrentConsumerListResponseInInputModel(responseCunsumerList: [ConsumerL
             cityOfBirth: $0.cityOfBirth,
             customerNTN: $0.customerNTN,
             employmentTypeID: $0.employmentTypeID,
-            professionID: $0.professionID,
+            professionId: $0.professionID,
             profession: $0.profession,
-            occupationID: $0.occupationID,
+            occupationId: $0.occupationID,
             occupation: $0.occupation,
             nearestLandmark: $0.nearestLandmark,
             natureOfBusiness: $0.natureOfBusiness,
@@ -247,11 +254,11 @@ func getCurrentConsumerListResponseInInputModel(responseCunsumerList: [ConsumerL
             idNumber: $0.idNumber,
             statusID: $0.statusID,
             nationalityTypeID: $0.nationalityTypeID,
-            natureOfAccountID: $0.natureOfAccountID,
+            natureOfAccountId: $0.natureOfAccountID,
             stepperSections: $0.stepperSections,
             addresses: $0.addresses,
             accountInformation: $0.accountInformation,
-            attachments: $0.attachments,
+//            attachments: $0.attachments,
             existingAccountInd: $0.existingAccountInd,
             customerNonResidentInd: $0.customerNonResidentInd,
             customerCity: $0.customerCity,

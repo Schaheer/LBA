@@ -9,7 +9,7 @@ import Foundation
 
 protocol ServiceChannelsViewModelProtocol{
     
-    var registerConsumerTransactionDetailsResponse: Observable<ConsumerTransactionDetailsResponseModel?> { get }
+    var registerConsumerTransactionDetailsResponse: Observable<RegisterVerifyOTPResponseModel?> { get }
     
     var reasonDropDownTapped: Observable<Bool> { get }
 
@@ -27,7 +27,7 @@ protocol ServiceChannelsViewModelProtocol{
 
 class ServiceChannelsViewModel{
     private(set) var reasonDropDownTapped: Observable<Bool> = Observable(false)
-    private(set) var registerConsumerTransactionDetailsResponse: Observable<ConsumerTransactionDetailsResponseModel?> = Observable(nil)
+    private(set) var registerConsumerTransactionDetailsResponse: Observable<RegisterVerifyOTPResponseModel?> = Observable(nil)
     private(set) var errorMessage: Observable<String?> = Observable(nil)
     private(set) var atmTypes: Observable<CodeTypeResponseModel?> = Observable(nil)
     private(set) var reasonTypes: Observable<CodeTypeResponseModel?> = Observable(nil)
@@ -40,6 +40,7 @@ class ServiceChannelsViewModel{
         rdaCustomerId: Double?,
         customerTypeId: Double?,
         atmTypeId: Double?,
+        physicalCardInd: Int?,
         transAlertInd: Int?,
         chequeBookReqInd: Int?,
         transactionalAlertId: Double?,
@@ -47,44 +48,30 @@ class ServiceChannelsViewModel{
         reasonForVisaDebitCardRequestId: Double?
         
     ) {
-        guard
-            let customerAccInfoID = customerAccInfoID,
-            let rdaCustomerId = rdaCustomerId,
-            let customerTypeId = customerTypeId,
-            let atmTypeId = atmTypeId,
-            let transAlertInd = transAlertInd,
-            let chequeBookReqInd = chequeBookReqInd,
-            let transactionalAlertId = transactionalAlertId,
-            let rdaCustomerProfileId = rdaCustomerProfileId,
-            let reasonForVisaDebitCardRequestId = reasonForVisaDebitCardRequestId
-        else {
-            
-            self.errorMessage.value = "All fields are required"
-            return
-            
-        }
+        var consumerListInputModelArray = [BasicInfoConsumerListInputModel]()
         
-        guard let transactionDetailsData = SetupTransactionDataInputModel (
+        guard let basicInfoConsumerListInput = BasicInfoConsumerListInputModel(
             rdaCustomerAccInfoId: customerAccInfoID,
-            rdaCustomerId: rdaCustomerId,
+            rdaCustomerProfileId: rdaCustomerId,
+            isPrimary: true,
+            taxResidentInd: 0,
             customerTypeId: customerTypeId,
             atmTypeId: atmTypeId,
+            physicalCardInd: physicalCardInd,
             transAlertInd: transAlertInd,
-            chequeBookReqInd: chequeBookReqInd,
-            transactionalAlertId: transactionalAlertId,
-            rdaCustomerProfileId:rdaCustomerProfileId,
-            reasonForVisaDebitCardRequestId: reasonForVisaDebitCardRequestId )
-        else { return }
+            chequeBookReqInd: chequeBookReqInd
+            
+        ) else { return }
+        consumerListInputModelArray = getListOfConsumers(newUserInfo: basicInfoConsumerListInput)
         
-        guard let transactionDetailsInput = SetupTransactionsInputModel(consumerList: [transactionDetailsData]) else { return }
+        guard let registerConsumerBasicInfoInput = RegisterConsumerBasicInfoInputModel(consumerList: consumerListInputModelArray) else {return}
         
-        APIManager.shared.setupConsumerTransactionDetails(input: transactionDetailsInput) { [weak self] response in
+        APIManager.shared.setupConsumerTransactionDetails(input: registerConsumerBasicInfoInput) { [weak self] response in
             guard let self = self else { return }
             
             switch response.result {
             case .success(let value):
                 self.registerConsumerTransactionDetailsResponse.value = value
-                
             case .failure(let error):
                 self.errorMessage.value = error.errorDescription
             }
@@ -144,5 +131,65 @@ class ServiceChannelsViewModel{
         return selectedAtmTypeID.value
     }
     
-    
+    //MARK: - For merging
+    func getListOfConsumers(newUserInfo: BasicInfoConsumerListInputModel) -> [BasicInfoConsumerListInputModel] {
+        var tempRdaCustomerProfileID = newUserInfo.rdaCustomerProfileId
+        var tempRdaCustomerAccInfoId = newUserInfo.rdaCustomerAccInfoId
+        
+        let cousumerListHamza = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
+        var currentConsumerList = getCurrentConsumerListResponseInInputModel(responseCunsumerList: cousumerListHamza!)
+        let cousumerListShakeel = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
+        var foundIndex = 99
+        //MARK: - Start----- Just to find new User Profile ID
+        if currentConsumerList.count > 0 {
+            for (index, consumer) in currentConsumerList.enumerated() {
+                print(consumer.rdaCustomerProfileId ?? 0)
+                print(consumer.rdaCustomerAccInfoId ?? 0)
+                if let consumerListLocalShakeel = cousumerListShakeel {
+                    var isNotFoundAndNewUserProfileID = true
+                    consumerListLocalShakeel.forEach {
+                       if $0.rdaCustomerProfileID == consumer.rdaCustomerProfileId {
+                            print("record found")
+                            isNotFoundAndNewUserProfileID = false
+                        }
+                    }
+                    if isNotFoundAndNewUserProfileID {
+                        print("------Start-----Profile Id Not Found------")
+                        tempRdaCustomerProfileID = consumer.rdaCustomerProfileId ?? 0
+                        tempRdaCustomerAccInfoId = consumer.rdaCustomerAccInfoId
+                        print("------End-----Profile Id Not Found------")
+                        foundIndex = index
+                    }
+                }
+            }
+        }
+        //MARK: - Start-----If user profile id found Replace in new user Request data
+//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerProfileID
+        
+        if foundIndex != 99 {
+            currentConsumerList[foundIndex] = BasicInfoConsumerListInputModel()!
+            currentConsumerList[foundIndex].isPrimary = false
+            currentConsumerList[foundIndex].isPrimaryRegistered = false
+        }
+        else {
+            foundIndex = 0
+            currentConsumerList[foundIndex].isPrimary = true
+        }
+        
+//        currentConsumerList[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+//        currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
+        
+        
+        currentConsumerList[foundIndex].rdaCustomerAccInfoId = newUserInfo.rdaCustomerAccInfoId
+        currentConsumerList[foundIndex].rdaCustomerProfileId = newUserInfo.rdaCustomerProfileId
+        currentConsumerList[foundIndex].customerTypeId = newUserInfo.customerTypeId
+        currentConsumerList[foundIndex].atmTypeId = newUserInfo.atmTypeId
+        currentConsumerList[foundIndex].physicalCardInd = newUserInfo.physicalCardInd
+        currentConsumerList[foundIndex].transAlertInd = newUserInfo.transAlertInd
+        currentConsumerList[foundIndex].chequeBookReqInd = newUserInfo.chequeBookReqInd
+        currentConsumerList[foundIndex].transactionalAlertId = newUserInfo.transactionalAlertId
+        currentConsumerList[foundIndex].reasonForVisaDebitCardRequestId = newUserInfo.reasonForVisaDebitCardRequestId
+        return currentConsumerList
+    }
 }

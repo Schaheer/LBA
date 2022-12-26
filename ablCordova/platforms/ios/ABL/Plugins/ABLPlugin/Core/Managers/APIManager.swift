@@ -60,13 +60,13 @@ final class APIManager: BaseHTTPClient {
     typealias changeMobileNumberCompletion = (AFDataResponse<ChangeNumberResponseModel>) -> Void
 
     typealias registerConsumerBasicInfoCompletion = (AFDataResponse<RegisterConsumerBasicInfoResponseModel>) -> Void
-    typealias registerConsumerEmailCompletion = (AFDataResponse<RegisterConsumerEmailResponseModel>) -> Void
+    typealias registerConsumerEmailCompletion = (AFDataResponse<RegisterConsumerBasicInfoResponseModel>) -> Void
     typealias registerConsumerAddressCompletion = (AFDataResponse<RegisterConsumerAddressResponseModel>) -> Void
     typealias getOccupationsListCompletion = (AFDataResponse<OccupationsListResponseModel>) -> Void
-    typealias registerConsumerEmploymentDetailsCompletion = (AFDataResponse<RegisterConsumerEmploymentDetailsResponseModel>) -> Void
-    typealias setupConsumerTransactionDetailsCompletion = (AFDataResponse<ConsumerTransactionDetailsResponseModel>) -> Void
+    typealias registerConsumerEmploymentDetailsCompletion = (AFDataResponse<RegisterConsumerBasicInfoResponseModel>) -> Void
+    typealias setupConsumerTransactionDetailsCompletion = (AFDataResponse<RegisterVerifyOTPResponseModel>) -> Void
     typealias saveAttachmentCompletion = (AFDataResponse<SaveAttachmentResponseModel>) -> Void
-    typealias registerPicAndSignCompletion = (AFDataResponse<RegisterPicAndSignResponseModel>) -> Void
+    typealias registerPicAndSignCompletion = (AFDataResponse<RegisterVerifyOTPResponseModel>) -> Void
     typealias registerFACTAInfoCompletion = (AFDataResponse<RegisterFACTAInfoResponseModel>) -> Void
     typealias taxNotAvailableCompletion = (AFDataResponse<CodeTypeResponseModel>) -> Void
     typealias additionalApplicantRelationshipsCompletion = (AFDataResponse<CodeTypeResponseModel>) -> Void
@@ -333,7 +333,7 @@ final class APIManager: BaseHTTPClient {
         )
     }
     func registerConsumerEmail(
-        input: RegisterConsumerEmailInputModel,
+        input: RegisterConsumerBasicInfoInputModel,
         completion: @escaping registerConsumerEmailCompletion
     ) {
         clearParameters()
@@ -400,7 +400,7 @@ final class APIManager: BaseHTTPClient {
     }
 
     func registerConsumerEmploymentDetails(
-        input: RegisterConsumerEmploymentDetailsInputModel,
+        input: RegisterConsumerBasicInfoInputModel,
         completion: @escaping registerConsumerEmploymentDetailsCompletion
     ) {
         clearParameters()
@@ -418,7 +418,7 @@ final class APIManager: BaseHTTPClient {
     }
     
     func setupConsumerTransactionDetails(
-        input: SetupTransactionsInputModel,
+        input: RegisterConsumerBasicInfoInputModel,
         completion: @escaping setupConsumerTransactionDetailsCompletion
     ) {
         clearParameters()
@@ -474,9 +474,8 @@ final class APIManager: BaseHTTPClient {
         )
     }
     func savePicAndSign(
-        input: RegisterPicAndSignInputModel,
+        input: RegisterConsumerBasicInfoInputModel,
         completion: @escaping registerPicAndSignCompletion
-
     ) {
         clearParameters()
         

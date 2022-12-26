@@ -10,6 +10,8 @@ import BetterSegmentedControl
 
 final class NationalityVC: UIViewController {
     
+    
+    
     @IBOutlet weak var nationalitySegment: BetterSegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
@@ -76,6 +78,10 @@ final class NationalityVC: UIViewController {
     @IBAction func nextButtonTapped(_ sender: UIButton){
         print(nationalitySegment.index)
         if nationalitySegment.index == 1 {
+            if self.nationalityDualCountryNameLocal == nil {
+                self.showAlertSuccessWithPopToVC(viewController: self, title: "Error!", message: "Please select dual country")
+                return
+            }
             modelRegistrationSteper.isNationalityDual = true
             if nationalityDualCountryNameLocal != nil {
                 modelRegistrationSteper.nationalityDualName = nationalityDualCountryNameLocal
@@ -89,8 +95,6 @@ final class NationalityVC: UIViewController {
             modelRegistrationSteper.nationalityDualId = nil
         }
         registerConsumerBasicInfo()
-        
-        
     }
     
     private func subscribeViewModel() {
@@ -102,9 +106,6 @@ final class NationalityVC: UIViewController {
             
             self?.countrisListResponse = response
             let countries = self?.countrisListResponse?.data
-            print(countries)
-            print(countries)
-
 //            let selectedCountryByDefault = countries?. {
 //                $0.id == 157
 //                print($0.id)
@@ -126,9 +127,6 @@ final class NationalityVC: UIViewController {
 
 extension NationalityVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(nationalitySegment.index)
-        print(nationalitySegment.index == 0)
-
         let index = nationalitySegment.index
         if index == 1 {
             return 2
@@ -144,7 +142,7 @@ extension NationalityVC: UITableViewDelegate, UITableViewDataSource {
                 withIdentifier: "SelectNationalityCell2",
                 for: indexPath
             ) as? SelectNationalityCell
-            cell?.selectNationalityLabel.text = "Pakistan"
+            cell?.labelDualCountry.text = "Pakistan"
             return cell ?? UITableViewCell()
         }
         if indexPath.row == 1 {
@@ -155,7 +153,7 @@ extension NationalityVC: UITableViewDelegate, UITableViewDataSource {
             cell?.countrisListResponse = countrisListResponse
             cell?.setupDropdown()
             if modelRegistrationSteper.nationalityDualName != nil {
-                cell?.selectNationalityLabel.text = modelRegistrationSteper.nationalityDualName!
+                cell?.labelDualCountry.text = modelRegistrationSteper.nationalityDualName!
             }
             cell?.countrySelected = { [weak self] (index, countryName) in
                 guard let countries = self?.countrisListResponse?.data else { return }
@@ -191,7 +189,6 @@ extension NationalityVC: UITableViewDelegate, UITableViewDataSource {
     
     func registerConsumerBasicInfo() {
         var currentUser = getCurrentUser()
-        
         let nationalityPakistan = NationalityInputModel(
             rdaCustomerId: currentUser.rdaCustomerProfileID,
             nationalityId: 157,
@@ -241,7 +238,6 @@ extension NationalityVC: UITableViewDelegate, UITableViewDataSource {
             switch response.result {
             case .success(let value):
                 self.delegate?.addChild(vc: .occupationVC, fromViewController: "")
-                print(value)
                 break
             case .failure(let error):
                 print(error.errorDescription)

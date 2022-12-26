@@ -14,21 +14,26 @@ class WelcomeVC: UIViewController {
     @IBOutlet weak var helpLineNumber: LabelSetting!
     @IBOutlet weak var email: LabelSetting!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        DataCacheManager.shared.saveNoOfJointApplicants(input: 0)
-        // Do any additional setup after loading the view.
-    }
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        DataCacheManager.shared.saveNoOfJointApplicants(input: 0)
+        // Do any additional setup after loading the view.
+        resetDefaults()
+    }
+    func resetDefaults() {
+        let defaults = UserDefaults.standard
+        let dictionary = defaults.dictionaryRepresentation()
+        dictionary.keys.forEach { key in
+            defaults.removeObject(forKey: key)
+        }
+    }
     
     @IBAction func nextTapped(_ sender: UIButton) {
-        
         openAvailabilityVC()
-        
     }
     @IBAction func backTapped(_ sender: UIButton) {
         

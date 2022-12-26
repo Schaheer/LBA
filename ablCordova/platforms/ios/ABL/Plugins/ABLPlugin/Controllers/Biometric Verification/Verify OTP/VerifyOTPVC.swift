@@ -337,71 +337,42 @@ extension VerifyOTPVC: OTPDelegate {
     }
     
     private func callRegisterVerifyOTP(){
-        //        if DataCacheManager.shared.getRegisterVerifyOTPResponseModel() != nil {
-        //
-        //        }
-        
         guard
             let viewAppGenerateOTPResponse = DataCacheManager.shared.loadViewAppGenerateOTPResponse() else { return }
         guard let viewAppGenerateResponseModel = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList else { return }
-        print(viewAppGenerateResponseModel.first?.idNumber)
+        print(viewAppGenerateResponseModel.first?.idNumber as Any)
 
-        var consumerListInputModelArray = [ConsumerListInputModel]()
         let consumer = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList?.first
-        
         let consumerList = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
-        print(consumer?.idNumber)
-        var rdaCustomerAccInfoId = 0
-        if let rdaid = consumer?.rdaCustomerAccInfoId as? Int {
-            rdaCustomerAccInfoId = rdaid
-        }
-        else if let rdaid = consumer?.rdaCustomerAccInfoId as? Double {
-            rdaCustomerAccInfoId = Int(rdaid)
-        }
-        else if let rdaid = consumer?.rdaCustomerAccInfoId as? String {
-            rdaCustomerAccInfoId = Int(rdaid)!
-        }
-        guard let consumerListInputModelll = ConsumerListInputModel(
-            cnicNumber: viewAppGenerateOTPResponse.idNumber ?? "",
-            mobileNumber: viewAppGenerateOTPResponse.mobileNo ?? "",
+        var consumerListInputModelArray = [BasicInfoConsumerListInputModel]()
+        var currentUser = getCurrentUser()
+        
+        
+        guard let basicInfoConsumerListInput = BasicInfoConsumerListInputModel(
+            rdaCustomerAccInfoId: currentUser.rdaCustomerAccInfoId as? Double,
+//            rdaCustomerProfileId: currentUser.rdaCustomerProfileID as? Double,
             isPrimary: viewAppGenerateOTPResponse.isPrimary ?? false,
-            customerTypeID: BaseConstants.Config.customerTypeID,
-            customerBranch: consumer?.customerBranch ?? "",
-            bankingModeID: consumer?.accountInformation?.bankingModeID, //selectBankingMethodViewModel.getBankingModeID(),
+            isPrimaryRegistered: false,
+            customerTypeId: BaseConstants.Config.customerTypeID,
+            mobileNo: viewAppGenerateOTPResponse.mobileNo ?? "",
             dateOfBirth: viewAppGenerateOTPResponse.dateOfBirth ?? "",
             dateOfIssue: viewAppGenerateOTPResponse.dateOfIssue ?? "",
-            isPrimaryRegistered: false,
-            rdaCustomerAccInfoId:  rdaCustomerAccInfoId,
-            attachments: [[String : Any]]()
+            idNumber: viewAppGenerateOTPResponse.idNumber ?? "",
+            attachments: [[String : Any]](),
+            customerBranch: consumer?.customerBranch ?? "",
+            bankingModeId: consumer?.accountInformation?.bankingModeID
         ) else { return }
         
-        consumerListInputModelArray.append(consumerListInputModelll)
-        consumerList?.forEach {
-            guard let consumerListInputModel = ConsumerListInputModel(
-                cnicNumber: $0.idNumber ?? "",
-                mobileNumber: $0.mobileNo ?? "",
-                isPrimary: $0.isPrimary ?? false,
-                customerTypeID: BaseConstants.Config.customerTypeID,
-                customerBranch: $0.customerBranch ?? "",
-                bankingModeID: consumer?.accountInformation?.bankingModeID, //selectBankingMethodViewModel.getBankingModeID(),
-                dateOfBirth: $0.dateOfBirth ?? "",
-                dateOfIssue: $0.dateOfIssue ?? "",
-                isPrimaryRegistered: $0.isPrimary ?? false,
-                rdaCustomerAccInfoId: rdaCustomerAccInfoId,
-                attachments: [[String : Any]]()
-            ) else { return }
-            
-            consumerListInputModelArray.append(consumerListInputModel)
-        }
-        
-//        print(DataCacheManager.shared.loadNoOfJointApplicants())
-//        print(consumer)
-//        print(DataCacheManager.shared.loadRegisterConsumerAccountInfoResponse())
-//        print(consumerListInputModelArray)
-        
+        consumerListInputModelArray = getListOfConsumers(newUserInfo: basicInfoConsumerListInput)
         //TODO: add data of primary and all the secondary applicants in consumerList Array
-        guard let registerVerifyOTPInput = RegisterVerifyOTPInputModel(consumerList: consumerListInputModelArray, noOfJointApplicants: DataCacheManager.shared.loadNoOfJointApplicants() ?? 0, bioMetricVerificationNadraMobileReq: nil, channelId: BaseConstants.Config.channelID, customerTypeId: BaseConstants.Config.customerTypeID) else { return }
-
+        guard let registerVerifyOTPInput = RegisterVerifyOTPInputModel(
+            consumerList: consumerListInputModelArray,
+            noOfJointApplicants: DataCacheManager.shared.loadNoOfJointApplicants() ?? 0,
+            bioMetricVerificationNadraMobileReq: nil,
+            channelId: BaseConstants.Config.channelID,
+            customerTypeId: BaseConstants.Config.customerTypeID
+        ) else { return }
+        
         registerVerifyOTP(input: registerVerifyOTPInput)
     }
     
@@ -422,5 +393,73 @@ extension VerifyOTPVC: OTPDelegate {
                 self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: errorMessage ?? "")
             }
         }
+    }
+    
+    //MARK: - For merging
+    func getListOfConsumers(newUserInfo: BasicInfoConsumerListInputModel) -> [BasicInfoConsumerListInputModel] {
+        var tempRdaCustomerProfileID = newUserInfo.rdaCustomerProfileId
+        var tempRdaCustomerAccInfoId = newUserInfo.rdaCustomerAccInfoId
+        
+        let cousumerListHamza = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
+        var currentConsumerList = getCurrentConsumerListResponseInInputModel(responseCunsumerList: cousumerListHamza!)
+        let cousumerListShakeel = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
+        var foundIndex = 99
+        //MARK: - Start----- Just to find new User Profile ID
+        if currentConsumerList.count > 0 {
+            for (index, consumer) in currentConsumerList.enumerated() {
+                print(consumer.rdaCustomerProfileId ?? 0)
+                print(consumer.rdaCustomerAccInfoId ?? 0)
+                if let consumerListLocalShakeel = cousumerListShakeel {
+                    var isNotFoundAndNewUserProfileID = true
+                    consumerListLocalShakeel.forEach {
+                       if $0.rdaCustomerProfileID == consumer.rdaCustomerProfileId {
+                            print("record found")
+                            isNotFoundAndNewUserProfileID = false
+                        }
+                    }
+                    if isNotFoundAndNewUserProfileID {
+                        print("------Start-----Profile Id Not Found------")
+                        tempRdaCustomerProfileID = consumer.rdaCustomerProfileId ?? 0
+                        tempRdaCustomerAccInfoId = consumer.rdaCustomerAccInfoId
+                        print("------End-----Profile Id Not Found------")
+                        foundIndex = index
+                    }
+                }
+            }
+        }
+        //MARK: - Start-----If user profile id found Replace in new user Request data
+//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerProfileID
+        
+        if foundIndex != 99 {
+            currentConsumerList[foundIndex] = BasicInfoConsumerListInputModel()!
+            currentConsumerList[foundIndex].isPrimary = false
+            currentConsumerList[foundIndex].isPrimaryRegistered = false
+        }
+        else {
+            foundIndex = 0
+            currentConsumerList[foundIndex].isPrimary = true
+        }
+        
+        
+        currentConsumerList[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+        currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
+        currentConsumerList[foundIndex].customerTypeId = newUserInfo.customerTypeId
+        currentConsumerList[foundIndex].mobileNo = newUserInfo.mobileNo
+        currentConsumerList[foundIndex].dateOfBirth = newUserInfo.dateOfBirth
+        currentConsumerList[foundIndex].dateOfIssue = newUserInfo.dateOfIssue
+        currentConsumerList[foundIndex].idNumber = newUserInfo.idNumber
+        //currentConsumerList[foundIndex].attachments = newUserInfo.attachments
+        currentConsumerList[foundIndex].customerBranch = newUserInfo.customerBranch
+        currentConsumerList[foundIndex].bankingModeId = newUserInfo.bankingModeId
+        if cousumerListShakeel?.count ?? 0 > 0 {
+            currentConsumerList[foundIndex].isPrimary = false
+            currentConsumerList[foundIndex].isPrimaryRegistered = false
+            var appendConsumerList = getCurrentConsumerListResponseInInputModel(responseCunsumerList: cousumerListShakeel!)
+            appendConsumerList.append(currentConsumerList.first!)
+            currentConsumerList = appendConsumerList
+        }
+        
+        return currentConsumerList
     }
 }

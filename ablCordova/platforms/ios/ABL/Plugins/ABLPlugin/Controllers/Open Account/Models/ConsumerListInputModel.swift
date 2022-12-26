@@ -41,7 +41,7 @@ final class ConsumerListInputModel: BaseInputModel {
     var dateOfIssue: String?
     var isPrimaryRegistered: Bool?
     var portedMobileNetwork: Bool?
-    var rdaCustomerAccInfoId: Any?
+    var rdaCustomerAccInfoId: Double?
     var attachments: [[String : Any]]?
 
     // MARK: - Model Initializers
@@ -96,7 +96,7 @@ final class ConsumerListInputModel: BaseInputModel {
         dateOfIssue: String,
         isPrimaryRegistered: Bool? = nil,
         portedMobileNetwork: Bool? = nil,
-        rdaCustomerAccInfoId: Int? = 0,
+        rdaCustomerAccInfoId: Double? = 0,
         attachments: [[String : Any]]
     ) {
         var dictionary = [String: Any]()

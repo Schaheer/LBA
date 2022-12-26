@@ -10,7 +10,7 @@ import Foundation
 protocol PicAndSignViewModelProtocol{
     
     var saveAttachmentResponse: Observable<SaveAttachmentResponseModel?> { get }
-    var registerPicAndSignResponse: Observable<RegisterPicAndSignResponseModel?> { get }
+    var registerPicAndSignResponse: Observable<RegisterVerifyOTPResponseModel?> { get }
     var errorMessage: Observable<String?> { get }
     var natureOfAccount: Observable<NatureOfAccount?> { get }
     var dropDownTapped: Observable<Bool> { get }
@@ -24,7 +24,7 @@ class PicAndSignViewModel: PicAndSignViewModelProtocol{
 
 
     private(set) var saveAttachmentResponse: Observable<SaveAttachmentResponseModel?> = Observable(nil)
-    private(set) var registerPicAndSignResponse: Observable<RegisterPicAndSignResponseModel?> = Observable(nil)
+    private(set) var registerPicAndSignResponse: Observable<RegisterVerifyOTPResponseModel?> = Observable(nil)
     private(set) var errorMessage: Observable<String?> = Observable(nil)
     private(set) var natureOfAccount: Observable<NatureOfAccount?> = Observable(nil)
     private(set) var dropDownTapped: Observable<Bool> = Observable(false)
@@ -94,7 +94,6 @@ class PicAndSignViewModel: PicAndSignViewModelProtocol{
         guard
             let rdaCustomerProfileId = rdaCustomerProfileId,
             let rdaCustomerAccInfoId = rdaCustomerAccInfoId,
-            let rdaCustomerId = rdaCustomerId,
             let customerTypeId = customerTypeId,
             let natureOfAccountId = natureOfAccountId,
             let noOfJointApplicatns = noOfJointApplicatns,
@@ -102,41 +101,25 @@ class PicAndSignViewModel: PicAndSignViewModelProtocol{
         else {
             self.errorMessage.value = "All fields required"
             return
-            
         }
-//        natureOfAccountPostParams.getData().getModeOfMajorTransId().add(Config.MODE_OF_MAJOR_TRANS_CASH);
-//        natureOfAccountPostParams.getData().getModeOfMajorTransId().add(Config.MODE_OF_MAJOR_TRANS_CLEARING);
-//        natureOfAccountPostParams.getData().getModeOfMajorTransId().add(Config.MODE_OF_MAJOR_TRANS_DOMESTIC_REMITTANCE);
-//        natureOfAccountPostParams.getData().getModeOfMajorTransId().add(Config.MODE_OF_MAJOR_TRANS_INTER_INTRA_BRANCH);
-//
-//        if (getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.REMITTANCE_ACCOUNT) {
-//            natureOfAccountPostParams.getData().getModeOfMajorTransId().add(Config.MODE_OF_MAJOR_TRANS_FOREIGN_REMITTANCE);
-//        }
-//        if (getBoolFromPref(Config.IS_ATM_SELECTED)){
-//            natureOfAccountPostParams.getData().getModeOfMajorTransId().add(Config.MODE_OF_MAJOR_TRANS_ATM);
-//            natureOfAccountPostParams.getData().getModeOfMajorTransId().add(Config.MODE_OF_MAJOR_TRANS_INTERNET_BANKING);
-//        }
-//
-//        public static int MODE_OF_MAJOR_TRANS_CASH = 108401;
-//
-//        public static int MODE_OF_MAJOR_TRANS_CLEARING = 108402;
-//
-//        public static int MODE_OF_MAJOR_TRANS_DOMESTIC_REMITTANCE = 108403;
-//
-//        public static int MODE_OF_MAJOR_TRANS_INTER_INTRA_BRANCH = 108405;
-//
-//        public static int MODE_OF_MAJOR_TRANS_FOREIGN_REMITTANCE = 108404;
-//
-//        public static int MODE_OF_MAJOR_TRANS_ATM = 108406;
-//
-//        public static int MODE_OF_MAJOR_TRANS_INTERNET_BANKING = 108407;
-        
+
         //TODO: add checks for isAtmSelected
-        var modeOfTransId: [Double] = [108401, 108402, 108403, 108405]
+        let modeOfTransId: [Double] = [108401, 108402, 108403, 108405]
+        var consumerListInputModelArray = [BasicInfoConsumerListInputModel]()
         
-        guard let registerPicAndSignConsumerInput = RegisterPicAndSignConsumerInputModel(rdaCustomerAccInfoId: rdaCustomerAccInfoId, rdaCustomerId: rdaCustomerId, customerTypeId: customerTypeId, natureOfAccountId: natureOfAccountId, noOfJointApplicatns: noOfJointApplicatns, rdaCustomerProfileId: rdaCustomerProfileId, nameOnPhysicalATM: nameOnPhysicalATM, modeOfMajorTransId: modeOfTransId ) else { return }
-        guard let registerPicAndSignInput = RegisterPicAndSignInputModel(consumerList: [registerPicAndSignConsumerInput]) else { return }
-        APIManager.shared.savePicAndSign(input: registerPicAndSignInput) { [weak self] response in
+        guard let basicInfoConsumerListInput = BasicInfoConsumerListInputModel(
+            rdaCustomerAccInfoId: rdaCustomerAccInfoId,
+            rdaCustomerProfileId: rdaCustomerProfileId,
+            isPrimary: true,
+            customerTypeId: customerTypeId, natureOfAccountId: natureOfAccountId,
+            noOfJointApplicatns: noOfJointApplicatns,
+            nameOnPhysicalATM: nameOnPhysicalATM,
+            modeOfMajorTransId: modeOfTransId
+        ) else { return }
+        
+        consumerListInputModelArray = getListOfConsumers(newUserInfo: basicInfoConsumerListInput)
+        guard let registerConsumerBasicInfoInput = RegisterConsumerBasicInfoInputModel(consumerList: consumerListInputModelArray) else {return}
+        APIManager.shared.savePicAndSign(input: registerConsumerBasicInfoInput) { [weak self] response in
             guard let self = self else { return }
             
             switch response.result {
@@ -179,5 +162,67 @@ class PicAndSignViewModel: PicAndSignViewModelProtocol{
     @objc
     func openDropdown() {
         dropDownTapped.value = true
+    }
+    
+    //MARK: - For merging
+    func getListOfConsumers(newUserInfo: BasicInfoConsumerListInputModel) -> [BasicInfoConsumerListInputModel] {
+        var tempRdaCustomerProfileID = newUserInfo.rdaCustomerProfileId
+        var tempRdaCustomerAccInfoId = newUserInfo.rdaCustomerAccInfoId
+        
+        let cousumerListHamza = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
+        var currentConsumerList = getCurrentConsumerListResponseInInputModel(responseCunsumerList: cousumerListHamza!)
+        let cousumerListShakeel = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
+        var foundIndex = 99
+        //MARK: - Start----- Just to find new User Profile ID
+        if currentConsumerList.count > 0 {
+            for (index, consumer) in currentConsumerList.enumerated() {
+                print(consumer.rdaCustomerProfileId ?? 0)
+                print(consumer.rdaCustomerAccInfoId ?? 0)
+                if let consumerListLocalShakeel = cousumerListShakeel {
+                    var isNotFoundAndNewUserProfileID = true
+                    consumerListLocalShakeel.forEach {
+                       if $0.rdaCustomerProfileID == consumer.rdaCustomerProfileId {
+                            print("record found")
+                            isNotFoundAndNewUserProfileID = false
+                        }
+                    }
+                    if isNotFoundAndNewUserProfileID {
+                        print("------Start-----Profile Id Not Found------")
+                        tempRdaCustomerProfileID = consumer.rdaCustomerProfileId ?? 0
+                        tempRdaCustomerAccInfoId = consumer.rdaCustomerAccInfoId
+                        print("------End-----Profile Id Not Found------")
+                        foundIndex = index
+                    }
+                }
+            }
+        }
+        //MARK: - Start-----If user profile id found Replace in new user Request data
+//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerProfileID
+        
+        if foundIndex != 99 {
+            currentConsumerList[foundIndex] = BasicInfoConsumerListInputModel()!
+            currentConsumerList[foundIndex].isPrimary = false
+            currentConsumerList[foundIndex].isPrimaryRegistered = false
+        }
+        else {
+            foundIndex = 0
+            currentConsumerList[foundIndex].isPrimary = true
+        }
+        
+//        currentConsumerList[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+//        currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
+        
+        
+        currentConsumerList[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+        currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
+        currentConsumerList[foundIndex].customerTypeId = newUserInfo.customerTypeId
+        currentConsumerList[foundIndex].atmTypeId = newUserInfo.atmTypeId
+        currentConsumerList[foundIndex].physicalCardInd = newUserInfo.physicalCardInd
+        currentConsumerList[foundIndex].transAlertInd = newUserInfo.transAlertInd
+        currentConsumerList[foundIndex].chequeBookReqInd = newUserInfo.chequeBookReqInd
+        currentConsumerList[foundIndex].transactionalAlertId = newUserInfo.transactionalAlertId
+        currentConsumerList[foundIndex].reasonForVisaDebitCardRequestId = newUserInfo.reasonForVisaDebitCardRequestId
+        return currentConsumerList
     }
 }
