@@ -141,6 +141,7 @@ final class SelectAccountTypeVC: UIViewController {
             guard let self = self, let response = response else { return }
             
             DataCacheManager.shared.saveRegisterConsumerAccountInfoResponse(input: response)
+            self.test()
             modelRegistrationSteper.selectAccountTypeViewModel = self.selectAccountTypeViewModel
             modelRegistrationSteper.selectedBankingMode = self.selectedBankingMode
             self.selectAccountTypeViewModel.openSelectPreferredAccountVC()
@@ -197,5 +198,29 @@ final class SelectAccountTypeVC: UIViewController {
         } else {
             AlertManager.shared.showOKAlert(with: "Error", message: "Please select account type and purpose of account.")
         }
+    }
+    
+    func test() {
+        let primaryUser = getPrimaryUser()
+        print(primaryUser)
+        print(primaryUser.accountInformation?.purposeOfAccountID)
+        print(primaryUser.customerTypeID)
+//        print(primaryUser.accountTypeId)
+//        print(primaryUser.customerAccountTypeId)
+        print(primaryUser.natureOfAccountID)
+
+        let accountInfo = DataCacheManager.shared.loadRegisterConsumerAccountInfoResponse()
+        
+//        print(primaryUser.accountInformation?.bankingModeID)
+//        print(primaryUser.accountInformation?.customerAccountTypeID)
+//        print(accountInfo?.data?.accountTypeID)
+//        print(accountInfo?.data?.customerAccountTypeID)
+        print(accountInfo?.data?.customerTypeID)
+        print(accountInfo?.data?.purposeOfAccountID)
+        print(accountInfo?.data?.natureOfAccountID)
+//        accountInfo?.data?.bankingModeID
+//        accountInfo?.data?.customerBranch
+        
+        
     }
 }

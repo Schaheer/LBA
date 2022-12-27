@@ -111,7 +111,8 @@ class PicAndSignViewModel: PicAndSignViewModelProtocol{
             rdaCustomerAccInfoId: rdaCustomerAccInfoId,
             rdaCustomerProfileId: rdaCustomerProfileId,
             isPrimary: true,
-            customerTypeId: customerTypeId, natureOfAccountId: natureOfAccountId,
+            customerTypeId: customerTypeId,
+            natureOfAccountId: natureOfAccountId,
             noOfJointApplicatns: noOfJointApplicatns,
             nameOnPhysicalATM: nameOnPhysicalATM,
             modeOfMajorTransId: modeOfTransId
@@ -119,7 +120,26 @@ class PicAndSignViewModel: PicAndSignViewModelProtocol{
         
         consumerListInputModelArray = getListOfConsumers(newUserInfo: basicInfoConsumerListInput)
         guard let registerConsumerBasicInfoInput = RegisterConsumerBasicInfoInputModel(consumerList: consumerListInputModelArray) else {return}
-        APIManager.shared.savePicAndSign(input: registerConsumerBasicInfoInput) { [weak self] response in
+        let primaryUser = getPrimaryUser()
+        let accountInfo = DataCacheManager.shared.loadRegisterConsumerAccountInfoResponse()
+        
+        var accountTypeId = primaryUser.accountInformation?.customerAccountTypeID ?? 0
+        guard let input = RegisterConsumerAccountInfoInputModel(
+            rdaCustomerAccInfoID: primaryUser.rdaCustomerAccInfoId,
+            rdaCustomerID: Int(primaryUser.rdaCustomerProfileID!),
+            bankingModeID: (accountInfo?.data?.bankingModeID)!,
+            customerAccountTypeID: (accountInfo?.data?.customerAccountTypeID)!,
+            customerBranch: (accountInfo?.data?.customerBranch)!,
+            customerTypeID: customerTypeId,
+            purposeOfAccountID: (accountInfo?.data?.purposeOfAccountID)!,
+            natureOfAccountID: natureOfAccountId,
+            noOfJointApplicatns: noOfJointApplicatns,
+            nameOnPhysicalATM: nameOnPhysicalATM,
+            modeOfMajorTransId: modeOfTransId
+//            genderId: modelRegistrationSteper.genderId
+        ) else { return }
+                
+        APIManager.shared.savePicAndSign(input: input) { [weak self] response in
             guard let self = self else { return }
             
             switch response.result {
@@ -209,20 +229,17 @@ class PicAndSignViewModel: PicAndSignViewModelProtocol{
             foundIndex = 0
             currentConsumerList[foundIndex].isPrimary = true
         }
-        
 //        currentConsumerList[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
 //        currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
-        
-        
         currentConsumerList[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
         currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
+        currentConsumerList[foundIndex].rdaCustomerId = tempRdaCustomerProfileID
         currentConsumerList[foundIndex].customerTypeId = newUserInfo.customerTypeId
-        currentConsumerList[foundIndex].atmTypeId = newUserInfo.atmTypeId
-        currentConsumerList[foundIndex].physicalCardInd = newUserInfo.physicalCardInd
-        currentConsumerList[foundIndex].transAlertInd = newUserInfo.transAlertInd
-        currentConsumerList[foundIndex].chequeBookReqInd = newUserInfo.chequeBookReqInd
-        currentConsumerList[foundIndex].transactionalAlertId = newUserInfo.transactionalAlertId
-        currentConsumerList[foundIndex].reasonForVisaDebitCardRequestId = newUserInfo.reasonForVisaDebitCardRequestId
+        currentConsumerList[foundIndex].noOfJointApplicatns = newUserInfo.noOfJointApplicatns
+        currentConsumerList[foundIndex].nameOnPhysicalATM = newUserInfo.nameOnPhysicalATM
+        currentConsumerList[foundIndex].modeOfMajorTransId = newUserInfo.modeOfMajorTransId
+        
         return currentConsumerList
     }
 }
+

@@ -14,6 +14,8 @@ final class ConsumerListResponseModel: BaseResponseModel {
     enum CodingKeys: String {
         case rdaCustomerAccInfoId = "accountInformation.rdaCustomerAccInfoId"
         case rdaCustomerProfileID = "rdaCustomerProfileId"
+        case accountTypeId = "accountInformation.accountTypeId"
+        case customerAccountTypeId = "accountInformation.customerAccountTypeId"
         case accessToken
         case customerTitleID = "customerTitleId"
         case customerTitle
@@ -87,6 +89,8 @@ final class ConsumerListResponseModel: BaseResponseModel {
     // MARK: - Model Properties
     var rdaCustomerAccInfoId: Any?
     var rdaCustomerProfileID: Double?
+    var accountTypeId: Double?
+    var customerAccountTypeId: Double?
     var accessToken: String?
     var customerTitleID: Double?
     var customerTitle: String?
@@ -173,6 +177,8 @@ final class ConsumerListResponseModel: BaseResponseModel {
         super.mapping(map: map)
         rdaCustomerProfileID <- map[CodingKeys.rdaCustomerProfileID.rawValue]
         rdaCustomerAccInfoId <- map[CodingKeys.rdaCustomerAccInfoId.rawValue]
+        accountTypeId <- map[CodingKeys.accountTypeId.rawValue]
+        customerAccountTypeId <- map[CodingKeys.customerAccountTypeId.rawValue]
         accessToken <- map[CodingKeys.accessToken.rawValue]
         customerTitleID <- map[CodingKeys.customerTitleID.rawValue]
         customerTitle <- map[CodingKeys.customerTitle.rawValue]

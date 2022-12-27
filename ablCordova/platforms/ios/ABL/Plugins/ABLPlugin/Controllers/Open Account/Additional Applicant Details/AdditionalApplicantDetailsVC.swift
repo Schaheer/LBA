@@ -27,7 +27,7 @@ final class AdditionalApplicantDetailsVC: UIViewController {
             codeTypeID: BaseConstants.Config.additionalApplicantRelationshipsLookupID
         )
         
-        getConsumerAccountDetails()
+//        getConsumerAccountDetails()
     }
     
     @IBAction func backTapped(_ sender: UIButton) {

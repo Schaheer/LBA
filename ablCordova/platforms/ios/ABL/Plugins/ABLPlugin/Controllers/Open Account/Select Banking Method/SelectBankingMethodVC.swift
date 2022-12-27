@@ -95,9 +95,26 @@ final class SelectBankingMethodVC: UIViewController {
         let branch = selectBankingMethodViewModel.getBranchName()
         
         if bankingModeID != 0 && !branch.isEmpty {
+            //            let viewAppGenerateResponseModel = DataCacheManager.shared.loadViewAppGenerateOTPResponseArray()
+            //            var consumerListInputModelArray = [ConsumerListInputModel]()
+            //
+            //            viewAppGenerateResponseModel.forEach {
+            //                guard let consumerListInputModel = ConsumerListInputModel(
+            //                    cnicNumber: $0.idNumber ?? "",
+            //                    mobileNumber: $0.mobileNo ?? "",
+            //                    isPrimary: true,
+            //                    customerTypeID: BaseConstants.Config.customerTypeID,
+            //                    customerBranch: selectBankingMethodViewModel.getBranchName(),
+            //                    bankingModeID: selectBankingMethodViewModel.getBankingModeID(),
+            //                    dateOfBirth: $0.dateOfBirth ?? "",
+            //                    dateOfIssue: $0.dateOfIssue ?? ""
+            //                ) else { return }
+            //
+            //                consumerListInputModelArray.append(consumerListInputModel)
+            //            }
             guard let viewAppGenerateResponseModel = DataCacheManager.shared.loadViewAppGenerateOTPResponse() else { return }
             let viewAppGenerateOTPWithData = DataCacheManager.shared.loadViewAppGenerateOTPWithData()
-
+            
             let attachments = viewAppGenerateOTPWithData?.attachments
             let cnicFrontAttachmentInput = [
                 "fileName": "CNIC FRONT",
@@ -112,9 +129,9 @@ final class SelectBankingMethodVC: UIViewController {
             
             guard let basicInfoConsumerListInput = BasicInfoConsumerListInputModel(
                 rdaCustomerAccInfoId: modelRegistrationSteper.rdaCustomerAccInfoId,
-    //            rdaCustomerProfileId: currentUser.rdaCustomerProfileID as? Double,
+                //            rdaCustomerProfileId: currentUser.rdaCustomerProfileID as? Double,
                 isPrimary: true,
-//                isPrimaryRegistered: false,
+                //                isPrimaryRegistered: false,
                 customerTypeId: BaseConstants.Config.customerTypeID,
                 mobileNo: viewAppGenerateResponseModel.mobileNo ?? "",
                 dateOfBirth: viewAppGenerateResponseModel.dateOfBirth ?? "",
@@ -128,7 +145,7 @@ final class SelectBankingMethodVC: UIViewController {
             let fingerprintList =  self.fingerprintList
             guard let lat = self.selectBankingMethodViewModel.getUserLocation()?.coordinate.latitude, let long = self.selectBankingMethodViewModel.getUserLocation()?.coordinate.longitude else { return }
             guard let verifyBioMetricNadraInputData = VerifyBiometricNadraInputData(rdaCustomerProfileId: nil, rdaCustomerAccountInfoId: nil, cnic: viewAppGenerateResponseModel.idNumber ?? "", fingerprints: fingerprintList, templateType: "WSQ", contactNumber: "", areaName: "", accountType: "", latitude: lat, longitude: long, imei: "") else { return }
-
+            
             var consumerListInputModelArray = [BasicInfoConsumerListInputModel]()
             consumerListInputModelArray = getListOfConsumers(newUserInfo: basicInfoConsumerListInput)
             guard
@@ -347,10 +364,8 @@ final class SelectBankingMethodVC: UIViewController {
             guard let self = self, isTapped else { return }
             self.dropDown.show()
         }
-        
         selectBankingMethodViewModel.registerVerifyOTPResponse.bind { [weak self] response in
             guard let self = self, let response = response else { return }
-            print(response.consumerList?.first?.rdaCustomerAccInfoId)
             if let rdaId = response.consumerList?.first?.rdaCustomerAccInfoId as? Int {
                 modelRegistrationSteper.rdaCustomerAccInfoId = Double(rdaId)
             }
@@ -446,7 +461,6 @@ final class SelectBankingMethodVC: UIViewController {
         else {
             currentConsumerList.append(newUserInfo)
         }
-        
         return currentConsumerList
     }
 }

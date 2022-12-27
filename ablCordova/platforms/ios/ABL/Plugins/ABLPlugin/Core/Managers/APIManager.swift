@@ -474,14 +474,13 @@ final class APIManager: BaseHTTPClient {
         )
     }
     func savePicAndSign(
-        input: RegisterConsumerBasicInfoInputModel,
+        input: RegisterConsumerAccountInfoInputModel,
         completion: @escaping registerPicAndSignCompletion
     ) {
         clearParameters()
         
         parameters = input.dictionaryRepresentation()
-        let endPoint = BaseConstants.BaseURL.RDA.consumer.rawValue + APIEndPoint.registerConsumerBasicInfo.rawValue
-
+        let endPoint = BaseConstants.BaseURL.RDA.consumer.rawValue + APIEndPoint.registerConsumerAccountInfo.rawValue
         
         executePost(
             endPoint: endPoint,

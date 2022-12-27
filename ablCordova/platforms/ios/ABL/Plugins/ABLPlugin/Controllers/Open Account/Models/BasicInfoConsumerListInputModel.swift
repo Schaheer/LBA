@@ -35,6 +35,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
     enum CodingKeys: String {
         case rdaCustomerAccInfoId = "rdaCustomerAccInfoId"
         case rdaCustomerProfileId
+        case rdaCustomerId
         case accessToken
         case customerTitleId
         case customerTitle
@@ -119,6 +120,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
     
     var rdaCustomerAccInfoId: Double?
     var rdaCustomerProfileId: Double?
+    var rdaCustomerId: Double?
     var fullName: String?
     var fatherHusbandName: String?
     var motherMaidenName: String?
@@ -217,6 +219,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
     required init?(
         rdaCustomerAccInfoId: Double? = nil,
         rdaCustomerProfileId: Double? = nil,
+        rdaCustomerId: Double? = nil,
         fullName: String? = nil,
         fatherHusbandName: String? = nil,
         motherMaidenName: String? = nil,
@@ -301,6 +304,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.rdaCustomerAccInfoId.rawValue] = rdaCustomerAccInfoId
         dictionary[CodingKeys.rdaCustomerProfileId.rawValue] = rdaCustomerProfileId
+        dictionary[CodingKeys.rdaCustomerId.rawValue] = rdaCustomerId
         dictionary[CodingKeys.fullName.rawValue] = fullName
         dictionary[CodingKeys.fatherHusbandName.rawValue] = fatherHusbandName
         dictionary[CodingKeys.motherMaidenName.rawValue] = motherMaidenName
@@ -385,6 +389,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
 
         self.rdaCustomerAccInfoId = rdaCustomerAccInfoId
         self.rdaCustomerProfileId = rdaCustomerProfileId
+        self.rdaCustomerId = rdaCustomerId
         self.fullName = fullName
         self.fatherHusbandName = fatherHusbandName
         self.motherMaidenName = motherMaidenName
@@ -619,6 +624,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         super.mapping(map: map)
         rdaCustomerProfileId <- map[CodingKeys.rdaCustomerProfileId.rawValue]
         rdaCustomerAccInfoId <- map[CodingKeys.rdaCustomerAccInfoId.rawValue]
+        rdaCustomerId <- map[CodingKeys.rdaCustomerId.rawValue]
         customerTitleId <- map[CodingKeys.customerTitleId.rawValue]
         
         //        accessToken <- map[CodingKeys.accessToken.rawValue]
@@ -977,6 +983,8 @@ final class BasicInfoConsumerListInputModelForAll: BaseInputModel {
 
         rdaCustomerAccInfoId <- map[CodingKeys.rdaCustomerAccInfoId.rawValue]
         rdaCustomerProfileId <- map[CodingKeys.rdaCustomerProfileId.rawValue]
+
+        
         fullName <- map[CodingKeys.fullName.rawValue]
         fatherHusbandName <- map[CodingKeys.fatherHusbandName.rawValue]
         motherMaidenName <- map[CodingKeys.motherMaidenName.rawValue]

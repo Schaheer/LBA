@@ -135,7 +135,6 @@ final class DataCacheManager: NSObject {
         ) as? [String: Any] {
             return RegisterConsumerAccountInfoResponseModel(JSON: savedRegisterConsumerAccountInfoResponse)
         }
-        
         return nil
     }
     

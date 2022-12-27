@@ -163,6 +163,7 @@ final class PictureAndSignatureVC: UIViewController {
             picAndSignViewModel.singleAccountTapped()
             self.single()
         }
+        getConsumerAccountDetails()
     }
     
     override func viewDidLayoutSubviews() {
@@ -290,7 +291,6 @@ final class PictureAndSignatureVC: UIViewController {
         // move to
         modelRegistrationSteper.picAndSignViewModel = picAndSignViewModel
     }
-    
     
     func singleFlow() {
         isJointFlow = false
@@ -753,6 +753,7 @@ final class PictureAndSignatureVC: UIViewController {
             modelRegistrationSteper.additionalApplicantNo = Int(noOfJointApplicants ?? "0") ?? 0
             self.picAndSignViewModel.setNoOfJointApplicants(applicants: Int(noOfJointApplicants ?? "0") ?? 0)
             DataCacheManager.shared.saveNoOfJointApplicants(input: Int(noOfJointApplicants ?? "0") ?? 0)
+            noOfJointApplicant = Int(noOfJointApplicants ?? "0") ?? 0
         }
     }
 }
@@ -794,6 +795,55 @@ extension PictureAndSignatureVC: UIImagePickerControllerDelegate, UINavigationCo
                 path: "",
                 base64Content: signData?.base64EncodedString(),
                 rdaCustomerAccInfoId: DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last?.accountInformation?.rdaCustomerAccInfoID)
+        }
+    }
+    
+    private func getConsumerAccountDetails() {
+        guard
+            let consumerAccountDetails = DataCacheManager.shared.loadRegisterVerifyOTPResponse()
+        else { return }
+        
+        let consumer = consumerAccountDetails.consumerList?.first
+        getConsumerAccountDetail(
+            rdaCustomerProfileID: consumer?.rdaCustomerProfileID,
+            rdaCustomerAccInfoID: consumer?.accountInformation?.rdaCustomerAccInfoID,
+            customerTypeID: BaseConstants.Config.customerTypeID
+        )
+    }
+    
+    private func getConsumerAccountDetail(
+        rdaCustomerProfileID: Double?,
+        rdaCustomerAccInfoID: Double?,
+        customerTypeID: Double?
+    ) {
+        guard
+            let rdaCustomerProfileID = rdaCustomerProfileID,
+            let rdaCustomerAccInfoID = rdaCustomerAccInfoID,
+            let customerTypeID = customerTypeID
+        else {
+            print("All fields required")
+            return }
+        
+        guard let input = ConsumerAccountDetailInputModel(
+            rdaCustomerProfileID: rdaCustomerProfileID,
+            rdaCustomerAccInfoID: rdaCustomerAccInfoID,
+            customerTypeID: customerTypeID
+        ) else { return }
+        
+        APIManager.shared.getConsumerAccountDetail(input: input) { [weak self] response in
+            guard let self = self else { return }
+            
+            switch response.result {
+            case .success(let value):
+                var registerVerifyOTPResponseModel: RegisterVerifyOTPResponseModel = value
+                print(registerVerifyOTPResponseModel)
+                DataCacheManager.shared.saveRegisterVerifyOTPResponse(input: registerVerifyOTPResponseModel)
+                DataCacheManager.shared.saveRegisterVerifyOTPResponseModel(registerVerifyOTPResponseModel: registerVerifyOTPResponseModel)
+                print(DataCacheManager.shared.getRegisterVerifyOTPResponseModel())
+                print(DataCacheManager.shared.getRegisterVerifyOTPResponseModel())
+            case .failure(let error):
+                print(error.errorDescription)
+            }
         }
     }
 }

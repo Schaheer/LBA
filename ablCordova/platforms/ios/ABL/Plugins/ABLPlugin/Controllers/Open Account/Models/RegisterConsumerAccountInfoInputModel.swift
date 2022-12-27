@@ -28,9 +28,12 @@ final class RegisterConsumerAccountInfoInputModel: BaseInputModel {
         case transactionalAlertID = "data.transactionalAlertId"
         case natureOfAccountID = "data.natureOfAccountId"
         case pdaRemitterDetailList = "data.pdaRemitterDetailList"
-        case noOfJointApplicants = "data.noOfJointApplicatns"
+        case noOfJointApplicants = "data.noOfJointApplicants"
+        case noOfJointApplicatns = "data.noOfJointApplicatns"
         case eSOAInd = "data.esoaInd"
         case genderId = "data.genderId"
+        case nameOnPhysicalATM = "data.nameOnPhysicalATM"
+        case modeOfMajorTransId = "data.modeOfMajorTransId"
     }
     
     // MARK: - Model Properties
@@ -53,6 +56,9 @@ final class RegisterConsumerAccountInfoInputModel: BaseInputModel {
     var noOfJointApplicants: Int?
     var eSOAInd: Int?
     var genderId: Int?
+    var noOfJointApplicatns: Int?
+    var nameOnPhysicalATM: String?
+    var modeOfMajorTransId: [Double]?
     
     // MARK: - Model Initializers
     
@@ -67,7 +73,11 @@ final class RegisterConsumerAccountInfoInputModel: BaseInputModel {
         customerAccountTypeID: Double,
         customerBranch: String,
         customerTypeID: Double,
-        purposeOfAccountID: Double
+        purposeOfAccountID: Double,
+        natureOfAccountID: Double? = nil,
+        noOfJointApplicatns: Int? = nil,
+        nameOnPhysicalATM: String? = nil,
+        modeOfMajorTransId: [Double]? = nil
 //        genderId: Int
     ) {
         var dictionary = [String: Any]()
@@ -78,6 +88,12 @@ final class RegisterConsumerAccountInfoInputModel: BaseInputModel {
         dictionary[CodingKeys.customerBranch.rawValue] = customerBranch
         dictionary[CodingKeys.customerTypeID.rawValue] = customerTypeID
         dictionary[CodingKeys.purposeOfAccountID.rawValue] = purposeOfAccountID
+        dictionary[CodingKeys.natureOfAccountID.rawValue] = natureOfAccountID
+        dictionary[CodingKeys.noOfJointApplicatns.rawValue] = noOfJointApplicatns
+        dictionary[CodingKeys.nameOnPhysicalATM.rawValue] = nameOnPhysicalATM
+        dictionary[CodingKeys.modeOfMajorTransId.rawValue] = modeOfMajorTransId
+        
+        
 //        dictionary[CodingKeys.genderId.rawValue] = genderId
         
         self.rdaCustomerAccInfoID = rdaCustomerAccInfoID
@@ -87,6 +103,11 @@ final class RegisterConsumerAccountInfoInputModel: BaseInputModel {
         self.customerBranch = customerBranch
         self.customerTypeID = customerTypeID
         self.purposeOfAccountID = purposeOfAccountID
+        self.natureOfAccountID = natureOfAccountID
+        self.noOfJointApplicatns = noOfJointApplicatns
+        self.nameOnPhysicalATM = nameOnPhysicalATM
+        self.modeOfMajorTransId = modeOfMajorTransId
+
 //        self.genderId = genderId
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
@@ -243,5 +264,8 @@ final class RegisterConsumerAccountInfoInputModel: BaseInputModel {
         noOfJointApplicants <- map[CodingKeys.noOfJointApplicants.rawValue]
         eSOAInd <- map[CodingKeys.eSOAInd.rawValue]
         genderId <- map[CodingKeys.genderId.rawValue]
+        noOfJointApplicatns <- map[CodingKeys.noOfJointApplicatns.rawValue]
+        nameOnPhysicalATM <- map[CodingKeys.nameOnPhysicalATM.rawValue]
+        modeOfMajorTransId <- map[CodingKeys.modeOfMajorTransId.rawValue]
     }
 }
