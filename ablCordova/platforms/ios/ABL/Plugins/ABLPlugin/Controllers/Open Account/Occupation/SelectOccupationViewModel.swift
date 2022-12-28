@@ -305,6 +305,7 @@ class EmploymentDetailsViewModel: EmploymentDetailsViewModelProtocol {
         currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
         currentConsumerList[foundIndex].occupationId = newUserInfo.occupationId
         currentConsumerList[foundIndex].professionId = newUserInfo.professionId
+        currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId
 
         return currentConsumerList
     }

@@ -52,6 +52,7 @@ class PersonalInformationViewModel: PersonalInformationViewModelProtocol {
                 fatherHusbandName: fatherHusbandName,
                 motherMaidenName: motherMaidenName,
                 isPrimary: consumerList?.count ?? 0 > 0 ? false : isPrimary,
+                genderId: modelRegistrationSteper.genderId,
                 cityOfBirth: placeOfBirth
             ) else { return }
             
@@ -95,6 +96,7 @@ class PersonalInformationViewModel: PersonalInformationViewModelProtocol {
             rdaCustomerAccInfoId: customerAccInfoID,
             rdaCustomerProfileId: customerProfiledID,
             isPrimary: consumerList?.count ?? 0 > 0 ? false : isPrimary,
+            genderId: modelRegistrationSteper.genderId,
             emailAddress: email,
             customerNonResidentInd: 0
         ) else { return }
@@ -321,6 +323,7 @@ class PersonalInformationViewModel: PersonalInformationViewModelProtocol {
         currentConsumerList[foundIndex].motherMaidenName = newUserInfo.motherMaidenName
         currentConsumerList[foundIndex].cityOfBirth = newUserInfo.cityOfBirth
         currentConsumerList[foundIndex].countryOfResidenceId = 157
+        currentConsumerList[foundIndex].genderId = newUserInfo.genderId
         
         return currentConsumerList
     }
@@ -375,6 +378,7 @@ class PersonalInformationViewModel: PersonalInformationViewModelProtocol {
         currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
         currentConsumerList[foundIndex].employerEmail = newUserInfo.emailAddress
         currentConsumerList[foundIndex].customerNonResidentInd = 0
+        currentConsumerList[foundIndex].genderId = newUserInfo.genderId
 
         return currentConsumerList
     }

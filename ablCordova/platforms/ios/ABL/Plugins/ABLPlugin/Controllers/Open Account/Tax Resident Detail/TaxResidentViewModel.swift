@@ -188,6 +188,7 @@ final class TaxResidentViewModel: TaxResidentViewModelProtocol {
             currentConsumerList[foundIndex].isPrimaryRegistered = false
             currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
             currentConsumerList[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+            currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId
         }
         else {
             foundIndex = 0

@@ -238,7 +238,8 @@ class PicAndSignViewModel: PicAndSignViewModelProtocol{
         currentConsumerList[foundIndex].noOfJointApplicatns = newUserInfo.noOfJointApplicatns
         currentConsumerList[foundIndex].nameOnPhysicalATM = newUserInfo.nameOnPhysicalATM
         currentConsumerList[foundIndex].modeOfMajorTransId = newUserInfo.modeOfMajorTransId
-        
+        currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId
+
         return currentConsumerList
     }
 }

@@ -190,6 +190,8 @@ class ServiceChannelsViewModel{
         currentConsumerList[foundIndex].chequeBookReqInd = newUserInfo.chequeBookReqInd
         currentConsumerList[foundIndex].transactionalAlertId = newUserInfo.transactionalAlertId
         currentConsumerList[foundIndex].reasonForVisaDebitCardRequestId = newUserInfo.reasonForVisaDebitCardRequestId
+        currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId
+
         return currentConsumerList
     }
 }

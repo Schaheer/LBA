@@ -22,7 +22,7 @@ class FATCADetailsViewController: UIViewController {
     var forViewController = ""
     private let fatcaDetailsViewModel = FATCADetailsViewModel()
     weak var delegate: PersonalInfoChildToParentProtocol? = nil
-    
+    var isJointFlow = false
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTableView()
@@ -31,7 +31,7 @@ class FATCADetailsViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    private func setupTableView(){
+    private func setupTableView() {
         let questionsNib = UINib(nibName: PluginNibs.fatcaTVC.rawValue, bundle: nil)
         questionsTableView.register(questionsNib, forCellReuseIdentifier: PluginTableViewCells.fatcaTVC.rawValue)
         questionsTableView.delegate = self
@@ -55,6 +55,15 @@ class FATCADetailsViewController: UIViewController {
                         NotificationCenter.default.post(name: Notification.Name("NotificationIdentifierRefreshReviewDetailsVC"), object: nil)
                     }
                 }
+                if self?.fromViewController == "isJointFlow" {
+                    guard let reviewDetailsVC = UIStoryboard.initialize(
+                        viewController: .reviewDetailsVC,
+                        fromStoryboard: .openAccount
+                    ) as? ReviewDetailsVC else { return }
+                    self?.navigationController?.pushViewController(reviewDetailsVC, animated: true)
+                    return()
+                }
+                
                 switch modelRegistrationSteper.selectPreferredAccountViewModel?.getAccountVariantID() {
                 case .freelancerDigitalAccount:
                     self?.delegate?.addChild(vc: .personalInformationSecondVC, fromViewController: "")

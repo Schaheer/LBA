@@ -600,7 +600,7 @@ final class PictureAndSignatureVC: UIViewController {
             let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
             if consumer?.count == noOfJointApplicant {
                 print("====================1")
-                self.delegate?.addChild(vc: .fatcaDetailsVC, fromViewController: "")
+                self.delegate?.addChild(vc: .fatcaDetailsVC, fromViewController: "isJointFlow")
             }
             else {
                 print("====================2")
@@ -617,6 +617,7 @@ final class PictureAndSignatureVC: UIViewController {
                     viewController: .reviewDetailsVC,
                     fromStoryboard: .openAccount
                 ) as? ReviewDetailsVC else { return }
+                
                 navigationController?.pushViewController(reviewDetailsVC, animated: true)
             }
             else {

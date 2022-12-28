@@ -420,6 +420,8 @@ final class CNICVerificationVC: UIViewController {
         currentConsumerList[foundIndex].attachments = newUserInfo.attachments
         currentConsumerList[foundIndex].customerBranch = newUserInfo.customerBranch
         currentConsumerList[foundIndex].bankingModeId = newUserInfo.bankingModeId
+        currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId
+
         return currentConsumerList
     }
 }
