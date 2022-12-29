@@ -229,8 +229,7 @@ class PicAndSignViewModel: PicAndSignViewModelProtocol{
             foundIndex = 0
             currentConsumerList[foundIndex].isPrimary = true
         }
-//        currentConsumerList[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
-//        currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
+
         currentConsumerList[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
         currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
         currentConsumerList[foundIndex].rdaCustomerId = tempRdaCustomerProfileID
@@ -239,6 +238,7 @@ class PicAndSignViewModel: PicAndSignViewModelProtocol{
         currentConsumerList[foundIndex].nameOnPhysicalATM = newUserInfo.nameOnPhysicalATM
         currentConsumerList[foundIndex].modeOfMajorTransId = newUserInfo.modeOfMajorTransId
         currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId
+        currentConsumerList[foundIndex].residentCountries =  getCurrentUser().residentCountries
 
         return currentConsumerList
     }

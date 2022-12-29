@@ -84,12 +84,14 @@ final class TaxResidentViewModel: TaxResidentViewModelProtocol {
     func registerConsumerBasicInfo(
         residentCountries: [BasicInfoResidentCountriesInputModel]
     ) {
-        let consumerListInputModelArray = getListOfConsumers(newUserInfo: BasicInfoConsumerListInputModel()!)
-
+        
+        let basicInfoAadNewUser = getListOfConsumers(newUserInfo: BasicInfoConsumerListInputModel()!, residentCountries: residentCountries)
+        let consumerListInputModelArray = basicInfoAadNewUser.0
+        
         //Need to add consumer list in the array
         guard let input = RegisterConsumerBasicInfoInputModel(
             consumerList: consumerListInputModelArray,
-            residentCountries: residentCountries
+            residentCountries: basicInfoAadNewUser.1
         ) else { return }
         
         
@@ -147,12 +149,12 @@ final class TaxResidentViewModel: TaxResidentViewModelProtocol {
     }
     
     //MARK: - For merging
-    func getListOfConsumers(newUserInfo: BasicInfoConsumerListInputModel) -> [BasicInfoConsumerListInputModel] {
+    func getListOfConsumers(newUserInfo: BasicInfoConsumerListInputModel, residentCountries: [BasicInfoResidentCountriesInputModel]) -> ([BasicInfoConsumerListInputModel], [BasicInfoResidentCountriesInputModel]) {
         var tempRdaCustomerProfileID = newUserInfo.rdaCustomerProfileId
         var tempRdaCustomerAccInfoId = newUserInfo.rdaCustomerAccInfoId
         
         let cousumerListHamza = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
-        var currentConsumerList = getCurrentConsumerListResponseInInputModel(responseCunsumerList: cousumerListHamza!)
+        let currentConsumerList = getCurrentConsumerListResponseInInputModel(responseCunsumerList: cousumerListHamza!)
         let cousumerListShakeel = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
         var foundIndex = 99
         //MARK: - Start----- Just to find new User Profile ID
@@ -179,8 +181,8 @@ final class TaxResidentViewModel: TaxResidentViewModelProtocol {
             }
         }
         //MARK: - Start-----If user profile id found Replace in new user Request data
-        print(tempRdaCustomerAccInfoId as Any)
-        print(tempRdaCustomerProfileID as Any)
+//        print(tempRdaCustomerAccInfoId as Any)
+//        print(tempRdaCustomerProfileID as Any)
         
         if foundIndex != 99 {
 //            currentConsumerList[foundIndex] = BasicInfoConsumerListInputModel()!
@@ -194,8 +196,11 @@ final class TaxResidentViewModel: TaxResidentViewModelProtocol {
             foundIndex = 0
             currentConsumerList[foundIndex].isPrimary = true
         }
-        
-        return currentConsumerList
+        residentCountries.first?.rdaCustomerID = currentConsumerList[foundIndex].rdaCustomerProfileId
+        currentConsumerList[foundIndex].taxResidentInd = residentCountries.first?.taxResidentInd
+        currentConsumerList[foundIndex].residentCountries = residentCountries
+        residentCountries.first?.taxResidentInd = nil
+        return (currentConsumerList, residentCountries)
     }
 }
 

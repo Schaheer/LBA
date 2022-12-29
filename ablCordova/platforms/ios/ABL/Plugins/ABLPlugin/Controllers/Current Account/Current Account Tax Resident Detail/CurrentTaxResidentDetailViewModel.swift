@@ -228,7 +228,8 @@ final class CurrentTaxResidentDetailViewModel: CurrentTaxResidentDetailViewModel
                     rdaCustomerID: customerID,
                     taxIdentityNo: taxIDNumber,
                     tinReasonID: 0,
-                    taxResidentInd: taxResidentInd
+                    taxResidentInd: taxResidentInd,
+                    countryOfTaxResidenceId: "\(countryOfTaxResidenceID)"
                 ) else { return }
                 
                 residentCountriesList.append(residentCountryListInputModel)
@@ -280,7 +281,8 @@ final class CurrentTaxResidentDetailViewModel: CurrentTaxResidentDetailViewModel
                 rdaCustomerID: customerID,
                 taxIdentityNo: taxIDNumber,
                 tinReasonID: tinReasonID,
-                taxResidentInd: taxResidentInd
+                taxResidentInd: taxResidentInd,
+                countryOfTaxResidenceId: "\(countryOfTaxResidenceID)"
             ) else { return }
             
             residentCountriesList.append(residentCountryListInputModel)

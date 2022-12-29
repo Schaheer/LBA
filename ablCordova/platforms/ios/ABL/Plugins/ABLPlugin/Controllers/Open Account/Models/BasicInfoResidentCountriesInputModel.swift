@@ -16,6 +16,7 @@ final class BasicInfoResidentCountriesInputModel: BaseInputModel {
         case taxIdentityNo
         case tinReasonID = "tinReasonId"
         case taxResidentInd
+        case countryOfTaxResidenceId
     }
     
     // MARK: - Model Properties
@@ -25,6 +26,7 @@ final class BasicInfoResidentCountriesInputModel: BaseInputModel {
     var taxIdentityNo: String?
     var tinReasonID: Double?
     var taxResidentInd: Int?
+    var countryOfTaxResidenceId: String?
     
     // MARK: - Model Initializers
     
@@ -37,7 +39,8 @@ final class BasicInfoResidentCountriesInputModel: BaseInputModel {
         rdaCustomerID: Double,
         taxIdentityNo: String,
         tinReasonID: Double,
-        taxResidentInd: Int
+        taxResidentInd: Int,
+        countryOfTaxResidenceId: String
     ) {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.explanation.rawValue] = explanation
@@ -45,13 +48,14 @@ final class BasicInfoResidentCountriesInputModel: BaseInputModel {
         dictionary[CodingKeys.taxIdentityNo.rawValue] = taxIdentityNo
         dictionary[CodingKeys.tinReasonID.rawValue] = tinReasonID
         dictionary[CodingKeys.taxResidentInd.rawValue] = taxResidentInd
-        
+        dictionary[CodingKeys.countryOfTaxResidenceId.rawValue] = countryOfTaxResidenceId
+
         self.explanation = explanation
         self.rdaCustomerID = rdaCustomerID
         self.taxIdentityNo = taxIdentityNo
         self.tinReasonID = tinReasonID
         self.taxResidentInd = taxResidentInd
-        
+        self.countryOfTaxResidenceId = countryOfTaxResidenceId
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
     
@@ -70,5 +74,6 @@ final class BasicInfoResidentCountriesInputModel: BaseInputModel {
         taxIdentityNo <- map[CodingKeys.taxIdentityNo.rawValue]
         tinReasonID <- map[CodingKeys.tinReasonID.rawValue]
         taxResidentInd <- map[CodingKeys.taxResidentInd.rawValue]
+        countryOfTaxResidenceId <- map[CodingKeys.countryOfTaxResidenceId.rawValue]
     }
 }

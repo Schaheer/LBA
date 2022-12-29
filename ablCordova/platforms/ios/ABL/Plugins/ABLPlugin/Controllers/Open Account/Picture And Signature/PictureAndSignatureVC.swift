@@ -92,12 +92,13 @@ final class PictureAndSignatureVC: UIViewController {
     }
     override func viewWillAppear(_ animated: Bool) {
         if DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList?.count ?? 0 > 0 {
-            viewJointAccount.isHidden = true
-            modelRegistrationSteper.isJointAccount = true
-            natureOfAccountLocal = .joint
-            picAndSignViewModel.jointAccountTapped()
-            self.joint()
-            picAndSignViewModel.setNoOfJointApplicants(applicants: DataCacheManager.shared.loadNoOfJointApplicants() ?? 0)
+            
+//            viewJointAccount.isHidden = true
+//            modelRegistrationSteper.isJointAccount = true
+//            natureOfAccountLocal = .joint
+//            picAndSignViewModel.jointAccountTapped()
+//            self.joint()
+//            picAndSignViewModel.setNoOfJointApplicants(applicants: DataCacheManager.shared.loadNoOfJointApplicants() ?? 0)
         }
     }
     override func viewDidLoad() {
@@ -147,16 +148,19 @@ final class PictureAndSignatureVC: UIViewController {
         subscribeViewModel()
         setupGestureRecognizers()
         let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
-        print(consumer)
-        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
-        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
-        
+//        print(consumer)
+//        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
+//        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
         
         if DataCacheManager.shared.loadNoOfJointApplicants() ?? 0 > 0 {
             isJointFlow = true
             viewJointAccount.isHidden = true
-            noOfJointApplicant = DataCacheManager.shared.loadNoOfJointApplicants() ?? 0
+            natureOfAccountLocal = .joint
             modelRegistrationSteper.isJointAccount = true
+            picAndSignViewModel.jointAccountTapped()
+            self.joint()
+            noOfJointApplicant = DataCacheManager.shared.loadNoOfJointApplicants() ?? 0
+            picAndSignViewModel.setNoOfJointApplicants(applicants: DataCacheManager.shared.loadNoOfJointApplicants() ?? 0)
         }
         else {
             natureOfAccountLocal = .single

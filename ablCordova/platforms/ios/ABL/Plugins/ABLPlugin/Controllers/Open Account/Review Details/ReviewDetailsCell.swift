@@ -253,7 +253,8 @@ final class ReviewDetailsCell: UITableViewCell {
         nationalityCnincLabel.text = consumer.idNumber ?? ""
         
         dateOfBirthLabel.text = consumer.dateOfBirth ?? ""
-        natureOfAccountLabel.text = consumer.natureOfBusiness
+        print(consumer.natureOfAccount)
+        natureOfAccountLabel.text = consumer.natureOfAccount
         
         cnicDateOfIssueLabel.text = consumer.dateOfIssue ?? ""
         motherNameLabel.text = consumer.motherMaidenName ?? ""
@@ -261,7 +262,7 @@ final class ReviewDetailsCell: UITableViewCell {
        
         proofOfIncomeLabel.text = consumer.accountInformation?.proofOfIncomeInd == false ? "NO" : "YES"
         
-        titleLabel.text = consumer.customerTitle ?? ""
+        titleLabel.text = consumer.customerTitle ?? "" == "Male" ? "Mr" : "Miss"
         fullNameLabel.text = consumer.fullName ?? ""
         genderLabel.text = consumer.gender ?? ""
         fatherHusbandName.text = consumer.fatherHusbandName ?? ""

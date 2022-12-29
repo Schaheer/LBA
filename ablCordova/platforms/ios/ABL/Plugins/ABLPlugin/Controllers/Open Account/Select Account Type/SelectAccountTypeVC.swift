@@ -202,12 +202,12 @@ final class SelectAccountTypeVC: UIViewController {
     
     func test() {
         let primaryUser = getPrimaryUser()
-        print(primaryUser)
-        print(primaryUser.accountInformation?.purposeOfAccountID)
-        print(primaryUser.customerTypeID)
+//        print(primaryUser)
+//        print(primaryUser.accountInformation?.purposeOfAccountID)
+//        print(primaryUser.customerTypeID)
 //        print(primaryUser.accountTypeId)
 //        print(primaryUser.customerAccountTypeId)
-        print(primaryUser.natureOfAccountID)
+//        print(primaryUser.natureOfAccountID)
 
         let accountInfo = DataCacheManager.shared.loadRegisterConsumerAccountInfoResponse()
         
@@ -215,9 +215,9 @@ final class SelectAccountTypeVC: UIViewController {
 //        print(primaryUser.accountInformation?.customerAccountTypeID)
 //        print(accountInfo?.data?.accountTypeID)
 //        print(accountInfo?.data?.customerAccountTypeID)
-        print(accountInfo?.data?.customerTypeID)
-        print(accountInfo?.data?.purposeOfAccountID)
-        print(accountInfo?.data?.natureOfAccountID)
+//        print(accountInfo?.data?.customerTypeID)
+//        print(accountInfo?.data?.purposeOfAccountID)
+//        print(accountInfo?.data?.natureOfAccountID)
 //        accountInfo?.data?.bankingModeID
 //        accountInfo?.data?.customerBranch
         

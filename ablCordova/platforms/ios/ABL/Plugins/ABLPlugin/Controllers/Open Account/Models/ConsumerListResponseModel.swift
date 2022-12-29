@@ -16,6 +16,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
         case rdaCustomerProfileID = "rdaCustomerProfileId"
         case accountTypeId = "accountInformation.accountTypeId"
         case customerAccountTypeId = "accountInformation.customerAccountTypeId"
+        case residentCountries
         case accessToken
         case customerTitleID = "customerTitleId"
         case customerTitle
@@ -59,6 +60,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
         case statusID = "statusId"
         case nationalityTypeID = "nationalityTypeId"
         case nationalities
+        case natureOfAccount
         case natureOfAccountID = "natureOfAccountId"
         case stepperSections
         case addresses
@@ -134,11 +136,13 @@ final class ConsumerListResponseModel: BaseResponseModel {
     var statusID: Double?
     var nationalityTypeID: Double?
     var nationalities: [[String: Any]]?
+    var natureOfAccount: String?
     var natureOfAccountID: Double?
     var stepperSections: StepperSectionsModel?
     var addresses: [AddressesModel]?
     var accountInformation: AccountInformationModel?
     var attachments: [CNICAttachmentResponseModel]?
+    var residentCountries: [BasicInfoResidentCountriesInputModel]?
     var existingAccountInd: Bool?
     var customerNonResidentInd: Int?
     var customerCity: String?
@@ -222,11 +226,13 @@ final class ConsumerListResponseModel: BaseResponseModel {
         statusID <- map[CodingKeys.statusID.rawValue]
         nationalityTypeID <- map[CodingKeys.nationalityTypeID.rawValue]
         nationalities <- map[CodingKeys.nationalities.rawValue]
+        natureOfAccount <- map[CodingKeys.natureOfAccount.rawValue]
         natureOfAccountID <- map[CodingKeys.natureOfAccountID.rawValue]
         stepperSections <- map[CodingKeys.stepperSections.rawValue]
         addresses <- map[CodingKeys.addresses.rawValue]
         accountInformation <- map[CodingKeys.accountInformation.rawValue]
         attachments <- map[CodingKeys.attachments.rawValue]
+        residentCountries <- map[CodingKeys.residentCountries.rawValue]
         existingAccountInd <- map[CodingKeys.existingAccountInd.rawValue]
         customerNonResidentInd <- map[CodingKeys.customerNonResidentInd.rawValue]
         customerCity <- map[CodingKeys.customerCity.rawValue]

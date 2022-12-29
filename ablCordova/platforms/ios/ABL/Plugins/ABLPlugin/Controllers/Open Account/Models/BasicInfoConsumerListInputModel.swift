@@ -114,6 +114,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         case noOfJointApplicatns
         case nameOnPhysicalATM
         case modeOfMajorTransId
+        case residentCountries = "residentCountries"
     }
     
     // MARK: - Model Properties
@@ -214,6 +215,8 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
     var noOfJointApplicatns: Int?
     var nameOnPhysicalATM: String?
     var modeOfMajorTransId: [Double]?
+    var residentCountries: [BasicInfoResidentCountriesInputModel]?
+
 
     required init?(
         rdaCustomerAccInfoId: Double? = nil,
@@ -297,7 +300,9 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         reasonForVisaDebitCardRequestId: Double? = nil,
         noOfJointApplicatns: Int? = nil,
         nameOnPhysicalATM: String? = nil,
-        modeOfMajorTransId: [Double]? = nil
+        modeOfMajorTransId: [Double]? = nil,
+        residentCountries: [BasicInfoResidentCountriesInputModel]? = nil
+
     ) {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.rdaCustomerAccInfoId.rawValue] = rdaCustomerAccInfoId
@@ -383,6 +388,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         dictionary[CodingKeys.noOfJointApplicatns.rawValue] = noOfJointApplicatns
         dictionary[CodingKeys.nameOnPhysicalATM.rawValue] = nameOnPhysicalATM
         dictionary[CodingKeys.modeOfMajorTransId.rawValue] = modeOfMajorTransId
+        dictionary[CodingKeys.residentCountries.rawValue] = residentCountries
 
         self.rdaCustomerAccInfoId = rdaCustomerAccInfoId
         self.rdaCustomerProfileId = rdaCustomerProfileId
@@ -465,6 +471,8 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         self.noOfJointApplicatns = noOfJointApplicatns
         self.nameOnPhysicalATM = nameOnPhysicalATM
         self.modeOfMajorTransId = modeOfMajorTransId
+        self.residentCountries = residentCountries
+
         
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
@@ -701,6 +709,7 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         noOfJointApplicatns <- map[CodingKeys.noOfJointApplicatns.rawValue]
         nameOnPhysicalATM <- map[CodingKeys.nameOnPhysicalATM.rawValue]
         modeOfMajorTransId <- map[CodingKeys.modeOfMajorTransId.rawValue]
+        residentCountries <- map[CodingKeys.residentCountries.rawValue]
     }
 }
 

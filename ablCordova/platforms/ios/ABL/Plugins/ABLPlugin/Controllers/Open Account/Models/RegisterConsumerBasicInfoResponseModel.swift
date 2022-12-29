@@ -83,13 +83,13 @@ class ConsumerList: Mappable {
     var customerNonResidentInd: Any?
     var customerBranch: Any?
     var educationId: Any?
-    var residentCountries: Any?
     var countryOfBirthPlaceId: Any?
     var mobileNo: String?
     var nationalityTypeId: Any?
     var emailAddress: Any?
     var employedSince: Any?
     var dateOfBirth: Any?
+    var residentCountries: [BasicInfoResidentCountriesInputModel]?
 
     required init?(map: Map){
     }

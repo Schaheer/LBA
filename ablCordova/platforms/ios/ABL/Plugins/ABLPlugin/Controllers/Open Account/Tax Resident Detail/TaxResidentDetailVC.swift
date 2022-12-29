@@ -159,23 +159,24 @@ final class TaxResidentDetailVC: UIViewController {
                 }
                 modelRegistrationSteper.isTaxIdentificationNoDual = true
                 modelRegistrationSteper.taxNotAvailableReson = labelReson.text
-                modelRegistrationSteper.taxNotAvailableResonId = taxResidentViewModel.getTaxNotAvailableReasonID()
-                if taxResidentViewModel.getTaxNotAvailableReasonID() == 101202.0 {
-                    textFieldIDentificationNumber.text = modelRegistrationSteper.taxFormBExplanation
-                }
-                else {
-                    modelRegistrationSteper.taxFormBExplanation = nil
-                }
+                modelRegistrationSteper.taxFormBExplanation = nil
+                modelRegistrationSteper.taxNotAvailableReson = nil
+                modelRegistrationSteper.taxNotAvailableResonId = nil
             }
             else {
                 if labelReson.text?.lowercased() == "please select" {
                     self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please select reason")
                     return()
                 }
+                modelRegistrationSteper.taxNotAvailableResonId = taxResidentViewModel.getTaxNotAvailableReasonID()
+                if taxResidentViewModel.getTaxNotAvailableReasonID() == 101202.0 {
+                    modelRegistrationSteper.taxFormBExplanation = textFieldIDentificationNumber.text
+                }
+                else {
+                    modelRegistrationSteper.taxFormBExplanation = nil
+                }
                 modelRegistrationSteper.isTaxIdentificationNoDual = false
                 taxResidentViewModel.setTaxIdentificationNumber(value: enterTaxNumberTextField.text ?? "")
-                modelRegistrationSteper.taxNotAvailableReson = nil
-                modelRegistrationSteper.taxNotAvailableResonId = nil
             }
         }
         else {
@@ -188,27 +189,21 @@ final class TaxResidentDetailVC: UIViewController {
         
         let taxIDNumber = taxResidentViewModel.getTaxIdentificationNumber()
         let taxNotAvailableReasonID = taxResidentViewModel.getTaxNotAvailableReasonID()
-        let taxResident = taxResidentViewModel.getTaxResident()
-        
-//        guard let registerConsumerAccountInfoResponse = DataCacheManager.shared.loadRegisterConsumerAccountInfoResponse() else { return }
-        
-        //            let consumer = BasicInfoConsumerListInputModel(
-        //                rdaCustomerAccInfoId: <#T##Double#>,
-        //                rdaCustomerProfileId: <#T##Double#>,
-        //                fullName: <#T##String#>,
-        //                fatherHusbandName: <#T##String#>,
-        //                motherMaidenName: <#T##String#>,
-        //                isPrimary: <#T##Bool#>
-        //            )
-        
+//        let taxResident = taxResidentViewModel.getTaxResident()
+        let taxResident = taxResidentSegment.index
+
+        let explanation = (modelRegistrationSteper.taxFormBExplanation != nil ? textFieldIDentificationNumber.text : taxResidentViewModel.getTaxNotAvailableReason()?.description ?? "N/A")!
+        print(taxResidentViewModel.getCountyofTaxResidenceID())
+        var countryResidentID = "\(taxResidentViewModel.getCountyofTaxResidenceID())"
+        print(countryResidentID)
         guard let residentCountry = BasicInfoResidentCountriesInputModel(
-            explanation: taxResidentViewModel.getTaxNotAvailableReason()?.description ?? "N/A",
+            explanation: explanation,
             rdaCustomerID: BaseConstants.Config.rdaCustomerId, // Enter correct rdaCustomerID
             taxIdentityNo: taxIDNumber,
             tinReasonID: taxNotAvailableReasonID,
-            taxResidentInd: taxResident
+            taxResidentInd: taxResident,
+            countryOfTaxResidenceId: countryResidentID
         ) else { return }
-        
         taxResidentViewModel.registerConsumerBasicInfo(
             residentCountries: [residentCountry]
         )
