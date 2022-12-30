@@ -14,8 +14,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/CNIC Upload/Change Number/ChangeNumberVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "nextButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/CNIC Upload/Change Number/ChangeNumberVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "nextButtonTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -126,8 +126,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "719"
-            endingLineNumber = "719"
+            startingLineNumber = "541"
+            endingLineNumber = "541"
             landmarkName = "openAdditionalDetailsVC()"
             landmarkType = "7">
          </BreakpointContent>
@@ -176,6 +176,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "138"
             endingLineNumber = "138"
+            landmarkName = "subscribeViewModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3ACB4B01-B642-466F-B4C4-3AFB27307746"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Freelancer Account/FATCA Details VC/FATCADetailsViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
             landmarkName = "subscribeViewModel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -270,8 +286,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Occupation/OccupationVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "203"
-            endingLineNumber = "203"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
             landmarkName = "subscribeViewModel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -494,8 +510,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "nextBtnTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -510,8 +526,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "565"
-            endingLineNumber = "565"
+            startingLineNumber = "509"
+            endingLineNumber = "509"
             landmarkName = "openReviewDetailsVC()"
             landmarkType = "7">
          </BreakpointContent>
@@ -526,8 +542,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "707"
-            endingLineNumber = "707"
+            startingLineNumber = "529"
+            endingLineNumber = "529"
             landmarkName = "openAdditionalDetailsVC()"
             landmarkType = "7">
          </BreakpointContent>
@@ -542,9 +558,25 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "500"
-            endingLineNumber = "500"
+            startingLineNumber = "450"
+            endingLineNumber = "450"
             landmarkName = "subscribeViewModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE7A78E6-2F03-4DF4-8C91-759A4187C676"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "220"
+            endingLineNumber = "220"
+            landmarkName = "nextBtnTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -622,8 +654,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "711"
-            endingLineNumber = "711"
+            startingLineNumber = "533"
+            endingLineNumber = "533"
             landmarkName = "openAdditionalDetailsVC()"
             landmarkType = "7">
          </BreakpointContent>
@@ -670,8 +702,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Review Details/ReviewDetailsVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "257"
-            endingLineNumber = "257"
+            startingLineNumber = "258"
+            endingLineNumber = "258"
             landmarkName = "buttonEditCurrentAddress()"
             landmarkType = "7">
          </BreakpointContent>
@@ -688,8 +720,8 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "180"
             endingLineNumber = "180"
-            landmarkName = "openSelectBranchVC()"
-            landmarkType = "7">
+            landmarkName = "SelectBankingMethodVC"
+            landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -848,6 +880,22 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "193"
             endingLineNumber = "193"
+            landmarkName = "subscribeViewModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "0B74D999-E78A-4340-A076-133DE3FE519A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Review Details/ReviewDetailsVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
             landmarkName = "subscribeViewModel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1086,13 +1134,13 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Review Details/ReviewDetailsCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
             landmarkName = "buttonEditNationality(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "C72DCB9D-7F81-4DAD-A2AE-AC8A299343D0 - e5a8544c5ae261e4"
+                  uuid = "C72DCB9D-7F81-4DAD-A2AE-AC8A299343D0 - e5a8544c5ae261c7"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1102,12 +1150,12 @@
                   urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Review%20Details/ReviewDetailsCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
                   offsetFromSymbolStart = "15">
                </Location>
                <Location
-                  uuid = "C72DCB9D-7F81-4DAD-A2AE-AC8A299343D0 - 67e00051013fcc98"
+                  uuid = "C72DCB9D-7F81-4DAD-A2AE-AC8A299343D0 - 67e00051013fccbb"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1117,8 +1165,8 @@
                   urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Review%20Details/ReviewDetailsCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
                   offsetFromSymbolStart = "53">
                </Location>
             </Locations>
@@ -1134,13 +1182,13 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Review Details/ReviewDetailsCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "105"
+            endingLineNumber = "105"
             landmarkName = "buttonEditPermanentAddress(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "EF4CF36B-C503-46AD-9AB5-8AB884F4F7A9 - b888f9faae5bd518"
+                  uuid = "EF4CF36B-C503-46AD-9AB5-8AB884F4F7A9 - b888f9faae5bd579"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1150,12 +1198,12 @@
                   urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Review%20Details/ReviewDetailsCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
                   offsetFromSymbolStart = "15">
                </Location>
                <Location
-                  uuid = "EF4CF36B-C503-46AD-9AB5-8AB884F4F7A9 - 81c97f26be3af246"
+                  uuid = "EF4CF36B-C503-46AD-9AB5-8AB884F4F7A9 - 81c97f26be3af227"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1165,8 +1213,8 @@
                   urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Review%20Details/ReviewDetailsCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "106"
-                  endingLineNumber = "106"
+                  startingLineNumber = "105"
+                  endingLineNumber = "105"
                   offsetFromSymbolStart = "53">
                </Location>
             </Locations>
@@ -1182,13 +1230,13 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Review Details/ReviewDetailsCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "110"
+            endingLineNumber = "110"
             landmarkName = "buttonEditFATCA(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "0845AD03-92E9-4C7A-A895-05EA6A0A00E3 - ab6980778726f36f"
+                  uuid = "0845AD03-92E9-4C7A-A895-05EA6A0A00E3 - ab6980778726f088"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1198,12 +1246,12 @@
                   urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Review%20Details/ReviewDetailsCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "111"
-                  endingLineNumber = "111"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
                   offsetFromSymbolStart = "15">
                </Location>
                <Location
-                  uuid = "0845AD03-92E9-4C7A-A895-05EA6A0A00E3 - a2695963c9a4926b"
+                  uuid = "0845AD03-92E9-4C7A-A895-05EA6A0A00E3 - a2695963c9a4918c"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -1213,8 +1261,8 @@
                   urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Review%20Details/ReviewDetailsCell.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "111"
-                  endingLineNumber = "111"
+                  startingLineNumber = "110"
+                  endingLineNumber = "110"
                   offsetFromSymbolStart = "53">
                </Location>
             </Locations>
@@ -1246,8 +1294,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Occupation/OccupationVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "211"
-            endingLineNumber = "211"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "callSaveKyc()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1265,6 +1313,38 @@
             startingLineNumber = "100"
             endingLineNumber = "100"
             landmarkName = "init?(cnicNumber:mobileNumber:isPrimary:customerTypeID:customerBranch:bankingModeID:dateOfBirth:dateOfIssue:isPrimaryRegistered:portedMobileNetwork:rdaCustomerAccInfoId:attachments:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D905F3B-0C9D-4FF6-9756-F445B43F1249"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Occupation/OccupationVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
+            landmarkName = "professionBasedOccupation(occupationId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B742A176-0468-452E-8B34-FA5DC4602E8D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Tax Resident Detail/TaxResidentDetailVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "235"
+            endingLineNumber = "235"
+            landmarkName = "setupDropdown()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1294,8 +1374,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Tax Resident Detail/TaxResidentDetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "327"
-            endingLineNumber = "327"
+            startingLineNumber = "309"
+            endingLineNumber = "309"
             landmarkName = "subscribeViewModel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1310,8 +1390,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Tax Resident Detail/TaxResidentDetailVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "333"
-            endingLineNumber = "333"
+            startingLineNumber = "315"
+            endingLineNumber = "315"
             landmarkName = "subscribeViewModel()"
             landmarkType = "7">
          </BreakpointContent>
@@ -1326,8 +1406,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Freelancer Account/FATCA Details VC/FATCADetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
+            startingLineNumber = "101"
+            endingLineNumber = "101"
             landmarkName = "nextBtnTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1342,8 +1422,8 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Freelancer Account/FATCA Details VC/FATCADetailsViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "87"
+            endingLineNumber = "87"
             landmarkName = "nextBtnTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1351,576 +1431,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "8EDFA3D1-96DE-4FE7-A434-4B9B1A2A7736"
+            uuid = "92398877-18D1-4B8E-B189-6CAB2D674439"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Review Details/ReviewDetailsVC.swift"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Select Preferred Account/SelectPreferredAccountVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "268"
-            endingLineNumber = "268"
-            landmarkName = "buttonEditDocuments()"
+            startingLineNumber = "275"
+            endingLineNumber = "275"
+            landmarkName = "nextTapped(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DA91D3E5-CD0A-4C4F-8396-A2E6807B8862"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Review Details/ReviewDetailsCell.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "buttonEditDocuments(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "DA91D3E5-CD0A-4C4F-8396-A2E6807B8862 - 6f4d988aa2f06575"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ABL.ReviewDetailsCell.buttonEditDocuments(Any) -&gt; ()"
-                  moduleName = "ABL"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Review%20Details/ReviewDetailsCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "15">
-               </Location>
-               <Location
-                  uuid = "DA91D3E5-CD0A-4C4F-8396-A2E6807B8862 - dde9e6cc10f5ec71"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "@objc ABL.ReviewDetailsCell.buttonEditDocuments(Any) -&gt; ()"
-                  moduleName = "ABL"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Review%20Details/ReviewDetailsCell.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "53">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "011D105D-9DF2-4BAA-8B28-3498EC250633"
+            uuid = "0BEFEC1C-17EA-4391-9774-CE6C516B458E"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "698"
-            endingLineNumber = "698"
-            landmarkName = "openAdditionalDetailsVC()"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "segmentJointAccount(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "9B05B5DB-1610-4B1F-AACB-8481DED306C9"
+            uuid = "2AA41163-F946-4633-90B8-BBE0ECD15ED2"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Freelancer Account/FATCA Details VC/FATCADetailsViewModel.swift"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "61"
             endingLineNumber = "61"
-            landmarkName = "registerFATCADetails(attorneyInd:birthUSInd:careAddrInd:greenCardHolderInd:rdaCustomerId:usCitizenInd:usMailAddrInd:usTaxResidentInd:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "485DAA36-BDCE-4EC1-93C9-483D1538E4C9"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Freelancer Account/FATCA Details VC/FATCADetailsViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
-            landmarkName = "subscribeViewModel()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "485DAA36-BDCE-4EC1-93C9-483D1538E4C9 - 6c741d4e4d0b16e2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;ABL.RegisterFACTAInfoResponseModel&gt;) -&gt; () in ABL.FATCADetailsViewController.subscribeViewModel() -&gt; ()"
-                  moduleName = "ABL"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Freelancer%20Account/FATCA%20Details%20VC/FATCADetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "110">
-               </Location>
-               <Location
-                  uuid = "485DAA36-BDCE-4EC1-93C9-483D1538E4C9 - 6c741d4e4d0b16e2"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;ABL.RegisterFACTAInfoResponseModel&gt;) -&gt; () in ABL.FATCADetailsViewController.subscribeViewModel() -&gt; ()"
-                  moduleName = "ABL"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Freelancer%20Account/FATCA%20Details%20VC/FATCADetailsViewController.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "45"
-                  endingLineNumber = "45"
-                  offsetFromSymbolStart = "170">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "722A3260-8933-4758-BE5D-0623F17FC6FA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Tax Resident Detail/TaxResidentDetailVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
-            landmarkName = "nextTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "78D5B6FD-8438-46B8-8F84-82B81A783761"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "613"
-            endingLineNumber = "613"
-            landmarkName = "openReviewDetailsVC()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0D6F0B90-FA6C-4A2E-9FD2-4C0A8656B805"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Remitter Detail/RemitterDetailVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
-            landmarkName = "subscribeViewModel()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "0D6F0B90-FA6C-4A2E-9FD2-4C0A8656B805 - d25e8163354426a6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "partial apply forwarder for closure #1 (Swift.Optional&lt;ABL.RegisterConsumerAccountInfoResponseModel&gt;) -&gt; () in ABL.RemitterDetailVC.subscribeViewModel() -&gt; ()"
-                  moduleName = "ABL"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Remitter%20Detail/RemitterDetailVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "26">
-               </Location>
-               <Location
-                  uuid = "0D6F0B90-FA6C-4A2E-9FD2-4C0A8656B805 - d25e8163354426a6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "partial apply forwarder for closure #1 (Swift.Optional&lt;ABL.RegisterConsumerAccountInfoResponseModel&gt;) -&gt; () in ABL.RemitterDetailVC.subscribeViewModel() -&gt; ()"
-                  moduleName = "ABL"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Remitter%20Detail/RemitterDetailVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "79"
-                  endingLineNumber = "79"
-                  offsetFromSymbolStart = "58">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "024A1799-687B-43BE-9D0D-D9730249B03E"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Remitter Detail/RemitterDetailVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "nextTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "0EB94D70-B3A7-44D7-98FA-9D2294E25772"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/CNIC Upload/Change Number/ChangeNumberVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B00208AD-466C-4013-8785-32F9CE43CA36"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/CNIC Upload/CNIC Verification/Manual CNIC Verification/CNICManualVerificationVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "viewWillAppear(_:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "B00208AD-466C-4013-8785-32F9CE43CA36 - d71bc3267e4f213e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Dead, Arg[1] = Dead&gt; of ABL.CNICManualVerificationVC.viewWillAppear(Swift.Bool) -&gt; ()"
-                  moduleName = "ABL"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/CNIC%20Upload/CNIC%20Verification/Manual%20CNIC%20Verification/CNICManualVerificationVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "17">
-               </Location>
-               <Location
-                  uuid = "B00208AD-466C-4013-8785-32F9CE43CA36 - d71bc3267e4f213e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "function signature specialization &lt;Arg[0] = Dead, Arg[1] = Dead&gt; of ABL.CNICManualVerificationVC.viewWillAppear(Swift.Bool) -&gt; ()"
-                  moduleName = "ABL"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/CNIC%20Upload/CNIC%20Verification/Manual%20CNIC%20Verification/CNICManualVerificationVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "29"
-                  endingLineNumber = "29"
-                  offsetFromSymbolStart = "64">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CB5186ED-D00B-4A91-9E44-A4FEAECCAAB0"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "615"
-            endingLineNumber = "615"
-            landmarkName = "openReviewDetailsVC()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4EA9AC6D-217A-4D10-A1B3-C530C5539715"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "616"
-            endingLineNumber = "616"
-            landmarkName = "openReviewDetailsVC()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "15AE6C70-FACE-4400-8A5A-B07D3495D0A4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "viewDidLoad()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "15AE6C70-FACE-4400-8A5A-B07D3495D0A4 - 611970956caf965f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ABL.PictureAndSignatureVC.viewDidLoad() -&gt; ()"
-                  moduleName = "ABL"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Picture%20And%20Signature/PictureAndSignatureVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
-                  offsetFromSymbolStart = "2899">
-               </Location>
-               <Location
-                  uuid = "15AE6C70-FACE-4400-8A5A-B07D3495D0A4 - 611970956caf965f"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ABL.PictureAndSignatureVC.viewDidLoad() -&gt; ()"
-                  moduleName = "ABL"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Picture%20And%20Signature/PictureAndSignatureVC.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
-                  offsetFromSymbolStart = "2935">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "FE05B13C-61EC-43B8-8170-338685ED2B34"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Core/Managers/DataCacheManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "130"
-            endingLineNumber = "130"
-            landmarkName = "saveRegisterConsumerAccountInfoResponse(input:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "23A298B8-0806-4DB9-BFFD-CC23A21060B5"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "165"
-            endingLineNumber = "165"
-            landmarkName = "viewDidAppearLocal()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "34E21C76-19C9-4336-89E2-8B31AABC6023"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Current Account/Next of Kin/NextOfKinVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
-            landmarkName = "nextButtonTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "8507C580-1647-460A-97CC-F382061D9B6A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Service Channels/ServiceChannelsVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
-            landmarkName = "setupDropdown()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7AF3A243-95EF-4601-A9C4-63F232598835"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Service Channels/ServiceChannelsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "registerConsumerEmploymentDetails(customerAccInfoID:rdaCustomerId:customerTypeId:atmTypeId:transAlertInd:chequeBookReqInd:transactionalAlertId:rdaCustomerProfileId:reasonForVisaDebitCardRequestId:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "7AF3A243-95EF-4601-A9C4-63F232598835 - 1525f4c9c8866335"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ABL.ServiceChannelsViewModel.registerConsumerEmploymentDetails(customerAccInfoID: Swift.Optional&lt;Swift.Double&gt;, rdaCustomerId: Swift.Optional&lt;Swift.Double&gt;, customerTypeId: Swift.Optional&lt;Swift.Double&gt;, atmTypeId: Swift.Optional&lt;Swift.Double&gt;, transAlertInd: Swift.Optional&lt;Swift.Int&gt;, chequeBookReqInd: Swift.Optional&lt;Swift.Int&gt;, transactionalAlertId: Swift.Optional&lt;Swift.Double&gt;, rdaCustomerProfileId: Swift.Optional&lt;Swift.Double&gt;, reasonForVisaDebitCardRequestId: Swift.Optional&lt;Swift.Double&gt;) -&gt; ()"
-                  moduleName = "ABL"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Service%20Channels/ServiceChannelsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
-                  offsetFromSymbolStart = "376">
-               </Location>
-               <Location
-                  uuid = "7AF3A243-95EF-4601-A9C4-63F232598835 - 8fb9b3740fba1518"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Alamofire.DataResponse&lt;ABL.ConsumerTransactionDetailsResponseModel, Alamofire.AFError&gt;) -&gt; () in ABL.ServiceChannelsViewModel.registerConsumerEmploymentDetails(customerAccInfoID: Swift.Optional&lt;Swift.Double&gt;, rdaCustomerId: Swift.Optional&lt;Swift.Double&gt;, customerTypeId: Swift.Optional&lt;Swift.Double&gt;, atmTypeId: Swift.Optional&lt;Swift.Double&gt;, transAlertInd: Swift.Optional&lt;Swift.Int&gt;, chequeBookReqInd: Swift.Optional&lt;Swift.Int&gt;, transactionalAlertId: Swift.Optional&lt;Swift.Double&gt;, rdaCustomerProfileId: Swift.Optional&lt;Swift.Double&gt;, reasonForVisaDebitCardRequestId: Swift.Optional&lt;Swift.Double&gt;) -&gt; ()"
-                  moduleName = "ABL"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Service%20Channels/ServiceChannelsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "81"
-                  endingLineNumber = "81"
-                  offsetFromSymbolStart = "95">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "9E253D35-5DBD-4B79-A076-29D6C864CEAE"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Additional Applicant Details/AdditionalApplicantDetailsVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "showAlertSuccessWithPopToVC(viewController:title:message:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "5BAA3F42-97AC-433C-81A3-8223BEFB15F7"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/CNIC Upload/CNIC Availablility/CNICAvailabilityVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
-            landmarkName = "nextTapped(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "874C87D0-543F-44CA-AEDC-3FF3A299B660"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Core/Managers/AlertManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "showOKAlert(with:message:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "B4800447-2C20-4297-ADBC-791CD4AB4A3D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Localizable/SettingUIDesign.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
-            landmarkName = "checkScreenSize()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2F957CE0-63E5-427D-AE07-52E4A1EE3D79"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Localizable/SettingUIDesign.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "90"
-            endingLineNumber = "90"
-            landmarkName = "checkScreenSize()"
+            landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

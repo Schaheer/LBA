@@ -155,7 +155,7 @@ final class PersonalInformationThirdVC: UIViewController {
     private func callRegisterAddress(){
         
         personalInformationViewModel.registerConsumerAddress(
-            rdaCustomerId: BaseConstants.Config.rdaCustomerId,
+            rdaCustomerId: DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last?.rdaCustomerProfileID,
             nearestLandMark: nearestLandmaarkTextField.text,
             customerAddress: addressTextField.text,
             city: cityTextField.text,

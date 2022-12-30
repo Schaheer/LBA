@@ -58,6 +58,33 @@ final class OccupationVC: UIViewController {
         
     }
     
+    
+    var occopationDataSource = [String]()
+    @objc func openOccupation() {
+        let dataSource = occopationDataSource
+        DispatchQueue.main.async {
+            self.showSelectionAlert(with: dataSource, title: "Searched Occupation", isSearchViewHidden: true) { index, item in
+                logsManager.debug("Selected item \(item) at index \(index)")
+                let occupation = self.employmentDetailsViewModel.getOccupation(at: index)
+                self.selectOccupationLabel.text = occupation?.description
+                self.employmentDetailsViewModel.setOccupation(id: occupation?.id ?? 0)
+                self.professionBasedOccupation(occupationId: occupation?.id ?? 0)
+            }
+        }
+    }
+    var professionDataSource = [String]()
+    @objc func openProfession() {
+        let dataSource = professionDataSource
+        DispatchQueue.main.async {
+            self.showSelectionAlert(with: dataSource, title: "Searched Profession", isSearchViewHidden: true) { index, item in
+                logsManager.debug("Selected item \(item) at index \(index)")
+                let profession = self.employmentDetailsViewModel.getProfession(at: index)
+                self.selectProfessionLabel.text = profession?.description
+                self.employmentDetailsViewModel.setProfession(id: profession?.id ?? 0)
+            }
+        }
+
+    }
     private func setupGestureRecognizers() {
         selectOccupationView.addGestureRecognizer(
             UITapGestureRecognizer(
@@ -65,14 +92,13 @@ final class OccupationVC: UIViewController {
                 action: #selector(employmentDetailsViewModel.openOccupationsDropdown)
             )
         )
-        
+
         selectProfessionView.addGestureRecognizer(
             UITapGestureRecognizer(
                 target: employmentDetailsViewModel,
                 action: #selector(employmentDetailsViewModel.openProfessionsDropdown)
             )
         )
-
     }
 
     
@@ -150,19 +176,23 @@ final class OccupationVC: UIViewController {
         
         employmentDetailsViewModel.occupationsList.bind { [weak self] response in
             guard let self = self, let occupationsList = response?.data else { return }
-            self.occupationsListDropDown.dataSource = occupationsList.map { $0.description ?? "N/A" }
+//            self.occupationsListDropDown.dataSource = occupationsList.map { $0.description ?? "N/A" }
+            self.occopationDataSource = occupationsList.map { $0.description ?? "N/A" }
         }
         
         employmentDetailsViewModel.occupationDropDownTapped.bind { [weak self] isTapped in
             
             guard let self = self, isTapped else { return }
-            self.occupationsListDropDown.show()
+//            self.occupationsListDropDown.show()
+            self.openOccupation()
         }
         
         
         employmentDetailsViewModel.professionsList.bind { [weak self] response in
-            guard let self = self, let occupationsList = response?.data else { return }
-            self.professionsListDropDown.dataSource = occupationsList.map { $0.description ?? "N/A" }
+            guard let self = self, let professionList = response?.data else { return }
+//            self.professionsListDropDown.dataSource = professionList.map { $0.description ?? "N/A" }
+            self.professionDataSource = professionList.map { $0.description ?? "N/A" }
+
         }
         
         employmentDetailsViewModel.professionsDropDownTapped.bind { [weak self] isTapped in
@@ -170,7 +200,8 @@ final class OccupationVC: UIViewController {
             guard let self = self, isTapped else {
                 return
             }
-            self.professionsListDropDown.show()
+//            self.professionsListDropDown.show()
+            self.openProfession()
         }
         
         employmentDetailsViewModel.registerConsumerEmploymentDetailsResponse.bind {  response  in

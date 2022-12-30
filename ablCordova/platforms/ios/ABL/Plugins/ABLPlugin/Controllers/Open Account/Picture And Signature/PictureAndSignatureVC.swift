@@ -95,7 +95,7 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
         viewProofOfIncomePicutre.isHidden = true
         
         segmentJointAccount.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,
@@ -157,13 +157,13 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
     }
     
     func continueToCamera() {
-                pictureImagePicker = UIImagePickerController()
-                //        pictureImagePicker.sourceType = .camera
-                pictureImagePicker.sourceType = .photoLibrary
+        pictureImagePicker = UIImagePickerController()
+        pictureImagePicker.sourceType = .camera
+//        pictureImagePicker.sourceType = .photoLibrary
         
-                pictureImagePicker.allowsEditing = true
-                pictureImagePicker.delegate = self
-                present(pictureImagePicker, animated: true)
+        pictureImagePicker.allowsEditing = true
+        pictureImagePicker.delegate = self
+        present(pictureImagePicker, animated: true)
     }
     
     func viewDidAppearLocal() {
@@ -539,10 +539,23 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
         }
         picAndSignViewModel.dropDownTapped.bind { [weak self]  isTapped in
             guard let self = self, isTapped else { return }
-            self.dropDown.show()
+//            self.dropDown.show()
+            self.openAdditionalApplicants()
         }
     }
     
+    func openAdditionalApplicants() {
+        let dataSource = self.dropDown.dataSource
+        self.showSelectionAlert(with: dataSource, title: "Select Delivery", isSearchViewHidden: true) { index, item in
+            logsManager.debug("Selected item \(item) at index \(index)")
+            self.additionalApplicantLabel.text = item
+            let noOfJointApplicants = item.components(separatedBy: " ").first
+            modelRegistrationSteper.additionalApplicant = item
+            modelRegistrationSteper.additionalApplicantNo = Int(noOfJointApplicants ?? "0") ?? 0
+            self.picAndSignViewModel.setNoOfJointApplicants(applicants: Int(noOfJointApplicants ?? "0") ?? 0)
+            DataCacheManager.shared.saveNoOfJointApplicants(input: Int(noOfJointApplicants ?? "0") ?? 0)
+        }
+    }
     func single() {
         self.singleAccountRadio.image = PluginImageAsset.radioFilled.image
         self.jointAccountRadio.image = PluginImageAsset.radioUnfilled.image

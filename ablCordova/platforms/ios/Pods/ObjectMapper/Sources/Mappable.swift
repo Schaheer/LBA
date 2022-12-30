@@ -76,8 +76,10 @@ public extension BaseMappable {
 
 	/// Returns the JSON String for the object
 	func toJSONString(prettyPrint: Bool = false) -> String? {
+        
 		return Mapper().toJSONString(self, prettyPrint: prettyPrint)
 	}
+    
 }
 
 public extension Array where Element: BaseMappable {

@@ -19,6 +19,7 @@ final class CNICAvailabilityVC: UIViewController {
     
     @IBAction func buttonUrdu(_ sender: Any) {
         funChangeAppLanguageAndSide(to: "ur", vc: self)
+        
     }
     @IBOutlet weak var buttonUrdu: UIButton!
     
@@ -64,7 +65,7 @@ final class CNICAvailabilityVC: UIViewController {
         mobileNumberTextField.delegate = self
         cnicNumberTextField.delegate = self
         portedSegment.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalBackgroundColor: PluginColorAsset.otpFieldBorder.color,
             normalTextColor: .white,
             selectedBackgroundColor: PluginColorAsset.appOrange.color,
@@ -93,6 +94,8 @@ final class CNICAvailabilityVC: UIViewController {
         )
         
         cnicAvailabilityViewModel.setShouldGenerateOTP(shouldGenerate: true)
+        
+        print(Defaults.selectedLanguageCode)
     }
     
     deinit {
@@ -148,7 +151,7 @@ final class CNICAvailabilityVC: UIViewController {
                 )
             }
         } else {
-            if modelRegistrationSteper.cnicNumber != cnicNumberTextField.text ?? "" {
+            if modelRegistrationSteper.cnicNumber != (cnicNumberTextField.text ?? "").replacingOccurrences(of: "-", with: "") {
                 
                 self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Provided CNIC is not matched")
                 
@@ -161,7 +164,7 @@ final class CNICAvailabilityVC: UIViewController {
                 customerTypeID: 106501,
                 mobileNumber: mobileNumberTextField.text,
                 generateOTP: cnicAvailabilityViewModel.getShouldGenerateOTP(),
-                cnicNumber: cnicNumberTextField.text ?? "",
+                cnicNumber: (cnicNumberTextField.text ?? ""),
                 isPortedMobileNetwork: (portedSegment.index == 1) ? true : false
             )
         }

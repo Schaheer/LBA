@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -40,10 +40,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z3s-2U-ozl">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hOW-bK-5y4">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="814"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Xdu-d3-qkW">
                                                 <rect key="frame" x="20" y="200.5" width="374" height="200"/>
@@ -266,7 +266,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="iP2-gg-qC5">
-                                                <rect key="frame" x="20" y="674" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="678" width="374" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5P-Ff-6JM" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="179" height="50"/>
@@ -392,7 +392,7 @@
                                                 </constraints>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="mUu-di-h5f" customClass="ChatView" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="744" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="748" width="374" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="47m-bs-BOc"/>
                                                 </constraints>
@@ -521,7 +521,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oPN-oR-fEY">
-                                <rect key="frame" x="0.0" y="48" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7Ky-T9-gCs">
                                         <rect key="frame" x="20" y="15" width="374" height="20"/>
@@ -605,7 +605,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qbk-pd-irl" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="118" width="374" height="38.5"/>
+                                <rect key="frame" x="20" y="114" width="374" height="38.5"/>
                                 <string key="text">Please Locate or Select your preferred 
 ABL Branch</string>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
@@ -613,13 +613,13 @@ ABL Branch</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ABL Branches near you" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dyX-BY-61Q" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="176.5" width="141.5" height="17"/>
+                                <rect key="frame" x="20" y="172.5" width="141.5" height="17"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                 <color key="textColor" name="Textfield Placeholder"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="N6V-3q-R9O">
-                                <rect key="frame" x="20" y="213.5" width="374" height="250"/>
+                                <rect key="frame" x="20" y="209.5" width="374" height="250"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="branches-map-image" translatesAutoresizingMaskIntoConstraints="NO" id="bZ9-tM-LJQ">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="250"/>
@@ -635,13 +635,13 @@ ABL Branch</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your preferred branch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9tR-Mh-KJW">
-                                <rect key="frame" x="20" y="483.5" width="175.5" height="17"/>
+                                <rect key="frame" x="20" y="479.5" width="175.5" height="17"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                 <color key="textColor" name="Textfield Placeholder"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y7g-gV-n7O">
-                                <rect key="frame" x="20" y="508.5" width="374" height="40"/>
+                                <rect key="frame" x="20" y="504.5" width="374" height="40"/>
                                 <subviews>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="List of ABL Branches..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6Ic-gw-Y89" customClass="TextFieldSetting" customModule="ABL" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="40"/>
@@ -767,7 +767,7 @@ ABL Branch</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wvW-AN-T5r">
-                                <rect key="frame" x="0.0" y="48" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Oco-bN-lS3">
                                         <rect key="frame" x="20" y="15" width="374" height="20"/>
@@ -851,23 +851,23 @@ ABL Branch</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your preferred Account" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQk-XE-iSj" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="118" width="374" height="19.5"/>
+                                <rect key="frame" x="20" y="114" width="374" height="19.5"/>
                                 <fontDescription key="fontDescription" name="Lato-Bold" family="Lato" pointSize="16"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Based on your profile" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EBN-9I-Pft" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="157.5" width="129.5" height="17"/>
+                                <rect key="frame" x="20" y="153.5" width="129.5" height="17"/>
                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                 <color key="textColor" name="Textfield Placeholder"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="K47-Y6-35j">
-                                <rect key="frame" x="20" y="194.5" width="374" height="511.5"/>
+                                <rect key="frame" x="20" y="190.5" width="374" height="515.5"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SelectPreferredAccountCell" rowHeight="160" id="gBJ-ir-xdI" customClass="SelectPreferredAccountCell" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="374" height="160"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="160"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="gBJ-ir-xdI" id="uxC-4n-0D5">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="160"/>
@@ -1032,7 +1032,7 @@ ABL Branch</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="B3l-9C-dgQ">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dzQ-GK-hex">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1475.5"/>
@@ -1143,16 +1143,19 @@ ABL Branch</string>
                                                                 <rect key="frame" x="20" y="65.5" width="374" height="100"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="B2j-dc-Y6V">
-                                                                        <rect key="frame" x="12" y="12" width="226.5" height="14"/>
+                                                                        <rect key="frame" x="12" y="12" width="227" height="14"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Do you have proof of income?" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gyY-5t-tuw" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="204.5" height="14"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="205" height="14"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="205" id="woZ-7W-ZPH"/>
+                                                                                </constraints>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wlQ-fU-yP5" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
-                                                                                <rect key="frame" x="212.5" y="0.0" width="14" height="14"/>
+                                                                                <rect key="frame" x="213" y="0.0" width="14" height="14"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" secondItem="wlQ-fU-yP5" secondAttribute="height" multiplier="1:1" id="mhf-df-33A"/>
                                                                                 </constraints>
@@ -1718,7 +1721,7 @@ Currency PKR</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YfL-VJ-jd8">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="w4v-lq-6YO">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="3834.5"/>
@@ -3178,7 +3181,7 @@ Currency PKR</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CF2-b4-CYg">
-                                <rect key="frame" x="0.0" y="48" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, January 3, 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ijf-LU-RA3">
                                         <rect key="frame" x="20" y="17" width="234" height="16.5"/>
@@ -3205,7 +3208,7 @@ Currency PKR</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YKw-nj-iGp">
-                                <rect key="frame" x="0.0" y="98" width="414" height="65"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="65"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ymX-Tp-Rjl">
                                         <rect key="frame" x="0.0" y="62" width="414" height="3"/>
@@ -3218,10 +3221,10 @@ Currency PKR</string>
                                         <rect key="frame" x="20" y="15.5" width="374" height="34.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="GWa-S3-5BI">
-                                                <rect key="frame" x="0.0" y="0.0" width="129" height="34.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="166" height="34.5"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="hcL-2P-MQ4">
-                                                <rect key="frame" x="141" y="0.0" width="124" height="34.5"/>
+                                                <rect key="frame" x="178" y="0.0" width="87" height="34.5"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="HDn-Ft-7tC">
                                                 <rect key="frame" x="277" y="0.0" width="97" height="34.5"/>
@@ -3241,23 +3244,23 @@ Currency PKR</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ySR-93-AlH">
-                                <rect key="frame" x="20" y="183" width="143" height="23.5"/>
+                                <rect key="frame" x="20" y="179" width="143" height="23.5"/>
                                 <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LE9-tm-bgB">
-                                <rect key="frame" x="20" y="226.5" width="374" height="2"/>
+                                <rect key="frame" x="20" y="222.5" width="374" height="2"/>
                                 <color key="backgroundColor" name="App Orange"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="UEd-VA-1TW"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="nuw-q9-HxA">
-                                <rect key="frame" x="20" y="248.5" width="374" height="3697.5"/>
+                                <rect key="frame" x="20" y="244.5" width="374" height="3701.5"/>
                                 <color key="backgroundColor" name="App Background"/>
                                 <stackView key="tableFooterView" opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" id="3LZ-rK-7Af">
-                                    <rect key="frame" x="0.0" y="3468" width="374" height="50"/>
+                                    <rect key="frame" x="0.0" y="3457" width="374" height="50"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WU2-1e-J2a">
@@ -3309,7 +3312,7 @@ Currency PKR</string>
                                 </stackView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewDetailsCell" rowHeight="3390" id="ADH-yV-VVQ" customClass="ReviewDetailsCell" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="374" height="3390"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="3390"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ADH-yV-VVQ" id="3ce-wn-QRM">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="3390"/>
@@ -4746,7 +4749,7 @@ Currency PKR</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyz-9M-m21">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Y1j-7x-Vnb">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="974"/>
@@ -5326,13 +5329,13 @@ Currency PKR</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Additional Applicant Details" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Iv-h1-ItM" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="48" width="414" height="16.5"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="16.5"/>
                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dTe-mT-GCJ" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="84.5" width="414" height="100"/>
+                                <rect key="frame" x="0.0" y="80.5" width="414" height="100"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Relationship" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yn2-31-ix5" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                         <rect key="frame" x="12" y="12" width="390" height="16.5"/>
@@ -5487,7 +5490,7 @@ Currency PKR</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="F8G-Ud-IuD">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="59m-gG-u1N">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="895"/>
@@ -5841,7 +5844,7 @@ Currency PKR</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cUd-jJ-Kee">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zU8-Cp-4fH">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="610"/>
@@ -6116,7 +6119,7 @@ Currency PKR</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZU-FN-lc0">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7vN-bd-qYE">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="983.5"/>
@@ -6434,16 +6437,16 @@ Currency PKR</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RXq-nF-DvJ">
-                                                        <rect key="frame" x="0.0" y="551.5" width="414" height="45"/>
+                                                        <rect key="frame" x="0.0" y="551.5" width="414" height="62"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="z9j-gc-3Pl">
-                                                                <rect key="frame" x="12" y="0.0" width="390" height="45"/>
+                                                                <rect key="frame" x="12" y="0.0" width="390" height="62"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="bSg-Qw-QhQ">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="390" height="33"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                                                         <subviews>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wOS-EZ-UMM" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="107" height="33"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="107" height="50"/>
                                                                                 <string key="text">Mailing Address
 Preferences</string>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
@@ -6451,7 +6454,7 @@ Preferences</string>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
                                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mca-HD-cnz" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                                                                <rect key="frame" x="115" y="0.0" width="275" height="33"/>
+                                                                                <rect key="frame" x="115" y="0.0" width="275" height="50"/>
                                                                                 <color key="backgroundColor" name="OTP Field Border"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -6462,7 +6465,7 @@ Preferences</string>
                                                                         </subviews>
                                                                     </stackView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at which address bank shall send letters/correspondence." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isB-2v-iOE" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="33" width="390" height="12"/>
+                                                                        <rect key="frame" x="0.0" y="50" width="390" height="12"/>
                                                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="10"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
@@ -6619,7 +6622,7 @@ Preferences</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Pt-hJ-XZg">
-                                <rect key="frame" x="0.0" y="48" width="414" height="115"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="115"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="7pn-Ut-eDQ">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="115"/>
@@ -6699,7 +6702,7 @@ Preferences</string>
                                 </constraints>
                             </view>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="5wT-UR-UGC">
-                                <rect key="frame" x="20" y="183" width="374" height="40"/>
+                                <rect key="frame" x="20" y="179" width="374" height="40"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiY-MV-85D">
                                         <rect key="frame" x="0.0" y="0.0" width="93" height="40"/>
@@ -6808,7 +6811,7 @@ Preferences</string>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YtU-sM-qN8">
-                                <rect key="frame" x="20" y="243" width="374" height="619"/>
+                                <rect key="frame" x="20" y="239" width="374" height="623"/>
                                 <color key="backgroundColor" name="App Background"/>
                             </view>
                         </subviews>
@@ -6848,7 +6851,7 @@ Preferences</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gdJ-8D-zqr">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dmt-DO-rNA">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="546.5"/>
@@ -7180,7 +7183,7 @@ Preferences</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Pb-ux-iFn">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BUm-lA-ZJY">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1376"/>
@@ -7191,18 +7194,18 @@ Preferences</string>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="xV5-fP-H8p">
                                                         <rect key="frame" x="12" y="20" width="390" height="30"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Choose Your Debit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCp-1b-LH5" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Your Debit Card" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCp-1b-LH5" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="158" height="30"/>
                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js4-FS-GIZ" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="js4-FS-GIZ" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                                 <rect key="frame" x="166" y="0.0" width="21" height="30"/>
                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                 <state key="normal" image="InfoIcon"/>
                                                             </button>
-                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Jf6-e3-qEs" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jf6-e3-qEs" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
                                                                 <rect key="frame" x="195" y="0.0" width="195" height="30"/>
                                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                                 <userDefinedRuntimeAttributes>
@@ -7559,13 +7562,13 @@ ATM Bill Payment</string>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Fg4-jk-EiA">
                                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Cheque Book Required?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmE-9h-HvW" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cheque Book Required?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WmE-9h-HvW" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="211.5" height="30"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYa-kQ-em7" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qYa-kQ-em7" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="219.5" y="0.0" width="21" height="30"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="21" id="rkI-NX-Gtb"/>
@@ -7573,7 +7576,7 @@ ATM Bill Payment</string>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" image="InfoIcon"/>
                                                                             </button>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W1h-lZ-jUQ" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="W1h-lZ-jUQ" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
                                                                                 <rect key="frame" x="248.5" y="0.0" width="141.5" height="30"/>
                                                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -7632,13 +7635,13 @@ ATM Bill Payment</string>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="b4h-ax-PMk">
                                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Electronic SOA Required?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcu-c3-Z7h" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Electronic SOA Required?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zcu-c3-Z7h" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="227" height="30"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A14-Gg-GPv" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A14-Gg-GPv" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="235" y="0.0" width="21" height="30"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="21" id="M5z-TI-uEH"/>
@@ -7646,7 +7649,7 @@ ATM Bill Payment</string>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" image="InfoIcon"/>
                                                                             </button>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pbh-w1-hwt" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Pbh-w1-hwt" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
                                                                                 <rect key="frame" x="264" y="0.0" width="126" height="30"/>
                                                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -7705,19 +7708,19 @@ ATM Bill Payment</string>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="nWU-Qk-RJW">
                                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Transactional Alerts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSr-lP-noh" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactional Alerts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rSr-lP-noh" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2B4-PS-cBP" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
-                                                                                <rect key="frame" x="185.5" y="0.0" width="1.5" height="30"/>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2B4-PS-cBP" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+                                                                                <rect key="frame" x="185.5" y="0.0" width="1" height="30"/>
                                                                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                                 <state key="normal" image="InfoIcon"/>
                                                                             </button>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sjw-CI-IGj" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                                                                <rect key="frame" x="195" y="0.0" width="195" height="30"/>
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sjw-CI-IGj" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                                                                <rect key="frame" x="194.5" y="0.0" width="195.5" height="30"/>
                                                                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                                                                 <userDefinedRuntimeAttributes>
                                                                                     <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -7864,7 +7867,7 @@ ATM Bill Payment</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HVC-q6-q7N">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="flf-1I-qpg">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="990"/>
@@ -8073,7 +8076,7 @@ ATM Bill Payment</string>
                                                         <rect key="frame" x="0.0" y="170" width="414" height="60"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you want to open Joint Account with another person?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="exZ-8q-R6k" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                <rect key="frame" x="12" y="12" width="278" height="33"/>
+                                                                <rect key="frame" x="12" y="12" width="278" height="36"/>
                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -8368,28 +8371,28 @@ ATM Bill Payment</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nDp-he-PXB">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dgw-Ns-z2g">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="935.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="953.5"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFl-Fv-94W">
-                                                <rect key="frame" x="0.0" y="20" width="414" height="56"/>
+                                                <rect key="frame" x="0.0" y="20" width="414" height="74"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="DMs-m4-PJt">
-                                                        <rect key="frame" x="12" y="12" width="390" height="32"/>
+                                                        <rect key="frame" x="12" y="12" width="390" height="50"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Dzi-aj-nFa">
-                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="32"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Same as mailing address" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fBq-16-JAk" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="32"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="179.5" height="50"/>
                                                                         <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="15"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cGS-7N-tkH" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                                                        <rect key="frame" x="187.5" y="0.0" width="202.5" height="32"/>
+                                                                        <rect key="frame" x="187.5" y="0.0" width="202.5" height="50"/>
                                                                         <color key="backgroundColor" name="OTP Field Border"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -8422,7 +8425,7 @@ ATM Bill Payment</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="an0-tj-UxS">
-                                                <rect key="frame" x="0.0" y="116" width="414" height="819.5"/>
+                                                <rect key="frame" x="0.0" y="134" width="414" height="819.5"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="39R-wC-hxp">
                                                         <rect key="frame" x="0.0" y="0.0" width="414" height="501.5"/>
@@ -8646,10 +8649,10 @@ ATM Bill Payment</string>
                                                                         <rect key="frame" x="12" y="12" width="390" height="74"/>
                                                                         <subviews>
                                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="dLW-rz-EMD">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="33"/>
+                                                                                <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                                                                 <subviews>
                                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="un7-Um-t0x" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="107" height="33"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="107" height="50"/>
                                                                                         <string key="text">Mailing Address
 Preferences</string>
                                                                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
@@ -8657,7 +8660,7 @@ Preferences</string>
                                                                                         <nil key="highlightedColor"/>
                                                                                     </label>
                                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xaq-WN-Nrj" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                                                                        <rect key="frame" x="115" y="0.0" width="275" height="33"/>
+                                                                                        <rect key="frame" x="115" y="0.0" width="275" height="50"/>
                                                                                         <color key="backgroundColor" name="OTP Field Border"/>
                                                                                         <userDefinedRuntimeAttributes>
                                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -8671,7 +8674,7 @@ Preferences</string>
                                                                                 </subviews>
                                                                             </stackView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="at which address bank shall send letters/correspondence." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BYN-kt-jbA" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                                <rect key="frame" x="0.0" y="45" width="390" height="29"/>
+                                                                                <rect key="frame" x="0.0" y="62" width="390" height="12"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="10"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
@@ -8828,13 +8831,13 @@ Preferences</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uXb-1K-3eK">
-                                <rect key="frame" x="0.0" y="48" width="414" height="1118"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="1122"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myU-bW-5jB">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1118"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1122"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ou0-Yp-Lcy">
-                                                <rect key="frame" x="20" y="978" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="982" width="374" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcn-Lo-bmd" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="179" height="50"/>
@@ -8984,7 +8987,7 @@ Preferences</string>
                                                                                     <constraint firstAttribute="height" constant="50" id="cYo-7C-CCf"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conventional" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xW-Ij-5hh">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conventional" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0xW-Ij-5hh" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="18.5" y="88" width="103" height="19"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="16"/>
                                                                                 <color key="textColor" name="App Orange"/>
@@ -9022,7 +9025,7 @@ Preferences</string>
                                                                                     <constraint firstAttribute="height" constant="50" id="XMf-OO-Ymx"/>
                                                                                 </constraints>
                                                                             </imageView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Islamic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzF-Ac-EAl">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Islamic" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gzF-Ac-EAl" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="42" y="88" width="56" height="19"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="16"/>
                                                                                 <color key="textColor" name="App Orange"/>
@@ -9182,38 +9185,38 @@ Preferences</string>
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="viM-6x-Uqk" customClass="ChatView" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="1048" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="1052" width="374" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="2Dj-Rc-7Ig"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Zzw-XU-COr">
-                                                <rect key="frame" x="20" y="420.5" width="374" height="537.5"/>
+                                                <rect key="frame" x="20" y="420.5" width="374" height="541.5"/>
                                                 <subviews>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uku-gN-a9Q" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="360"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="360"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose your branch" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ucy-aq-0kV" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                <rect key="frame" x="12" y="12" width="311" height="16.5"/>
+                                                                <rect key="frame" x="12" y="12" width="350" height="16.5"/>
                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Below are suggested branches based on your current location" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ysQ-Ca-yIY" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                <rect key="frame" x="12" y="40.5" width="311" height="12"/>
+                                                                <rect key="frame" x="12" y="40.5" width="350" height="12"/>
                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="10"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="X4P-fp-OXH">
-                                                                <rect key="frame" x="12" y="64.5" width="311" height="283.5"/>
+                                                                <rect key="frame" x="12" y="64.5" width="350" height="283.5"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                 <prototypes>
                                                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SuggestedBranchCell" id="EPO-1K-oaG" customClass="SuggestedBranchCell" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="50" width="311" height="44"/>
+                                                                        <rect key="frame" x="0.0" y="44.5" width="350" height="44"/>
                                                                         <autoresizingMask key="autoresizingMask"/>
                                                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EPO-1K-oaG" id="acK-0K-p1o">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="311" height="44"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="350" height="44"/>
                                                                             <autoresizingMask key="autoresizingMask"/>
                                                                             <subviews>
                                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="radio-unfilled" translatesAutoresizingMaskIntoConstraints="NO" id="zf5-4i-6ok">
@@ -9224,7 +9227,7 @@ Preferences</string>
                                                                                     </constraints>
                                                                                 </imageView>
                                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="04i-ug-rL0">
-                                                                                    <rect key="frame" x="40" y="12.5" width="259" height="19"/>
+                                                                                    <rect key="frame" x="40" y="12.5" width="298" height="19"/>
                                                                                     <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
                                                                                     <nil key="textColor"/>
                                                                                     <nil key="highlightedColor"/>
@@ -9267,23 +9270,23 @@ Preferences</string>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCo-JI-2qo" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="100"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
                                                         <subviews>
                                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="SCQ-fb-EZW">
-                                                                <rect key="frame" x="12" y="40.5" width="311" height="40"/>
+                                                                <rect key="frame" x="12" y="40.5" width="350" height="40"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjh-T7-8dz" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="278" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="317" height="40"/>
                                                                         <subviews>
                                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield-down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="oa7-WF-HVA">
-                                                                                <rect key="frame" x="254" y="14" width="12" height="12"/>
+                                                                                <rect key="frame" x="293" y="14" width="12" height="12"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="height" constant="12" id="IOV-kW-nWt"/>
                                                                                     <constraint firstAttribute="width" constant="12" id="WUw-Ml-NyI"/>
                                                                                 </constraints>
                                                                             </imageView>
                                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose preferred branch" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="huk-wX-0fY" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                                <rect key="frame" x="8" y="10.5" width="238" height="19"/>
+                                                                                <rect key="frame" x="8" y="10.5" width="277" height="19"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
                                                                                 <color key="textColor" name="Textfield Placeholder"/>
                                                                                 <nil key="highlightedColor"/>
@@ -9302,7 +9305,7 @@ Preferences</string>
                                                                         </userDefinedRuntimeAttributes>
                                                                     </view>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ma2-A2-POT">
-                                                                        <rect key="frame" x="286" y="0.0" width="25" height="40"/>
+                                                                        <rect key="frame" x="325" y="0.0" width="25" height="40"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="width" constant="25" id="YtZ-6Y-st1"/>
                                                                         </constraints>
@@ -9315,7 +9318,7 @@ Preferences</string>
                                                                 </subviews>
                                                             </stackView>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or select yourself" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="crn-i6-VmL" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                <rect key="frame" x="12" y="12" width="311" height="16.5"/>
+                                                                <rect key="frame" x="12" y="12" width="350" height="16.5"/>
                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
@@ -9395,6 +9398,7 @@ Preferences</string>
                         <outlet property="allBranchesContainer" destination="QCo-JI-2qo" id="4go-nY-xcy"/>
                         <outlet property="allBranchesView" destination="gjh-T7-8dz" id="XoT-oL-Q6L"/>
                         <outlet property="bankingMethodContainer" destination="mGh-oJ-8C8" id="nUn-YZ-VmD"/>
+                        <outlet property="buttonNext" destination="8R6-vW-66O" id="fzn-bx-NVS"/>
                         <outlet property="conventionalBankingMethodView" destination="9bG-b0-enf" id="gtZ-Oa-gUa"/>
                         <outlet property="currentAccountView" destination="60P-Y0-2Ic" id="nVG-n2-veo"/>
                         <outlet property="islamicBankingMethodView" destination="dJN-cR-gPn" id="2Vp-HS-fvg"/>
@@ -9407,7 +9411,7 @@ Preferences</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vGx-M3-Fda" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-700.46511627906978" y="176.39484978540773"/>
+            <point key="canvasLocation" x="-648" y="177"/>
         </scene>
         <!--Review DetailsVC-->
         <scene sceneID="NLf-CE-MxP">
@@ -9418,7 +9422,7 @@ Preferences</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8PQ-np-fgk">
-                                <rect key="frame" x="0.0" y="48" width="414" height="50"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, January 3, 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zLl-1H-zri" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                         <rect key="frame" x="20" y="17" width="234" height="16.5"/>
@@ -9445,7 +9449,7 @@ Preferences</string>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="svv-Iq-9Qx">
-                                <rect key="frame" x="0.0" y="98" width="414" height="65"/>
+                                <rect key="frame" x="0.0" y="94" width="414" height="65"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mb2-AH-RPl">
                                         <rect key="frame" x="0.0" y="62" width="414" height="3"/>
@@ -9458,10 +9462,10 @@ Preferences</string>
                                         <rect key="frame" x="20" y="15.5" width="374" height="34.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="2cB-Qf-aU7">
-                                                <rect key="frame" x="0.0" y="0.0" width="166" height="34.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="129" height="34.5"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="D5g-UE-CAX">
-                                                <rect key="frame" x="178" y="0.0" width="87" height="34.5"/>
+                                                <rect key="frame" x="141" y="0.0" width="124" height="34.5"/>
                                             </imageView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="oMS-cy-Lzs">
                                                 <rect key="frame" x="277" y="0.0" width="97" height="34.5"/>
@@ -9481,24 +9485,24 @@ Preferences</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Review Details" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCF-IK-KAm" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="183" width="143" height="23.5"/>
+                                <rect key="frame" x="20" y="179" width="143" height="23.5"/>
                                 <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dXN-NJ-FxT">
-                                <rect key="frame" x="20" y="226.5" width="374" height="2"/>
+                                <rect key="frame" x="20" y="222.5" width="374" height="2"/>
                                 <color key="backgroundColor" name="App Orange"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="sau-Gz-n09"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="lCZ-SL-H6A">
-                                <rect key="frame" x="20" y="248.5" width="374" height="4797.5"/>
+                                <rect key="frame" x="20" y="244.5" width="374" height="4801.5"/>
                                 <color key="backgroundColor" name="App Background"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ReviewDetailsCell" rowHeight="4500" id="8nj-sy-qDL" customClass="ReviewDetailsCell" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="374" height="4500"/>
+                                        <rect key="frame" x="0.0" y="44.5" width="374" height="4500"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="8nj-sy-qDL" id="RF0-sP-hoK">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="4500"/>
@@ -11704,7 +11708,7 @@ Preferences</string>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatCell" id="u2b-fo-1Dt" customClass="ChatCell" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="4550" width="374" height="155.5"/>
+                                        <rect key="frame" x="0.0" y="4544.5" width="374" height="155.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="u2b-fo-1Dt" id="Fny-lF-efe">
                                             <rect key="frame" x="0.0" y="0.0" width="374" height="155.5"/>
@@ -11978,7 +11982,7 @@ Preferences</string>
                                 </connections>
                             </button>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zKM-BB-LDY">
-                                <rect key="frame" x="20" y="142" width="374" height="630"/>
+                                <rect key="frame" x="20" y="138" width="374" height="634"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -11986,7 +11990,7 @@ Preferences</string>
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EaP-An-JrO">
-                                <rect key="frame" x="0.0" y="48" width="414" height="74"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="74"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ydw-hM-NJZ">
                                         <rect key="frame" x="20" y="20" width="374" height="34"/>
@@ -12037,7 +12041,7 @@ Preferences</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0F-Yq-leB">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MLZ-6W-unO">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="839.5"/>
@@ -12350,7 +12354,7 @@ Preferences</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jRL-6E-Q0R">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="48g-Jg-LNi">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="904.5"/>
@@ -12602,13 +12606,13 @@ Preferences</string>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sdO-Jb-fr1">
                                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Transactional Alerts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="uPF-0Q-o0o" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactional Alerts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="uPF-0Q-o0o" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17n-Ps-q2A" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="17n-Ps-q2A" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="185.5" y="0.0" width="21" height="30"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="21" id="ely-Id-4ub"/>
@@ -12619,7 +12623,7 @@ Preferences</string>
                                                                                     <action selector="buttonEye:" destination="U5V-6L-nus" eventType="touchUpInside" id="3jW-Zv-iUA"/>
                                                                                 </connections>
                                                                             </button>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zBE-uL-Omt" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zBE-uL-Omt" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
                                                                                 <rect key="frame" x="214.5" y="0.0" width="175.5" height="30"/>
                                                                                 <color key="backgroundColor" name="App Orange"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -12841,7 +12845,7 @@ Preferences</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ud8-lX-gRe">
-                                <rect key="frame" x="0.0" y="48" width="414" height="814"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5lT-RW-nAr">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="1200.5"/>
@@ -13177,13 +13181,13 @@ Preferences</string>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Gn0-G1-QEX">
                                                                         <rect key="frame" x="0.0" y="0.0" width="390" height="30"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Transactional Alerts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8tv-Bd-FvL" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Transactional Alerts" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="8tv-Bd-FvL" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="0.0" y="0.0" width="177.5" height="30"/>
                                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="18"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hd-P9-kYX" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9hd-P9-kYX" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                                                 <rect key="frame" x="185.5" y="0.0" width="21" height="30"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="21" id="djZ-1k-8LA"/>
@@ -13194,7 +13198,7 @@ Preferences</string>
                                                                                     <action selector="buttonEye:" destination="iac-Kp-mUQ" eventType="touchUpInside" id="dyO-aO-Mi5"/>
                                                                                 </connections>
                                                                             </button>
-                                                                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Gd1-lI-78U" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
+                                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gd1-lI-78U" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
                                                                                 <rect key="frame" x="214.5" y="0.0" width="175.5" height="30"/>
                                                                                 <color key="backgroundColor" name="App Orange"/>
                                                                                 <userDefinedRuntimeAttributes>
@@ -13503,6 +13507,9 @@ Preferences</string>
         <designable name="0oR-oV-yym">
             <size key="intrinsicContentSize" width="114" height="18"/>
         </designable>
+        <designable name="0xW-Ij-5hh">
+            <size key="intrinsicContentSize" width="103" height="19"/>
+        </designable>
         <designable name="10c-vg-q4e">
             <size key="intrinsicContentSize" width="60" height="19"/>
         </designable>
@@ -13713,9 +13720,6 @@ Preferences</string>
         <designable name="9hd-P9-kYX">
             <size key="intrinsicContentSize" width="21" height="22"/>
         </designable>
-        <designable name="9uX-a7-rfc">
-            <size key="intrinsicContentSize" width="159" height="32"/>
-        </designable>
         <designable name="9vF-uI-dta">
             <size key="intrinsicContentSize" width="193.5" height="18.5"/>
         </designable>
@@ -13791,9 +13795,6 @@ Preferences</string>
         <designable name="CEt-I1-k66">
             <size key="intrinsicContentSize" width="106" height="19"/>
         </designable>
-        <designable name="Ce9-4k-nwE">
-            <size key="intrinsicContentSize" width="159" height="32"/>
-        </designable>
         <designable name="Cr0-ya-Umg">
             <size key="intrinsicContentSize" width="255" height="12"/>
         </designable>
@@ -13805,9 +13806,6 @@ Preferences</string>
         </designable>
         <designable name="D4h-lc-cVX">
             <size key="intrinsicContentSize" width="26" height="19"/>
-        </designable>
-        <designable name="DBf-vY-9ci">
-            <size key="intrinsicContentSize" width="159" height="32"/>
         </designable>
         <designable name="DEv-D0-oIG">
             <size key="intrinsicContentSize" width="111" height="19"/>
@@ -13881,9 +13879,6 @@ Preferences</string>
         <designable name="Gc7-qs-jCC">
             <size key="intrinsicContentSize" width="63" height="33"/>
         </designable>
-        <designable name="Gd1-lI-78U">
-            <size key="intrinsicContentSize" width="195" height="32"/>
-        </designable>
         <designable name="Gqw-qR-fGx">
             <size key="intrinsicContentSize" width="54" height="19"/>
         </designable>
@@ -13938,9 +13933,6 @@ Preferences</string>
         <designable name="InG-la-SFs">
             <size key="intrinsicContentSize" width="143" height="23.5"/>
         </designable>
-        <designable name="Jf6-e3-qEs">
-            <size key="intrinsicContentSize" width="195" height="32"/>
-        </designable>
         <designable name="Jfu-pP-Dpk">
             <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
@@ -13957,7 +13949,7 @@ Preferences</string>
             <size key="intrinsicContentSize" width="47" height="19"/>
         </designable>
         <designable name="KDp-7J-WBH">
-            <size key="intrinsicContentSize" width="241" height="20.5"/>
+            <size key="intrinsicContentSize" width="236" height="20.5"/>
         </designable>
         <designable name="KWW-Io-ZHc">
             <size key="intrinsicContentSize" width="59" height="33"/>
@@ -13979,9 +13971,6 @@ Preferences</string>
         </designable>
         <designable name="M1h-Qq-zMT">
             <size key="intrinsicContentSize" width="39.5" height="12"/>
-        </designable>
-        <designable name="MFp-3z-yat">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="MK0-2r-B5h">
             <size key="intrinsicContentSize" width="61" height="33"/>
@@ -14051,9 +14040,6 @@ Preferences</string>
         </designable>
         <designable name="POx-UJ-Azw">
             <size key="intrinsicContentSize" width="39.5" height="12"/>
-        </designable>
-        <designable name="Pbh-w1-hwt">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="Pf4-tA-bjs">
             <size key="intrinsicContentSize" width="117" height="12"/>
@@ -14130,9 +14116,6 @@ Preferences</string>
         <designable name="U9R-1w-Ebk">
             <size key="intrinsicContentSize" width="736.5" height="20.5"/>
         </designable>
-        <designable name="UNU-99-qCx">
-            <size key="intrinsicContentSize" width="195" height="32"/>
-        </designable>
         <designable name="UXq-Xc-2Wt">
             <size key="intrinsicContentSize" width="81.5" height="19"/>
         </designable>
@@ -14169,9 +14152,6 @@ Preferences</string>
         <designable name="VvD-ay-t2h">
             <size key="intrinsicContentSize" width="321" height="19.5"/>
         </designable>
-        <designable name="W1h-lZ-jUQ">
-            <size key="intrinsicContentSize" width="195" height="32"/>
-        </designable>
         <designable name="WLR-SC-vJM">
             <size key="intrinsicContentSize" width="58.5" height="33.5"/>
         </designable>
@@ -14202,9 +14182,6 @@ Preferences</string>
         <designable name="X01-q2-BAl">
             <size key="intrinsicContentSize" width="82.5" height="19.5"/>
         </designable>
-        <designable name="X0i-ME-Tok">
-            <size key="intrinsicContentSize" width="195" height="32"/>
-        </designable>
         <designable name="X6p-hh-Gch">
             <size key="intrinsicContentSize" width="19.5" height="12"/>
         </designable>
@@ -14216,9 +14193,6 @@ Preferences</string>
         </designable>
         <designable name="XYj-L9-KNe">
             <size key="intrinsicContentSize" width="44" height="19"/>
-        </designable>
-        <designable name="Xaq-WN-Nrj">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="Xmj-h9-Qnd">
             <size key="intrinsicContentSize" width="79" height="19"/>
@@ -14292,23 +14266,14 @@ Preferences</string>
         <designable name="bht-2P-4UK">
             <size key="intrinsicContentSize" width="324.5" height="19.5"/>
         </designable>
-        <designable name="bjU-iX-ylw">
-            <size key="intrinsicContentSize" width="159" height="32"/>
-        </designable>
         <designable name="byA-CM-u21">
             <size key="intrinsicContentSize" width="77" height="19"/>
-        </designable>
-        <designable name="c2t-m5-zK0">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="cDj-wr-LMs">
             <size key="intrinsicContentSize" width="53" height="31"/>
         </designable>
         <designable name="cFY-LU-p8V">
             <size key="intrinsicContentSize" width="333.5" height="25"/>
-        </designable>
-        <designable name="cGS-7N-tkH">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="cXd-fY-Ygm">
             <size key="intrinsicContentSize" width="169.5" height="12"/>
@@ -14382,9 +14347,6 @@ Preferences</string>
         <designable name="fI7-KY-ceG">
             <size key="intrinsicContentSize" width="53.5" height="18"/>
         </designable>
-        <designable name="fKw-EW-MEm">
-            <size key="intrinsicContentSize" width="195" height="32"/>
-        </designable>
         <designable name="fNh-X9-kOh">
             <size key="intrinsicContentSize" width="68.5" height="33"/>
         </designable>
@@ -14442,6 +14404,9 @@ Preferences</string>
         <designable name="gyY-5t-tuw">
             <size key="intrinsicContentSize" width="204.5" height="16.5"/>
         </designable>
+        <designable name="gzF-Ac-EAl">
+            <size key="intrinsicContentSize" width="56" height="19"/>
+        </designable>
         <designable name="h21-Fi-gUQ">
             <size key="intrinsicContentSize" width="255.5" height="76.5"/>
         </designable>
@@ -14450,9 +14415,6 @@ Preferences</string>
         </designable>
         <designable name="hGc-Wp-ook">
             <size key="intrinsicContentSize" width="61" height="33"/>
-        </designable>
-        <designable name="hHa-7G-ye7">
-            <size key="intrinsicContentSize" width="159" height="32"/>
         </designable>
         <designable name="hI1-if-imR">
             <size key="intrinsicContentSize" width="198.5" height="23.5"/>
@@ -14499,9 +14461,6 @@ Preferences</string>
         <designable name="isB-2v-iOE">
             <size key="intrinsicContentSize" width="284" height="12"/>
         </designable>
-        <designable name="iyY-da-ek9">
-            <size key="intrinsicContentSize" width="195" height="32"/>
-        </designable>
         <designable name="j4R-8W-yRO">
             <size key="intrinsicContentSize" width="35.5" height="12"/>
         </designable>
@@ -14509,7 +14468,7 @@ Preferences</string>
             <size key="intrinsicContentSize" width="90" height="19"/>
         </designable>
         <designable name="jAQ-jT-Gfw">
-            <size key="intrinsicContentSize" width="234.5" height="20.5"/>
+            <size key="intrinsicContentSize" width="229.5" height="20.5"/>
         </designable>
         <designable name="jQB-8C-tZX">
             <size key="intrinsicContentSize" width="144" height="23.5"/>
@@ -14531,9 +14490,6 @@ Preferences</string>
         </designable>
         <designable name="jsI-5d-DjU">
             <size key="intrinsicContentSize" width="113" height="19"/>
-        </designable>
-        <designable name="jut-Xa-Y9t">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="jwn-Kf-m0g">
             <size key="intrinsicContentSize" width="229.5" height="30.5"/>
@@ -14571,12 +14527,6 @@ Preferences</string>
         <designable name="m9z-hE-cJq">
             <size key="intrinsicContentSize" width="61" height="33"/>
         </designable>
-        <designable name="mAi-tR-7ga">
-            <size key="intrinsicContentSize" width="159" height="32"/>
-        </designable>
-        <designable name="mCw-ig-99I">
-            <size key="intrinsicContentSize" width="159" height="32"/>
-        </designable>
         <designable name="mPX-yd-hUH">
             <size key="intrinsicContentSize" width="121.5" height="19"/>
         </designable>
@@ -14585,9 +14535,6 @@ Preferences</string>
         </designable>
         <designable name="maw-vD-Te1">
             <size key="intrinsicContentSize" width="288" height="68"/>
-        </designable>
-        <designable name="mca-HD-cnz">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="mcl-FF-KdC">
             <size key="intrinsicContentSize" width="168" height="16.5"/>
@@ -14735,9 +14682,6 @@ Preferences</string>
         </designable>
         <designable name="se5-id-O0G">
             <size key="intrinsicContentSize" width="333.5" height="25"/>
-        </designable>
-        <designable name="sjw-CI-IGj">
-            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="svx-52-aC1">
             <size key="intrinsicContentSize" width="21" height="22"/>
@@ -14907,9 +14851,6 @@ Preferences</string>
         <designable name="yxx-Eq-rpe">
             <size key="intrinsicContentSize" width="72" height="33.5"/>
         </designable>
-        <designable name="zBE-uL-Omt">
-            <size key="intrinsicContentSize" width="195" height="32"/>
-        </designable>
         <designable name="zDc-Uo-Bma">
             <size key="intrinsicContentSize" width="276" height="21.5"/>
         </designable>
@@ -14939,13 +14880,13 @@ Preferences</string>
         <image name="allied-slogan" width="97" height="14"/>
         <image name="branches-map-image" width="630" height="645"/>
         <image name="check-icon" width="42" height="42"/>
-        <image name="chevron.down" catalog="system" width="128" height="70"/>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="conventional-icon" width="90.5" height="87"/>
         <image name="current-account-icon" width="87" height="72.5"/>
         <image name="doc.text" catalog="system" width="115" height="128"/>
         <image name="edit-icon" width="38" height="38"/>
         <image name="islamic-icon" width="87" height="87"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="navbar-back-button" width="37" height="24"/>
         <image name="navbar-email" width="52" height="35"/>
         <image name="navbar-power-off" width="54" height="54"/>

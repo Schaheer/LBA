@@ -46,7 +46,7 @@ final class TaxResidentDetailVC: UIViewController {
         resonBView.isHidden = true
         
         taxResidentSegment.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,
@@ -57,7 +57,7 @@ final class TaxResidentDetailVC: UIViewController {
         )
         
         taxIdentificationNumSegment.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,
@@ -289,7 +289,8 @@ final class TaxResidentDetailVC: UIViewController {
         
         taxResidentViewModel.countryDropDownTapped.bind { [weak self]  isTapped in
             guard let self = self, isTapped else { return }
-            self.selectCountryDropDown.show()
+//            self.selectCountryDropDown.show()
+            self.openCountries()
         }
         
         taxResidentViewModel.taxNotAvailableReasons.bind { [weak self] response in
@@ -333,6 +334,16 @@ final class TaxResidentDetailVC: UIViewController {
 //                    self?.delegate?.addChild(vc: .serviceChannelsVC, fromViewController: "TaxResidentDetailVC")
 //                }
             }
+        }
+    }
+    
+    func openCountries() {
+        let dataSource = self.selectCountryDropDown.dataSource
+        
+        self.showSelectionAlert(with: dataSource, title: "Searched Country") { index, item in
+            self.taxResidentViewModel.setCountryOfTaxResidenceID(for: index)
+            self.labelCountry.text = item
+            self.taxResidentViewModel.setCountryOfTaxResidenceID(for: index)
         }
     }
 }

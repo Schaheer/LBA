@@ -67,7 +67,7 @@ class CNICAvailabilityViewModel: CNICAvailabilityViewModelProtocol {
             if mobileNumber.isValidPhoneNumber{
                 guard let viewAppGenerateOTPInput = ViewAppGenerateOTPInputModel(
                     customerTypeID: customerTypeID,
-                    mobileNumber: mobileNumber,
+                    mobileNumber: mobileNumber.replacingOccurrences(of: "-", with: ""),
                     generateOTP: generateOTP
                 ) else { return }
                 
@@ -108,9 +108,9 @@ class CNICAvailabilityViewModel: CNICAvailabilityViewModelProtocol {
         if !mobileNumber.isEmpty && !cnicNumber.isEmpty {
             guard let viewAppGenerateOTPInput = ViewAppGenerateOTPInputModel(
                 customerTypeID: customerTypeID,
-                mobileNumber: mobileNumber,
+                mobileNumber: mobileNumber.replacingOccurrences(of: "-", with: ""),
                 generateOTP: generateOTP,
-                cnicNumber: cnicNumber,
+                cnicNumber: cnicNumber.replacingOccurrences(of: "-", with: ""),
                 isPortedMobileNetwork: isPortedMobileNetwork
             ) else { return }
             

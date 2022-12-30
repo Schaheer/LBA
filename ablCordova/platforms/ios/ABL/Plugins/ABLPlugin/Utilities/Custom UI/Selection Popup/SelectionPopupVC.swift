@@ -12,20 +12,37 @@ class SelectionPopupVC: UIViewController {
     @IBOutlet weak var titleLabel   : LabelSetting!
     @IBOutlet weak var searchField  : UITextField!
     
+    @IBOutlet weak var backGroundView: CustomUIView!
     @IBOutlet weak var tableView    : UITableView!
+    @IBOutlet weak var backGroundView2: UIView!
+    
+    @IBOutlet weak var viewSearch: UIView!
     
     var dataSource: [String] = []
     var searchedItems: [String] = []
-    
+    var isSearchViewHidden = false
     var alertTitle : String = ""
     var completionHandler: ((Int, String) -> ()) = { _, _ in }
-    
+    override func viewWillAppear(_ animated: Bool) {
+//        backGroundView.isHidden = true
+        backGroundView2.isHidden = true
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        backGroundView2.isHidden = false
+
+    }
+    override func viewWillDisappear(_ animated: Bool) {
+        backGroundView2.isHidden = true
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        viewSearch.isHidden = isSearchViewHidden
         titleLabel.text = alertTitle
 
         tableView.register(UINib(nibName: "SelectionCell", bundle: nil), forCellReuseIdentifier: "SelectionCell")
+        
+        backGroundView.layer.borderWidth = 1
+        backGroundView.layer.borderColor = UIColor.lightGray.cgColor
     }
     
     @IBAction func searchTextEditingChanged(_ sender: Any) {
@@ -44,13 +61,12 @@ class SelectionPopupVC: UIViewController {
         dismiss(animated: true)
     }
     
-    func setAlertWith(datasource: [String], title: String? = "", block: @escaping ((Int, String) -> ()) = { _, _ in }) {
+    func setAlertWith(datasource: [String], title: String? = "", isSearchViewHidden: Bool, block: @escaping ((Int, String) -> ()) = { _, _ in }) {
         dataSource = datasource
         searchedItems = datasource
-        
         alertTitle = title ?? ""
-
         completionHandler = block
+        self.isSearchViewHidden = isSearchViewHidden
     }
     
 }

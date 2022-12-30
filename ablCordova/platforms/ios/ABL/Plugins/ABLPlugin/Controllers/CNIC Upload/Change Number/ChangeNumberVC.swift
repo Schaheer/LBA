@@ -23,7 +23,7 @@ final class ChangeNumberVC: UIViewController {
         super.viewDidLoad()
         
         portedSegment.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalBackgroundColor: PluginColorAsset.otpFieldBorder.color,
             normalTextColor: .white,
             selectedBackgroundColor: PluginColorAsset.appOrange.color,

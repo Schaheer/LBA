@@ -8,29 +8,29 @@
 import Foundation
 
 struct BaseConstants {
-    enum BaseURL: String {
-        case connectionProtocol = "http"
-        case qaServer = "10.100.102.124"
-        case qaPort = "8080"
-        case api = "api"
-
-        enum RDA: String {
-            case consumer = "RdaConsumer/api/consumer/"
-            case admin = "RdaAdmin/api/admin/"
-            case helpDesk = "RdaHelpDesk/api/helpdesk/"
-            case common = "RdaConsumer/api/common/"
-            case attachment = "RdaConsumer/api/attachment/"
-        }
-
-        static func value() -> String {
-            return connectionProtocol.rawValue
-                    + "://"
-                    + qaServer.rawValue
-                    + ":"
-                    + qaPort.rawValue
-                    + "/"
-        }
-    }
+//    enum BaseURL: String {
+//        case connectionProtocol = "http"
+//        case qaServer = "10.100.102.124"
+//        case qaPort = "8080"
+//        case api = "api"
+//
+//        enum RDA: String {
+//            case consumer = "RdaConsumer/api/consumer/"
+//            case admin = "RdaAdmin/api/admin/"
+//            case helpDesk = "RdaHelpDesk/api/helpdesk/"
+//            case common = "RdaConsumer/api/common/"
+//            case attachment = "RdaConsumer/api/attachment/"
+//        }
+//
+//        static func value() -> String {
+//            return connectionProtocol.rawValue
+//                    + "://"
+//                    + qaServer.rawValue
+//                    + ":"
+//                    + qaPort.rawValue
+//                    + "/"
+//        }
+//    }
     
 //    enum BaseURL: String {
 //        case connectionProtocol = "https"
@@ -53,26 +53,26 @@ struct BaseConstants {
 //        }
 //    }
     
-//    enum BaseURL: String {
-//        case connectionProtocol = "https"
-//        case qaServer = "rda.abl.com"
-//        case api = "api"
-//
-//        enum RDA: String {
-//            case consumer = "RdaConsumer/api/consumer/"
-//            case admin = "RdaAdmin/api/admin/"
-//            case helpDesk = "RdaHelpDesk/api/helpdesk/"
-//            case common = "RdaConsumer/api/common/"
-//            case attachment = "RdaConsumer/api/attachment/"
-//        }
-//
-//        static func value() -> String {
-//            return connectionProtocol.rawValue
-//                    + "://"
-//                    + qaServer.rawValue
-//                    + "/"
-//        }
-//    }
+    enum BaseURL: String {
+        case connectionProtocol = "https"
+        case qaServer = "rda.abl.com"
+        case api = "api"
+
+        enum RDA: String {
+            case consumer = "RdaConsumer/api/consumer/"
+            case admin = "RdaAdmin/api/admin/"
+            case helpDesk = "RdaHelpDesk/api/helpdesk/"
+            case common = "RdaConsumer/api/common/"
+            case attachment = "RdaConsumer/api/attachment/"
+        }
+
+        static func value() -> String {
+            return connectionProtocol.rawValue
+                    + "://"
+                    + qaServer.rawValue
+                    + "/"
+        }
+    }
     enum UserDefaults: String {
         case userData = "com.ablPlugin.userData"
         case authHeaders = "com.ablPlugin.authHeaders"
@@ -102,7 +102,7 @@ struct BaseConstants {
         static let customerTypeID: Double = 106501
         static let rdaCustomerId: Double = 5559
         static let taxNotAvailableLookupID = 1012
-        static let channelID: Double = 114603
+        static let channelID: Double = 114601
         static let additionalApplicantRelationshipsLookupID: Double = 1088
         static let smsTransactionalAlertID: Double = 114401
         static let emailTransactionalAlertID: Double = 114402
@@ -122,8 +122,8 @@ struct BaseConstants {
     
     struct CustomerAddress{
         
-        static let currentAddressId: Double = 106901
-        static let permanetAddressId: Double = 106902
+        static let currentAddressId: Double = 103301
+        static let permanetAddressId: Double = 10
         static let countryId: Double = 157
         static let countryCode = "+92"
     }

@@ -65,16 +65,13 @@ extension UIViewController {
         DispatchQueue.main.async {
             viewControllerToPresent.modalPresentationStyle = .overCurrentContext
             viewControllerToPresent.modalTransitionStyle = modalTransitionStyle
-            
             self.present(viewControllerToPresent, animated: flag, completion: completion)
         }
-        
     }
     
-    func showSelectionAlert(with datasource: [String], title: String? = "", block: @escaping ((Int, String) -> ()) = { _, _ in }) {
+    func showSelectionAlert(with datasource: [String], title: String? = "", isSearchViewHidden: Bool = false, block: @escaping ((Int, String) -> ()) = { _, _ in }) {
         if let alert: SelectionPopupVC = SelectionPopupVC.fromNib() {
-            alert.setAlertWith(datasource: datasource, title: title, block: block)
-            
+            alert.setAlertWith(datasource: datasource, title: title, isSearchViewHidden: isSearchViewHidden, block: block)
             presentPOPUP(alert, animated: true)
         }
     }

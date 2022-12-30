@@ -284,6 +284,7 @@ final class ReviewDetailsCell: UITableViewCell {
         
         cnicFrontImageView.image = modelRegistrationSteper.cnicFrontSideImageView
         cnicBackImageView.image = modelRegistrationSteper.cnicBackSideImageView
+        signatureImageView.image = modelRegistrationSteper.signaturePreviewImage
 //        cnicFrontImageView.image = UIImage(data: Data(base64Encoded: cnicFront) ?? Data())
 //        cnicBackImageView.image = UIImage(data: Data(base64Encoded: cnicBack) ?? Data())
     }
@@ -306,7 +307,7 @@ final class ReviewDetailsCell: UITableViewCell {
     
     func fatcaDefaultSetting() {
         segementUSTaxResident.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,
@@ -316,7 +317,7 @@ final class ReviewDetailsCell: UITableViewCell {
             )
         )
         segementUSTaxCitizen.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,
@@ -326,7 +327,7 @@ final class ReviewDetailsCell: UITableViewCell {
             )
         )
         segementMailAddress.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,
@@ -336,7 +337,7 @@ final class ReviewDetailsCell: UITableViewCell {
             )
         )
         segementPlaceOfBirth.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,
@@ -346,7 +347,7 @@ final class ReviewDetailsCell: UITableViewCell {
             )
         )
         segementOverSeasTerrotory.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,
@@ -356,7 +357,7 @@ final class ReviewDetailsCell: UITableViewCell {
             )
         )
         segementPermanentResident.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,
@@ -366,7 +367,7 @@ final class ReviewDetailsCell: UITableViewCell {
             )
         )
         segementGreenCardORPhoneNumber.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,

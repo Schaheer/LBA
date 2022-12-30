@@ -127,9 +127,9 @@ final class CNICVerificationVC: UIViewController {
     @IBAction func btnFrontSide(_ sender: UIButton){
         frontSideImagePicker = UIImagePickerController()
         //shakeel
-        frontSideImagePicker.sourceType = .photoLibrary
-//        frontSideImagePicker.sourceType = .camera
-//        frontSideImagePicker.allowsEditing = true
+//        frontSideImagePicker.sourceType = .photoLibrary
+        frontSideImagePicker.sourceType = .camera
+        frontSideImagePicker.allowsEditing = true
         frontSideImagePicker.delegate = self
         present(frontSideImagePicker, animated: true)
     }
@@ -137,10 +137,10 @@ final class CNICVerificationVC: UIViewController {
         backSideImagePicker = UIImagePickerController()
         //shakeel
 
-        frontSideImagePicker.sourceType = .photoLibrary
+//        frontSideImagePicker.sourceType = .photoLibrary
 
-//        backSideImagePicker.sourceType = .camera
-//        backSideImagePicker.allowsEditing = true
+        backSideImagePicker.sourceType = .camera
+        backSideImagePicker.allowsEditing = true
         backSideImagePicker.delegate = self
         present(backSideImagePicker, animated: true)
     }
@@ -388,15 +388,15 @@ extension CNICVerificationVC: UIImagePickerControllerDelegate, UINavigationContr
 
 
 
-//        guard let image = info[.editedImage] as? UIImage else {
+        guard let image = info[.editedImage] as? UIImage else {
 
-//            print("No image found")
+            print("No image found")
 
-//            return
+            return
 
-//        }
+        }
 
-        let image = info[.originalImage] as? UIImage
+//        let image = info[.originalImage] as? UIImage
 
 
 
@@ -404,13 +404,13 @@ extension CNICVerificationVC: UIImagePickerControllerDelegate, UINavigationContr
 
             cnicFrontSideImageView.image = image
 
-            frontSideCNICData = image?.jpegData(compressionQuality: 1)
+            frontSideCNICData = image.jpegData(compressionQuality: 1)
 
         } else {
 
             cnicBackSideImageView.image = image
 
-            backSideCNICData = image?.jpegData(compressionQuality: 1)
+            backSideCNICData = image.jpegData(compressionQuality: 1)
 
         }
 

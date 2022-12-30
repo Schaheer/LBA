@@ -121,7 +121,7 @@ final class CurrentTaxResidentDetailVC: UIViewController {
     
     private func setupSegments() {
         taxResidentOutsideSegment.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,
@@ -132,7 +132,7 @@ final class CurrentTaxResidentDetailVC: UIViewController {
         )
         
         taxIDNumberSegment.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,
@@ -243,8 +243,8 @@ class ChatView: UIImageView {
     }
 
     @objc func handleTap(_ sender: UITapGestureRecognizer? = nil) {
-        let alert = UIAlertController(title: "Alert", message: "Pending from client", preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
+        let alert = UIAlertController(title: "Alert".localizeString(), message: "Pending from client".localizeString(), preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK".localizeString(), style: .default))
         
         if var topController = UIApplication.shared.keyWindow?.rootViewController {
             while let presentedViewController = topController.presentedViewController {

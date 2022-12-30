@@ -111,9 +111,9 @@ extension UIViewController {
     func openCustomPopup(viewController: UIViewController, titleMessage: String, message: String) {
         let portedPopupVC = UIStoryboard.init(name: "CNICUpload", bundle: nil).instantiateViewController(withIdentifier: "CustomPopup") as! CustomPopup
 
-        portedPopupVC.titleString = titleMessage
-        portedPopupVC.message = message
-        portedPopupVC.buttonTitle = "OK"
+        portedPopupVC.titleString = titleMessage.localizeString()
+        portedPopupVC.message = message.localizeString()
+        portedPopupVC.buttonTitle = "OK".localizeString()
         portedPopupVC.portedMobileNetwork = {
 
         }

@@ -177,6 +177,8 @@ final class SelectBankingMethodVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+  
+    @IBOutlet weak var buttonNext: ButtonSetting!
     private func openSelectBranchVC() {
         guard let selectBranchVC = UIStoryboard.initialize(
             viewController: .selectBranchVC,
@@ -372,7 +374,10 @@ final class SelectBankingMethodVC: UIViewController {
         
         selectBankingMethodViewModel.dropDownTapped.bind { [weak self] isTapped in
             guard let self = self, isTapped else { return }
-            self.dropDown.show()
+            DispatchQueue.main.async {
+//                self.dropDown.show()
+                self.branchCodeSearchTapped(UIButton())
+            }
         }
         
         selectBankingMethodViewModel.registerVerifyOTPResponse.bind { [weak self] response in

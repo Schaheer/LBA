@@ -194,7 +194,7 @@ final class ServiceChannelsVC: UIViewController {
     
     private func setupViews() {
         if nextBtnTapped.tag != 1 {
-            debitCardSwitch.segments = LabelSegment.segments(withTitles: ["No", "Yes"],
+            debitCardSwitch.segments = LabelSegment.segments(withTitles: ["No".localizeString(), "Yes".localizeString()],
                                                              normalTextColor: .white,
                                                              selectedTextColor: UIColor(red: 0.92, green: 0.29, blue: 0.15, alpha: 1.00))
             if modelRegistrationSteper.chequeBookIndex == nil {
@@ -204,10 +204,10 @@ final class ServiceChannelsVC: UIViewController {
             }
             
             
-            chequeBookSwitch.segments = LabelSegment.segments(withTitles: ["No", "Yes"],
+            chequeBookSwitch.segments = LabelSegment.segments(withTitles: ["No".localizeString(), "Yes".localizeString()],
                                                              normalTextColor: .white,
                                                              selectedTextColor: UIColor(red: 0.92, green: 0.29, blue: 0.15, alpha: 1.00))
-            transactionalAlertsSwitch.segments = LabelSegment.segments(withTitles: ["Required", "Not Required"],
+            transactionalAlertsSwitch.segments = LabelSegment.segments(withTitles: ["Required".localizeString(), "Not Required".localizeString()],
                                                              normalTextColor: .white,
                                                              selectedTextColor: UIColor(red: 0.92, green: 0.29, blue: 0.15, alpha: 1.00))
             
@@ -369,7 +369,9 @@ final class ServiceChannelsVC: UIViewController {
             guard let self = self, isTapped else {
                 return
             }
-            self.reasonListDropDown.show()
+//            self.reasonListDropDown.show()
+            
+            self.openReasons()
         }
 
         serviceChannelsVM.deliveryOptions.bind { [weak self] deliveryOptions in
@@ -388,7 +390,8 @@ final class ServiceChannelsVC: UIViewController {
             guard let self = self, isTapped else {
                 return
             }
-            self.DCDeliveryDropDown.show()
+//            self.DCDeliveryDropDown.show()
+            self.openDelivery()
         }
         
         serviceChannelsVM.errorMessage.bind {   error in
@@ -399,6 +402,28 @@ final class ServiceChannelsVC: UIViewController {
     
     //MARK: TODO
     // debit card delivery brd
+    
+    func openReasons() {
+        let dataSource = self.reasonListDropDown.dataSource
+        self.showSelectionAlert(with: dataSource, title: "Select Reasons", isSearchViewHidden: true) { index, item in
+            let reason = self.serviceChannelsVM.getReason(at: index)
+            self.labelReason.text = reason?.description
+            self.serviceChannelsVM.setReason(id: reason?.id ?? 0)
+        }
+    }
+    func openDelivery() {
+        let dataSource = self.DCDeliveryDropDown.dataSource
+        
+        self.showSelectionAlert(with: dataSource, title: "Select Delivery", isSearchViewHidden: true) { index, item in
+            if self.deliveryOptions.endIndex - 1 == index {
+                let option = self.serviceChannelsVM.getDeliveryOption(at: index)
+                self.DCDeliveryLabel.text = option?.description
+                self.serviceChannelsVM.setDelivery(id: option?.id ?? 0)
+            } else {
+                self.DCDeliveryDropDown.deselectRow(at: index)
+            }
+        }
+    }
 }
 
 
@@ -454,8 +479,8 @@ extension ServiceChannelsVC: UICollectionViewDelegate, UICollectionViewDataSourc
             fromStoryboard: .cnicUpload
         ) as? PortedPopupVC else { return }
         
-        portedPopupVC.message = message
-        portedPopupVC.buttonTitle = "Open"
+        portedPopupVC.message = message.localizeString()
+        portedPopupVC.buttonTitle = "Open".localizeString()
         portedPopupVC.portedMobileNetwork = {
             if let url = URL(string: "https://www.abl.com/services/downloads/schedule-of-charges/") {
                 UIApplication.shared.open(url)

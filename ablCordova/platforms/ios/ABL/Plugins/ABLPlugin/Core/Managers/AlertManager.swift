@@ -40,9 +40,9 @@ final class AlertManager {
 ////            self.topController?.present(alert, animated: true)
             let portedPopupVC = UIStoryboard.init(name: "CNICUpload", bundle: nil).instantiateViewController(withIdentifier: "CustomPopup") as! CustomPopup
 
-            portedPopupVC.titleString = title
-            portedPopupVC.message = message
-            portedPopupVC.buttonTitle = "OK"
+            portedPopupVC.titleString = title?.localizeString()
+            portedPopupVC.message = message?.localizeString()
+            portedPopupVC.buttonTitle = "OK".localizeString()
             portedPopupVC.portedMobileNetwork = {
 
             }

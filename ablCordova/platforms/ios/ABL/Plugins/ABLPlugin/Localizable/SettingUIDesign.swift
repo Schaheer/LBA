@@ -30,6 +30,11 @@ class LabelSetting: UILabel {
     
     func checkScreenSize() {
         var fontSize = self.font.pointSize
+        if Defaults.selectedLanguageCode == "en"{
+            fontSize = self.font.pointSize
+        }else{
+            fontSize = self.font.pointSize - 3
+        }
 //        if IPAD {
 //            fontSize *= iPadMultiplier
 //        } else if iPhoneMiniIdentifiers.contains(UIDevice.current.screenType) {
@@ -87,8 +92,14 @@ class ButtonSetting: UIButton {
 //            } else {
 //                fontSize *= iPhoneMultiplier
 //            }
+            if Defaults.selectedLanguageCode == "en"{
+                fontSize = self.titleLabel!.font.pointSize
+            }else{
+                fontSize = fontSize - 3
+            }
+            
             DispatchQueue.main.async {
-                self.titleLabel?.font = UIFont(name: "WorkSans-SemiBold", size: 16)
+                self.titleLabel?.font = UIFont(name: "WorkSans-SemiBold", size: fontSize)
             }
         }
     }
@@ -119,6 +130,11 @@ class TextFieldSetting: UITextField {
 //            } else {
 //                fontSize *= iPhoneMultiplier
 //            }
+            if Defaults.selectedLanguageCode == "en"{
+                fontSize = self.font!.pointSize
+            }else{
+                fontSize = self.font!.pointSize - 3
+            }
             
             self.font = UIFont(name: fontName, size: fontSize)
         }

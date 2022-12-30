@@ -28,7 +28,7 @@ final class NationalityVC: UIViewController {
         super.viewDidLoad()
         
         nationalitySegment.segments = LabelSegment.segments(
-            withTitles: ["Single", "Dual"],
+            withTitles: ["Single".localizeString(), "Dual".localizeString()],
             normalTextColor: .white,
             selectedTextColor: .orange
         )
@@ -154,6 +154,7 @@ extension NationalityVC: UITableViewDelegate, UITableViewDataSource {
             ) as? SelectNationalityCell
             cell?.countrisListResponse = countrisListResponse
             cell?.setupDropdown()
+            cell?.viewController = self
             if modelRegistrationSteper.nationalityDualName != nil {
                 cell?.selectNationalityLabel.text = modelRegistrationSteper.nationalityDualName!
             }
