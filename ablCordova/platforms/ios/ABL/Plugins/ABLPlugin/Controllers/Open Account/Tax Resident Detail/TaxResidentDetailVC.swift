@@ -157,6 +157,8 @@ final class TaxResidentDetailVC: UIViewController {
                     AlertManager.shared.showOKAlert(with: "Alert!", message: "Please Enter Tax Identification Number first")
                     return()
                 }
+                taxResidentViewModel.setTaxIdentificationNumber(value: enterTaxNumberTextField.text ?? "")
+                modelRegistrationSteper.taxNumberDual = enterTaxNumberTextField.text
                 modelRegistrationSteper.isTaxIdentificationNoDual = true
                 modelRegistrationSteper.taxNotAvailableReson = labelReson.text
                 modelRegistrationSteper.taxFormBExplanation = nil
@@ -175,8 +177,9 @@ final class TaxResidentDetailVC: UIViewController {
                 else {
                     modelRegistrationSteper.taxFormBExplanation = nil
                 }
+                modelRegistrationSteper.taxNumberDual = nil
+                taxResidentViewModel.setTaxIdentificationNumber(value: "")
                 modelRegistrationSteper.isTaxIdentificationNoDual = false
-                taxResidentViewModel.setTaxIdentificationNumber(value: enterTaxNumberTextField.text ?? "")
             }
         }
         else {
@@ -191,7 +194,7 @@ final class TaxResidentDetailVC: UIViewController {
         let taxNotAvailableReasonID = taxResidentViewModel.getTaxNotAvailableReasonID()
 //        let taxResident = taxResidentViewModel.getTaxResident()
         let taxResident = taxResidentSegment.index
-
+        
         let explanation = (modelRegistrationSteper.taxFormBExplanation != nil ? textFieldIDentificationNumber.text : taxResidentViewModel.getTaxNotAvailableReason()?.description ?? "N/A")!
         print(taxResidentViewModel.getCountyofTaxResidenceID())
         var countryResidentID = "\(taxResidentViewModel.getCountyofTaxResidenceID())"

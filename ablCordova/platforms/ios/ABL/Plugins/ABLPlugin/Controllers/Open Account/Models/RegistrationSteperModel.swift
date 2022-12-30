@@ -72,6 +72,7 @@ class RegistrationSteperModel {
     var taxNumberDual: String?
     var nationalityDualName: String?
     var nationalityDualId: Int?
+    var nationalityDualTaxIdentificationNo: String?
     var taxNotAvailableReson: String?
     var taxNotAvailableResonId: Double?
     var taxNotAvailableResonFormBExplination: String?
