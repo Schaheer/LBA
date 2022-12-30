@@ -23,11 +23,11 @@
         <array key="WorkSans-Medium.ttf">
             <string>WorkSans-Medium</string>
         </array>
+        <array key="WorkSans-Regular.ttf">
+            <string>WorkSans-Regular</string>
+        </array>
         <array key="WorkSans-SemiBold.ttf">
             <string>WorkSans-SemiBold</string>
-        </array>
-        <array key="WorkSans-VariableFont_wght.ttf">
-            <string>WorkSans-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -8719,10 +8719,10 @@ Preferences</string>
                                 <rect key="frame" x="0.0" y="48" width="414" height="1118"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="myU-bW-5jB">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1118"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="680.5"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Ou0-Yp-Lcy">
-                                                <rect key="frame" x="20" y="978" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="540.5" width="374" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fcn-Lo-bmd" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="179" height="50"/>
@@ -9063,13 +9063,13 @@ Preferences</string>
                                                 </subviews>
                                             </stackView>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="viM-6x-Uqk" customClass="ChatView" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="1048" width="374" height="50"/>
+                                                <rect key="frame" x="20" y="610.5" width="374" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="2Dj-Rc-7Ig"/>
                                                 </constraints>
                                             </imageView>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Zzw-XU-COr">
-                                                <rect key="frame" x="20" y="420.5" width="374" height="537.5"/>
+                                                <rect key="frame" x="20" y="420.5" width="374" height="100"/>
                                                 <subviews>
                                                     <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uku-gN-a9Q" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="360"/>
@@ -9147,7 +9147,7 @@ Preferences</string>
                                                             </userDefinedRuntimeAttribute>
                                                         </userDefinedRuntimeAttributes>
                                                     </view>
-                                                    <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCo-JI-2qo" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
+                                                    <view multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QCo-JI-2qo" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="374" height="100"/>
                                                         <subviews>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gjh-T7-8dz" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">

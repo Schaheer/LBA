@@ -29,6 +29,8 @@ final class APIManager: BaseHTTPClient {
         case registerConsumerAccountInfo = "register-consumer-account-info"
 
         case consumerAccountDetail = "consumer-account-detail"
+        case updateConsumerAccountDetail = "consumer-profile-update-status"
+
         case updateAccount = "public/update-account"
         case changeMobileNumber = "public/change-mobile-no"
 
@@ -284,6 +286,24 @@ final class APIManager: BaseHTTPClient {
         parameters = input.dictionaryRepresentation()
 
         let endPoint = BaseConstants.BaseURL.RDA.consumer.rawValue + APIEndPoint.consumerAccountDetail.rawValue
+        
+        executePost(
+            endPoint: endPoint,
+            ignoreBaseURL: false,
+            isDebugging: true,
+            showLoader: true,
+            completion: completion
+        )
+    }
+    
+    func updateConsumerAccountDetail(
+        input: ConsumerAccountDetailInputModel,
+        completion: @escaping consumerAccountDetailCompletion
+    ) {
+        clearParameters()
+        parameters = input.dictionaryRepresentation()
+
+        let endPoint = BaseConstants.BaseURL.RDA.consumer.rawValue + APIEndPoint.updateConsumerAccountDetail.rawValue
         
         executePost(
             endPoint: endPoint,

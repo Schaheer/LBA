@@ -15,6 +15,7 @@ final class ConsumerAccountDetailInputModel: BaseInputModel {
         case rdaCustomerProfileID = "data.rdaCustomerProfileId"
         case rdaCustomerAccInfoID = "data.rdaCustomerAccInfoId"
         case customerTypeID = "data.customerTypeId"
+        case statusId = "data.statusId"
     }
     
     // MARK: - Model Properties
@@ -22,6 +23,7 @@ final class ConsumerAccountDetailInputModel: BaseInputModel {
     var rdaCustomerProfileID: Double?
     var rdaCustomerAccInfoID: Double?
     var customerTypeID: Double?
+    var statusId: Double?
     
     // MARK: - Model Initializers
     
@@ -32,16 +34,19 @@ final class ConsumerAccountDetailInputModel: BaseInputModel {
     required init?(
         rdaCustomerProfileID: Double,
         rdaCustomerAccInfoID: Double,
-        customerTypeID: Double
+        customerTypeID: Double? = nil,
+        statusId: Double? = nil
     ) {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.rdaCustomerProfileID.rawValue] = rdaCustomerProfileID
         dictionary[CodingKeys.rdaCustomerAccInfoID.rawValue] = rdaCustomerAccInfoID
         dictionary[CodingKeys.customerTypeID.rawValue] = customerTypeID
-        
+        dictionary[CodingKeys.statusId.rawValue] = statusId
+
         self.rdaCustomerProfileID = rdaCustomerProfileID
         self.rdaCustomerAccInfoID = rdaCustomerAccInfoID
         self.customerTypeID = customerTypeID
+        self.statusId = statusId
         
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
@@ -59,5 +64,6 @@ final class ConsumerAccountDetailInputModel: BaseInputModel {
         rdaCustomerProfileID <- map[CodingKeys.rdaCustomerProfileID.rawValue]
         rdaCustomerAccInfoID <- map[CodingKeys.rdaCustomerAccInfoID.rawValue]
         customerTypeID <- map[CodingKeys.customerTypeID.rawValue]
+        statusId <- map[CodingKeys.customerTypeID.rawValue]
     }
 }

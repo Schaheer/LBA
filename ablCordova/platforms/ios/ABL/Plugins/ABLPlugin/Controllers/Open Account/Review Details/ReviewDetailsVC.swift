@@ -115,6 +115,15 @@ final class ReviewDetailsVC: UIViewController {
         )
     }
     
+    private func updateConsumerAccountDetails() {
+        let consumer = getPrimaryUser()
+        reviewDetailsViewModel.updateConsumerAccountDetail(
+            rdaCustomerProfileID: consumer.rdaCustomerProfileID,
+            rdaCustomerAccInfoID: consumer.accountInformation?.rdaCustomerAccInfoID,
+            statusId: consumer.accountInformation?.accountStatusID
+        )
+    }
+    
 //    private func populateDetails(with consumer: ConsumerListResponseModel) {
 //        bankingModeLabel.text = BankingMethod.getDescription(for: consumer.accountInformation?.bankingModeID ?? 0)
 //        branchLabel.text = consumer.customerBranch ?? "N/A"
@@ -289,7 +298,8 @@ final class ReviewDetailsVC: UIViewController {
             return
         }
             
-        reviewDetailsViewModel.openConfirmationVC()
+        updateConsumerAccountDetails()
+//        reviewDetailsViewModel.openConfirmationVC()
     }
     
     //MARK: TODO

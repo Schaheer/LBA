@@ -18,9 +18,12 @@ protocol ReviewDetailsViewModelProtocol {
         customerTypeID: Double?
     )
     func openConfirmationVC()
+    
 }
 
 final class ReviewDetailsViewModel: ReviewDetailsViewModelProtocol {
+    
+    
     
     private(set) var consumerAccountDetail: Observable<RegisterVerifyOTPResponseModel?> = Observable(nil)
     private(set) var routeToConfirmationVC: Observable<Bool> = Observable(false)
@@ -51,6 +54,38 @@ final class ReviewDetailsViewModel: ReviewDetailsViewModelProtocol {
             switch response.result {
             case .success(let value):
                 self.consumerAccountDetail.value = value
+            case .failure(let error):
+                self.errorMessage.value = error.errorDescription
+            }
+        }
+    }
+    
+    func updateConsumerAccountDetail(
+        rdaCustomerProfileID: Double?,
+        rdaCustomerAccInfoID: Double?,
+        statusId: Double?
+    ) {
+        guard
+            let rdaCustomerProfileID = rdaCustomerProfileID,
+            let rdaCustomerAccInfoID = rdaCustomerAccInfoID,
+            let statusId = statusId
+        else {
+            self.errorMessage.value = "All fields required"
+            return }
+        
+        guard let input = ConsumerAccountDetailInputModel(
+            rdaCustomerProfileID: rdaCustomerProfileID,
+            rdaCustomerAccInfoID: rdaCustomerAccInfoID,
+            statusId: statusId
+        ) else { return }
+        
+        APIManager.shared.getConsumerAccountDetail(input: input) { [weak self] response in
+            guard let self = self else { return }
+            
+            switch response.result {
+            case .success(let value):
+//                self.consumerAccountDetail.value = value
+                self.openConfirmationVC()
             case .failure(let error):
                 self.errorMessage.value = error.errorDescription
             }
