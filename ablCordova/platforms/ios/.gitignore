@@ -12,3 +12,6 @@ ablCordova/platforms/ios/Veridium4FUI.xcframework
 ablCordova/platforms/ios/VeridiumFingerSelector.xcframework
 ablCordova/platforms/ios/Pods/
 ablCordova/platforms/ios/Veridium4FBiometrics.xcframework/
+ablCordova/platforms/ios/xcuserdata/*
+ablCordova/platforms/ios/xcworkspace/xcuserdata/*
+ablCordova/platforms/ios/ABL.xcworkspace/xcuserdata/
