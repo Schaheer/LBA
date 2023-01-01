@@ -12,15 +12,26 @@ import DropDown
 final class ServiceChannelsVC: UIViewController {
     
     @IBAction func buttonEye(_ sender: Any) {
-        let message  = "Charges shall be applicable as per latest SOC. Click Open to view"
+        let message  = "Charges shall be applicable as per latest SOC. Click here to view SOC."
         openPortedPopupVC(viewController: self, message: message)
     }
+    
+    @IBAction func SOAEyeTapped(_ sender: Any) {
+        let message  = "Charges shall be applicable as per latest SOC. Click here to view SOC."
+        openPortedPopupVC(viewController: self, message: message)
+    }
+    
     @IBAction func buttonReason(_ sender: Any) {
         
     }
     @IBOutlet weak var buttonReason: UIButton!
     @IBOutlet weak var labelReason: LabelSetting!
     @IBOutlet weak var viewReason: CustomUIView!
+    
+    @IBOutlet weak var DCDeliveryView: CustomUIView!
+    @IBOutlet weak var DCDeliveryButton: UIButton!
+    @IBOutlet weak var DCDeliveryLabel: LabelSetting!
+    
     @IBOutlet weak var nextBtnTapped: UIButton!
     @IBOutlet weak var buttonSms: UIButton!
     @IBOutlet weak var buttonEmail: UIButton!
@@ -32,6 +43,7 @@ final class ServiceChannelsVC: UIViewController {
     }
     
     private let reasonListDropDown = DropDown()
+    private let DCDeliveryDropDown = DropDown()
 
     var selectedATMTypeId = Double()
     
@@ -77,6 +89,10 @@ final class ServiceChannelsVC: UIViewController {
     @IBOutlet weak var debitCardSwitch: BetterSegmentedControl!
     @IBOutlet weak var chequeBookSwitch: BetterSegmentedControl!
     @IBOutlet weak var transactionalAlertsSwitch: BetterSegmentedControl!
+    
+    @IBOutlet weak var SOAView: UIView!
+    @IBOutlet weak var SOASwitch: BetterSegmentedControl!
+    
     @IBOutlet weak var atmTypeCollectionView: UICollectionView!
     @IBOutlet var atmtypeCollectionLayout: UICollectionViewFlowLayout!
     
@@ -84,6 +100,7 @@ final class ServiceChannelsVC: UIViewController {
     weak var delegate: PersonalInfoChildToParentProtocol? = nil
     private var atmTypes = [CodeTypeDataModel]()
     private var reasonTypes = [CodeTypeDataModel]()
+    private var deliveryOptions = [CodeTypeDataModel]()
 
     override func viewWillAppear(_ animated: Bool) {
     }
@@ -98,10 +115,19 @@ final class ServiceChannelsVC: UIViewController {
         serviceChannelsVM.getReasons(
             codeTypeID: BaseConstants.Config.reasonForRequiringVisaCard
         )
+        serviceChannelsVM.getDeliveryOptions(
+            codeTypeID: BaseConstants.Config.debitCardDeliveryOptionsID
+        )
         setupDropdown()
         setupCollectionViews()
         subscribeViewModel()
         viewReason.isHidden = true
+        
+        if modelRegistrationSteper.emailOptional?.isEmpty ?? true {
+            SOAView.isHidden = true
+        } else {
+            SOAView.isHidden = false
+        }
         
         setupGestureRecognizers()
     }
@@ -152,6 +178,12 @@ final class ServiceChannelsVC: UIViewController {
                 transactionalAlertsSwitch.isSelected = index == 1
                 transactionalAlertsSwitch.setIndex(index!)
             }
+            if modelRegistrationSteper.SOAIndex != nil {
+                let index = modelRegistrationSteper.SOAIndex
+                SOASwitch.isEnabled = index == 1
+                SOASwitch.isSelected = index == 1
+                SOASwitch.setIndex(index!)
+            }
         }
     }
     
@@ -162,7 +194,7 @@ final class ServiceChannelsVC: UIViewController {
     
     private func setupViews() {
         if nextBtnTapped.tag != 1 {
-            debitCardSwitch.segments = LabelSegment.segments(withTitles: ["No", "Yes"],
+            debitCardSwitch.segments = LabelSegment.segments(withTitles: ["No".localizeString(), "Yes".localizeString()],
                                                              normalTextColor: .white,
                                                              selectedTextColor: UIColor(red: 0.92, green: 0.29, blue: 0.15, alpha: 1.00))
             if modelRegistrationSteper.chequeBookIndex == nil {
@@ -172,10 +204,14 @@ final class ServiceChannelsVC: UIViewController {
             }
             
             
-            chequeBookSwitch.segments = LabelSegment.segments(withTitles: ["No", "Yes"],
+            chequeBookSwitch.segments = LabelSegment.segments(withTitles: ["No".localizeString(), "Yes".localizeString()],
                                                              normalTextColor: .white,
                                                              selectedTextColor: UIColor(red: 0.92, green: 0.29, blue: 0.15, alpha: 1.00))
-            transactionalAlertsSwitch.segments = LabelSegment.segments(withTitles: ["Required", "Not Required"],
+            transactionalAlertsSwitch.segments = LabelSegment.segments(withTitles: ["Required".localizeString(), "Not Required".localizeString()],
+                                                             normalTextColor: .white,
+                                                             selectedTextColor: UIColor(red: 0.92, green: 0.29, blue: 0.15, alpha: 1.00))
+            
+            SOASwitch.segments = LabelSegment.segments(withTitles: ["No", "Yes"],
                                                              normalTextColor: .white,
                                                              selectedTextColor: UIColor(red: 0.92, green: 0.29, blue: 0.15, alpha: 1.00))
         }
@@ -207,6 +243,33 @@ final class ServiceChannelsVC: UIViewController {
             self.labelReason.text = reason?.description
             self.serviceChannelsVM.setReason(id: reason?.id ?? 0)
         }
+        
+        DCDeliveryDropDown.anchorView = DCDeliveryView
+        DCDeliveryDropDown.frame.origin.y = DCDeliveryView.frame.maxY
+        DCDeliveryDropDown.direction = .any
+        DCDeliveryDropDown.width = DCDeliveryView.bounds.width
+        DCDeliveryDropDown.frame.size.height = 250
+        DCDeliveryDropDown.bottomOffset = CGPoint(
+            x: 0,
+            y: DCDeliveryDropDown.anchorView?.plainView.bounds.height ?? 0
+        )
+        
+        DCDeliveryDropDown.selectionAction = { [unowned self] index, item in
+            if deliveryOptions.endIndex - 1 == index {
+                let option = serviceChannelsVM.getDeliveryOption(at: index)
+                self.DCDeliveryLabel.text = option?.description
+                self.serviceChannelsVM.setDelivery(id: option?.id ?? 0)
+            } else {
+                DCDeliveryDropDown.deselectRow(at: index)
+            }
+        }
+        
+//        DCDeliveryDropDown.customCellConfiguration = { (index: Index, item: String, cell: DropDownCell) -> Void in
+////           guard let cell = cell as? DropDownCell else { return }
+//            cell.optionLabel.textColor = .red
+//            cell.backgroundColor = .green
+//            cell.optionLabel.tintColor = .orange
+//        }
     }
     private func setupGestureRecognizers() {
         viewReason.addGestureRecognizer(
@@ -215,8 +278,18 @@ final class ServiceChannelsVC: UIViewController {
                 action: #selector(serviceChannelsVM.openReasonDropdown)
             )
         )
+        
+        DCDeliveryButton.addGestureRecognizer(
+            UITapGestureRecognizer(
+                target: serviceChannelsVM,
+                action: #selector(serviceChannelsVM.openDeliveryDropdown)
+            )
+        )
     }
     
+    @IBAction func DCDeliveryDropDownTapped(_ sender: Any) {
+        
+    }
     
     @IBAction func backBtnTapped(_ sender: UIButton){
         if let count = self.parent?.children.count{
@@ -263,6 +336,11 @@ final class ServiceChannelsVC: UIViewController {
         modelRegistrationSteper.transAlertIndex = sender.index
     }
     
+    @IBAction func SOAValueChanged(_ sender: BetterSegmentedControl) {
+        print("The selected index is \(sender.index)")
+        modelRegistrationSteper.SOAIndex = sender.index
+    }
+    
     func getTransactionalAlertId() -> Double {
         return transactionalAlertsSwitch.index == 0 ? 114401 : 114402
     }
@@ -287,14 +365,36 @@ final class ServiceChannelsVC: UIViewController {
             self.reasonTypes = reasonTypes
             self.reasonListDropDown.dataSource = reasonTypes.map { $0.description ?? "N/A" }
         }
-        
         serviceChannelsVM.reasonDropDownTapped.bind { [weak self] isTapped in
             print(isTapped)
             guard let self = self, isTapped else {
                 return
             }
-            self.reasonListDropDown.show()
+//            self.reasonListDropDown.show()
+            
+            self.openReasons()
         }
+
+        serviceChannelsVM.deliveryOptions.bind { [weak self] deliveryOptions in
+            print(deliveryOptions)
+
+            guard let self = self, let deliveryOptions = deliveryOptions?.data else { return }
+            self.deliveryOptions = deliveryOptions
+            self.DCDeliveryDropDown.dataSource = deliveryOptions.map { $0.description ?? "N/A" }
+            
+            let option = self.serviceChannelsVM.getDeliveryOption(at: deliveryOptions.endIndex - 1)
+            self.DCDeliveryLabel.text = option?.description
+            self.serviceChannelsVM.setDelivery(id: option?.id ?? 0)
+        }
+        serviceChannelsVM.DCDeliveryDropDownTapped.bind { [weak self] isTapped in
+            print(isTapped)
+            guard let self = self, isTapped else {
+                return
+            }
+//            self.DCDeliveryDropDown.show()
+            self.openDelivery()
+        }
+        
         serviceChannelsVM.errorMessage.bind {   error in
             guard let error = error else { return }
             AlertManager.shared.showOKAlert(with: "Error", message: error)
@@ -303,6 +403,28 @@ final class ServiceChannelsVC: UIViewController {
     
     //MARK: TODO
     // debit card delivery brd
+    
+    func openReasons() {
+        let dataSource = self.reasonListDropDown.dataSource
+        self.showSelectionAlert(with: dataSource, title: "Select Reasons", isSearchViewHidden: true) { index, item in
+            let reason = self.serviceChannelsVM.getReason(at: index)
+            self.labelReason.text = reason?.description
+            self.serviceChannelsVM.setReason(id: reason?.id ?? 0)
+        }
+    }
+    func openDelivery() {
+        let dataSource = self.DCDeliveryDropDown.dataSource
+        
+        self.showSelectionAlert(with: dataSource, title: "Select Delivery", isSearchViewHidden: true) { index, item in
+            if self.deliveryOptions.endIndex - 1 == index {
+                let option = self.serviceChannelsVM.getDeliveryOption(at: index)
+                self.DCDeliveryLabel.text = option?.description
+                self.serviceChannelsVM.setDelivery(id: option?.id ?? 0)
+            } else {
+                self.DCDeliveryDropDown.deselectRow(at: index)
+            }
+        }
+    }
 }
 
 
@@ -358,8 +480,8 @@ extension ServiceChannelsVC: UICollectionViewDelegate, UICollectionViewDataSourc
             fromStoryboard: .cnicUpload
         ) as? PortedPopupVC else { return }
         
-        portedPopupVC.message = message
-        portedPopupVC.buttonTitle = "Open"
+        portedPopupVC.message = message.localizeString()
+        portedPopupVC.buttonTitle = "Open".localizeString()
         portedPopupVC.portedMobileNetwork = {
             if let url = URL(string: "https://www.abl.com/services/downloads/schedule-of-charges/") {
                 UIApplication.shared.open(url)

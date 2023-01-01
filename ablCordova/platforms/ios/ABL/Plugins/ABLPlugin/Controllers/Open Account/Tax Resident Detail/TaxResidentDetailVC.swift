@@ -107,7 +107,7 @@ final class TaxResidentDetailVC: UIViewController {
                     textFieldIDentificationNumber.text = modelRegistrationSteper.taxFormBExplanation
                 }
                 else {
-                    resonBView.isHidden = true                    
+                    resonBView.isHidden = true
                 }
             }
         }

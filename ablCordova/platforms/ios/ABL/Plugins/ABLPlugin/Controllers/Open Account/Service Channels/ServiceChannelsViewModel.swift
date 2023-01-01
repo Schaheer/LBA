@@ -12,10 +12,12 @@ protocol ServiceChannelsViewModelProtocol{
     var registerConsumerTransactionDetailsResponse: Observable<RegisterVerifyOTPResponseModel?> { get }
     
     var reasonDropDownTapped: Observable<Bool> { get }
+    var DCDeliveryDropDownTapped: Observable<Bool> { get }
 
     var errorMessage: Observable<String?> { get }
     var atmTypes: Observable<CodeTypeResponseModel?> { get }
     var reasonTypes: Observable<CodeTypeResponseModel?> { get }
+    var deliveryOptions: Observable<CodeTypeResponseModel?> { get }
 
     var selectedAtmTypeID: Observable<Double?> { get }
     
@@ -28,12 +30,16 @@ protocol ServiceChannelsViewModelProtocol{
 class ServiceChannelsViewModel{
     private(set) var reasonDropDownTapped: Observable<Bool> = Observable(false)
     private(set) var registerConsumerTransactionDetailsResponse: Observable<RegisterVerifyOTPResponseModel?> = Observable(nil)
+    private(set) var DCDeliveryDropDownTapped: Observable<Bool> = Observable(false)
+
     private(set) var errorMessage: Observable<String?> = Observable(nil)
     private(set) var atmTypes: Observable<CodeTypeResponseModel?> = Observable(nil)
     private(set) var reasonTypes: Observable<CodeTypeResponseModel?> = Observable(nil)
-
+    private(set) var deliveryOptions: Observable<CodeTypeResponseModel?> = Observable(nil)
     private(set) var selectedAtmTypeID: Observable<Double?> = Observable(nil)
+    
     private var reasonID: Double = 0
+    private var deliveryID: Double = 0
 
     func registerConsumerEmploymentDetails(
         customerAccInfoID: Double?,
@@ -107,8 +113,25 @@ class ServiceChannelsViewModel{
         }
     }
     
+    func getDeliveryOptions(codeTypeID: Int) {
+        guard let input = CodeTypeInputModel(codeTypeID: codeTypeID) else { return }
+        APIManager.shared.lookupInformation(input: input) { [weak self] response in
+            guard let self = self else { return }
+            switch response.result {
+            case .success(let value):
+                self.deliveryOptions.value = value
+            case .failure(let error):
+                self.errorMessage.value = error.errorDescription
+            }
+        }
+    }
+    
     func getReason(at index: Int) -> CodeTypeDataModel? {
         return reasonTypes.value?.data?[index]
+    }
+    
+    func getDeliveryOption(at index: Int) -> CodeTypeDataModel? {
+        return deliveryOptions.value?.data?[index]
     }
     
     func setReason(id: Double) {// selected reason is stored in
@@ -118,9 +141,21 @@ class ServiceChannelsViewModel{
         return reasonID
     }
     
+    func setDelivery(id: Double) {// selected reason is stored in
+        deliveryID = id
+    }
+    func getDeliverySelected() -> Double {// selected reason is stored in
+        return deliveryID
+    }
+    
     @objc
     func openReasonDropdown() {
         reasonDropDownTapped.value = true
+    }
+    
+    @objc
+    func openDeliveryDropdown() {
+        DCDeliveryDropDownTapped.value = true
     }
     
     func setSelectedATMTypeID(accountVariantID: Double) {

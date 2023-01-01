@@ -18,6 +18,16 @@ class WelcomeVC: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
     }
+    
+    @IBOutlet weak var buttonUrdu: UIButton!
+    
+    @IBAction func buttonEnglish(_ sender: Any) {
+        funChangeAppLanguageAndSide(to: "en", vc: self)
+    }
+    @IBAction func buttonUrdu(_ sender: Any) {
+        funChangeAppLanguageAndSide(to: "ur", vc: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DataCacheManager.shared.saveNoOfJointApplicants(input: 0)
@@ -148,6 +158,22 @@ class WelcomeVC: UIViewController {
     
     @IBAction func whatsappTapped(_ sender: Any) {
         let url = URL(string: "https://api.whatsapp.com/send?phone=+923001225225")
+        
+        if UIApplication.shared.canOpenURL(url!) {
+            UIApplication.shared.open(url!)
+        }
+    }
+    
+    @IBAction func securityGuidelinesTapped(_ sender: Any) {
+        var urlString = ""
+        
+        if BaseConstants.BaseURL.qaServer.rawValue == "10.100.102.124" {
+            urlString = "https://10.100.102.124/consumer-portal/assets/docs/securityawareness.pdf"
+        } else {
+            urlString = BaseConstants.BaseURL.value() + "/consumer-portal/assets/docs/securityawareness.pdf"
+        }
+        
+        let url = URL(string: urlString)
         
         if UIApplication.shared.canOpenURL(url!) {
             UIApplication.shared.open(url!)

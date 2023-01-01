@@ -104,13 +104,14 @@ struct BaseConstants {
         static let customerTypeID: Double = 106501
         static let rdaCustomerId: Double = 5559
         static let taxNotAvailableLookupID = 1012
-        static let channelID: Double = 114603
+        static let channelID: Double = 114601
         static let additionalApplicantRelationshipsLookupID: Double = 1088
         static let smsTransactionalAlertID: Double = 114401
         static let emailTransactionalAlertID: Double = 114402
         static let allAccountsLookupID = 1082
         static let allATMTypesLookupId = 1086
         static let reasonForRequiringVisaCard = 1126
+        static let debitCardDeliveryOptionsID = 1033
     }
     
     struct AttachmentTypeIDs{
@@ -123,8 +124,8 @@ struct BaseConstants {
     
     struct CustomerAddress{
         
-        static let currentAddressId: Double = 106901
-        static let permanetAddressId: Double = 106902
+        static let currentAddressId: Double = 103301
+        static let permanetAddressId: Double = 10
         static let countryId: Double = 157
         static let countryCode = "+92"
     }

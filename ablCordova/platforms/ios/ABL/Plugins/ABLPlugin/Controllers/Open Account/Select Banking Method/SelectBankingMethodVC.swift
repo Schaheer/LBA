@@ -41,8 +41,9 @@ final class SelectBankingMethodVC: UIViewController {
     
     private var branchName = ""
     private var suggestedBranches = [BranchListModel]()
-    var isEditFromReviewDetailsViewController = false
+    var branchList: [BranchListModel]?
     
+    var isEditFromReviewDetailsViewController = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,14 +52,14 @@ final class SelectBankingMethodVC: UIViewController {
         selectBankingMethodViewModel.locationAuthorization()
         
         
-//        mapView.delegate = selectBankingMethodViewModel
+        //        mapView.delegate = selectBankingMethodViewModel
         selectBankingMethodViewModel.locationAuthorization()
         
         subscribeViewModel()
         setupGestureRecognizers()
         setupDropdown()
     }
-  
+    
     override func viewWillAppear( _ animated: Bool) {
         
     }
@@ -169,6 +170,8 @@ final class SelectBankingMethodVC: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    
+    @IBOutlet weak var buttonNext: ButtonSetting!
     private func openSelectBranchVC() {
         guard let selectBranchVC = UIStoryboard.initialize(
             viewController: .selectBranchVC,
@@ -194,53 +197,53 @@ final class SelectBankingMethodVC: UIViewController {
         navigationController?.pushViewController(selectAccountTypeVC, animated: true)
     }
     
-//    func openFingerPrintScanner() {
-//
-//        let customUI = CustomUI(
-//            topBarBackgroundImage: nil,
-//            topBarColor: PluginColorAsset.appCTABlue.color,
-//            topBarTextColor: UIColor.white,
-//            containerBackgroundColor: .green,
-//            scannerOverlayColor: .green,
-//            scannerOverlayTextColor: UIColor.white,
-//            instructionTextColor: UIColor.white,
-//            buttonsBackgroundColor: .orange,
-//            buttonsTextColor: UIColor.black,
-//            imagesColor: UIColor.white,
-//            isFullWidthButtons: true,
-//            guidanceScreenButtonText: "NEXT",
-//            guidanceScreenText: "jhvj",
-//            guidanceScreenAnimationFilePath: nil,
-//            showGuidanceScreen: false)
-//
-//        let customDialog = CustomDialog(
-//            dialogImageBackgroundColor: UIColor.white,
-//            dialogImageForegroundColor: .green,
-//            dialogBackgroundColor: UIColor.white,
-//            dialogTitleColor: .systemBlue,
-//            dialogMessageColor: UIColor.black,
-//            dialogButtonTextColor: UIColor.white,
-//            dialogButtonBackgroundColor: .orange)
-//
-//        let customFontFamily = CustomFontFamily(
-//            customFontRegular: PluginFonts.latoRegular.rawValue,
-//            customFontSemiBold: PluginFonts.latoBold.rawValue,
-//            customFontBold: PluginFonts.latoBlack.rawValue)
-//        let uiConfig = UIConfig(
-//            splashScreenLoaderIndicatorColor: UIColor.white,
-//            splashScreenText: "Please wait",
-//            splashScreenTextColor: UIColor.white,
-//            customUI: customUI,
-//            customDialog: customDialog,
-//            customFontFamily: customFontFamily)
-//
-//        let fingerprintConfig = FingerprintConfig(mode: .EXPORT_WSQ, fingers: .EIGHT_FINGERS, isPackPng: true, uiConfig: uiConfig)
-//        let vc = FaceoffViewController.init(nibName: "FaceoffViewController", bundle: Bundle(for: FaceoffViewController.self))
-//        vc.fingerprintConfig = fingerprintConfig
-//        vc.fingerprintResponseDelegate = self
-////        add(vc, to: self.view)
-//        self.present(vc, animated: false, completion: nil)
-//    }
+    //    func openFingerPrintScanner() {
+    //
+    //        let customUI = CustomUI(
+    //            topBarBackgroundImage: nil,
+    //            topBarColor: PluginColorAsset.appCTABlue.color,
+    //            topBarTextColor: UIColor.white,
+    //            containerBackgroundColor: .green,
+    //            scannerOverlayColor: .green,
+    //            scannerOverlayTextColor: UIColor.white,
+    //            instructionTextColor: UIColor.white,
+    //            buttonsBackgroundColor: .orange,
+    //            buttonsTextColor: UIColor.black,
+    //            imagesColor: UIColor.white,
+    //            isFullWidthButtons: true,
+    //            guidanceScreenButtonText: "NEXT",
+    //            guidanceScreenText: "jhvj",
+    //            guidanceScreenAnimationFilePath: nil,
+    //            showGuidanceScreen: false)
+    //
+    //        let customDialog = CustomDialog(
+    //            dialogImageBackgroundColor: UIColor.white,
+    //            dialogImageForegroundColor: .green,
+    //            dialogBackgroundColor: UIColor.white,
+    //            dialogTitleColor: .systemBlue,
+    //            dialogMessageColor: UIColor.black,
+    //            dialogButtonTextColor: UIColor.white,
+    //            dialogButtonBackgroundColor: .orange)
+    //
+    //        let customFontFamily = CustomFontFamily(
+    //            customFontRegular: PluginFonts.latoRegular.rawValue,
+    //            customFontSemiBold: PluginFonts.latoBold.rawValue,
+    //            customFontBold: PluginFonts.latoBlack.rawValue)
+    //        let uiConfig = UIConfig(
+    //            splashScreenLoaderIndicatorColor: UIColor.white,
+    //            splashScreenText: "Please wait",
+    //            splashScreenTextColor: UIColor.white,
+    //            customUI: customUI,
+    //            customDialog: customDialog,
+    //            customFontFamily: customFontFamily)
+    //
+    //        let fingerprintConfig = FingerprintConfig(mode: .EXPORT_WSQ, fingers: .EIGHT_FINGERS, isPackPng: true, uiConfig: uiConfig)
+    //        let vc = FaceoffViewController.init(nibName: "FaceoffViewController", bundle: Bundle(for: FaceoffViewController.self))
+    //        vc.fingerprintConfig = fingerprintConfig
+    //        vc.fingerprintResponseDelegate = self
+    ////        add(vc, to: self.view)
+    //        self.present(vc, animated: false, completion: nil)
+    //    }
     
     private func setupGestureRecognizers() {
         islamicBankingMethodView.addGestureRecognizer(
@@ -327,7 +330,7 @@ final class SelectBankingMethodVC: UIViewController {
         
         selectBankingMethodViewModel.routeToSelectBranchVC.bind { [weak self] shouldRoute in
             guard let self = self, shouldRoute else { return }
-
+            
             self.openSelectBranchVC()
         }
         
@@ -353,6 +356,8 @@ final class SelectBankingMethodVC: UIViewController {
                 let suggestedBranches = response?.suggestedBranchList
             else { return }
             self.dropDown.dataSource = allBranches.map { "\($0.branchName ?? "N/A") (\($0.branchCode ?? ""))"}
+            
+            self.branchList = allBranches
             self.suggestedBranches = suggestedBranches
             
             self.suggestedBranchesContainer.isHidden = false
@@ -362,7 +367,10 @@ final class SelectBankingMethodVC: UIViewController {
         
         selectBankingMethodViewModel.dropDownTapped.bind { [weak self] isTapped in
             guard let self = self, isTapped else { return }
-            self.dropDown.show()
+            DispatchQueue.main.async {
+                //                self.dropDown.show()
+                self.branchCodeSearchTapped(UIButton())
+            }
         }
         selectBankingMethodViewModel.registerVerifyOTPResponse.bind { [weak self] response in
             guard let self = self, let response = response else { return }
@@ -382,14 +390,14 @@ final class SelectBankingMethodVC: UIViewController {
         selectBankingMethodViewModel.routeToSelectAccountTypeVC.bind { [weak self]  shouldRoute in
             guard let self = self, shouldRoute else { return }
             modelRegistrationSteper.selectBankingMethodViewModel = self.selectBankingMethodViewModel
-//
+            //
             self.openSelectAccountTypeVC()
         }
     }
     
     private func getBranches() {
         if let location = self.selectBankingMethodViewModel.getUserLocation() {
-
+            
             let bankingMode = self.selectBankingMethodViewModel.getBankingMode()
             self.selectBankingMethodViewModel.getBranches(
                 branchName: "",
@@ -398,6 +406,16 @@ final class SelectBankingMethodVC: UIViewController {
                 longitude: "\(location.coordinate.longitude)",
                 distance: ""
             )
+        }
+    }
+    
+    @IBAction func branchCodeSearchTapped(_ sender: Any) {
+        let dataSource = branchList?.map({ "\($0.branchName ?? "N/A") (\($0.branchCode ?? ""))" }) ?? []
+        
+        showSelectionAlert(with: dataSource, title: "Searched Branches") { index, item in
+            logsManager.debug("Selected item \(item) at index \(index)")
+            self.preferredBranchLabel.text = item
+            self.selectBankingMethodViewModel.setBranch(name: item)
         }
     }
     //MARK: - For merging
@@ -418,7 +436,7 @@ final class SelectBankingMethodVC: UIViewController {
                     if let consumerListLocalShakeel = cousumerListShakeel {
                         var isNotFoundAndNewUserProfileID = true
                         consumerListLocalShakeel.forEach {
-                           if $0.rdaCustomerProfileID == consumer.rdaCustomerProfileId {
+                            if $0.rdaCustomerProfileID == consumer.rdaCustomerProfileId {
                                 print("record found")
                                 isNotFoundAndNewUserProfileID = false
                             }
@@ -434,8 +452,8 @@ final class SelectBankingMethodVC: UIViewController {
                 }
             }
             //MARK: - Start-----If user profile id found Replace in new user Request data
-    //        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
-    //        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerProfileID
+            //        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+            //        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerProfileID
             
             if foundIndex != 99 {
                 currentConsumerList[foundIndex] = BasicInfoConsumerListInputModel()!
@@ -458,7 +476,7 @@ final class SelectBankingMethodVC: UIViewController {
             currentConsumerList[foundIndex].customerBranch = newUserInfo.customerBranch
             currentConsumerList[foundIndex].bankingModeId = newUserInfo.bankingModeId
             currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId
-
+            
         }
         else {
             currentConsumerList.append(newUserInfo)
@@ -466,6 +484,7 @@ final class SelectBankingMethodVC: UIViewController {
         return currentConsumerList
     }
 }
+
 
 extension SelectBankingMethodVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

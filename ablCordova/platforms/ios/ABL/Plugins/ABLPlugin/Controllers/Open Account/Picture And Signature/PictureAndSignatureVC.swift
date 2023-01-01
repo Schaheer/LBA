@@ -11,12 +11,12 @@ import DropDown
 import MobileCoreServices
 import UniformTypeIdentifiers
 
-final class PictureAndSignatureVC: UIViewController {
+final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
     
     @IBOutlet weak var viewProofOfIncome: UIView!
     @IBOutlet weak var imageProofOfIncome: UIImageView!
     @IBOutlet weak var viewJointAccount: UIView!
-
+    
     @IBOutlet weak var singleAccountView: UIView!
     @IBOutlet weak var singleAccountRadio: UIImageView!
     @IBOutlet weak var viewSelectNatureOfAccount: CustomUIView!
@@ -59,7 +59,7 @@ final class PictureAndSignatureVC: UIViewController {
     @IBOutlet weak var signaturePreviewImageView: UIImageView!
     @IBOutlet weak var additionalApplicantListView: CustomUIView!
     @IBOutlet weak var viewProofOfIncomePicutre: UIView!
-
+    
     
     private var picAndSignViewModel = PicAndSignViewModel()
     
@@ -82,7 +82,7 @@ final class PictureAndSignatureVC: UIViewController {
         viewDidAppearLocal()
         viewProofOfIncome.isHidden = true
         self.selectAdditionalApplicantView.isHidden = false
-
+        
         if modelRegistrationSteper.proofOfIncomeInd == 1 {
             viewProofOfIncome.isHidden = false
         }
@@ -93,12 +93,12 @@ final class PictureAndSignatureVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         if DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList?.count ?? 0 > 0 {
             
-//            viewJointAccount.isHidden = true
-//            modelRegistrationSteper.isJointAccount = true
-//            natureOfAccountLocal = .joint
-//            picAndSignViewModel.jointAccountTapped()
-//            self.joint()
-//            picAndSignViewModel.setNoOfJointApplicants(applicants: DataCacheManager.shared.loadNoOfJointApplicants() ?? 0)
+            //            viewJointAccount.isHidden = true
+            //            modelRegistrationSteper.isJointAccount = true
+            //            natureOfAccountLocal = .joint
+            //            picAndSignViewModel.jointAccountTapped()
+            //            self.joint()
+            //            picAndSignViewModel.setNoOfJointApplicants(applicants: DataCacheManager.shared.loadNoOfJointApplicants() ?? 0)
         }
     }
     override func viewDidLoad() {
@@ -107,7 +107,7 @@ final class PictureAndSignatureVC: UIViewController {
         viewProofOfIncomePicutre.isHidden = true
         
         segmentJointAccount.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,
@@ -148,9 +148,9 @@ final class PictureAndSignatureVC: UIViewController {
         subscribeViewModel()
         setupGestureRecognizers()
         let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
-//        print(consumer)
-//        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
-//        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
+        //        print(consumer)
+        //        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList)
+        //        print(DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.count)
         
         if DataCacheManager.shared.loadNoOfJointApplicants() ?? 0 > 0 {
             isJointFlow = true
@@ -172,6 +172,17 @@ final class PictureAndSignatureVC: UIViewController {
     
     override func viewDidLayoutSubviews() {
         //        setupViews()
+    }
+    
+    
+    func continueToCamera() {
+        pictureImagePicker = UIImagePickerController()
+//        pictureImagePicker.sourceType = .camera
+        pictureImagePicker.sourceType = .photoLibrary
+        
+        pictureImagePicker.allowsEditing = true
+        pictureImagePicker.delegate = self
+        present(pictureImagePicker, animated: true)
     }
     
     func viewDidAppearLocal() {
@@ -226,26 +237,30 @@ final class PictureAndSignatureVC: UIViewController {
     }
     
     func validationError() -> Bool {
+        
         if noOfJointApplicant ?? 0 > 0 {
             
         }
         else {
             if segmentJointAccount.index == 1 {
-                if additionalApplicantLabel.text == "Select additional applicants" {
+                if additionalApplicantLabel.text == "Select additional applicants".localizeString() {
                     self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please select additional applicants")
                     return true
                 }
             }
+            
+            
+            if modelRegistrationSteper.proofOfIncomeInd == 1 && imageProofOfIncome.tag != 1 {
+                self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please upload proof of income")
+                return true
+            }
+            
+            //False means no error
+            return false
         }
-        
-        if modelRegistrationSteper.proofOfIncomeInd == 1 && imageProofOfIncome.tag != 1 {
-            self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please upload proof of income")
-            return true
-        }
-        
-        //False means no error
-        return false
+        return true
     }
+    
     @IBAction func nextBtnTapped(_ sender: UIButton) {
         if validationError() {
             return()
@@ -296,6 +311,12 @@ final class PictureAndSignatureVC: UIViewController {
         modelRegistrationSteper.picAndSignViewModel = picAndSignViewModel
     }
     
+    @IBAction func infoAccountPressed(_ sender: Any) {
+        let message  = "In case of joint account entire details of joint applicant along with documentation is required.".localizeString()
+        openPortedPopupVC(viewController: self, message: message)
+    }
+    
+    
     func singleFlow() {
         isJointFlow = false
         let natureOfAccount = picAndSignViewModel.getNatureOfAccount()!
@@ -314,14 +335,13 @@ final class PictureAndSignatureVC: UIViewController {
     }
     @objc private func takePictureTapped(_ sender: UIButton){
         
-        pictureImagePicker = UIImagePickerController()
-        //        pictureImagePicker.sourceType = .camera
-        pictureImagePicker.sourceType = .photoLibrary
+        guard let customPopupDemoVC = UIStoryboard.initialize(
+            viewController: .CustomPopupDemoVC,
+            fromStoryboard: .cnicUpload
+        ) as? CustomPopupDemoVC else { return }
         
-        pictureImagePicker.allowsEditing = true
-        pictureImagePicker.delegate = self
-        present(pictureImagePicker, animated: true)
-        
+        customPopupDemoVC.delegate = self
+        self.present(customPopupDemoVC, animated: true)
     }
     
     @objc private func uploadSignTapped(_ sender: UIButton){
@@ -338,191 +358,193 @@ final class PictureAndSignatureVC: UIViewController {
     
     @objc private func uploadDocumentTapped(_ sender: UIButton){
         let docsTypes = ["public.text",
-                                  "com.apple.iwork.pages.pages",
-                                  "public.data",
-                                  "kUTTypeItem",
-                                  "kUTTypeContent",
-                                  "kUTTypeCompositeContent",
-                                  "kUTTypeData",
-                                  "public.database",
-                                  "public.calendar-event",
-                                  "public.message",
-                                  "public.presentation",
-                                  "public.contact",
-                                  "public.archive",
-                                  "public.disk-image",
-                                  "public.plain-text",
-                                  "public.utf8-plain-text",
-                                  "public.utf16-external-plain-​text",
-                                  "public.utf16-plain-text",
-                                  "com.apple.traditional-mac-​plain-text",
-                                  "public.rtf",
-                                  "com.apple.ink.inktext",
-                                  "public.html",
-                                  "public.xml",
-                                  "public.source-code",
-                                  "public.c-source",
-                                  "public.objective-c-source",
-                                  "public.c-plus-plus-source",
-                                  "public.objective-c-plus-​plus-source",
-                                  "public.c-header",
-                                  "public.c-plus-plus-header",
-                                  "com.sun.java-source",
-                                  "public.script",
-                                  "public.assembly-source",
-                                  "com.apple.rez-source",
-                                  "public.mig-source",
-                                  "com.apple.symbol-export",
-                                  "com.netscape.javascript-​source",
-                                  "public.shell-script",
-                                  "public.csh-script",
-                                  "public.perl-script",
-                                  "public.python-script",
-                                  "public.ruby-script",
-                                  "public.php-script",
-                                  "com.sun.java-web-start",
-                                  "com.apple.applescript.text",
-                                  "com.apple.applescript.​script",
-                                  "public.object-code",
-                                  "com.apple.mach-o-binary",
-                                  "com.apple.pef-binary",
-                                  "com.microsoft.windows-​executable",
-                                  "com.microsoft.windows-​dynamic-link-library",
-                                  "com.sun.java-class",
-                                  "com.sun.java-archive",
-                                  "com.apple.quartz-​composer-composition",
-                                  "org.gnu.gnu-tar-archive",
-                                  "public.tar-archive",
-                                  "org.gnu.gnu-zip-archive",
-                                  "org.gnu.gnu-zip-tar-archive",
-                                  "com.apple.binhex-archive",
-                                  "com.apple.macbinary-​archive",
-                                  "public.url",
-                                  "public.file-url",
-                                  "public.url-name",
-                                  "public.vcard",
-                                  "public.image",
-                                  "public.fax",
-                                  "public.jpeg",
-                                  "public.jpeg-2000",
-                                  "public.tiff",
-                                  "public.camera-raw-image",
-                                  "com.apple.pict",
-                                  "com.apple.macpaint-image",
-                                  "public.png",
-                                  "public.xbitmap-image",
-                                  "com.apple.quicktime-image",
-                                  "com.apple.icns",
-                                  "com.apple.txn.text-​multimedia-data",
-                                  "public.audiovisual-​content",
-                                  "public.movie",
-                                  "public.video",
-                                  "com.apple.quicktime-movie",
-                                  "public.avi",
-                                  "public.mpeg",
-                                  "public.mpeg-4",
-                                  "public.3gpp",
-                                  "public.3gpp2",
-                                  "public.audio",
-                                  "public.mp3",
-                                  "public.mpeg-4-audio",
-                                  "com.apple.protected-​mpeg-4-audio",
-                                  "public.ulaw-audio",
-                                  "public.aifc-audio",
-                                  "public.aiff-audio",
-                                  "com.apple.coreaudio-​format",
-                                  "public.directory",
-                                  "public.folder",
-                                  "public.volume",
-                                  "com.apple.package",
-                                  "com.apple.bundle",
-                                  "public.executable",
-                                  "com.apple.application",
-                                  "com.apple.application-​bundle",
-                                  "com.apple.application-file",
-                                  "com.apple.deprecated-​application-file",
-                                  "com.apple.plugin",
-                                  "com.apple.metadata-​importer",
-                                  "com.apple.dashboard-​widget",
-                                  "public.cpio-archive",
-                                  "com.pkware.zip-archive",
-                                  "com.apple.webarchive",
-                                  "com.apple.framework",
-                                  "com.apple.rtfd",
-                                  "com.apple.flat-rtfd",
-                                  "com.apple.resolvable",
-                                  "public.symlink",
-                                  "com.apple.mount-point",
-                                  "com.apple.alias-record",
-                                  "com.apple.alias-file",
-                                  "public.font",
-                                  "public.truetype-font",
-                                  "com.adobe.postscript-font",
-                                  "com.apple.truetype-​datafork-suitcase-font",
-                                  "public.opentype-font",
-                                  "public.truetype-ttf-font",
-                                  "public.truetype-collection-​font",
-                                  "com.apple.font-suitcase",
-                                  "com.adobe.postscript-lwfn​-font",
-                                  "com.adobe.postscript-pfb-​font",
-                                  "com.adobe.postscript.pfa-​font",
-                                  "com.apple.colorsync-profile",
-                                  "public.filename-extension",
-                                  "public.mime-type",
-                                  "com.apple.ostype",
-                                  "com.apple.nspboard-type",
-                                  "com.adobe.pdf",
-                                  "com.adobe.postscript",
-                                  "com.adobe.encapsulated-​postscript",
-                                  "com.adobe.photoshop-​image",
-                                  "com.adobe.illustrator.ai-​image",
-                                  "com.compuserve.gif",
-                                  "com.microsoft.bmp",
-                                  "com.microsoft.ico",
-                                  "com.microsoft.word.doc",
-                                  "com.microsoft.excel.xls",
-                                  "com.microsoft.powerpoint.​ppt",
-                                  "com.microsoft.waveform-​audio",
-                                  "com.microsoft.advanced-​systems-format",
-                                  "com.microsoft.windows-​media-wm",
-                                  "com.microsoft.windows-​media-wmv",
-                                  "com.microsoft.windows-​media-wmp",
-                                  "com.microsoft.windows-​media-wma",
-                                  "com.microsoft.advanced-​stream-redirector",
-                                  "com.microsoft.windows-​media-wmx",
-                                  "com.microsoft.windows-​media-wvx",
-                                  "com.microsoft.windows-​media-wax",
-                                  "com.apple.keynote.key",
-                                  "com.apple.keynote.kth",
-                                  "com.truevision.tga-image",
-                                  "com.sgi.sgi-image",
-                                  "com.ilm.openexr-image",
-                                  "com.kodak.flashpix.image",
-                                  "com.j2.jfx-fax",
-                                  "com.js.efx-fax",
-                                  "com.digidesign.sd2-audio",
-                                  "com.real.realmedia",
-                                  "com.real.realaudio",
-                                  "com.real.smil",
-                                  "com.allume.stuffit-archive",
-                                  "org.openxmlformats.wordprocessingml.document",
-                                  "com.microsoft.powerpoint.​ppt",
-                                  "org.openxmlformats.presentationml.presentation",
-                                  "com.microsoft.excel.xls",
-                                  "org.openxmlformats.spreadsheetml.sheet",
-                                 
-            
-          ]
+                         "com.apple.iwork.pages.pages",
+                         "public.data",
+                         "kUTTypeItem",
+                         "kUTTypeContent",
+                         "kUTTypeCompositeContent",
+                         "kUTTypeData",
+                         "public.database",
+                         "public.calendar-event",
+                         "public.message",
+                         "public.presentation",
+                         "public.contact",
+                         "public.archive",
+                         "public.disk-image",
+                         "public.plain-text",
+                         "public.utf8-plain-text",
+                         "public.utf16-external-plain-​text",
+                         "public.utf16-plain-text",
+                         "com.apple.traditional-mac-​plain-text",
+                         "public.rtf",
+                         "com.apple.ink.inktext",
+                         "public.html",
+                         "public.xml",
+                         "public.source-code",
+                         "public.c-source",
+                         "public.objective-c-source",
+                         "public.c-plus-plus-source",
+                         "public.objective-c-plus-​plus-source",
+                         "public.c-header",
+                         "public.c-plus-plus-header",
+                         "com.sun.java-source",
+                         "public.script",
+                         "public.assembly-source",
+                         "com.apple.rez-source",
+                         "public.mig-source",
+                         "com.apple.symbol-export",
+                         "com.netscape.javascript-​source",
+                         "public.shell-script",
+                         "public.csh-script",
+                         "public.perl-script",
+                         "public.python-script",
+                         "public.ruby-script",
+                         "public.php-script",
+                         "com.sun.java-web-start",
+                         "com.apple.applescript.text",
+                         "com.apple.applescript.​script",
+                         "public.object-code",
+                         "com.apple.mach-o-binary",
+                         "com.apple.pef-binary",
+                         "com.microsoft.windows-​executable",
+                         "com.microsoft.windows-​dynamic-link-library",
+                         "com.sun.java-class",
+                         "com.sun.java-archive",
+                         "com.apple.quartz-​composer-composition",
+                         "org.gnu.gnu-tar-archive",
+                         "public.tar-archive",
+                         "org.gnu.gnu-zip-archive",
+                         "org.gnu.gnu-zip-tar-archive",
+                         "com.apple.binhex-archive",
+                         "com.apple.macbinary-​archive",
+                         "public.url",
+                         "public.file-url",
+                         "public.url-name",
+                         "public.vcard",
+                         "public.image",
+                         "public.fax",
+                         "public.jpeg",
+                         "public.jpeg-2000",
+                         "public.tiff",
+                         "public.camera-raw-image",
+                         "com.apple.pict",
+                         "com.apple.macpaint-image",
+                         "public.png",
+                         "public.xbitmap-image",
+                         "com.apple.quicktime-image",
+                         "com.apple.icns",
+                         "com.apple.txn.text-​multimedia-data",
+                         "public.audiovisual-​content",
+                         "public.movie",
+                         "public.video",
+                         "com.apple.quicktime-movie",
+                         "public.avi",
+                         "public.mpeg",
+                         "public.mpeg-4",
+                         "public.3gpp",
+                         "public.3gpp2",
+                         "public.audio",
+                         "public.mp3",
+                         "public.mpeg-4-audio",
+                         "com.apple.protected-​mpeg-4-audio",
+                         "public.ulaw-audio",
+                         "public.aifc-audio",
+                         "public.aiff-audio",
+                         "com.apple.coreaudio-​format",
+                         "public.directory",
+                         "public.folder",
+                         "public.volume",
+                         "com.apple.package",
+                         "com.apple.bundle",
+                         "public.executable",
+                         "com.apple.application",
+                         "com.apple.application-​bundle",
+                         "com.apple.application-file",
+                         "com.apple.deprecated-​application-file",
+                         "com.apple.plugin",
+                         "com.apple.metadata-​importer",
+                         "com.apple.dashboard-​widget",
+                         "public.cpio-archive",
+                         "com.pkware.zip-archive",
+                         "com.apple.webarchive",
+                         "com.apple.framework",
+                         "com.apple.rtfd",
+                         "com.apple.flat-rtfd",
+                         "com.apple.resolvable",
+                         "public.symlink",
+                         "com.apple.mount-point",
+                         "com.apple.alias-record",
+                         "com.apple.alias-file",
+                         "public.font",
+                         "public.truetype-font",
+                         "com.adobe.postscript-font",
+                         "com.apple.truetype-​datafork-suitcase-font",
+                         "public.opentype-font",
+                         "public.truetype-ttf-font",
+                         "public.truetype-collection-​font",
+                         "com.apple.font-suitcase",
+                         "com.adobe.postscript-lwfn​-font",
+                         "com.adobe.postscript-pfb-​font",
+                         "com.adobe.postscript.pfa-​font",
+                         "com.apple.colorsync-profile",
+                         "public.filename-extension",
+                         "public.mime-type",
+                         "com.apple.ostype",
+                         "com.apple.nspboard-type",
+                         "com.adobe.pdf",
+                         "com.adobe.postscript",
+                         "com.adobe.encapsulated-​postscript",
+                         "com.adobe.photoshop-​image",
+                         "com.adobe.illustrator.ai-​image",
+                         "com.compuserve.gif",
+                         "com.microsoft.bmp",
+                         "com.microsoft.ico",
+                         "com.microsoft.word.doc",
+                         "com.microsoft.excel.xls",
+                         "com.microsoft.powerpoint.​ppt",
+                         "com.microsoft.waveform-​audio",
+                         "com.microsoft.advanced-​systems-format",
+                         "com.microsoft.windows-​media-wm",
+                         "com.microsoft.windows-​media-wmv",
+                         "com.microsoft.windows-​media-wmp",
+                         "com.microsoft.windows-​media-wma",
+                         "com.microsoft.advanced-​stream-redirector",
+                         "com.microsoft.windows-​media-wmx",
+                         "com.microsoft.windows-​media-wvx",
+                         "com.microsoft.windows-​media-wax",
+                         "com.apple.keynote.key",
+                         "com.apple.keynote.kth",
+                         "com.truevision.tga-image",
+                         "com.sgi.sgi-image",
+                         "com.ilm.openexr-image",
+                         "com.kodak.flashpix.image",
+                         "com.j2.jfx-fax",
+                         "com.js.efx-fax",
+                         "com.digidesign.sd2-audio",
+                         "com.real.realmedia",
+                         "com.real.realaudio",
+                         "com.real.smil",
+                         "com.allume.stuffit-archive",
+                         "org.openxmlformats.wordprocessingml.document",
+                         "com.microsoft.powerpoint.​ppt",
+                         "org.openxmlformats.presentationml.presentation",
+                         "com.microsoft.excel.xls",
+                         "org.openxmlformats.spreadsheetml.sheet",
+                         
+                         
+        ]
         let documentPicker = UIDocumentPickerViewController(documentTypes: docsTypes, in: .import)
-            documentPicker.delegate = self
-            documentPicker.allowsMultipleSelection = true
-            present(documentPicker, animated: true, completion: nil)
+        documentPicker.delegate = self
+        present(documentPicker, animated: true, completion: nil)
     }
     
     private func subscribeViewModel() {
         
         picAndSignViewModel.saveAttachmentResponse.bind { [weak self]  response  in
-            
+            guard let status = response?.message?.status, let description = response?.message?.description?.lowercased() else { return }
+            if status == "200" && description.lowercased() == "success"{
+                self?.showAlertSuccessWithPopToVC(viewController: self, title: "Success", message: "Document uploaded successfully")
+            }
         }
         picAndSignViewModel.registerPicAndSignResponse.bind { [weak self]  response  in
             guard let status = response?.message?.status, let description = response?.message?.description?.lowercased() else { return }
@@ -552,10 +574,23 @@ final class PictureAndSignatureVC: UIViewController {
         }
         picAndSignViewModel.dropDownTapped.bind { [weak self]  isTapped in
             guard let self = self, isTapped else { return }
-            self.dropDown.show()
+            //            self.dropDown.show()
+            self.openAdditionalApplicants()
         }
     }
     
+    func openAdditionalApplicants() {
+        let dataSource = self.dropDown.dataSource
+        self.showSelectionAlert(with: dataSource, title: "Select Delivery", isSearchViewHidden: true) { index, item in
+            logsManager.debug("Selected item \(item) at index \(index)")
+            self.additionalApplicantLabel.text = item
+            let noOfJointApplicants = item.components(separatedBy: " ").first
+            modelRegistrationSteper.additionalApplicant = item
+            modelRegistrationSteper.additionalApplicantNo = Int(noOfJointApplicants ?? "0") ?? 0
+            self.picAndSignViewModel.setNoOfJointApplicants(applicants: Int(noOfJointApplicants ?? "0") ?? 0)
+            DataCacheManager.shared.saveNoOfJointApplicants(input: Int(noOfJointApplicants ?? "0") ?? 0)
+        }
+    }
     func single() {
         self.singleAccountRadio.image = PluginImageAsset.radioFilled.image
         self.jointAccountRadio.image = PluginImageAsset.radioUnfilled.image
@@ -565,7 +600,7 @@ final class PictureAndSignatureVC: UIViewController {
         self.additionalApplicantLabel.text = "Select additional applicants"
         modelRegistrationSteper.additionalApplicant = "Select additional applicants"
         natureOfAccountLocal = .single
-//        DataCacheManager.shared.saveNoOfJointApplicants(input: 0)
+        //        DataCacheManager.shared.saveNoOfJointApplicants(input: 0)
     }
     func joint() {
         self.singleAccountRadio.image = PluginImageAsset.radioUnfilled.image
@@ -598,7 +633,7 @@ final class PictureAndSignatureVC: UIViewController {
             fromStoryboard: .openAccount
         ) as? PersonalInformationBaseVC
         
-//        edit ka case is me handle karna ha in sy pehlay
+        //        edit ka case is me handle karna ha in sy pehlay
         let accountVariantID = modelRegistrationSteper.selectPreferredAccountViewModel?.getAccountVariantID()
         if isJointFlow {
             let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
@@ -633,7 +668,7 @@ final class PictureAndSignatureVC: UIViewController {
                 }
             }
         }
-       
+        
         
         
         
@@ -649,35 +684,35 @@ final class PictureAndSignatureVC: UIViewController {
         
         
         //Android Check
-//        if (getIntent().hasExtra(Config.INDEX)) {
-//            openActivity(ReviewDocumentActivity.class);
-//        } else {
-//            int selectedJointApplicant = consumerList.get(0).getAccountInformation().getNoOfJointApplicatns();
-//            if (selectedJointApplicant == 0 || index == selectedJointApplicant) {
-//
-//                if (getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ASAAN_DIGITAL_ACCOUNT ||
-//                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.REMITTANCE_ACCOUNT
-//                    ||
-//                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ASAAN_DIGITAL_REMITTANCE_SAVING_ACCOUNT ||
-//                    getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.FREELANCE_DIGITAL_SAVING_ACCOUNT ||
-//                    getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.FREELANCE_ACCOUNT ||
-//
-//
-//
-//
-//                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.FREELANCE_FCY_ACCOUNT ||
-//                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ALLIED_ISLAMIC_ASAAN_DIGITAL_ACCOUNT ||
-//                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ALLIED_AITEBAR_ASAAN_DIGITAL_ACCOUNT ||
-//                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.FREELANCE_DIGITAL_ISLAMIC_ACCOUNT ||
-//                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ALLIED_AITEBAR_FREELANCE_DIGITAL_ACCOUNT) {
-//                    openActivity(ReviewDocumentActivity.class);
-//                } else {
-//                    openActivity(FatcaDetailsActivity.class);
-//                }
-//            } else {
-//                openAdditionalApplicantActivity();
-//            }
-//        }
+        //        if (getIntent().hasExtra(Config.INDEX)) {
+        //            openActivity(ReviewDocumentActivity.class);
+        //        } else {
+        //            int selectedJointApplicant = consumerList.get(0).getAccountInformation().getNoOfJointApplicatns();
+        //            if (selectedJointApplicant == 0 || index == selectedJointApplicant) {
+        //
+        //                if (getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ASAAN_DIGITAL_ACCOUNT ||
+        //                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.REMITTANCE_ACCOUNT
+        //                    ||
+        //                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ASAAN_DIGITAL_REMITTANCE_SAVING_ACCOUNT ||
+        //                    getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.FREELANCE_DIGITAL_SAVING_ACCOUNT ||
+        //                    getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.FREELANCE_ACCOUNT ||
+        //
+        //
+        //
+        //
+        //                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.FREELANCE_FCY_ACCOUNT ||
+        //                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ALLIED_ISLAMIC_ASAAN_DIGITAL_ACCOUNT ||
+        //                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ALLIED_AITEBAR_ASAAN_DIGITAL_ACCOUNT ||
+        //                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.FREELANCE_DIGITAL_ISLAMIC_ACCOUNT ||
+        //                        getIntFromPref(Config.ACCOUNT_VARIANT_ID) == Config.ALLIED_AITEBAR_FREELANCE_DIGITAL_ACCOUNT) {
+        //                    openActivity(ReviewDocumentActivity.class);
+        //                } else {
+        //                    openActivity(FatcaDetailsActivity.class);
+        //                }
+        //            } else {
+        //                openAdditionalApplicantActivity();
+        //            }
+        //        }
         
         
         
@@ -689,13 +724,13 @@ final class PictureAndSignatureVC: UIViewController {
     private func openAdditionalDetailsVC() {
         if isEditFromReviewDetailsViewController && forViewController == "ReviewDetailsVC" {
             navigationController?.popViewController(animated: true)
-
+            
             return()
         }
-//        guard let additionalDetailsVC = UIStoryboard.initialize(
-//            viewController: .additionalApplicantDetailsVC,
-//            fromStoryboard: .openAccount
-//        ) as? AdditionalApplicantDetailsVC else { return }
+        //        guard let additionalDetailsVC = UIStoryboard.initialize(
+        //            viewController: .additionalApplicantDetailsVC,
+        //            fromStoryboard: .openAccount
+        //        ) as? AdditionalApplicantDetailsVC else { return }
         let additionalDetailsVC = UIStoryboard.initialize(
             viewController: .additionalApplicantDetailsVC,
             fromStoryboard: .openAccount
@@ -761,6 +796,7 @@ final class PictureAndSignatureVC: UIViewController {
             noOfJointApplicant = Int(noOfJointApplicants ?? "0") ?? 0
         }
     }
+    
 }
 
 
@@ -889,7 +925,7 @@ extension PictureAndSignatureVC: UIDocumentMenuDelegate, UIDocumentPickerDelegat
         ) as? PortedPopupVC else { return }
         
         portedPopupVC.message = message
-        portedPopupVC.buttonTitle = "OK"
+        portedPopupVC.buttonTitle = "OK".localizeString()
         portedPopupVC.portedMobileNetwork = {
             
         }

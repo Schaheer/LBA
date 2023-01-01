@@ -105,7 +105,7 @@ final class TransactionalAlertsVC: UIViewController {
     
     private func setupSegments() {
         electronicSOASegment.segments = LabelSegment.segments(
-            withTitles: ["No", "Yes"],
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,
@@ -116,7 +116,7 @@ final class TransactionalAlertsVC: UIViewController {
         )
         
         transactionalAlertSegment.segments = LabelSegment.segments(
-            withTitles: ["Not Required", "Required"],
+            withTitles: ["Not Required".localizeString(), "Required".localizeString()],
             normalTextColor: .white,
             selectedTextColor: UIColor(
                 red: 0.92,

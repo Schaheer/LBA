@@ -15,7 +15,6 @@
 			dependencies = (
 			);
 			name = GoogleMaps;
-			productName = GoogleMaps;
 		};
 /* End PBXAggregateTarget section */
 
@@ -432,7 +431,7 @@
 		99E046B628F89CF460EE48EF60BCE924 /* BetterSegmentedControl+IBDesignable.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "BetterSegmentedControl+IBDesignable.swift"; path = "Pod/Classes/BetterSegmentedControl+IBDesignable.swift"; sourceTree = "<group>"; };
 		9B6725B782188F18CB76A740433F14E4 /* DropDown */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = DropDown; path = DropDown.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C9A34D111AC69950B2423101FA161DB /* NVActivityIndicatorAnimationBallGridBeat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NVActivityIndicatorAnimationBallGridBeat.swift; path = Sources/Base/Animations/NVActivityIndicatorAnimationBallGridBeat.swift; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9FDC23F9D652D3EA982F5D2041449789 /* Map.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Map.swift; path = Sources/Map.swift; sourceTree = "<group>"; };
 		9FEDFFC494D9EC43C0338DED83B459E0 /* SwiftKeychainWrapper.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftKeychainWrapper.modulemap; sourceTree = "<group>"; };
 		A148F95703AFFA4B11EA35A741A4258B /* IQUITextFieldView+Additions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "IQUITextFieldView+Additions.h"; path = "IQKeyboardManager/Categories/IQUITextFieldView+Additions.h"; sourceTree = "<group>"; };
@@ -459,7 +458,7 @@
 		B5B540B751EDD7D64891E10407AB1852 /* CachedResponseHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CachedResponseHandler.swift; path = Source/CachedResponseHandler.swift; sourceTree = "<group>"; };
 		B60CBC6E562576862112A5B620A92512 /* DropDown-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "DropDown-Info.plist"; sourceTree = "<group>"; };
 		B6C19D65FD405705ED6ED31595442793 /* DropDownCell.xib */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.xib; name = DropDownCell.xib; path = DropDown/resources/DropDownCell.xib; sourceTree = "<group>"; };
-		B8E453F69F45FA450BDB1DCC8396CD4A /* Pods_ABL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ABL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8E453F69F45FA450BDB1DCC8396CD4A /* Pods-ABL */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-ABL"; path = Pods_ABL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9084FE779702931E8DF1D00A2D725FB /* ObjectMapper */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = ObjectMapper; path = ObjectMapper.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B96AE2B75170FBFB0CE5CD6E0E7F4F29 /* ObjectMapper-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ObjectMapper-Info.plist"; sourceTree = "<group>"; };
 		BB02D255E7CB0628FAE79E5CE281F31C /* Alamofire.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Source/Alamofire.swift; sourceTree = "<group>"; };
@@ -627,6 +626,7 @@
 				45C52F0061A7DC0BBFB75DC79F25D9E6 /* Resources */,
 				80F9B22320EE77FB074BC696EBB0D666 /* Support Files */,
 			);
+			name = DropDown;
 			path = DropDown;
 			sourceTree = "<group>";
 		};
@@ -704,6 +704,7 @@
 				765586D15423F61C606282003FAB1E18 /* Validation.swift */,
 				D7094F9A3BA3F0EFE6194338595C97A1 /* Support Files */,
 			);
+			name = Alamofire;
 			path = Alamofire;
 			sourceTree = "<group>";
 		};
@@ -774,6 +775,7 @@
 				B8F01D72E9431242858C67E72A877770 /* Maps */,
 				C6B0129E1A2855ED2E67080311589B96 /* Support Files */,
 			);
+			name = GoogleMaps;
 			path = GoogleMaps;
 			sourceTree = "<group>";
 		};
@@ -814,6 +816,7 @@
 				80F039CF1358327F0A30E26DAF8672F1 /* URLTransform.swift */,
 				7E973BF8EC0B1D7205BE3B6512D71AA0 /* Support Files */,
 			);
+			name = ObjectMapper;
 			path = ObjectMapper;
 			sourceTree = "<group>";
 		};
@@ -848,6 +851,7 @@
 				E970FBE032780F36AD5D1924A40EBA7B /* UIView+Helpers.swift */,
 				81E639BB8904D6D660E1077CBB892E41 /* Support Files */,
 			);
+			name = BetterSegmentedControl;
 			path = BetterSegmentedControl;
 			sourceTree = "<group>";
 		};
@@ -874,6 +878,7 @@
 				D064AAAC13F15989E8E1B069E989759F /* Base */,
 				7D2278E198F930FE89CCA85F7FA77C80 /* Support Files */,
 			);
+			name = NVActivityIndicatorView;
 			path = NVActivityIndicatorView;
 			sourceTree = "<group>";
 		};
@@ -910,6 +915,7 @@
 				7597B22A381906DC3121A992D1D3A7B6 /* IQUIViewController+Additions.m */,
 				98E5AC805BFE8BFAF8772725C4D69910 /* Support Files */,
 			);
+			name = IQKeyboardManager;
 			path = IQKeyboardManager;
 			sourceTree = "<group>";
 		};
@@ -941,7 +947,7 @@
 				98527D7196957AAB07B79E2E2AFDE23E /* IQKeyboardManager */,
 				A1B9F27862201CD82B398E0B35B14128 /* NVActivityIndicatorView */,
 				B9084FE779702931E8DF1D00A2D725FB /* ObjectMapper */,
-				B8E453F69F45FA450BDB1DCC8396CD4A /* Pods_ABL.framework */,
+				B8E453F69F45FA450BDB1DCC8396CD4A /* Pods-ABL */,
 				5069D199AB328CCD047E61C632CD7C32 /* SwiftKeychainWrapper */,
 				36C6F0DD9B00CD62109C2D53724C22F7 /* TTGTagCollectionView */,
 			);
@@ -1054,6 +1060,7 @@
 				E2E2D038EEF76B61C5112FB7FDF3C708 /* SwiftKeychainWrapper.h */,
 				E610A85364015BCFC1BAE43D1A0CF17E /* Support Files */,
 			);
+			name = SwiftKeychainWrapper;
 			path = SwiftKeychainWrapper;
 			sourceTree = "<group>";
 		};
@@ -1123,6 +1130,7 @@
 				85E16B286EC641FFEF5822595EBEA3FC /* TTGTextTagStyle.m */,
 				E4F096CF6FE47FC5433E344546844D03 /* Support Files */,
 			);
+			name = TTGTagCollectionView;
 			path = TTGTagCollectionView;
 			sourceTree = "<group>";
 		};
@@ -1360,7 +1368,7 @@
 			);
 			name = "Pods-ABL";
 			productName = Pods_ABL;
-			productReference = B8E453F69F45FA450BDB1DCC8396CD4A /* Pods_ABL.framework */;
+			productReference = B8E453F69F45FA450BDB1DCC8396CD4A /* Pods-ABL */;
 			productType = "com.apple.product-type.framework";
 		};
 		FBA456CB50E371584C11231929A0971E /* IQKeyboardManager */ = {

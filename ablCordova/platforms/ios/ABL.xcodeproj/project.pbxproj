@@ -270,6 +270,11 @@
 		7D5CAD7F2949E1F30092C044 /* CustomPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CAD7E2949E1F30092C044 /* CustomPopup.swift */; };
 		7D88A7BB2923C87800D522C8 /* RegistrationSteperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D88A7B92923C87800D522C8 /* RegistrationSteperModel.swift */; };
 		7D97757F29261F530060315C /* ReviewDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D97757E29261F530060315C /* ReviewDetailsVC.swift */; };
+		7DCF2FC62961A2EA003330D9 /* CustomPopupDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF2FC42961A2EA003330D9 /* CustomPopupDemo.swift */; };
+		7DCF2FD32961AC4F003330D9 /* SelectionPopupVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF2FCE2961AC4F003330D9 /* SelectionPopupVC.swift */; };
+		7DCF2FD42961AC4F003330D9 /* SelectionPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DCF2FCF2961AC4F003330D9 /* SelectionPopupVC.xib */; };
+		7DCF2FD52961AC4F003330D9 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF2FD12961AC4F003330D9 /* SelectionCell.swift */; };
+		7DCF2FD62961AC4F003330D9 /* SelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DCF2FD22961AC4F003330D9 /* SelectionCell.xib */; };
 		7DE4B4B92951E78D00D9CF9D /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE4B4B82951E78D00D9CF9D /* APIs.swift */; };
 		8DA36AAA2B4C4F8F83EADA68 /* BiometricVerification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF29282811C42E8ACDB35CF /* BiometricVerification.storyboard */; };
 		D2535B7819B54DE1934D1CF8 /* GetBiometricVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459EF818686419092F74758 /* GetBiometricVerificationVC.swift */; };
@@ -586,6 +591,11 @@
 		7D5CAD7E2949E1F30092C044 /* CustomPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopup.swift; sourceTree = "<group>"; };
 		7D88A7B92923C87800D522C8 /* RegistrationSteperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationSteperModel.swift; sourceTree = "<group>"; };
 		7D97757E29261F530060315C /* ReviewDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewDetailsVC.swift; sourceTree = "<group>"; };
+		7DCF2FC42961A2EA003330D9 /* CustomPopupDemo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopupDemo.swift; sourceTree = "<group>"; };
+		7DCF2FCE2961AC4F003330D9 /* SelectionPopupVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionPopupVC.swift; sourceTree = "<group>"; };
+		7DCF2FCF2961AC4F003330D9 /* SelectionPopupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionPopupVC.xib; sourceTree = "<group>"; };
+		7DCF2FD12961AC4F003330D9 /* SelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
+		7DCF2FD22961AC4F003330D9 /* SelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionCell.xib; sourceTree = "<group>"; };
 		7DE4B4B82951E78D00D9CF9D /* APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
 		85EF20C9C1615DAA6CA55ACA /* Pods_ABL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ABL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1107310486CEB800E47090 /* ABL-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ABL-Info.plist"; path = "ABL/ABL-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
@@ -653,7 +663,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+		29B97314FDCFA39411CA2CEA = {
 			isa = PBXGroup;
 			children = (
 				EB87FDF41871DAF40020F90C /* config.xml */,
@@ -1096,6 +1106,7 @@
 		7A6F14E027D238F200DA1D15 /* Custom UI */ = {
 			isa = PBXGroup;
 			children = (
+				7DCF2FCD2961AC4F003330D9 /* Selection Popup */,
 				7A6F14E227D238FC00DA1D15 /* OTPStackView.swift */,
 				7A6F14E427D2391500DA1D15 /* OTPTextField.swift */,
 				7AB891A027D8D9EF00054BD3 /* ActivityIndicatorView.swift */,
@@ -1286,6 +1297,7 @@
 			children = (
 				7ABD53AE27FB872300AC54AE /* PortedPopupVC.swift */,
 				7D5CAD7E2949E1F30092C044 /* CustomPopup.swift */,
+				7DCF2FC42961A2EA003330D9 /* CustomPopupDemo.swift */,
 			);
 			path = "Mobile Network Ported Popup";
 			sourceTree = "<group>";
@@ -1486,6 +1498,25 @@
 			path = Localizable;
 			sourceTree = "<group>";
 		};
+		7DCF2FCD2961AC4F003330D9 /* Selection Popup */ = {
+			isa = PBXGroup;
+			children = (
+				7DCF2FCE2961AC4F003330D9 /* SelectionPopupVC.swift */,
+				7DCF2FCF2961AC4F003330D9 /* SelectionPopupVC.xib */,
+				7DCF2FD02961AC4F003330D9 /* SelectionCell */,
+			);
+			path = "Selection Popup";
+			sourceTree = "<group>";
+		};
+		7DCF2FD02961AC4F003330D9 /* SelectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				7DCF2FD12961AC4F003330D9 /* SelectionCell.swift */,
+				7DCF2FD22961AC4F003330D9 /* SelectionCell.xib */,
+			);
+			path = SelectionCell;
+			sourceTree = "<group>";
+		};
 		7DE4B4B62951E78200D9CF9D /* DataContainer */ = {
 			isa = PBXGroup;
 			children = (
@@ -1547,7 +1578,7 @@
 				Base,
 				ur,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -1609,8 +1640,10 @@
 				4CBB13F82808622200BECF46 /* README.txt in Resources */,
 				7A99D4B427D0DFB900B0ABEA /* CustomColor.xcassets in Resources */,
 				4CBB13EE2808622200BECF46 /* WorkSans-SemiBold.ttf in Resources */,
+				7DCF2FD62961AC4F003330D9 /* SelectionCell.xib in Resources */,
 				4CBB13ED2808622200BECF46 /* WorkSans-Medium.ttf in Resources */,
 				4CBB13F62808622200BECF46 /* WorkSans-Italic-VariableFont_wght.ttf in Resources */,
+				7DCF2FD42961AC4F003330D9 /* SelectionPopupVC.xib in Resources */,
 				7A6BCC6E27D60563003921A0 /* Lato-Regular.ttf in Resources */,
 				0207DA581B56EA530066E2B4 /* Images.xcassets in Resources */,
 				7A6BCC7327D60563003921A0 /* Lato-Bold.ttf in Resources */,
@@ -1686,7 +1719,6 @@
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
-				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${BUILT_PRODUCTS_DIR}/TTGTagCollectionView/TTGTags.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -1698,7 +1730,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TTGTags.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1819,6 +1850,7 @@
 				4C4F4CF6282E98CE000A2F39 /* Bool.swift in Sources */,
 				7ABF89C7280CE30D008F8D61 /* CustomUITextField.swift in Sources */,
 				7A99D4BC27D0EB2F00B0ABEA /* NSMutableAttributedString.swift in Sources */,
+				7DCF2FD32961AC4F003330D9 /* SelectionPopupVC.swift in Sources */,
 				7A27447B2812348A0073D737 /* ReviewDetailsCell.swift in Sources */,
 				302D95F114D2391D003F00A1 /* MainViewController.m in Sources */,
 				7A127984282903F5008AB996 /* AdditionalApplicantDetailsViewModel.swift in Sources */,
@@ -1826,6 +1858,7 @@
 				7ABF89D2280EDD98008F8D61 /* ChangeNumberResponseModel.swift in Sources */,
 				7ABF89B928050C98008F8D61 /* UpdateAccountResponseModel.swift in Sources */,
 				4C8A6931280EEED90026345B /* RegisterPicAndSignResponseModel.swift in Sources */,
+				7DCF2FD52961AC4F003330D9 /* SelectionCell.swift in Sources */,
 				7AB78E8827FF8F7F009A339C /* RegisterConsumerAccountInfoResponseModel.swift in Sources */,
 				2029B57B81A24D31A58152F2 /* ABLPlugin.swift in Sources */,
 				4C40A2C7283CAA1F00E72949 /* RegisterPermanentAddressViewController.swift in Sources */,
@@ -1851,6 +1884,7 @@
 				7AB8918527D757A100054BD3 /* AlamofireObjectMapper.swift in Sources */,
 				7AF9936F27F1B51F001186EE /* OTPVerifyMode.swift in Sources */,
 				7ABF89BB28058686008F8D61 /* SelectPreferredAccountViewModel.swift in Sources */,
+				7DCF2FC62961A2EA003330D9 /* CustomPopupDemo.swift in Sources */,
 				4CC36DC2280D9301000EFEBE /* ServiceChannelsViewModel.swift in Sources */,
 				4C40A2C9283CAAA600E72949 /* RegisterPermanentAddressViewModel.swift in Sources */,
 				7ABD538327F5A24500AC54AE /* SelectBranchViewModel.swift in Sources */,

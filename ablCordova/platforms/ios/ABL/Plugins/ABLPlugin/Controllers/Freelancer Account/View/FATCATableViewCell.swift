@@ -20,7 +20,7 @@ class FATCATableViewCell: UITableViewCell {
     }
     
     private func setupViews(){
-        answerSwitch.segments = LabelSegment.segments(withTitles: ["No", "Yes"],
+        answerSwitch.segments = LabelSegment.segments(withTitles: ["No".localizeString(), "Yes".localizeString()],
                                                       normalFont: PluginFonts.workSansReg14.font,
                                                       normalTextColor: .white,
                                                       selectedFont: PluginFonts.workSansReg14.font,

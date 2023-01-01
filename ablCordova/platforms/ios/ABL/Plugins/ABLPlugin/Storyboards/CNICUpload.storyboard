@@ -42,7 +42,7 @@
                                 <rect key="frame" x="0.0" y="47" width="390" height="50"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, January 3, 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TGg-m8-WkD" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="17" width="210" height="16.333333333333329"/>
+                                        <rect key="frame" x="20" y="16.666666666666664" width="210" height="16.666666666666664"/>
                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -79,12 +79,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qoQ-MF-S0b">
                                 <rect key="frame" x="0.0" y="97" width="390" height="65"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="q9i-p7-wE1">
-                                        <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="mXM-te-2Ie">
-                                        <rect key="frame" x="283" y="15.333333333333332" width="87" height="34.333333333333343"/>
-                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ryA-0q-gzn">
                                         <rect key="frame" x="0.0" y="62" width="390" height="3"/>
                                         <color key="backgroundColor" name="Allied Blue"/>
@@ -92,27 +86,40 @@
                                             <constraint firstAttribute="height" constant="3" id="gDj-7x-V44"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wHn-Lb-8bL">
+                                        <rect key="frame" x="20" y="15.333333333333332" width="350" height="34.333333333333343"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="H5v-GC-bEn">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="NOR-Br-7Sm">
+                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="3n4-xM-Ozv">
+                                                <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="mXM-te-2Ie" secondAttribute="trailing" constant="20" id="1s7-eB-69O"/>
+                                    <constraint firstItem="wHn-Lb-8bL" firstAttribute="centerY" secondItem="qoQ-MF-S0b" secondAttribute="centerY" id="5Wa-Wp-Qo7"/>
                                     <constraint firstAttribute="height" constant="65" id="5jR-Uj-AV2"/>
-                                    <constraint firstItem="q9i-p7-wE1" firstAttribute="leading" secondItem="qoQ-MF-S0b" secondAttribute="leading" constant="20" id="AEy-Ub-Bne"/>
-                                    <constraint firstItem="q9i-p7-wE1" firstAttribute="centerY" secondItem="qoQ-MF-S0b" secondAttribute="centerY" id="Odf-E7-5Gx"/>
                                     <constraint firstAttribute="trailing" secondItem="ryA-0q-gzn" secondAttribute="trailing" id="Y8Y-HV-Jhz"/>
                                     <constraint firstItem="ryA-0q-gzn" firstAttribute="leading" secondItem="qoQ-MF-S0b" secondAttribute="leading" id="gF3-7P-9gG"/>
-                                    <constraint firstItem="mXM-te-2Ie" firstAttribute="centerY" secondItem="qoQ-MF-S0b" secondAttribute="centerY" id="xkY-mR-I9P"/>
+                                    <constraint firstAttribute="trailing" secondItem="wHn-Lb-8bL" secondAttribute="trailing" constant="20" id="vyp-Wl-FkT"/>
+                                    <constraint firstItem="wHn-Lb-8bL" firstAttribute="leading" secondItem="qoQ-MF-S0b" secondAttribute="leading" constant="20" id="wVF-Cm-a1J"/>
                                     <constraint firstAttribute="bottom" secondItem="ryA-0q-gzn" secondAttribute="bottom" id="yZm-Nn-pdg"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Change Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fN3-lA-V6G" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="182" width="147.33333333333334" height="23.333333333333343"/>
+                                <rect key="frame" x="20" y="182" width="157" height="23.666666666666657"/>
                                 <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b1G-7x-4yj">
-                                <rect key="frame" x="20" y="225.33333333333334" width="350" height="2"/>
+                                <rect key="frame" x="20" y="225.66666666666666" width="350" height="2"/>
                                 <color key="backgroundColor" name="App Orange"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="ANC-Bf-AYI"/>
@@ -129,7 +136,7 @@
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eBn-i3-CZv" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="334" height="104"/>
-                                        <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account. 
+                                        <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account.
 If you wish to continue Click here </string>
                                         <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -189,11 +196,10 @@ If you wish to continue Click here </string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="0D3-BC-pHi"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Next">
-                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Next"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="6"/>
@@ -206,7 +212,7 @@ If you wish to continue Click here </string>
                                 </subviews>
                             </stackView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yG4-HG-bpZ" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                <rect key="frame" x="300" y="352.33333333333331" width="70" height="35"/>
+                                <rect key="frame" x="300" y="352.66666666666669" width="70" height="35"/>
                                 <color key="backgroundColor" name="OTP Field Border"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="70" id="ym3-1Y-pvM"/>
@@ -225,25 +231,25 @@ If you wish to continue Click here </string>
                                 </connections>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Have you ported your mobile network?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8g7-CQ-0L5" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                <rect key="frame" x="20" y="361.66666666666669" width="260" height="16.333333333333314"/>
+                                <rect key="frame" x="20" y="353.66666666666669" width="260" height="33"/>
                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="COl-X3-0P5">
-                                <rect key="frame" x="20" y="247.33333333333337" width="350" height="85"/>
+                                <rect key="frame" x="20" y="247.66666666666663" width="350" height="85"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DNE-So-tPQ">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="85"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ctv-fW-bmK" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="16.333333333333332"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="16.666666666666668"/>
                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Enter your mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ssk-3D-n5b" customClass="TextFieldSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="24.333333333333343" width="350" height="40"/>
+                                                <rect key="frame" x="0.0" y="24.666666666666657" width="350" height="40"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="c0L-xj-KTU"/>
@@ -278,7 +284,7 @@ If you wish to continue Click here </string>
                                                 </userDefinedRuntimeAttributes>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Make sure entered mobile number is registered against your CNIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdw-go-56I" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="72.333333333333343" width="350" height="12.666666666666671"/>
+                                                <rect key="frame" x="0.0" y="72.666666666666657" width="350" height="12.333333333333329"/>
                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="9"/>
                                                 <color key="textColor" name="Textfield Placeholder"/>
                                                 <nil key="highlightedColor"/>
@@ -301,13 +307,13 @@ If you wish to continue Click here </string>
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CNIC Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3O-DX-Gk1" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="17.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="18"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder=" Enter your CNIC number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3L1-VE-0Lm" customClass="TextFieldSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="25.666666666666657" width="350" height="40"/>
+                                                <rect key="frame" x="0.0" y="26.000000000000028" width="350" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="40" id="1kg-gg-wAZ"/>
                                                 </constraints>
@@ -346,13 +352,13 @@ If you wish to continue Click here </string>
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Network" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="isS-8X-brr" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="350" height="17.666666666666668"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="350" height="18"/>
                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ERt-63-294" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="25.666666666666657" width="350" height="40"/>
+                                                <rect key="frame" x="0.0" y="26.000000000000028" width="350" height="40"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield-down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="CLA-Dg-hjp">
                                                         <rect key="frame" x="318" y="14" width="12" height="12"/>
@@ -362,7 +368,7 @@ If you wish to continue Click here </string>
                                                         </constraints>
                                                     </imageView>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your mobile network" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8FH-Lk-HhX" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                        <rect key="frame" x="0.0" y="11.999999999999998" width="310" height="16.333333333333329"/>
+                                                        <rect key="frame" x="0.0" y="11.666666666666629" width="310" height="17"/>
                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                         <color key="textColor" name="Textfield Placeholder"/>
                                                         <nil key="highlightedColor"/>
@@ -470,38 +476,21 @@ If you wish to continue Click here </string>
                                                             <constraint firstAttribute="width" constant="140" id="yV1-Xn-oJ1"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3ER-2x-oxh">
-                                                        <rect key="frame" x="0.0" y="0.0" width="250" height="50"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <connections>
-                                                            <action selector="buttonBack:" destination="JlR-7H-xAK" eventType="touchUpInside" id="7Dy-8L-kFj"/>
-                                                        </connections>
-                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" name="App Orange"/>
                                                 <constraints>
-                                                    <constraint firstItem="3ER-2x-oxh" firstAttribute="leading" secondItem="Pcq-Ua-9xc" secondAttribute="leading" id="9ae-gb-DiU"/>
                                                     <constraint firstItem="zqH-9Y-JTQ" firstAttribute="leading" secondItem="Zad-lh-fqC" secondAttribute="trailing" constant="20" id="CR6-gx-g02"/>
-                                                    <constraint firstItem="3ER-2x-oxh" firstAttribute="top" secondItem="Pcq-Ua-9xc" secondAttribute="top" id="L2O-C8-uGG"/>
                                                     <constraint firstAttribute="bottom" secondItem="zqH-9Y-JTQ" secondAttribute="bottom" id="RwY-Ef-moz"/>
                                                     <constraint firstItem="Zad-lh-fqC" firstAttribute="centerY" secondItem="Pcq-Ua-9xc" secondAttribute="centerY" id="a18-c6-Hq1"/>
                                                     <constraint firstAttribute="trailing" secondItem="zqH-9Y-JTQ" secondAttribute="trailing" id="ej5-Ya-lS4"/>
                                                     <constraint firstAttribute="height" constant="50" id="jBC-jK-e8H"/>
-                                                    <constraint firstItem="zqH-9Y-JTQ" firstAttribute="leading" secondItem="3ER-2x-oxh" secondAttribute="trailing" id="tAr-aE-xT1"/>
                                                     <constraint firstItem="Zad-lh-fqC" firstAttribute="leading" secondItem="Pcq-Ua-9xc" secondAttribute="leading" constant="20" id="v1A-dz-1fv"/>
-                                                    <constraint firstAttribute="bottom" secondItem="3ER-2x-oxh" secondAttribute="bottom" id="vbX-Oh-5oh"/>
                                                     <constraint firstItem="zqH-9Y-JTQ" firstAttribute="top" secondItem="Pcq-Ua-9xc" secondAttribute="top" id="xZM-lb-Xun"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XHs-u6-Imd">
                                                 <rect key="frame" x="0.0" y="50" width="390" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="MIx-5P-YXK">
-                                                        <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="gGl-Ae-vJs">
-                                                        <rect key="frame" x="283" y="15.333333333333332" width="87" height="34.333333333333343"/>
-                                                    </imageView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aiQ-ce-fNK">
                                                         <rect key="frame" x="0.0" y="62" width="390" height="3"/>
                                                         <color key="backgroundColor" name="Allied Blue"/>
@@ -509,16 +498,29 @@ If you wish to continue Click here </string>
                                                             <constraint firstAttribute="height" constant="3" id="ZHy-1J-7r0"/>
                                                         </constraints>
                                                     </view>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="u7g-4l-9ZT">
+                                                        <rect key="frame" x="20" y="15.333333333333332" width="350" height="34.333333333333343"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="0KV-YB-9Sm">
+                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="yyM-gv-8xF">
+                                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="hwo-g9-bF0">
+                                                                <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstItem="aiQ-ce-fNK" firstAttribute="leading" secondItem="XHs-u6-Imd" secondAttribute="leading" id="1ho-FL-vAd"/>
-                                                    <constraint firstAttribute="trailing" secondItem="gGl-Ae-vJs" secondAttribute="trailing" constant="20" id="Kw5-fP-gSV"/>
-                                                    <constraint firstItem="MIx-5P-YXK" firstAttribute="centerY" secondItem="XHs-u6-Imd" secondAttribute="centerY" id="PIH-dD-XPO"/>
-                                                    <constraint firstItem="gGl-Ae-vJs" firstAttribute="centerY" secondItem="XHs-u6-Imd" secondAttribute="centerY" id="Vja-O0-tsA"/>
+                                                    <constraint firstItem="u7g-4l-9ZT" firstAttribute="leading" secondItem="XHs-u6-Imd" secondAttribute="leading" constant="20" id="H9G-g1-0lI"/>
+                                                    <constraint firstAttribute="trailing" secondItem="u7g-4l-9ZT" secondAttribute="trailing" constant="20" id="Knd-FT-Wph"/>
+                                                    <constraint firstItem="u7g-4l-9ZT" firstAttribute="centerY" secondItem="XHs-u6-Imd" secondAttribute="centerY" id="RYI-ph-t3F"/>
                                                     <constraint firstAttribute="bottom" secondItem="aiQ-ce-fNK" secondAttribute="bottom" id="bTs-z1-I31"/>
                                                     <constraint firstAttribute="height" constant="65" id="jkx-yV-5jo"/>
-                                                    <constraint firstItem="MIx-5P-YXK" firstAttribute="leading" secondItem="XHs-u6-Imd" secondAttribute="leading" constant="20" id="nuX-iZ-Xse"/>
                                                     <constraint firstAttribute="trailing" secondItem="aiQ-ce-fNK" secondAttribute="trailing" id="qlb-N8-GV5"/>
                                                 </constraints>
                                             </view>
@@ -535,7 +537,7 @@ If you wish to continue Click here </string>
                                                     <constraint firstAttribute="height" constant="2" id="qXP-td-MVL"/>
                                                 </constraints>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a Clear Picture Of Your Original CNIC" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kO5-PP-VXe">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Take a Clear Picture Of Your Original CNIC" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kO5-PP-VXe" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="192.66666666666666" width="350" height="16.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
                                                 <nil key="textColor"/>
@@ -554,7 +556,7 @@ If you wish to continue Click here </string>
                                                                     <constraint firstAttribute="width" constant="20" id="V1q-GM-RrV"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cnic Front" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7my-Sh-QGH">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cnic Front" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7my-Sh-QGH" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                 <rect key="frame" x="42" y="11.666666666666687" width="71" height="16.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -642,7 +644,7 @@ If you wish to continue Click here </string>
                                                                     <constraint firstAttribute="width" constant="20" id="KPI-Hy-N6Y"/>
                                                                 </constraints>
                                                             </imageView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cnic Back" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCO-JD-r3T">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cnic Back" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xCO-JD-r3T" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                 <rect key="frame" x="42.000000000000007" y="11.666666666666687" width="67.666666666666686" height="16.666666666666671"/>
                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
                                                                 <nil key="textColor"/>
@@ -725,7 +727,7 @@ If you wish to continue Click here </string>
                                                     <constraint firstAttribute="height" constant="350" id="dMC-Ah-w5q"/>
                                                 </constraints>
                                             </stackView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yri-BJ-CCh">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yri-BJ-CCh" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="599.33333333333337" width="350" height="17.666666666666629"/>
                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="15"/>
                                                 <nil key="textColor"/>
@@ -760,11 +762,10 @@ If you wish to continue Click here </string>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aoZ-DQ-lEr" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
                                                         <color key="backgroundColor" name="Allied Blue"/>
+                                                        <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Next">
-                                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                                        </buttonConfiguration>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Next"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="6"/>
@@ -806,8 +807,8 @@ If you wish to continue Click here </string>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AFa-O0-uor" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="8" width="334" height="104"/>
-                                                        <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account. 
-If you wish to continue Click here </string>
+                                                        <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account.
+If you wish to continue Click here</string>
                                                         <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -1869,12 +1870,20 @@ Do you wish to change mobile number?</string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4Wu-Ul-gr5">
                                                 <rect key="frame" x="0.0" y="50" width="390" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="v99-DT-XGE">
-                                                        <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="vS5-GZ-QkG">
-                                                        <rect key="frame" x="283" y="15.333333333333332" width="87" height="34.333333333333343"/>
-                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="62N-o7-ZSc">
+                                                        <rect key="frame" x="20" y="15.333333333333332" width="350" height="34.333333333333343"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="cSx-o9-gcG">
+                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="LEt-Jw-h3J">
+                                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="GTA-GC-sLb">
+                                                                <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OWN-pE-vgs">
                                                         <rect key="frame" x="0.0" y="62" width="390" height="3"/>
                                                         <color key="backgroundColor" name="Allied Blue"/>
@@ -1885,13 +1894,12 @@ Do you wish to change mobile number?</string>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="vS5-GZ-QkG" secondAttribute="trailing" constant="20" id="2BZ-ne-yYA"/>
-                                                    <constraint firstItem="vS5-GZ-QkG" firstAttribute="centerY" secondItem="4Wu-Ul-gr5" secondAttribute="centerY" id="C7F-Hm-PKq"/>
+                                                    <constraint firstItem="62N-o7-ZSc" firstAttribute="leading" secondItem="4Wu-Ul-gr5" secondAttribute="leading" constant="20" id="7CM-8B-ac3"/>
                                                     <constraint firstAttribute="bottom" secondItem="OWN-pE-vgs" secondAttribute="bottom" id="KKb-Tl-Gfn"/>
                                                     <constraint firstItem="OWN-pE-vgs" firstAttribute="leading" secondItem="4Wu-Ul-gr5" secondAttribute="leading" id="NBw-dd-U1R"/>
-                                                    <constraint firstItem="v99-DT-XGE" firstAttribute="leading" secondItem="4Wu-Ul-gr5" secondAttribute="leading" constant="20" id="Pa3-tB-fh1"/>
+                                                    <constraint firstItem="62N-o7-ZSc" firstAttribute="centerY" secondItem="4Wu-Ul-gr5" secondAttribute="centerY" id="U04-cN-uPn"/>
                                                     <constraint firstAttribute="height" constant="65" id="aDD-yC-rf2"/>
-                                                    <constraint firstItem="v99-DT-XGE" firstAttribute="centerY" secondItem="4Wu-Ul-gr5" secondAttribute="centerY" id="eDI-qy-MmL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="62N-o7-ZSc" secondAttribute="trailing" constant="20" id="ezA-jF-cu7"/>
                                                     <constraint firstAttribute="trailing" secondItem="OWN-pE-vgs" secondAttribute="trailing" id="iuz-sz-waj"/>
                                                 </constraints>
                                             </view>
@@ -1922,11 +1930,10 @@ Do you wish to change mobile number?</string>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="wX7-2R-tNG"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                                         <color key="tintColor" name="App CTA Blue"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Back">
-                                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                                        </buttonConfiguration>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Back"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="6"/>
@@ -1945,11 +1952,10 @@ Do you wish to change mobile number?</string>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ir-uu-0mj" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="183" y="0.0" width="167" height="50"/>
                                                         <color key="backgroundColor" name="Allied Blue"/>
+                                                        <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Continue">
-                                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                                        </buttonConfiguration>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Continue"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="6"/>
@@ -1966,7 +1972,7 @@ Do you wish to change mobile number?</string>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tEK-y5-91K" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="8" y="8" width="334" height="104"/>
-                                                        <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account. 
+                                                        <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account.
 If you wish to continue Click here </string>
                                                         <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="15"/>
                                                         <nil key="textColor"/>
@@ -2274,12 +2280,20 @@ If you wish to continue Click here </string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9hv-pF-3aH">
                                 <rect key="frame" x="0.0" y="97" width="390" height="65"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="LqD-7K-U2h">
-                                        <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="mEO-Dr-lT1">
-                                        <rect key="frame" x="283" y="15.333333333333332" width="87" height="34.333333333333343"/>
-                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="hv3-6f-PGR">
+                                        <rect key="frame" x="20" y="15.333333333333332" width="350" height="34.333333333333343"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="WZQ-Yf-wmd">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="k5x-Z8-H1O">
+                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="yHR-Iz-4xu">
+                                                <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YY6-S6-b5l">
                                         <rect key="frame" x="0.0" y="62" width="390" height="3"/>
                                         <color key="backgroundColor" name="Allied Blue"/>
@@ -2290,13 +2304,12 @@ If you wish to continue Click here </string>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="LqD-7K-U2h" firstAttribute="leading" secondItem="9hv-pF-3aH" secondAttribute="leading" constant="20" id="5Mi-EO-04D"/>
                                     <constraint firstAttribute="height" constant="65" id="8hj-m1-Vt2"/>
                                     <constraint firstAttribute="trailing" secondItem="YY6-S6-b5l" secondAttribute="trailing" id="AQ4-TM-r6a"/>
-                                    <constraint firstItem="LqD-7K-U2h" firstAttribute="centerY" secondItem="9hv-pF-3aH" secondAttribute="centerY" id="JJS-6R-VsD"/>
-                                    <constraint firstItem="mEO-Dr-lT1" firstAttribute="centerY" secondItem="9hv-pF-3aH" secondAttribute="centerY" id="MLx-gk-xYn"/>
+                                    <constraint firstAttribute="trailing" secondItem="hv3-6f-PGR" secondAttribute="trailing" constant="20" id="Jh1-fy-4sm"/>
+                                    <constraint firstItem="hv3-6f-PGR" firstAttribute="leading" secondItem="9hv-pF-3aH" secondAttribute="leading" constant="20" id="PrH-hN-N9V"/>
+                                    <constraint firstItem="hv3-6f-PGR" firstAttribute="centerY" secondItem="9hv-pF-3aH" secondAttribute="centerY" id="U0t-W8-4nv"/>
                                     <constraint firstItem="YY6-S6-b5l" firstAttribute="leading" secondItem="9hv-pF-3aH" secondAttribute="leading" id="XHe-Pt-eMq"/>
-                                    <constraint firstAttribute="trailing" secondItem="mEO-Dr-lT1" secondAttribute="trailing" constant="20" id="fQR-Bu-taD"/>
                                     <constraint firstAttribute="bottom" secondItem="YY6-S6-b5l" secondAttribute="bottom" id="nU9-YB-KUZ"/>
                                 </constraints>
                             </view>
@@ -2325,11 +2338,10 @@ If you wish to continue Click here </string>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xvr-js-BIj" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="350" height="50"/>
                                         <color key="backgroundColor" name="Allied Blue"/>
+                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Next">
-                                            <fontDescription key="titleFontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Next"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="6"/>
@@ -2368,7 +2380,7 @@ If you wish to continue Click here </string>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KPd-l3-Uye" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="334" height="104"/>
-                                        <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account. 
+                                        <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account.
 If you wish to continue Click here </string>
                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -2735,7 +2747,7 @@ If you wish to continue Click here </string>
         <!--Manual VerificationVC-->
         <scene sceneID="1Ln-C6-IaN">
             <objects>
-                <viewController storyboardIdentifier="CNICManualVerificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7ja-sA-wRK" customClass="CNICManualVerificationVC" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CNICManualVerificationVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7ja-sA-wRK" customClass="CNICManualVerificationVC" customModule="ABL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Qqq-wq-T0E">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -2770,12 +2782,6 @@ If you wish to continue Click here </string>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xKx-7I-lmQ">
                                 <rect key="frame" x="0.0" y="97" width="390" height="65"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="fF7-Y1-PYt">
-                                        <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
-                                    </imageView>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="cD8-L9-MBL">
-                                        <rect key="frame" x="283" y="15.333333333333332" width="87" height="34.333333333333343"/>
-                                    </imageView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LCM-wf-Ess">
                                         <rect key="frame" x="0.0" y="62" width="390" height="3"/>
                                         <color key="backgroundColor" name="Allied Blue"/>
@@ -2783,14 +2789,27 @@ If you wish to continue Click here </string>
                                             <constraint firstAttribute="height" constant="3" id="o8W-uj-S6L"/>
                                         </constraints>
                                     </view>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="UDB-yK-HzM">
+                                        <rect key="frame" x="20" y="15.333333333333332" width="350" height="34.333333333333343"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="CLs-h4-Tlv">
+                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="iiP-ge-Z0e">
+                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                            </imageView>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="N1E-Ip-rFk">
+                                                <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>
+                                            </imageView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstItem="fF7-Y1-PYt" firstAttribute="centerY" secondItem="xKx-7I-lmQ" secondAttribute="centerY" id="Cod-TY-eE5"/>
-                                    <constraint firstItem="fF7-Y1-PYt" firstAttribute="leading" secondItem="xKx-7I-lmQ" secondAttribute="leading" constant="20" id="Reg-BB-K9G"/>
                                     <constraint firstAttribute="height" constant="65" id="RjD-x5-a8j"/>
-                                    <constraint firstItem="cD8-L9-MBL" firstAttribute="centerY" secondItem="xKx-7I-lmQ" secondAttribute="centerY" id="aNq-HR-E5A"/>
-                                    <constraint firstAttribute="trailing" secondItem="cD8-L9-MBL" secondAttribute="trailing" constant="20" id="j19-S0-dMh"/>
+                                    <constraint firstItem="UDB-yK-HzM" firstAttribute="leading" secondItem="xKx-7I-lmQ" secondAttribute="leading" constant="20" id="XHe-9d-YZf"/>
+                                    <constraint firstItem="UDB-yK-HzM" firstAttribute="centerY" secondItem="xKx-7I-lmQ" secondAttribute="centerY" id="eh3-hB-hn2"/>
+                                    <constraint firstAttribute="trailing" secondItem="UDB-yK-HzM" secondAttribute="trailing" constant="20" id="iCh-Y7-Or4"/>
                                     <constraint firstAttribute="trailing" secondItem="LCM-wf-Ess" secondAttribute="trailing" id="kL5-OM-Fdz"/>
                                     <constraint firstAttribute="bottom" secondItem="LCM-wf-Ess" secondAttribute="bottom" id="ydZ-gY-bIV"/>
                                     <constraint firstItem="LCM-wf-Ess" firstAttribute="leading" secondItem="xKx-7I-lmQ" secondAttribute="leading" id="zR5-fz-4dq"/>
@@ -2820,7 +2839,7 @@ If you wish to continue Click here </string>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FL8-Jr-r8c" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                         <rect key="frame" x="8" y="8" width="334" height="104"/>
-                                        <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account. 
+                                        <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account.
 If you wish to continue Click here </string>
                                         <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -2880,11 +2899,10 @@ If you wish to continue Click here </string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="CoL-MD-66w"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Next">
-                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Next"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="6"/>
@@ -3102,17 +3120,17 @@ If you wish to continue Click here </string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QB2-zG-5iZ">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rMe-Hg-zLY">
-                                                        <rect key="frame" x="8" y="15.666666666666671" width="374" height="19"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="rMe-Hg-zLY">
+                                                        <rect key="frame" x="8" y="0.0" width="374" height="50"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, January 3, 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="BdX-Wr-X5k">
-                                                                <rect key="frame" x="0.0" y="0.0" width="144" height="19"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, January 3, 2022" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BdX-Wr-X5k">
+                                                                <rect key="frame" x="0.0" y="4" width="78.333333333333329" height="42.333333333333336"/>
                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="12"/>
                                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Mmp-ET-Khl">
-                                                                <rect key="frame" x="152" y="0.0" width="164" height="19"/>
+                                                                <rect key="frame" x="86.333333333333314" y="15.666666666666671" width="164" height="19"/>
                                                                 <subviews>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yeG-ek-ONN">
                                                                         <rect key="frame" x="0.0" y="0.0" width="19" height="19"/>
@@ -3135,7 +3153,7 @@ If you wish to continue Click here </string>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jk0-cS-Xyw">
-                                                                        <rect key="frame" x="58" y="0.0" width="19" height="19"/>
+                                                                        <rect key="frame" x="58.000000000000014" y="0.0" width="19" height="19"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" image="youtube"/>
                                                                         <connections>
@@ -3143,7 +3161,7 @@ If you wish to continue Click here </string>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ELT-mw-ksl">
-                                                                        <rect key="frame" x="87" y="0.0" width="19" height="19"/>
+                                                                        <rect key="frame" x="87.000000000000014" y="0.0" width="19" height="19"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" image="instagram"/>
                                                                         <connections>
@@ -3151,7 +3169,7 @@ If you wish to continue Click here </string>
                                                                         </connections>
                                                                     </button>
                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Ig-MM-khU">
-                                                                        <rect key="frame" x="116" y="0.0" width="19" height="19"/>
+                                                                        <rect key="frame" x="116.00000000000001" y="0.0" width="18.999999999999986" height="19"/>
                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                                                         <state key="normal" image="linkedin"/>
                                                                         <connections>
@@ -3168,12 +3186,77 @@ If you wish to continue Click here </string>
                                                                     </button>
                                                                 </subviews>
                                                             </stackView>
-                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top-bar-urdu-trans" translatesAutoresizingMaskIntoConstraints="NO" id="RV9-ln-HHf">
-                                                                <rect key="frame" x="324" y="0.0" width="50" height="19"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="width" constant="50" id="3bq-ai-19D"/>
-                                                                </constraints>
-                                                            </imageView>
+                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="CVu-m6-fCF">
+                                                                <rect key="frame" x="258.33333333333331" y="0.0" width="115.66666666666669" height="50"/>
+                                                                <subviews>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1i8-9s-Yib">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                        <subviews>
+                                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top-bar-urdu-trans" translatesAutoresizingMaskIntoConstraints="NO" id="RV9-ln-HHf">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                                <constraints>
+                                                                                    <constraint firstAttribute="width" constant="50" id="3bq-ai-19D"/>
+                                                                                </constraints>
+                                                                            </imageView>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3H-0X-0UY">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                                <connections>
+                                                                                    <action selector="buttonUrdu:" destination="Edf-MR-RmW" eventType="touchUpInside" id="ect-Id-xAQ"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="trailing" secondItem="L3H-0X-0UY" secondAttribute="trailing" id="96S-nq-Qou"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="L3H-0X-0UY" secondAttribute="bottom" id="CtC-OL-ASm"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="RV9-ln-HHf" secondAttribute="trailing" id="E8s-i3-n6o"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="RV9-ln-HHf" secondAttribute="bottom" id="HYw-OX-1bl"/>
+                                                                            <constraint firstItem="RV9-ln-HHf" firstAttribute="top" secondItem="1i8-9s-Yib" secondAttribute="top" id="Sj3-lt-fkf"/>
+                                                                            <constraint firstItem="L3H-0X-0UY" firstAttribute="top" secondItem="1i8-9s-Yib" secondAttribute="top" id="jTW-kb-eBO"/>
+                                                                            <constraint firstItem="RV9-ln-HHf" firstAttribute="leading" secondItem="1i8-9s-Yib" secondAttribute="leading" id="sL7-8h-GUw"/>
+                                                                            <constraint firstItem="L3H-0X-0UY" firstAttribute="leading" secondItem="1i8-9s-Yib" secondAttribute="leading" id="we4-tt-m4I"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="83l-cw-D1R">
+                                                                        <rect key="frame" x="52" y="0.0" width="63.666666666666657" height="50"/>
+                                                                        <subviews>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fpb-9a-zuJ">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="50"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="kVt-aQ-b3j">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="42.333333333333336" height="50"/>
+                                                                                        <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="12"/>
+                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="top-bar-english-trans" translatesAutoresizingMaskIntoConstraints="NO" id="hSg-YI-vaQ">
+                                                                                        <rect key="frame" x="42.333333333333371" y="0.0" width="21.333333333333329" height="50"/>
+                                                                                    </imageView>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgd-PU-JKo">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="63.666666666666664" height="50"/>
+                                                                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                                <connections>
+                                                                                    <action selector="buttonEnglish:" destination="Edf-MR-RmW" eventType="touchUpInside" id="4bG-fN-MNF"/>
+                                                                                </connections>
+                                                                            </button>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                        <constraints>
+                                                                            <constraint firstItem="Fpb-9a-zuJ" firstAttribute="leading" secondItem="83l-cw-D1R" secondAttribute="leading" id="CiH-Dd-Bkr"/>
+                                                                            <constraint firstItem="Sgd-PU-JKo" firstAttribute="top" secondItem="83l-cw-D1R" secondAttribute="top" id="PhS-AZ-dw1"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="Fpb-9a-zuJ" secondAttribute="bottom" id="TaA-mh-P1z"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="Fpb-9a-zuJ" secondAttribute="trailing" id="jdI-xv-3t7"/>
+                                                                            <constraint firstAttribute="bottom" secondItem="Sgd-PU-JKo" secondAttribute="bottom" id="mCB-vl-dAt"/>
+                                                                            <constraint firstItem="Sgd-PU-JKo" firstAttribute="leading" secondItem="83l-cw-D1R" secondAttribute="leading" id="qzl-n2-83G"/>
+                                                                            <constraint firstAttribute="trailing" secondItem="Sgd-PU-JKo" secondAttribute="trailing" id="vzI-lk-yn7"/>
+                                                                            <constraint firstItem="Fpb-9a-zuJ" firstAttribute="top" secondItem="83l-cw-D1R" secondAttribute="top" id="wtZ-y3-gDZ"/>
+                                                                        </constraints>
+                                                                    </view>
+                                                                </subviews>
+                                                            </stackView>
                                                         </subviews>
                                                     </stackView>
                                                 </subviews>
@@ -3188,12 +3271,20 @@ If you wish to continue Click here </string>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RiW-d6-LCC">
                                                 <rect key="frame" x="0.0" y="50" width="390" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="ZCc-qR-VO0">
-                                                        <rect key="frame" x="20" y="21.333333333333343" width="129" height="22.666666666666671"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="jOD-sn-wjw">
-                                                        <rect key="frame" x="283" y="15.333333333333346" width="87" height="34.333333333333343"/>
-                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="LvD-oH-S5h">
+                                                        <rect key="frame" x="20" y="15.333333333333346" width="350" height="34.333333333333343"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="ZCc-qR-VO0">
+                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="jOD-sn-wjw">
+                                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="zPe-Sg-LQQ">
+                                                                <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="23p-bg-BoZ">
                                                         <rect key="frame" x="0.0" y="62" width="390" height="3"/>
                                                         <color key="backgroundColor" name="Allied Blue"/>
@@ -3205,11 +3296,10 @@ If you wish to continue Click here </string>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="65" id="3uJ-Nu-zBv"/>
+                                                    <constraint firstAttribute="trailing" secondItem="LvD-oH-S5h" secondAttribute="trailing" constant="20" id="6Tm-33-ez4"/>
                                                     <constraint firstAttribute="trailing" secondItem="23p-bg-BoZ" secondAttribute="trailing" id="8w1-cF-Kbw"/>
-                                                    <constraint firstAttribute="trailing" secondItem="jOD-sn-wjw" secondAttribute="trailing" constant="20" id="Bg9-0S-XW2"/>
-                                                    <constraint firstItem="ZCc-qR-VO0" firstAttribute="centerY" secondItem="RiW-d6-LCC" secondAttribute="centerY" id="CIy-45-KkF"/>
-                                                    <constraint firstItem="jOD-sn-wjw" firstAttribute="centerY" secondItem="RiW-d6-LCC" secondAttribute="centerY" id="ZWV-tX-dmH"/>
-                                                    <constraint firstItem="ZCc-qR-VO0" firstAttribute="leading" secondItem="RiW-d6-LCC" secondAttribute="leading" constant="20" id="lPP-WH-d5Q"/>
+                                                    <constraint firstItem="LvD-oH-S5h" firstAttribute="leading" secondItem="RiW-d6-LCC" secondAttribute="leading" constant="20" id="CZu-ul-VPn"/>
+                                                    <constraint firstItem="LvD-oH-S5h" firstAttribute="centerY" secondItem="RiW-d6-LCC" secondAttribute="centerY" id="DZW-qo-1df"/>
                                                     <constraint firstAttribute="bottom" secondItem="23p-bg-BoZ" secondAttribute="bottom" id="sNT-1E-Adz"/>
                                                     <constraint firstItem="23p-bg-BoZ" firstAttribute="leading" secondItem="RiW-d6-LCC" secondAttribute="leading" id="xEH-in-KQU"/>
                                                 </constraints>
@@ -3475,7 +3565,7 @@ If you wish to continue Click here </string>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="HMN-y4-lwj">
                                                         <rect key="frame" x="20" y="20" width="310" height="143"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Customer Support, Suggestions &amp; Complaints " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7f-Kp-hPC" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="For Customer Support, Suggestions &amp; Complaints" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g7f-Kp-hPC" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                                 <rect key="frame" x="0.0" y="0.0" width="310" height="47"/>
                                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="20"/>
                                                                 <nil key="textColor"/>
@@ -3559,7 +3649,7 @@ If you wish to continue Click here </string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will be obliged to have your feedback on overall user experience at the end of the process. " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUG-LQ-YNU" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="We will be obliged to have your feedback on overall user experience at the end of the process." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UUG-LQ-YNU" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
                                                 <rect key="frame" x="20" y="1031" width="350" height="56.333333333333258"/>
                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="16"/>
                                                 <nil key="textColor"/>
@@ -3573,11 +3663,10 @@ If you wish to continue Click here </string>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="iwC-Ax-fhL"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
                                                         <color key="tintColor" name="App CTA Blue"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Back">
-                                                            <fontDescription key="titleFontDescription" name="Lato-Regular" family="Lato" pointSize="16"/>
-                                                        </buttonConfiguration>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Back"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="6"/>
@@ -3864,6 +3953,7 @@ Please ensure you use camera enabled device during whole onboarding process. You
                     </view>
                     <navigationItem key="navigationItem" id="X2J-Lm-6Xq"/>
                     <connections>
+                        <outlet property="buttonUrdu" destination="L3H-0X-0UY" id="Q4y-9C-0Do"/>
                         <outlet property="email" destination="e20-Zg-J1w" id="neK-ZD-GQN"/>
                         <outlet property="emailStack" destination="lab-ji-zlV" id="vt4-wV-Yoe"/>
                         <outlet property="helpLineNumber" destination="5rM-bR-R4e" id="iTN-pM-87f"/>
@@ -3886,55 +3976,113 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                 <rect key="frame" x="0.0" y="47" width="390" height="763"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jIK-WJ-3jw">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="686.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="390" height="703.66666666666663"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L8P-Qe-jul">
                                                 <rect key="frame" x="0.0" y="0.0" width="390" height="50"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Monday, January 3, 2022" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cuk-Hd-zWj" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                        <rect key="frame" x="20" y="17" width="210" height="16.333333333333329"/>
+                                                        <rect key="frame" x="20" y="16.666666666666664" width="214" height="16.666666666666664"/>
                                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top-bar-urdu-view" translatesAutoresizingMaskIntoConstraints="NO" id="rkR-28-wH5">
-                                                        <rect key="frame" x="250" y="0.0" width="140" height="50"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="width" constant="140" id="VU2-Xp-Wyr"/>
-                                                        </constraints>
-                                                    </imageView>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xnc-TK-Ct2">
-                                                        <rect key="frame" x="230" y="0.0" width="160" height="50"/>
-                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                                        <connections>
-                                                            <action selector="buttonUrdu:" destination="v9z-4B-hbV" eventType="touchUpInside" id="leT-VN-w7v"/>
-                                                        </connections>
-                                                    </button>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="s8K-sr-QTj">
+                                                        <rect key="frame" x="254" y="0.0" width="116" height="50"/>
+                                                        <subviews>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RTE-c4-bAd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                <subviews>
+                                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="top-bar-urdu-trans" translatesAutoresizingMaskIntoConstraints="NO" id="d9Q-Xp-QRc">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="50" id="DOh-Dv-x7x"/>
+                                                                        </constraints>
+                                                                    </imageView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M8E-9f-IVJ">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <connections>
+                                                                            <action selector="buttonUrdu:" destination="v9z-4B-hbV" eventType="touchUpInside" id="fja-75-Jx8"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="bottom" secondItem="d9Q-Xp-QRc" secondAttribute="bottom" id="6Fc-xT-ssm"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="M8E-9f-IVJ" secondAttribute="trailing" id="Ls9-nI-hSR"/>
+                                                                    <constraint firstItem="d9Q-Xp-QRc" firstAttribute="top" secondItem="RTE-c4-bAd" secondAttribute="top" id="RZg-aw-rAW"/>
+                                                                    <constraint firstItem="M8E-9f-IVJ" firstAttribute="leading" secondItem="RTE-c4-bAd" secondAttribute="leading" id="Vh3-Rd-AOf"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="d9Q-Xp-QRc" secondAttribute="trailing" id="XXM-Af-062"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="M8E-9f-IVJ" secondAttribute="bottom" id="d5X-U6-Aoh"/>
+                                                                    <constraint firstItem="d9Q-Xp-QRc" firstAttribute="leading" secondItem="RTE-c4-bAd" secondAttribute="leading" id="dKC-Be-XMn"/>
+                                                                    <constraint firstItem="M8E-9f-IVJ" firstAttribute="top" secondItem="RTE-c4-bAd" secondAttribute="top" id="nTc-bS-jok"/>
+                                                                </constraints>
+                                                            </view>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sAK-E2-d3e">
+                                                                <rect key="frame" x="52" y="0.0" width="64" height="50"/>
+                                                                <subviews>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rGL-Yi-XSE">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="50"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="English" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="6" translatesAutoresizingMaskIntoConstraints="NO" id="oEA-co-FWJ">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="64" height="50"/>
+                                                                                <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="12"/>
+                                                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                    </stackView>
+                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6Zd-6q-L7B">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="64" height="50"/>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <connections>
+                                                                            <action selector="buttonEnglish:" destination="v9z-4B-hbV" eventType="touchUpInside" id="8eR-IZ-2VO"/>
+                                                                        </connections>
+                                                                    </button>
+                                                                </subviews>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="bottom" secondItem="rGL-Yi-XSE" secondAttribute="bottom" id="5cf-Ox-IgS"/>
+                                                                    <constraint firstItem="6Zd-6q-L7B" firstAttribute="leading" secondItem="sAK-E2-d3e" secondAttribute="leading" id="62k-Nt-DJ5"/>
+                                                                    <constraint firstAttribute="bottom" secondItem="6Zd-6q-L7B" secondAttribute="bottom" id="7At-AB-i44"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="rGL-Yi-XSE" secondAttribute="trailing" id="Mp5-Pt-20L"/>
+                                                                    <constraint firstAttribute="trailing" secondItem="6Zd-6q-L7B" secondAttribute="trailing" id="fOR-I4-pEK"/>
+                                                                    <constraint firstItem="rGL-Yi-XSE" firstAttribute="leading" secondItem="sAK-E2-d3e" secondAttribute="leading" id="sLX-f8-gZA"/>
+                                                                    <constraint firstItem="rGL-Yi-XSE" firstAttribute="top" secondItem="sAK-E2-d3e" secondAttribute="top" id="ujV-ox-u4E"/>
+                                                                    <constraint firstItem="6Zd-6q-L7B" firstAttribute="top" secondItem="sAK-E2-d3e" secondAttribute="top" id="ziM-nm-ulu"/>
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" name="App Orange"/>
                                                 <constraints>
-                                                    <constraint firstItem="rkR-28-wH5" firstAttribute="top" secondItem="L8P-Qe-jul" secondAttribute="top" id="8VV-KZ-Ql8"/>
-                                                    <constraint firstAttribute="bottom" secondItem="rkR-28-wH5" secondAttribute="bottom" id="App-FZ-hLv"/>
-                                                    <constraint firstItem="rkR-28-wH5" firstAttribute="leading" secondItem="cuk-Hd-zWj" secondAttribute="trailing" constant="20" id="EtZ-sF-F5s"/>
-                                                    <constraint firstAttribute="bottom" secondItem="xnc-TK-Ct2" secondAttribute="bottom" id="FHo-Jc-pAE"/>
+                                                    <constraint firstAttribute="trailing" secondItem="s8K-sr-QTj" secondAttribute="trailing" constant="20" id="7ne-Pw-nAL"/>
                                                     <constraint firstItem="cuk-Hd-zWj" firstAttribute="centerY" secondItem="L8P-Qe-jul" secondAttribute="centerY" id="Klu-oS-uF9"/>
-                                                    <constraint firstAttribute="trailing" secondItem="rkR-28-wH5" secondAttribute="trailing" id="MrP-hF-VHy"/>
                                                     <constraint firstItem="cuk-Hd-zWj" firstAttribute="leading" secondItem="L8P-Qe-jul" secondAttribute="leading" constant="20" id="h9b-hc-D1Z"/>
-                                                    <constraint firstAttribute="trailing" secondItem="xnc-TK-Ct2" secondAttribute="trailing" id="nkL-l9-x0f"/>
-                                                    <constraint firstItem="xnc-TK-Ct2" firstAttribute="leading" secondItem="cuk-Hd-zWj" secondAttribute="trailing" id="raN-Vd-dr2"/>
+                                                    <constraint firstItem="s8K-sr-QTj" firstAttribute="leading" secondItem="cuk-Hd-zWj" secondAttribute="trailing" constant="20" id="i9y-LB-moP"/>
+                                                    <constraint firstItem="s8K-sr-QTj" firstAttribute="centerY" secondItem="cuk-Hd-zWj" secondAttribute="centerY" id="uhU-94-K9I"/>
                                                     <constraint firstAttribute="height" constant="50" id="xpp-bu-V01"/>
-                                                    <constraint firstItem="xnc-TK-Ct2" firstAttribute="top" secondItem="L8P-Qe-jul" secondAttribute="top" id="yOU-Qz-dfn"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EEL-VW-jig">
                                                 <rect key="frame" x="0.0" y="50" width="390" height="65"/>
                                                 <subviews>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="94e-bJ-6oz">
-                                                        <rect key="frame" x="20" y="21.333333333333329" width="129" height="22.666666666666671"/>
-                                                    </imageView>
-                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="uxg-S9-Flh">
-                                                        <rect key="frame" x="283" y="15.333333333333332" width="87" height="34.333333333333343"/>
-                                                    </imageView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="wnD-pw-rml">
+                                                        <rect key="frame" x="20" y="15.333333333333332" width="350" height="34.333333333333343"/>
+                                                        <subviews>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="5aJ-fG-TFO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="SmE-GP-F9q">
+                                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                                            </imageView>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="7KV-fV-Jcc">
+                                                                <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                    </stackView>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3yE-44-EJi">
                                                         <rect key="frame" x="0.0" y="62" width="390" height="3"/>
                                                         <color key="backgroundColor" name="Allied Blue"/>
@@ -3945,31 +4093,30 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="trailing" secondItem="wnD-pw-rml" secondAttribute="trailing" constant="20" id="CbQ-Mf-7Rs"/>
                                                     <constraint firstAttribute="height" constant="65" id="EHL-cw-YQS"/>
-                                                    <constraint firstItem="uxg-S9-Flh" firstAttribute="centerY" secondItem="EEL-VW-jig" secondAttribute="centerY" id="EmT-dE-GzA"/>
                                                     <constraint firstAttribute="trailing" secondItem="3yE-44-EJi" secondAttribute="trailing" id="GiZ-mF-g6N"/>
                                                     <constraint firstAttribute="bottom" secondItem="3yE-44-EJi" secondAttribute="bottom" id="Glh-NJ-VwQ"/>
-                                                    <constraint firstItem="94e-bJ-6oz" firstAttribute="centerY" secondItem="EEL-VW-jig" secondAttribute="centerY" id="Ixh-JU-NvE"/>
                                                     <constraint firstItem="3yE-44-EJi" firstAttribute="leading" secondItem="EEL-VW-jig" secondAttribute="leading" id="UV2-N3-351"/>
-                                                    <constraint firstItem="94e-bJ-6oz" firstAttribute="leading" secondItem="EEL-VW-jig" secondAttribute="leading" constant="20" id="XGy-HU-Iol"/>
-                                                    <constraint firstAttribute="trailing" secondItem="uxg-S9-Flh" secondAttribute="trailing" constant="20" id="oZE-da-9SN"/>
+                                                    <constraint firstItem="wnD-pw-rml" firstAttribute="centerY" secondItem="EEL-VW-jig" secondAttribute="centerY" id="Z0X-Jn-rrA"/>
+                                                    <constraint firstItem="wnD-pw-rml" firstAttribute="leading" secondItem="EEL-VW-jig" secondAttribute="leading" constant="20" id="klC-Kz-khq"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's Get Started" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8yL-Gr-iUS" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="135" width="152.66666666666666" height="23.333333333333343"/>
+                                                <rect key="frame" x="20" y="135" width="167.33333333333334" height="23.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="20"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J4z-BD-zb7">
-                                                <rect key="frame" x="20" y="178.33333333333334" width="350" height="2"/>
+                                                <rect key="frame" x="20" y="178.66666666666666" width="350" height="2"/>
                                                 <color key="backgroundColor" name="App Orange"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="2" id="Q4b-HK-dE9"/>
                                                 </constraints>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ITZ-hv-ozy">
-                                                <rect key="frame" x="20" y="200.33333333333337" width="350" height="120"/>
+                                                <rect key="frame" x="20" y="200.66666666666663" width="350" height="120"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j0K-GJ-cXy">
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="120"/>
@@ -3978,19 +4125,19 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                                 <rect key="frame" x="0.0" y="0.0" width="350" height="120"/>
                                                                 <subviews>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oKc-2c-acB" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="16.333333333333332"/>
+                                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="16.666666666666668"/>
                                                                         <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter mobile no as &quot;03xx-xxxxxxx&quot;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lc9-xL-5hQ" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="24.333333333333343" width="350" height="16.333333333333329"/>
+                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter mobile no as '03xx-xxxxxxx'" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lc9-xL-5hQ" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
+                                                                        <rect key="frame" x="0.0" y="24.666666666666657" width="350" height="16.666666666666671"/>
                                                                         <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                                                         <nil key="textColor"/>
                                                                         <nil key="highlightedColor"/>
                                                                     </label>
                                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Enter your mobile number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="aTI-0R-R5c" customClass="TextFieldSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="48.666666666666657" width="350" height="40"/>
+                                                                        <rect key="frame" x="0.0" y="49.333333333333343" width="350" height="40"/>
                                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="40" id="CS3-1W-9Bn"/>
@@ -4025,7 +4172,7 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                                         </userDefinedRuntimeAttributes>
                                                                     </textField>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Make sure entered mobile number is registered against your CNIC" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5uu-fU-ApC" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="96.666666666666657" width="350" height="23.333333333333329"/>
+                                                                        <rect key="frame" x="0.0" y="97.333333333333343" width="350" height="22.666666666666671"/>
                                                                         <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="9"/>
                                                                         <color key="textColor" name="Textfield Placeholder"/>
                                                                         <nil key="highlightedColor"/>
@@ -4045,13 +4192,13 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="85"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CNIC Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xoM-UV-VcR" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="16.333333333333332"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="16.666666666666668"/>
                                                                 <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="14"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="  Enter your CNIC number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vTo-ld-Bw8" customClass="TextFieldSetting" customModule="ABL" customModuleProvider="target">
-                                                                <rect key="frame" x="2" y="24.333333333333343" width="348" height="40"/>
+                                                                <rect key="frame" x="2" y="24.666666666666657" width="348" height="40"/>
                                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="40" id="3Ir-4I-5Ef"/>
@@ -4091,13 +4238,13 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                         <rect key="frame" x="0.0" y="0.0" width="350" height="0.0"/>
                                                         <subviews>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mobile Network" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfV-c1-yX1" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="17.666666666666668"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="350" height="18"/>
                                                                 <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="15"/>
                                                                 <nil key="textColor"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="je5-rl-hMk" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                                                <rect key="frame" x="0.0" y="25.666666666666657" width="350" height="40"/>
+                                                                <rect key="frame" x="0.0" y="26.000000000000028" width="350" height="40"/>
                                                                 <subviews>
                                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="textfield-down-arrow" translatesAutoresizingMaskIntoConstraints="NO" id="sun-qU-fQF">
                                                                         <rect key="frame" x="318" y="14" width="12" height="12"/>
@@ -4107,7 +4254,7 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                                         </constraints>
                                                                     </imageView>
                                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select your mobile network" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BQJ-cj-byT" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                                        <rect key="frame" x="0.0" y="11.999999999999998" width="310" height="16.333333333333329"/>
+                                                                        <rect key="frame" x="0.0" y="11.666666666666629" width="310" height="17"/>
                                                                         <fontDescription key="fontDescription" name="Lato-Regular" family="Lato" pointSize="14"/>
                                                                         <color key="textColor" name="Textfield Placeholder"/>
                                                                         <nil key="highlightedColor"/>
@@ -4140,13 +4287,13 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                 </subviews>
                                             </stackView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="749" text="Have you ported your mobile network?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qfP-er-OAn" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="340.33333333333331" width="260" height="16.333333333333314"/>
+                                                <rect key="frame" x="20" y="340.66666666666669" width="260" height="33"/>
                                                 <fontDescription key="fontDescription" name="WorkSans-Regular" family="Work Sans" pointSize="14"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WXQ-C5-dfi" customClass="BetterSegmentedControl" customModule="BetterSegmentedControl">
-                                                <rect key="frame" x="300" y="331.66666666666669" width="70" height="34"/>
+                                                <rect key="frame" x="300" y="340.33333333333331" width="70" height="34"/>
                                                 <color key="backgroundColor" name="OTP Field Border"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="34" id="Fc6-59-aWl"/>
@@ -4165,24 +4312,27 @@ Please ensure you use camera enabled device during whole onboarding process. You
                                                 </connections>
                                             </view>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="allied-live-chat" translatesAutoresizingMaskIntoConstraints="NO" id="HOJ-2T-ONe" customClass="ChatView" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="616.66666666666663" width="350" height="50"/>
+                                                <rect key="frame" x="20" y="633.66666666666663" width="350" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="GGl-RQ-USu"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wfL-he-X3h" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
-                                                <rect key="frame" x="20" y="476.66666666666663" width="350" height="120"/>
+                                                <rect key="frame" x="20" y="493.66666666666663" width="350" height="120"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qd-0f-w0f" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                        <rect key="frame" x="8" y="25.000000000000004" width="334" height="49.333333333333343"/>
-                                                        <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account. 
-If you wish to continue.</string>
+                                                        <rect key="frame" x="8" y="20" width="334" height="56"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="56" id="mGW-3e-pvx"/>
+                                                        </constraints>
+                                                        <string key="text">If you don’t have your original CNIC with you at present, you can open myWallet account.
+If you wish to continue</string>
                                                         <fontDescription key="fontDescription" name="WorkSans-Medium" family="Work Sans" pointSize="14"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click here" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zir-eb-vhv" customClass="LabelSetting" customModule="ABL" customModuleProvider="target">
-                                                        <rect key="frame" x="130" y="80.333333333333371" width="90" height="19"/>
+                                                        <rect key="frame" x="110" y="84" width="130" height="19"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="19" id="ups-p3-goi"/>
                                                         </constraints>
@@ -4192,14 +4342,14 @@ If you wish to continue.</string>
                                                     </label>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstItem="zir-eb-vhv" firstAttribute="leading" secondItem="wfL-he-X3h" secondAttribute="leading" constant="130" id="3Hx-wQ-MUG"/>
+                                                    <constraint firstItem="zir-eb-vhv" firstAttribute="leading" secondItem="wfL-he-X3h" secondAttribute="leading" constant="110" id="3Hx-wQ-MUG"/>
+                                                    <constraint firstAttribute="bottom" secondItem="zir-eb-vhv" secondAttribute="bottom" constant="17" id="7bi-s7-Fd1"/>
                                                     <constraint firstItem="8qd-0f-w0f" firstAttribute="leading" secondItem="wfL-he-X3h" secondAttribute="leading" constant="8" id="Bbv-sm-qWJ"/>
                                                     <constraint firstAttribute="height" constant="120" id="TDP-wk-Bwc"/>
+                                                    <constraint firstItem="zir-eb-vhv" firstAttribute="top" secondItem="8qd-0f-w0f" secondAttribute="bottom" constant="8" id="Tqx-l5-oeZ"/>
                                                     <constraint firstAttribute="trailing" secondItem="8qd-0f-w0f" secondAttribute="trailing" constant="8" id="Uk2-lG-GPr"/>
-                                                    <constraint firstItem="zir-eb-vhv" firstAttribute="top" secondItem="8qd-0f-w0f" secondAttribute="bottom" constant="6" id="amM-gV-d3e"/>
-                                                    <constraint firstItem="8qd-0f-w0f" firstAttribute="top" secondItem="wfL-he-X3h" secondAttribute="top" constant="25" id="cCI-Sh-aZ9"/>
-                                                    <constraint firstAttribute="bottom" secondItem="zir-eb-vhv" secondAttribute="bottom" constant="20.670000000000002" id="eYR-9X-ZjH"/>
-                                                    <constraint firstAttribute="trailing" secondItem="zir-eb-vhv" secondAttribute="trailing" constant="130" id="y9j-qT-ulF"/>
+                                                    <constraint firstItem="8qd-0f-w0f" firstAttribute="top" secondItem="wfL-he-X3h" secondAttribute="top" constant="20" id="cCI-Sh-aZ9"/>
+                                                    <constraint firstAttribute="trailing" secondItem="zir-eb-vhv" secondAttribute="trailing" constant="110" id="y9j-qT-ulF"/>
                                                 </constraints>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
@@ -4214,7 +4364,7 @@ If you wish to continue.</string>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="6bR-tZ-IG2">
-                                                <rect key="frame" x="20" y="406.66666666666669" width="350" height="50"/>
+                                                <rect key="frame" x="20" y="423.66666666666669" width="350" height="50"/>
                                                 <subviews>
                                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6oX-ji-jRL" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="0.0" width="0.0" height="50"/>
@@ -4244,11 +4394,10 @@ If you wish to continue.</string>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="yLE-4p-m9d"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Next">
-                                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                                        </buttonConfiguration>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Next"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="6"/>
@@ -4323,7 +4472,7 @@ If you wish to continue.</string>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="buttonUrdu" destination="xnc-TK-Ct2" id="CHU-8O-dkg"/>
+                        <outlet property="buttonUrdu" destination="M8E-9f-IVJ" id="S0T-v0-0da"/>
                         <outlet property="clickHereLink" destination="zir-eb-vhv" id="6dK-5E-eEF"/>
                         <outlet property="cnicNumberLabel" destination="xoM-UV-VcR" id="gJB-0l-BzL"/>
                         <outlet property="cnicNumberTextField" destination="vTo-ld-Bw8" id="EBJ-bN-nYX"/>
@@ -4372,11 +4521,10 @@ If you wish to continue.</string>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="O0Z-9Y-Pk7"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Done">
-                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Done"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="6"/>
@@ -4533,6 +4681,73 @@ If you wish to continue.</string>
             </objects>
             <point key="canvasLocation" x="4360" y="74.644549763033169"/>
         </scene>
+        <!--Custom Popup DemoVC-->
+        <scene sceneID="GCj-ZD-0VQ">
+            <objects>
+                <viewController storyboardIdentifier="CustomPopupDemoVC" modalTransitionStyle="crossDissolve" modalPresentationStyle="overFullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="dEI-7p-MEV" customClass="CustomPopupDemoVC" customModule="ABL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FkI-VP-olr">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pui-UA-ugF" customClass="CustomUIView" customModule="ABL" customModuleProvider="target">
+                                <rect key="frame" x="20" y="203.66666666666663" width="350" height="450"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_guidelines" translatesAutoresizingMaskIntoConstraints="NO" id="1fy-P7-hj7">
+                                        <rect key="frame" x="4" y="90" width="342" height="350"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="342" id="Kc4-Rn-YHS"/>
+                                            <constraint firstAttribute="height" constant="350" id="sPi-bv-az6"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLO-9v-Flj" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="20" width="310" height="50"/>
+                                        <color key="backgroundColor" name="Allied Blue"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="8jK-36-UNp"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Begin Verification"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="6"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="beginVerificationPressed:" destination="dEI-7p-MEV" eventType="touchUpInside" id="pm2-dA-o6a"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="450" id="3xB-pv-Of9"/>
+                                    <constraint firstItem="bLO-9v-Flj" firstAttribute="top" secondItem="pui-UA-ugF" secondAttribute="top" constant="20" id="77c-5v-MS7"/>
+                                    <constraint firstItem="1fy-P7-hj7" firstAttribute="top" secondItem="bLO-9v-Flj" secondAttribute="bottom" constant="20" id="AlL-iy-EpO"/>
+                                    <constraint firstAttribute="trailing" secondItem="bLO-9v-Flj" secondAttribute="trailing" constant="20" id="IDL-n0-FX5"/>
+                                    <constraint firstItem="bLO-9v-Flj" firstAttribute="leading" secondItem="pui-UA-ugF" secondAttribute="leading" constant="20" id="M94-ke-MH4"/>
+                                    <constraint firstItem="1fy-P7-hj7" firstAttribute="centerX" secondItem="bLO-9v-Flj" secondAttribute="centerX" id="Pfh-zg-iJA"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="12"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="KS8-UD-4s2"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="KS8-UD-4s2" firstAttribute="trailing" secondItem="pui-UA-ugF" secondAttribute="trailing" constant="20" id="C9W-TE-ldO"/>
+                            <constraint firstItem="pui-UA-ugF" firstAttribute="leading" secondItem="KS8-UD-4s2" secondAttribute="leading" constant="20" id="Cig-Oq-3x2"/>
+                            <constraint firstItem="pui-UA-ugF" firstAttribute="centerY" secondItem="KS8-UD-4s2" secondAttribute="centerY" id="aib-Ir-NJz"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pA4-Ji-TKi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5080" y="74.644549763033169"/>
+        </scene>
     </scenes>
     <designables>
         <designable name="2Vk-pC-GLB">
@@ -4542,7 +4757,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="236.66666666666666" height="17"/>
         </designable>
         <designable name="3L1-VE-0Lm">
-            <size key="intrinsicContentSize" width="174" height="18"/>
+            <size key="intrinsicContentSize" width="171.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="46E-Et-Szy">
             <size key="intrinsicContentSize" width="1649.6666666666667" height="19"/>
@@ -4557,7 +4772,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="71.333333333333329" height="14.666666666666666"/>
         </designable>
         <designable name="4ir-uu-0mj">
-            <size key="intrinsicContentSize" width="95" height="33"/>
+            <size key="intrinsicContentSize" width="71" height="31"/>
         </designable>
         <designable name="4nv-2L-Awp">
             <size key="intrinsicContentSize" width="210.66666666666666" height="19"/>
@@ -4569,40 +4784,43 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="92.333333333333329" height="16.666666666666668"/>
         </designable>
         <designable name="5uu-fU-ApC">
-            <size key="intrinsicContentSize" width="265.66666666666669" height="10.666666666666666"/>
+            <size key="intrinsicContentSize" width="290.66666666666669" height="10.666666666666666"/>
         </designable>
         <designable name="6K0-GQ-pRy">
             <size key="intrinsicContentSize" width="92.666666666666671" height="18"/>
         </designable>
         <designable name="6oX-ji-jRL">
-            <size key="intrinsicContentSize" width="74" height="32.666666666666664"/>
+            <size key="intrinsicContentSize" width="72" height="33.333333333333336"/>
         </designable>
         <designable name="7FD-cA-ueB">
             <size key="intrinsicContentSize" width="30" height="30"/>
         </designable>
         <designable name="7lP-V9-K42">
-            <size key="intrinsicContentSize" width="57.666666666666664" height="32.666666666666664"/>
+            <size key="intrinsicContentSize" width="37" height="31"/>
+        </designable>
+        <designable name="7my-Sh-QGH">
+            <size key="intrinsicContentSize" width="71" height="16.666666666666668"/>
         </designable>
         <designable name="8FH-Lk-HhX">
-            <size key="intrinsicContentSize" width="170.66666666666666" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="167.33333333333334" height="17"/>
         </designable>
         <designable name="8g7-CQ-0L5">
-            <size key="intrinsicContentSize" width="243.33333333333334" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="265.66666666666669" height="16.666666666666668"/>
         </designable>
         <designable name="8qd-0f-w0f">
-            <size key="intrinsicContentSize" width="562" height="32.666666666666664"/>
+            <size key="intrinsicContentSize" width="612.33333333333337" height="33"/>
         </designable>
         <designable name="8yL-Gr-iUS">
-            <size key="intrinsicContentSize" width="152.66666666666666" height="23.333333333333332"/>
+            <size key="intrinsicContentSize" width="167.33333333333334" height="23.666666666666668"/>
         </designable>
         <designable name="AFa-O0-uor">
-            <size key="intrinsicContentSize" width="616.66666666666663" height="33"/>
+            <size key="intrinsicContentSize" width="612.33333333333337" height="33"/>
         </designable>
         <designable name="AsG-Fd-zav">
             <size key="intrinsicContentSize" width="73.333333333333329" height="19"/>
         </designable>
         <designable name="BQJ-cj-byT">
-            <size key="intrinsicContentSize" width="170.66666666666666" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="167.33333333333334" height="17"/>
         </designable>
         <designable name="Bgw-9p-Czx">
             <size key="intrinsicContentSize" width="174.33333333333334" height="24"/>
@@ -4614,7 +4832,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="143.33333333333334" height="19.333333333333332"/>
         </designable>
         <designable name="Ctv-fW-bmK">
-            <size key="intrinsicContentSize" width="96.666666666666671" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="105.33333333333333" height="16.666666666666668"/>
         </designable>
         <designable name="EKx-vZ-Vd7">
             <size key="intrinsicContentSize" width="46" height="34"/>
@@ -4629,19 +4847,19 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="155.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="FL8-Jr-r8c">
-            <size key="intrinsicContentSize" width="616.66666666666663" height="33"/>
+            <size key="intrinsicContentSize" width="612.33333333333337" height="33"/>
         </designable>
         <designable name="FXo-5w-y8J">
             <size key="intrinsicContentSize" width="116.66666666666667" height="23.666666666666668"/>
         </designable>
         <designable name="FkY-e2-7cF">
-            <size key="intrinsicContentSize" width="58.333333333333336" height="33.333333333333336"/>
+            <size key="intrinsicContentSize" width="35" height="32"/>
         </designable>
         <designable name="GKJ-Ir-2MU">
             <size key="intrinsicContentSize" width="165.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="H3O-DX-Gk1">
-            <size key="intrinsicContentSize" width="94.666666666666671" height="17.666666666666668"/>
+            <size key="intrinsicContentSize" width="94" height="18"/>
         </designable>
         <designable name="HFP-uA-hEM">
             <size key="intrinsicContentSize" width="288" height="68"/>
@@ -4650,7 +4868,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
         <designable name="HfV-c1-yX1">
-            <size key="intrinsicContentSize" width="106" height="17.666666666666668"/>
+            <size key="intrinsicContentSize" width="107.66666666666667" height="18"/>
         </designable>
         <designable name="IhV-g2-Lcm">
             <size key="intrinsicContentSize" width="165.33333333333334" height="18.666666666666668"/>
@@ -4659,10 +4877,10 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="259" height="11"/>
         </designable>
         <designable name="KDI-Sa-7Tr">
-            <size key="intrinsicContentSize" width="74" height="32.666666666666664"/>
+            <size key="intrinsicContentSize" width="72" height="33.333333333333336"/>
         </designable>
         <designable name="KPd-l3-Uye">
-            <size key="intrinsicContentSize" width="657" height="41"/>
+            <size key="intrinsicContentSize" width="653.66666666666663" height="41"/>
         </designable>
         <designable name="KcK-As-RfG">
             <size key="intrinsicContentSize" width="522.66666666666663" height="19"/>
@@ -4713,13 +4931,13 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="58.333333333333336" height="33.333333333333336"/>
         </designable>
         <designable name="SoH-0Q-u1P">
-            <size key="intrinsicContentSize" width="60.666666666666664" height="33"/>
+            <size key="intrinsicContentSize" width="37" height="31"/>
         </designable>
         <designable name="Sqx-En-6aI">
             <size key="intrinsicContentSize" width="136.33333333333334" height="19.333333333333332"/>
         </designable>
         <designable name="Ssk-3D-n5b">
-            <size key="intrinsicContentSize" width="186" height="18"/>
+            <size key="intrinsicContentSize" width="181.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="Stp-mR-xTp">
             <size key="intrinsicContentSize" width="167.33333333333334" height="18.666666666666668"/>
@@ -4728,7 +4946,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="95.666666666666671" height="14.666666666666666"/>
         </designable>
         <designable name="TGg-m8-WkD">
-            <size key="intrinsicContentSize" width="158" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="167.66666666666666" height="16.666666666666668"/>
         </designable>
         <designable name="TWB-J5-wgz">
             <size key="intrinsicContentSize" width="290.66666666666669" height="10.666666666666666"/>
@@ -4740,7 +4958,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="980.66666666666663" height="19"/>
         </designable>
         <designable name="UUG-LQ-YNU">
-            <size key="intrinsicContentSize" width="747.33333333333337" height="19"/>
+            <size key="intrinsicContentSize" width="741.66666666666663" height="19"/>
         </designable>
         <designable name="Udw-1f-HrB">
             <size key="intrinsicContentSize" width="49" height="31"/>
@@ -4758,7 +4976,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="94" height="16.666666666666668"/>
         </designable>
         <designable name="Xvr-js-BIj">
-            <size key="intrinsicContentSize" width="58.333333333333336" height="33.333333333333336"/>
+            <size key="intrinsicContentSize" width="35" height="32"/>
         </designable>
         <designable name="YcM-lN-klO">
             <size key="intrinsicContentSize" width="522.66666666666663" height="19"/>
@@ -4773,10 +4991,10 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="265" height="17"/>
         </designable>
         <designable name="aTI-0R-R5c">
-            <size key="intrinsicContentSize" width="186" height="18"/>
+            <size key="intrinsicContentSize" width="181.33333333333334" height="18.666666666666668"/>
         </designable>
         <designable name="aoZ-DQ-lEr">
-            <size key="intrinsicContentSize" width="60.666666666666664" height="33"/>
+            <size key="intrinsicContentSize" width="37" height="31"/>
         </designable>
         <designable name="b43-Og-Fl7">
             <size key="intrinsicContentSize" width="192" height="19"/>
@@ -4784,11 +5002,14 @@ If you wish to continue.</string>
         <designable name="bGn-qY-wNS">
             <size key="intrinsicContentSize" width="195" height="23.666666666666668"/>
         </designable>
+        <designable name="bLO-9v-Flj">
+            <size key="intrinsicContentSize" width="138" height="31"/>
+        </designable>
         <designable name="c6e-mD-GlQ">
             <size key="intrinsicContentSize" width="49" height="31"/>
         </designable>
         <designable name="cuk-Hd-zWj">
-            <size key="intrinsicContentSize" width="158" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="167.66666666666666" height="16.666666666666668"/>
         </designable>
         <designable name="dXT-C1-loa">
             <size key="intrinsicContentSize" width="126" height="19.333333333333332"/>
@@ -4797,7 +5018,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="101.33333333333333" height="19"/>
         </designable>
         <designable name="eBn-i3-CZv">
-            <size key="intrinsicContentSize" width="562" height="32.666666666666664"/>
+            <size key="intrinsicContentSize" width="612.33333333333337" height="33"/>
         </designable>
         <designable name="eWy-Tc-aAJ">
             <size key="intrinsicContentSize" width="78" height="19"/>
@@ -4812,7 +5033,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
         <designable name="fN3-lA-V6G">
-            <size key="intrinsicContentSize" width="147.33333333333334" height="23.333333333333332"/>
+            <size key="intrinsicContentSize" width="157" height="23.666666666666668"/>
         </designable>
         <designable name="fTv-RW-a9W">
             <size key="intrinsicContentSize" width="72" height="33.333333333333336"/>
@@ -4824,10 +5045,10 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="132.33333333333334" height="19.333333333333332"/>
         </designable>
         <designable name="g7f-Kp-hPC">
-            <size key="intrinsicContentSize" width="491.33333333333331" height="23.666666666666668"/>
+            <size key="intrinsicContentSize" width="484.33333333333331" height="23.666666666666668"/>
         </designable>
         <designable name="gLi-wL-U27">
-            <size key="intrinsicContentSize" width="64.333333333333329" height="33"/>
+            <size key="intrinsicContentSize" width="41" height="31"/>
         </designable>
         <designable name="gMd-1A-2Ds">
             <size key="intrinsicContentSize" width="160.66666666666666" height="19"/>
@@ -4839,10 +5060,10 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="107.66666666666667" height="18"/>
         </designable>
         <designable name="ihQ-UI-2SX">
-            <size key="intrinsicContentSize" width="62.666666666666664" height="33"/>
+            <size key="intrinsicContentSize" width="39" height="31"/>
         </designable>
         <designable name="isS-8X-brr">
-            <size key="intrinsicContentSize" width="106" height="17.666666666666668"/>
+            <size key="intrinsicContentSize" width="107.66666666666667" height="18"/>
         </designable>
         <designable name="jMG-fk-45g">
             <size key="intrinsicContentSize" width="1178.6666666666667" height="37.666666666666664"/>
@@ -4859,6 +5080,9 @@ If you wish to continue.</string>
         <designable name="kJP-GB-Hko">
             <size key="intrinsicContentSize" width="2610" height="19"/>
         </designable>
+        <designable name="kO5-PP-VXe">
+            <size key="intrinsicContentSize" width="284.66666666666669" height="16.666666666666668"/>
+        </designable>
         <designable name="kfz-Z1-JkX">
             <size key="intrinsicContentSize" width="160.33333333333334" height="23.666666666666668"/>
         </designable>
@@ -4869,7 +5093,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
         <designable name="lc9-xL-5hQ">
-            <size key="intrinsicContentSize" width="263.66666666666669" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="284" height="16.666666666666668"/>
         </designable>
         <designable name="mb3-Wl-J6m">
             <size key="intrinsicContentSize" width="1528" height="19"/>
@@ -4884,7 +5108,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="122.33333333333333" height="16.666666666666668"/>
         </designable>
         <designable name="oKc-2c-acB">
-            <size key="intrinsicContentSize" width="96.666666666666671" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="105.33333333333333" height="16.666666666666668"/>
         </designable>
         <designable name="oRq-ig-bd8">
             <size key="intrinsicContentSize" width="288" height="68"/>
@@ -4896,13 +5120,13 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="245.66666666666666" height="19.333333333333332"/>
         </designable>
         <designable name="pdw-go-56I">
-            <size key="intrinsicContentSize" width="265.66666666666669" height="10.666666666666666"/>
+            <size key="intrinsicContentSize" width="290.66666666666669" height="10.666666666666666"/>
         </designable>
         <designable name="phb-j7-R3k">
             <size key="intrinsicContentSize" width="72" height="33.333333333333336"/>
         </designable>
         <designable name="qfP-er-OAn">
-            <size key="intrinsicContentSize" width="243.33333333333334" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="265.66666666666669" height="16.666666666666668"/>
         </designable>
         <designable name="rQr-lP-aS3">
             <size key="intrinsicContentSize" width="271.33333333333331" height="19"/>
@@ -4917,7 +5141,7 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="117.33333333333333" height="16.666666666666668"/>
         </designable>
         <designable name="tEK-y5-91K">
-            <size key="intrinsicContentSize" width="660.66666666666663" height="35.333333333333336"/>
+            <size key="intrinsicContentSize" width="656" height="35.333333333333336"/>
         </designable>
         <designable name="tJ2-JT-Q8P">
             <size key="intrinsicContentSize" width="52" height="35.333333333333336"/>
@@ -4932,16 +5156,19 @@ If you wish to continue.</string>
             <size key="intrinsicContentSize" width="81.666666666666671" height="19"/>
         </designable>
         <designable name="vTo-ld-Bw8">
-            <size key="intrinsicContentSize" width="178" height="18"/>
+            <size key="intrinsicContentSize" width="174" height="18.666666666666668"/>
         </designable>
         <designable name="vwl-AW-ZWS">
             <size key="intrinsicContentSize" width="94" height="18"/>
+        </designable>
+        <designable name="xCO-JD-r3T">
+            <size key="intrinsicContentSize" width="67.666666666666671" height="16.666666666666668"/>
         </designable>
         <designable name="xaA-r6-3xo">
             <size key="intrinsicContentSize" width="290.66666666666669" height="10.666666666666666"/>
         </designable>
         <designable name="xoM-UV-VcR">
-            <size key="intrinsicContentSize" width="88.333333333333329" height="16.333333333333332"/>
+            <size key="intrinsicContentSize" width="93.333333333333329" height="16.666666666666668"/>
         </designable>
         <designable name="yU2-eO-Bqo">
             <size key="intrinsicContentSize" width="103.66666666666667" height="23.666666666666668"/>
@@ -4955,16 +5182,20 @@ If you wish to continue.</string>
         <designable name="ydE-VJ-Qhs">
             <size key="intrinsicContentSize" width="483.66666666666669" height="23.666666666666668"/>
         </designable>
+        <designable name="yri-BJ-CCh">
+            <size key="intrinsicContentSize" width="89.333333333333329" height="17.666666666666668"/>
+        </designable>
         <designable name="zcf-ME-3pA">
             <size key="intrinsicContentSize" width="169.33333333333334" height="16.666666666666668"/>
         </designable>
         <designable name="zir-eb-vhv">
-            <size key="intrinsicContentSize" width="67" height="17.666666666666668"/>
+            <size key="intrinsicContentSize" width="74.666666666666671" height="17.666666666666668"/>
         </designable>
     </designables>
     <resources>
         <image name="allied-live-chat" width="288" height="68"/>
         <image name="allied-logo-new" width="129" height="22.666666030883789"/>
+        <image name="allied-slogan" width="97" height="14"/>
         <image name="camera-icon" width="66.666664123535156" height="60"/>
         <image name="chatIcon" width="16.333333969116211" height="16.333333969116211"/>
         <image name="circle.fill" catalog="system" width="128" height="123"/>
@@ -4976,6 +5207,7 @@ If you wish to continue.</string>
         <image name="edit-icon" width="38" height="38"/>
         <image name="emailIcon" width="16" height="11.666666984558105"/>
         <image name="facebook" width="50" height="50"/>
+        <image name="ic_guidelines" width="500" height="538"/>
         <image name="instagram" width="50" height="50"/>
         <image name="linkedin" width="50" height="50"/>
         <image name="myabl-logo" width="117.66666412353516" height="32.666667938232422"/>
@@ -4989,6 +5221,7 @@ If you wish to continue.</string>
         <image name="rounded-plus" width="42" height="42"/>
         <image name="rounded-plus-orange" width="30" height="30"/>
         <image name="textfield-down-arrow" width="20.666666030883789" height="12"/>
+        <image name="top-bar-english-trans" width="21.5" height="21.5"/>
         <image name="top-bar-urdu-trans" width="68" height="21.5"/>
         <image name="top-bar-urdu-view" width="104" height="38"/>
         <image name="trash-icon" width="27.333333969116211" height="32"/>

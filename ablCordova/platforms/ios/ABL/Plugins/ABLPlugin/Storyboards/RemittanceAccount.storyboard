@@ -13,11 +13,11 @@
         <array key="WorkSans-Medium.ttf">
             <string>WorkSans-Medium</string>
         </array>
+        <array key="WorkSans-Regular.ttf">
+            <string>WorkSans-Regular</string>
+        </array>
         <array key="WorkSans-SemiBold.ttf">
             <string>WorkSans-SemiBold</string>
-        </array>
-        <array key="WorkSans-VariableFont_wght.ttf">
-            <string>WorkSans-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -194,11 +194,10 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="RqQ-fj-Apa"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                         <color key="tintColor" name="App CTA Blue"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Back">
-                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Back"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="6"/>
@@ -220,11 +219,10 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Dgv-7u-lyI"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="Next">
-                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                        </buttonConfiguration>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title="Next"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                 <real key="value" value="6"/>
@@ -572,11 +570,10 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="8jP-0d-nfO"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                                         <color key="tintColor" name="App CTA Blue"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Back">
-                                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                                        </buttonConfiguration>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Back"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="6"/>
@@ -598,11 +595,10 @@
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="sUo-mD-AzX"/>
                                                         </constraints>
+                                                        <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <state key="normal" title="Button"/>
-                                                        <buttonConfiguration key="configuration" style="plain" title="Next">
-                                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                                        </buttonConfiguration>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" title="Next"/>
                                                         <userDefinedRuntimeAttributes>
                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                 <real key="value" value="6"/>
@@ -1252,11 +1248,10 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="bMi-yg-5ao"/>
                                                                         </constraints>
+                                                                        <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                                                         <color key="tintColor" name="App CTA Blue"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="Back">
-                                                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                                                        </buttonConfiguration>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="Back"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                                 <real key="value" value="6"/>
@@ -1278,11 +1273,10 @@
                                                                         <constraints>
                                                                             <constraint firstAttribute="height" constant="50" id="nHv-VZ-3dT"/>
                                                                         </constraints>
+                                                                        <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                                                         <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        <state key="normal" title="Button"/>
-                                                                        <buttonConfiguration key="configuration" style="plain" title="Next">
-                                                                            <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                                                        </buttonConfiguration>
+                                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                        <state key="normal" title="Next"/>
                                                                         <userDefinedRuntimeAttributes>
                                                                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                                 <real key="value" value="6"/>
@@ -1375,7 +1369,7 @@
             <size key="intrinsicContentSize" width="238" height="16.5"/>
         </designable>
         <designable name="1it-KE-p9A">
-            <size key="intrinsicContentSize" width="63" height="33"/>
+            <size key="intrinsicContentSize" width="39" height="31"/>
         </designable>
         <designable name="31P-Lz-o02">
             <size key="intrinsicContentSize" width="156.5" height="16.5"/>
@@ -1402,7 +1396,7 @@
             <size key="intrinsicContentSize" width="257.5" height="28.5"/>
         </designable>
         <designable name="CYM-il-g2v">
-            <size key="intrinsicContentSize" width="61" height="33"/>
+            <size key="intrinsicContentSize" width="37" height="31"/>
         </designable>
         <designable name="CmM-Cb-1e5">
             <size key="intrinsicContentSize" width="86" height="16.5"/>
@@ -1435,7 +1429,7 @@
             <size key="intrinsicContentSize" width="278.5" height="16.5"/>
         </designable>
         <designable name="QDg-S0-1ii">
-            <size key="intrinsicContentSize" width="63" height="33"/>
+            <size key="intrinsicContentSize" width="39" height="31"/>
         </designable>
         <designable name="YjQ-4L-9B4">
             <size key="intrinsicContentSize" width="267.5" height="16.5"/>
@@ -1450,10 +1444,10 @@
             <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
         <designable name="gbe-W4-jfE">
-            <size key="intrinsicContentSize" width="61" height="33"/>
+            <size key="intrinsicContentSize" width="37" height="31"/>
         </designable>
         <designable name="iQs-Sc-vtT">
-            <size key="intrinsicContentSize" width="63" height="33"/>
+            <size key="intrinsicContentSize" width="39" height="31"/>
         </designable>
         <designable name="iyB-m1-hBy">
             <size key="intrinsicContentSize" width="269.5" height="16.5"/>
@@ -1468,7 +1462,7 @@
             <size key="intrinsicContentSize" width="215.5" height="19"/>
         </designable>
         <designable name="vNd-jc-ifJ">
-            <size key="intrinsicContentSize" width="61" height="33"/>
+            <size key="intrinsicContentSize" width="37" height="31"/>
         </designable>
     </designables>
     <resources>
