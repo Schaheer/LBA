@@ -44,10 +44,6 @@ extension UIBarButtonItem: AnchorView {
 public final class DropDown: UIView {
 
 	//TODO: handle iOS 7 landscape mode
-    
-    public var dropDownHeight: CGFloat = 0.0 {
-        didSet { setNeedsUpdateConstraints() }
-    }
 
 	/// The dismiss mode for a drop down.
 	public enum DismissMode {
@@ -573,7 +569,7 @@ extension DropDown {
 		widthConstraint.constant = layout.width
 		heightConstraint.constant = layout.visibleHeight
 
-//		tableView.isScrollEnabled = layout.offscreenHeight > 0
+		tableView.isScrollEnabled = layout.offscreenHeight > 0
 
 		DispatchQueue.main.async { [weak self] in
 			self?.tableView.flashScrollIndicators()
@@ -1022,14 +1018,9 @@ extension DropDown {
 	}
 
 	/// Returns the height needed to display all cells.
-    fileprivate var tableHeight: CGFloat {
-        if tableView.numberOfRows(inSection: 0) < 5 {
-            return tableView.rowHeight * CGFloat(dataSource.count)
-        }
-        else {
-            return dropDownHeight
-        }
-    }
+	fileprivate var tableHeight: CGFloat {
+		return tableView.rowHeight * CGFloat(dataSource.count)
+	}
 
     //MARK: Objective-C methods for converting the Swift type Index
 	@objc public func selectRow(_ index: Int, scrollPosition: UITableView.ScrollPosition = .none) {
