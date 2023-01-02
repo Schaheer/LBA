@@ -83,14 +83,29 @@ class EmploymentDetailsViewModel: EmploymentDetailsViewModelProtocol {
     func saveKyc(rdaCustomerAccInfoId: Double?, rdaCustomerProfileId: Double?, isPrimary: Bool?, relationCode1: Double?, averageMonthlySalary: String?) {
 //        guard let rdaCustomerAccInfoId = rdaCustomerAccInfoId, let rdaCustomerProfileId= rdaCustomerProfileId, let isPrimary = isPrimary, let relationCode1 = relationCode1, let averageMonthlySalary = averageMonthlySalary else { return }
         guard let kycInfo = saveKYCObject(rdaCustomerAccInfoId: rdaCustomerAccInfoId, rdaCustomerProfileId: rdaCustomerProfileId, isPrimary: isPrimary, relationCode1: relationCode1, averageMonthlySalary: averageMonthlySalary) else { return }
-        let viewAppGenerateResponseModel = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
         var consumerListInputModelArray = [saveKYCObject]()
-        viewAppGenerateResponseModel?.forEach {
-            guard let consumerListInputModel = saveKYCObject(rdaCustomerAccInfoId: ($0.accountInformation?.rdaCustomerAccInfoID)!, rdaCustomerProfileId: $0.rdaCustomerProfileID , isPrimary: $0.isPrimary, relationCode1: DataCacheManager.shared.loadAdditionalApplicantRelationship()?.id, averageMonthlySalary: $0.accountInformation?.averageMonthlySalary) else { return }
-            
-            consumerListInputModelArray.append(consumerListInputModel)
-        }
-        consumerListInputModelArray.append(kycInfo)
+
+        
+        
+        //        viewAppGenerateResponseModel?.forEach {
+//            guard let consumerListInputModel = saveKYCObject(rdaCustomerAccInfoId: ($0.accountInformation?.rdaCustomerAccInfoID)!, rdaCustomerProfileId: $0.rdaCustomerProfileID , isPrimary: $0.isPrimary, relationCode1: DataCacheManager.shared.loadAdditionalApplicantRelationship()?.id, averageMonthlySalary: $0.accountInformation?.averageMonthlySalary) else { return }
+//
+//            consumerListInputModelArray.append(consumerListInputModel)
+//        }
+        
+        
+                                          
+                                          
+        guard let basicInfoConsumerListInput = BasicInfoConsumerListInputModel(
+            rdaCustomerAccInfoId: rdaCustomerAccInfoId,
+            rdaCustomerProfileId: rdaCustomerProfileId,
+            isPrimary: isPrimary,
+            relationCode1: relationCode1,
+            averageMonthlySalary: averageMonthlySalary)
+        else { return }
+        consumerListInputModelArray = getListOfConsumersForSVC(newUserInfo: basicInfoConsumerListInput)
+        
+        
         guard let saveKYCInput = SaveKYCInputModel(data: consumerListInputModelArray) else { return }
         
         APIManager.shared.saveKYC(input: saveKYCInput) { [weak self] response in
@@ -182,78 +197,6 @@ class EmploymentDetailsViewModel: EmploymentDetailsViewModelProtocol {
         return professionID
     }
     
-    
-//    //MARK: - For merging
-//    func getListOfConsumers(newUserInfo: EmploymentDetailsInputModel) -> [EmploymentDetailsInputModel] {
-//        var tempRdaCustomerProfileID = newUserInfo.rdaCustomerProfileId
-//        var tempRdaCustomerAccInfoId = newUserInfo.rdaCustomerAccInfoId
-//
-//        let cousumerListHamza = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
-//        let cousumerListShakeel = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
-//
-//        //MARK: - Start----- Just to find new User Profile ID
-//        if let listConsumerLocalHamza = cousumerListHamza {
-//            for consumer in listConsumerLocalHamza {
-//                print(consumer.rdaCustomerProfileID ?? 0)
-//                print(consumer.rdaCustomerAccInfoId ?? 0)
-//                if let consumerListLocalShakeel = cousumerListShakeel {
-//                    var isNotFoundAndNewUserProfileID = true
-//                    consumerListLocalShakeel.forEach {
-//                        print("Hamza" + "\(consumer.rdaCustomerProfileID ?? 0)")
-//                        print("Hamza" + "\(consumer.rdaCustomerAccInfoId ?? 0)")
-//                        print("Shakeel" + "\($0.rdaCustomerProfileID ?? 0)")
-//                        print("Shakeel" + "\($0.rdaCustomerAccInfoId ?? 0)")
-//                        if $0.rdaCustomerProfileID == consumer.rdaCustomerProfileID {
-//                            print("record found")
-//                            isNotFoundAndNewUserProfileID = false
-//                        }
-//                    }
-//                    if isNotFoundAndNewUserProfileID {
-//                        print("------Start-----Profile Id Not Found------")
-//                        tempRdaCustomerProfileID = consumer.rdaCustomerProfileID ?? 0
-//                        tempRdaCustomerAccInfoId = consumer.rdaCustomerAccInfoId as? Double
-//                        print(consumer.rdaCustomerProfileID ?? 0)
-//                        print(consumer.rdaCustomerAccInfoId ?? 0)
-//                        print("------End-----Profile Id Not Found------")
-//                    }
-//                }
-//            }
-//        }
-//        //MARK: - End----- Just to find new User Profile ID
-//
-//        //MARK: - Start-----If user profile id found Replace in new user Request data
-//        newUserInfo.rdaCustomerProfileId = tempRdaCustomerProfileID
-//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
-//        //MARK: - End-----If user profile id found Replace in new user Request data
-//
-//        var consumerListInputModelArray = [EmploymentDetailsInputModel]()
-//
-//        if let consumerListTemp = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList {
-//            consumerListTemp.forEach {
-//                let consumerListInputModel = EmploymentDetailsInputModel(
-//                    rdaCustomerAccInfoId: ($0.accountInformation?.rdaCustomerAccInfoID)!,
-//                    rdaCustomerProfileId: $0.rdaCustomerProfileID!,
-//                    occupationId: Double($0.occupationID ?? 0),
-//                    professionId: Double($0.professionID ?? 0),
-//                    isPrimary: $0.isPrimary ?? false
-//                )
-//                consumerListInputModelArray.append(consumerListInputModel!)
-//            }
-//        }
-//
-//        print("------Start-----Check if user is adding for joint account------")
-//        //MARK: - Start----- Just to check if user is trying for joint account this this check will become true
-//        if consumerListInputModelArray.count > 0 {
-////            newUserInfo.isPrimaryRegistered = false
-//            newUserInfo.isPrimary = false
-//        }
-//        //MARK: - End----- Just to check if user is trying for joint account this this check will become true
-//        print("------End-----Check if user is adding for joint account------")
-//
-//        consumerListInputModelArray.append(newUserInfo)
-//        return consumerListInputModelArray
-//    }
-    
 
     //MARK: - For merging
     func getListOfConsumers(newUserInfo: BasicInfoConsumerListInputModel) -> [BasicInfoConsumerListInputModel] {
@@ -309,5 +252,62 @@ class EmploymentDetailsViewModel: EmploymentDetailsViewModelProtocol {
 
         return currentConsumerList
     }
-
+    //MARK: - For merging
+    func getListOfConsumersForSVC(newUserInfo: BasicInfoConsumerListInputModel) -> [saveKYCObject] {
+        var tempRdaCustomerProfileID = newUserInfo.rdaCustomerProfileId
+        var tempRdaCustomerAccInfoId = newUserInfo.rdaCustomerAccInfoId
+        
+        let cousumerListHamza = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
+        var currentConsumerList = getCurrentConsumerListResponseInInputModel(responseCunsumerList: cousumerListHamza!)
+        let cousumerListShakeel = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
+        var foundIndex = 99
+        
+        var arraySaveKYCObject = [saveKYCObject]()
+        //MARK: - Start----- Just to find new User Profile ID
+        if currentConsumerList.count > 0 {
+            for (index, consumer) in currentConsumerList.enumerated() {
+                print(consumer.rdaCustomerProfileId ?? 0)
+                print(consumer.rdaCustomerAccInfoId ?? 0)
+                if let consumerListLocalShakeel = cousumerListShakeel {
+                    var isNotFoundAndNewUserProfileID = true
+                    consumerListLocalShakeel.forEach {
+                       if $0.rdaCustomerProfileID == consumer.rdaCustomerProfileId {
+                            print("record found")
+                            isNotFoundAndNewUserProfileID = false
+                        }
+                         let consumerListKYCData = saveKYCObject(rdaCustomerAccInfoId: ($0.accountInformation?.rdaCustomerAccInfoID)!, rdaCustomerProfileId: $0.rdaCustomerProfileID , isPrimary: $0.isPrimary, relationCode1: DataCacheManager.shared.loadAdditionalApplicantRelationship()?.id, averageMonthlySalary: $0.accountInformation?.averageMonthlySalary)
+                        arraySaveKYCObject.append(consumerListKYCData!)
+                    }
+                    if isNotFoundAndNewUserProfileID {
+                        print("------Start-----Profile Id Not Found------")
+                        tempRdaCustomerProfileID = consumer.rdaCustomerProfileId ?? 0
+                        tempRdaCustomerAccInfoId = consumer.rdaCustomerAccInfoId
+                        print("------End-----Profile Id Not Found------")
+                        foundIndex = index
+                    }
+                }
+            }
+        }
+        //MARK: - Start-----If user profile id found Replace in new user Request data
+//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+//        newUserInfo.rdaCustomerAccInfoId = tempRdaCustomerProfileID
+        
+        if foundIndex != 99 {
+            currentConsumerList[foundIndex] = BasicInfoConsumerListInputModel()!
+            currentConsumerList[foundIndex].isPrimary = false
+            currentConsumerList[foundIndex].isPrimaryRegistered = false
+        }
+        else {
+            foundIndex = 0
+            currentConsumerList[foundIndex].isPrimary = true
+        }
+        
+        arraySaveKYCObject[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
+        arraySaveKYCObject[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
+        
+        arraySaveKYCObject[foundIndex].relationCode1 = newUserInfo.relationCode1
+        arraySaveKYCObject[foundIndex].averageMonthlySalary = newUserInfo.averageMonthlySalary
+                
+        return arraySaveKYCObject
+    }
 }

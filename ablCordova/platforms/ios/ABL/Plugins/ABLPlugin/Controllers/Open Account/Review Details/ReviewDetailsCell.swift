@@ -244,7 +244,13 @@ final class ReviewDetailsCell: UITableViewCell {
 //        bankingModetxt.text = BankingMethod.getDescription(for: consumer.accountInformation?.bankingModeID ?? 0)
         branchLabel.text = consumer.customerBranch ?? ""
         accountLabel.text = AccountType.getDescription(for: consumer.accountInformation?.customerAccountTypeID ?? 0)
-        currencyLabel.text = consumer.accountInformation?.currencyType ?? ""
+        if let currency =  consumer.accountInformation?.currencyType {
+            currencyLabel.text = currency
+        } else {
+            currencyLabel.text = "PKR"
+        }
+        
+        
         // Accout type here
         accountTypeLabel.text = AccountType.getDescription(for: consumer.accountInformation?.customerAccountTypeID ?? 0)
         // Nature of account
@@ -262,7 +268,7 @@ final class ReviewDetailsCell: UITableViewCell {
        
         proofOfIncomeLabel.text = consumer.accountInformation?.proofOfIncomeInd == false ? "NO" : "YES"
         
-        titleLabel.text = consumer.customerTitle ?? "" == "Male" ? "Mr" : "Miss"
+        titleLabel.text = consumer.gender ?? "" == "Male" ? "Mr" : "Miss"
         fullNameLabel.text = consumer.fullName ?? ""
         genderLabel.text = consumer.gender ?? ""
         fatherHusbandName.text = consumer.fatherHusbandName ?? ""

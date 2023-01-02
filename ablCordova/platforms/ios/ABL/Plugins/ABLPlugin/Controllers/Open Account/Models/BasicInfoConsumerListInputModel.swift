@@ -115,6 +115,8 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         case nameOnPhysicalATM
         case modeOfMajorTransId
         case residentCountries = "residentCountries"
+        case relationCode1
+        case averageMonthlySalary
     }
     
     // MARK: - Model Properties
@@ -216,7 +218,8 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
     var nameOnPhysicalATM: String?
     var modeOfMajorTransId: [Double]?
     var residentCountries: [BasicInfoResidentCountriesInputModel]?
-
+    var relationCode1: Double?
+    var averageMonthlySalary: String?
 
     required init?(
         rdaCustomerAccInfoId: Double? = nil,
@@ -301,7 +304,9 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         noOfJointApplicatns: Int? = nil,
         nameOnPhysicalATM: String? = nil,
         modeOfMajorTransId: [Double]? = nil,
-        residentCountries: [BasicInfoResidentCountriesInputModel]? = nil
+        residentCountries: [BasicInfoResidentCountriesInputModel]? = nil,
+        relationCode1: Double? = nil,
+        averageMonthlySalary: String? = nil
 
     ) {
         var dictionary = [String: Any]()
@@ -389,6 +394,8 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         dictionary[CodingKeys.nameOnPhysicalATM.rawValue] = nameOnPhysicalATM
         dictionary[CodingKeys.modeOfMajorTransId.rawValue] = modeOfMajorTransId
         dictionary[CodingKeys.residentCountries.rawValue] = residentCountries
+        dictionary[CodingKeys.relationCode1.rawValue] = relationCode1
+        dictionary[CodingKeys.averageMonthlySalary.rawValue] = averageMonthlySalary
 
         self.rdaCustomerAccInfoId = rdaCustomerAccInfoId
         self.rdaCustomerProfileId = rdaCustomerProfileId
@@ -472,7 +479,8 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         self.nameOnPhysicalATM = nameOnPhysicalATM
         self.modeOfMajorTransId = modeOfMajorTransId
         self.residentCountries = residentCountries
-
+        self.relationCode1 = relationCode1
+        self.averageMonthlySalary = averageMonthlySalary
         
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
@@ -710,6 +718,8 @@ final class BasicInfoConsumerListInputModel: BaseInputModel {
         nameOnPhysicalATM <- map[CodingKeys.nameOnPhysicalATM.rawValue]
         modeOfMajorTransId <- map[CodingKeys.modeOfMajorTransId.rawValue]
         residentCountries <- map[CodingKeys.residentCountries.rawValue]
+        relationCode1 <- map[CodingKeys.relationCode1.rawValue]
+        averageMonthlySalary <- map[CodingKeys.averageMonthlySalary.rawValue]
     }
 }
 
