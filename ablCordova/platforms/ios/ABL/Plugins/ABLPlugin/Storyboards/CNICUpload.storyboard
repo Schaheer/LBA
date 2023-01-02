@@ -1874,10 +1874,10 @@ Do you wish to change mobile number?</string>
                                                         <rect key="frame" x="20" y="15.333333333333332" width="350" height="34.333333333333343"/>
                                                         <subviews>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-logo-new" translatesAutoresizingMaskIntoConstraints="NO" id="cSx-o9-gcG">
-                                                                <rect key="frame" x="0.0" y="0.0" width="142" height="34.333333333333336"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="129" height="34.333333333333336"/>
                                                             </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="pakistan-digital-account" translatesAutoresizingMaskIntoConstraints="NO" id="LEt-Jw-h3J">
-                                                                <rect key="frame" x="154" y="0.0" width="87" height="34.333333333333336"/>
+                                                                <rect key="frame" x="141" y="0.0" width="100" height="34.333333333333336"/>
                                                             </imageView>
                                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="allied-slogan" translatesAutoresizingMaskIntoConstraints="NO" id="GTA-GC-sLb">
                                                                 <rect key="frame" x="253" y="0.0" width="97" height="34.333333333333336"/>

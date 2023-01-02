@@ -237,7 +237,7 @@ class PicAndSignViewModel: PicAndSignViewModelProtocol{
         currentConsumerList[foundIndex].noOfJointApplicatns = newUserInfo.noOfJointApplicatns
         currentConsumerList[foundIndex].nameOnPhysicalATM = newUserInfo.nameOnPhysicalATM
         currentConsumerList[foundIndex].modeOfMajorTransId = newUserInfo.modeOfMajorTransId
-        currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId
+        currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId == 0 ? nil : newUserInfo.genderId
         currentConsumerList[foundIndex].residentCountries =  getCurrentUser().residentCountries
 
         return currentConsumerList

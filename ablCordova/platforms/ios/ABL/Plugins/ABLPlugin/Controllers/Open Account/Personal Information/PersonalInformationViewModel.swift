@@ -323,7 +323,7 @@ class PersonalInformationViewModel: PersonalInformationViewModelProtocol {
         currentConsumerList[foundIndex].motherMaidenName = newUserInfo.motherMaidenName
         currentConsumerList[foundIndex].cityOfBirth = newUserInfo.cityOfBirth
         currentConsumerList[foundIndex].countryOfResidenceId = 157
-        currentConsumerList[foundIndex].genderId = newUserInfo.genderId
+        currentConsumerList[foundIndex].genderId = newUserInfo.genderId == 0 ? nil : newUserInfo.genderId
         
         return currentConsumerList
     }
@@ -378,8 +378,8 @@ class PersonalInformationViewModel: PersonalInformationViewModelProtocol {
         currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
         currentConsumerList[foundIndex].employerEmail = newUserInfo.emailAddress
         currentConsumerList[foundIndex].customerNonResidentInd = 0
-        currentConsumerList[foundIndex].genderId = newUserInfo.genderId
-
+        currentConsumerList[foundIndex].genderId = newUserInfo.genderId == 0 ? nil : newUserInfo.genderId
+//        currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId
         return currentConsumerList
     }
 }

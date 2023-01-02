@@ -7,22 +7,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2CBD1B00-44AD-474D-B7E2-B22C815EF322"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/CNIC Upload/CNIC Verification/CNICVerificationVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
-            landmarkName = "subscribeViewModel()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "33275C86-9B59-4D02-AC39-5B5F832538E1"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -71,22 +55,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "554B4A2D-FA72-467C-A489-A2E0930816B4"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Review Details/ReviewDetailsVC.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "120"
-            endingLineNumber = "120"
-            landmarkName = "updateConsumerAccountDetails()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "7851F79E-A7DD-47F8-9043-DD70113AD9DF"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -103,70 +71,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "49145223-ED63-48BD-9CA5-D1A751659263"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Occupation/SelectOccupationViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "86"
-            endingLineNumber = "86"
-            landmarkName = "saveKyc(rdaCustomerAccInfoId:rdaCustomerProfileId:isPrimary:relationCode1:averageMonthlySalary:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "BB5C571B-CDB6-4DD7-832D-011601A8F22B"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Occupation/SelectOccupationViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "55"
-            endingLineNumber = "55"
-            landmarkName = "registerConsumerEmploymentDetails(customerAccInfoID:customerProfiledID:occupationId:professionId:isPrimary:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "BB5C571B-CDB6-4DD7-832D-011601A8F22B - 7cf047c85a0963ff"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ABL.EmploymentDetailsViewModel.registerConsumerEmploymentDetails(customerAccInfoID: Swift.Optional&lt;Swift.Double&gt;, customerProfiledID: Swift.Optional&lt;Swift.Double&gt;, occupationId: Swift.Optional&lt;Swift.Double&gt;, professionId: Swift.Optional&lt;Swift.Double&gt;, isPrimary: Swift.Optional&lt;Swift.Bool&gt;) -&gt; ()"
-                  moduleName = "ABL"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Occupation/SelectOccupationViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "92">
-               </Location>
-               <Location
-                  uuid = "BB5C571B-CDB6-4DD7-832D-011601A8F22B - 7cf047c85a0963ff"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "ABL.EmploymentDetailsViewModel.registerConsumerEmploymentDetails(customerAccInfoID: Swift.Optional&lt;Swift.Double&gt;, customerProfiledID: Swift.Optional&lt;Swift.Double&gt;, occupationId: Swift.Optional&lt;Swift.Double&gt;, professionId: Swift.Optional&lt;Swift.Double&gt;, isPrimary: Swift.Optional&lt;Swift.Bool&gt;) -&gt; ()"
-                  moduleName = "ABL"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Occupation/SelectOccupationViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "131">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "AA715B89-249D-4B55-BCC3-EB18D99DDEDE"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
@@ -174,13 +78,13 @@
             filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Occupation/SelectOccupationViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "saveKyc(rdaCustomerAccInfoId:rdaCustomerProfileId:isPrimary:relationCode1:averageMonthlySalary:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "AA715B89-249D-4B55-BCC3-EB18D99DDEDE - 368ddb8ff14e68fb"
+                  uuid = "AA715B89-249D-4B55-BCC3-EB18D99DDEDE - 368ddb8ff14e68d8"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -190,12 +94,12 @@
                   urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Occupation/SelectOccupationViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "111"
-                  endingLineNumber = "111"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
                   offsetFromSymbolStart = "1362">
                </Location>
                <Location
-                  uuid = "AA715B89-249D-4B55-BCC3-EB18D99DDEDE - 16af4a61f3c0d05a"
+                  uuid = "AA715B89-249D-4B55-BCC3-EB18D99DDEDE - 16af4a61f3c0d079"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
@@ -205,11 +109,235 @@
                   urlString = "file:///Users/shakeel/Documents/Archive/ABLMYPDA/Updated27Sep/ABLVersioned/ablCordova/platforms/ios/ABL/Plugins/ABLPlugin/Controllers/Open%20Account/Occupation/SelectOccupationViewModel.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "111"
-                  endingLineNumber = "111"
+                  startingLineNumber = "112"
+                  endingLineNumber = "112"
                   offsetFromSymbolStart = "95">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D9C26608-015B-4A60-91D5-7DC1F90B414A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Occupation/SelectOccupationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "107"
+            endingLineNumber = "107"
+            landmarkName = "saveKyc(rdaCustomerAccInfoId:rdaCustomerProfileId:isPrimary:relationCode1:averageMonthlySalary:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "234D825E-60DE-44B0-B7AD-1496FB7B7C44"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Occupation/SelectOccupationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "297"
+            endingLineNumber = "297"
+            landmarkName = "getListOfConsumersForSVC(newUserInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "59613D9F-D9E3-4673-8824-79ABD342920C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Occupation/SelectOccupationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "269"
+            endingLineNumber = "269"
+            landmarkName = "getListOfConsumersForSVC(newUserInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DE97886F-1F5A-4710-AE89-386BD9E25417"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Occupation/OccupationVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "210"
+            endingLineNumber = "210"
+            landmarkName = "subscribeViewModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A5D41D86-E82F-4E6A-B7D0-79D37E7C557D"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Occupation/OccupationVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "256"
+            endingLineNumber = "256"
+            landmarkName = "callSaveKyc()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "96350DFF-6117-4689-9F0C-039E86B2D794"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Occupation/SelectOccupationViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "312"
+            endingLineNumber = "312"
+            landmarkName = "getListOfConsumersForSVC(newUserInfo:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "B9D88A2F-09BD-4269-8CD7-89826CF20110"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Select Preferred Account/SelectPreferredAccountViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "registerConsumerAccountInfo(rdaCustomerAccInfoID:rdaCustomerID:bankingModeID:customerAccountTypeID:customerBranch:customerTypeID:proofOfIncomeInd:accountVariantID:genderId:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2CB09D08-D4A9-4EBA-A8C5-6F226CBA5D62"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Select Preferred Account/SelectPreferredAccountVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "280"
+            endingLineNumber = "280"
+            landmarkName = "nextTapped(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7DA31C24-E715-4D3F-97E5-6A84FC5F2F83"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "537"
+            endingLineNumber = "537"
+            landmarkName = "subscribeViewModel()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4061358E-50D3-4FEC-8F37-1D3DD11E83E1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "630"
+            endingLineNumber = "630"
+            landmarkName = "openReviewDetailsVC()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4BAACEA7-28FC-4FA0-8263-CFAD488052DD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "647"
+            endingLineNumber = "647"
+            landmarkName = "openReviewDetailsVC()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8A3D9D95-E034-4663-8D62-5CC00C73A157"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "643"
+            endingLineNumber = "643"
+            landmarkName = "openReviewDetailsVC()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "C3D4219E-6CB6-429D-9D63-8B468ECE5BFE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "162"
+            endingLineNumber = "162"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "423C33E7-E392-4497-9056-9EDF42C01895"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ABL/Plugins/ABLPlugin/Controllers/Open Account/Picture And Signature/PictureAndSignatureVC.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "797"
+            endingLineNumber = "797"
+            landmarkName = "setupDropdown()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

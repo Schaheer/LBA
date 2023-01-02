@@ -160,6 +160,7 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
             picAndSignViewModel.jointAccountTapped()
             self.joint()
             noOfJointApplicant = DataCacheManager.shared.loadNoOfJointApplicants() ?? 0
+            print(noOfJointApplicant)
             picAndSignViewModel.setNoOfJointApplicants(applicants: DataCacheManager.shared.loadNoOfJointApplicants() ?? 0)
         }
         else {
@@ -237,9 +238,8 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
     }
     
     func validationError() -> Bool {
-        
         if noOfJointApplicant ?? 0 > 0 {
-            
+            return false
         }
         else {
             if segmentJointAccount.index == 1 {
@@ -286,17 +286,9 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
     private func jointFlow() {
         isJointFlow = true
         let natureOfAccount = picAndSignViewModel.getNatureOfAccount()!
-        var currentUser = getCurrentUser()
-        var noOfJointApplicants = 0
-        if isJointFlow {
-            noOfJointApplicants = noOfJointApplicant ?? 0
-        }
-        else {
-            noOfJointApplicants = picAndSignViewModel.getNoOfJointApplicants()
-            DataCacheManager.shared.saveNoOfJointApplicants(input: noOfJointApplicants)
-        }
+        let currentUser = getCurrentUser()
         
-        logsManager.debug(natureOfAccount.rawValue, noOfJointApplicants)
+        logsManager.debug(natureOfAccount.rawValue, noOfJointApplicant as Any)
         picAndSignViewModel.saveNatureOfAccount(
             rdaCustomerProfileId: currentUser.rdaCustomerProfileID,
             rdaCustomerAccInfoId: currentUser.rdaCustomerAccInfoId as? Double,
@@ -304,7 +296,7 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
             customerTypeId: BaseConstants.Config.customerTypeID,
             //                        customerTypeId: consumer.customerTypeID,
             natureOfAccountId: natureOfAccount.code,
-            noOfJointApplicatns: Int(noOfJointApplicants),
+            noOfJointApplicatns: Int(noOfJointApplicant ?? 0),
             nameOnPhysicalATM: String(getPrimaryUser().rdaCustomerProfileID!) // rdaCustomerProfileID of primary applicant
         )
         // move to
@@ -551,7 +543,6 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
             if status == "200" && description.lowercased() == "success"{
                 //TODO: check if no of applicants
                 modelRegistrationSteper.picAndSignViewModel = self?.picAndSignViewModel
-                
                 self?.openReviewDetailsVC()
             }
         }
@@ -589,6 +580,7 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
             modelRegistrationSteper.additionalApplicantNo = Int(noOfJointApplicants ?? "0") ?? 0
             self.picAndSignViewModel.setNoOfJointApplicants(applicants: Int(noOfJointApplicants ?? "0") ?? 0)
             DataCacheManager.shared.saveNoOfJointApplicants(input: Int(noOfJointApplicants ?? "0") ?? 0)
+            self.noOfJointApplicant = Int(noOfJointApplicants ?? "0") ?? 0
         }
     }
     func single() {
@@ -637,7 +629,16 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
         let accountVariantID = modelRegistrationSteper.selectPreferredAccountViewModel?.getAccountVariantID()
         if isJointFlow {
             let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
-            if consumer?.count == noOfJointApplicant {
+            
+            var consumerCount = consumer?.count
+            var consumerCount2 = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList?.count
+            
+            print(consumer?.count)
+            print(noOfJointApplicant)
+            print(consumerCount)
+            print(consumerCount2 ?? 0)
+            
+            if consumerCount ?? 0 >= noOfJointApplicant ?? 0 {
                 print("====================1")
                 self.delegate?.addChild(vc: .fatcaDetailsVC, fromViewController: "isJointFlow")
             }

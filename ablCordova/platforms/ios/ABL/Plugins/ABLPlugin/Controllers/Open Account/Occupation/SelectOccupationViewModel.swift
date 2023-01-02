@@ -81,7 +81,7 @@ class EmploymentDetailsViewModel: EmploymentDetailsViewModelProtocol {
     }
     
     func saveKyc(rdaCustomerAccInfoId: Double?, rdaCustomerProfileId: Double?, isPrimary: Bool?, relationCode1: Double?, averageMonthlySalary: String?) {
-//        guard let rdaCustomerAccInfoId = rdaCustomerAccInfoId, let rdaCustomerProfileId= rdaCustomerProfileId, let isPrimary = isPrimary, let relationCode1 = relationCode1, let averageMonthlySalary = averageMonthlySalary else { return }
+
         guard let kycInfo = saveKYCObject(rdaCustomerAccInfoId: rdaCustomerAccInfoId, rdaCustomerProfileId: rdaCustomerProfileId, isPrimary: isPrimary, relationCode1: relationCode1, averageMonthlySalary: averageMonthlySalary) else { return }
         var consumerListInputModelArray = [saveKYCObject]()
 
@@ -103,6 +103,7 @@ class EmploymentDetailsViewModel: EmploymentDetailsViewModelProtocol {
             relationCode1: relationCode1,
             averageMonthlySalary: averageMonthlySalary)
         else { return }
+        
         consumerListInputModelArray = getListOfConsumersForSVC(newUserInfo: basicInfoConsumerListInput)
         
         
@@ -248,7 +249,7 @@ class EmploymentDetailsViewModel: EmploymentDetailsViewModelProtocol {
         currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
         currentConsumerList[foundIndex].occupationId = newUserInfo.occupationId
         currentConsumerList[foundIndex].professionId = newUserInfo.professionId
-        currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId
+        currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId == 0 ? nil : newUserInfo.genderId
 
         return currentConsumerList
     }
@@ -261,6 +262,7 @@ class EmploymentDetailsViewModel: EmploymentDetailsViewModelProtocol {
         var currentConsumerList = getCurrentConsumerListResponseInInputModel(responseCunsumerList: cousumerListHamza!)
         let cousumerListShakeel = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList
         var foundIndex = 99
+        
         
         var arraySaveKYCObject = [saveKYCObject]()
         //MARK: - Start----- Just to find new User Profile ID
@@ -299,6 +301,15 @@ class EmploymentDetailsViewModel: EmploymentDetailsViewModelProtocol {
         }
         else {
             foundIndex = 0
+            let consumerListKYCData = saveKYCObject(
+                rdaCustomerAccInfoId: (newUserInfo.rdaCustomerAccInfoId)!,
+                rdaCustomerProfileId: newUserInfo.rdaCustomerProfileId ,
+                isPrimary: true,
+                relationCode1: DataCacheManager.shared.loadAdditionalApplicantRelationship()?.id,
+                averageMonthlySalary: newUserInfo.accountInformation?.averageMonthlySalary
+            )
+            
+            arraySaveKYCObject.append(consumerListKYCData!)
             currentConsumerList[foundIndex].isPrimary = true
         }
         

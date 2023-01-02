@@ -38,6 +38,9 @@
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="upi-paypak-classic-card" translatesAutoresizingMaskIntoConstraints="NO" id="NEg-gY-1dw">
                                                 <rect key="frame" x="5" y="5" width="183" height="186"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="186" id="4iW-Qi-f7b"/>
+                                                </constraints>
                                             </imageView>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -113,6 +116,14 @@ ATM Bill Payment</string>
             <point key="canvasLocation" x="242.75362318840581" y="205.58035714285714"/>
         </collectionViewCell>
     </objects>
+    <designables>
+        <designable name="pin-V4-peU">
+            <size key="intrinsicContentSize" width="168" height="21.5"/>
+        </designable>
+        <designable name="t8R-dA-MXr">
+            <size key="intrinsicContentSize" width="255.5" height="76.5"/>
+        </designable>
+    </designables>
     <resources>
         <image name="upi-paypak-classic-card" width="310" height="186"/>
         <namedColor name="orange">

@@ -475,7 +475,7 @@ final class SelectBankingMethodVC: UIViewController {
             currentConsumerList[foundIndex].attachments = newUserInfo.attachments
             currentConsumerList[foundIndex].customerBranch = newUserInfo.customerBranch
             currentConsumerList[foundIndex].bankingModeId = newUserInfo.bankingModeId
-            currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId
+            currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId == 0 ? nil : newUserInfo.genderId
             
         }
         else {

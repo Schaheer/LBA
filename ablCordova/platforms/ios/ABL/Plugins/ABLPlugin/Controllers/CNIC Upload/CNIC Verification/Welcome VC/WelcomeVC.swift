@@ -17,6 +17,7 @@ class WelcomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
+        resetDefaults()
     }
     
     @IBOutlet weak var buttonUrdu: UIButton!
@@ -32,7 +33,7 @@ class WelcomeVC: UIViewController {
         super.viewDidLoad()
         DataCacheManager.shared.saveNoOfJointApplicants(input: 0)
         // Do any additional setup after loading the view.
-        resetDefaults()
+        
     }
     func resetDefaults() {
         let defaults = UserDefaults.standard

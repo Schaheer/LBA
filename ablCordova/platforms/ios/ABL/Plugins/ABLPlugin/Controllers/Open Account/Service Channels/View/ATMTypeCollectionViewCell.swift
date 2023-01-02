@@ -29,7 +29,23 @@ class ATMTypeCollectionViewCell: UICollectionViewCell {
     func setupCell(with atm: CodeTypeDataModel) {
         atmTitleLabel.text = atm.name
         atmDescriptionLabel.text = atm.description
-        atmImageView.image = UIImage(named: "upi-paypak-classic-card")!
+        atmImageView.loadFrom(URLAddress: "https://rda.abl.com/assets/img/atm-cards/" + "\(Int(atm.id!))" + ".png")
     }
 
+}
+
+extension UIImageView {
+    func loadFrom(URLAddress: String) {
+        guard let url = URL(string: URLAddress) else {
+            return
+        }
+        print(url)
+        DispatchQueue.main.async { [weak self] in
+            if let imageData = try? Data(contentsOf: url) {
+                if let loadedImage = UIImage(data: imageData) {
+                        self?.image = loadedImage
+                }
+            }
+        }
+    }
 }

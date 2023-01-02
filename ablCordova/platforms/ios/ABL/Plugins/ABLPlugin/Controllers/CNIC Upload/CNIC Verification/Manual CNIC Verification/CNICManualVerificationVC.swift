@@ -205,7 +205,7 @@ final class CNICManualVerificationVC: UIViewController {
         }
         currentConsumerList[foundIndex].rdaCustomerAccInfoId = tempRdaCustomerAccInfoId
         currentConsumerList[foundIndex].rdaCustomerProfileId = tempRdaCustomerProfileID
-        currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId
+        currentConsumerList[foundIndex].genderId = modelRegistrationSteper.genderId == 0 ? nil : newUserInfo.genderId
 
         return currentConsumerList
     }

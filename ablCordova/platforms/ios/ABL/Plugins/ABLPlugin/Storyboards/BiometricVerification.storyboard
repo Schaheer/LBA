@@ -19,11 +19,11 @@
         <array key="WorkSans-Medium.ttf">
             <string>WorkSans-Medium</string>
         </array>
+        <array key="WorkSans-Regular.ttf">
+            <string>WorkSans-Regular</string>
+        </array>
         <array key="WorkSans-SemiBold.ttf">
             <string>WorkSans-SemiBold</string>
-        </array>
-        <array key="WorkSans-VariableFont_wght.ttf">
-            <string>WorkSans-Regular</string>
         </array>
     </customFonts>
     <scenes>

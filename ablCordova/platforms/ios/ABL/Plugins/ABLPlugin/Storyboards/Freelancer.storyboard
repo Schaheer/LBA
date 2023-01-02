@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21225" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21207"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
+        <array key="WorkSans-Regular.ttf">
+            <string>WorkSans-Regular</string>
+        </array>
         <array key="WorkSans-SemiBold.ttf">
             <string>WorkSans-SemiBold</string>
-        </array>
-        <array key="WorkSans-VariableFont_wght.ttf">
-            <string>WorkSans-Regular</string>
         </array>
     </customFonts>
     <scenes>
@@ -27,7 +27,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="CIn-Ds-15u">
-                                <rect key="frame" x="8" y="64" width="398" height="778"/>
+                                <rect key="frame" x="8" y="68" width="398" height="774"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <stackView key="tableHeaderView" opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="2" id="Fvb-gp-2Ul">
                                     <rect key="frame" x="0.0" y="0.0" width="398" height="100"/>
@@ -50,7 +50,7 @@
                                 </stackView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="170" id="qZp-Rs-uAj">
-                                        <rect key="frame" x="0.0" y="144.5" width="398" height="170"/>
+                                        <rect key="frame" x="0.0" y="150" width="398" height="170"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="qZp-Rs-uAj" id="NIC-So-HEa">
                                             <rect key="frame" x="0.0" y="0.0" width="398" height="170"/>
@@ -58,7 +58,7 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="ChatCell" id="5rv-jj-ba5">
-                                        <rect key="frame" x="0.0" y="314.5" width="398" height="120"/>
+                                        <rect key="frame" x="0.0" y="320" width="398" height="120"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5rv-jj-ba5" id="ivF-IA-uZb">
                                             <rect key="frame" x="0.0" y="0.0" width="398" height="120"/>
@@ -75,11 +75,10 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="irR-1z-esw"/>
                                                                     </constraints>
+                                                                    <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                                                     <color key="tintColor" name="App CTA Blue"/>
-                                                                    <state key="normal" title="Button"/>
-                                                                    <buttonConfiguration key="configuration" style="plain" title="Back">
-                                                                        <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                                                    </buttonConfiguration>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <state key="normal" title="Back"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                             <real key="value" value="6"/>
@@ -101,11 +100,10 @@
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" constant="50" id="IVm-R5-zgY"/>
                                                                     </constraints>
+                                                                    <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <state key="normal" title="Button"/>
-                                                                    <buttonConfiguration key="configuration" style="plain" title="Next">
-                                                                        <fontDescription key="titleFontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
-                                                                    </buttonConfiguration>
+                                                                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                                    <state key="normal" title="Next"/>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
                                                                             <real key="value" value="6"/>
@@ -160,10 +158,10 @@
             <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
         <designable name="Ebp-18-eM0">
-            <size key="intrinsicContentSize" width="63" height="33"/>
+            <size key="intrinsicContentSize" width="39" height="31"/>
         </designable>
         <designable name="Jrg-sC-tAL">
-            <size key="intrinsicContentSize" width="61" height="33"/>
+            <size key="intrinsicContentSize" width="37" height="31"/>
         </designable>
         <designable name="UwM-54-LV3">
             <size key="intrinsicContentSize" width="946.5" height="16.5"/>

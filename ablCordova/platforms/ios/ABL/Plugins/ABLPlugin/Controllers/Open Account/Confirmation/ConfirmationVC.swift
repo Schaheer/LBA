@@ -18,18 +18,17 @@ final class ConfirmationVC: UIViewController {
     
     @IBAction func noThanksTapped(_ sender: UIButton){
         
+//        self.dismissToViewController(viewController: WelcomeVC.self)
         
-        navigationController?.popViewController(animated: true)
-//        self.view.window?.rootViewController?.dismiss(animated: true)
+//        navigationController?.popViewController(animated: true)
+        self.view.window?.rootViewController?.dismiss(animated: true)
     }
     
     @IBAction func feedbackBtnTapped(_ sender: UIButton){
-        
+        self.view.window?.rootViewController?.dismiss(animated: true)
+
         //
     }
-    
-    
-    //Irfan
     
     private func setupGestureRecognizers() {
         
@@ -55,17 +54,10 @@ final class ConfirmationVC: UIViewController {
         let phoneNumber: String = "telprompt://111225225"
         
         if let appURL = URL(string: phoneNumber){
-            
-            
-            
             if #available(iOS 10.0, *) {
-                
                 UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
-                
             } else {
-                
                 UIApplication.shared.openURL(appURL)
-                
             }
             
         }
