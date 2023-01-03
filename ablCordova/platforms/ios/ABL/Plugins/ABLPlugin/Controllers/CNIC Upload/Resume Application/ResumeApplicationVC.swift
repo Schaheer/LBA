@@ -10,6 +10,7 @@ import UIKit
 final class ResumeApplicationVC: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
+    var deletedIndex = 0
     
     private var detailCells = [GetDraftedAppsAppListModel]()
     var draftedAppsData: GetDraftedAppsVerifyOTPResponseModel?
@@ -173,9 +174,12 @@ final class ResumeApplicationVC: UIViewController {
                 self.resumeApplicationViewModel.openPictureAndSignatureVC()
             }
         }
-        
+
+        //Shakeel Draft
         resumeApplicationViewModel.updateAccountResponse.bind { [weak self] response in
             guard let self = self, let response = response else { return }
+            self.detailCells.remove(at: self.deletedIndex)
+            self.tableView.reloadData()
             AlertManager.shared.showOKAlert(with: "Success", message: "Drafted app is deleted")
         }
     }
@@ -185,7 +189,6 @@ extension ResumeApplicationVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return detailCells.count + 1
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -203,6 +206,7 @@ extension ResumeApplicationVC: UITableViewDelegate, UITableViewDataSource {
                     message: "Are you sure you want to delete this drafted app?"
                 ) { _ in
                     let draftedApp = self.detailCells[indexPath.row]
+                    self.deletedIndex = indexPath.row
                     self.resumeApplicationViewModel.updateAccount(
                         customerProfileID: draftedApp.rdaCustomerProfileID,
                         customerAccountInfoID: draftedApp.rdaCustomerAccInfoID

@@ -275,6 +275,7 @@
 		7DCF2FD42961AC4F003330D9 /* SelectionPopupVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DCF2FCF2961AC4F003330D9 /* SelectionPopupVC.xib */; };
 		7DCF2FD52961AC4F003330D9 /* SelectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF2FD12961AC4F003330D9 /* SelectionCell.swift */; };
 		7DCF2FD62961AC4F003330D9 /* SelectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7DCF2FD22961AC4F003330D9 /* SelectionCell.xib */; };
+		7DCF2FE329630CF0003330D9 /* FeebackSuccessVc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DCF2FE129630CF0003330D9 /* FeebackSuccessVc.swift */; };
 		7DE4B4B92951E78D00D9CF9D /* APIs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DE4B4B82951E78D00D9CF9D /* APIs.swift */; };
 		8DA36AAA2B4C4F8F83EADA68 /* BiometricVerification.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8EF29282811C42E8ACDB35CF /* BiometricVerification.storyboard */; };
 		D2535B7819B54DE1934D1CF8 /* GetBiometricVerificationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1459EF818686419092F74758 /* GetBiometricVerificationVC.swift */; };
@@ -596,6 +597,7 @@
 		7DCF2FCF2961AC4F003330D9 /* SelectionPopupVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionPopupVC.xib; sourceTree = "<group>"; };
 		7DCF2FD12961AC4F003330D9 /* SelectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionCell.swift; sourceTree = "<group>"; };
 		7DCF2FD22961AC4F003330D9 /* SelectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SelectionCell.xib; sourceTree = "<group>"; };
+		7DCF2FE129630CF0003330D9 /* FeebackSuccessVc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeebackSuccessVc.swift; sourceTree = "<group>"; };
 		7DE4B4B82951E78D00D9CF9D /* APIs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIs.swift; sourceTree = "<group>"; };
 		85EF20C9C1615DAA6CA55ACA /* Pods_ABL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ABL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D1107310486CEB800E47090 /* ABL-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "ABL-Info.plist"; path = "ABL/ABL-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = SOURCE_ROOT; };
@@ -663,7 +665,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
+		29B97314FDCFA39411CA2CEA = {
 			isa = PBXGroup;
 			children = (
 				EB87FDF41871DAF40020F90C /* config.xml */,
@@ -1318,6 +1320,7 @@
 			isa = PBXGroup;
 			children = (
 				7ABF89C2280832DF008F8D61 /* ConfirmationVC.swift */,
+				7DCF2FE129630CF0003330D9 /* FeebackSuccessVc.swift */,
 			);
 			path = Confirmation;
 			sourceTree = "<group>";
@@ -1578,7 +1581,7 @@
 				Base,
 				ur,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
+			mainGroup = 29B97314FDCFA39411CA2CEA;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -1714,8 +1717,10 @@
 				"${PODS_ROOT}/Target Support Files/Pods-ABL/Pods-ABL-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/BetterSegmentedControl/BetterSegmentedControl.framework",
+				"${BUILT_PRODUCTS_DIR}/Cosmos/Cosmos.framework",
 				"${BUILT_PRODUCTS_DIR}/DropDown/DropDown.framework",
 				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
@@ -1725,8 +1730,10 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BetterSegmentedControl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Cosmos.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DropDown.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NVActivityIndicatorView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
@@ -1866,6 +1873,7 @@
 				7AB78E8E28006BE5009A339C /* PurposeOfAccountResponseModel.swift in Sources */,
 				7ABF89B728050A74008F8D61 /* UpdateAccountInputModel.swift in Sources */,
 				4C5EA0C0281806AE007416B5 /* PluginNibs.swift in Sources */,
+				7DCF2FE329630CF0003330D9 /* FeebackSuccessVc.swift in Sources */,
 				7AB78E8627FF8987009A339C /* SelectAccountTypeViewModel.swift in Sources */,
 				4CC36DC7280D9877000EFEBE /* ConsumerTransactionDetailsResponseModel.swift in Sources */,
 				4CBB13C32807FFA000BECF46 /* RegisterConsumerEmailInputModel.swift in Sources */,

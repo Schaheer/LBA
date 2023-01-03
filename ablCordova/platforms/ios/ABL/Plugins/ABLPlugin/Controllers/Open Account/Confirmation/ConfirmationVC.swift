@@ -25,7 +25,9 @@ final class ConfirmationVC: UIViewController {
     }
     
     @IBAction func feedbackBtnTapped(_ sender: UIButton){
-        self.view.window?.rootViewController?.dismiss(animated: true)
+        let vc = UIStoryboard.init(name: "CNICUpload", bundle: nil).instantiateViewController(withIdentifier: "FeebackSuccessVc") as? FeebackSuccessVc
+        
+        self.navigationController?.pushViewController(vc!, animated: true)
 
         //
     }

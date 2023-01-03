@@ -29,7 +29,8 @@ class ATMTypeCollectionViewCell: UICollectionViewCell {
     func setupCell(with atm: CodeTypeDataModel) {
         atmTitleLabel.text = atm.name
         atmDescriptionLabel.text = atm.description
-        atmImageView.loadFrom(URLAddress: "https://rda.abl.com/assets/img/atm-cards/" + "\(Int(atm.id!))" + ".png")
+        let imageUrl = "https://rda.abl.com/assets/img/atm-cards/" + "\(Int(atm.id!))" + ".png"
+        atmImageView.setImage(urlString: imageUrl, placeholder: "upi-paypak-classic-card")
     }
 
 }

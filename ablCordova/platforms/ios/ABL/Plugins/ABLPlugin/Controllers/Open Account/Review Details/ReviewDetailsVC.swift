@@ -47,6 +47,8 @@ final class ReviewDetailsVC: UIViewController {
     
     @IBOutlet weak var detailsTableView: UITableView!
     
+    var callBackIsBackTapped: (() -> ())?
+
     private let reviewDetailsViewModel = ReviewDetailsViewModel()
     private var consumers = [ConsumerListResponseModel]()
     
@@ -270,6 +272,7 @@ final class ReviewDetailsVC: UIViewController {
     }
     
     @IBAction func backTapped(_ sender: UIButton) {
+        callBackIsBackTapped?()
         self.navigationController?.popViewController(animated: true)
     }
     

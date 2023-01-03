@@ -1,6 +1,7 @@
 PODS:
   - Alamofire (5.4.4)
   - BetterSegmentedControl (2.0.1)
+  - Cosmos (23.0.0)
   - DropDown (2.3.13)
   - GoogleMaps (5.2.0):
     - GoogleMaps/Maps (= 5.2.0)
@@ -8,6 +9,7 @@ PODS:
   - GoogleMaps/Maps (5.2.0):
     - GoogleMaps/Base
   - IQKeyboardManager (6.5.9)
+  - Kingfisher (6.3.1)
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
   - NVActivityIndicatorView/Base (5.1.1)
@@ -18,9 +20,11 @@ PODS:
 DEPENDENCIES:
   - Alamofire (~> 5.4.3)
   - BetterSegmentedControl
+  - Cosmos
   - DropDown
   - GoogleMaps
   - IQKeyboardManager
+  - Kingfisher
   - NVActivityIndicatorView
   - ObjectMapper
   - SwiftKeychainWrapper (~> 3.2)
@@ -30,9 +34,11 @@ SPEC REPOS:
   trunk:
     - Alamofire
     - BetterSegmentedControl
+    - Cosmos
     - DropDown
     - GoogleMaps
     - IQKeyboardManager
+    - Kingfisher
     - NVActivityIndicatorView
     - ObjectMapper
     - SwiftKeychainWrapper
@@ -41,14 +47,16 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   BetterSegmentedControl: 09607b27861d49cbce48b7673b74f9150a3d371a
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   DropDown: 8a2116376c1981888557f72ec2ffc9a5e0e456ec
   GoogleMaps: 025272d5876d3b32604e5c080dc25eaf68764693
   IQKeyboardManager: 241cc94ccabc9deb8f8bd7d12f00d73288d13ecc
+  Kingfisher: 016c8b653a35add51dd34a3aba36b580041acc74
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   ObjectMapper: 1eb41f610210777375fa806bf161dc39fb832b81
   SwiftKeychainWrapper: 6fc49fbf7d4a6b0772917acb0e53a1639f6078d6
   TTGTagCollectionView: a2a8668c659b39e7a6ffd6590475ea53a7ae95f7
 
-PODFILE CHECKSUM: ddb0b61cc53324a4015528fab820598ad5c812e8
+PODFILE CHECKSUM: b79a4388478645636fa5b2191e48b6f40922c768
 
 COCOAPODS: 1.11.3

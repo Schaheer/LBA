@@ -16,6 +16,7 @@ final class AdditionalApplicantDetailsVC: UIViewController {
     private let additionalApplicantDetailsViewModel = AdditionalApplicantDetailsViewModel()
     private let dropDown = DropDown()
     weak var delegate: PersonalInfoChildToParentProtocol? = nil
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,6 +38,7 @@ final class AdditionalApplicantDetailsVC: UIViewController {
     @IBAction func nextTapped(_ sender: UIButton) {
         if let selectedRelationship = additionalApplicantDetailsViewModel.getSelectedRelationship() {
             DataCacheManager.shared.saveAdditionalApplicantRelationship(input: selectedRelationship)
+            modelRegistrationSteperArray.append(modelRegistrationSteper)
             NotificationCenter.default.post(name: .additionalApplicant, object: nil)
             dismissToViewController(viewController: CNICAvailabilityVC.self)
 //            navigationController?.popToRootViewController(animated: true)

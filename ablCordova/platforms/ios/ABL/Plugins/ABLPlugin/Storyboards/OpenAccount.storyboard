@@ -10886,11 +10886,11 @@ Preferences</string>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Zs-cB-YR6">
                                                                         <rect key="frame" x="0.0" y="45.5" width="390" height="38"/>
                                                                         <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="LYn-C3-6gc">
-                                                                                <rect key="frame" x="0.0" y="8" width="102" height="30"/>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="LYn-C3-6gc">
+                                                                                <rect key="frame" x="0.0" y="8" width="92" height="30"/>
                                                                                 <subviews>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8KX-Uc-xed" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="45" height="30"/>
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="35" height="30"/>
                                                                                         <color key="backgroundColor" name="Allied Blue"/>
                                                                                         <constraints>
                                                                                             <constraint firstAttribute="height" constant="30" id="ubb-bM-Xoe"/>
@@ -10909,7 +10909,7 @@ Preferences</string>
                                                                                         </connections>
                                                                                     </button>
                                                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A9Z-LM-7eA" customClass="ButtonSetting" customModule="ABL" customModuleProvider="target">
-                                                                                        <rect key="frame" x="57" y="0.0" width="45" height="30"/>
+                                                                                        <rect key="frame" x="47" y="0.0" width="45" height="30"/>
                                                                                         <fontDescription key="fontDescription" name="WorkSans-SemiBold" family="Work Sans" pointSize="16"/>
                                                                                         <color key="tintColor" name="App CTA Blue"/>
                                                                                         <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>

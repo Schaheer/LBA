@@ -479,6 +479,9 @@ final class SelectBankingMethodVC: UIViewController {
             
         }
         else {
+            if modelRegistrationSteper.alreadyExist ?? false {
+                newUserInfo.attachments = []
+            }
             currentConsumerList.append(newUserInfo)
         }
         return currentConsumerList

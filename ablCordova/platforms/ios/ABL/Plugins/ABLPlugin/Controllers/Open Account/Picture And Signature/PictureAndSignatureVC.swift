@@ -543,7 +543,7 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
             if status == "200" && description.lowercased() == "success"{
                 //TODO: check if no of applicants
                 modelRegistrationSteper.picAndSignViewModel = self?.picAndSignViewModel
-                self?.openReviewDetailsVC()
+                self?.validationCheck()
             }
         }
         
@@ -613,7 +613,7 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
         natureOfAccountLocal = .minor
     }
     
-    private func openReviewDetailsVC() {
+    private func validationCheck() {
         if isEditFromReviewDetailsViewController && forViewController == "ReviewDetailsVC" {
             navigationController?.popViewController(animated: true)
             return()
@@ -630,20 +630,24 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
         if isJointFlow {
             let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList
             
-            var consumerCount = consumer?.count
-            var consumerCount2 = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList?.count
+            let consumerCount = consumer?.count
+            let consumerCount2 = DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList?.count
             
-            print(consumer?.count)
-            print(noOfJointApplicant)
-            print(consumerCount)
-            print(consumerCount2 ?? 0)
+            print("Consumer count: \(consumerCount ?? 0)")
+            print("noOfJointApplicant: \(noOfJointApplicant ?? 0)")
+            print("Consumer count: \(consumerCount2 ?? 0)")
             
-            if consumerCount ?? 0 >= noOfJointApplicant ?? 0 {
-                print("====================1")
-                self.delegate?.addChild(vc: .fatcaDetailsVC, fromViewController: "isJointFlow")
+            if consumerCount ?? 0 >= (noOfJointApplicant ?? 0) + 1 {
+                print("====================1 joint flow completed")
+                switch modelRegistrationSteper.selectPreferredAccountViewModel?.getAccountVariantID() {
+                case .freelancerDigitalAccount:
+                    self.delegate?.addChild(vc: .fatcaDetailsVC, fromViewController: "isJointFlow")
+                default:
+                    openReviewDetailsViewController()
+                }
             }
             else {
-                print("====================2")
+                print("====================2 joint flow continue")
                 openAdditionalDetailsVC()
             }
         }
@@ -669,21 +673,6 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
                 }
             }
         }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
         //Android Check
         //        if (getIntent().hasExtra(Config.INDEX)) {
         //            openActivity(ReviewDocumentActivity.class);
@@ -714,20 +703,27 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
         //                openAdditionalApplicantActivity();
         //            }
         //        }
-        
-        
-        
-        
-        
-        
     }
     
+    private func openReviewDetailsViewController() {
+        guard let reviewDetailsVC = UIStoryboard.initialize(
+            viewController: .reviewDetailsVC,
+            fromStoryboard: .openAccount
+        ) as? ReviewDetailsVC else { return }
+        modelRegistrationSteperArray.append(modelRegistrationSteper)
+
+        
+        reviewDetailsVC.callBackIsBackTapped? = { 
+            modelRegistrationSteper = modelRegistrationSteperArray.last!
+        }
+        self.navigationController?.pushViewController(reviewDetailsVC, animated: true)
+    }
     private func openAdditionalDetailsVC() {
         if isEditFromReviewDetailsViewController && forViewController == "ReviewDetailsVC" {
             navigationController?.popViewController(animated: true)
-            
             return()
         }
+        
         //        guard let additionalDetailsVC = UIStoryboard.initialize(
         //            viewController: .additionalApplicantDetailsVC,
         //            fromStoryboard: .openAccount
@@ -736,14 +732,16 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
             viewController: .additionalApplicantDetailsVC,
             fromStoryboard: .openAccount
         ) as! AdditionalApplicantDetailsVC
-        switch natureOfAccountLocal {
-        case .single:
-            break
-        case .joint:
-            self.navigationController?.pushViewController(additionalDetailsVC, animated: true)
-        case .minor:
-            break
-        }
+        self.navigationController?.pushViewController(additionalDetailsVC, animated: true)
+        
+//        switch natureOfAccountLocal {
+//        case .single:
+//            break
+//        case .joint:
+//            self.navigationController?.pushViewController(additionalDetailsVC, animated: true)
+//        case .minor:
+//            break
+//        }
         
     }
     

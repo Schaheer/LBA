@@ -86,6 +86,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
         case mobileNetworkID = "mobileNetworkId"
         case portedMobileNetwork
         case bankingModeId
+        case alreadyExist
     }
     
     // MARK: - Model Properties
@@ -163,6 +164,7 @@ final class ConsumerListResponseModel: BaseResponseModel {
     var suggestedMotherNames: [String]?
     var mobileNetworkID: Double?
     var portedMobileNetwork: Bool?
+    var alreadyExist: Bool?
     
     // MARK: - Model Initializers
     
@@ -253,5 +255,6 @@ final class ConsumerListResponseModel: BaseResponseModel {
         mobileNetworkID <- map[CodingKeys.mobileNetworkID.rawValue]
         portedMobileNetwork <- map[CodingKeys.portedMobileNetwork.rawValue]
         bankingModeId <- map[CodingKeys.bankingModeId.rawValue]
+        alreadyExist <- map[CodingKeys.bankingModeId.rawValue]
     }
 }

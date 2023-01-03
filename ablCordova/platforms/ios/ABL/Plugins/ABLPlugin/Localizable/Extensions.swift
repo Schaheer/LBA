@@ -8,10 +8,7 @@
 import Foundation
 
 import UIKit
-
-
-
-
+import Kingfisher
 
 extension UISegmentedControl {
     func textColor(selectedColor: UIColor, normalColor: UIColor) {
@@ -509,5 +506,40 @@ extension CGFloat {
         }
         
         return fontSize
+    }
+}
+
+extension UIImageView {
+    func setImage(urlString: String, placeholder: String? = nil, completionHandler:((Int) -> Void)? = nil) {
+        //        let url2 = "\(urlString)".validURL()
+        var string = urlString.lowercased().replacingOccurrences(of: "http", with: "https")
+        string = string.replacingOccurrences(of: "httpss", with: "https")
+        if let url = URL(string: string) {
+            print("valid url")
+            print(url)
+            var tempPlaceHolder = placeholder
+            if placeholder == nil {
+                tempPlaceHolder = "placeholder"
+            }
+            self.kf.setImage(with: url, placeholder: UIImage(named: tempPlaceHolder!), options: nil, progressBlock: nil, completionHandler: { result in
+                switch result {
+                case .success(let response):
+                    print("Image: \(response.image). Got from: \(response.cacheType)")
+                    DispatchQueue.main.async {
+                        self.image = response.image
+                    }
+                case .failure(let error):
+                    print("Error: \(error)")
+                    if placeholder != nil {
+                        self.image = UIImage(named: placeholder!)
+                    }
+                }
+            })
+        } else {
+            print("invalid url")
+            if placeholder != nil {
+                self.image = UIImage(named: placeholder!)
+            }
+        }
     }
 }

@@ -10,6 +10,7 @@ import Foundation
 import ObjectMapper
 
 var modelRegistrationSteper = RegistrationSteperModel()
+var modelRegistrationSteperArray = [RegistrationSteperModel]()
 class RegistrationSteperModel {
     
     // MARK: - Model Properties
@@ -31,6 +32,7 @@ class RegistrationSteperModel {
     var fullName: String?
     var fatherName: String?
     var cnicNumber: String?
+    var alreadyExist: Bool?
     var placeOfBirth: String?
     var mothersName: String?
     var emailOptional: String?

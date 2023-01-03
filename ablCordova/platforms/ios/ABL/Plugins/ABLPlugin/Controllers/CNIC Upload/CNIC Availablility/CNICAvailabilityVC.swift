@@ -141,7 +141,7 @@ final class CNICAvailabilityVC: UIViewController {
     
     @IBAction func nextTapped(_ sender: UIButton) {
         if cnicNumberView.isHidden {
-            if mobileNumberTextField.text?.count == 0{
+            if mobileNumberTextField.text?.count == 0 {
                 AlertManager.shared.showOKAlert(with: "Alert!", message: "Please enter Mobile Number first")
             }else{
                 cnicAvailabilityViewModel.viewAppGenerateOTP(
@@ -154,10 +154,6 @@ final class CNICAvailabilityVC: UIViewController {
             if modelRegistrationSteper.cnicNumber != (cnicNumberTextField.text ?? "").replacingOccurrences(of: "-", with: "") {
                 
                 self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Provided CNIC is not matched")
-                
-                DispatchQueue.main.async {
-                }
-                
                 return
             }
             cnicAvailabilityViewModel.viewAppGenerateOTPWithCNIC(
@@ -238,6 +234,7 @@ final class CNICAvailabilityVC: UIViewController {
             } else {
                 //Shakeel 11Nov22
                 modelRegistrationSteper.cnicNumber = response.idNumber
+                modelRegistrationSteper.alreadyExist = true
 //                self.cnicNumberTextField.text = response.idNumber
                 self.cnicNumberView.isHidden = false
             }
