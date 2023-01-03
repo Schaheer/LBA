@@ -9,13 +9,13 @@ import UIKit
 import BetterSegmentedControl
 
 protocol ReviewDetailsCellDelegate: AnyObject {
-    func buttonEditAccountDetails()
-    func buttonEditYourDetails()
-    func buttonEditCurrentAddress()
-    func buttonEditNationality()
-    func buttonEditFATCA()
-    func buttonEditPermanentAddress()
-    func buttonEditDocuments()
+    func buttonEditAccountDetails(cellIndex: Int)
+    func buttonEditYourDetails(cellIndex: Int)
+    func buttonEditCurrentAddress(cellIndex: Int)
+    func buttonEditNationality(cellIndex: Int)
+    func buttonEditFATCA(cellIndex: Int)
+    func buttonEditPermanentAddress(cellIndex: Int)
+    func buttonEditDocuments(cellIndex: Int)
 }
 final class ReviewDetailsCell: UITableViewCell {
     
@@ -98,36 +98,36 @@ final class ReviewDetailsCell: UITableViewCell {
     
     @IBOutlet weak var buttonEditNationality: UIButton!
     @IBAction func buttonEditNationality(_ sender: Any) {
-        cellDelegate.buttonEditNationality()
+        cellDelegate.buttonEditNationality(cellIndex: cellIndex)
     }
     
     @IBOutlet weak var buttonEditPermanentAddress: UIButton!
     @IBAction func buttonEditPermanentAddress(_ sender: Any) {
-        cellDelegate.buttonEditPermanentAddress()
+        cellDelegate.buttonEditPermanentAddress(cellIndex: cellIndex)
     }
     
     @IBOutlet weak var buttonEditFATCA: UIButton!
     @IBAction func buttonEditFATCA (_ sender: Any) {
-        cellDelegate.buttonEditFATCA()
+        cellDelegate.buttonEditFATCA(cellIndex: cellIndex)
     }
     @IBOutlet weak var buttonEditAccountDetails: UIButton!
     @IBAction func buttonEditAccountDetails(_ sender: Any) {
-        cellDelegate.buttonEditAccountDetails()
+        cellDelegate.buttonEditAccountDetails(cellIndex: cellIndex)
     }
     @IBOutlet weak var buttonEditYourDetails: UIButton!
     @IBAction func buttonEditYourDetails(_ sender: Any) {
-        cellDelegate.buttonEditYourDetails()
+        cellDelegate.buttonEditYourDetails(cellIndex: cellIndex)
     }
     @IBOutlet weak var buttonEditCurrentAddress: UIButton!
     @IBAction func buttonEditCurrentAddress(_ sender: Any) {
-        cellDelegate.buttonEditCurrentAddress()
+        cellDelegate.buttonEditCurrentAddress(cellIndex: cellIndex)
     }
     @IBOutlet weak var buttonEditDetailsTransactions: UIButton!
     @IBAction func buttonEditDetailsTransactions(_ sender: Any) {
     }
     @IBOutlet weak var buttonEditDocuments: UIButton!
     @IBAction func buttonEditDocuments(_ sender: Any) {
-        cellDelegate.buttonEditDocuments()
+        cellDelegate.buttonEditDocuments(cellIndex: cellIndex)
     }
     
 //    @IBOutlet weak var bankingModetxt: UITextField!
@@ -174,6 +174,7 @@ final class ReviewDetailsCell: UITableViewCell {
     
     
     var cellDelegate: ReviewDetailsCellDelegate!
+    var cellIndex: Int!
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -102,6 +102,7 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
         }
     }
     override func viewDidLoad() {
+        modelRegistrationSteper.rdaCustomerProfileId = getCurrentUser().rdaCustomerProfileID
         super.viewDidLoad()
         imageProofOfIncome.isHidden = true
         viewProofOfIncomePicutre.isHidden = true
@@ -117,7 +118,6 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
             )
         )
         viewSelectNatureOfAccount.isHidden = true
-        
         setupDropdown()
         dropDown.dataSource = [
             "1 Additional Applicant",
@@ -711,7 +711,6 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
             fromStoryboard: .openAccount
         ) as? ReviewDetailsVC else { return }
         modelRegistrationSteperArray.append(modelRegistrationSteper)
-
         
         reviewDetailsVC.callBackIsBackTapped? = { 
             modelRegistrationSteper = modelRegistrationSteperArray.last!

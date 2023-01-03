@@ -17,6 +17,7 @@ class RegistrationSteperModel {
     var cnicFrontSideImageView: UIImage?
     var cnicBackSideImageView: UIImage?
     
+    var rdaCustomerProfileId: Double?
     var rdaCustomerAccInfoId: Double?
     var selectBankingMethodViewModel: SelectBankingMethodViewModel?
     var selectAccountTypeViewModel: SelectAccountTypeViewModel?

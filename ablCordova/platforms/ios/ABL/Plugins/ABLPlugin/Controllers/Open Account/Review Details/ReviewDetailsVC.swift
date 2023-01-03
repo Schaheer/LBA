@@ -50,7 +50,7 @@ final class ReviewDetailsVC: UIViewController {
     var callBackIsBackTapped: (() -> ())?
 
     private let reviewDetailsViewModel = ReviewDetailsViewModel()
-    private var consumers = [ConsumerListResponseModel]()
+    private var consumersLocal = [ConsumerListResponseModel]()
     
     var TCCheckBoxChecked: Bool = false
     var declarationCheckBoxChecked: Bool = false
@@ -92,7 +92,7 @@ final class ReviewDetailsVC: UIViewController {
         reviewDetailsViewModel.consumerAccountDetail.bind { [weak self] response in
             guard let self = self, let response = response, let consumers = response.consumerList else { return }
             
-            self.consumers = consumers
+            self.consumersLocal = consumers
             DataCacheManager.shared.saveRegisterVerifyOTPResponse(input: response)
             
             self.detailsTableView.reloadData()
@@ -307,7 +307,7 @@ extension ReviewDetailsVC: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
-            return consumers.count
+            return consumersLocal.count
         } else {
             return 1
         }
@@ -317,7 +317,8 @@ extension ReviewDetailsVC: UITableViewDelegate, UITableViewDataSource {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCell(withIdentifier: "ReviewDetailsCell", for: indexPath) as? ReviewDetailsCell
             cell?.cellDelegate = self
-            cell?.setupCell(with: consumers[indexPath.row])
+            cell?.cellIndex = indexPath.row
+            cell?.setupCell(with: consumersLocal[indexPath.row])
             
             return cell ?? UITableViewCell()
         } else {
@@ -380,7 +381,7 @@ extension ReviewDetailsVC: UITableViewDelegate, UITableViewDataSource {
 }
 
 extension ReviewDetailsVC: ReviewDetailsCellDelegate {
-    func buttonEditNationality() {
+    func buttonEditNationality(cellIndex: Int) {
         guard let personalInformationBaseVC = UIStoryboard.initialize(
             viewController: .personalInformationBaseVC,
             fromStoryboard: .openAccount
@@ -389,20 +390,11 @@ extension ReviewDetailsVC: ReviewDetailsCellDelegate {
         personalInformationBaseVC.firstChild = .nationalityVC
         personalInformationBaseVC.isEditFromReviewDetailsViewController = true
         personalInformationBaseVC.forViewController = "NationalityVC"
+        setSteper(cellIndex: cellIndex)
         navigationController?.pushViewController(personalInformationBaseVC, animated: true)
     }
     
-    func buttonEditFATCA() {
-//        guard let personalInformationBaseVC = UIStoryboard.initialize(
-//            viewController: .personalInformationBaseVC,
-//            fromStoryboard: .openAccount
-//        ) as? PersonalInformationBaseVC else { return }
-//
-//        personalInformationBaseVC.firstChild = .nationalityVC
-//        personalInformationBaseVC.isEditFromReviewDetailsViewController = true
-//        personalInformationBaseVC.forViewController = "NationalityVC"
-//        navigationController?.pushViewController(personalInformationBaseVC, animated: true)
-//
+    func buttonEditFATCA(cellIndex: Int) {
         guard let fatcaDetailsViewController = UIStoryboard.initialize(
             viewController: .personalInformationBaseVC,
             fromStoryboard: .openAccount
@@ -410,10 +402,11 @@ extension ReviewDetailsVC: ReviewDetailsCellDelegate {
         fatcaDetailsViewController.firstChild = .fatcaVC
         fatcaDetailsViewController.isEditFromReviewDetailsViewController = true
         fatcaDetailsViewController.forViewController = "FATCADetailsViewController"
+        setSteper(cellIndex: cellIndex)
         navigationController?.pushViewController(fatcaDetailsViewController, animated: true)
     }
     
-    func buttonEditPermanentAddress() {
+    func buttonEditPermanentAddress(cellIndex: Int) {
         guard let personalInformationBaseVC = UIStoryboard.initialize(
             viewController: .personalInformationBaseVC,
             fromStoryboard: .openAccount
@@ -422,10 +415,11 @@ extension ReviewDetailsVC: ReviewDetailsCellDelegate {
         personalInformationBaseVC.firstChild = .registerPermanentAddress
         personalInformationBaseVC.isEditFromReviewDetailsViewController = true
         personalInformationBaseVC.forViewController = "RegisterPermanentAddressViewController"
+        setSteper(cellIndex: cellIndex)
         navigationController?.pushViewController(personalInformationBaseVC, animated: true)
     }
     
-    func buttonEditAccountDetails() {
+    func buttonEditAccountDetails(cellIndex: Int) {
 //        dismissToViewController(viewController: SelectBankingMethodVC.self)
         
         guard let selectBankingMethodVC = UIStoryboard.initialize(
@@ -433,10 +427,11 @@ extension ReviewDetailsVC: ReviewDetailsCellDelegate {
             fromStoryboard: .openAccount
         ) as? SelectBankingMethodVC else { return }
         selectBankingMethodVC.isEditFromReviewDetailsViewController = true
+        setSteper(cellIndex: cellIndex)
         navigationController?.pushViewController(selectBankingMethodVC, animated: true)
     }
     
-    func buttonEditYourDetails() {
+    func buttonEditYourDetails(cellIndex: Int) {
 //        dismissToViewController(viewController: PersonalInformationBaseVC.self)
         guard let personalInformationBaseVC = UIStoryboard.initialize(
             viewController: .personalInformationBaseVC,
@@ -446,21 +441,22 @@ extension ReviewDetailsVC: ReviewDetailsCellDelegate {
         personalInformationBaseVC.firstChild = .personalInfoSecondVC
         personalInformationBaseVC.isEditFromReviewDetailsViewController = true
         personalInformationBaseVC.forViewController = "PersonalInformationSecondVC"
+        setSteper(cellIndex: cellIndex)
         navigationController?.pushViewController(personalInformationBaseVC, animated: true)
     }
     
-    func buttonEditCurrentAddress() {
+    func buttonEditCurrentAddress(cellIndex: Int) {
         guard let personalInformationBaseVC = UIStoryboard.initialize(
             viewController: .personalInformationBaseVC,
             fromStoryboard: .openAccount
         ) as? PersonalInformationBaseVC else { return }
 //        PersonalInformationThirdVC
         personalInformationBaseVC.firstChild = .personalInfoThirdVC
+        setSteper(cellIndex: cellIndex)
         navigationController?.pushViewController(personalInformationBaseVC, animated: true)
     }
     
-    func buttonEditDocuments() {
-        
+    func buttonEditDocuments(cellIndex: Int) {
         guard let personalInformationBaseVC = UIStoryboard.initialize(
             viewController: .personalInformationBaseVC,
             fromStoryboard: .openAccount
@@ -469,6 +465,25 @@ extension ReviewDetailsVC: ReviewDetailsCellDelegate {
         personalInformationBaseVC.firstChild = .pictureAndSignVC
         personalInformationBaseVC.isEditFromReviewDetailsViewController = true
         personalInformationBaseVC.forViewController = "ReviewDetailsVC"
+        setSteper(cellIndex: cellIndex)
         navigationController?.pushViewController(personalInformationBaseVC, animated: true)
     }
+    
+    
+    func setSteper(cellIndex: Int) {
+        let rdaCustomerProfileID = consumersLocal[cellIndex].rdaCustomerProfileID
+        modelRegistrationSteper = kGetStapperUser(rdaCustomerProfileId: rdaCustomerProfileID!)
+    }
+}
+
+func kGetStapperUser(rdaCustomerProfileId: Double) -> RegistrationSteperModel {
+    for steper in modelRegistrationSteperArray {
+        print("steper profile id : \(steper.rdaCustomerProfileId)")
+        print("selected profile id : \(rdaCustomerProfileId)")
+
+        if steper.rdaCustomerProfileId == rdaCustomerProfileId {
+            return steper
+        }
+    }
+    return RegistrationSteperModel()
 }
