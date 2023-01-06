@@ -416,6 +416,7 @@ final class SelectBankingMethodVC: UIViewController {
             logsManager.debug("Selected item \(item) at index \(index)")
             self.preferredBranchLabel.text = item
             self.selectBankingMethodViewModel.setBranch(name: item)
+            self.tableView.reloadData()
         }
     }
     //MARK: - For merging
@@ -504,6 +505,7 @@ extension SelectBankingMethodVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let branch = suggestedBranches[indexPath.row]
         selectBankingMethodViewModel.setBranch(name: branch.branchName ?? "")
+        self.preferredBranchLabel.text = "Choose preferred branch"
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
