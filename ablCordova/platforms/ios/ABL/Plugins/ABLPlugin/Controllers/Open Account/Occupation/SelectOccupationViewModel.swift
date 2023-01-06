@@ -83,19 +83,15 @@ class EmploymentDetailsViewModel: EmploymentDetailsViewModelProtocol {
     func saveKyc(rdaCustomerAccInfoId: Double?, rdaCustomerProfileId: Double?, isPrimary: Bool?, relationCode1: Double?, averageMonthlySalary: String?) {
 
         guard let kycInfo = saveKYCObject(rdaCustomerAccInfoId: rdaCustomerAccInfoId, rdaCustomerProfileId: rdaCustomerProfileId, isPrimary: isPrimary, relationCode1: relationCode1, averageMonthlySalary: averageMonthlySalary) else { return }
+        print(kycInfo)
         var consumerListInputModelArray = [saveKYCObject]()
-
         
-        
-        //        viewAppGenerateResponseModel?.forEach {
+//        viewAppGenerateResponseModel?.forEach {
 //            guard let consumerListInputModel = saveKYCObject(rdaCustomerAccInfoId: ($0.accountInformation?.rdaCustomerAccInfoID)!, rdaCustomerProfileId: $0.rdaCustomerProfileID , isPrimary: $0.isPrimary, relationCode1: DataCacheManager.shared.loadAdditionalApplicantRelationship()?.id, averageMonthlySalary: $0.accountInformation?.averageMonthlySalary) else { return }
 //
 //            consumerListInputModelArray.append(consumerListInputModel)
 //        }
         
-        
-                                          
-                                          
         guard let basicInfoConsumerListInput = BasicInfoConsumerListInputModel(
             rdaCustomerAccInfoId: rdaCustomerAccInfoId,
             rdaCustomerProfileId: rdaCustomerProfileId,

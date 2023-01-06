@@ -97,24 +97,30 @@ final class CNICVerificationViewModel: CNICVerificationViewModelProtocol {
         mobileNumber: String?,
         generateOTP: Bool?,
         idNumber: String?,
-        dateofExpiry: String?
+        dateOfIssue: String?,
+        dateOfBirth: String?,
+        isPortedMobileNetwork: Bool?
     ) {
         guard
             let customerTypeID = customerTypeID,
             let mobileNumber = mobileNumber,
             let generateOTP = generateOTP,
             let idNumber = idNumber,
-            let dateofExpiry = dateofExpiry
+            let dateOfIssue = dateOfIssue,
+            let dateOfBirth = dateOfBirth,
+            let isPortedMobileNetwork = isPortedMobileNetwork
         else { return }
         
-        if dateofExpiry.isEmpty == false && idNumber.isEmpty == false {
+        if dateOfIssue.isEmpty == false && idNumber.isEmpty == false {
             
             guard let viewAppGenerateOTPInput = ViewAppGenerateOTPInputModel(
                 customerTypeID: customerTypeID,
-                mobileNumber: mobileNumber,
+                mobileNumber: mobileNumber.removeMasking(),
                 generateOTP: generateOTP,
-                cnicNumber: idNumber,
-                dateofExpiry: dateofExpiry
+                cnicNumber: idNumber.removeMasking(),
+                dateOfIssue: dateOfIssue,
+                dateOfBirth: dateOfBirth,
+                isPortedMobileNetwork: isPortedMobileNetwork
             ) else { return }
             
             APIManager.shared.viewAppsGenerateOTP(input: viewAppGenerateOTPInput) { [weak self] response in

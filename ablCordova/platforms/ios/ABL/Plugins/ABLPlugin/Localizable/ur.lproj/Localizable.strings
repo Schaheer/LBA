@@ -27,6 +27,12 @@
 "A One Time Password (OTP) has been sent at your mobile number (03XX-XXXXXXX)
 
 Please enter to proceed further" = "آپ کے رجسٹرڈ موبائل نمبر پر بھیج دیا گیا ہے  براہ کرم نیچے درج کریں۔ OTP";
+
+"Please enter to proceed further" = "براہ کرم نیچے درج کریں۔";
+
+"A One Time Password (OTP) has been sent at your mobile number" = "آپ کے رجسٹرڈ موبائل نمبر پر بھیج دیا گیا ہے OTP";
+
+
 "OTP Will Expire After 5 Minutes" = "او ٹی پی کی میعاد 5 منٹ بعد ختم ہو جائے گی";
 "Change Number" = "نمبر تبدیل کریں";
 "Did not recieve OTP - Resend" = "موصول نہیں ہوا - دوبارہ بھیجیں۔  OTP";

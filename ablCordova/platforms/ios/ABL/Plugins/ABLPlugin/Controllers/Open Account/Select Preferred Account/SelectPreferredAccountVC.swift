@@ -117,6 +117,7 @@ final class SelectPreferredAccountVC: UIViewController {
             print(modelRegistrationSteper.genderId)
             self.yesAccounts.removeAll()
             self.noAccounts.removeAll()
+            self.selectPreferredAccountViewModel.resetAccountVariantID()
             self.filterAccounts()
             self.collectionView.reloadData()
         }
@@ -125,19 +126,17 @@ final class SelectPreferredAccountVC: UIViewController {
     
     func viewDidLoadLocal() {
         if modelRegistrationSteper.selectPreferredAccountViewModel != nil {
-            selectPreferredAccountViewModel.resetAccountVariantID()
+            let viewModel = modelRegistrationSteper.selectPreferredAccountViewModel!
+            let accountVariantID = viewModel.getAccountVariantID()
+            let id: Double = accountVariantID.id
+            modelRegistrationSteper.accountVariantId = id
             yesAccounts.removeAll()
             noAccounts.removeAll()
 //            self.selectPreferredAccountViewModel
             
-            let viewModel = modelRegistrationSteper.selectPreferredAccountViewModel!
             labelGender.text = modelRegistrationSteper.gender
             labelGender.textColor = .black
             
-            let accountVariantID = viewModel.getAccountVariantID()
-            let id: Double = accountVariantID.id
-            let accountVariant = AccountVariant(rawValue: id) ?? .unknown
-            selectPreferredAccountViewModel.setAccountVariantID(accountVariantID: accountVariant)
             filterAccounts()
             let proofOfIncome = viewModel.getProofOfIncomeInd()
             if proofOfIncome == 0 {
@@ -146,6 +145,10 @@ final class SelectPreferredAccountVC: UIViewController {
             else {
                 yesTapped()
             }
+            
+            let accountVariant = AccountVariant(rawValue: id) ?? .unknown
+            selectPreferredAccountViewModel.setAccountVariantID(accountVariantID: accountVariant)
+            
             var foundRow = 0
             if proofOfIncome == 1 {
                 var index = 0
@@ -168,13 +171,18 @@ final class SelectPreferredAccountVC: UIViewController {
                 }
             }
             collectionView.reloadData()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
                 print(foundRow)
-                self.cellTemp = self.collectionView.cellForItem(at: IndexPath(item: foundRow, section: 0)) as? SelectPreferredAccountCell
-                if self.cellTemp == nil {
-                    return
+//                let cellTemp = self.collectionView.cellForItem(at: IndexPath(item: foundRow, section: 0)) as? SelectPreferredAccountCell
+//                if cellTemp == nil {
+//                    return
+//                }
+                
+                self.collectionView.scrollToItem(at: IndexPath(item: foundRow, section: 0), at: .right, animated: true)
+                self.collectionView.reloadItems(at: [IndexPath(item: foundRow, section: 0)])
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    self.cellTemp?.isSelected = true
                 }
-                self.cellTemp?.isSelected = true
                 viewModel.accountVariantID.bind { [weak self]  accVariantId in
                     switch accVariantId?.currency{
                     case .PKR:
@@ -241,10 +249,7 @@ final class SelectPreferredAccountVC: UIViewController {
         noButton.borderWidth = 1
         selectPreferredAccountViewModel.setProofOfIncomeInd(proofOfIncome: 1)
         collectionView.reloadData()
-//        if !isViewWillAppear {
-//            selectPreferredAccountViewModel.resetAccountVariantID()
-//        }
-        
+        selectPreferredAccountViewModel.resetAccountVariantID()
     }
     
     @IBAction func noTapped(_ sender: UIButton) {
@@ -263,9 +268,7 @@ final class SelectPreferredAccountVC: UIViewController {
         yesButton.borderWidth = 1
         selectPreferredAccountViewModel.setProofOfIncomeInd(proofOfIncome: 0)
         collectionView.reloadData()
-//        if !isViewWillAppear {
-//            selectPreferredAccountViewModel.resetAccountVariantID()
-//        }
+        selectPreferredAccountViewModel.resetAccountVariantID()
     }
     
     @IBAction func nextTapped(_ sender: UIButton) {
@@ -530,12 +533,33 @@ extension SelectPreferredAccountVC: UICollectionViewDelegate, UICollectionViewDa
         else { return UICollectionViewCell() }
 
 //        let proofOfIncomeInd = selectPreferredAccountViewModel.getProofOfIncomeInd()
+        var accountVarientId = 0.0
         if proofOfIncomeInd == 1 {
             cell.setupCell(with: yesAccounts[indexPath.row])
+            accountVarientId = yesAccounts[indexPath.row].id ?? 0.0
+
         } else {
             cell.setupCell(with: noAccounts[indexPath.row])
+            accountVarientId = noAccounts[indexPath.row].id ?? 0.0
         }
-
+        if accountVarientId == modelRegistrationSteper.accountVariantId {
+            cellTemp = cell
+            cell.isSelected = true
+            if !cell.isSelected {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                    self.cellTemp = cell
+                    self.cellTemp?.isSelected = true
+                }
+            }
+            print("true")
+            cell.filledUnfilledIconImageView.image = PluginImageAsset.checkIcon.image
+            cell.containerView.borderColor = PluginColorAsset.appOrange.color
+        }
+        else {
+            print("false")
+            cell.filledUnfilledIconImageView.image = PluginImageAsset.uncheckIcon.image
+            cell.containerView.borderColor = PluginColorAsset.otpFieldBorder.color
+        }
         return cell
     }
     
@@ -561,8 +585,9 @@ extension SelectPreferredAccountVC: UICollectionViewDelegate, UICollectionViewDa
         }
         
 //        if id == 108243 {
-        
+        modelRegistrationSteper.accountVariantId = id
         selectPreferredAccountViewModel.setAccountVariantID(accountVariantID: accountVariant)
+        collectionView.reloadItems(at: [indexPath])
 
 //        } else {
 //            AlertManager.shared.showOKAlert(with: "Error", message: "Account not available yet")

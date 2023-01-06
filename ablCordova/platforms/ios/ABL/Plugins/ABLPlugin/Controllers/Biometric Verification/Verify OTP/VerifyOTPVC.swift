@@ -57,6 +57,12 @@ final class VerifyOTPVC: UIViewController {
 //        addGestureRecognizers()
         
         subscribeViewModel()
+        
+        var labelOne = "A One Time Password (OTP) has been sent at your mobile number".localizeString()
+        labelOne = labelOne + " " + (modelRegistrationSteper.phoneNumber ?? "")
+        
+        let labelTwo = "Please enter to proceed further".localizeString()
+        labelDescription.text = labelOne + "\n" + labelTwo
     }
     
     private func startOtpTimer() {
@@ -109,6 +115,7 @@ final class VerifyOTPVC: UIViewController {
         self.view.window?.rootViewController?.dismiss(animated: true)
     }
     
+    @IBOutlet weak var labelDescription: LabelSetting!
     @IBAction func backTapped(_ sender: UIButton) {
         navigationController?.popViewController(animated: true)
     }

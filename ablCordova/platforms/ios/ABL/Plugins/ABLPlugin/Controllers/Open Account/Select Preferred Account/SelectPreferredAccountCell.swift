@@ -73,20 +73,22 @@ final class SelectPreferredAccountCell: UICollectionViewCell {
     @IBOutlet weak var filledUnfilledIconImageView: UIImageView!
     @IBOutlet weak var containerView: CustomUIView!
     
+
     override var isSelected: Bool {
         didSet {
-            if isSelected {
-                filledUnfilledIconImageView.image = PluginImageAsset.checkIcon.image
-                containerView.borderColor = PluginColorAsset.appOrange.color
-            } else {
-                filledUnfilledIconImageView.image = PluginImageAsset.uncheckIcon.image
-                containerView.borderColor = PluginColorAsset.otpFieldBorder.color
-            }
+//            if isSelected {
+//                filledUnfilledIconImageView.image = PluginImageAsset.checkIcon.image
+//                containerView.borderColor = PluginColorAsset.appOrange.color
+//            } else {
+//                filledUnfilledIconImageView.image = PluginImageAsset.uncheckIcon.image
+//                containerView.borderColor = PluginColorAsset.otpFieldBorder.color
+//            }
         }
     }
 
     override class func awakeFromNib() {
         super.awakeFromNib()
+
     }
 
 //    func setupCell(with preferredAccount: PreferredAccount) {

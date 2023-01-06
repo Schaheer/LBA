@@ -16,7 +16,7 @@ class RegistrationSteperModel {
     // MARK: - Model Properties
     var cnicFrontSideImageView: UIImage?
     var cnicBackSideImageView: UIImage?
-    
+    var accountVariantId: Double?
     var rdaCustomerProfileId: Double?
     var rdaCustomerAccInfoId: Double?
     var selectBankingMethodViewModel: SelectBankingMethodViewModel?
@@ -32,6 +32,7 @@ class RegistrationSteperModel {
     var genderId = Int()
     var fullName: String?
     var fatherName: String?
+    var phoneNumber: String?
     var cnicNumber: String?
     var alreadyExist: Bool?
     var placeOfBirth: String?

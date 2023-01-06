@@ -20,6 +20,8 @@ final class ViewAppGenerateOTPInputModel: BaseInputModel {
         case generateOTP = "data.generateOtp"
         case attachments = "data.attachments"
         case dateofExpiry = "data.dateofExpiry"
+        case dateOfIssue = "data.dateOfIssue"
+        case dateOfBirth = "data.dateOfBirth"
     }
     
     // MARK: - Model Properties
@@ -31,7 +33,9 @@ final class ViewAppGenerateOTPInputModel: BaseInputModel {
     var generateOTP: Bool?
     var attachments: [CNICAttachmentInputModel]?
     var dateofExpiry: String?
-    
+    var dateOfIssue: String?
+    var dateOfBirth: String?
+
     // MARK: - Model Initializers
     
     required init?(map: Map) {
@@ -106,20 +110,26 @@ final class ViewAppGenerateOTPInputModel: BaseInputModel {
         mobileNumber: String,
         generateOTP: Bool,
         cnicNumber: String,
-        dateofExpiry: String
+        dateOfIssue: String,
+        dateOfBirth: String,
+        isPortedMobileNetwork: Bool
     ) {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.customerTypeID.rawValue] = customerTypeID
         dictionary[CodingKeys.mobileNumber.rawValue] = mobileNumber
         dictionary[CodingKeys.generateOTP.rawValue] = generateOTP
         dictionary[CodingKeys.cnicNumber.rawValue] = cnicNumber
-        dictionary[CodingKeys.dateofExpiry.rawValue] = dateofExpiry
+        dictionary[CodingKeys.dateOfIssue.rawValue] = dateOfIssue
+        dictionary[CodingKeys.dateOfBirth.rawValue] = dateOfBirth
+        dictionary[CodingKeys.isPortedMobileNetwork.rawValue] = isPortedMobileNetwork
         
         self.customerTypeID = customerTypeID
         self.mobileNumber = mobileNumber
         self.generateOTP = generateOTP
         self.cnicNumber = cnicNumber
-        self.dateofExpiry = dateofExpiry
+        self.dateOfIssue = dateOfIssue
+        self.dateOfBirth = dateOfBirth
+        self.isPortedMobileNetwork = isPortedMobileNetwork
         
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
@@ -141,5 +151,8 @@ final class ViewAppGenerateOTPInputModel: BaseInputModel {
         attachments <- map[CodingKeys.attachments.rawValue]
         isPortedMobileNetwork <- map[CodingKeys.isPortedMobileNetwork.rawValue]
         dateofExpiry <- map[CodingKeys.dateofExpiry.rawValue]
+        dateOfIssue <- map[CodingKeys.dateOfIssue.rawValue]
+        dateOfBirth <- map[CodingKeys.dateOfBirth.rawValue]
+
     }
 }

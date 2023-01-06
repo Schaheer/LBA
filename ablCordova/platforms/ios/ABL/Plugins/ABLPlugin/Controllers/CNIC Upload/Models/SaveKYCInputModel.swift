@@ -33,7 +33,7 @@ final class SaveKYCInputModel: BaseInputModel {
     // MARK: Coding Keys
     
     enum CodingKeys: String {
-        case data = "data.data"
+        case data = "data"
     }
     
     // MARK: - Model Properties
@@ -53,7 +53,7 @@ final class SaveKYCInputModel: BaseInputModel {
         dictionary[CodingKeys.data.rawValue] = data
         
         self.data = data
-        
+        dump(data)
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
     
@@ -66,8 +66,13 @@ final class SaveKYCInputModel: BaseInputModel {
     
     override func mapping(map: Map) {
         super.mapping(map: map)
+        data <- map[CodingKeys.data.rawValue + "data"]
         
-        data <- map[CodingKeys.data.rawValue]
+        dump(data)
+        print(data)
+        
+
+        
     }
 }
 

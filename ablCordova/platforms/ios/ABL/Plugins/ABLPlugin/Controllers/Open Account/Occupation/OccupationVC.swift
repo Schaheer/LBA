@@ -207,7 +207,7 @@ final class OccupationVC: UIViewController {
         employmentDetailsViewModel.registerConsumerEmploymentDetailsResponse.bind {  response  in
             guard let status = response?.message?.status, let description = response?.message?.description?.lowercased() else { return }
             if status == "200" && description.lowercased() == "success"{
-//                self.callSaveKyc()
+                self.callSaveKyc()
                 modelRegistrationSteper.profession = self.selectProfessionLabel.text!
                 modelRegistrationSteper.occupation = self.selectOccupationLabel.text!
                 modelRegistrationSteper.ntnNumber = self.textFieldNtn.text!

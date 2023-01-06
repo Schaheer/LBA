@@ -1157,6 +1157,7 @@ Please enter to proceed further</string>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="labelDescription" destination="zhd-6B-hEA" id="VfK-vQ-Tq0"/>
                         <outlet property="otpFieldView" destination="EyN-Ho-mP2" id="Gm8-eM-IPg"/>
                         <outlet property="otpMainLabel" destination="qPo-SN-gLe" id="rTa-tn-sRm"/>
                         <outlet property="otpTimerLabel" destination="eip-Rt-Ui9" id="Tvw-HM-fVS"/>

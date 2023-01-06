@@ -27,6 +27,10 @@ final class CNICAvailabilityVC: UIViewController {
         funChangeAppLanguageAndSide(to: "en", vc: self)
     }
     
+    @IBAction func buttonBack(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
+    
     @IBOutlet weak var mobileNumberLabel: UILabel!
     @IBOutlet weak var mobileNumberTextField: UITextField!
     
@@ -105,7 +109,7 @@ final class CNICAvailabilityVC: UIViewController {
             object: nil
         )
     }
-    //Irfan
+
     private func setupGestureRecognizers() {
         
         let clickHere = UITapGestureRecognizer(target: self, action: #selector(openclickHereLink))
@@ -113,7 +117,7 @@ final class CNICAvailabilityVC: UIViewController {
         clickHereLink.addGestureRecognizer(clickHere)
 
     }
-        //Irfan
+
     @objc private func openclickHereLink() {
         let clickHere: String = "https://apps.apple.com/pk/app/myabl-wallet/id1455479217"
         if let appURL = URL(string: clickHere){
@@ -121,9 +125,7 @@ final class CNICAvailabilityVC: UIViewController {
                 UIApplication.shared.open(appURL, options: [:], completionHandler: nil)
             } else {
                 UIApplication.shared.openURL(appURL)
-                
             }
-            
         }
     }
     
@@ -225,18 +227,17 @@ final class CNICAvailabilityVC: UIViewController {
     private func subscribeViewModel() {
         cnicAvailabilityViewModel.viewAppGenerateOTPResponse.bind { [weak self] response in
             guard let self = self, let response = response else { return }
-            guard let alreadyExist = response.alreadyExist else {
-                self.cnicAvailabilityViewModel.openCNICVerificationVC()
-                return
-            }
-            if alreadyExist == false {
-                self.cnicAvailabilityViewModel.openCNICVerificationVC()
-            } else {
+            
+            modelRegistrationSteper.cnicNumber = response.idNumber
+            modelRegistrationSteper.phoneNumber = self.mobileNumberTextField.text!
+            if response.alreadyExist ?? false {
                 //Shakeel 11Nov22
-                modelRegistrationSteper.cnicNumber = response.idNumber
                 modelRegistrationSteper.alreadyExist = true
-//                self.cnicNumberTextField.text = response.idNumber
                 self.cnicNumberView.isHidden = false
+            }
+            else {
+                modelRegistrationSteper.alreadyExist = false
+                self.cnicAvailabilityViewModel.openCNICVerificationVC()
             }
         }
         
@@ -309,7 +310,6 @@ final class CNICAvailabilityVC: UIViewController {
     }
 }
 
-//irfan
 extension CNICAvailabilityVC : UITextFieldDelegate {
 
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -377,9 +377,6 @@ extension CNICAvailabilityVC : UITextFieldDelegate {
         return result
 
     }
-
-    
-
     /// mask example: `+X (XXX) XXX-XXXX`
 
     func formatCnicNumber(with mask: String, cnic: String) -> String {
@@ -389,39 +386,18 @@ extension CNICAvailabilityVC : UITextFieldDelegate {
         var result = ""
 
         var index = numbers.startIndex // numbers iterator
-
-        
-
         // iterate over the mask characters until the iterator of numbers ends
 
         for ch in mask where index < numbers.endIndex {
-
             if ch == "X" {
-
                 // mask requires a number in this place, so take the next one
-
                 result.append(numbers[index])
-
-                
-
                 // move numbers iterator to the next index
-
                 index = numbers.index(after: index)
-
-                
-
             } else {
-
                 result.append(ch) // just append a mask character
-
             }
-
         }
-
         return result
-
     }
-
-    
-
 }

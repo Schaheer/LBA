@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import BetterSegmentedControl
 
 final class CNICVerificationVC: UIViewController {
     
@@ -53,12 +54,34 @@ final class CNICVerificationVC: UIViewController {
         cnicBackSideLabel.makeUnderlinedAttributedText(
             underlinedString: "Back Side"
         )
+        toggleUpload.segments = LabelSegment.segments(
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
+            normalBackgroundColor: PluginColorAsset.otpFieldBorder.color,
+            normalTextColor: .white,
+            selectedBackgroundColor: PluginColorAsset.appOrange.color,
+            selectedTextColor: .white
+        )
         
         setupGestureRecognizers()
         subscribeViewModel()
     }
     
+    func validationsError() -> Bool {
+        if cnicFrontSideImageView.tag == 0 {
+            showAlertSuccessWithPopToVC(viewController: self, title: "Alert", message: "Please add front cnic picture")
+            return true
+        }
+        else if cnicBackSideImageView.tag == 0 {
+            showAlertSuccessWithPopToVC(viewController: self, title: "Alert", message: "Please add back cnic picture")
+            return true
+        }
+        return false
+    }
+    
     @IBAction func nextTapped(_ sender: UIButton) {
+        if validationsError() {
+            return()
+        }
         //        print(frontSideCNICData?.base64EncodedString(), "frontSideCNICData?.base64EncodedString()...")
         //        print(backSideCNICData?.base64EncodedString(), "backSideCNICData?.base64EncodedString()")
                 
@@ -130,9 +153,12 @@ final class CNICVerificationVC: UIViewController {
     }
     @IBAction func btnFrontSide(_ sender: UIButton){
         frontSideImagePicker = UIImagePickerController()
-        //shakeel
-        frontSideImagePicker.sourceType = .photoLibrary
-//        frontSideImagePicker.sourceType = .camera
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            frontSideImagePicker.sourceType = .camera
+        }
+        else {
+            frontSideImagePicker.sourceType = .photoLibrary
+        }
         frontSideImagePicker.allowsEditing = true
         frontSideImagePicker.delegate = self
         present(frontSideImagePicker, animated: true)
@@ -159,7 +185,8 @@ final class CNICVerificationVC: UIViewController {
     }
     
     @IBAction func cancelTapped(_ sender: UIButton) {
-        self.view.window?.rootViewController?.dismiss(animated: true)
+//        self.view.window?.rootViewController?.dismiss(animated: true)
+        navigationController?.popViewController(animated: true)
     }
     
     private func openSimVerificationVC() {
@@ -231,13 +258,75 @@ final class CNICVerificationVC: UIViewController {
     @objc
     private func setupCnicFrontImagePicker() {
         frontSideImagePicker = UIImagePickerController()
-        //shakeel
         frontSideImagePicker.sourceType = .photoLibrary
-
 //        frontSideImagePicker.sourceType = .camera
         frontSideImagePicker.allowsEditing = true
         frontSideImagePicker.delegate = self
         present(frontSideImagePicker, animated: true)
+    }
+    @IBOutlet weak var btnBackSide: ButtonSetting!
+    @IBOutlet weak var toggleUpload: BetterSegmentedControl!
+    @IBAction func toggleUpload(_ sender: Any) {
+        if toggleUpload.index == 1 {
+            btnBackSide.isHidden = true
+            btnFrontSide.isHidden = true
+            buttonScan.isHidden = false
+            buttonScanBack.isHidden = false
+            buttonUpload.isHidden = false
+            buttonUploadBack.isHidden = false
+        }
+        else {
+            btnBackSide.isHidden = false
+            btnFrontSide.isHidden = false
+            buttonScan.isHidden = true
+            buttonScanBack.isHidden = true
+            buttonUpload.isHidden = true
+            buttonUploadBack.isHidden = true
+        }
+    }
+    @IBOutlet weak var btnFrontSide: ButtonSetting!
+    @IBOutlet weak var buttonUpload: ButtonSetting!
+    @IBAction func buttonUpload(_ sender: Any) {
+        frontSideImagePicker = UIImagePickerController()
+        frontSideImagePicker.sourceType = .photoLibrary
+        frontSideImagePicker.allowsEditing = true
+        frontSideImagePicker.delegate = self
+        present(frontSideImagePicker, animated: true)
+    }
+    @IBOutlet weak var buttonScan: ButtonSetting!
+    @IBAction func buttonScan(_ sender: Any) {
+        frontSideImagePicker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            frontSideImagePicker.sourceType = .camera
+        }
+        else {
+            frontSideImagePicker.sourceType = .photoLibrary
+        }
+        frontSideImagePicker.allowsEditing = true
+        frontSideImagePicker.delegate = self
+        present(frontSideImagePicker, animated: true)
+    }
+    @IBOutlet weak var buttonScanBack: ButtonSetting!
+    @IBAction func buttonUploadBack(_ sender: Any) {
+        frontSideImagePicker = UIImagePickerController()
+        frontSideImagePicker.sourceType = .photoLibrary
+        frontSideImagePicker.allowsEditing = true
+        frontSideImagePicker.delegate = self
+        present(backSideImagePicker, animated: true)
+    }
+
+    @IBOutlet weak var buttonUploadBack: ButtonSetting!
+    @IBAction func buttonScanBack(_ sender: Any) {
+        frontSideImagePicker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            frontSideImagePicker.sourceType = .camera
+        }
+        else {
+            frontSideImagePicker.sourceType = .photoLibrary
+        }
+        frontSideImagePicker.allowsEditing = true
+        frontSideImagePicker.delegate = self
+        present(backSideImagePicker, animated: true)
     }
     
     @objc private func viewFullimg() {
@@ -262,11 +351,12 @@ final class CNICVerificationVC: UIViewController {
     @objc
     private func setupCnicBackImagePicker() {
         backSideImagePicker = UIImagePickerController()
-        //shakeel
-
-        frontSideImagePicker.sourceType = .photoLibrary
-
-//        backSideImagePicker.sourceType = .camera
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            frontSideImagePicker.sourceType = .camera
+        }
+        else {
+            frontSideImagePicker.sourceType = .photoLibrary
+        }
         backSideImagePicker.allowsEditing = true
         backSideImagePicker.delegate = self
         present(backSideImagePicker, animated: true)
@@ -284,6 +374,11 @@ final class CNICVerificationVC: UIViewController {
             
             if !self.cameFromJointFlow {
                 if let _ = response.idNumber{
+                    
+                    //for testing
+//                    self.cnicVerificationViewModel.openVerifyCNICManually()
+//                    return()
+                    
                     self.cnicVerificationViewModel.openVerifyOTPVC()
                     
                 } else {
@@ -430,35 +525,20 @@ final class CNICVerificationVC: UIViewController {
 extension CNICVerificationVC: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-
         picker.dismiss(animated: true)
-
-
-
         guard let image = info[.editedImage] as? UIImage else {
-
             print("No image found")
-
             return
-
         }
-
 //        let image = info[.originalImage] as? UIImage
-
-
-
         if picker == frontSideImagePicker {
-
             cnicFrontSideImageView.image = image
-
             frontSideCNICData = image.jpeg(.low)
-
+            cnicFrontSideImageView.tag = 1
         } else {
-
             cnicBackSideImageView.image = image
-
             backSideCNICData = image.jpeg(.low)
-
+            cnicBackSideImageView.tag = 1
         }
 
     }
