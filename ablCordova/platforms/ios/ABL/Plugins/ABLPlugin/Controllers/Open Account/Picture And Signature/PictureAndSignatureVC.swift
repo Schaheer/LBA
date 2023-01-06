@@ -176,15 +176,7 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
     }
     
     
-    func continueToCamera() {
-        pictureImagePicker = UIImagePickerController()
-//        pictureImagePicker.sourceType = .camera
-        pictureImagePicker.sourceType = .photoLibrary
-        
-        pictureImagePicker.allowsEditing = true
-        pictureImagePicker.delegate = self
-        present(pictureImagePicker, animated: true)
-    }
+    
     
     func viewDidAppearLocal() {
         var tempNoOfParticipant = ""
@@ -337,15 +329,23 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
     }
     
     @objc private func uploadSignTapped(_ sender: UIButton){
-        
         signImagePicker = UIImagePickerController()
-        //        signImagePicker.sourceType = .camera
         pictureImagePicker.sourceType = .photoLibrary
-        
         signImagePicker.allowsEditing = true
         signImagePicker.delegate = self
         present(signImagePicker, animated: true)
-        
+    }
+    func continueToCamera() {
+        pictureImagePicker = UIImagePickerController()
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            pictureImagePicker.sourceType = .camera
+        }
+        else {
+            pictureImagePicker.sourceType = .photoLibrary
+        }
+        pictureImagePicker.allowsEditing = true
+        pictureImagePicker.delegate = self
+        present(pictureImagePicker, animated: true)
     }
     
     @objc private func uploadDocumentTapped(_ sender: UIButton){
@@ -712,7 +712,7 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
         ) as? ReviewDetailsVC else { return }
         modelRegistrationSteperArray.append(modelRegistrationSteper)
         
-        reviewDetailsVC.callBackIsBackTapped? = { 
+        reviewDetailsVC.callBackIsBackTapped? = {
             modelRegistrationSteper = modelRegistrationSteperArray.last!
         }
         self.navigationController?.pushViewController(reviewDetailsVC, animated: true)
