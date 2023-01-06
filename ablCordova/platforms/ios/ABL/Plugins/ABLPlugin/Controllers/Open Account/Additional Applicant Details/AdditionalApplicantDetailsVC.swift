@@ -55,7 +55,8 @@ final class AdditionalApplicantDetailsVC: UIViewController {
         
         additionalApplicantDetailsViewModel.dropdownTapped.bind { [weak self] isTapped in
             guard let self = self, isTapped else { return }
-            self.dropDown.show()
+//            self.dropDown.show()
+            self.openRelationShip()
         }
         
         additionalApplicantDetailsViewModel.errorMessage.bind { errorMessage in
@@ -64,6 +65,16 @@ final class AdditionalApplicantDetailsVC: UIViewController {
         }
     }
     
+    func openRelationShip() {
+        let dataSource = self.dropDown.dataSource
+        self.showSelectionAlert(with: dataSource, title: "Select Delivery", isSearchViewHidden: true) { index, item in
+            logsManager.debug("Selected item \(item) at index \(index)")
+            self.relationshipLabel.text = item
+            
+            let relationship = self.additionalApplicantDetailsViewModel.getRelationship(for: index)
+            self.additionalApplicantDetailsViewModel.setSelectedRelationship(data: relationship)
+        }
+    }
     private func setupDropdown() {
         dropDown.anchorView = selectRelationshipView
         dropDown.direction = .bottom
