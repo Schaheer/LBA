@@ -19,6 +19,7 @@ final class VerifyOTPVC: UIViewController {
     @IBOutlet weak var otpMainLabel: LabelSetting!
     @IBOutlet weak var otpTimerLabel: LabelSetting!
     
+    var callBackBackButton: (() -> ())!
     private var otpStackView = OTPStackView()
     private var timer: Timer?
     private var seconds = 300
@@ -116,8 +117,11 @@ final class VerifyOTPVC: UIViewController {
     }
     
     @IBOutlet weak var labelDescription: LabelSetting!
+    
     @IBAction func backTapped(_ sender: UIButton) {
-        navigationController?.popViewController(animated: true)
+        callBackBackButton?()
+        self.dismissToViewController(viewController: CNICAvailabilityVC.self)
+//        navigationController?.popViewController(animated: true)
     }
     
     @IBAction func resendOTPTapped(_ sender: UIButton) {

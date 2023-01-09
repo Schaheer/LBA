@@ -119,6 +119,7 @@ final class SelectPreferredAccountVC: UIViewController {
             self.noAccounts.removeAll()
             self.selectPreferredAccountViewModel.resetAccountVariantID()
             self.filterAccounts()
+            modelRegistrationSteper.accountVariantId = nil
             self.collectionView.reloadData()
         }
         dropDown.show()
@@ -148,6 +149,7 @@ final class SelectPreferredAccountVC: UIViewController {
             
             let accountVariant = AccountVariant(rawValue: id) ?? .unknown
             selectPreferredAccountViewModel.setAccountVariantID(accountVariantID: accountVariant)
+            modelRegistrationSteper.accountVariantId = id
             
             var foundRow = 0
             if proofOfIncome == 1 {
@@ -250,6 +252,7 @@ final class SelectPreferredAccountVC: UIViewController {
         selectPreferredAccountViewModel.setProofOfIncomeInd(proofOfIncome: 1)
         collectionView.reloadData()
         selectPreferredAccountViewModel.resetAccountVariantID()
+        modelRegistrationSteper.accountVariantId = nil
     }
     
     @IBAction func noTapped(_ sender: UIButton) {
@@ -269,6 +272,7 @@ final class SelectPreferredAccountVC: UIViewController {
         selectPreferredAccountViewModel.setProofOfIncomeInd(proofOfIncome: 0)
         collectionView.reloadData()
         selectPreferredAccountViewModel.resetAccountVariantID()
+        modelRegistrationSteper.accountVariantId = nil
     }
     
     @IBAction func nextTapped(_ sender: UIButton) {
@@ -276,7 +280,10 @@ final class SelectPreferredAccountVC: UIViewController {
             self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please select gender")
             return()
         }
-        
+        else if modelRegistrationSteper.accountVariantId == nil {
+            self.showAlertSuccessWithPopToVC(viewController: self, title: "Error", message: "Please select your account")
+            return()
+        }
         let proofOfIncomeInd = selectPreferredAccountViewModel.getProofOfIncomeInd()
         let accountVariantID = selectPreferredAccountViewModel.getAccountVariantID()
         modelRegistrationSteper.proofOfIncomeInd = proofOfIncomeInd

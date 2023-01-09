@@ -35,6 +35,8 @@ final class CNICVerificationVC: UIViewController {
     private var backSideCNICData: Data?
     var cameFromJointFlow = false
     
+    var callBackBackButton: (() -> ())!
+    
     override func viewWillAppear(_ animated: Bool) {
         if modelRegistrationSteper.cnicFrontSideImageView != nil {
             cnicFrontSideImageView.image =  modelRegistrationSteper.cnicFrontSideImageView
@@ -165,11 +167,12 @@ final class CNICVerificationVC: UIViewController {
     }
     @IBAction func btnBackSide(_ sender: UIButton){
         backSideImagePicker = UIImagePickerController()
-        //shakeel
-
-        frontSideImagePicker.sourceType = .photoLibrary
-
-//        backSideImagePicker.sourceType = .camera
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            backSideImagePicker.sourceType = .camera
+        }
+        else {
+            backSideImagePicker.sourceType = .photoLibrary
+        }
         backSideImagePicker.allowsEditing = true
         backSideImagePicker.delegate = self
         present(backSideImagePicker, animated: true)
@@ -186,6 +189,7 @@ final class CNICVerificationVC: UIViewController {
     
     @IBAction func cancelTapped(_ sender: UIButton) {
 //        self.view.window?.rootViewController?.dismiss(animated: true)
+        callBackBackButton?()
         navigationController?.popViewController(animated: true)
     }
     
@@ -270,16 +274,16 @@ final class CNICVerificationVC: UIViewController {
         if toggleUpload.index == 1 {
             btnBackSide.isHidden = true
             btnFrontSide.isHidden = true
-            buttonScan.isHidden = false
-            buttonScanBack.isHidden = false
+//            buttonScan.isHidden = false
+//            buttonScanBack.isHidden = false
             buttonUpload.isHidden = false
             buttonUploadBack.isHidden = false
         }
         else {
             btnBackSide.isHidden = false
             btnFrontSide.isHidden = false
-            buttonScan.isHidden = true
-            buttonScanBack.isHidden = true
+//            buttonScan.isHidden = true
+//            buttonScanBack.isHidden = true
             buttonUpload.isHidden = true
             buttonUploadBack.isHidden = true
         }

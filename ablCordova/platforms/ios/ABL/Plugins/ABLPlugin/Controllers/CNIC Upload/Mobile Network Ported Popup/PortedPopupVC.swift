@@ -17,6 +17,9 @@ final class PortedPopupVC: UIViewController {
     
    
     @IBOutlet weak var cancelButton: UIButton!
+    
+    var callBackBackButton: (() -> ())!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +38,7 @@ final class PortedPopupVC: UIViewController {
         }
     }
     @IBAction func cancelButton(_ sender: Any) {
+        callBackBackButton?()
         dismiss(animated: true)
     }
 }

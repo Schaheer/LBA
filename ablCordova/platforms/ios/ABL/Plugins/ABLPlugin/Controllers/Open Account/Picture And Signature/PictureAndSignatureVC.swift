@@ -11,7 +11,7 @@ import DropDown
 import MobileCoreServices
 import UniformTypeIdentifiers
 
-final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
+final class PictureAndSignatureVC: UIViewController {
     
     @IBOutlet weak var viewProofOfIncome: UIView!
     @IBOutlet weak var imageProofOfIncome: UIImageView!
@@ -80,7 +80,7 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
     var natureOfAccountLocal = NatureOfAccount.single
     override func viewDidAppear(_ animated: Bool) {
         viewDidAppearLocal()
-        viewProofOfIncome.isHidden = true
+        
         self.selectAdditionalApplicantView.isHidden = false
         
         if modelRegistrationSteper.proofOfIncomeInd == 1 {
@@ -90,20 +90,11 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
             segmentJointAccount.setIndex(modelRegistrationSteper.isJointAccount ? 1 : 0)
         }
     }
-    override func viewWillAppear(_ animated: Bool) {
-        if DataCacheManager.shared.getRegisterVerifyOTPResponseModel()?.consumerList?.count ?? 0 > 0 {
-            
-            //            viewJointAccount.isHidden = true
-            //            modelRegistrationSteper.isJointAccount = true
-            //            natureOfAccountLocal = .joint
-            //            picAndSignViewModel.jointAccountTapped()
-            //            self.joint()
-            //            picAndSignViewModel.setNoOfJointApplicants(applicants: DataCacheManager.shared.loadNoOfJointApplicants() ?? 0)
-        }
-    }
+    
     override func viewDidLoad() {
-        modelRegistrationSteper.rdaCustomerProfileId = getCurrentUser().rdaCustomerProfileID
         super.viewDidLoad()
+        modelRegistrationSteper.rdaCustomerProfileId = getCurrentUser().rdaCustomerProfileID
+        
         imageProofOfIncome.isHidden = true
         viewProofOfIncomePicutre.isHidden = true
         
@@ -117,6 +108,13 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
                 alpha: 1.00
             )
         )
+        toggleUpload.segments = LabelSegment.segments(
+            withTitles: ["No".localizeString(), "Yes".localizeString()],
+            normalBackgroundColor: PluginColorAsset.otpFieldBorder.color,
+            normalTextColor: .white,
+            selectedBackgroundColor: PluginColorAsset.appOrange.color,
+            selectedTextColor: .white
+        )
         viewSelectNatureOfAccount.isHidden = true
         setupDropdown()
         dropDown.dataSource = [
@@ -127,24 +125,6 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
             "5 Additional Applicants"
         ]
         
-        livePhotoPreviewImageView.addGestureRecognizer(
-            UITapGestureRecognizer(
-                target: self,
-                action: #selector(takePictureTapped(_:))
-            )
-        )
-        signaturePreviewImageView.addGestureRecognizer(
-            UITapGestureRecognizer(
-                target: self,
-                action: #selector(uploadSignTapped(_:))
-            )
-        )
-        viewProofOfIncome.addGestureRecognizer(
-            UITapGestureRecognizer(
-                target: self,
-                action: #selector(uploadDocumentTapped(_:))
-            )
-        )
         subscribeViewModel()
         setupGestureRecognizers()
         let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
@@ -324,13 +304,26 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
             fromStoryboard: .cnicUpload
         ) as? CustomPopupDemoVC else { return }
         
-        customPopupDemoVC.delegate = self
+        customPopupDemoVC.callBackContinueWithImage = {
+            self.continueToCamera()
+        }
         self.present(customPopupDemoVC, animated: true)
     }
     
     @objc private func uploadSignTapped(_ sender: UIButton){
         signImagePicker = UIImagePickerController()
-        pictureImagePicker.sourceType = .photoLibrary
+
+        if toggleUpload.index == 0 {
+            if UIImagePickerController.isSourceTypeAvailable(.camera) {
+                signImagePicker.sourceType = .camera
+            }
+            else {
+                signImagePicker.sourceType = .photoLibrary
+            }
+        }
+        else {
+            signImagePicker.sourceType = .photoLibrary
+        }
         signImagePicker.allowsEditing = true
         signImagePicker.delegate = self
         present(signImagePicker, animated: true)
@@ -345,7 +338,10 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
         }
         pictureImagePicker.allowsEditing = true
         pictureImagePicker.delegate = self
-        present(pictureImagePicker, animated: true)
+        pictureImagePicker.present(in: self)
+//        DispatchQueue.main.async {
+//            self.present(self.pictureImagePicker, animated: true)
+//        }
     }
     
     @objc private func uploadDocumentTapped(_ sender: UIButton){
@@ -530,8 +526,10 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
         present(documentPicker, animated: true, completion: nil)
     }
     
+    @IBOutlet weak var toggleUpload: BetterSegmentedControl!
+    @IBAction func toggleUpload(_ sender: Any) {
+    }
     private func subscribeViewModel() {
-        
         picAndSignViewModel.saveAttachmentResponse.bind { [weak self]  response  in
             guard let status = response?.message?.status, let description = response?.message?.description?.lowercased() else { return }
             if status == "200" && description.lowercased() == "success"{
@@ -712,7 +710,7 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
         ) as? ReviewDetailsVC else { return }
         modelRegistrationSteperArray.append(modelRegistrationSteper)
         
-        reviewDetailsVC.callBackIsBackTapped? = {
+        reviewDetailsVC.callBackIsBackTapped? = { 
             modelRegistrationSteper = modelRegistrationSteperArray.last!
         }
         self.navigationController?.pushViewController(reviewDetailsVC, animated: true)
@@ -773,6 +771,24 @@ final class PictureAndSignatureVC: UIViewController, CustomPopupDemoVCDelegate {
                 action: #selector(picAndSignViewModel.openDropdown)
             )
         )
+        livePhotoPreviewImageView.addGestureRecognizer(
+            UITapGestureRecognizer(
+                target: self,
+                action: #selector(takePictureTapped(_:))
+            )
+        )
+        signaturePreviewImageView.addGestureRecognizer(
+            UITapGestureRecognizer(
+                target: self,
+                action: #selector(uploadSignTapped(_:))
+            )
+        )
+        viewProofOfIncome.addGestureRecognizer(
+            UITapGestureRecognizer(
+                target: self,
+                action: #selector(uploadDocumentTapped(_:))
+            )
+        )
     }
     
     private func setupDropdown() {
@@ -807,25 +823,27 @@ extension PictureAndSignatureVC: UIImagePickerControllerDelegate, UINavigationCo
             return
         }
         if picker == pictureImagePicker {
-            livePhotoPreviewImageView.backgroundColor = .white
-            livePhotoPreviewImageView.image = image
-            
-            modelRegistrationSteper.livePhotoPreviewImage = image
-            livePictureData = image.jpegData(compressionQuality: 1)
-            
-            picAndSignViewModel.saveAttachment(
-                attachmentTypeId: BaseConstants.AttachmentTypeIDs.livePhotoID,
-                entityId: 443,
-                fileName: "Live Photo",
-                mimeType: "",
-                path: "",
-                base64Content: livePictureData?.base64EncodedString(),
-                rdaCustomerAccInfoId: DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last?.accountInformation?.rdaCustomerAccInfoID)
+            self.livePhotoPreviewImageView.backgroundColor = .white
+            self.livePhotoPreviewImageView.image = image
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                modelRegistrationSteper.livePhotoPreviewImage = image
+                self.livePictureData = image.jpeg(.low)
+                // your code here
+                self.livePhotoPreviewImageView.image = image
+                self.picAndSignViewModel.saveAttachment(
+                    attachmentTypeId: BaseConstants.AttachmentTypeIDs.livePhotoID,
+                    entityId: 443,
+                    fileName: "Live Photo",
+                    mimeType: "",
+                    path: "",
+                    base64Content: self.livePictureData?.base64EncodedString(),
+                    rdaCustomerAccInfoId: DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last?.accountInformation?.rdaCustomerAccInfoID)
+            }
         } else {
             signaturePreviewImageView.backgroundColor = .white
             signaturePreviewImageView.image = image
             modelRegistrationSteper.signaturePreviewImage = image
-            signData = image.jpegData(compressionQuality: 1)
+            signData = image.jpeg(.low)
             picAndSignViewModel.saveAttachment(
                 attachmentTypeId: BaseConstants.AttachmentTypeIDs.signatureTypeID,
                 entityId: 443,

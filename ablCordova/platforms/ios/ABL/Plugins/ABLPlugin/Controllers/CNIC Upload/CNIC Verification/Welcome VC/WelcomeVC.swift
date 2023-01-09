@@ -7,6 +7,8 @@
 
 import UIKit
 
+var defaults = UserDefaults.standard
+
 class WelcomeVC: UIViewController {
     
     @IBOutlet weak var emailStack: UIStackView!
@@ -17,7 +19,6 @@ class WelcomeVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: true)
-        resetDefaults()
     }
     
     @IBOutlet weak var buttonUrdu: UIButton!
@@ -33,6 +34,18 @@ class WelcomeVC: UIViewController {
         super.viewDidLoad()
         DataCacheManager.shared.saveNoOfJointApplicants(input: 0)
         // Do any additional setup after loading the view.
+        
+        let dd = defaults.value(forKey: "isRunFirstTime") as? String
+        print(dd)
+
+        if ((UserDefaults.standard.value(forKey: "isRunFirstTime") as? String) != nil) {
+            defaults.setValue(nil, forKey: "isRunFirstTime")
+        }
+        else {
+            AlertManager.shared.showLanguageAlert(with: "App Language", message: "Please select your preferred Language before proceeding")
+            resetDefaults()
+            defaults.setValue("1", forKey: "isRunFirstTime")
+        }
         
     }
     func resetDefaults() {
@@ -52,7 +65,7 @@ class WelcomeVC: UIViewController {
         
     }
     private func openAvailabilityVC() {
-//                let vc = UIStoryboard.init(name: "OpenAccount", bundle: nil).instantiateViewController(withIdentifier: "ServiceChannelsVC") as? ServiceChannelsVC
+//                let vc = UIStoryboard.init(name: "OpenAccount", bundle: nil).instantiateViewController(withIdentifier: "PictureAndSignatureVC") as? PictureAndSignatureVC
 //                self.navigationController?.pushViewController(vc!, animated: true)
 //
 //                //Shakeel Test

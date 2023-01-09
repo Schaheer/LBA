@@ -105,8 +105,15 @@ final class ServiceChannelsVC: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        isScreenOpen = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        buttonSms.isHidden = true
+        buttonEmail.isHidden = true
+        
         setupViews()
         buttonEmailSMSDefault()
         serviceChannelsVM.getATMTypes(
@@ -133,7 +140,7 @@ final class ServiceChannelsVC: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
+        isScreenOpen = true
         viewDidAppearCustom()
     }
     func viewDidAppearCustom() {
@@ -177,6 +184,10 @@ final class ServiceChannelsVC: UIViewController {
                 transactionalAlertsSwitch.isEnabled = index == 1
                 transactionalAlertsSwitch.isSelected = index == 1
                 transactionalAlertsSwitch.setIndex(index!)
+                if index == 0 {
+                    buttonSms.isHidden = true
+                    buttonEmail.isHidden = true
+                }
             }
             if modelRegistrationSteper.SOAIndex != nil {
                 let index = modelRegistrationSteper.SOAIndex
@@ -184,6 +195,7 @@ final class ServiceChannelsVC: UIViewController {
                 SOASwitch.isSelected = index == 1
                 SOASwitch.setIndex(index!)
             }
+            
         }
     }
     
@@ -334,6 +346,14 @@ final class ServiceChannelsVC: UIViewController {
     @IBAction func transAlertSwitchValueChanged(_ sender: BetterSegmentedControl) {
         print("The selected index is \(sender.index)")
         modelRegistrationSteper.transAlertIndex = sender.index
+        if sender.index == 1 {
+            buttonSms.isHidden = false
+            buttonEmail.isHidden = false
+        }
+        else {
+            buttonSms.isHidden = true
+            buttonEmail.isHidden = true
+        }
     }
     
     @IBAction func SOAValueChanged(_ sender: BetterSegmentedControl) {
@@ -344,12 +364,15 @@ final class ServiceChannelsVC: UIViewController {
     func getTransactionalAlertId() -> Double {
         return transactionalAlertsSwitch.index == 0 ? 114401 : 114402
     }
-    
+    var isScreenOpen = false
     private func subscribeViewModel() {
         serviceChannelsVM.registerConsumerTransactionDetailsResponse.bind { [weak self]   response  in
             guard let status = response?.message?.status, let description = response?.message?.description?.lowercased() else { return }
             if status == "200" && description.lowercased() == "success"{
-                self?.delegate?.addChild(vc: .pictureAndSignatureVC, fromViewController: "")
+                if self?.isScreenOpen == true {
+                    self?.delegate?.addChild(vc: .pictureAndSignatureVC, fromViewController: "")
+                }
+                
             }
         }
         

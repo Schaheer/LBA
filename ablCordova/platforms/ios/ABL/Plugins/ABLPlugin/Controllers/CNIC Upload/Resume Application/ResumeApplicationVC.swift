@@ -44,7 +44,8 @@ final class ResumeApplicationVC: UIViewController {
     
     @IBAction func cancelTapped(_ sender: UIButton) {
 //        self.view.window?.rootViewController?.dismiss(animated: true)
-        navigationController?.popViewController(animated: true)
+        self.dismissToViewController(viewController: CNICAvailabilityVC.self)
+//        navigationController?.popViewController(animated: true)
     }
     
     private func openSelectBankingMethodVC() {

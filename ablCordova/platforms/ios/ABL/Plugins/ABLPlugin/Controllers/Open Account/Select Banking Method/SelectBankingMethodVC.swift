@@ -117,16 +117,28 @@ final class SelectBankingMethodVC: UIViewController {
             let viewAppGenerateOTPWithData = DataCacheManager.shared.loadViewAppGenerateOTPWithData()
             
             let attachments = viewAppGenerateOTPWithData?.attachments
-            let cnicFrontAttachmentInput = [
-                "fileName": "CNIC FRONT",
-                "base64Content": attachments?.first?.base64Content ?? "",
-                "attachmentTypeId": attachments?.first?.attachmentTypeID ?? 0
-            ] as [String : Any]
-            let cnicBackAttachmentInput = [
-                "fileName": "CNIC BACK",
-                "base64Content": attachments?.last?.base64Content ?? "",
-                "attachmentTypeId": attachments?.last?.attachmentTypeID ?? 0
-            ] as [String : Any]
+            var cnicFrontAttachmentInput = [String : Any]()
+            if attachments?.first?.base64Content ?? "" != "" {
+                cnicFrontAttachmentInput = [
+                    "fileName": "CNIC FRONT",
+                    "base64Content": attachments?.first?.base64Content ?? "",
+                    "attachmentTypeId": attachments?.first?.attachmentTypeID ?? 0
+                ] as [String : Any]
+            }
+            var cnicBackAttachmentInput = [String : Any]()
+            if attachments?.last?.base64Content ?? "" != "" {
+                cnicBackAttachmentInput = [
+                    "fileName": "CNIC BACK",
+                    "base64Content": attachments?.last?.base64Content ?? "",
+                    "attachmentTypeId": attachments?.last?.attachmentTypeID ?? 0
+                ] as [String : Any]
+            }
+            
+            var arrayAttachments = [cnicFrontAttachmentInput, cnicBackAttachmentInput]
+           
+            if attachments?.last?.base64Content ?? "" == "" || attachments?.first?.base64Content ?? "" == "" {
+                arrayAttachments = []
+            }
             
             guard let basicInfoConsumerListInput = BasicInfoConsumerListInputModel(
                 rdaCustomerAccInfoId: modelRegistrationSteper.rdaCustomerAccInfoId,
@@ -138,7 +150,7 @@ final class SelectBankingMethodVC: UIViewController {
                 dateOfBirth: viewAppGenerateResponseModel.dateOfBirth ?? "",
                 dateOfIssue: viewAppGenerateResponseModel.dateOfIssue ?? "",
                 idNumber: viewAppGenerateResponseModel.idNumber ?? "",
-                attachments: [cnicFrontAttachmentInput, cnicBackAttachmentInput],
+                attachments: arrayAttachments,
                 customerBranch: selectBankingMethodViewModel.getBranchName(),
                 bankingModeId: selectBankingMethodViewModel.getBankingModeID()
             ) else { return }

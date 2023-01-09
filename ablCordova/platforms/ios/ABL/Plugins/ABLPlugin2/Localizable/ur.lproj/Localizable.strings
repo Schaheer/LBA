@@ -1,0 +1,340 @@
+/* 
+  Localizable.strings
+  ABL
+
+  Created by Shakeel on 16/11/2022.
+  
+*/
+
+"Things You Need" = "درکار دستاویزات";
+"Biometric Verification" = "بائیو میٹرک تصدیق";
+"Account Number" = "اکاؤنٹ نمبر";
+"Enter your account number" = "اکاؤنٹ نمبر درج کریں۔ ";
+"CNIC Number" = "شناختی کارڈ نمبر";
+"Enter your CNIC number" = "شناختی کارڈ نمبر درج کریں۔" ;
+"Next" = "آگے بڑھیں";
+"Cancel" = "منسوخ";
+"OTP Verification" = "کی تصدیق OTP";
+"Verify OTP" = "کی تصدیق کریں OTP";
+"Enter OTP:" = "درج کریں۔ OTP";
+"Please enter 6-digit verification code here:" = "براہ کرم چھ ہندسے والا کوڈ درج کریں۔";
+"5:00 Minute" = "پانچ منٹ";
+"Submit" = "جمع کرائیں";
+"Resend OTP" = "او ٹی پی کو دوبارہ بھیجیں۔";
+"Did Not Receive OTP? Click Here To Resend OTP" = "او ٹی پی موصول نہیں ہوا دوبارہ بھیجیں";
+"Verify" = "تصدیق کریں";
+"Done" = "ہو گیا";
+"A One Time Password (OTP) has been sent at your mobile number (03XX-XXXXXXX)
+
+Please enter to proceed further" = "آپ کے رجسٹرڈ موبائل نمبر پر بھیج دیا گیا ہے  براہ کرم نیچے درج کریں۔ OTP";
+
+"Please enter to proceed further" = "براہ کرم نیچے درج کریں۔";
+
+"A One Time Password (OTP) has been sent at your mobile number" = "آپ کے رجسٹرڈ موبائل نمبر پر بھیج دیا گیا ہے OTP";
+
+
+"OTP Will Expire After 5 Minutes" = "او ٹی پی کی میعاد 5 منٹ بعد ختم ہو جائے گی";
+"Change Number" = "نمبر تبدیل کریں";
+"Did not recieve OTP - Resend" = "موصول نہیں ہوا - دوبارہ بھیجیں۔  OTP";
+"Back" = "واپس جائیں";
+"Mobile Number" = "موبائل فون کا نمبر";
+"Enter your mobile number" = "موبائل فون کا نمبر درج کریں۔";
+"Make sure entered mobile number is registered against your CNIC" = "یقینی بنائیں کہ درج کردہ موبائل نمبر آپ کے CNIC کے خلاف رجسٹرڈ ہے";
+"Have you ported your mobile network?" = "کیا آپ نےاپنا موبائل فون کا نمبر پورٹ کرلیا ہے؟";
+"If you don’t have your original CNIC with you at present, you can open myWallet account.
+If you wish to continue" = "اگر آپ کے پاس اس وقت اپنی اصلی شناختی دستاویز موجود نہیں ہے تو آپ \"مائی والٹ\" اکاؤنٹ کھول سکتے ہیں۔ اگر آپ ایسا کرنا چاہتے ہیں تو یہاں کلک کریں";
+"Attach CNIC" = "منسلک کریں CNIC";
+"Take a Clear Picture Of Your Original CNIC" = "کی واضح تصویر لیں CNIC اپنے اصلی";
+"Cnic Front" = "شناختی دستاویز (آگے سے)";
+"Cnic Back" = "شناختی دستاویز (پیچھے سے)";
+"Front Side" = "آگے سے";
+"Back Side" = "پیچھے سے";
+"Mother’s Name" = "والدہ کا نام";
+"Email" = "ای میل";
+"Town/Tehsil" = "علاقہ/تحصیل";
+"Take the picture of your signature on white paper with Blue or Black pen." = "نیلے یا سیاہ قلم سے سفید کاغذ پر اپنے دستخط کی تصویر لیں۔";
+"How to take a picture e.g., do not where sunglasses, do not wear masks etc" = "تصویر کیسے لی جائے مثلاً دھوپ کے چشمے نہ لگائیں، ماسک نہ پہنیں وغیرہ";
+"Nationality" = "قومیت";
+"I/We confirm having read, understood and agreed to the Key Fact Statement of selected account." = "میں/ہم منتخب اکاؤنٹ کے کلیدی حقیقت بیان کو پڑھے، سمجھے اور اس سے متفق ہونے کی تصدیق کرتے ہیں۔";
+"You have successfully submitted your application for the to Allied Bank." = "آپ نے کامیابی کے ساتھ الائیڈ بینک کے لیے اپنی درخواست جمع کرادی ہے۔";
+"For any further inquiry, please contact" = "مزید کسی بھی انکوائری کے لیے، براہ کرم رابطہ کریں۔";
+"or call our Helpline:" = "یا ہماری ہیلپ لائن پر کال کریں:";
+"Instructions" = "ہدایات";
+"Let's Get Started" = "آو شروع کریں";
+"SIM Ownership Verification Failure" = "سم کی ملکیت کی تصدیق میں ناکامی";
+"SIM Verification Failed" = "کی تصدیق ناکام ہو گئی SIM";
+"As per Telecom Operator records, provided mobile number is not registered with scanned CNIC
+Do you wish to change mobile number?" =
+"ٹیلی کام آپریٹر کے ریکارڈ کے مطابق، فراہم کردہ موبائل نمبر سکین شدہ CNIC کے ساتھ رجسٹرڈ نہیں ہے۔
+کیا آپ موبائل نمبر تبدیل کرنا چاہتے ہیں؟";
+"Mobile Network" = "موبائل نیٹ ورک";
+"Select your mobile network" = "اپنے موبائل نیٹ ورک کو منتخب کریں";
+"Press here to continue with same Mobile number to open Instant myABL Wallet Account" = "انسٹنٹ myABL والیٹ اکاؤنٹ کھولنے کے لیے اسی موبائل نمبر کے ساتھ جاری رکھنے کے لیے یہاں دبائیں";
+"Resume Application" = "درخواست دوبارہ شروع کریں";
+"Select And Continue" = "منتخب کریں اور جاری رکھیں";
+"Full Name (CNIC Data)" = "مکمل نام (نادرا ریکارڈ کے مطابق)";
+"Account Type" = "اکاؤنٹ کی قسم";
+"Account Currency" = "اکاؤنٹ کی کرنسی";
+"PKR" = "پی کے آر";
+"Create Another Application" = "ایک اور درخواست تشکیل دیں";
+"Continue" = "جاری رہے";
+"Create New Account" = "نیا اکاؤنٹ بنانے";
+"To update your mobile network in bank's system, please write \"MNP\" in message and send it to 9225 & 9080. Otherwise, you will not be able to receive One Time Password on your mobile phone." =
+"بینک کے سسٹم میں اپنے موبائل نیٹ ورک کو اپ ڈیٹ کرنے کے لیے، براہ کرم میسج میں \"MNP\" لکھیں اور اسے 9225 اور 9080 پر بھیجیں۔ بصورت دیگر، آپ اپنے موبائل فون پر ون ٹائم پاس ورڈ وصول نہیں کر سکیں گے۔";
+"Welcome to the World of Possibilities & Lifestyle." = "ممکنات اور طرز زندگی کی دنیا میں خوش آمدید۔";
+"Open your account in 4 easy steps" = "اپنا اکاؤنٹ 4 آسان مراحل میں کھولیں۔";
+"Original CNIC" = "اصل CNIC";
+"Picture of your signature" = "دستخط کی تصویر لیں۔";
+"Proof of Income" = "آمدن کا ثبوت";
+"(Not required for Asaan Digital Account, Asaan Digital Remittance Account & Freelancer Digital Account)" = "(آسان ڈیجیٹل اکاؤنٹ، آسان ڈیجیٹل ریمیٹنس اکاؤنٹ اور فری لانسر ڈیجیٹل اکاؤنٹ کے لیے ضروری نہیں)";
+"Please Note" = "براہ مہربانی نوٹ کریں";
+"You need to ensure that mobile number is registered on your CNIC" = "دیا جانے والا موبائل نمبر آپ کے شناختی کارڈ پر رجسٹرڈ ہونا چاہیے";
+"Be informed that during the process your live picture will be taken" = "آپ کو مطلع کیا جاتا ہے کہ اکاؤنٹ کھولنے کےدوران آپ کی ائیو فوٹو لی جائے گی۔";
+"If you wish to open Joint Account, details of joint applicant will be taken at the end of the process" = "(جوائنٹ اکاؤنٹ کی صورت میں مشترکہ درخواست گزار کی تمام تفصیلات کے ساتھ دستاویزات درکار ہیں۔)";
+"For Customer Support, Suggestions & Complaints" = "کسٹمر سپورٹ، تجاویز اور شکایات کے لیے";
+"Live Chat" = "لائیو چیٹ";
+"In case of joint account entire details of joint applicant along with documentation is required." = "مشترکہ اکاؤنٹ کی صورت میں مشترکہ درخواست دہندہ کی تمام تفصیلات کے ساتھ دستاویزات درکار ہیں۔";
+"We will be obliged to have your feedback on overall user experience at the end of the process." = "اختتام پر آپ کے مجموعی تجزیہ /تاثرات ہمارے لئے مشعل راہ ہوں گے ۔";
+"Must Read" = "ضرور پڑھنا";
+"OK" = "ٹھیک ہے";
+"In case of expired NADRA ID Document (CNIC/ SNIC), please upload original NADRA Token in place of Original ID Card. Please be informed that you shall update bank record with original renewed NADRA ID Card immediately on receipt but not later than ‘30’ days, otherwise, bank reserves the right to block operation in your account." = " براہ کرم اصل شناختی کارڈ کی جگہ پر اصل نادرا ٹوکن اپ لوڈ کریں۔ براہ کرم مطلع رہیں کہ آپ اصل تجدید شدہ نادرا شناختی کارڈ کے حصول کے فورن بعد بینک میں \'30\' دنوں کے اندر جمع کروائیں گے ، بصورت دیگر، بینک آپ کے اکاؤنٹ کو بلاک کرنے کا حق محفوظ رکھتا ہے۔";
+"Bank will protect your personal details through strict information security controls, provided information will not be divulged" = "بینک آپ کی ذاتی تفصیلات /معلومات کو محفوظ اور پووشیدہ رکھے گا، اور یہ کہ آپ کی آپ کی ذاتی معلومات کو ظاہر نہیں کیا جائے گا۔";
+"All fields are mandatory except mentioned otherwise
+Please ensure you use camera enabled device during whole onboarding process. Your Photograph/ Video call session(s) may be recorded for bank use." = "تمام معلومات ضروری ہیں ما سواے جو نشاندہ ہوں۔ اکاؤنٹ کھولنے کے لئے کمرے والا موبائل /کمپیوٹر استعمال ریں ۔ آپ کی تصویر/ویڈیو کال بینک کے استعمال کے لیے ریکارڈ کیے جا سکتے ہیں";
+"Recommended browsers: Chrome, Firefox, Safari and Microsoft Edge" = "تجویز کردہ براؤزر: کروم، فائر فاکس، سفاری اور مائیکروسافٹ ایج";
+"Please be informed that your CNIC/ NICOP number is your unique tracking ID, which can be used to continue your application, if not completed at once. However, we urge you to complete the process in one go." = "براہ کرم مطلع کریں کہ آپ کا شناختی کارڈ نمبر آپ کا ٹریکنگ نمبر ہے، جسے آپ کی درخواست جاری رکھنے کے لیے استعمال کیا جا سکتا ہے، اگر ایک ہی دفع مکمّل نہیں کر سکتے ۔ تاہم، ہم آپ سے درخواست کرتے ہیں کہ اس عمل کو ایک ہی بار میں مکمل کریں۔";
+"Setup Account" = "اکاؤنٹ سیٹ اپ";
+"Select Account Type" = "اکاؤنٹ کی قسم منتخب کریں";
+"Current" = "کرنٹ";
+"Savings" = "بچت";
+"Purpose of account" = "اکاؤنٹ کا مقصد";
+"Please select your preferred banking Method" = "براہ کرم اپنا ترجیح کردہ بینکنگ طریقہ منتخب کریں";
+"Islamic" = "اسلامک";
+"Read More" = "مزید پڑھ";
+"Conventional" = "روایتی";
+"ABL Branch" = "برانچ ABL";
+"Please Locate or Select your preferred ABL Branch" = "براہ کرم اپنی ترجیح کردہ ABL برانچ تلاش کریں یا منتخب کریں";
+"ABL Branches near you" = "آپ کے قریب ABL برانچز";
+"Select your preferred branch" = "اپنی ترجیح کردہ برانچ منتخب کریں";
+"List of ABL Branches..." = "شاخوں کی فہرست ... ABL";
+"Select your preferred Account" = "اپنا ترجیح کردہ اکاؤنٹ منتخب کریں";
+"Based on your profile" = "آپ کے پروفائل کی بنیاد پر";
+"Asaan Digital Account" = "آسان ڈیجیٹل اکاؤنٹ";
+"An everyday account for every Pakistani. Allied Assan Digital Account is tailored to cater the banking needs of unbanked people of society with simplified account opening requirement/ procedures." = "ہر پاکستانی کے لیے روزمرہ کا اکاؤنٹ۔ الائیڈ Assan ڈیجیٹل اکاؤنٹ معاشرے کے غیر بینکوں کے لوگوں کی بینکنگ ضروریات کو پورا کرنے کے لیے بنایا گیا ہے جس میں اکاؤنٹ کھولنے کی ضرورت/ طریقہ کار آسان ہے۔";
+"Do you have proof of income?" = "کیا آپ کے پاس آمدنی کا ثبوت ہے؟";
+"Gender" = "جنس";
+"Select Gender" = "جنس کا انتخاب کریں";
+"Select Your Account" = "اپنا اکاؤنٹ منتخب کریں";
+
+"Maximum credit balance limit PKR 1,000,000
+
+Maximum Debit balance limit PKR 1,000,000
+
+Currency PKR" =
+"زیادہ سے زیادہ کریڈٹ بیلنس کی حد PKR 1,000,000، زیادہ سے زیادہ ڈیبٹ بیلنس کی حد PKR 1,000,000
+کرنسی PKR";
+"Select the Currency" = "کرنسی کا انتخاب کریں";
+"The currency that will used to send and recieve amount" = "کرنسی جو رقم بھیجنے اور وصول کرنے کے لیے استعمال ہوگی";
+"Rs Pakistani Rupee" = "پاکستانی روپیہ";
+"$ US Dollar" = "$ امریکی ڈالر";
+"£ Pound Sterling" = "£ پاؤنڈ سٹرلنگ";
+"¥ Japanese Yen" = "¥ جاپانی ین";
+"€ Euro" = "یورو €";
+"Review Details" = "تفصیلات کا جائزہ لیں";
+"Summary" = "خلاصہ";
+"Banking Mode" = "بینکاری موڈ";
+"Branch" = "برانچ";
+"Branch 4" = "برانچ 4";
+"Currency" = "کرنسی";
+"Account" = "کھاتہ";
+"Nature Of Account" = "اکاؤنٹ کی نوعیت";
+"Single" = "سنگل";
+"03XX XXXXXXX" = "03XX XXXXXXX";
+"CNIC" = "شناختی کارڈ";
+"35XXX XXXXXXX X" = "35XXX XXXXXXX X";
+"Date Of Birth" = "تاریخ پیدائش";
+"CNIC Date Of Issue" = "شناختی کارڈ جاری کرنے کی تاریخ";
+"CNIC Date Of Expiry" = "شناختی دستاویز تاریخ منسوخی";
+"Mother Name" = "والدہ کا نام";
+"Place of Birth" = "پیدائش کی جگہ";
+"Lahore" = "لاہور";
+"Country" = "ملک";
+"Pakistan" = "پاکستان";
+"Account Details" = "اکاؤنٹ کی تفصیلات";
+"Salary/Personal" = "تنخواہ/ذاتی";
+"Your Details" = "آپ کی تفصیلات";
+"Title" = "ٹائیٹل";
+"Mrs." = "مسز.";
+"Full Name" = "پورا نام";
+"Customer Full Name" = "مکمل نام کسٹمر";
+"Female" = "عورت";
+"Father / Husband Name" = "والد/شوہر کا نام";
+"Father’s Name" = "والد کا نام";
+"Profession" = "پیشہ";
+"Salaried" = "تنخواہ دار";
+"Occupation" = "ذریعہِ معاش";
+"Accountant" = "اکاؤنٹنٹ";
+"Expected Salary / Income Per Year" = "متوقع ماہانہ تنخواہ /آمدنی";
+"Current / Mailing Address for Correspondence" = "خط و کتابت کے لیے موجودہ / ڈاک کا پتہ";
+"Address" = "ایڈریس";
+"Nearest Landmark" = "قریبی امتیازی جگہ";
+"i.e. any prominent/ popular place near your address" = "یعنی آپ کے پتے کے قریب کوئی نمایاں/مقبول جگہ";
+"Name of Place" = "جگہ کا نام";
+"Tehsil / Town" = "تحصیل/ قصبہ";
+"Lahore City" = "لاہور سٹی";
+"City" = "شہر";
+"Email Address" = "ای میل اڈریس";
+"Details of Transactions" = "لین دین کی تفصیلات";
+"Debit Card" = "ڈیبٹ کارڈ";
+"UPI PayPak" = "UPI PayPak";
+"Cheque Book" = "چیک بک";
+"No" = "نہیں";
+"Transaction Alerts" = "لین دین کے انتباہات";
+"Documents" = "کاغذات";
+"Signature" = "دستخط";
+"View Terms & Conditions to agree / disagree" = "دیکھیں متفق/غیر متفق ہونے کے لیے شرائط و ضوابط";
+"I / We confirm My / our declaration" = "میں / ہم اس بات سے اتفاق کرتے ہیں";
+"Thank You!" = "شکریہ!";
+"Your have successfully submitted your application for the Asaan Digital Account to Allied Bank.
+
+For any further inquiry, please contact ada@abl.com       or call our Helpline: 111-225-225" = "آپ نے کامیابی کے ساتھ آسان ڈیجیٹل اکاؤنٹ کے لیے اپنی درخواست الائیڈ بینک میں جمع کرادی ہے۔ مزید کسی بھی انکوائری کے لیے، براہ کرم ada@abl.com پر رابطہ کریں یا ہماری ہیلپ لائن پر کال کریں: 111-225-225";
+"We will be obliged if you can take a minute to give us feedback and provide your input to further improve the digital onboarding experience" = "اگر آپ ہمیں فیڈ بیک دینے اور ڈیجیٹل آن بورڈنگ کے تجربے کو مزید بہتر بنانے کے لیے اپنا ان پٹ فراہم کرنے کے لیے ایک منٹ نکال سکتے ہیں تو ہم اس کے پابند ہوں گے";
+"No Thanks" = "نہیں شکریہ";
+"Feedback" = "رائے";
+"Take your Live Picture" = "لائیو تصویر کھینچیں";
+"Click here" = "یہاں کلک کریں";
+"Upload Picture of Your signature" = "دستخط کی تصویر اپلوڈ کریں۔";
+"If you want to open Joint Account with another person?" = "اگر آپ کسی دوسرے شخص کے ساتھ جوائنٹ اکاؤنٹ کھولنا چاہتے ہیں؟";
+"Take the picture of your signature on white paper" = "سفید کاغذ پر اپنے دستخط کی تصویر لیں۔";
+"Select the Nature of Account" = "اکاؤنٹ کی نوعیت کو منتخب کریں";
+"Joint" = "مشترکہ";
+"Select number of additional applicants" = "اضافی درخواست گزاروں کی تعداد منتخب کریں";
+"Select additional applicants" = "اضافی درخواست گزاروں  منتخب کریں";
+"Additional Applicant Details" = "درخواست گزار کی اضافی تفصیلات";
+"Relationship" = "رشتہ";
+"Select relationship" = "رشتہ منتخب کریں";
+"Full Name (As per NADRA Record)" = "پورا نام (نادرا ریکارڈ کے مطابق)";
+"You may amend if correction is required" = "اگر اصلاح کی ضرورت ہو تو آپ ترمیم کر سکتے ہیں";
+"Father/Husband  Name (As per NADRA Record)" = "والد/شوہر کا نام (نادرا ریکارڈ کے مطابق)";
+"Email (Optional)" = "ای میل (اختیاری)";
+"Please enter your email address" = "براہ کرم اپنا ای میل ایڈریس درج کریں";
+"Full Fahter’s Name (Pre-filled)" = "مکمل فاتر کا نام (پہلے سے بھرا ہوا)";
+"Full Name will be Pre-Populated" = "مکمل نام پہلے سے آباد کیا جائے گا";
+"Father Name will be Pre-Populated" = "والد کا نام پہلے سے آباد کیا جائے گا";
+"CNIC Issuance date" = "شناختی دستاویز تاریخ اجراء";
+"24/5/2018 (Pre-Populated)" = "24/5/2018 (پہلے سے آباد)";
+"johndoe@email.com" = "johndoe@email.com";
+"0XX-XXXXXXXX" = "0XX-XXXXXXXX";
+"Enter residence phone number" = "رہائشی فون نمبر درج کریں";
+"Current/Mailing Address for Correspondence" = "خط و کتابت کے لیے موجودہ/میلنگ ایڈریس";
+"Pre-filled Address" = "پہلے سے بھرا ہوا پتہ";
+"Pre-filled City" = "پہلے سے بھرا ہوا شہر";
+"Please Select" = "براہ مہربانی منتخب کریں";
+"Mailing Address Preferences" = "میلنگ پتے کی ترجیحات";
+"at which address bank shall send letters/correspondence." = "بینک کون سے پتے پر مراسلات بھیجے/خط و کتابت کرے۔";
+"Step 1" = "مرحلہ نمبر 1";
+"Step 2" = "مرحلہ نمبر 2";
+"Step 3" = "مرحلہ نمبر 3";
+"Step 4" = "مرحلہ نمبر 4";
+"Employment Details" = "ملازمت کی تفصیلات";
+"NTN (Optional)" = "ٹیکس ایڈنٹیفکیشن (اختیاری)";
+"Please mention your average monthly salary/ income in Pakistani Rupee (PKR)" = "براہ کرم اپنی ماہانہ تنخواہ/آمدن    پاکستانی روپیہ (پی کے آر) میں درج کریں";
+"Enter Salary/Income Here" = "یہاں تنخواہ/آمدنی درج کریں";
+"Choose Your Debit Card" = "ڈیبٹ کارڈ چنیں";
+"Cheque Book Required?" = "چیک بک چاہیے؟";
+"Cheque Book will be delivered at your selected branch" = "چیک بک آپ کی منتخب برانچ میں پہنچائی جائے گی";
+"Transactional Alerts" = "ٹرانزیکشنل الرٹس";
+"Where do you want bank to send account transaction alerts." = "آپ کہاں چاہتے ہیں کہ بینک اکاؤنٹ ٹرانزیکشن الرٹس بھیجے۔";
+"SMS" = "پیغام";
+"UPI PayPak Classic" = "UPI PayPak کلاسک";
+"Domestic & International use
+Daily Transaction Limit 50,000/- on ATM
+Daily Transaction Limit 50,000/- on POS
+ATM Fund Tranfer
+ATM Bill Payment" = "گھریلو اور بین الاقوامی استعمال
+اے ٹی ایم پر روزانہ لین دین کی حد 50,000/-
+POS پر روزانہ لین دین کی حد 50,000/-
+اے ٹی ایم فنڈ ٹرانسفر
+اے ٹی ایم بل کی ادائیگی";
+"VDC Classic" = "VDC کلاسک";
+"Reason for Requiring Visa Card" = "ویزا کارڈ کی ضرورت کی وجہ";
+"Select reason" = "وجہ منتخب کریں";
+"Debit Card Delivery" = "ڈیبٹ کارڈ کی ترسیل";
+"How this Card shall be Delivered" = "یہ کارڈ کیسے ڈیلیور کیا جائے گا۔";
+"Upload Proof of Income" = "آمدن کا ثبوت اپلوڈ کریں۔";
+"Minor" = "معمولی";
+"Same as mailing address" = "میلنگ ایڈریس کی طرح";
+"Permanent Residential Address" = "مستقل رہائشی پتہ";
+"Landline Number (Optional)" = "(اختیاری) لینڈلائن نمبر";
+"Mailing Address
+Preferences" = "خط و کتابت کے لیے حالیہ/میلنگ پتہ";
+"Your Preferred Banking Mode" = "آپ کا ترجیح کردہ بینکنگ موڈ";
+"Please select Type of Account" = "براہ کرم اکاؤنٹ کی قسم منتخب کریں";
+"Choose your branch" = "اپنی برانچ چنیں";
+"Below are suggested branches based on your current location" = "آپکے موجودہ مقام کی بنیاد پر آپکو مندرجہذیل برانچیں تجویز کی گئی ہی";
+"Choose preferred branch" = "اپنی ترجیح کرد برانچ چنیں";
+"Or select yourself" = "یا خود منتخب کریں";
+"Your Nationality Details" = "آپ کی قومیت کی تفصیلات";
+"PAKISTAN, ISLAMIC REPUBLIC OF" = "پاکستان، اسلامی جمہوریہ";
+"FATCA" = "فیٹکا";
+"Are you a U.S. tax Resident?" = "کیا آپ یو ایس ٹیکس کے رہائشی ہیں؟";
+"Are you a U.S. tax Citizen?" = "کیا آپ ایک امریکی شہری ہیں؟";
+"Do you have any \"in-care-of\" or \"hold mail\" address?" = "کیا آپ کے پاس کوئی ان کیئر آف یا ہولڈ میل ایڈریس ہے؟";
+"Is your place of birth in the U.S. or in any U.S. territory?" = "کیا آپ کی جائے پیدائش امریکہ میں ہے یا امریکہ کے کسی علاقے میں؟";
+"Do you intend to issue any standing instructions for transfer of funds to U.S. or U.S. overseas territory?" = "کیا آپ US یا U.S. سمندر پار علاقے میں رقوم کی منتقلی کے لیے کوئی مستقل ہدایات جاری کرنے کا ارادہ رکھتے ہیں؟";
+"Are you holding a U.S. Permanent Resident Card (Green Card Holder)?" = "کیا آپ کے پاس یو ایس کا مستقل رہائشی کارڈ (گرین کارڈ ہولڈر) ہے؟";
+"Have you issued any Authority / Operating Authority to USA Citizen  / Green Card Holder  / or a person with US address/ phone number?" = "کیا آپ نے یو ایس اے سٹیزن/ گرین کارڈ ہولڈر/ یا امریکی ایڈریس/ فون نمبر والے شخص کو کوئی اٹارنی/ آپریٹنگ اتھارٹی جاری کی ہے؟";
+"The Foreign Account Tax Compliance Act (FATCA), requires us to generally acquire information regarding foreign assets held by applicants." = "فارن اکاؤنٹ ٹیکس کمپلائنس ایکٹ (فیٹکا) ہمارے لیے درخواست گزاران سے ان کے بیرونی اثاثوں سے متعلق عمومی سوالات پوچھنا لازم قراردیتا ہے۔";
+"Remitter's Details" = "بھیجنے والے کی تفصیلات";
+"Name of Remitter" = "بھیجنے والے کا نام";
+"Note to be added under full name field : You may amend if correction is required" = "مکمل نام کی فیلڈ کے تحت شامل کرنے کے لیے نوٹ: اگر اصلاح درکار ہو تو آپ ترمیم کر سکتے ہیں";
+"Enter full name" = "پورا نام درج کریں";
+"Enter relationship" = "رشتہ درج کریں۔";
+"Add Remitter" = "بھیجنے والا شامل کریں";
+"Are you a tax resident outside Pakistan?" = "کیا آپ پاکستان سے باہر ٹیکس رہائشی ہیں؟";
+"Select country" = "ملک منتخب کریں";
+"Do you have Tax Identification Number?" = "کیا آپ کے پاس ٹیکس شناختی نمبر ہے؟";
+"What is your Tax Identification Number" = "آپ کا ٹیکس شناختی نمبر کیا ہے";
+"Enter Tax Identification Number" = "ٹیکس شناختی نمبر درج کریں";
+"If you don’t have Tax Identification Number select reason for non availibility:" = "اگر آپ کے پاس ٹیکس شناختی نمبر نہیں ہے تو عدم دستیابی کی وجہ منتخب کریں:";
+"Select reason unavailability" = "نہ ہونے کی وجہ";
+"Why are you unable to obtain TIN?" = "آپ TIN حاصل کرنے سے کیوں قاصر ہیں؟";
+"Enter reason here" = "وجہ یہاں درج کریں";
+"Reason if not available" = "اگر دستیاب نہ ہو تو وجہ";
+"For Reason 'B' provide Explanation" = "وجہ نمبر ٢ کے لیے وضاحت درج کریں";
+"Provide Information" = "معلومات فراہم کریں";
+"Country of Nationality" = "قومیت کا ملک";
+"Select one" = "ایک منتخب کریں";
+"Add Another Country" = "ایک اور ملک شامل کریں";
+"Electronic SOA Required?" = "کی ضرورت ہے؟ SOA الیکٹرانک ";
+"Next of Kin Details" = "اگلے صلہ کی تفصیلات";
+"Name (Kin)" = "نام (صلہ)";
+"Please enter name" = "براہ کرم نام درج کریں";
+"Choose purpose of account" = "اکاؤنٹ کا مقصد منتخب کریں۔";
+"Please enter mobile no as '03xx-xxxxxxx'" = "براہ کرم موبائل نمبر '03xx-xxxxxx' درج کریں";
+"  Enter your mobile number" = "  اپنا موبائل نمبر درج کیجئے";
+"  Enter your CNIC number" = "اپنا CNIC نمبر درج کریں";
+"Error" = "خرابی";
+"OK" = "ٹھیک ہے";
+"No" = "نہیں" ;
+"Yes" = "جی ہاں";
+"Alert!" = "انتباہ!";
+"Please enter Mobile Number first" = "براہ کرم پہلے موبائل نمبر درج کریں";
+"Provided CNIC is not matched" = "بشرطیکہ CNIC مماثل نہیں ہے";
+"Select one" = "ایک منتخب کریں";
+"Single" = "سنگل";
+"Dual" = "دوہری";
+"Success" = "کامیابی";
+
+"What is your Tax Identification number" = "آپ کا ٹیکس شناختی نمبر کیا ہے";
+" Enter Tax identification Number" = "ٹیکس شناختی نمبر درج کریں";
+"Please Select" = "براہ مہربانی منتخب کریں";
+"Please select country" = "براہ کرم ملک منتخب کریں";
+"Please Enter Tax Identification Number first" = "براہ کرم پہلے ٹیکس شناختی نمبر درج کریں";
+"Please select reason" = "براہ کرم وجہ منتخب کریں";
+"Open" = "کھلا";
+"Charges shall be applicable as per latest SOC. Click here to view SOC." = "چارجز کا اطلاق تازہ ترین SOC کے مطابق ہوگا۔ SOC دیکھنے کے لیے یہاں کلک کریں۔";
+"Required" = "ضرورت ہے";
+"Not Required" = "ضرورت نہیں ہے";
+"Document uploaded successfully" = "دستاویز کامیابی سے اپ لوڈ ہو گئی";
+"Pending from client" = "کلائنٹ سے زیر التواء";

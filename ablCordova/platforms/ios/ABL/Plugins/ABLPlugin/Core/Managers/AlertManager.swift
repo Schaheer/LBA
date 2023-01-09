@@ -68,6 +68,15 @@ final class AlertManager {
 //        }
     }
     
+    func showLanguageAlert(with title: String? = "", message: String? = "") {
+        DispatchQueue.main.async {
+            let portedPopupVC = UIStoryboard.init(name: "CNICUpload", bundle: nil).instantiateViewController(withIdentifier: "CustomPopupLanguage") as! CustomPopupLanguage
+            portedPopupVC.titleString = title?.localizeString()
+            portedPopupVC.message = message?.localizeString()
+            self.topController?.present(portedPopupVC, animated: true)
+        }
+    }
+    
     func showOkAlert(title: String, message: String) {
 //        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
 

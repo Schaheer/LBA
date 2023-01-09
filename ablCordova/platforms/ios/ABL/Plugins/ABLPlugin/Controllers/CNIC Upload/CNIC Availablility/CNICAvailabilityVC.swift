@@ -8,6 +8,7 @@
 import UIKit
 import DropDown
 import BetterSegmentedControl
+import SwiftUI
 
 final class CNICAvailabilityVC: UIViewController {
     
@@ -22,7 +23,6 @@ final class CNICAvailabilityVC: UIViewController {
         
     }
     @IBOutlet weak var buttonUrdu: UIButton!
-    
     @IBAction func buttonEnglish(_ sender: Any) {
         funChangeAppLanguageAndSide(to: "en", vc: self)
     }
@@ -49,11 +49,12 @@ final class CNICAvailabilityVC: UIViewController {
     
     private let notificationCenter = NotificationCenter.default
     var cameFromJointFlow = false
-    
+
     override func viewWillAppear(_ animated: Bool) {
-        cnicNumberTextField.text = nil
-        mobileNumberTextField.text = nil
-        modelRegistrationSteper = RegistrationSteperModel()
+//        cnicNumberTextField.text = nil
+//        mobileNumberTextField.text = nil
+        
+        
         //Irfan
         setupGestureRecognizers()
         let consumer = DataCacheManager.shared.loadRegisterVerifyOTPResponse()?.consumerList?.last
@@ -64,8 +65,20 @@ final class CNICAvailabilityVC: UIViewController {
         print(DataCacheManager.shared.loadNoOfJointApplicants())
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+
+    }
+    
+    
+    @objc func resetStaper() {
+        modelRegistrationSteper = RegistrationSteperModel()
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.resetStaper), name: .resetStaper, object: nil)
+        resetStaper()
+        
         mobileNumberTextField.delegate = self
         cnicNumberTextField.delegate = self
         portedSegment.segments = LabelSegment.segments(
@@ -100,6 +113,7 @@ final class CNICAvailabilityVC: UIViewController {
         cnicAvailabilityViewModel.setShouldGenerateOTP(shouldGenerate: true)
         
         print(Defaults.selectedLanguageCode)
+//        AlertManager.shared.showOKAlert()
     }
     
     deinit {
@@ -142,6 +156,14 @@ final class CNICAvailabilityVC: UIViewController {
     }
     
     @IBAction func nextTapped(_ sender: UIButton) {
+        phoneNumberCheck()
+    }
+    
+    @IBAction func cancelTapped(_ sender: UIButton) {
+        self.view.window?.rootViewController?.dismiss(animated: true)
+    }
+    
+    private func phoneNumberCheck() {
         if cnicNumberView.isHidden {
             if mobileNumberTextField.text?.count == 0 {
                 AlertManager.shared.showOKAlert(with: "Alert!", message: "Please enter Mobile Number first")
@@ -168,10 +190,6 @@ final class CNICAvailabilityVC: UIViewController {
         }
     }
     
-    @IBAction func cancelTapped(_ sender: UIButton) {
-        self.view.window?.rootViewController?.dismiss(animated: true)
-    }
-    
     private func openCNICVerificationVC() {
         guard let cnicVerificationVC = UIStoryboard.initialize(
             viewController: .cnicVerificationVC,
@@ -181,9 +199,13 @@ final class CNICAvailabilityVC: UIViewController {
         cnicVerificationVC.mobileNumber = mobileNumberTextField.text
         cnicVerificationVC.isPortedMobileNetwork = (portedSegment.index == 1) ? true : false
         cnicVerificationVC.cameFromJointFlow = cameFromJointFlow
+        cnicVerificationVC.callBackBackButton = {
+
+        }
         navigationController?.pushViewController(cnicVerificationVC, animated: true)
     }
     
+
     private func openVerifyOTPVC() {
         guard let verifyOTPVC = UIStoryboard.initialize(
             viewController: .verifyOTPVC,
@@ -191,10 +213,12 @@ final class CNICAvailabilityVC: UIViewController {
         ) as? VerifyOTPVC else { return }
         
         verifyOTPVC.otpVerifyMode = .cnicUpload
-        
+        verifyOTPVC.callBackBackButton = {
+
+        }
         navigationController?.pushViewController(verifyOTPVC, animated: true)
     }
-    
+
     private func openPersonalInformationVC() {
         guard let personalInformationVC = UIStoryboard.initialize(
             viewController: .personalInformationBaseVC,
@@ -209,7 +233,9 @@ final class CNICAvailabilityVC: UIViewController {
             viewController: .portedPopupVC,
             fromStoryboard: .cnicUpload
         ) as? PortedPopupVC else { return }
-        
+        portedPopupVC.callBackBackButton = {
+
+        }
         portedPopupVC.portedMobileNetwork = { [weak self] in
             guard let self = self else { return }
 //            self.portedSwitch.setOn(true, animated: true)
@@ -323,15 +349,13 @@ extension CNICAvailabilityVC : UITextFieldDelegate {
             textField.text = formatCnicNumber(with: "XXXXX-XXXXXXX-X", cnic: newString)
 
         }
-
         else if textField == mobileNumberTextField {
-
             textField.text = formatPhoneNumber(with: "XXXX-XXXXXXX", phone: newString)
-
+            if newString.count == 12 {
+                phoneNumberCheck()
+            }
         }
-
         
-
         return false
 
     }

@@ -267,6 +267,7 @@
 		7D18C3C52924FFFC00EAF680 /* SettingUIDesign.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D18C3C12924FFFC00EAF680 /* SettingUIDesign.swift */; };
 		7D18C3C62924FFFC00EAF680 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D18C3C22924FFFC00EAF680 /* Localizable.swift */; };
 		7D18C3C92925003900EAF680 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7D18C3CB2925003900EAF680 /* Localizable.strings */; };
+		7D229F56296C317800712825 /* CustomPopupLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D229F54296C317800712825 /* CustomPopupLanguage.swift */; };
 		7D5CAD7F2949E1F30092C044 /* CustomPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D5CAD7E2949E1F30092C044 /* CustomPopup.swift */; };
 		7D88A7BB2923C87800D522C8 /* RegistrationSteperModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D88A7B92923C87800D522C8 /* RegistrationSteperModel.swift */; };
 		7D97757F29261F530060315C /* ReviewDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D97757E29261F530060315C /* ReviewDetailsVC.swift */; };
@@ -589,6 +590,7 @@
 		7D18C3C22924FFFC00EAF680 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
 		7D18C3CA2925003900EAF680 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7D18C3CC2925003D00EAF680 /* ur */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ur; path = ur.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7D229F54296C317800712825 /* CustomPopupLanguage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomPopupLanguage.swift; sourceTree = "<group>"; };
 		7D5CAD7E2949E1F30092C044 /* CustomPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomPopup.swift; sourceTree = "<group>"; };
 		7D88A7B92923C87800D522C8 /* RegistrationSteperModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegistrationSteperModel.swift; sourceTree = "<group>"; };
 		7D97757E29261F530060315C /* ReviewDetailsVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewDetailsVC.swift; sourceTree = "<group>"; };
@@ -665,7 +667,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA = {
+		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
 				EB87FDF41871DAF40020F90C /* config.xml */,
@@ -1299,6 +1301,7 @@
 			children = (
 				7ABD53AE27FB872300AC54AE /* PortedPopupVC.swift */,
 				7D5CAD7E2949E1F30092C044 /* CustomPopup.swift */,
+				7D229F54296C317800712825 /* CustomPopupLanguage.swift */,
 				7DCF2FC42961A2EA003330D9 /* CustomPopupDemo.swift */,
 			);
 			path = "Mobile Network Ported Popup";
@@ -1581,7 +1584,7 @@
 				Base,
 				ur,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA;
+			mainGroup = 29B97314FDCFA39411CA2CEA /* CustomTemplate */;
 			productRefGroup = 19C28FACFE9D520D11CA2CBB /* Products */;
 			projectDirPath = "";
 			projectReferences = (
@@ -1882,6 +1885,7 @@
 				7ABF89C028082AA4008F8D61 /* ReviewDetailsViewModel.swift in Sources */,
 				7A12223C27E0AEF600CE890A /* CustomImageView.swift in Sources */,
 				7A12225B27E3D2AA00CE890A /* PersonalInformationThirdVC.swift in Sources */,
+				7D229F56296C317800712825 /* CustomPopupLanguage.swift in Sources */,
 				7AB78E6227FE3ED3009A339C /* UIScrollView.swift in Sources */,
 				7A5D99942819DFD8007B572D /* RemitterDetailViewModel.swift in Sources */,
 				7AC92C5D27CFAD6C0035BF99 /* PluginViewController.swift in Sources */,

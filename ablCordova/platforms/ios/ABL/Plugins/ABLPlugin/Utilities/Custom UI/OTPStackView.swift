@@ -52,6 +52,7 @@ class OTPStackView: UIStackView {
     private final func addOTPFields() {
         for index in 0..<numberOfFields{
             let field = OTPTextField()
+            field.textAlignment = .center
             setupTextField(field)
             textFieldsCollection.append(field)
             //Adding a marker to previous field

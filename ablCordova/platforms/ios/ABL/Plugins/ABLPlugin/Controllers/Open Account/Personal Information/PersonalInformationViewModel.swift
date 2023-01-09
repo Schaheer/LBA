@@ -424,7 +424,7 @@ func getCurrentUser() -> ConsumerListResponseModel {
         currentUser!.isPrimary = false
     }
    
-    return currentUser!
+    return currentUser ?? ConsumerListResponseModel() as! ConsumerListResponseModel
 }
 
 //MARK: - For merging

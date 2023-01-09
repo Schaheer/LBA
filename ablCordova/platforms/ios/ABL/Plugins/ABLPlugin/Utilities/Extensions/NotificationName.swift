@@ -11,4 +11,9 @@ extension Notification.Name {
     static var additionalApplicant: Notification.Name {
         return .init(rawValue: "com.ablPlugin.additionalApplicant.Notification")
     }
+    static var resetStaper: Notification.Name {
+        return .init(rawValue: "resetStaper")
+    }
+    
+    
 }

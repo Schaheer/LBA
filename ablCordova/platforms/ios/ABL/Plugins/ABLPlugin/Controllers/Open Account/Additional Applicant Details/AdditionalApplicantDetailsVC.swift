@@ -40,6 +40,8 @@ final class AdditionalApplicantDetailsVC: UIViewController {
             DataCacheManager.shared.saveAdditionalApplicantRelationship(input: selectedRelationship)
             modelRegistrationSteperArray.append(modelRegistrationSteper)
             NotificationCenter.default.post(name: .additionalApplicant, object: nil)
+            NotificationCenter.default.post(name: .resetStaper, object: nil, userInfo: nil)
+
             dismissToViewController(viewController: CNICAvailabilityVC.self)
 //            navigationController?.popToRootViewController(animated: true)
         } else {
