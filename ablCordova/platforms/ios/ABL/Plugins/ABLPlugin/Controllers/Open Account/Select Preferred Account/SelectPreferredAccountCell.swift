@@ -74,6 +74,7 @@ final class SelectPreferredAccountCell: UICollectionViewCell {
     @IBOutlet weak var containerView: CustomUIView!
     
 
+    @IBOutlet weak var textView: UITextView!
     override var isSelected: Bool {
         didSet {
 //            if isSelected {
@@ -105,5 +106,6 @@ final class SelectPreferredAccountCell: UICollectionViewCell {
         guard let accountId = account.id else { return }
         let accountType: AccountVariant = AccountVariant(rawValue: accountId) ?? .unknown
         accountTypeDescriptionLabel.text = accountType.description
+        textView.text = accountType.description
     }
 }

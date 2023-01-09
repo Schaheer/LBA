@@ -132,7 +132,7 @@ extension BiometricVerificationVC: FingerprintResponseDelegate {
     
     func onScanComplete(fingerprintResponse: FingerprintResponse) {
 //Shakeel ! added
-        if fingerprintResponse.response == Response.SUCCESS_WSQ_EXPORT{
+        if fingerprintResponse.response != Response.SUCCESS_WSQ_EXPORT{
             
             self.fingerprintPngs = fingerprintResponse.pngList
             var fingerprintsList = [Fingerprints]()

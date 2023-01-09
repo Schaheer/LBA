@@ -34,11 +34,20 @@ final class CustomPopupLanguage: UIViewController {
   
     @IBOutlet weak var buttonUrdu: UIButton!
     @IBAction func buttonUrdu(_ sender: Any) {
-        funChangeAppLanguageAndSide(to: "ur", vc: self)
-        
+        if Defaults.selectedLanguageCode == "ur" {
+            dismiss(animated: true)
+        }
+        else {
+            funChangeAppLanguageAndSide(to: "ur", vc: self)
+        }
     }
     @IBOutlet weak var buttonEnglish: UIButton!
     @IBAction func buttonEnglish(_ sender: Any) {
-        funChangeAppLanguageAndSide(to: "en", vc: self)
+        if Defaults.selectedLanguageCode == "en" {
+            dismiss(animated: true)
+        }
+        else {
+            funChangeAppLanguageAndSide(to: "en", vc: self)
+        }
     }
 }
