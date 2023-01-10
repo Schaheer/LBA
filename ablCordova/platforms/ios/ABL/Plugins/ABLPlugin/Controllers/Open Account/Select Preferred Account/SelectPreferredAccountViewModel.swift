@@ -78,8 +78,8 @@ final class SelectPreferredAccountViewModel: SelectPreferredAccountViewModelProt
             customerBranch: customerBranch,
             customerTypeID: customerTypeID,
             proofOfIncomeInd: proofOfIncomeInd,
-            accountVariantID: accountVariantID
-//            genderId: genderId
+            accountVariantID: accountVariantID,
+            genderId: genderId
         ) else { return }
         
         APIManager.shared.registerConsumerAccountInfo(input: input) { [weak self] response in

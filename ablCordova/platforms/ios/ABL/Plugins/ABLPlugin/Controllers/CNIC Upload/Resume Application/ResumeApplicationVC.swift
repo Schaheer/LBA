@@ -154,16 +154,42 @@ final class ResumeApplicationVC: UIViewController {
             guard
                 let draftedAppStepper = response.consumerList?.first?.stepperSections?.stepTo()
             else { return }
-            
+            modelRegistrationSteper.isResumeDraft = true
             DataCacheManager.shared.saveRegisterVerifyOTPResponse(input: response)
+            
+//            switch draftedAppStepper {
+//            case .setupAccountBankingMode:
+//                self.resumeApplicationViewModel.openBankingMethodVC()
+//            case .setupAccountType:
+//                self.resumeApplicationViewModel.openAccountTypeVC()
+//            case .setupAccountIncome:
+//                self.resumeApplicationViewModel.openSelectPreferredAccountVC()
+//            case .personalDetailNames:
+//                self.resumeApplicationViewModel.openPersonalInformationVC()
+//            case .personalDetailAddress:
+//                self.resumeApplicationViewModel.openPersonalInformationVC()
+//            case .personalDetailEmployment:
+//                self.resumeApplicationViewModel.openOccupationVC()
+//            case .transactionalDetail:
+//                self.resumeApplicationViewModel.openServiceChannelsVC()
+//            case .documentUploader:
+//                self.resumeApplicationViewModel.openPictureAndSignatureVC()
+//            }
+            //Modified
             switch draftedAppStepper {
             case .setupAccountBankingMode:
                 self.resumeApplicationViewModel.openBankingMethodVC()
             case .setupAccountType:
+                self.resumeApplicationViewModel.openBankingMethodVC()
                 self.resumeApplicationViewModel.openAccountTypeVC()
             case .setupAccountIncome:
+                self.resumeApplicationViewModel.openBankingMethodVC()
+                self.resumeApplicationViewModel.openAccountTypeVC()
                 self.resumeApplicationViewModel.openSelectPreferredAccountVC()
             case .personalDetailNames:
+                self.resumeApplicationViewModel.openBankingMethodVC()
+                self.resumeApplicationViewModel.openAccountTypeVC()
+                self.resumeApplicationViewModel.openSelectPreferredAccountVC()
                 self.resumeApplicationViewModel.openPersonalInformationVC()
             case .personalDetailAddress:
                 self.resumeApplicationViewModel.openPersonalInformationVC()

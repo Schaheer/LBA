@@ -35,6 +35,7 @@ class RegistrationSteperModel {
     var phoneNumber: String?
     var cnicNumber: String?
     var alreadyExist: Bool?
+    var isResumeDraft: Bool?
     var placeOfBirth: String?
     var mothersName: String?
     var emailOptional: String?

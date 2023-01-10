@@ -55,10 +55,10 @@ final class RegisterConsumerAccountInfoInputModel: BaseInputModel {
     var pdaRemitterDetailList: [PDARemitterDetailInputModel]?
     var noOfJointApplicants: Int?
     var eSOAInd: Int?
-    var genderId: Int?
     var noOfJointApplicatns: Int?
     var nameOnPhysicalATM: String?
     var modeOfMajorTransId: [Double]?
+    var genderId: Int?
     
     // MARK: - Model Initializers
     
@@ -78,7 +78,6 @@ final class RegisterConsumerAccountInfoInputModel: BaseInputModel {
         noOfJointApplicatns: Int? = nil,
         nameOnPhysicalATM: String? = nil,
         modeOfMajorTransId: [Double]? = nil
-//        genderId: Int
     ) {
         var dictionary = [String: Any]()
         dictionary[CodingKeys.rdaCustomerAccInfoID.rawValue] = rdaCustomerAccInfoID
@@ -93,9 +92,6 @@ final class RegisterConsumerAccountInfoInputModel: BaseInputModel {
         dictionary[CodingKeys.nameOnPhysicalATM.rawValue] = nameOnPhysicalATM
         dictionary[CodingKeys.modeOfMajorTransId.rawValue] = modeOfMajorTransId
         
-        
-//        dictionary[CodingKeys.genderId.rawValue] = genderId
-        
         self.rdaCustomerAccInfoID = rdaCustomerAccInfoID
         self.rdaCustomerID = rdaCustomerID
         self.bankingModeID = bankingModeID
@@ -108,7 +104,6 @@ final class RegisterConsumerAccountInfoInputModel: BaseInputModel {
         self.nameOnPhysicalATM = nameOnPhysicalATM
         self.modeOfMajorTransId = modeOfMajorTransId
 
-//        self.genderId = genderId
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }
     
@@ -120,8 +115,8 @@ final class RegisterConsumerAccountInfoInputModel: BaseInputModel {
         customerBranch: String,
         customerTypeID: Double,
         proofOfIncomeInd: Int,
-        accountVariantID: Double
-//        genderId: Int
+        accountVariantID: Double,
+        genderId: Int
     ) {
         
         var dictionary = [String: Any]()
@@ -133,7 +128,7 @@ final class RegisterConsumerAccountInfoInputModel: BaseInputModel {
         dictionary[CodingKeys.customerTypeID.rawValue] = customerTypeID
         dictionary[CodingKeys.proofOfIncomeInd.rawValue] = proofOfIncomeInd
         dictionary[CodingKeys.accountVariantID.rawValue] = accountVariantID
-//        dictionary[CodingKeys.genderId.rawValue] = genderId
+        dictionary[CodingKeys.genderId.rawValue] = genderId
 //        print(dictionary)
         self.rdaCustomerAccInfoID = rdaCustomerAccInfoID
         self.rdaCustomerID = rdaCustomerID
@@ -143,7 +138,7 @@ final class RegisterConsumerAccountInfoInputModel: BaseInputModel {
         self.customerTypeID = customerTypeID
         self.proofOfIncomeInd = proofOfIncomeInd
         self.accountVariantID = accountVariantID
-//        self.genderId = genderId
+        self.genderId = genderId
         
         super.init(map: Map(mappingType: .fromJSON, JSON: dictionary))
     }

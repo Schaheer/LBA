@@ -289,7 +289,13 @@ final class SelectPreferredAccountVC: UIViewController {
         modelRegistrationSteper.proofOfIncomeInd = proofOfIncomeInd
         if proofOfIncomeInd != 2 && accountVariantID.id != 0 {
             if let registerVerifyOTPResponse = DataCacheManager.shared.loadRegisterVerifyOTPResponse() {
-                let consumer = registerVerifyOTPResponse.consumerList?.first
+                
+                
+                var consumer = registerVerifyOTPResponse.consumerList?.first
+                if modelRegistrationSteper.isResumeDraft ?? false {
+                    consumer = getPrimaryUser()
+                    selectedAccountTypeId = consumer?.accountInformation?.customerAccountTypeID
+                }
                 
                 selectPreferredAccountViewModel.registerConsumerAccountInfo(
                     rdaCustomerAccInfoID: consumer?.accountInformation?.rdaCustomerAccInfoID,
