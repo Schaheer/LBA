@@ -855,6 +855,9 @@
         <designable name="C1E-Uc-KCn">
             <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
+        <designable name="CFo-1m-nBp">
+            <size key="intrinsicContentSize" width="195" height="32"/>
+        </designable>
         <designable name="DeN-Vb-DI7">
             <size key="intrinsicContentSize" width="37" height="31"/>
         </designable>
@@ -882,6 +885,9 @@
         <designable name="XI0-uX-p62">
             <size key="intrinsicContentSize" width="39" height="31"/>
         </designable>
+        <designable name="YIU-rA-Rii">
+            <size key="intrinsicContentSize" width="195" height="32"/>
+        </designable>
         <designable name="dJn-Lb-nIV">
             <size key="intrinsicContentSize" width="288" height="68"/>
         </designable>
@@ -899,6 +905,9 @@
         </designable>
         <designable name="osT-Wx-pu5">
             <size key="intrinsicContentSize" width="39" height="31"/>
+        </designable>
+        <designable name="uwh-DP-ZHu">
+            <size key="intrinsicContentSize" width="195" height="32"/>
         </designable>
         <designable name="yPn-jd-hMi">
             <size key="intrinsicContentSize" width="83.5" height="19"/>
